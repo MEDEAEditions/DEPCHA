@@ -1,6 +1,11 @@
 ### Encoding gaps
+
+Several isseus came up relating to original encoding within FromThePage, and should be addressed through more markup or feature development.
+
+#### Implicit Party
 We need a way to encode the implicit party, Stagville Plantation Store.  Maybe in the work metadata?  Maybe in a top section heading?  Bang notation?
 
+#### "P Pins"?
 `P Pins` is marked up as a subject in the encoding.  Is `"P"` actually a unit of measure?  The resulting export shows
 ```xml
                         <measure commodity="pins" quantity="1">
@@ -9,6 +14,8 @@ We need a way to encode the implicit party, Stagville Plantation Store.  Maybe i
                            3/-
                         </measure>
 ```
+
+##### "Son"?
 We should mark up references like "Son" when possible, so that they get their own `rs`:
 ```xml
                <head ana="#bk_party #bk_from #bk_account" depth="2">
@@ -18,10 +25,13 @@ We should mark up references like "Son" when possible, so that they get their ow
                </head>
 ```
 
+#### "PP Order Dr"?
 What does "PP Order Dr" mean?
 
 
 ### Export/Transformation gaps
+
+#### Dates
 The date columns could be automatically populated using some smart understanding of ditto marks and times.
 
 For example:
@@ -39,6 +49,7 @@ Empty date columns can be filled in by header information:
                <head depth="3">Stagville August 4th 1808</head>
 ```
 
+#### Inline parties
 People mentioned inline as parties within the entries are marked as commodities rather than participants, e.g.
 ```xml
                         <measure commodity="Henry" quantity="1/-" unit="PP">
@@ -47,6 +58,7 @@ People mentioned inline as parties within the entries are marked as commodities 
                         </measure>
 ```
 
+#### `#bk_from` vs. `#bk_to`
 Accounts are marked as `#bk_from` when they probably should be `#bk_to`
 
 
@@ -54,9 +66,7 @@ Accounts are marked as `#bk_from` when they probably should be `#bk_to`
 
 ### Challenges
 
-* Inline account changes are encoded as commodities
-
-* Some commodity names are non-standard: `yds` vs. `yd` or `Peck`.  This is a function of deriving the unit from the verbatim transcription, and should perhaps be standardized during post-processing.
+Some commodity unit names are non-standard: `yds` vs. `yd` or `Peck`.  This is a function of deriving the unit from the verbatim transcription, and should perhaps be standardized during post-processing.
 
 
 ### Questions for Discussion
