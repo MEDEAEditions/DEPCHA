@@ -1,0 +1,150 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rem="http://gams.uni-graz.at/rem/bookkeeping/#">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Best Practice for the Bookkeeping Ontology. </title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+        <idno type="PID">o:medea.tei_template</idno>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Something in this Document is defined here like: All receivings of <name ana="#bk_to" ref="Pers.02">Sepp the Header</name>, date: <date ana="#bk_when" when="1660-06-14">14th July
+						1660</date>
+        </p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <editorialDecl>
+        <p/>
+      </editorialDecl>
+      <projectDesc>
+        <p>
+          <ref target="info:fedora/context:medea" type="context">MEDEA</ref>
+        </p>
+      </projectDesc>
+    </encodingDesc>
+    <revisionDesc>
+      <change/>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div>
+        <head>bk_ is defined inside the actual entry. Examples for bk_amount, bk_what and bk_service</head>
+        <div ana="#bk_entry">
+          <span>
+            <date ana="#bk_when" when="1750-06-04">4. July 1750</date>: <persName ana="#bk_from #bk_party" ref="Pers.01">Christoper</persName> gives <persName ana="#bk_to #bk_party" ref="Pers.02">Sepp</persName>
+            <measure ana="#bk_amount" commodity="currency" quantity="20" unit="dollar"> 20 $</measure>.</span>
+          <lb/>
+        </div>
+        <div ana="#bk_entry">
+          <span>
+            <date ana="#bk_when" when="1750-06-05">5. July 1750</date>: <persName ana="#bk_from #bk_party" ref="Pers.01">Christopher</persName> gives <persName ana="#bk_to #bk_party" ref="Pers.02">Sepp</persName>
+            <measure ana="#bk_what" commodity="wood" quantity="10" unit="pieces"> 10 pieces of wood</measure>
+          </span>
+          <lb/>
+        </div>
+        <div ana="#bk_entry">
+          <span>
+            <date ana="#bk_when" when="1750-06-10">10. July 1750</date>: <persName ana="#bk_from #bk_party" ref="Pers.01">Christopher</persName> pays for <measure ana="#bk_service" commodity="time" quantity="5" unit="hours">5 hours of work</measure> a not marked person.</span>
+          <lb/>
+        </div>
+      </div>
+      <pb/>
+      <div>
+        <head>bk_when and bk_to are defined in a xml-strucutre before the actual entry<lb/>
+          <orgName ana="#bk_to #bk_account" ref="Acc.1">Christophers Account</orgName> receives on the <date ana="#bk_when" when="1460-10-01">10.01.1460</date>: </head>
+        <p ana="#bk_entry">5 € from <span ana="#bk_from">
+            <name ref="Pers.13">Luis</name>
+          </span>
+        </p>
+        <p ana="#bk_entry">
+          <measure ana="#bk_amount" commodity="currency" quantity="514" unit="cent">51,4€</measure> from <span ana="#bk_from">
+            <name ref="Acc.2">Weingeld</name>
+          </span>
+        </p>
+        <p ana="#bk_entry">1 cow from <span ana="#bk_from">
+            <name ref="Pers.15">Mr X.</name>
+          </span>
+        </p>
+        <pb/>
+      </div>
+      <div>
+        <head>bk_when and bk_to are defined in the TEI-Header. A tei-table is used.</head>
+        <table>
+          <row ana="#bk_entry">
+            <cell>
+              <persName ana="#bk_from #bk_party" ref="Pers.01">Christopher</persName> pays <measure ana="#bk_what" commodity="cow" quantity="3" unit="pieces">3 Cows</measure>
+            </cell>
+            <cell/>
+            <cell/>
+          </row>
+          <row ana="#bk_entry">
+            <cell/>
+            <cell/>
+            <cell/>
+          </row>
+        </table>
+      </div>
+      <div>
+        <div ana="#bk_d #bk_from" xml:id="bs_Ausgaben-div-0">
+          <head xml:id="d2e5951" xml:space="preserve">SRBAS Example</head>
+          <div ana="#bs_StadtAusgaben" xml:id="bs_StadtAusgaben-div-0">
+            <div ana="#bs_Zinszahlungen" xml:id="bs_Zinszahlungen-div-0">           
+   <head xml:id="d2e5958" xml:space="preserve">Verzinst</head>
+              <p ana="#bk_entry" xml:id="bs_Zinszahlungen-1">Prima angaria
+								<seg ana="#bk_amount" rend="rb" xml:id="d2e5963" xml:space="preserve"> <measure quantity="1804" type="currency" unit="https://glossa.uni-graz.at/#lb">xviij<seg rend="super">c</seg> iiij lb</measure> <measure quantity="4" type="currency" unit="ß-w">iiij ß</measure> <measure quantity="10" type="currency" unit="d">x d</measure></seg>
+              </p>
+              <p ana="#bk_entry" xml:id="bs_Zinszahlungen-2">Secunda angaria
+								<seg ana="#bk_amount" rend="rb" xml:id="d2e5976" xml:space="preserve"> <measure quantity="1797" type="currency" unit="https://glossa.uni-graz.at/#lb">j<seg rend="super">m</seg> vij<seg rend="super">c</seg> lxxxxvij lb</measure> <measure quantity="16" type="currency" unit="ß-w">xvj ß</measure> <measure quantity="1" type="currency" unit="d">j d</measure></seg>
+              </p>
+              <p ana="#bk_entry" xml:id="bs_Zinszahlungen-3">Tertia angaria
+								<seg ana="#bk_amount" rend="rb" xml:id="d2e5992" xml:space="preserve"> <measure quantity="2513" type="currency" unit="https://glossa.uni-graz.at/#lb">ij<seg rend="super">m</seg> v<seg rend="super">c</seg> xiij lb</measure> <measure quantity="6" type="currency" unit="ß-w">vj ß</measure> <measure quantity="10" type="currency" unit="d">x d</measure></seg>
+              </p>
+              <p ana="#bk_entry" xml:id="bs_Zinszahlungen-4">Quarta angaria
+								<seg ana="#bk_amount" rend="rb" xml:id="d2e6008" xml:space="preserve"> <measure quantity="2312" type="currency" unit="https://glossa.uni-graz.at/#lb">ij<seg rend="super">m</seg> iij<seg rend="super">c</seg> xij lb</measure> <measure quantity="11" type="currency" unit="ß-w">xj ß</measure> <measure quantity="11" type="currency" unit="d">xj d</measure></seg>
+              </p>
+              <p ana="#bk_total" xml:id="bs_Zinszahlungen-total-1">Suma
+								<seg ana="#bk_amount" rend="rb" xml:id="d2e6025" xml:space="preserve"> <measure quantity="8427" type="currency" unit="https://glossa.uni-graz.at/#lb">viij<seg rend="super">m</seg> iiij<seg rend="super">c</seg> xxvij lb</measure> <measure quantity="19" type="currency" unit="ß-w">xix ß</measure> <measure quantity="8" type="currency" unit="d">viij d</measure></seg>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <head>Pandolfini Example</head>
+        <p ana="#bk_entry">
+          <seg>
+            <term>Panni fini</term> di nostra rangione per mandare a <placeName xml:id="SID.1">Napoli</placeName>
+            <seg ana="#bk_debit">deono dare</seg>, a dì <date ana="#bk_when" when="1473-08-28">.xxviiii. d’aghosto</date>, <measure type="currency">f. <num value="30">trenta</num> s. <num value="16">xvi°</num> d. <num value="8">viii</num>
+            </measure>, e
+						sono per <term>tintura</term> di .x. panni di grana e .i.° verde; posto <orgName ana="#bk_between #bk_from" ref="#org_15">
+              <persName>Girolamo Ciai</persName> e conp.</orgName>
+						tintori debbino avere <note>avere <hi rend="italics">corr. da</hi> dare</note>in questo <ref>c. 20</ref>,</seg>
+          <seg ana="#bk_amount">
+            <measure quantity="920" type="currency" unit="https://glossa.uni-graz.at/#d">f. 30.16.8</measure>
+          </seg>
+        </p>
+        <p ana="#bk_entry">
+          <note type="number-of-commodity">4</note>
+          <seg>E a dì <date ana="#bk_when" when="1473-08-28">.xxviii. detto</date>
+            <measure type="currency">f. 164.15.10</measure>, sono per <measure ana="#bk_what" commodity="panni-fini" quantity="4" type="commodity" unit="piece">.iiii.° panni fini</measure>
+						chonperati da <persName ana="#bk_between #bk_from" ref="#pers_">Piero erede del Pugliese</persName>; posto debbino avere in questo <ref>c. 22</ref>,</seg>
+          <seg ana="#bk_amount">
+            <measure quantity="39550" type="currency" unit="https://glossa.uni-graz.at/#d">f. 164.15.10</measure>
+          </seg>
+        </p>
+      </div>
+      
+      <div>
+        <div>
+          <head>Franz Einkaufsliste</head>
+          <p ana="#bk_entry">
+            <persName ana="#bk_to #bk_party" ref="Pers_100">Franz</persName> hat am <date ana="#bk_when" when="1990-05-04">04.05.1900</date>
+            <measure ana="#bk_what" commodity="Fleisch" quantity="3" type="commodity" unit="kg">3 kg Fleisch</measure> für den Gesamtbetrag von <measure ana="#bk_price" commodity="Euro" quantity="12" type="currency">12 €</measure> von <persName ana="#bk_from #bk_party" ref="Pers_200">Fritz</persName> gekauft. </p>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>
