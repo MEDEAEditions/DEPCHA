@@ -1,5 +1,3 @@
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_all.xsd" xml:lang="EN" xml:id="export">
    <teiHeader>
@@ -62,23 +60,8 @@
             <date when="2018-04-04T17:45:35-05:00">April  4, 2018</date>
          </publicationStmt>
          <sourceDesc>
-            <p>Accounts of <orgName ana="#bk_to" >Stagville Plantation Store</name> from <date ana="#bk_when" when="1808-08-01">August 1808</date>.
+            <p>Accounts of <orgName ana="#bk_to" >Stagville Plantation Store</orgName> from <date ana="#bk_when" when="1808-08-01">August 1808</date>.
         </p>
-
-            <msDesc>
-               <msIdentifier>
-                  <collection>Stagville Accounts</collection>
-               </msIdentifier>
-               <physDesc>
-                  <p />
-               </physDesc>
-               <history>
-                  <origin>
-                     <placeName>Southern Historical Collection</placeName>
-                  </origin>
-                  <provenance />
-               </history>
-            </msDesc>
          </sourceDesc>
       </fileDesc>
       <encodingDesc>
@@ -557,9 +540,6 @@
          </classDecl>
       </encodingDesc>
       <profileDesc />
-      <revisionDesc>
-    	 <!-- TODO: remove meaningless data -->
-      </revisionDesc>
    </teiHeader>
    <text>
       <body>
@@ -567,18 +547,10 @@
          <pb xml:id="F7884" n="3" facs="/image-service/7884/full/full/0/native.jpg" />
          <div xml:id="OTP7884">
             <fw type="pageNum">3</fw>
-            <p corresp="TTP7884P0" xml:id="OTP7884P0">
-               <head depth="3">Stagville August 1st 1808</head>
-               <lb />
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  69
-                  <rs ref="#S10787">James Haley</rs>
-                  Self Dr.
-               </head>
-               <lb />
+            <div corresp="TTP7884P0" xml:id="OTP7884P0">
                <table>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-01"/>
+                     <cell ana="#bk_when"><date when="1808-08-01"/></cell>
                      <cell ana="#bk_what">
                         <measure commodity="powder" quantity="1/4" unit="lb">
                            1/4 lb
@@ -607,7 +579,7 @@
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when"   when="1808-08-01"/>
+                     <cell ana="#bk_when"><date when="1808-08-01"/></cell>
                      <cell ana="#bk_what">
                         <measure commodity="knife">
                            <rs ref="#S10758">Shoe Knife</rs>
@@ -634,20 +606,16 @@
                         <measure commodity="currency" quantity="9" unit="shillings">9</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                </table>
                <lb />
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  69
-                  <rs ref="#S10788">William Pettigrew Jr.</rs>
-                  Self Dr.
-               </head>
+              
                <lb />
                <table>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-01">1</cell>
+                     <cell ana="#bk_when"><date when="1808-08-01"/>1</cell>
                      <cell ana="#bk_what">
                         <measure commodity="powder" quantity="1/4" unit="lb">
                            1/4 lb
@@ -671,7 +639,7 @@
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-08">8</cell>
+                     <cell ana="#bk_when"><date when="1808-08-08"/>8</cell>
                      <cell ana="#bk_what">
                         <measure commodity="sugar" quantity="3" unit="lb">
                            3 lb
@@ -700,7 +668,7 @@
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-08">8</cell>
+                     <cell ana="#bk_when"><date when="1808-08-08">8</date></cell>
                      <cell ana="#bk_what">
                         <measure commodity="coffee" quantity="1/2" unit="lb">
                            1/2 lb
@@ -720,22 +688,18 @@
                         <measure commodity="currency" quantity="8" unit="shillings">8</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                </table>
                <lb />
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  69
-                  <rs ref="#S10789">John Telley Jr</rs>
-                  Dr.
-               </head>
+              
                <lb />
-            </p>
-            <p corresp="TTP7884P1" xml:id="OTP7884P1">
+            </div>
+            <div corresp="TTP7884P1" xml:id="OTP7884P1">
                <table>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-01"/>
+                     <cell ana="#bk_when"><date when="1808-08-01"/></cell>
                      <cell ana="#bk_what">
                         <measure commodity="iron" quantity="1/4" unit="lb">
                            1/4 lb
@@ -753,7 +717,7 @@
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-26">26</cell>
+                     <cell ana="#bk_when"><date when="1808-08-26">26</date></cell>
                      <cell ana="#bk_what">
                         <!-- TODO: there is a bug in the quantity parsing here to resolve -->
                         <measure commodity="salt" quantity="1" unit="Bushel">
@@ -769,7 +733,7 @@
                         <measure commodity="currency" quantity="10" unit="shillings">10</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                   <row>
@@ -786,25 +750,25 @@
                      </cell>
                   </row>
                </table>
-               <lb />
+               <lb /><p>
                Examd with
-               <rs ref="#S10790">TDB</rs>
+               <rs ref="#S10790">TDB</rs></p>
                <lb />
-            </p>
-            <p corresp="TTP7884P2" xml:id="OTP7884P2">
-               <head depth="2">
+            </div>
+            <div corresp="TTP7884P2" xml:id="OTP7884P2">
+               <p>
                   69
                   <rs ana="#bk_from_actor" ref="#S10791">Henry Moize</rs>
                   PP Bro
-                  <rsana="#bk_party #bk_to #bk_account"   ref="#S10792">Jonathan</rs>
+                  <rs ana="#bk_party #bk_to #bk_account"  ref="#S10792">Jonathan</rs>
                   Dr.
-               </head>
+               </p>
                <lb />
-            </p>
-            <p corresp="TTP7884P3" xml:id="OTP7884P3">
+            </div>
+            <div corresp="TTP7884P3" xml:id="OTP7884P3">
                <table>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-02">2</cell>
+                     <cell ana="#bk_when"><date when="1808-08-02"/>2</cell>
                      <cell ana="#bk_what">
                         <measure commodity="powder" quantity="1/2" unit="lb">
                            1/2 lb
@@ -819,11 +783,11 @@
                         <measure commodity="currency" quantity="5" unit="shillings">5</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-16">16</cell>
+                     <cell ana="#bk_when"><date when="1808-08-16"/>16</cell>
                      <cell ana="#bk_what">
                         <measure commodity="copperas" quantity="2" unit="lb">
                            2 lb
@@ -848,11 +812,11 @@
                         <measure commodity="currency" quantity="11" unit="shillings">11</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-16">"</cell>
+                     <cell ana="#bk_when"><date when="1808-08-16"/>"</cell>
                      <cell ana="#bk_what">
                         <measure commodity="iron" quantity="1/2" unit="lb">
                            1/2 lb
@@ -885,17 +849,12 @@
                   </row>
                </table>
                <lb />
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  69
-                  <rs ref="#S10792">Jonathan Moize</rs>
-                  Self Dr.
-               </head>
-               <lb />
-            </p>
-            <p corresp="TTP7884P4" xml:id="OTP7884P4">
+               
+            </div>
+            <div corresp="TTP7884P4" xml:id="OTP7884P4">
                <table>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-02">2</cell>
+                     <cell ana="#bk_when"><date when="1808-08-02"/>2</cell>
                      <cell ana="#bk_what">
                         <measure commodity="brimstone" quantity="1/2" unit="lb">
                            1/2 lb
@@ -909,17 +868,17 @@
                         </measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="6" unit="shillings">6</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-16">16</cell>
+                     <cell ana="#bk_when"><date when="1808-08-16"/>16</cell>
                      <cell ana="#bk_what">
                         <measure commodity="mode" quantity="1/2" unit="yd">
                            1/2 yd
@@ -933,7 +892,7 @@
                         </measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="12" unit="shillings">12</measure>
@@ -943,7 +902,7 @@
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-16">"</cell>
+                     <cell ana="#bk_when"><date when="1808-08-16"/>"</cell>
                      <cell ana="#bk_what">
                         <measure commodity="ribbon" quantity="4" unit="yds">
                            4 yds
@@ -961,20 +920,20 @@
                            1/-
                         </measure>
                            PP
-                           <rs ana="#bk_party #bk_to"ref="#S10793">B. Henry</rs>
+                           <rs ana="#bk_party #bk_to" ref="#S10793">B. Henry</rs>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="6" unit="shillings">6</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-27">27</cell>
+                     <cell ana="#bk_when"><date when="1808-08-27"/>27</cell>
                      <cell ana="#bk_what">
                         <measure commodity="pipe">
                            <rs ref="#S10770">pipes</rs>
@@ -984,17 +943,17 @@
                        <rs ana="#bk_party #bk_to" ref="#S10794">Frederick</rs>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="shillings">-</measure>
+                        <measure commodity="currency"  unit="shillings">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="6" unit="pence">6</measure>
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-30">30</cell>
+                     <cell ana="#bk_when"><date when="1808-08-30"/>30</cell>
                      <cell ana="#bk_what">
                         <measure commodity="sugar" quantity="2" unit="lb">
                            2 lb
@@ -1013,17 +972,17 @@
                         </measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="10" unit="shillings">10</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-30">"</cell>
+                     <cell ana="#bk_when"><date when="1808-08-30"/>"</cell>
                      <cell ana="#bk_what">
                         <measure commodity="cruet">
                            <rs ref="#S10772">Cruet</rs>
@@ -1031,7 +990,7 @@
                         </measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="2" unit="shillings">2</measure>
@@ -1055,17 +1014,17 @@
                   </row>
                </table>
                <lb />
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  69
+               <div ana="#bk_party #bk_to #bk_account">
+                 <p> 69
                   <rs ref="#S10795">Joseph Wood Jr</rs>
-                  Self Dr.
-               </head>
+                  Self Dr.</p>
+               </div>
                <lb />
-            </p>
-            <p corresp="TTP7884P5" xml:id="OTP7884P5">
+            </div>
+            <div corresp="TTP7884P5" xml:id="OTP7884P5">
                <table>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-02">2</cell>
+                     <cell ana="#bk_when"><date when="1808-08-02"/>2</cell>
                      <cell ana="#bk_what">
                         <measure commodity="powder" quantity="1/2" unit="lb">
                            1/2 lb
@@ -1079,7 +1038,7 @@
                         </measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="11" unit="shillings">11</measure>
@@ -1089,7 +1048,7 @@
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-02">"</cell>
+                     <cell ana="#bk_when"><date when="1808-08-02"/>"</cell>
                      <cell ana="#bk_what">
                         <measure commodity="comb">
                            <rs ref="#S10764">Hair Comb</rs>
@@ -1102,7 +1061,7 @@
                         </measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="5" unit="shillings">5</measure>
@@ -1112,7 +1071,7 @@
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-22">22</cell>
+                     <cell ana="#bk_when"><date when="1808-08-22"/>22</cell>
                      <cell ana="#bk_what">
                         <measure commodity="gunflint">
                            <rs ref="#S10773">Gunflints</rs>
@@ -1122,10 +1081,10 @@
                            <rs ana="#bk_party #bk_to" ref="#S10796">James</rs>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="shillings">-</measure>
+                        <measure commodity="currency"  unit="shillings">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="6" unit="pence">6</measure>
@@ -1133,25 +1092,24 @@
                   </row>
                </table>
                <lb />
-            </p>
-            <p corresp="TTP7884P6" xml:id="OTP7884P6" />
+            </div>
          </div>
          <pb xml:id="F7885" n="4" facs="/image-service/7885/full/full/0/native.jpg" />
          <div xml:id="OTP7885">
             <fw type="pageNum">4</fw>
-            <p corresp="TTP7885P0" xml:id="OTP7885P0">
-               <head ana="#bk_party #bk_to #bk_account"  depth="3">Stagville August 3rd 1808</head>
+            <div corresp="TTP7885P0" xml:id="OTP7885P0">
+               <p ana="#bk_party #bk_to #bk_account"  >Stagville August 3rd 1808</p>
                <lb />
-            </p>
-            <p corresp="TTP7885P1" xml:id="OTP7885P1">
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
+            </div>
+            <div corresp="TTP7885P1" xml:id="OTP7885P1">
+               <p ana="#bk_party #bk_to #bk_account"  >
                   69
                   <rs ref="#S14350">Nathaniel Carrington</rs>
                   PP Son Dr.
-               </head>
+               </p>
                <lb />
-            </p>
-            <p corresp="TTP7885P2" xml:id="OTP7885P2">
+            </div>
+            <div corresp="TTP7885P2" xml:id="OTP7885P2">
                <table>
                   <row ana="#bk_entry">
                      <cell ana="#bk_when" />
@@ -1174,7 +1132,7 @@
                         <measure commodity="currency" quantity="15" unit="shillings">15</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                   <row ana="#bk_entry">
@@ -1192,13 +1150,13 @@
                         </measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="9" unit="shillings">9</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                   <row ana="#bk_entry">
@@ -1210,28 +1168,28 @@
                         </measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="5" unit="shillings">5</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                </table>
                <lb />
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  69
+               <div ana="#bk_party #bk_to #bk_account"  >
+                  <p>69
                   <rs ref="#S14351">Leonard Laws</rs>
-                  Self Dr.
-               </head>
+                  Self Dr.</p>
+               </div>
                <lb />
-            </p>
-            <p corresp="TTP7885P3" xml:id="OTP7885P3">
+            </div>
+            <div  corresp="TTP7885P3" xml:id="OTP7885P3">
                <table>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-03">3</cell>
+                     <cell ana="#bk_when"><date when="1808-08-03"/>3</cell>
                      <cell ana="#bk_what">
                         <measure commodity="salt" quantity="1" unit="Peck">
                            1 Peck
@@ -1240,17 +1198,17 @@
                         </measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="5" unit="shillings">5</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-13">13</cell>
+                     <cell ana="#bk_when"><date when="1808-08-13"/>13</cell>
                      <cell ana="#bk_what">
                         <measure commodity="sugar" quantity="1" unit="lb">
                            1 lb
@@ -1269,7 +1227,7 @@
                         </measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="10" unit="shillings">10</measure>
@@ -1279,7 +1237,7 @@
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-20">20</cell>
+                     <cell ana="#bk_when"><date when="1808-08-20"/>20</cell>
                      <cell ana="#bk_what">
                         <measure commodity="whiskey" quantity="1" unit="qt">
                            1 qt
@@ -1288,20 +1246,20 @@
                         </measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="3" unit="shillings">3</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                   <row>
                      <cell ana="#bk_when" />
                      <cell ana="#bk_what" />
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="19" unit="shillings">19</measure>
@@ -1312,19 +1270,19 @@
                   </row>
                </table>
                <lb />
-            </p>
-            <p corresp="TTP7885P4" xml:id="OTP7885P4">
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
+            </div>
+            <div corresp="TTP7885P4" xml:id="OTP7885P4">
+               <p ana="#bk_party #bk_to #bk_account"  >
                   69
                   <rs ref="#S14352">James Watson</rs>
                   PP Order Dr.
-               </head>
+               </p>
                <lb />
-            </p>
-            <p corresp="TTP7885P5" xml:id="OTP7885P5">
+            </div>
+            <div corresp="TTP7885P5" xml:id="OTP7885P5">
                <table>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-04">4</cell>
+                     <cell ana="#bk_when"><date when="1808-08-04"/>4</cell>
                      <cell ana="#bk_what">
                         <measure commodity="powder" quantity="1/4" unit="lb">
                            1/4 lb
@@ -1338,31 +1296,31 @@
                         </measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="5" unit="shillings">5</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
-               </table>
-               Examd with TDB
+               </table><p>
+               Examd with TDB</p>
                <lb />
-            </p>
-            <p corresp="TTP7885P6" xml:id="OTP7885P6">
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
+            </div>
+            <div corresp="TTP7885P6" xml:id="OTP7885P6">
+               <p ana="#bk_party #bk_to #bk_account"  >
                   69
                   <rs ref="#S14353">William Meadowes</rs>
                   Self Dr.
-               </head>
+               </p>
                <lb />
-            </p>
-            <p corresp="TTP7885P7" xml:id="OTP7885P7">
+            </div>
+            <div corresp="TTP7885P7" xml:id="OTP7885P7">
                <table>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-04">4</cell>
+                     <cell ana="#bk_when"><date when="1808-08-04"/>4</cell>
                      <cell ana="#bk_what">
                         <measure commodity="alum" quantity="1/4" unit="lb">
                            1/4 lb
@@ -1391,7 +1349,7 @@
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-04">4</cell>
+                     <cell ana="#bk_when"><date when="1808-08-04"/>4</cell>
                      <cell ana="#bk_what">
                         <measure commodity="knife">
                            <rs ref="#S10758">Cutting Knife</rs>
@@ -1414,7 +1372,7 @@
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-04">4</cell>
+                     <cell ana="#bk_when"><date when="1808-08-04"/>4</cell>
                      <cell ana="#bk_what">
                         <measure commodity="nails" quantity="0">
                            0
@@ -1451,17 +1409,17 @@
                      </cell>
                   </row>
                </table>
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  69
+               <div ana="#bk_party #bk_to #bk_account"  >
+                 <p> 69
                   <rs ref="#S14354">Knight Dalby</rs>
-                  Self Dr.
-               </head>
+                  Self Dr.</p>
+               </div>
                <lb />
-            </p>
-            <p corresp="TTP7885P8" xml:id="OTP7885P8">
+            </div>
+            <div corresp="TTP7885P8" xml:id="OTP7885P8">
                <table>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-04">4</cell>
+                     <cell ana="#bk_when"><date when="1808-08-04"/>4</cell>
                      <cell ana="#bk_what">
                         <measure commodity="shot" quantity="4" unit="lb">
                            4 lb
@@ -1475,17 +1433,17 @@
                         </measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="11" unit="shillings">11</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-04">"</cell>
+                     <cell ana="#bk_when"><date when="1808-08-04"/>"</cell>
                      <cell ana="#bk_what">
                         <measure commodity="pins">
                            <rs ref="#S10566">Paper pins</rs>
@@ -1498,43 +1456,43 @@
                         </measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="8" unit="shillings">8</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                   <row>
                      <cell ana="#bk_when" />
                      <cell ana="#bk_what" />
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pounds">-</measure>
+                        <measure commodity="currency"  unit="pounds">-</measure>
                      </cell>
                      <cell ana="#bk_amount">
                         <measure commodity="currency" quantity="19" unit="shillings">19</measure>
                      </cell>
                      <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="-" unit="pence">-</measure>
+                        <measure commodity="currency"  unit="pence">-</measure>
                      </cell>
                   </row>
                </table>
                <lb />
-               <head ana="#bk_account" depth="2">
-                  69
+               <div ana="#bk_account" >
+                  <p>69
                   <rs ana="#bk_party #bk_to_agent" ref="#S14355">Majr Micajah Bullock</rs>
                   PP
                   <rs ana="#bk_party #bk_to" ref="#S14354">Kt Dalby</rs>
-                  Dr.
-               </head>
+                  Dr.</p>
+               </div>
                <lb />
-            </p>
-            <p corresp="TTP7885P9" xml:id="OTP7885P9">
+            </div>
+            <div corresp="TTP7885P9" xml:id="OTP7885P9">
                <table>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-04">Chd to KDalby 4</cell>
+                     <cell ana="#bk_when"><date when="1808-08-04"/>Chd to KDalby 4</cell>
                      <cell ana="#bk_what">
                         <measure commodity="powder">
                            <rs ref="#S10756">Powder</rs>
@@ -1563,71 +1521,25 @@
                   </row>
                </table>
                <lb />
-            </p>
+            </div>
          </div>
          <pb xml:id="F7886" n="5" facs="/image-service/7886/full/full/0/native.jpg" />
          <div xml:id="OTP7886">
             <fw type="pageNum">5</fw>
-            <p corresp="TTP7886P0" xml:id="OTP7886P0">
-               <head depth="3">Stagville August 4th 1808</head>
+            <div corresp="TTP7886P0" xml:id="OTP7886P0">
+               <p>Stagville August 4th 1808</p>
                <lb />
-            </p>
-            <p corresp="TTP7886P1" xml:id="OTP7886P1">
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
+            </div>
+            <div corresp="TTP7886P1" xml:id="OTP7886P1">
+               <p ana="#bk_party #bk_to #bk_account"  >
                   69
                   <rs ref="#S14356">Richard Roberts</rs>
                   Self Dr.
-               </head>
+               </p>
                <lb />
                <table>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-04"/>
-                     <cell ana="#bk_what">
-                        <measure commodity="copperas" quantity="1" unit="lb">
-                           1 lb
-                           <rs ref="#S10763">Copperas</rs>
-                           1/6
-                        </measure>
-                        <measure commodity="hat" quantity="1/2" unit="yds">
-                           1/2 yds
-                           <rs ref="#S10520">hat binding</rs>
-                           2/-
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="3" unit="shillings">3</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="6" unit="pence">6</measure>
-                     </cell>
-                  </row>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-04"/>
-                     <cell ana="#bk_what">
-                        <measure commodity="silk" quantity="1" unit="hank">
-                           1 hank
-                           <rs ref="#S10580">Silk</rs>
-                           1/
-                        </measure>
-                        <measure commodity="ribbon" quantity="1" unit="yd">
-                           1 yd
-                           <rs ref="#S10564">Ribbon</rs>
-                           1/3
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="2" unit="shillings">2</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="3" unit="pence">3</measure>
-                     </cell>
-                  </row>
+                  
+                
                   <row>
                      <cell ana="#bk_when" />
                      <cell ana="#bk_what" />
@@ -1643,59 +1555,31 @@
                   </row>
                </table>
                <lb />
-               <head ana="#bk_account" depth="2">
-                  69
+               <div ana="#bk_account" >
+                 <p> 69
                   <rs ana="#bk_party #bk_to_agent" ref="#S14357">Mark Veazey</rs>
                   PP Bro
                   <rs ana="#bk_party #bk_to" ref="#S14358">William</rs>
-                  Dr.
-               </head>
+                  Dr.</p>
+               </div>
                <lb />
-               <table>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-04">4</cell>
-                     <cell ana="#bk_what">
-                        <measure commodity="powder">
-                           <rs ref="#S10756">Powder</rs>
-                           &amp;amp;
-                        </measure>
-                        <measure commodity="shot" quantity="&amp;amp" unit=";">
-                           &amp;amp ;
-                           <rs ref="#S10757">Shot</rs>
-                           5/
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="5" unit="shillings">5</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-               </table>
+               
                <lb />
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  69
+               <div ana="#bk_party #bk_to #bk_account"  >
+                 <p> 69
                   <rs ref="#S14358">William Veazey</rs>
-                  Self Dr.
-               </head>
+                  Self Dr.</p>
+               </div>
                <lb />
-               <table>
+               <div><table>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-04"/>
+                     <cell ana="#bk_when"><date when="1808-08-04"/></cell>
                      <cell ana="#bk_what">
                         <measure commodity="powder">
                            <rs ref="#S10756">Powder</rs>
                            &amp;amp;
                         </measure>
-                        <measure commodity="shot" quantity="&amp;amp" unit=";">
-                           &amp;amp ;
-                           <rs ref="#S10757">Shot</rs>
-                           5/-
-                        </measure>
+                       
                         <measure commodity="gunflint" quantity="3">
                            3
                            <rs ref="#S10773">flints</rs>
@@ -1712,23 +1596,23 @@
                         <measure commodity="currency" quantity="6" unit="pence">6</measure>
                      </cell>
                   </row>
-               </table>
+               </table></div>
                <lb />
-               Examd with TDB
+               
                <lb />
-            </p>
-            <p corresp="TTP7886P2" xml:id="OTP7886P2">
-               <head ana="#bk_account" depth="2">
+            </div>
+            <div corresp="TTP7886P2" xml:id="OTP7886P2">
+               <p ana="#bk_account" >
                   69
                   <rs ana="#bk_party #bk_to_agent" ref="#S14359">James Cash</rs>
                   PP Brother
                   <rs ana="#bk_party #bk_to" ref="#S14360">Bryant</rs>
                   Dr.
-               </head>
+               </p>
                <lb />
                <table>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-05">5</cell>
+                     <cell ana="#bk_when"><date when="1808-08-05"/>5</cell>
                      <cell ana="#bk_what">
                         <measure commodity="powder" quantity="1/2" unit="lb">
                            1/2 lb
@@ -1757,7 +1641,7 @@
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-27">27</cell>
+                     <cell ana="#bk_when"><date when="1808-08-27"/>27</cell>
                      <cell ana="#bk_what">
                         <measure commodity="rum" quantity="3" unit="Pts">
                            3 Pts
@@ -1781,7 +1665,7 @@
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-27">27</cell>
+                     <cell ana="#bk_when"><date when="1808-08-27"/>27</cell>
                      <cell ana="#bk_what">
                         <measure commodity="pepper" quantity="1/4" unit="lb">
                            1/4 lb
@@ -1805,7 +1689,7 @@
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-27">27</cell>
+                     <cell ana="#bk_when"><date when="1808-08-27"/>27</cell>
                      <cell ana="#bk_what">
                         <measure commodity="container">
                            <rs ref="#S10781">Pepper Box</rs>
@@ -1842,21 +1726,21 @@
                   </row>
                </table>
                <lb />
-            </p>
-            <p corresp="TTP7886P3" xml:id="OTP7886P3">
-               Examd with TDB
-               <lb />
-            </p>
-            <p corresp="TTP7886P4" xml:id="OTP7886P4">
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
+            </div>
+            <div corresp="TTP7886P3" xml:id="OTP7886P3">
+               <p>Examd with TDB
+               <lb /></p>
+            </div>
+            <div corresp="TTP7886P4" xml:id="OTP7886P4">
+               <p ana="#bk_party #bk_to #bk_account"  >
                   69
                   <rs ref="#S14360">Bryant Cash</rs>
                   Self Dr.
-               </head>
+               </p>
                <lb />
                <table>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-05">5</cell>
+                     <cell ana="#bk_when"><date when="1808-08-05"/>5</cell>
                      <cell ana="#bk_what">
                         <measure commodity="powder" quantity="1/2" unit="lb">
                            1/2 lb
@@ -1885,7 +1769,7 @@
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-05">5</cell>
+                     <cell ana="#bk_when"><date when="1808-08-05"/>5</cell>
                      <cell ana="#bk_what">
                         <measure commodity="sugar" quantity="2" unit="lb">
                            2 lb
@@ -1904,7 +1788,7 @@
                      </cell>
                   </row>
                   <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-27">27</cell>
+                     <cell ana="#bk_when"><date when="1808-08-27"/>27</cell>
                      <cell ana="#bk_what">
                         <measure commodity="rum" quantity="3" unit="Pts">
                            3 Pts
@@ -1942,677 +1826,23 @@
                   </row>
                </table>
                <lb />
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  69
+               <div ana="#bk_party #bk_to #bk_account"  >
+                 <p> 69
                   <rs ref="#S14361">William Walker Jr</rs>
-                  Self Dr
-               </head>
+                  Self Dr</p>
+               </div>
                <lb />
-               <table>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-05">5</cell>
-                     <cell ana="#bk_what">
-                        <measure commodity="sugar" quantity="4" unit="lb">
-                           4 lb
-                           <rs ref="#S7930">Sugar</rs>
-                           10/-
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="10" unit="shillings">10</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-               </table>
+               
                <lb />
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  69
+               <div ana="#bk_party #bk_to #bk_account"  >
+                 <p> 69
                   <rs ref="#S14362">George Carey</rs>
-                  Self Dr
-               </head>
+                  Self Dr</p>
+               </div>
                <lb />
-               <table>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-05">5</cell>
-                     <cell ana="#bk_what">
-                        <measure commodity="shot" quantity="1/2" unit="lb">
-                           1/2 lb
-                           <rs ref="#S10757">Shot</rs>
-                           8/9
-                        </measure>
-                        <measure commodity="salt" quantity="1">
-                           1
-                           <rs ref="#S10761">Bushel Salt</rs>
-                           20/-
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="1" unit="pounds">1</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="8" unit="shillings">8</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="9" unit="pence">9</measure>
-                     </cell>
-                  </row>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-13">13</cell>
-                     <cell ana="#bk_what">
-                        <measure commodity="mode" quantity="3/4" unit="yds">
-                           3/4 yds
-                           <rs ref="#S10767">blk Mode</rs>
-                           13/-
-                        </measure>
-                        <measure commodity="cambric" quantity="1/4" unit="yd">
-                           1/4 yd
-                           <rs ref="#S10768">C Cambrick</rs>
-                           4/6
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="17" unit="shillings">17</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="6" unit="pence">6</measure>
-                     </cell>
-                  </row>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-13">13</cell>
-                     <cell ana="#bk_what">
-                        <measure commodity="thread">
-                           <rs ref="#S10560">Fine thd</rs>
-                           1/-
-                        </measure>
-                        <measure commodity="ribbon" quantity="2" unit="yds">
-                           2 yds
-                           <rs ref="#S10564">Locket</rs>
-                           1/-
-                        </measure>
-                        <measure commodity="silk" quantity="1">
-                           1
-                           <rs ref="#S10580">hank Silk</rs>
-                           1/3
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="3" unit="shillings">3</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="3" unit="pence">3</measure>
-                     </cell>
-                  </row>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-13">13</cell>
-                     <cell ana="#bk_what">
-                        <measure commodity="paste board">
-                           <rs ref="#S10783">paste Board</rs>
-                           1/-
-                        </measure>
-                        <measure commodity="comb" quantity="2">
-                           2
-                           <rs ref="#S10764">Hair Combs</rs>
-                           5/
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="6" unit="shillings">6</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-                  <row>
-                     <cell ana="#bk_when" />
-                     <cell ana="#bk_what" />
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="2" unit="pounds">2</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="15" unit="shillings">15</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="6" unit="pence">6</measure>
-                     </cell>
-                  </row>
-               </table>
+               
                <lb />
-            </p>
-            <p corresp="TTP7886P5" xml:id="OTP7886P5" />
-         </div>
-         <pb xml:id="F7887" n="6" facs="/image-service/7887/full/full/0/native.jpg" />
-         <div xml:id="OTP7887">
-            <fw type="pageNum">6</fw>
-            <p corresp="TTP7887P0" xml:id="OTP7887P0">
-               <head ana="#bk_party #bk_to #bk_account"  depth="3">Stagville August 5th 1808</head>
-               <lb />
-            </p>
-            <p corresp="TTP7887P1" xml:id="OTP7887P1">
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  69
-                  <rs ref="#S10786">Twitty Chambliss</rs>
-                  Self Dr
-               </head>
-               <lb />
-               <table>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-05"/>
-                     <cell ana="#bk_what">
-                        <measure commodity="salt" quantity="1/4" unit="lb">
-                           1/4 lb
-                           <rs ref="#S10761">Salt</rs>
-                           1/3
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="1" unit="shillings">1</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="3" unit="pence">3</measure>
-                     </cell>
-                  </row>
-               </table>
-               <lb />
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  69
-                  <rs ref="#S14363">Thomas Hunt</rs>
-                  Self Dr
-               </head>
-               <lb />
-               <table>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-06">6</cell>
-                     <cell ana="#bk_what">
-                        <measure commodity="hat">
-                           <rs ref="#S10520">Fine Hat</rs>
-                           $5
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="2" unit="pounds">2</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="10" unit="shillings">10</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-20">20</cell>
-                     <cell ana="#bk_what">
-                        <measure commodity="salt" quantity="1" unit="Peck">
-                           1 Peck
-                           <rs ref="#S10761">Salt</rs>
-                           5/
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="5" unit="shillings">5</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-                  <row>
-                     <cell ana="#bk_when" />
-                     <cell ana="#bk_what" />
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="2" unit="pounds">2</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="15" unit="shillings">15</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-               </table>
-               <lb />
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  69
-                  <rs ref="#S14364">Richard Cragg</rs>
-                  Self Dr
-               </head>
-               <lb />
-               <table>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-06">6</cell>
-                     <cell ana="#bk_what">
-                        <measure commodity="powder" quantity="1/4" unit="lb">
-                           1/4 lb
-                           <rs ref="#S10756">powder</rs>
-                           2/6
-                        </measure>
-                        <measure commodity="shot" quantity="1/4" unit="lb">
-                           1/4 lb
-                           <rs ref="#S10757">Shot</rs>
-                           3/-
-                        </measure>
-                        <measure commodity="buttons" quantity="3/" unit="-">
-                           3/ -
-                           <rs ref="#S10784">1/2 doz v buttons</rs>
-                           3/9
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="9" unit="shillings">9</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="3" unit="pence">3</measure>
-                     </cell>
-                  </row>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-06">6</cell>
-                     <cell ana="#bk_what">
-                        <measure commodity="hat">
-                           <rs ref="#S10520">Fine Hat</rs>
-                           $5
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="2" unit="pounds">2</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="10" unit="shillings">10</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-                  <row>
-                     <cell ana="#bk_when" />
-                     <cell ana="#bk_what" />
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="2" unit="pounds">2</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="19" unit="shillings">19</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="3" unit="pence">3</measure>
-                     </cell>
-                  </row>
-               </table>
-               Examd with TDB
-               <lb />
-            </p>
-            <p corresp="TTP7887P2" xml:id="OTP7887P2">
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  69
-                  <rs ref="#S14365">William Horton</rs>
-                  Self Dr
-               </head>
-               <lb />
-               <table>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-06">6</cell>
-                     <cell ana="#bk_what">
-                        <measure commodity="moulds" quantity="1/2" unit="doz">
-                           1/2 doz
-                           <rs ref="#S10821">Moulds</rs>
-                           1/6
-                        </measure>
-                        <measure commodity="pipe" quantity="3">
-                           3
-                           <rs ref="#S10770">pipes</rs>
-                           d9
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="2" unit="shillings">2</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="3" unit="pence">3</measure>
-                     </cell>
-                  </row>
-               </table>
-               <lb />
-               <head ana="#bk_account" depth="2">
-                  69
-                  <rs ana="#bk_party #bk_to_agent" ref="#S14366">Sarah Cozart</rs>
-                  PP
-                  <rs ana="#bk_party #bk_to" ref="#S14365">Wm Horton</rs>
-                  Dr
-               </head>
-               <lb />
-               <table>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-06">6</cell>
-                     <cell ana="#bk_what">
-                        <measure commodity="cotton" quantity="3" unit="yds">
-                           3 yds
-                           <rs ref="#S10562">I cotton</rs>
-                           15/-
-                        </measure>
-                        <measure commodity="comb" quantity="1">
-                           1
-                           <rs ref="#S10764">Ivory comb</rs>
-                           5/-
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="1" unit="pounds">1</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="shillings" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-06">6</cell>
-                     <cell ana="#bk_what">
-                        <measure commodity="pins">
-                           <rs ref="#S10566">Paper pins</rs>
-                           3/
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="3" unit="shillings">3</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-                  <row>
-                     <cell ana="#bk_when" />
-                     <cell ana="#bk_what" />
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="1" unit="pounds">1</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="3" unit="shillings">3</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-               </table>
-               <lb />
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  70
-                  <rs ref="#S14367">James Daniel</rs>
-                  Self Dr
-               </head>
-               <lb />
-               <table>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-08">8</cell>
-                     <cell ana="#bk_what">
-                        <measure commodity="powder" quantity="1/4" unit="lb">
-                           1/4 lb
-                           <rs ref="#S10756">Powder</rs>
-                           2/6
-                        </measure>
-                        <measure commodity="shot" quantity="1" unit="lb">
-                           1 lb
-                           <rs ref="#S10757">Shot</rs>
-                           2/6
-                        </measure>
-                        <measure commodity="comb" quantity="2">
-                           2
-                           <rs ref="#S10764">Hair Combs</rs>
-                           7/-
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="12" unit="shillings">12</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when"   when="1808-08-08"/>
-                     <cell ana="#bk_what">
-                        <measure commodity="lard" quantity="3/4" unit="lb">
-                           3/4 lb
-                           <rs ref="#S10785">Hogs Lard</rs>
-                           a
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="shillings" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when" />
-                     <cell ana="#bk_what">
-                        <measure commodity="bacon" quantity="20" unit="lb">
-                           20 lb
-                           <rs ref="#S10822">Bacon</rs>
-                           a
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="1" unit="pounds">1</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="8" unit="shillings">8</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="9" unit="pence">9</measure>
-                     </cell>
-                  </row>
-               </table>
-               <lb />
-            </p>
-            <p corresp="TTP7887P3" xml:id="OTP7887P3">
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  70
-                  <rs ref="#S14368">Baxter</rs>
-                  Self PP Self Dr
-               </head>
-               <lb />
-               <table>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when"  when="1808-08-08">8</cell>
-                     <cell ana="#bk_what">
-                        <measure commodity="salt" quantity="1/2" unit="Bushel">
-                           1/2 Bushel
-                           <rs ref="#S10761">Salt</rs>
-                           10/-
-                        </measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="10" unit="shillings">10</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-               </table>
-            </p>
-            <note resp="#U4">Sarah Cozart -- first woman I've seen transacting business at the store.  Also doesn't have her own account, but is under William Horton's.  (Wonder what their relationship was.)</note>
-            <note resp="#U4">Baxter -- no last name?</note>
-            <note resp="#U4">Baxter's transactions are odd -- "self PP self" PP usually means "buying on behalf of" but he's buying on behalf of himself?  Maybe just a "typo"?</note>
-            <note resp="#U4">categorized Moulds as a kitchen implement, but thinking maybe not now.  Could it be for brickmaking?  Would go with "pipes" for building?  Do you have an "unknown" category?  (Need a place to put it!)</note>
-         </div>
-         <pb xml:id="F7888" n="7" facs="/image-service/7888/full/full/0/native.jpg" />
-         <div xml:id="OTP7888">
-            <fw type="pageNum">7</fw>
-            <p corresp="TTP7888P0" xml:id="OTP7888P0">
-               <head ana="#bk_party #bk_to #bk_account"  depth="3">Stagville August 8th 1808</head>
-               <lb />
-            </p>
-            <p corresp="TTP7888P1" xml:id="OTP7888P1">
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  70
-                  <rs ref="#S14369">Starky Robertson</rs>
-                  Self Dr
-               </head>
-               <lb />
-               <table>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when"   when="1808-08-08"/>
-                     <cell ana="#bk_what" />
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="12" unit="shillings">12</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="6 " unit="pence">6</measure>
-                     </cell>
-                  </row>
-               </table>
-               <lb />
-               <head ana="#bk_account" depth="2">
-                  70
-                  <rs ana="#bk_party #bk_to_agent" ref="#S14370">George Carrington</rs>
-                  PP
-                  <rs ana="#bk_party #bk_to" ref="#S14371">M Brown</rs>
-                  Dr
-               </head>
-               <lb />
-               <table>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-08">8</cell>
-                     <cell ana="#bk_what" />
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="4" unit="shillings">4</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-08">25</cell>
-                     <cell ana="#bk_what" />
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="9" unit="shillings">9</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="3 " unit="pence">3</measure>
-                     </cell>
-                  </row>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when">"</cell>
-                     <cell ana="#bk_what" />
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="15" unit="shillings">15</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when" />
-                     <cell ana="#bk_what" />
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="1" unit="pounds">1</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="8" unit="shillings">8</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="3 " unit="pence">3</measure>
-                     </cell>
-                  </row>
-               </table>
-               <lb />
-               <head ana="#bk_party #bk_to #bk_account"  depth="2">
-                  70
-                  <rs ref="#S14372">James Meadows</rs>
-                  Self Dr
-               </head>
-               <lb />
-               <table>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-09">9</cell>
-                     <cell ana="#bk_what" />
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="1" unit="pounds">1</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="6" unit="shillings">6</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pence" />
-                     </cell>
-                  </row>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when" when="1808-08-22">22</cell>
-                     <cell ana="#bk_what" />
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" unit="pounds" />
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="2" unit="shillings">2</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="6 " unit="pence">6</measure>
-                     </cell>
-                  </row>
-                  <row ana="#bk_entry">
-                     <cell ana="#bk_when" />
-                     <cell ana="#bk_what" />
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="1" unit="pounds">1</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="8" unit="shillings">8</measure>
-                     </cell>
-                     <cell ana="#bk_amount">
-                        <measure commodity="currency" quantity="6 " unit="pence">6</measure>
-                     </cell>
-                  </row>
-               </table>
-               Examd with TDB
-            </p>
+            </div>
          </div>
     	 <!-- omitted 68 untranscribed pages -->
          <pb xml:id="F7957" n="76" facs="/image-service/7957/full/full/0/native.jpg" />
