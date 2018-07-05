@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+ <teiHeader>
+  <fileDesc>
+   <titleStmt>
+    <title>Laban Morey Wheaton Day Book p. 001 with References to Bookkeeping Ontology</title>
+   </titleStmt>
+   <publicationStmt>
+    <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+    <idno type="PID">o:medea.Wheaton_1</idno>
+   </publicationStmt>
+   <sourceDesc>
+    <biblFull>
+     <titleStmt>
+      <title>Laban Morey Wheaton Day Book</title>
+
+      <author ana="#bk_from" ref="#pers_wheaton_1">Laban Morey Wheaton</author>
+      <respStmt>
+       <name type="person">Bill Funk</name>
+       <resp> Transcription and TEI-compatible XML markup <date when="2016"/></resp>
+      </respStmt>
+      <respStmt>
+       <name type="person">Kathryn Tomasek</name>
+       <resp> Corrections <date when="2016"/></resp>
+      </respStmt>
+      <respStmt>
+       <name type="person">Kathryn Tomasek</name>
+       <resp> References to Bookkeeping Ontology <date when="2016"/></resp>
+      </respStmt>
+     </titleStmt>
+     <publicationStmt>
+      <p>Test file, Wheaton College</p>
+     </publicationStmt>
+     <sourceDesc>
+      <p>The <title>Day Book of Laban Morey Wheaton</title>
+       <date from="1828-09-15" to="1859"/> is part of the Wheaton Family Papers, MS001, Marion B.
+       Gebbie Archives and Special Collections at the Madeleine Clark Wallace Library, Wheaton
+       College, Norton, Massachusetts.</p>
+     </sourceDesc>
+    </biblFull>
+   </sourceDesc>
+  </fileDesc>
+ </teiHeader>
+ <text>
+  <body>
+   <pb n="001"/>
+   <head> Monday <date ana="#bk_when" when="1828-09-15">September 15th 1828</date>
+   </head>
+   <table>
+    <row>
+     <cell/>
+     <cell/>
+     <cell>$</cell>
+     <cell>sh.</cell>
+     <cell/>
+    </row>
+    <!-- ENTRY -->
+    <!-- bk_transaction = bk_entry
+     consists of 3 transfers
+     Ax from Wheaton to Darius, <bk_agent> Puffer
+     Work from Darius to Wheaton 
+     Money from Wheaton to Darius
+     
+     Every measureable goues to Darius AND there is money, therefore money goues back to Sarius 
+    -->
+    <row ana="#bk_entry">
+     <cell>Settled</cell>
+     <cell>
+      <name ref="#pers_wheaton_2" ana="#bk_to">Derius Drake</name>
+      <choice>
+       <abbr>D</abbr>
+       <expan>debtor</expan>
+      </choice>
+      <p> To <measure ana="#bk_commodity #bk_from #bk_agent" commodity="ax" quantity="1">ax</measure>
+       <choice>
+        <abbr>dlvd</abbr>
+        <expan>delivered</expan>
+       </choice> By <name ana="#bk_agent" ref="#pers_wheaton_3">Puffer</name> 9/ </p>
+      <p> By <measure ana="#bk_service #bk_to" commodity="Cutting Sticks">cutting two
+        sticks</measure>
+       <choice>
+        <abbr>Cr</abbr>
+        <expan>Credit</expan>
+       </choice>
+      </p>
+     </cell>
+     <cell>
+      <measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_from"
+       >1</measure>
+     </cell>
+     <cell>
+      <measure commodity="currency" quantity="50" unit="cents" ana="#bk_money #bk_from">50</measure>
+     </cell>
+     <cell/>
+    </row>
+    <!-- ENTRY
+       1 ax from Puffer to Wheaton, <bk_agent> Darius drake
+       Money from Puffer to Wheaton
+    -->
+    <row ana="#bk_entry">
+     <cell>109</cell>
+     <cell>
+      <p>
+       <name ref="#pers_wheaton_3" ana="#bk_to">Pliny Puffer</name>
+       <choice>
+        <abbr>Cr</abbr>
+        <expan>Credit</expan>
+       </choice>
+      </p>
+      <p> By <measure ana="#bk_commodity #bk_to" commodity="axe" quantity="1">1
+        ax</measure>
+       <choice>
+        <abbr>dlvd.</abbr>
+        <expan>delivered to</expan>
+       </choice>
+       <name ref="#pers_wheaton_2">Drake</name> 9/</p>
+     </cell>
+     <cell>
+      <measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_from">1</measure>
+     </cell>
+     <cell>
+      <measure commodity="currency" quantity="50" unit="cents" ana="#bk_money #bk_from">50</measure>
+     </cell>
+     <cell/>
+    </row>
+   </table>
+  </body>
+ </text>
+</TEI>
