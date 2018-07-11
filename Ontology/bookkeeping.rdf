@@ -59,13 +59,6 @@
     <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E5_Event"></rdfs:subClassOf>
     <rdfs:comment xml:lang="en">A Transfer is the action in which one party cedes property rights to another parties or economic facts of an actor are assigned to an account.</rdfs:comment>
     <rdfs:comment xml:lang="de">Als Transfer versteht man die Aktion in der Geld, Waren o. Ä. von einem Konto oder Akteur zum anderen übermittelt wird.</rdfs:comment>
-    <skos:example rdf:parseType="Resource">
-    	<bk:Transfer rdf:about="https://glossa.uni-graz.at/o:medea.wheaton.000#Entry-10-Transfer-1">
-    		<bk:transfers rdf:resource="https://glossa.uni-graz.at/o:medea.wheaton.000#Entry-10-Measurable-1"/>
-    		<bk:from rdf:resource="https://glossa.uni-graz.at/o:medea.wheaton.000#Entry-10-pers_WCDH264"/>
-    		<bk:to rdf:resource="https://glossa.uni-graz.at/o:medea.wheaton.000#Entry-10-#pers_MightyWheatonHimself"/>
-    	</bk:Transfer>
-    </skos:example>
   	<skos:example>
   		&lt;https://glossa.uni-graz.at/o:medea.wheaton.000#Entry-10-Transfer-1&gt; a &lt;bk:Transfer&gt;;
   		bk:transfers &lt;https://glossa.uni-graz.at/o:medea.wheaton.000#Entry-10-Measurable-1&gt;;
@@ -93,6 +86,24 @@
     <skos:example rdf:parseType="Literal">
 			100 $ to 
 		</skos:example>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://glossa.uni-graz.at/o:medea.bookkeeping#TypeAssignment">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E17_Type_Assignment"></rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Type Assignment</rdfs:label>
+    <rdfs:label xml:lang="de">Typenzuordnung</rdfs:label>
+    <rdfs:comment xml:lang="en">Comprises the actions of classifying items of whatever kind. Such items include objects, specimens, people, actions and concepts. This classification (interpretation) is done by the scholar.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Fasst Transaktionen als fachwissenschaftliche Interpretation zusammen.</rdfs:comment>
+    <skos:example rdf:parseType="Literal">
+      <div ana="#bk_entry">
+        ToDo
+      </div>
+    </skos:example>
+    <skos:example>
+      &lt;bk:Transaction&gt; bk:typeAssignment &lt;https://glossa.uni-graz.at/o:medea.wheaton.000#Entry-1-Project_1&gt;.
+    </skos:example>
+    <skos:example>
+      &lt;bk:Transaction&gt; bk:typeAssignment &lt;https://glossa.uni-graz.at/o:medea.wheaton.000#Entry-1-Context_1&gt;.
+    </skos:example>
   </rdfs:Class>
   <rdfs:Class rdf:about="https://glossa.uni-graz.at/o:medea.bookkeeping#Account">
     <rdfs:label xml:lang="en">Account</rdfs:label>
@@ -259,6 +270,19 @@
   	</skos:example>
   	<skos:example>&lt;bk:Transaction&gt; bk:entry "To ax dlvd By Puffer 9/1 1 50".</skos:example>
   </rdf:Property>
+  <rdf:Property rdf:about="https://glossa.uni-graz.at/o:medea.bookkeeping#assignment">
+    <rdfs:label xml:lang="en">assigned</rdfs:label>
+    <rdfs:label xml:lang="de">zugeordnet</rdfs:label>
+    <rdfs:comment xml:lang="en">Assigns transactions to a specific type or context. This decision is made by a scholar and is an interpretation.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Ordnet Transaktionen einem bestimmten Typ bzw. Kontext zu. Diese Entscheidung wird vom Fachwissenschaftler getroffen und ist eine Interpretation.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://glossa.uni-graz.at/o:medea.bookkeeping#Transaction"></rdfs:domain>
+    <rdfs:range rdf:resource="https://glossa.uni-graz.at/o:medea.bookkeeping#TypeAssignment"></rdfs:range>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P42_assigned"></rdfs:subPropertyOf>
+    <skos:example rdf:parseType="Literal">
+      ToDo
+    </skos:example>
+    <skos:example>ToDo</skos:example>
+  </rdf:Property>
   <rdf:Property rdf:about="https://glossa.uni-graz.at/o:medea.bookkeeping#by">
     <rdfs:label xml:lang="en">by</rdfs:label>
     <rdfs:label xml:lang="de">bei</rdfs:label>
@@ -423,5 +447,42 @@
   	<skos:example>
   		&lt;bk:Party&gt; bk:name "Darius Drake".
   	</skos:example>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://glossa.uni-graz.at/o:medea.bookkeeping#commentary">
+    <rdfs:label xml:lang="en">name</rdfs:label>
+    <rdfs:label xml:lang="de">genannt</rdfs:label>
+    <rdfs:comment xml:lang="en">Gives a Party or an Account a name.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Text der im bk_Entry steht. Für Volltextsuche verwendet</rdfs:comment>
+    <rdfs:domain rdf:resource="https://glossa.uni-graz.at/o:medea.bookkeeping#TypeAssignment"></rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"></rdfs:range>
+    <skos:example  rdf:parseType="Literal">
+      ToDo
+    </skos:example>
+    <skos:example>
+      &lt;https://glossa.uni-graz.at/o:medea.wheaton.000#Entry-1-Project_1&gt; bk:commentary "Schlitz Companys investments from 1911 to 1913" .
+    </skos:example>
+    <skos:example>
+      &lt;bk:Transaction&gt; bk:commentary "All transactions in connection with slavetrade at Washingtons farm X".
+    </skos:example>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://glossa.uni-graz.at/o:medea.bookkeeping#status">
+    <rdfs:label xml:lang="en">transaction status</rdfs:label>
+    <rdfs:label xml:lang="de">hat Status</rdfs:label>
+    <rdfs:comment xml:lang="en">Specifies the status of a transaction.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Spezifiziert den Status einer Transaktion weiter.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://glossa.uni-graz.at/o:medea.bookkeeping#Transaction"></rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"></rdfs:range>
+    <skos:example  rdf:parseType="Literal">
+      ToDo
+    </skos:example>
+    <skos:example>
+      &lt;bk:Transaction&gt; bk:status "pp. Boiler".
+    </skos:example>
+    <skos:example>
+      &lt;bk:Transaction&gt; bk:status "in full Boiler".
+    </skos:example>
+    <skos:example>
+      &lt;bk:Transaction&gt; bk:status "settled".
+    </skos:example>
   </rdf:Property>
 </rdf:RDF>
