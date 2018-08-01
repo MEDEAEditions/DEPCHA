@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:functx="http://www.functx.com"
+    xmlns:gn="http://www.geonames.org/ontology#" xmlns:bk="http://gams.uni-graz.at/rem/bookkeeping/#" xmlns:skos="http://glossa.uni-graz.at/skos/scheme/o:oth/#"
+    xmlns:t="http://www.tei-c.org/ns/1.0">
+    <xsl:strip-space elements="*"/>
+    
+    
+    
+    <xsl:variable name="Actual_PID" select="//t:publicationStmt/t:idno[@type = 'PID']"/>
+    
+    <!-- ////////////////////////// -->
+    <!-- checks PID -->
+    <xsl:template match="/">
+        <rdf:RDF>
+            <xsl:choose>
+                <xsl:when test="$Actual_PID">
+                    <xsl:apply-templates/>
+                </xsl:when>
+                <xsl:otherwise> No defined data source found! </xsl:otherwise>
+            </xsl:choose>
+        </rdf:RDF>
+    </xsl:template>
+    
+    
+    <!-- ////////////////////////// -->
+    <!-- goes through all Entries in a given TEI. Entriess must be defined with @ana='#bk_entry', dont cre about the element, starting from t:body -->
+    <xsl:template match="t:text//.[tokenize(@ana, ' ') = '#bk_entry']">
+        
+         
+        
+        
+        <!-- ///VARIABLES/// -->
+        <xsl:variable name="Transaction-ID" select="concat('http://glossa.uni-graz.at/', $Actual_PID, '#Entry-',  position(), '-Transaction')"/>
+        <xsl:variable name="Transfer-ID" select="concat('http://glossa.uni-graz.at/', $Actual_PID, '#Entry-',  position(), '-Transfer')"/>
+        <xsl:variable name="Entry-ID" select="concat('http://glossa.uni-graz.at/', $Actual_PID, '#Entry-', position())"/>
+        <xsl:variable name="Between-ID" select="concat('http://glossa.uni-graz.at/', $Actual_PID,  '#Entry-', position(), '-Between')"/>   
+        <xsl:variable name="Good-ID" select="concat('http://glossa.uni-graz.at/', $Actual_PID,  '#Entry-',  position(), '-Good')"/>
+        <xsl:variable name="MonetaryValue-ID" select="concat('http://glossa.uni-graz.at/', $Actual_PID,  '#Entry-', position(), '-MonetaryValue')"/>
+        <xsl:variable name="Party-ID" select="concat('http://glossa.uni-graz.at/', $Actual_PID,  '#Entry-', position(), '-Party')"/>
+        <xsl:variable name="Account-ID" select="concat('http://glossa.uni-graz.at/', $Actual_PID,  '#Entry-', position(), '-Account')"/>
+        
+
+        
+        <!-- FROM -->
+        <xsl:variable name="From" select=".//.[tokenize(@ana, ' ') = '#bk_from']"/>
+        <!-- TO -->
+        <xsl:variable name="To" select=".//.[tokenize(@ana, ' ') = '#bk_to'] | .//.[tokenize(@ana, ' ') = '#bk_between']"/>
+        
+        <!-- DATE -->
+        <xsl:variable name="Date">
+            <xsl:value-of select=".//.[@when]/@when"/>
+        </xsl:variable>
+        
+        
+        <xsl:comment>///TRANSACTION-<xsl:value-of select="position()"/> BEGIN///</xsl:comment>
+        
+        <bk:Transaction rdf:about="{$Transaction-ID}">
+            <bk:consists-of rdf:resource="{$Transfer-ID}"/>
+        </bk:Transaction>
+        
+        <!-- bk:Transaction is main element for every Transfer -->
+        <bk:Transfer rdf:about="{$Transfer-ID}">
+            <bk:hasEntry rdf:resource="{$Entry-ID}"/>
+            
+            <!-- for each bk:Good -->
+            <xsl:for-each select=".//.[tokenize(@ana, ' ') = '#bk_what']">
+                <bk:transfers rdf:resource="{concat($Good-ID, '-', position())}"/>
+            </xsl:for-each>
+            
+            <!-- for each bk:MonetaryValue -->
+            <xsl:for-each select=".//.[tokenize(@ana, ' ') = '#bk_amount']">
+                <xsl:for-each select=".//@unit">
+                    <bk:transfers rdf:resource="{concat($MonetaryValue-ID, '-', position())}"/>
+                </xsl:for-each>
+            </xsl:for-each>
+            
+            
+            <xsl:for-each select="$From">
+                <xsl:if test=".">
+                    <bk:from rdf:resource="{concat($Between-ID, '-', position())}"/>
+                </xsl:if>
+            </xsl:for-each>
+            <xsl:for-each select="$To">
+                <xsl:if test=".">
+                    <bk:to rdf:resource="{concat($Between-ID, '-', position())}"/>
+                </xsl:if>
+            </xsl:for-each>
+            
+            
+            <!-- to an bk:account? -->
+            <!--  <bk:to rdf:resource="{$Account-ID}"/>-->
+            
+            <xsl:if test="$Date castable as xs:date">
+                <bk:hasDate>
+                    <xsl:value-of select="$Date"/>
+                </bk:hasDate>
+            </xsl:if>
+        </bk:Transfer>
+        
+        <!-- ////////////////////////// -->
+        <!-- Here define apply-templates with .//.[tokenize(@ana, ' ') = '#ANA-NAME-FROM-TEI-BASED-ON-ONTOLOGIE'] -->
+        
+        
+        <!-- bk:Entry has bk:debit and bk:dredit -->
+        <bk:Entry rdf:about="{$Entry-ID}">
+            <xsl:apply-templates select=".//.[tokenize(@ana, ' ') = '#bk_debit'] | .//.[tokenize(@ana, ' ') = '#bk_credit']"/>
+            <bk:hasText>
+                <xsl:call-template name="Fulltext"/>
+            </bk:hasText>
+        </bk:Entry>
+        
+        <!-- bk:Between  -->
+        <xsl:call-template name="Between">
+            <xsl:with-param name="Between-ID" select="$Between-ID"/>
+            <xsl:with-param name="To" select="$To"/>
+            <xsl:with-param name="From" select="$From"/>
+        </xsl:call-template>
+        
+        
+        <!-- bk:Account -->
+        <!-- <xsl:apply-templates select="@xml:id">
+            <xsl:with-param name="Account-ID" select="$Account-ID"/>
+        </xsl:apply-templates>-->
+        
+        <!-- bk:Good -->        <xsl:apply-templates select=".//.[tokenize(@ana, ' ') = '#bk_what']">
+            <xsl:with-param name="Good-ID" select="$Good-ID"/>
+        </xsl:apply-templates>
+        
+        <!-- bk:MonetaryValue -->
+        <xsl:apply-templates select=".//.[tokenize(@ana, ' ') = '#bk_amount']">
+            <xsl:with-param name="MonetaryValue-ID" select="$MonetaryValue-ID"/>
+        </xsl:apply-templates>
+        
+        <!-- bk:Total -->
+        <xsl:apply-templates select=".//.[tokenize(@ana, ' ') = '#bk_total']">
+        </xsl:apply-templates>
+        
+        
+        
+        <xsl:comment>///TRANSACTION-<xsl:value-of select="position()"/> END///</xsl:comment>
+    </xsl:template>
+    
+    
+    
+    <!-- ////////////////////////////////////////////////////////////////////// -->
+    <!-- ////////////////////////////////////////////////////////////////////// -->
+    <!-- MATCHED TEMPLATES -->
+    
+    
+    <!-- <xsl:template match="@xml:id">
+        <xsl:param name="Account-ID"/>
+        <bk:Accouount rdf:about="{$Account-ID}"/>
+    </xsl:template>-->
+    
+    
+    <!-- ////////////////////////// -->
+    <!-- bk:Debit -->
+    <xsl:template match=".[tokenize(@ana, ' ') = '#bk_debit']">
+        <xsl:if test=".">
+            <bk:debit>
+                <xsl:value-of select="."/>
+            </bk:debit>
+        </xsl:if>
+    </xsl:template>
+    
+    <!-- ////////////////////////// -->
+    <!-- bk:Credit -->
+    <xsl:template match=".[tokenize(@ana, ' ') = '#bk_credit']">
+        <xsl:if test=".">
+            <bk:credit>
+                <xsl:value-of select="."/>
+            </bk:credit>
+        </xsl:if>
+    </xsl:template>
+    
+    <!-- ////////////////////////// -->
+    <!-- bk:Total-->
+    <xsl:template match=".[tokenize(@ana, ' ') = '#bk_total']">
+        <xsl:comment>Here comes a bk:Total</xsl:comment>
+    </xsl:template>
+    
+    
+    
+    
+    
+    
+    <!-- ////////////////////////// -->
+    <!-- SKIP this Elements. -->
+    <xsl:template match="t:teiHeader | t:head | t:fw | t:front"/>
+    
+    <!-- ////////////////////////// -->
+    <!-- bk:Good -->
+    <xsl:template match=".[tokenize(@ana, ' ') = '#bk_what']">
+        <xsl:param name="Good-ID"/>
+        <bk:Good rdf:about="{concat($Good-ID, '-', position())}">
+            <xsl:if test="@unit">
+                <bk:unit>
+                    <xsl:value-of select="concat('http://glossa.uni-graz.at/#', @unit)"/>
+                </bk:unit>
+            </xsl:if>
+            <xsl:if test="@quantity">
+                <bk:quantity>
+                    <xsl:value-of select="@quantity"/>
+                </bk:quantity>
+            </xsl:if>
+        </bk:Good>
+    </xsl:template>
+    
+    
+    <!-- ////////////////////////// -->
+    <!-- bk:MonetaryValue -->
+    <xsl:template match=".[tokenize(@ana, ' ') = '#bk_amount']">
+        <xsl:param name="MonetaryValue-ID"/>
+        <xsl:for-each select=".//@unit">
+            
+            <bk:MonetaryValue rdf:about="{concat($MonetaryValue-ID, '-', position())}">
+                <xsl:if test=".">
+                    <bk:unit>
+                        <xsl:value-of select="concat('http://glossa.uni-graz.at/#', .)"/>
+                    </bk:unit>
+                </xsl:if>
+                <xsl:if test="../@quantity">
+                    <bk:quantity>
+                        <xsl:value-of select="../@quantity"/>
+                    </bk:quantity>
+                </xsl:if>
+            </bk:MonetaryValue>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="t:note">
+        
+    </xsl:template>
+    
+    
+    
+    <!-- ////////////////////////////////////////////////////////////////////// -->
+    <!-- ////////////////////////////////////////////////////////////////////// -->
+    <!-- CALLED TEMPLATES -->
+    
+    
+    <!-- ////////////////////////// -->
+    <!-- bk:Between -->
+    <xsl:template name="Between">
+        <xsl:param name="Between-ID"/>
+        <xsl:param name="To"/>
+        <xsl:param name="From"/>
+        <xsl:for-each select="$To">
+            <bk:Between rdf:about="{concat($Between-ID, '-', position())}">
+                <xsl:if test="not(. = '')">
+                    <t:persName>
+                        <xsl:value-of select="."/>
+                    </t:persName>
+                </xsl:if>
+            </bk:Between>
+        </xsl:for-each>
+        <xsl:for-each select="$From">
+            <xsl:if test="not(. = '')">
+                <bk:Between rdf:about="{concat($Between-ID, '-', position())}">
+                    <t:persName>
+                        <xsl:value-of select="."/>
+                    </t:persName>
+                </bk:Between>
+            </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <!-- ////////////////////////// -->
+    <!-- FULLTEXT for fulltextsearch with whitespace cleaning and normalization -->
+    <xsl:template name="Fulltext">
+        <xsl:for-each select=".//text()">
+            <xsl:value-of select="normalize-space(.)"/>
+            <xsl:text> </xsl:text>
+        </xsl:for-each>
+    </xsl:template>
+    
+    
+</xsl:stylesheet>

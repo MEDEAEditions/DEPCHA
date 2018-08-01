@@ -1,0 +1,503 @@
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600);
+
+
+
+.pre-scrollable{
+    width: 20em;
+}
+
+.navigation{  
+  font-size: 12px;
+  margin-top: 0;
+  margin-bottom: 5%;
+  max-height: 80%; 
+  position: fixed;
+}
+
+
+
+
+.bk_closer{
+  font-weight: bold;
+  padding-top: 5%;
+}
+
+
+/*Spreadsheet CSS */
+
+.page > h4{
+    margin-top: 5%;
+}
+
+    
+
+.bk_head_register{
+  font-weight: bold;
+  font-size:110%; 
+  max-width:30em;
+  
+}
+
+.bk_head{
+  margin-top: 5%;
+  font-weight: bold;
+  font-size:120%; 
+  max-width:34em;
+}
+
+.bk_amount{
+  font-size:120%; 
+  max-width:38em;
+  text-align: right;
+}
+
+.bk_entry{
+  margin-top: 2%;
+  font-size:115%; 
+  line-height:1.5;
+  font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+  max-width:60em;
+  padding:0 1em;
+}
+
+.bk_entry_metadata{
+
+}
+
+
+
+/*
+###### Typography
+*/
+html{
+    background-color:#475862;
+}
+
+body{
+    font-family:"Open Sans", Arial, Helvetica, sans-serif;
+    background-color:#e8e8e8;
+    color:#474747;
+}
+/*farben im main bereich sollen fÃžr alle projekte gleichbleiben wg. kontrast und einheitlichkeit*/
+
+h1,
+h3,
+h4,
+h5,
+h6{
+    font-family:"Droid Serif", Georgia, "Times New Roman", Times, serif;
+}
+
+h1{
+    font-size:200%;
+    margin-bottom:0;
+}
+
+h2{
+    font-size:140%;
+    font-family:"Open Sans", Arial, Helvetica, sans-serif;
+    font-style:italic;
+    margin-bottom:0.8em;
+    margin-top:0.4em;
+}
+
+h3{    
+    color:#955251; /*projektfarbe!*/
+    font-size:130%;
+    line-height:1.8em;
+}
+h3.objekt{
+    margin-top:5px;
+}
+
+h4{
+    font-size:120%;
+    color:#333333;
+    font-family:"Open Sans", Arial, Helvetica, sans-serif;
+    font-style:italic;
+}
+
+h5{
+    font-family:"Open Sans", Arial, Helvetica, sans-serif;
+    color:#333333;
+
+}
+
+h6{
+    font-family:"Open Sans", Arial, Helvetica, sans-serif;
+    color:#333333;
+    font-size:100%;
+    line-height:1.5;
+
+}
+
+blockquote,
+cite,
+q{
+    font-family:"Open Sans", Arial, Helvetica, sans-serif;
+}
+
+a{
+    color:#955251; /*projektfarbe!*/
+}
+
+a:hover,
+a:focus{
+    background-color:transparent;
+    color:inherit;
+}
+
+.color{
+    color:#955251; /*projektfarbe!*/
+}
+
+/*
+###### Header
+*/
+@media (max-width: 768px){
+    header h1{
+        font-size: 160%; 
+    }
+      header h2{
+        font-size: 130%; 
+    }
+    .logoUni {
+    height: 45px;
+}
+
+}
+@media (max-width: 568px){
+    header h1{
+        font-size: 140%; 
+    }
+      header h2{
+        font-size: 100%; 
+    }
+}
+
+div.unilogo {
+    float: right;
+    margin-top:20px;
+}
+
+div a.unilogo {
+    width: 73px; 
+    height: 62px; 
+    text-decoration: none; 
+    background: none;
+}
+
+header {
+    background-color: #955251;/*projektfarbe!*/
+    overflow: hidden;
+     height: 125px;
+   
+}
+
+header h1, header h2, div.language  {
+    color: #ffffff;
+}
+header h1{
+    margin-top:37px;
+}
+div.language {
+    text-align:right;
+    
+    padding-bottom:10px;
+    font-size: 80%;
+}
+div.language a, div.language a:hover, div.language a:focus {
+    color:#ffffff;
+    background:transparent;
+    
+}
+
+/*
+###### Navigation
+siehe navbar.css
+*/
+
+
+/*
+###### Main
+
+*/
+main a:hover, main a:focus {
+    background-color:transparent;
+    color:#955251; /*projektfarbe!*/
+}
+
+
+
+main p {
+line-height:1.5;
+margin-bottom:15px;
+
+}
+
+/*
+###### Footer
+
+*/
+
+footer {
+    background-color: #475862; 
+    padding-bottom: 30px;
+    margin-top: 0;
+    color: #ffffff;
+}
+
+footer h6 {
+     color: inherit;
+     background-color: inherit;
+     border-bottom: 1px solid #ffffff;
+     margin-bottom: 1em;
+}
+
+footer a {
+    color: inherit;
+}
+
+
+img.footer_icons{
+    padding-right:10px;
+    padding-bottom:10px;
+}
+
+.icons a:hover, .icons a:focus {text-decoration:none;}
+/*
+###### Boxen
+*/
+
+
+.panel{
+    box-shadow:none; 
+    border-radius:0;
+    padding-right:20px;
+    padding-left:20px;
+    margin-bottom:30px;
+}
+
+/*
+###### Bilder
+*/
+
+.thumbnail{
+    border-radius:0;
+}
+
+.panel-with-image{
+    padding-right:0;
+    padding-left:0;
+    background-color:#955251; /*projektfarbe*/
+    border:none;
+}
+
+.panel-with-image .panel-body h4{
+    color:white;
+    margin:0;
+}
+.panel-with-image .panel-body a{
+    color:white;
+    float:right;
+}
+.panel-image img.panel-image-preview {
+    width: 100%;
+}
+
+.panel-heading ~ .panel-image img.panel-image-preview {
+	border-radius: 0px;
+}
+
+.panel-image ~ .panel-body, .panel-image.hide-panel-body ~ .panel-body {
+	overflow: hidden;
+}
+.panel-image ~ .panel-footer a {
+	padding: 0px 10px;
+	font-size: 1.3em;
+}
+
+.panel-image.hide-panel-body ~ .panel-body {
+	height: 0px;
+	padding: 0px;
+}
+
+/**/
+/*.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-xs-1,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9{
+    padding-left:10px;
+    padding-right:10px
+}
+*/
+
+
+/* box: flexible heights, responsive */ /*funktioniert nur in Firefox und IE, Chrome und Safari wehren sich*/
+
+/*.equalheight {
+  display: inherit;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; 
+  }
+    
+ .equal {
+  flex: 0 0 1;
+ }
+ 
+.row.equalheight {
+ padding-bottom: 20px
+ }
+
+.panel-eq {
+   display: flex;
+   flex-direction:column;
+   align-content:stretch; 
+   width: 100%;
+   height: 100%;
+   padding-bottom: 15px
+}
+ 
+@media (max-width: 768px) {
+ .equalheight {
+    display: block;
+ }
+ }
+
+.flex, .flex > article[class*='col-'] {  
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex:1 0 auto;
+}*/
+
+
+/*
+###### Suche und Kontextliste
+*/
+
+.list-group-submenu {
+  margin-left:20px;
+}
+.chevron-down-context{
+    font-size:10px; 
+    padding-right:5px;
+}
+.context-item-number{
+    float:right;
+    color:#955251; /*projektfarbe*/
+}
+
+p.results{
+    float:right; bottom: 0; right: 0; font-size:12px;
+}
+
+li.results{
+    position:relative;overflow:hidden;border-bottom:dotted 1px;padding:5px 0 5px 0;margin:5px 0 5px 0;
+}
+
+li.results:last-child {border-bottom:none;}
+
+img.results{
+    float: left; padding-right: 10px; padding-bottom:5px;
+}
+
+span.results{
+    vertical-align: top; padding-right: 10px;
+}
+span.permalink{
+    font-size:12px;
+}
+.icons{
+    margin-left:5px;
+}
+span.icon-span{
+    position: absolute; bottom: 0; right: 0; padding:5px;
+}
+.form-control, .input-group-addon, .btn{
+    border-radius:0;
+}
+
+#search a, #search a:hover, #search a:focus, #results a, #results a:hover, #results a:focus {
+    color:#333333;
+    text-decoration:none;
+}
+
+
+#search p, #results p {margin-bottom:5px;}
+
+#search-navi a, #search-navi a:hover, #search-navi a:focus {
+color:#955251;/*projektfarbe!*/
+}
+
+
+.result {
+list-style:none; 
+padding:0;
+margin:0;
+}
+
+
+/*Accordion*/
+
+.accordion{
+    padding:0;
+}
+.sublinks{
+    max-height: 270px;
+    overflow-y: scroll;
+}
+.accordion .list-group-item{
+    border-radius:0;
+}

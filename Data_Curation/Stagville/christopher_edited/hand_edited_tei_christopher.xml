@@ -37,17 +37,21 @@
 					<resp> made 5 edits between <date type="first_edit" when="2016-03-22T13:50:40Z">March 22, 2016</date> and <date type="last_edit" when="2016-03-22T13:55:42Z">March 22, 2016</date> .
 					</resp>
 				</respStmt>
+				<respStmt>
+					<persName>Christopher Pollin</persName>
+					<resp>Did some manual changes for the bk-ontology, 30.07.2018.</resp>
+				</respStmt>
 			</editionStmt>
 			<publicationStmt>
 				<publisher>Dynamic TEI export from FromThePage</publisher>
-				<idno type="PID">o:medea.stakeville1</idno>
+				<idno type="PID">o:medea.stagville.1</idno>
 				<availability>
 					<p/>
 				</availability>
 				<date when="2018-04-04T17:45:35-05:00">April 4, 2018</date>
 			</publicationStmt>
 			<sourceDesc>
-				<p>Accounts of <orgName ana="#bk_to">Stagville Plantation Store</orgName> from <date ana="#bk_when" when="1808-08-01">August 1808</date>. </p>
+				<p>Accounts of <orgName ana="#bk_to" ref="StagyStagville">Stagville Plantation Store</orgName> from <date ana="#bk_when" when="1808-08-01">August 1808</date>. <ref target="info:fedora/context:medea.stagville" type="context">Wheaton Financial Papers</ref></p>
 			</sourceDesc>
 		</fileDesc>
 		<encodingDesc>
@@ -535,12 +539,13 @@
 				<fw type="pageNum">3</fw>
 				<div corresp="TTP7884P0" xml:id="OTP7884P0">
 					<table>
+						<head>69 <name ana="#bk_from" ref="S10787">James Haley J</name> Self Dr.</head>
 						<row ana="#bk_entry">
 							<cell><date ana="#bk_when"  when="1808-08-01"/></cell>
 							<cell>
-								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="1/4" unit="lb"> 1/4 lb <rs ref="#S10756">Powder</rs> 2/6 </measure>
-								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="1" unit="lb"> 1 lb <rs ref="#S10757">Shot</rs> 2/6 </measure>
-								<measure ana="#bk_commodity #bk_from" commodity="sugar" quantity="1" unit="lb"> 1 lb <rs ref="#S7930">Sugar</rs> 2/6 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10756">Powder</rs> <measure ana="#bk_price">2/6</measure> </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="1" unit="lb"> 1 lb <rs ref="#S10757">Shot</rs> <measure ana="#bk_price">2/6</measure> </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="sugar" quantity="1" unit="lb"> 1 lb <rs ref="#S7930">Sugar</rs> <measure ana="#bk_price">2/6</measure> </measure>
 							</cell>
 							<cell>
 								
@@ -585,10 +590,11 @@
 
 					<lb/>
 					<table>
+						<head>69 <name ana="#bk_from" ref="S10788">William Pettigrew Jr.</name> Self Dr. James Haley J Self Dr.</head>
 						<row ana="#bk_entry">
 							<cell><date ana="#bk_when"  when="1808-08-01"/>1</cell>
 							<cell>
-								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="1/4" unit="lb"> 1/4 lb <rs ref="#S10756">Powder</rs> 2/6 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10756">Powder</rs> 2/6 </measure>
 								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="2" unit="lb"> 2 lb <rs ref="#S10757">Shot</rs> 5/ </measure>
 							</cell>
 							<cell/>
@@ -603,7 +609,7 @@
 							<cell><date ana="#bk_when"  when="1808-08-08"/>8</cell>
 							<cell>
 								<measure ana="#bk_commodity #bk_from" commodity="sugar" quantity="3" unit="lb"> 3 lb <rs ref="#S7930">Sugar</rs> 7/6 </measure>
-								<measure ana="#bk_commodity #bk_from" commodity="ginger" quantity="1/4" unit="lb"> 1/4 lb <rs ref="#S10759">Ginger</rs> 1/3 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="ginger" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10759">Ginger</rs> 1/3 </measure>
 								<measure ana="#bk_commodity #bk_from" commodity="brandy" quantity="1" unit="Gallon"> 1 Gallon <rs ref="#S10541">Brandy</rs> 15/ </measure>
 							</cell>
 							<cell>
@@ -619,7 +625,7 @@
 						<row ana="#bk_entry">
 							<cell><date ana="#bk_when"  when="1808-08-08">8</date></cell>
 							<cell>
-								<measure ana="#bk_commodity #bk_from" commodity="coffee" quantity="1/2" unit="lb"> 1/2 lb <rs ref="#S10760">Coffee</rs> 3/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="coffee" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10760">Coffee</rs> 3/- </measure>
 								<measure ana="#bk_commodity #bk_from" commodity="salt" quantity="1" unit="Peck"> 1 Peck <rs ref="#S10761">Salt</rs> 5/- </measure>
 							</cell>
 							<cell>
@@ -639,10 +645,11 @@
 				</div>
 				<div corresp="TTP7884P1" xml:id="OTP7884P1">
 					<table>
+						<head>69 <name ana="#bk_from" ref="S10789">John Telley Jr</name> Dr.</head>
 						<row ana="#bk_entry">
 							<cell><date ana="#bk_when"  when="1808-08-01"/></cell>
 							<cell>
-								<measure ana="#bk_commodity #bk_from" commodity="iron" quantity="1/4" unit="lb"> 1/4 lb <rs ref="#S10762">Iron work'd at the Shop in July</rs>
+								<measure ana="#bk_commodity #bk_from" commodity="iron" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10762">Iron work'd at the Shop in July</rs>
 								</measure>
 							</cell>
 							<cell>
@@ -689,16 +696,13 @@
 					<p> Examd with <rs ref="#S10790">TDB</rs></p>
 					<lb/>
 				</div>
-				<div corresp="TTP7884P2" xml:id="OTP7884P2">
-					<p> 69 <rs ana="#bk_from" ref="#S10791">Henry Moize</rs> PP Bro <rs ana="#bk_to" ref="#S10792">Jonathan</rs> Dr. </p>
-					<lb/>
-				</div>
 				<div corresp="TTP7884P3" xml:id="OTP7884P3">
 					<table>
+						<head> 69 <rs ana="#bk_from" ref="#S10791">Henry Moize</rs> PP Bro <rs ana="#bk_to" ref="#S10792">Jonathan</rs> Dr. </head>
 						<row ana="#bk_entry">
 							<cell><date ana="#bk_when"  when="1808-08-02"/>2</cell>
 							<cell>
-								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="1/2" unit="lb"> 1/2 lb <rs ref="#S10756">Powder</rs> 5/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10756">Powder</rs> 5/- </measure>
 							</cell>
 							<cell/>
 							<cell>
@@ -726,7 +730,7 @@
 						<row ana="#bk_entry">
 							<cell><date ana="#bk_when"  when="1808-08-16"/>"</cell>
 							<cell>
-								<measure ana="#bk_commodity #bk_from" commodity="iron" quantity="1/2" unit="lb"> 1/2 lb <rs ref="#S10762">Iron</rs> 13/6 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="iron" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10762">Iron</rs> 13/6 </measure>
 							</cell>
 							<cell/>
 							<cell>
@@ -755,10 +759,11 @@
 				</div>
 				<div corresp="TTP7884P4" xml:id="OTP7884P4">
 					<table>
+						<head>69 <rs ana="#bk_from" ref="#S10792">Jonathan Moize Self</rs> Dr.</head>
 						<row ana="#bk_entry">
 							<cell><date ana="#bk_when"  when="1808-08-02"/>2</cell>
 							<cell>
-								<measure ana="#bk_commodity #bk_from" commodity="brimstone" quantity="1/2" unit="lb"> 1/2 lb <rs ref="#S10765">Brimstone</rs> 1/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="brimstone" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10765">Brimstone</rs> 1/- </measure>
 								<measure ana="#bk_commodity #bk_from" commodity="pot" quantity="1"> 1 <rs ref="#S10766">Small Pot</rs> 5/- </measure>
 							</cell>
 							<cell/>
@@ -776,7 +781,7 @@
 								<measure ana="#bk_commodity #bk_from" commodity="cambric" quantity="0.25" unit="yd"> 1/4 yd <rs ref="#S10768">Red Cambrick</rs> 3/6 </measure>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="12" unit="shillings">12</measure>
@@ -793,7 +798,7 @@
 								<measure ana="#bk_commodity #bk_from"  commodity="wire" quantity="1" unit="bunch"> 1 bunch <rs ref="#S10769">wire</rs> 1/- </measure> PP <rs ana="#bk_party #bk_to" ref="#S10793">B. Henry</rs>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6" unit="shillings">6</measure>
@@ -809,7 +814,7 @@
 									<rs ref="#S10770">pipes</rs> 6d </measure> PP Bro <rs ana="#bk_party #bk_to" ref="#S10794">Frederick</rs>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" unit="shillings">-</measure>
@@ -822,11 +827,11 @@
 							<cell><date ana="#bk_when"  when="1808-08-30"/>30</cell>
 							<cell>
 								<measure ana="#bk_commodity #bk_from" commodity="sugar" quantity="2" unit="lb"> 2 lb <rs ref="#S7930">Sugar</rs> 5/- </measure>
-								<measure ana="#bk_commodity #bk_from" commodity="coffee" quantity="1/2" unit="lb"> 1/2 lb <rs ref="#S10760">Coffee</rs> 3/0 </measure>
-								<measure ana="#bk_commodity #bk_from" commodity="camphor" quantity="1/2" unit="oz"> 1/2 oz <rs ref="#S10771">Camphor</rs> 2/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="coffee" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10760">Coffee</rs> 3/0 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="camphor" quantity="0.5" unit="oz"> 1/2 oz <rs ref="#S10771">Camphor</rs> 2/- </measure>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="10" unit="shillings">10</measure>
@@ -838,11 +843,11 @@
 						<row ana="#bk_entry">
 							<cell><date ana="#bk_when"  when="1808-08-30"/>"</cell>
 							<cell>
-								<measure ana="#bk_commodity #bk_from" commodity="cruet">
+								<measure ana="#bk_commodity #bk_from" commodity="cruet" unit="piece" quantity="1">
 									<rs ref="#S10772">Cruet</rs> 2/6 </measure>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="2" unit="shillings">2</measure>
@@ -865,22 +870,18 @@
 							</cell>
 						</row>
 					</table>
-					<lb/>
-					<div>
-						<p> 69 <rs ref="#S10795" ana="#bk_party #bk_to #bk_account">Joseph Wood Jr</rs> Self Dr.</p>
-					</div>
-					<lb/>
 				</div>
 				<div corresp="TTP7884P5" xml:id="OTP7884P5">
 					<table>
+						<head>69 <rs ref="#S10795" ana="#bk_party #bk_to #bk_account">Joseph Wood Jr</rs> Self Dr.</head>
 						<row ana="#bk_entry">
 							<cell><date ana="#bk_when"  when="1808-08-02"/>2</cell>
 							<cell>
-								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="1/2" unit="lb"> 1/2 lb <rs ref="#S10756">powder</rs> 5/ </measure>
-								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="1/2" unit="lb"> 1/2 lb <rs ref="#S10757">Shot</rs> 6/3 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10756">powder</rs> 5/ </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10757">Shot</rs> 6/3 </measure>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="11" unit="shillings">11</measure>
@@ -897,7 +898,7 @@
 								<measure ana="#bk_commodity #bk_from" commodity="whiskey" quantity="1" unit="qt"> 1 qt <rs ref="#S10519">Whisky</rs> 3/- </measure>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="5" unit="shillings">5</measure>
@@ -913,7 +914,7 @@
 									<rs ref="#S10773">Gunflints</rs> PP </measure> PP Brother <rs ana="#bk_party #bk_to" ref="#S10796">James</rs>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" unit="shillings">-</measure>
@@ -930,7 +931,7 @@
 			<div xml:id="OTP7885">
 				<fw type="pageNum">4</fw>
 				<div corresp="TTP7885P0" xml:id="OTP7885P0">
-					<p ana="#bk_party #bk_to #bk_account">Stagville August 3rd 1808</p>
+					<p>Stagville August 3rd 1808</p>
 					<lb/>
 				</div>
 				<div corresp="TTP7885P1" xml:id="OTP7885P1">
@@ -958,11 +959,11 @@
 						<row ana="#bk_entry">
 							<cell/>
 							<cell>
-								<measure ana="#bk_commodity #bk_from" commodity="ribbon" quantity="1/4" unit="yds"> 1/4 yds <rs ref="#S10564">Ribbon</rs> 5/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="ribbon" quantity="0.25" unit="yds"> 1/4 yds <rs ref="#S10564">Ribbon</rs> 5/- </measure>
 								<measure  ana="#bk_commodity #bk_from" commodity="instrument" quantity="4"> 4 <rs ref="#S10775">Jews Harps</rs> 4/- </measure>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="9" unit="shillings">9</measure>
@@ -978,7 +979,7 @@
 									<rs ref="#S10758">Pocket Knife</rs> 5/- </measure>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="5" unit="shillings">5</measure>
@@ -1002,7 +1003,7 @@
 								<measure ana="#bk_commodity #bk_from" commodity="salt" quantity="1" unit="Peck"> 1 Peck <rs ref="#S10761">Salt</rs> 5/- </measure>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="5" unit="shillings">5</measure>
@@ -1019,7 +1020,7 @@
 								<measure ana="#bk_commodity #bk_from" commodity="storage vessel" quantity="2"> 2 <rs ref="#S10776">Tins</rs> 3/- </measure>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="10" unit="shillings">10</measure>
@@ -1034,7 +1035,7 @@
 								<measure ana="#bk_commodity #bk_from" commodity="whiskey" quantity="1" unit="qt"> 1 qt <rs ref="#S10519">Whisky</rs> 3/- </measure>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="3" unit="shillings">3</measure>
@@ -1047,7 +1048,7 @@
 							<cell/>
 							<cell/>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="19" unit="shillings">19</measure>
@@ -1068,11 +1069,11 @@
 						<row ana="#bk_entry">
 							<cell><date ana="#bk_when"  when="1808-08-04"/>4</cell>
 							<cell>
-								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="1/4" unit="lb"> 1/4 lb <rs ref="#S10756">Powder</rs> 2/6 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10756">Powder</rs> 2/6 </measure>
 								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="1" unit="lb"> 1 lb <rs ref="#S10757">Shot</rs> 2/6 </measure>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="5" unit="shillings">5</measure>
@@ -1094,9 +1095,9 @@
 						<row ana="#bk_entry">
 							<cell><date ana="#bk_when"  when="1808-08-04"/>4</cell>
 							<cell>
-								<measure ana="#bk_commodity #bk_from" commodity="alum" quantity="1/4" unit="lb"> 1/4 lb <rs ref="#S10777">Alum</rs> @ </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="alum" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10777">Alum</rs> @ </measure>
 								<measure ana="#bk_commodity #bk_from" commodity="ginger" quantity="6" unit="1/4"> 6 1/4 <rs ref="#S10759">Ginger</rs> 1/3 </measure>
-								<measure ana="#bk_commodity #bk_from" commodity="allspice" quantity="1/3" unit="1/4"> 1/3 1/4 <rs ref="#S10778">Allspice</rs> 1/3 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="allspice" quantity="0.333" unit="1/4"> 1/3 1/4 <rs ref="#S10778">Allspice</rs> 1/3 </measure>
 							</cell>
 							<cell>
 								
@@ -1166,10 +1167,10 @@
 							<cell><date ana="#bk_when"  when="1808-08-04"/>4</cell>
 							<cell>
 								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="4" unit="lb"> 4 lb <rs ref="#S10757">Shot</rs> 10/- </measure>
-								<measure ana="#bk_commodity #bk_from" commodity="gunflint" quantity="1/2" unit="doz"> 1/2 doz <rs ref="#S10773">Gunflints</rs> 1/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="gunflint" quantity="0.5" unit="doz"> 1/2 doz <rs ref="#S10773">Gunflints</rs> 1/- </measure>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="11" unit="shillings">11</measure>
@@ -1186,7 +1187,7 @@
 								<measure ana="#bk_commodity #bk_from" commodity="cotton" quantity="1" unit="yd"> 1 yd <rs ref="#S10562">India Cotton</rs> 5/- </measure>
 							</cell>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="8" unit="shillings">8</measure>
@@ -1199,7 +1200,7 @@
 							<cell/>
 							<cell/>
 							<cell>
-								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pounds">-</measure>
+								
 							</cell>
 							<cell>
 								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="19" unit="shillings">19</measure>
@@ -1309,8 +1310,8 @@
 						<row ana="#bk_entry">
 							<cell><date ana="#bk_when"  when="1808-08-05"/>5</cell>
 							<cell>
-								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="1/2" unit="lb"> 1/2 lb <rs ref="#S10756">Powder</rs> 5/ </measure>
-								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="1/2" unit="lb"> 1/2 lb <rs ref="#S10757">Shot</rs> 6/3 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10756">Powder</rs> 5/ </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10757">Shot</rs> 6/3 </measure>
 								<measure ana="#bk_commodity #bk_from" commodity="sugar" quantity="3" unit="lb"> 3 lb <rs ref="#S7930">Sugar</rs> 7/6 </measure>
 							</cell>
 							<cell>
@@ -1327,7 +1328,7 @@
 							<cell><date ana="#bk_when"  when="1808-08-27"/>27</cell>
 							<cell>
 								<measure ana="#bk_commodity #bk_from" commodity="rum" quantity="3" unit="Pts"> 3 Pts <rs ref="#S10506">Rum</rs> 7/6 </measure>
-								<measure ana="#bk_commodity #bk_from" commodity="ginger" quantity="1/4" unit="lb"> 1/4 lb <rs ref="#S10759">Ginger</rs> 1/3 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="ginger" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10759">Ginger</rs> 1/3 </measure>
 							</cell>
 							<cell>
 								
@@ -1342,7 +1343,7 @@
 						<row ana="#bk_entry">
 							<cell><date ana="#bk_when"  when="1808-08-27"/>27</cell>
 							<cell>
-								<measure ana="#bk_commodity #bk_from" commodity="pepper" quantity="1/4" unit="lb"> 1/4 lb <rs ref="#S10780">Pepper</rs> 1/6 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="pepper" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10780">Pepper</rs> 1/6 </measure>
 								<measure ana="#bk_commodity #bk_from" commodity="silk" quantity="1"> 1 <rs ref="#S10580">hank Silk</rs> 1/3 </measure>
 							</cell>
 							<cell>
@@ -1398,7 +1399,7 @@
 						<row ana="#bk_entry">
 							<cell><date ana="#bk_when"  when="1808-08-05"/>5</cell>
 							<cell>
-								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="1/2" unit="lb"> 1/2 lb <rs ref="#S10756">Powder</rs> 5/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10756">Powder</rs> 5/- </measure>
 								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="2" unit="1/2"> 2 1/2 <rs ref="#S10757">Shot</rs> 6/3 </measure>
 								<measure ana="#bk_commodity #bk_from" commodity="knife" quantity="1"> 1 <rs ref="#S10758">P? Knife</rs> 4/- </measure>
 							</cell>
@@ -1431,7 +1432,7 @@
 							<cell><date ana="#bk_when"  when="1808-08-27"/>27</cell>
 							<cell>
 								<measure ana="#bk_commodity #bk_from" commodity="rum" quantity="3" unit="Pts"> 3 Pts <rs ref="#S10506">Rum</rs> 7/6 </measure>
-								<measure ana="#bk_commodity #bk_from" commodity="pepper" quantity="1/4" unit="lb"> 1/4 lb <rs ref="#S10780">Pepper</rs> 1/6 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="pepper" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10780">Pepper</rs> 1/6 </measure>
 							</cell>
 							<cell>
 								

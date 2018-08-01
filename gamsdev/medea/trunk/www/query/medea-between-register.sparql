@@ -1,0 +1,32 @@
+PREFIX bds: <http://www.bigdata.com/rdf/search#>
+PREFIX bk: <http://gams.uni-graz.at/rem/bookkeeping/#>
+PREFIX t: <http://www.tei-c.org/ns/1.0/>
+
+select ?Between ?name ?Entry ?p ?data ?a
+{
+   ?Between a bk:Between;
+              ?persName ?name.
+  
+   OPTIONAL
+   {
+     ?Transfer bk:from ?Between.
+     ?Transfer bk:hasEntry ?Entry.
+        OPTIONAL
+   {
+     ?Transfer bk:has:Date ?data.
+     }
+
+     
+   }
+   OPTIONAL
+  {
+     ?Transfer bk:to ?Between.
+     ?Transfer bk:hasEntry ?Entry.
+       OPTIONAL
+   {
+     ?Transfer bk:has:Date ?data.
+     }
+
+  }
+  
+}

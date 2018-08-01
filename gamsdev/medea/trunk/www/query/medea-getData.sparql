@@ -1,0 +1,36 @@
+PREFIX bds: <http://www.bigdata.com/rdf/search#>
+PREFIX bk: <https://gams.uni-graz.at/o:medea.bookkeeping#>
+PREFIX t: <http://www.tei-c.org/ns/1.0/>
+PREFIX gams:<https://gams.uni-graz.at/o:gams-ontology/#>
+
+#author:Christopher pollin
+#Select all Accounts (bk:Between) which have a value ?quantity in there ?MonetaryValue
+# and which have a date/@when
+
+select distinct ?Entry ?When ?From ?From_name ?To ?To_name ?Measurable ?Measurable_type ?Quantity ?Unit ?Commodity 
+{
+  ?Transaction gams:isMemberOfCollection <https://glossa.uni-graz.at/context:medea.wheaton>.
+  ?Transaction a bk:Transaction.
+  
+  #when
+  OPTIONAL{?Transaction bk:when ?When.}
+  
+  #ENTRY
+  ?Transaction bk:hasEntry ?Entry.
+
+  ?Transaction bk:consists-of ?Transfer.
+  
+  #TO
+  ?Transfer bk:to ?To.
+  OPTIONAL{?To bk:hasName ?To_name.}
+  #FROM
+  ?Transfer bk:from ?From.
+  OPTIONAL{?From bk:hasName ?From_name.}
+  
+  #MEASURABLE
+  ?Transfer bk:transfers ?Measurable.
+  ?Measurable a ?Measurable_type.
+  OPTIONAL{?Measurable bk:unit ?Unit.}
+  OPTIONAL{?Measurable bk:quantity ?Quantity.}
+  OPTIONAL{?Measurable bk:commodity ?Commodity.}
+}

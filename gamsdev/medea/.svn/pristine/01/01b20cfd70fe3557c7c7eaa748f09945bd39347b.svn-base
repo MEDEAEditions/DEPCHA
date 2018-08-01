@@ -1,0 +1,25 @@
+PREFIX bds: <http://www.bigdata.com/rdf/search#>
+PREFIX bk: <http://gams.uni-graz.at/rem/bookkeeping/#>
+
+select ?text ?entry ?date  ?to ?Between ?Measurable ?quantity ?unit ("$1" as ?query)
+{
+    ?entry bk:hasText ?text.
+    ?text bds:search '$1' .
+  	?transfer bk:hasEntry ?entry.
+	
+	OPTIONAL
+  	{       
+     ?transfer bk:hasDate ?date.    
+    }
+  	OPTIONAL
+  	{       
+     ?transfer bk:to ?to.
+	 ?to ?a ?Between.    
+    }
+    OPTIONAL
+  	{       
+     ?transfer bk:transfers ?Measurable.
+     ?Measurable bk:quantity ?quantity;
+                 bk:unit ?unit.
+    }
+}

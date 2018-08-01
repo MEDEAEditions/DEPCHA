@@ -1,0 +1,26 @@
+PREFIX bds: <http://www.bigdata.com/rdf/search#>
+PREFIX bk: <https://gams.uni-graz.at/rem/bookkeeping/#>
+
+select distinct  ?transfer ?text ?entry ?date ?from ?from_name ?to ?to_name ?measurable ?quantity ?unit ("$1" as ?query)
+{
+  ?transfer bk:from|bk:to $1 .
+  ?transfer bk:hasEntry ?entry.
+	     
+  ?transfer bk:when ?date. 
+  	OPTIONAL
+  	{       
+     ?transfer bk:to ?to.
+	   ?to bk:name ?to_name.    
+    }
+    OPTIONAL
+  	{       
+     ?transfer bk:from ?from.
+	   ?from bk:name ?from_name.    
+    }
+    OPTIONAL
+  	{       
+     ?transfer bk:transfers ?measurable.
+     ?measurable bk:quantity ?quantity;
+                 bk:unit ?unit.
+    }
+}
