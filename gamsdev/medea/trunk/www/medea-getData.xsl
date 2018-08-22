@@ -122,12 +122,16 @@
 	                                    <xsl:value-of select="document(concat((substring-before(substring-after(//s:results/s:result[1]/s:query, '&lt;'), '&gt;')), '/TEI_SOURCE'))//t:titleStmt/t:title"/>
 	                                </xsl:when>
 	                                <xsl:otherwise>
-	                                    <xsl:text>Searchresult: </xsl:text><mark><xsl:value-of select="$ContextTitle"/></mark>
+	                                    <xsl:text>SEARCH: </xsl:text><mark><xsl:value-of select="$ContextTitle"/></mark>
+	                                	<br/>
+	                                	<xsl:text>SEARCHRESULT: </xsl:text><xsl:value-of select="count(distinct-values(//s:results/s:result/s:Transfer/@uri))"/>
 	                                </xsl:otherwise>
 	                            </xsl:choose>
 	                        </h1>
 	                        <div>
-	                            <p>Here can be a nice Text!</p>
+	                            <p>
+	                            	<xsl:text>Here can be a nice Text!</xsl:text>
+	                            </p>
 	                        </div>
 	                    </div>
                 		<!-- //////////////////////////////////////// -->
@@ -147,24 +151,22 @@
 	                    	         </a>
 	                    	     </xsl:if>
 	                    	     
-
+								<!-- export for objects -->
 	                    	 	 <div class="card-text">
-	                    	 	    <a class="btn" href="{concat(substring-before(substring-after(//s:results/s:result[1]/s:query, '&lt;'), '&gt;'),'/RDF')}" role="button" style="margin: 10px;" target="_blank">
-                                    <img alt="RDF" height="25" id="rdf" src="/templates/img/RDF_icon.png" title="RDF"/>
-                                </a>
-	                    	 	<xsl:if test="contains($Context, 'o:medea')">
-                         	 	    <a href="{concat('/archive/objects/query:medea.getdata-tei/methods/sdef:Query/get?params=$1|&lt;https://glossa.uni-graz.at/', //t:idno[@type = 'PID'], '&gt;')}" id="datatable_button" class="btn">
-                         	 	        <xsl:text>Datatable</xsl:text>
-                         	 	    </a>
-	                    	 	</xsl:if>
-                    	 	    <xsl:if test="contains($Context, 'o:medea')">
-                    	 	        <a class="button" href="{concat(substring-before(substring-after(//s:results/s:result[1]/s:query, '&lt;'), '&gt;'),'/TEI_SOURCE')}" role="button" style="margin: 10px;" target="_blank">
-                    	 	            <img alt="TEI" height="25" id="tei" src="/templates/img/tei_icon.jpg" title="TEI"/>
-                    	 	        </a>
+	                    	 	 	<xsl:if test="contains($Context, 'o:medea')">
+		                    	 	    <a class="btn" href="{concat(substring-before(substring-after(//s:results/s:result[1]/s:query, '&lt;'), '&gt;'),'/RDF')}" role="button" style="margin: 10px;" target="_blank">
+	                                    	<img alt="RDF" height="25" id="rdf" src="/templates/img/RDF_icon.png" title="RDF"/>
+		                    	 	    </a>
+	                    	 	 		<a href="{concat('/archive/objects/query:medea.getdata-tei/methods/sdef:Query/get?params=$1|&lt;https://glossa.uni-graz.at/', //t:idno[@type = 'PID'], '&gt;')}" id="datatable_button" class="btn">
+                         	 	        	<xsl:text>Datatable</xsl:text>
+                         	 	   		 </a>
+	                    	 	 		<a class="button" href="{concat(substring-before(substring-after(//s:results/s:result[1]/s:query, '&lt;'), '&gt;'),'/TEI_SOURCE')}" role="button" style="margin: 10px;" target="_blank">
+                    	 	            	<img alt="TEI" height="25" id="tei" src="/templates/img/tei_icon.jpg" title="TEI"/>
+                    	 	        	</a>
                     	 	    </xsl:if>
 	                    	 	
-	                    	 
-	                    	 	<xsl:variable name="QueryParam" >
+	                    	 	<!-- ecreate query -->
+	                    	 	<xsl:variable name="QueryParam">
 	                    	 	<xsl:choose>
 	                    	 		<!-- if its a search query -->
 	                    	 		<xsl:when test="contains(s:query, 'context:medea')">
@@ -180,7 +182,7 @@
 	                    	 	</xsl:choose>
 	                    	 	</xsl:variable>
 	                    	 	
-	                    	 		<!-- /archive/objects/query:medea.getcollection/methods/sdef:Query/getHSSF?params=$1|<https%3A%2F%2Fglossa.uni-graz.at%2Fcontext:medea.schlitz> -->
+	                    	 	<!-- /archive/objects/query:medea.getcollection/methods/sdef:Query/getHSSF?params=$1|<https%3A%2F%2Fglossa.uni-graz.at%2Fcontext:medea.schlitz> -->
                                 <a class="btn" href="{$QueryParam}" role="button" style="margin: 10px;">
                                     <img alt="Excel" height="25" id="rdf" src="/gamsdev/pollin/medea/trunk/www/img/TABELLENSYMBOL.png" title="HSSF"/>
                                 </a>
@@ -193,6 +195,8 @@
 								    $('#<xsl:value-of select="$Table-ID"/>').DataTable();
 								    } );
 								</script>
+	                    	 	
+	                    	 	<!-- DATATABLE -->
 		                        <table id="{$Table-ID}" class="table table-striped table-bordered display" style="width:100%">
 		                            <thead>
 		                                <tr>
@@ -204,8 +208,7 @@
 		                                    <th><xsl:text></xsl:text></th>
 		                                </tr>
 		                            </thead>
-		                            <tbody>
-		                            	
+		                            <tbody>		                            	
 		                            	<!-- //////////////////////////////////////// -->
 		                                <xsl:for-each-group select="current-group()" group-by="s:Transfer/@uri">
 		                                    <xsl:sort select="s:When"/>
@@ -316,7 +319,7 @@
 		                                           <!-- <xsl:value-of select="$Measurable"/><xsl:text> </xsl:text>-->
 		                                        </td>
 		                                        <td>
-		                                            <xsl:text>Detail</xsl:text>
+		                                            <a href="{concat('/', $TEI)}" target="_blank" title="To the data source">SOURCE</a>
 		                                        </td>
 		                                    </tr>
 		                                  <!--</xsl:for-each>-->

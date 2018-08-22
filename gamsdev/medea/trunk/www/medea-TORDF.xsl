@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:functx="http://www.functx.com"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:functx="http://www.functx.com"
     xmlns:gn="http://www.geonames.org/ontology#" 
     xmlns:gams="https://gams.uni-graz.at/o:gams-ontology/#"
     xmlns:bk="https://gams.uni-graz.at/o:medea.bookkeeping#" xmlns:skos="http://gams.uni-graz.at/skos/scheme/o:oth/#"
@@ -23,7 +25,19 @@
             <xsl:choose>
                 <xsl:when test="$Actual_PID">
                     <xsl:apply-templates select="//t:text//*[tokenize(@ana, ' ') = '#bk_entry']"/>
+                	
+	            	<xsl:for-each-group select="//.[tokenize(@ana, ' ') = '#bk_to'][not(local-name() ='measure')] | //.[tokenize(@ana, ' ') = '#bk_from'][not(local-name() ='measure')]" group-by="@ref">
+	            		<bk:Between rdf:about="{concat('https://gams.uni-graz.at/', $Actual_PID, '#Between-', current-grouping-key())}">
+				    		<xsl:for-each select="distinct-values(current-group())">
+				    			<bk:name>
+				    				<xsl:value-of select="."/>
+				    		     </bk:name>
+				    		</xsl:for-each>
+				    	</bk:Between>
+	            	</xsl:for-each-group>
+            	
                 </xsl:when>
+
                 <xsl:otherwise>
                 	<xsl:text>ERROR: No PID defined in idno/@type="PID"</xsl:text>
                 </xsl:otherwise>
@@ -50,7 +64,8 @@
         <!-- bk_from -->
         <xsl:variable name="bk_From">
             <xsl:choose>
-                <xsl:when test=".//.[tokenize(@ana, ' ') = '#bk_from']">
+            	<!-- not t:measure elements, because bk_from is used to connect measure and between -->
+                <xsl:when test=".//.[tokenize(@ana, ' ') = '#bk_from'][not(local-name() ='measure')]">
                     <xsl:value-of select=".//.[tokenize(@ana, ' ') = '#bk_from']"/>
                 </xsl:when>
                 <xsl:when test="$TEIHeader//.[tokenize(@ana, ' ') = '#bk_from']">
@@ -67,7 +82,8 @@
         </xsl:variable>
         <xsl:variable name="bk_From_ref">
             <xsl:choose>
-                <xsl:when test=".//.[tokenize(@ana, ' ') = '#bk_from']/@ref">
+            	<!-- not t:measure elements -->
+                <xsl:when test=".//.[tokenize(@ana, ' ') = '#bk_from'][not(local-name() ='measure')]/@ref">
                     <xsl:value-of select=".//.[tokenize(@ana, ' ') = '#bk_from']/@ref"/>
                 </xsl:when>
                 <xsl:when test="$TEIHeader//.[tokenize(@ana, ' ') = '#bk_from']/@ref">
@@ -89,7 +105,9 @@
         <!-- bk_to -->
         <xsl:variable name="bk_To">
             <xsl:choose>
-                <xsl:when test=".//.[tokenize(@ana, ' ') = '#bk_to']">
+            	<!-- //.[tokenize(@ana, ' ') = '#bk_to'][not(tokenize(@ana, ' ') = '#bk_')] -->
+            	
+                <xsl:when test=".//.[tokenize(@ana, ' ') = '#bk_to'][not(local-name() ='measure')]">
                     <xsl:value-of select=".//.[tokenize(@ana, ' ') = '#bk_to']"/>
                 </xsl:when>
                 <xsl:when test="$TEIHeader//.[tokenize(@ana, ' ') = '#bk_to']">
@@ -106,7 +124,7 @@
         </xsl:variable>
         <xsl:variable name="bk_To_ref">
             <xsl:choose>
-                <xsl:when test=".//.[tokenize(@ana, ' ') = '#bk_to']/@ref">
+                <xsl:when test=".//.[tokenize(@ana, ' ') = '#bk_to'][not(local-name() ='measure')]/@ref">
                     <xsl:value-of select=".//.[tokenize(@ana, ' ') = '#bk_to']/@ref"/>
                 </xsl:when>
                 <xsl:when test="$TEIHeader//.[tokenize(@ana, ' ') = '#bk_to']/@ref">
@@ -125,10 +143,20 @@
         <!-- /////////// -->
         <!-- bk_Agent -->
         <xsl:variable name="bk_Agent">
-        	<xsl:value-of select=".//.[tokenize(@ana, ' ') = '#bk_agent']"/>
+        	<xsl:choose>
+        		<xsl:when test=".//.[tokenize(@ana, ' ') = '#bk_agent']">
+        			<xsl:value-of select=".//.[tokenize(@ana, ' ') = '#bk_agent']"/>
+        		</xsl:when>
+        		<xsl:otherwise/>
+        	</xsl:choose>
         </xsl:variable>
     	<xsl:variable name="bk_Agent-ID">
-    	    <xsl:value-of select=".//.[tokenize(@ana, ' ') = '#bk_agent']/@ref"/>
+    		<xsl:choose>
+        		<xsl:when test=".//.[tokenize(@ana, ' ') = '#bk_agent']/@ref">
+        			<xsl:value-of select=".//.[tokenize(@ana, ' ') = '#bk_agent']/@ref"/>
+        		</xsl:when>
+        		<xsl:otherwise/>
+        	</xsl:choose>
         </xsl:variable>
         
         
@@ -214,6 +242,46 @@
                     <xsl:value-of select="$bk_Where"/>   
                 </bk:when>
             </xsl:if>-->
+        	
+        		 	<!-- ////////////////////////// -->
+    <!-- FULLTEXT for fulltextsearch with whitespace cleaning and normalization -->
+    	<gams:textualContent>
+        	<xsl:for-each select=".//text()">
+				<xsl:value-of select="normalize-space(.)"/>
+				<xsl:text> </xsl:text>
+			</xsl:for-each>
+    		<!-- add FROM, TO -->
+    		<!-- TODO -->
+    		<!--<xsl:for-each-group select="$bk_Between_REF" group-by=".">
+	    		<xsl:for-each select="distinct-values($TEI//.[@ref = current-grouping-key()])">
+	    				<xsl:value-of select="."/><xsl:text> </xsl:text>
+	    		</xsl:for-each>	    	
+    		</xsl:for-each-group>-->
+    		<xsl:for-each-group select="$bk_Measurables" group-by="@ana">
+    			 <xsl:value-of select="@quantity"/>
+    			 <xsl:text> </xsl:text>
+    			 <xsl:value-of select="@unit"/>
+    			 <xsl:text> </xsl:text>
+    			 <xsl:if test="not(@commodity ='currency')">
+    			 	<xsl:value-of select="@commodity"/>
+    			 	<xsl:text> </xsl:text>
+    			 </xsl:if>
+    		</xsl:for-each-group>
+    		<xsl:if test="$bk_From">
+	    		<xsl:text> from </xsl:text>
+	    		<xsl:value-of select="$bk_From"/>
+    		</xsl:if>
+    		<xsl:if test="$bk_To">
+	    		<xsl:text> to </xsl:text>
+	    		<xsl:value-of select="$bk_To"/>
+    		</xsl:if>
+    		<xsl:if test="not($bk_Agent = '')">
+    			<xsl:text> by </xsl:text>
+    			<xsl:value-of select="$bk_Agent"/>
+    		</xsl:if>
+    	</gams:textualContent>
+        	
+        	
         </bk:Transaction>
     	<!-- END TRANSACTON -->
         
@@ -245,13 +313,13 @@
                 <xsl:choose>
                     <!-- CASE, this is turned arround  -->
                     <xsl:when test="contains(@ana,  '#bk_to')">
-                        <bk:from rdf:resource="{concat('https://gams.uni-graz.at/', $Actual_PID, '#Entry-', $Position, '-', $bk_To_ref)}"/>
-                        <bk:to rdf:resource="{concat('https://gams.uni-graz.at/', $Actual_PID, '#Entry-', $Position, '-', $bk_From_ref)}"/>
+                        <bk:from rdf:resource="{concat('https://gams.uni-graz.at/', $Actual_PID, '#Between-', $bk_To_ref)}"/>
+                        <bk:to rdf:resource="{concat('https://gams.uni-graz.at/', $Actual_PID, '#Between-', $bk_From_ref)}"/>
                     </xsl:when>
                     <!-- CASE -->
                     <xsl:when test="contains(@ana, '#bk_from')">
-                        <bk:from rdf:resource="{concat('https://gams.uni-graz.at/', $Actual_PID, '#Entry-', $Position, '-', $bk_From_ref)}"/>
-                        <bk:to rdf:resource="{concat('https://gams.uni-graz.at/', $Actual_PID, '#Entry-', $Position, '-', $bk_To_ref)}"/>
+                        <bk:from rdf:resource="{concat('https://gams.uni-graz.at/', $Actual_PID, '#Between-', $bk_From_ref)}"/>
+                        <bk:to rdf:resource="{concat('https://gams.uni-graz.at/', $Actual_PID, '#Between-', $bk_To_ref)}"/>
                     </xsl:when>
                     <xsl:otherwise>
                        <xsl:comment>Error: problem identifying #bk_to; #bk_from; #bk_Agent. The @ana need further #bk_to #bk_from like measure ana="#bk_money #bk_to"</xsl:comment>
@@ -345,8 +413,28 @@
                                     <bk:commodity>
                                         <xsl:value-of select="@commodity"/>
                                     </bk:commodity>
+                                	<xsl:variable name="DBpediaTerm">
+                                		<xsl:choose>
+                                			<xsl:when test="contains(@commodity, ' ')">
+                                				<!-- Potatoe, pine wood = Pine -->
+                                				<xsl:value-of select="concat(upper-case(substring(substring-before(@commodity, ' '),1,1)), substring(substring-before(@commodity, ' '),2))"/>
+                                			</xsl:when>
+                                			<xsl:otherwise>
+                                				<xsl:value-of select="concat(upper-case(substring(@commodity,1,1)), substring(@commodity,2))"/>
+                                			</xsl:otherwise>
+                                		</xsl:choose>
+                                	</xsl:variable>
+                                	<rdfs:seeAlso rdf:resource="{concat('https://dbpedia.org/resource/', $DBpediaTerm)}"/>
+                                	
                                 </xsl:if>
-                                <bk:text>
+                            	<!-- wikidata reference in TEI -->
+                            	<xsl:for-each select="tokenize(@ana, ' ')">
+                            		<xsl:if test="contains(., '#wiki_')">
+                            			<!-- rdfs:seeAlso !!! todo rdfs:namepsace -->
+                            			<rdfs:seeAlso rdf:resource="{concat('https://www.wikidata.org/wiki/', substring-after(., '#wiki_'))}"/>
+                            		</xsl:if>
+                            	</xsl:for-each>                            	
+                            	<bk:text>
                                     <xsl:value-of select="normalize-space(.)"/>
                                 </bk:text>
                             </xsl:element>
@@ -392,15 +480,15 @@
     	
     	<!-- /////////// -->
         <!-- BETWEEN -->
-    	<xsl:for-each-group select="$bk_Between_REF" group-by=".">
-	    	<bk:Between rdf:about="{concat('https://gams.uni-graz.at/', $Actual_PID, '#Entry-', $Position, '-', .)}">
+    	<!--<xsl:for-each-group select="$bk_Between_REF" group-by=".">
+	    	<bk:Between rdf:about="{concat('https://gams.uni-graz.at/', $Actual_PID, '#Entry-', $Position, '-', current-grouping-key())}">
 	    		<xsl:for-each select="distinct-values($TEI//.[@ref = current-grouping-key()])">
 	    			<bk:name>
 	    				<xsl:value-of select="."/>
 	    		     </bk:name>
 	    		</xsl:for-each>
 	    	</bk:Between>
-    	</xsl:for-each-group>
+    	</xsl:for-each-group>-->
         
         <!-- /////////// -->
         <!-- Agent -->
@@ -416,8 +504,9 @@
         </xsl:for-each-group>
         </xsl:if>
 
-    	
-            
+    
+   
+  
             
     </xsl:template>
     
@@ -732,14 +821,7 @@
         </xsl:for-each>
     </xsl:template>
     
-    <!-- ////////////////////////// -->
-    <!-- FULLTEXT for fulltextsearch with whitespace cleaning and normalization -->
-    <xsl:template name="Fulltext">
-        <xsl:for-each select=".//text()">
-            <xsl:value-of select="normalize-space(.)"/>
-            <xsl:text> </xsl:text>
-        </xsl:for-each>
-    </xsl:template>
+    
     
 
     

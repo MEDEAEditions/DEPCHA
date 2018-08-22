@@ -33,14 +33,14 @@
 	    				<br/>
 	    				<a href="#Visualisation"  onclick="scrolldown(this)">Visualisation</a>
 	    			</div>
-		            <div class="card-body">  
+		            <div class="card-body" style="overflow-y: scroll;">  
 		            	<div id="accordion" class="small">
 		            		<div id="ClassAccordion">
 						        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseClass" aria-expanded="true" aria-controls="collapseOne">
 						          <xsl:text>Class</xsl:text>
 						        </button>
 						    </div>
-		            		<div id="collapseClass" class="collapse show" aria-labelledby="ClassAccordion" data-parent="#accordion">
+		            		<div id="collapseClass" class="collapse show" aria-labelledby="ClassAccordion" data-parent="#accordion" >
 						      	<ul>
 						      		<xsl:for-each-group select="//rdfs:Class[@rdf:about][not(rdfs:subClassOf[contains(text(),  'http://www.cidoc-crm.org/')])]" group-by="(@rdf:about)" >
 						      			<li>
