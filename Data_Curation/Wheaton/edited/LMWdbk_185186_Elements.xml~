@@ -1,0 +1,1484 @@
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>LMW Day Book, pp.185-186</title>
+            <author ana="#bk_from" ref="#pers_MightyWheatonHimself">L.M. Wheaton</author>
+         </titleStmt>
+         <publicationStmt><publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher><idno type="PID">o:medea.wheaton.185</idno></publicationStmt>
+         <sourceDesc><list><item><ref target="info:fedora/context:medea.wheaton" type="context">Wheaton Financial Papers</ref></item></list>
+            <biblFull default="false" status="draft">
+               <titleStmt>
+                  <title>Account Books, pp.185-186</title>
+                  <author>L.M. Wheaton</author>
+                  <respStmt>
+                     <resp> TEI-compatible XML markup by <name type="person" full="yes" instant="false">Tyana Craig</name> with
+                        corrections by <name type="person" full="yes" instant="false">Name</name>, <name type="person" full="yes" instant="false">Name</name>, and <name type="person" full="yes" instant="false">Name</name>.</resp>
+                     <name type="person" full="yes" instant="false">Name</name>
+                  </respStmt>
+               </titleStmt>
+               <publicationStmt>
+                  <p part="N">Indication of work done and date 06/30/15, Wheaton College</p>
+               </publicationStmt>
+               <sourceDesc default="false">
+                  <p part="N"> From the Marion B. Gebbie Archives and Special Collections at the Madeleine
+                     Clark Wallace Library, Wheaton College </p>
+               </sourceDesc>
+            </biblFull>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <pb n="185"/>
+         <fw type="pageNum">185</fw>
+         <table xml:id="p185" cols="6">
+            <head>Monday <date when="1844-04-22">April 22nd 1844</date></head>
+            <row xml:id="p185_01">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_02" role="data" rows="1" cols="1">
+               <cell>524</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Geo. W Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_03" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Pine Timber" quantity="691" unit="feet" ana="#bk_commodity #bk_from">691 ft. Pine Timber</measure> 
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="8" unit="dollars" ana="#bk_money #bk_to">8</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="98" unit="cents" ana="#bk_money #bk_to">98</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_04" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-04-25" ana="#bk_when">25</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_05" role="data" rows="1" cols="1">
+               <cell>523</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Frank Dunahoe</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_06" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <name type="account" ref="LMWcash" ana="#bk_to">cash ten Dollars to send to Boston</name>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="10" unit="dollars" ana="#bk_money #bk_to">10</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_07" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-04-26" ana="#bk_when">26</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_08" role="data" rows="1" cols="1">
+               <cell><span ana="#bk_transactionStatus">Settled</span></cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Westley Brown</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_09" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <name type="account" ref="LMWcash" ana="#bk_to">cash towards wall</name>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="5" unit="dollars" ana="#bk_money #bk_to">5</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_10">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_11" role="data" rows="1" cols="1">
+               <cell/>
+               <cell><name type="person" ref="v" ana="#bk_to">Honey D. Lane</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_12" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Snowball Potatoes" quantity="1" unit="bushels" ana="#bk_commodity #bk_from"> 1 Buss. SnowB. Potatoes</measure>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_13" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   " <measure commodity="Red Potatoes" quantity="1" unit="bushels" ana="#bk_commodity #bk_from"> 1 "  Red</measure> do.
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_14" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-04-30" ana="#bk_when">30</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_15" role="data" rows="1" cols="1">
+               <cell>Paid</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Wheaton Wheelor</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_16" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Veal" quantity="0.125">1/2 of 1/4 quarter veal </measure>5x
+               </cell>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="35" unit="cents" ana="#bk_money #bk_to">35</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_17">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_18" role="data" rows="1" cols="1">
+               <cell><span ana="#bk_transactionStatus">Settled</span></cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Linus Howard</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_19" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Veal" quantity="18.25" unit="pound">18 1/4 lb Veal </measure>5x
+               </cell>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="91" unit="cents" ana="#bk_money #bk_to">91</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_20">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_21" role="data" rows="1" cols="1">
+               <cell>115</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Wm A West</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_22" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Veal" quantity="10.25" unit="pounds">10 1/4 lb Veal </measure>6x
+               </cell>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="61" unit="cents" ana="#bk_money #bk_to">61</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_23">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_24" role="data" rows="1" cols="1">
+               <cell><span ana="#bk_transactionStatus">Settled</span></cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Wm Knowles</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_25" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Veal" quantity="8.75" unit="pounds"> 8 3/4 lb. Veal</measure> 6x
+               </cell>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="53" unit="cents" ana="#bk_money #bk_to">53</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_26" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-05-01" ana="#bk_when">May 1</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_27" role="data" rows="1" cols="1">
+               <cell>524</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Geo. W. Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_28" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   To <name type="account" ref="LMWcash" ana="#bk_to">to paying for House</name> , towards
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_29" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   <measure commodity="labor" ana="#bk_service #bk_from">Work on House</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="65" unit="dollars" ana="#bk_money #bk_to">65</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_30">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_31" role="data" rows="1" cols="1">
+               <cell>388</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Jason M. Reed</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_32" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Cattle" quantity="1" unit="count" ana="#bk_commodity #bk_from">cattle</measure> + 
+                   <measure commodity="Plough" quantity="1" unit="count" ana="#bk_commodity #bk_from">Plough </measure>to plough two
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_33" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>gardens</cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_34" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-05-03" ana="#bk_when">3</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_35" role="data" rows="1" cols="1">
+               <cell>524</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">George W. Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>Cr</abbr>
+                     <expan instant="false">credit</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_36" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   By <measure commodity="plaining Machine" quantity="1" unit="count" ana="#bk_commodity #bk_from"> plaining Machine </measure>$150.
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="150" unit="dollars" ana="#bk_money #bk_to">150</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_37" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   " <name type="account" ref="LMWcash" ana="#bk_to">Cash received of <name type="person" ref="pers_WCDH221" ana="#bk_to">Thos Carpenter</name></name>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_38" ana="#bk_entry">
+               <cell/>
+               <cell>for shop in Jany</cell>
+               <cell>
+                   <measure commodity="currency" quantity="160" unit="dollars" ana="#bk_money #bk_to">160</measure>
+               </cell>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="310" unit="dollars" ana="#bk_money #bk_to">310</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+            </row>
+            <row xml:id="p185_39" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-05-04" ana="#bk_when">4</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_40" role="data" rows="1" cols="1">
+               <cell>524</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">George W. Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_41" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="horse waggon" quantity="1" unit="count" ana="#bk_commodity #bk_from">horse waggon</measure> $80.00
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="80" unit="dollars" ana="#bk_money #bk_to">80</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_42">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_43" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-05-07" ana="#bk_when">7</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_44" role="data" rows="1" cols="1">
+               <cell>524</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">George W. Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_45" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <name type="account" ref="LMWcash" ana="#bk_to">cash </name>$16.
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="16" unit="dollars" ana="#bk_money #bk_to">16</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_46">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_47" role="data" rows="1" cols="1">
+               <cell>528</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Wm. J. Sweet</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_48" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Dryed Beef" quantity="6.25" unit="pounds"> 6 1/4 lbs Dryed Beef</measure> 7x
+               </cell>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="44" unit="cents" ana="#bk_money #bk_to">44</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_49" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   " <measure commodity="Potatoes">Potatoes</measure>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_50" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-05-13" ana="#bk_when">13</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_51" role="data" rows="1" cols="1">
+               <cell>104</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Catherine Lynch</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_52" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <name type="account" ref="LMWcash" ana="#bk_to">cash fr Gloves </name> 1/
+               </cell>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="17" unit="cents" ana="#bk_money #bk_to">17</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_53">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_54" role="data" rows="1" cols="1">
+               <cell>528</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Wm J. Sweet</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_55" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Pork" quantity="3.5" unit="pounds">3 1/2 lb. Pork </measure> 9x
+               </cell>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="32" unit="cents" ana="#bk_money #bk_to">32</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_56" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-05-25" ana="#bk_when">25</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_57" role="data" rows="1" cols="1">
+               <cell><span ana="#bk_transactionStatus">Settled</span></cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Westley Brown</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_58" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <name type="account" ref="LMWcash" ana="#bk_to">cash </name>18/
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="3" unit="dollars" ana="#bk_money #bk_to">3</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_59" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-05-27" ana="#bk_when">27</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_60" role="data" rows="1" cols="1">
+               <cell/>
+               <cell><name type="person" ref="v" ana="#bk_to">Thos Carpenter</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_61" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Oxen" quantity="0.5" unit="day">Oxen </measure>+ 
+                   <measure commodity="Plough" quantity="0.5" unit="day">Plough half day</measure>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_62">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_63" role="data" rows="1" cols="1">
+               <cell>524</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Geo. W. Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p185_64" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Ham" quantity="22" unit="pounds">22lbs. Ham </measure> 10x
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="2" unit="dollars" ana="#bk_money #bk_to">2</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="20" unit="cents" ana="#bk_money #bk_to">20</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+         </table>
+         <pb n="186"/>
+         <fw type="pageNum">186</fw>
+         <table xml:id="p186" cols="6">
+            <head>Tuesday <date when="1844-05-28">May 28th 1844</date></head>
+            <row xml:id="p186_01" role="data" rows="1" cols="1">
+               <cell/>
+               <cell/>
+               <cell>$</cell>
+               <cell>cts.</cell>
+               <cell>$</cell>
+               <cell>cts.</cell>
+            </row>
+            <row xml:id="p186_02" role="data" rows="1" cols="1">
+               <cell><span ana="#bk_transactionStatus">Settled</span></cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Westley Brown</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_03" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Potatoes" quantity="10" unit="bushels" ana="#bk_commodity #bk_from">10 Buss Potatoes </measure>20x
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="2" unit="dollars" ana="#bk_money #bk_to">2</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_04" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-05-29" ana="#bk_when">29</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_05" role="data" rows="1" cols="1">
+               <cell>524</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Geo. W Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_06" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <name type="account" ref="LMWcash" ana="#bk_to">cash ten Dollars</name> 
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="10" unit="dollars" ana="#bk_money #bk_to">10</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_07">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_08" role="data" rows="1" cols="1">
+               <cell>524</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Geo. W Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_09" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Pig" quantity="1" unit="count" ana="#bk_commodity #bk_from">one pig </measure> 12/
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="2" unit="dollars" ana="#bk_money #bk_to">2</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_10">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_11" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-06-01" ana="#bk_when">June 1st</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_12" role="data" rows="1" cols="1">
+               <cell>523</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Frank Dunahue</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_13" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <name type="account" ref="LMWcash" ana="#bk_to">cash eight Dollars</name> 
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="8" unit="dollars" ana="#bk_money #bk_to">8</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_14" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-06-03" ana="#bk_when">3</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_15" role="data" rows="1" cols="1">
+               <cell>524</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Geo. W. Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_16" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <name type="account" ref="LMWcash" ana="#bk_to">cash as pr. receipt</name>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="25" unit="dollars" ana="#bk_money #bk_to">25</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_17" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   " <measure commodity="Lard" quantity="10" unit="pounds">10 lbs Lard </measure>10x
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_to">1</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_18" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   " <measure commodity="Cheese" quantity="7" unit="pounds">7 " Cheese </measure>7x
+               </cell>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="49" unit="cents" ana="#bk_money #bk_to">49</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="26" unit="dollars" ana="#bk_money #bk_to">26</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="49" unit="cents" ana="#bk_money #bk_to">49</measure>
+               </cell>
+            </row>
+            <row xml:id="p186_19" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-06-07" ana="#bk_when">7</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_20" role="data" rows="1" cols="1">
+               <cell><span ana="#bk_transactionStatus">Settled</span></cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Wm J. Sweet</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_21" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Potatoes">Potatoes </measure>some time since
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_22" ana="#bk_entry">
+               <cell/>
+               <cell>not <span ana="#bk_transactionStatus">Settled</span> for, pd. May 7th</cell>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="25" unit="cents" ana="#bk_money #bk_to">25</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_23" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-06-10" ana="#bk_when">10</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_24" role="data" rows="1" cols="1">
+               <cell><span ana="#bk_transactionStatus">Settled</span></cell>
+               <cell><name type="person" ref="v" ana="#bk_to">John Arnold</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_25" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Calf" quantity="1" unit="count" ana="#bk_commodity #bk_from">one calf</measure>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_26" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   " <measure commodity="Calf Skin" quantity="1" unit="count" ana="#bk_commodity #bk_from">one calf Skin</measure>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_27">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_28" role="data" rows="1" cols="1">
+               <cell>524</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Geo. W. Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_29" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   To <name type="account" ref="LMWcash" ana="#bk_to">paying <name type="person" ref="pers_WCDH268" ana="#bk_to">Oliver Deane</name></name> 
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_30" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   for <measure commodity="Lime" quantity="7" unit="corks"> Seven corks lime</measure> $125x
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="8" unit="dollars" ana="#bk_money #bk_to">8</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="75" unit="cents" ana="#bk_money #bk_to">75</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_31" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Ham" quantity="9" unit="bushels" ana="#bk_commodity #bk_from"> 9 Buss. Ham </measure>30x 270
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_32" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   " <measure commodity="labor" quantity="1" unit="trucking" ana="#bk_service #bk_from">Trucking same </measure>51
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="3" unit="dollars" ana="#bk_money #bk_to">3</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="01" unit="cents" ana="#bk_money #bk_to">01</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="11" unit="dollars" ana="#bk_money #bk_to">11</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="76" unit="cents" ana="#bk_money #bk_to">76</measure>
+               </cell>
+            </row>
+            <row xml:id="p186_33" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-07-06" ana="#bk_when">July 6</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_34" role="data" rows="1" cols="1">
+               <cell>524</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Geo. W. Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_35" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Lard" quantity="10" unit="pounds">10lbs Lard </measure>10x 6/
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_36" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                  <choice rend="align(right)">
+                     <abbr>Cr.</abbr>
+                     <expan instant="false">credit</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_37" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   By <measure commodity="Horse" quantity="1" unit="count" ana="#bk_commodity #bk_from">Horse </measure>
+                   + <measure commodity="Waggon" quantity="1" unit="count" ana="#bk_commodity #bk_from">waggon </measure>to Pic Mc 2/
+               </cell>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="33" unit="cents" ana="#bk_money #bk_to">33</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_38">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_39" role="data" rows="1" cols="1">
+               <cell>104</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Catherine Lynch</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_40" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Shirting" quantity="12" unit="yards">12 Yds Shirting</measure>  6/
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_to">1</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_41" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   " <measure commodity="Calico" quantity="8" unit="yards">8 " Calico</measure> /9
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_to">1</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="2" unit="dollars" ana="#bk_money #bk_to">2</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="00" unit="cents" ana="#bk_money #bk_to">00</measure>
+               </cell>
+            </row>
+            <row xml:id="p186_42" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   " <measure commodity="labor" quantity="1" unit="bonnet" ana="#bk_service #bk_from">Fixing Bonnet </measure>25x
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="25" unit="cents" ana="#bk_money #bk_to">25</measure>
+               </cell>
+            </row>
+            <row xml:id="p186_43">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_44" role="data" rows="1" cols="1">
+               <cell>524</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Geo. W. Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>D.</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_45" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Beef" quantity="32.03125" unit="pounds">32lb 0.5oz Beef </measure> 7x
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="2" unit="dollars" ana="#bk_money #bk_to">2</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="26" unit="cents" ana="#bk_money #bk_to">26</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_46" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   " <measure commodity="Ham" quantity="16" unit="pounds">16 lb. Ham </measure> 9x
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_to">1</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="44" unit="cents" ana="#bk_money #bk_to">44</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="4" unit="dollars" ana="#bk_money #bk_to">4</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="70" unit="cents" ana="#bk_money #bk_to">70</measure>
+               </cell>
+            </row>
+            <row xml:id="p186_47" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-07-10" ana="#bk_when">10</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_48" role="data" rows="1" cols="1">
+               <cell>524</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Geo. Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_49" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <name type="account" ref="LMWcash" ana="#bk_to">cash pd Williams</name>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="189" unit="dollars" ana="#bk_money #bk_to">189</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="28" unit="cents" ana="#bk_money #bk_to">28</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_50" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   " <measure commodity="Boards" quantity="134" unit="feet" ana="#bk_commodity #bk_from">Boards in July 134ft.</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="2" unit="dollars" ana="#bk_money #bk_to">2</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="68" unit="cents" ana="#bk_money #bk_to">68</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_51" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   " <measure commodity="Hay"> Hay</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_to">1</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="50" unit="cents" ana="#bk_money #bk_to">50</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="193" unit="dollars" ana="#bk_money #bk_to">193</measure>
+               </cell>
+               <cell>
+                   <measure commodity="currency" quantity="46" unit="cents" ana="#bk_money #bk_to">46</measure>
+               </cell>
+            </row>
+            <row xml:id="p186_52">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_53" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-07-17" ana="#bk_when">July 17</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_54" role="data" rows="1" cols="1">
+               <cell>511</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Otis Blandin</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_57" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Grass land">use of Grass land &amp;c.</measure> 
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_58" role="data" rows="1" cols="1">
+               <cell/>
+               <cell>
+                   <date when="1844-07-19" ana="#bk_when">19</date>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_59" role="data" rows="1" cols="1">
+               <cell>328</cell>
+               <cell><name type="person" ref="v" ana="#bk_to">Wm. J. Sweet</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan instant="false">debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_60" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   To <measure commodity="Pork" quantity="6" unit="pounds">6lbs Pork </measure>9x
+               </cell>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="54" unit="cents" ana="#bk_money #bk_to">54</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_61" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   " <measure commodity="Lard" quantity="2.5" unit="pounds"> 2 1/2 lbs Lard </measure>10x
+               </cell>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="25" unit="cents" ana="#bk_money #bk_to">25</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_62" ana="#bk_entry">
+               <cell/>
+               <cell>
+                   " <measure commodity="Soap" quantity="2" unit="quarts">2 qts Soap </measure>4x
+               </cell>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="8" unit="dollars" ana="#bk_money #bk_to">8</measure>
+               </cell>
+               <cell/>
+               <cell>
+                   <measure commodity="currency" quantity="87" unit="cents" ana="#bk_money #bk_to">87</measure>
+               </cell>
+            </row>
+            <row xml:id="p186_63">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row xml:id="p186_64">
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+         </table>
+      </body>
+   </text>
+</TEI>
