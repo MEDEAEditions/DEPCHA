@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rem="http://gams.uni-graz.at/rem/bookkeeping/#">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Best Practice for the Bookkeeping Ontology.</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+                <idno type="PID">o:medea.sampleData.1</idno>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Something in this Document is defined here like: All receivings of <name
+                        ana="#bk_to" ref="CP_Pers.01">Christopher</name>, date: <date ana="#bk_when"
+                            when="1960-06-14">14th July 1960</date></p>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <editorialDecl>
+                <p/>
+            </editorialDecl>
+            <projectDesc>
+                <p><ref target="context:sampleData" type="context">Best Practice</ref></p>
+            </projectDesc>
+        </encodingDesc>
+        <revisionDesc>
+            <change/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <head>Single Way Transactions</head>
+                <div ana="#bk_entry">
+                    <span><date ana="#bk_when" when="1950-07-04">4. July 1950</date>: <persName
+                            ana="#bk_from" ref="CP_Pers.01">Christoper</persName> gives <persName
+                            ana="#bk_to" ref="CP_Pers.02">Sepp</persName><measure
+                            ana="#bk_money #bk_from" quantity="20" unit="dollars"
+                            commodity="currency">20 $</measure>.</span>
+                    <lb/>
+                </div>
+                <div ana="#bk_entry">
+                    <span><date ana="#bk_when" when="1950-06-05">5. June 1951</date>: <persName
+                            ana="#bk_from" ref="CP_Pers.01">Christopher</persName> gives <persName
+                            ana="#bk_to" ref="CP_Pers.02">Sepp</persName><measure
+                            ana="#bk_commodity #bk_from" quantity="10" unit="pieces"
+                            commodity="wood">10 pieces of wood</measure></span>
+                    <lb/>
+                </div>
+                <div ana="#bk_entry">
+                    <span><date ana="#bk_when" when="1949-09-10">10. September 1949</date>:
+                            <persName ana="#bk_from" ref="CP_Pers.01">Christopher</persName> works
+                        for <measure ana="#bk_service #bk_from" unit="hours" quantity="5"
+                            commodity="time">5 hours for <persName ana="#bk_to" ref="CP_Pers.02"
+                                >Sepp</persName></measure>.</span>
+                    <lb/>
+                </div>
+            </div>
+            <pb/>
+            <div>
+                <head>bk_when and bk_to are defined in a xml-strucutre before these entries<lb/>
+                    <orgName ana="#bk_to" ref="CP_Pers.01">Christophers Account</orgName>, on the
+                        <date ana="#bk_when" when="2010-10-01">10.01.2010</date>: </head>
+                <p ana="#bk_entry"><measure ana="#bk_money #bk_from" quantity="5" unit="dollars"
+                        commodity="currency">5 $</measure> from <name ana="#bk_from"
+                        ref="CP_Pers.13">Luis</name></p>
+                <p ana="#bk_entry">
+                    <measure ana="#bk_money #bk_from" quantity="51" unit="dollars"
+                        commodity="currency">51</measure>,<measure ana="#bk_money #bk_from"
+                        quantity="4" unit="cents" commodity="currency">4</measure>$ from <name
+                        ref="CP_Pers.12" ana="#bk_from">Franz</name></p>
+                <p ana="#bk_entry"><measure ana="#bk_commodity #bk_from" quantity="1" unit="pieces"
+                        commodity="cow">1 cow</measure> from <name ana="#bk_from" ref="Cp_Pers.15"
+                        >Leonhard</name></p>
+                <pb/>
+            </div>
+            <div>
+                <head>bk_to are defined in the TEI-Header</head>
+                <table>
+                    <head><date ana="#bk_when" when="2018-06-14">14</date></head>
+                    <row ana="#bk_entry">
+                        <cell><persName ana="#bk_from" ref="CP_Pers.09">Gernto</persName></cell>
+                        <cell>
+                            <measure ana="#bk_commodity #bk_to" quantity="3" unit="meter"
+                                commodity="lumber">3 m lumber</measure>
+                        </cell>
+                        <cell>
+                            <measure ana="#bk_money #bk_from" quantity="3" unit="dollars"
+                                commodity="currency">3 $</measure>
+                        </cell>
+                    </row>
+                    <row ana="#bk_entry">
+                        <cell><persName ana="#bk_from" ref="CP_Pers.09">Gernto</persName></cell>
+                        <cell>
+                            <measure ana="#bk_commodity #bk_to" quantity="3" unit="meter"
+                                commodity="lumber">2 m lumber</measure>
+                        </cell>
+                        <cell>
+                            <measure ana="#bk_money #bk_from" quantity="2" unit="dollars"
+                                commodity="currency">2 $</measure>
+                        </cell>
+                    </row>
+                    <row ana="#bk_entry">
+
+                        <cell><persName ana="#bk_from" ref="CP_Pers.09">Gernto</persName></cell>
+                        <cell>
+                            <measure ana="#bk_commodity #bk_to" quantity="3" unit="meter"
+                                commodity="lumber">2 m lumber</measure>
+                        </cell>
+                        <cell>
+                            <measure ana="#bk_money #bk_from" quantity="1" unit="dollars"
+                                commodity="currency">1 $</measure>
+                        </cell>
+                    </row>
+                </table>
+                <table>
+                    <head><date ana="#bk_when" when="2018-06-15">15</date></head>
+                    <row ana="#bk_entry">
+                        <cell><persName ana="#bk_from" ref="CP_Pers.09">Gernto</persName></cell>
+                        <cell>
+                            <measure ana="#bk_commodity #bk_to" quantity="3" unit="meter"
+                                commodity="lumber">1 m lumber</measure>
+                        </cell>
+                        <cell>
+                            <measure ana="#bk_money #bk_from" quantity="10" unit="dollars"
+                                commodity="currency">10 $</measure>
+                        </cell>
+                    </row>
+                    <row ana="#bk_entry">
+                        <cell><persName ana="#bk_from" ref="CP_Pers.09">Gernto</persName></cell>
+                        <cell>
+                            <measure ana="#bk_commodity #bk_to" quantity="3" unit="meter"
+                                commodity="corn">2 m corn</measure>
+                        </cell>
+                        <cell>
+                            <measure ana="#bk_money #bk_from" quantity="40" unit="dollars"
+                                commodity="currency">40 $</measure>
+                        </cell>
+                    </row>
+                </table>
+                <table>
+                    <head><date ana="#bk_when" when="2018-06-20">20</date></head>
+                    <row ana="#bk_entry">
+                        <cell><persName ana="#bk_from" ref="CP_Pers.09">Gernto</persName></cell>
+                        <cell>
+                            <measure ana="#bk_commodity #bk_to" quantity="3" unit="meter"
+                                commodity="lumber">2 m lumber</measure>
+                        </cell>
+                        <cell>
+                            <measure ana="#bk_money #bk_from" quantity="25" unit="dollars"
+                                commodity="currency">25 $</measure>
+                        </cell>
+                    </row>
+
+                </table>
+            </div>
+        </body>
+    </text>
+</TEI>

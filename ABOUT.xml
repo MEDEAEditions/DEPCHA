@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="en">DEPCHA - Digital Edition Publishing Cooperative for Historical
+                    Accounts</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher xml:lang="de">Karl-Franzens-Universität Graz</publisher>
+                <publisher xml:lang="en">University of Graz</publisher>
+                <date when="2018">2018</date>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl/>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p/>
+            </projectDesc>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date when="2018">2018</date>
+                <name type="place">Graz, Austria</name>
+            </creation>
+            <langUsage>
+                <language ident="en">English</language>
+            </langUsage>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+                <div type="header">
+                    <head>DEPCHA - The Digital Edition Publishing Cooperative for Historical Accounts</head>
+                </div>
+                <div>
+                     <div type="body"><p>DEPCHA offers publication and access services to a wide range of editors and users
+                         interested in the information contained in historical accounting records.
+                         This hub allows editors to upload their transcriptions from multiple
+                         formats, including Excel, Drupal, XML/TEI. As outputs, the hub offers visualizations.
+                         In addition, the hosted dis offerd as Resource Definition Framework (RDF), which
+                         makes it discoverable for data mining for historians who seek to take
+                         advantage of the semantic web and for researchers in such diverse fields as
+                         demography, climate science, and biology. </p>
+                     <p>This publishing cooperative would leverage relationships developed under
+                         Modeling semantically Enhanced Digital Edition of Accounts (MEDEA), a
+                         primarily European-based project funded through a 2015 Bilateral Digital
+                         Humanities award from the National Endowment for the Humanities and the
+                         German Research Foundation. The cooperative would share technical expertise
+                         and establish a platform for publication of digital editions that include
+                         textual and numerical representations; visualizations of accounting
+                         information; and data representation referencing a shared MEDEA bookkeeping
+                         ontology. The proposed platform would replicate a system developed at the
+                         Centre for Information Modeling at the University of Graz: the
+                         Humanities Asset Management System (Geisteswissenschaftliches Asset
+                         Management System - GAMS), a FEDORA Commons based infrastructure for data
+                         enrichment, publication, and long-term preservation of digital humanities
+                         data.</p></div>
+                </div>
+            <div>
+                <div type="body">
+                    <head>Persons involved in the Project</head>
+                    <p>A team of experts shares a scholarly affinity for creating digital editions
+                         of accounts, with historian Kathryn Tomasek of Wheaton College serving as
+                         Principal Investigator. Georg Vogeler and Christopher Pollin join the team
+                         from Graz. MEDEA participants lead several U.S. projects focused on creating
+                         digital editions of accounts: Jennifer Stertzer and Worthy Martin at the
+                         University of Virginia, Anna Agbe-Davies at the University of North Carolina
+                         at Chapel Hill, and Jodi Eastberg at Alverno College. Additional
+                         participants work in libraries that hold a substantial number of account
+                         books in their collections: Molly Hardy of the American Antiquarian Society
+                         and Gregory Colati of the University of Connecticut. Ben Brumfield and Sara
+                         Brumfield, of Brumfield Labs, LLC, would serve as technical consultants in
+                         the United States. Kate Boylan, Director of Archives and Digital
+                         Initiatives, would contribute a leadership perspective from Library Services
+                         at Wheaton College, the proposed host institution.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div type="body">
+                <head>GAMS: Long-Term Infrastructure</head>
+                <p>The Humanities Asset Management System GAMS (Geisteswissenschaftliches Asset Management System) 
+                    provides longterm preservation of research data at the Faculty of Arts and Humanities
+                    at the University of Graz. According to the basic understanding of its
+                    operator, the Centre for Information Modelling at the University of Graz,
+                    the repository not only provides a technical solution, but a way of
+                    achieving sustainability in the handling of research data. The aim of GAMS
+                    is not only to provide long-term archiving and storage for digital content
+                    but to function as a platform for realizing standardized workflows in
+                    research projects in the Humanities. In cooperation with scholars from
+                    various domains the Centre has been working on questions of the digital
+                    representation of textual corpora, source material and other scientific
+                    content. Due to the increasing degree of digitization in research, modelling
+                    scholarly content has become more and more of an issue in the Humanities and
+                    related disciplines.</p>
+                <p> The vision of GAMS is to ensure sustainable availability and
+                    flexible (re-) use of digitally annotated and enriched scientific content.
+                    This is achieved through a largely XML-based content strategy based on
+                    domain specific data models. XML-based data formats such as TEI or LIDO
+                    provide means for flexible, metadata-enriched forms of storage of textual
+                    data. The primary content of documents is enriched with additional
+                    descriptive elements based on modelling standards. These standardizations
+                    provide a basis for the semantization and, consequently, the automated
+                    processing and analysis of specialist knowledge. Special emphasis lies on
+                    incorporating domainspecific ontologies and vocabularies. The separation of
+                    content and its presentation as a fundamental feature of XML-based formats
+                    implies a high degree of flexibility when dealing with the analysis and
+                    transformation of the original (textual) data in different presentation
+                    forms. On the other hand, this also calls for standardized workflows in the
+                    processing of such data. This approach has created a pool of re-usable data
+                    objects from the Humanities over the past years. In addition, automatic
+                    extraction of semantic relations of the ingested material implement further
+                    possibilities of textual analysis and content representation for the
+                    designated community of the repository. </p>
+                <p> One of the unique features of GAMS is that digital resources are not managed
+                    at the file level, but as complex digital objects: the digital
+                    representation of a digitized medieval accounting record consists of descriptive
+                    metadata, a plurality of facsimile photographs, a TEI-based full-text
+                    transcription of the text and so on. All these data streams are stored
+                    within an object; every data stream can be seen as an attribute of the
+                    object. The design of content models (object classes) construct complex objects and object class
+                    hierarchies. Content models not only describe the content structure of an
+                    object class (the datastreams) and possible relations to other objects (e.g.
+                    container objects) but also bind via WSDL disseminators (methods) to a
+                    model. These can be XSL-transformations creating various output formats of
+                    the datastreams (HTML, PDF, etc.), the presentation of book-like content in
+                    special viewers, or e.g. methods to transform images to other sizes, formats
+                    or color models.</p>
+                <p> Implementing the aforementioned software design features and respecting the
+                    principles of long-term preservation, the GAMS project only uses open source
+                    software. Its core technologies are Fedora Commons (currently version 3)
+                    for storage and management of digital objects, Apache Lucene and Solr for
+                    full text search, Blazegraph Triplestore as graph database, Postgresql
+                    Database Server as relational database, Apache Cocoon as main platform for
+                    web services used as object disseminators, and Loris IIIF Image Server to
+                    provide access to images via the IIIF Image API11. 2017 marked the beginning
+                    of a major migration process to ensure accessibility of content for the next
+                    years. Therfore a new version of GAMS will be based on Fedora 4.</p>
+                </div>
+                <div type="body">
+                    <head>Data Ingest: Cirilo</head>
+                    <p>
+                        Cirilo is a java application developed for content preservation and data curation in FEDORA-based repository systems. 
+                        Content preservation and data curation in our sense include object creation and management, versioning, normalization and standards, 
+                        and the choice of data formats. The client offers functionalities which are especially prone to be used as tools for mass operations on 
+                        FEDORA objects, thus complementing FEDORA's inbuilt Admin Client. Cirilo operates on FEDORA's management-API (API-M) and uses a collection of predefined
+                        content models. These content models can be used without further adjustments for standard workflow scenarios like the management of collections
+                        of TEI objects. Content models in the sense of FEDORA are class definitions; On the one hand they define the (MIME-)type of the contained datastreams,
+                        on the other hand they designate dissemination methods operating on these datastreams. Every object in the repository is an instance of one of these class definitions.
+                    </p>
+                </div>
+                <div>
+                    <head>Workflow and Data Life Cylye in GAMS</head>
+                    <p>
+                        The following figure illustrates the data life cycle in the GAMS repository.
+                    </p>
+                    <figure type="web" source="/context:gams/WORKFLOW" ana="GAMS workflow and data life cycle"/>
+                </div>
+            </div>
+            <div>
+                <div type="body">
+                    <head>Bookkeeping Ontology and Linked Open Data</head>
+                    <p>
+                         The work of historians is an interpretation of relics from the past. Therefore, when using formal methods on historical data, research should distinguish between the representation of the original source and its interpretation.
+                         The latter is the core knowledge domain of historical research. It is advised to share the basic assumptions and definitions in a knowledge domain in a formal way. Linked Open Data is a central approach to this. 
+                         This particularly applies to historical accounts, which provide large, highly structured data sets over long timespans, if the individual information entities are prepared for formal analysis.
+                    </p>
+                     <p>
+                         The common knowledge domain of these documents is formalized in a ”bookkeeping” ontology, based on the REA model and compliant with the CIDOC CRM. As a conceptual data model, 
+                         the ontology is developed in an iterative process. It formalizes the interpretation of transactions of money, commodities and services from one actor to another, and further
+                         properties that can be found in historical accounts. The RDF data extracted from the accounts becomes therefore a highly structured and self describing data set, being interoperable
+                         and reusable for researchers in diverse fields. The RDF representation can link to URI’s of commodities, places, persons or other LOD vocabularies.
+                         Additionally the RDF representation contributes to the LOD. Thus, all formal methods applied in the DEPCHA project can be transferred to other data conforming to the proposed ontology and any kind of combined data set.
+                     </p>
+                </div>
+            </div>
+            <div>
+            <div type="body">
+                <head>Data Modelling</head>
+                <p>TO</p>
+            </div>
+            <div type="body">
+                <head>RDF Datamodel</head>
+                <p>TO</p>
+            </div>
+            </div>
+        </body>
+        <back/>
+    </text>
+</TEI>

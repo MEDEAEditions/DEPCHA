@@ -133,16 +133,30 @@
 			<date ana="#bk_when">
 				<xsl:choose>
 					<xsl:when test="contains(../date-attribute, 'to')">
-						<xsl:attribute name="from">
+						<xsl:attribute name="when">
 								<xsl:value-of select="normalize-space(substring-before(../date-attribute, 'to'))"/>
 						</xsl:attribute>
-						<xsl:attribute name="to">
+						<!--<xsl:attribute name="to">
 								<xsl:value-of select="normalize-space(substring-after(../date-attribute, 'to'))"/>
-						</xsl:attribute>
+						</xsl:attribute>-->
 					</xsl:when>
 					<xsl:when test="not(../date-attribute = '')">
 						<xsl:attribute name="when">
-							<xsl:value-of select="../date-attribute"/>
+							<xsl:choose>
+								<xsl:when test="../date-attribute castable as xs:date">
+									<xsl:value-of select="../date-attribute"/>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:choose>
+										<xsl:when test="contains(../date-attribute, '-')">
+											<xsl:value-of select="../date-attribute"/>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:value-of select="concat(../date-attribute, '-01')"/>
+										</xsl:otherwise>
+									</xsl:choose>
+								</xsl:otherwise>
+							</xsl:choose>
 						</xsl:attribute>
 					</xsl:when>
 					<xsl:otherwise></xsl:otherwise>
