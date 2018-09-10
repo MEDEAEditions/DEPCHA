@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -20,12 +18,26 @@
                 </list>
             </sourceDesc>
         </fileDesc>
+        <encodingDesc>
+            <classDecl>
+                <taxonomy>
+                    <category xml:id="context.1">
+                        <gloss>Context 1</gloss>
+                        <desc></desc>
+                    </category>
+                    <category xml:id="context.2">
+                        <gloss>Context 2</gloss>
+                        <desc></desc>
+                    </category>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
     </teiHeader>
     <text>
         <body>
             <table>
                 <head>1897</head>
-                <row ana="#bk_entry" n="3">
+                <row ana="#bk_entry" n="3" corresp="#context.1">
                     <cell>Febry</cell>
                     <cell>
                         <date ana="#bk_when" when="1897-02-18">18</date>
@@ -45,7 +57,7 @@
                         <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents">50</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="4">
+                <row ana="#bk_entry" n="4" corresp="#context.1">
                     <cell></cell>
                     <cell>
                         <date ana="#bk_when" when="1897-02-20">20</date>
@@ -63,7 +75,7 @@
                         <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="5">
+                <row ana="#bk_entry" n="5" corresp="#context.2">
                     <cell></cell>
                     <cell>
                         <date ana="#bk_when" when="1897-02-20">&quot;</date>
@@ -83,7 +95,7 @@
                         <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="6">
+                <row ana="#bk_entry" n="6" corresp="#context.2">
                     <cell></cell>
                     <cell>
                         <date ana="#bk_when" when="1897-02-23">23</date>
@@ -102,7 +114,7 @@
                         <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="7">
+                <row ana="#bk_entry" n="7" corresp="#context.1">
                     <cell></cell>
                     <cell>
                         <date ana="#bk_when" when="1897-02-25">25</date>
@@ -121,7 +133,7 @@
                         <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="8">
+                <row ana="#bk_entry" n="8" corresp="#context.1">
                     <cell></cell>
                     <cell>
                         <date ana="#bk_when" when="1897-02-25">&quot;</date>
@@ -139,7 +151,7 @@
                         <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="9">
+                <row ana="#bk_entry" n="9" corresp="#context.1">
                     <cell></cell>
                     <cell>
                         <date ana="#bk_when" when="1897-02-25">&quot;</date>
@@ -158,7 +170,7 @@
                         <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="10">
+                <row ana="#bk_entry" n="10" corresp="#context.2">
                     <cell></cell>
                     <cell>
                         <date ana="#bk_when" when="1897-02-27">27</date>
@@ -177,7 +189,7 @@
                         <measure ana="#bk_money #bk_to" commodity="currency" quantity="45" unit="cents">45</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="11">
+                <row ana="#bk_entry" n="11" corresp="#context.2">
                     <cell></cell>
                     <cell>
                         <date ana="#bk_when" when="1897-02-27">&quot;</date>

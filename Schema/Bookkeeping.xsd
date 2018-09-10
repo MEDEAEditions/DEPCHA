@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.tei-c.org/ns/1.0" xmlns:t="http://www.tei-c.org/ns/1.0">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+  <xs:element name="TEI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:teiHeader"/>
+        <xs:element ref="t:text"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="teiHeader">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:fileDesc"/>
+        <xs:element minOccurs="0" ref="t:encodingDesc"/>
+        <xs:choice minOccurs="0">
+          <xs:element ref="t:profileDesc"/>
+          <xs:element ref="t:revisionDesc"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fileDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:titleStmt"/>
+        <xs:element minOccurs="0" ref="t:editionStmt"/>
+        <xs:element ref="t:publicationStmt"/>
+        <xs:element minOccurs="0" ref="t:seriesStmt"/>
+        <xs:element ref="t:sourceDesc"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="editionStmt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:edition"/>
+        <xs:element maxOccurs="unbounded" ref="t:respStmt"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="edition" type="xs:string"/>
+  <xs:element name="seriesStmt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:title"/>
+        <xs:element ref="t:respStmt"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="encodingDesc">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="t:classDecl"/>
+        <xs:sequence>
+          <xs:element ref="t:editorialDecl"/>
+          <xs:element ref="t:projectDesc"/>
+        </xs:sequence>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="classDecl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:taxonomy"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="taxonomy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="t:category"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="editorialDecl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:p"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="projectDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="t:ab"/>
+        <xs:element ref="t:p"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="profileDesc">
+    <xs:complexType>
+      <xs:sequence minOccurs="0">
+        <xs:element ref="t:langUsage"/>
+        <xs:element ref="t:textClass"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="langUsage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:language"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="language">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NCName">
+          <xs:attribute name="ident" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="textClass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="t:keywords"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="keywords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:list"/>
+      </xs:sequence>
+      <xs:attribute name="ana" type="xs:NCName"/>
+      <xs:attribute name="scheme" type="xs:NMTOKEN"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="revisionDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:change"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="change">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="text">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:body"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="body">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="t:div"/>
+        <xs:element ref="t:fw"/>
+        <xs:element ref="t:head"/>
+        <xs:element ref="t:pb"/>
+        <xs:element ref="t:table"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="titleStmt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:title"/>
+        <xs:element minOccurs="0" ref="t:author"/>
+        <xs:element minOccurs="0" ref="t:respStmt"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="author">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="t:persName"/>
+      </xs:sequence>
+      <xs:attribute name="ana"/>
+      <xs:attribute name="ref"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="respStmt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="t:persName"/>
+          <xs:element ref="t:resp"/>
+        </xs:choice>
+        <xs:element minOccurs="0" ref="t:name"/>
+      </xs:sequence>
+      
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="resp">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="t:date"/>
+        <xs:element ref="t:name"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="publicationStmt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="t:publisher"/>
+        <xs:sequence minOccurs="0">
+          <xs:element ref="t:authority"/>
+          <xs:element ref="t:distributor"/>
+        </xs:sequence>
+        <xs:choice>
+          <xs:element ref="t:p"/>
+          <xs:choice maxOccurs="unbounded">
+            <xs:element ref="t:date"/>
+            <xs:element ref="t:availability"/>
+            <xs:element ref="t:idno"/>
+            <xs:element ref="t:pubPlace"/>
+          </xs:choice>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="publisher">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="t:orgName"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="authority">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:orgName"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="distributor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:orgName"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="availability">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="t:p"/>
+        <xs:element ref="t:licence"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="licence">
+    <xs:complexType mixed="true">
+      <xs:attribute name="target" use="required" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="idno">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:NMTOKEN">
+          <xs:attribute name="type" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pubPlace" type="xs:NCName"/>
+  <xs:element name="title">
+    <xs:complexType mixed="true">
+      <xs:attribute name="ana"/>
+      <xs:attribute name="ref" type="xs:anyURI"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sourceDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="t:ab"/>
+        <xs:element minOccurs="0" ref="t:list"/>
+        <xs:element minOccurs="0" ref="t:biblFull"/>
+        <xs:element minOccurs="0" ref="t:p"/>
+      </xs:sequence>
+      <xs:attribute name="default" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="biblFull">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:titleStmt"/>
+        <xs:element ref="t:publicationStmt"/>
+        <xs:element ref="t:sourceDesc"/>
+      </xs:sequence>
+      <xs:attribute name="default" type="xs:boolean"/>
+      <xs:attribute name="status" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="category">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="t:category"/>
+        <xs:element ref="t:desc"/>
+        <xs:element ref="t:gloss"/>
+      </xs:choice>
+      <xs:attributeGroup ref="xml:id"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="gloss">
+    
+  </xs:element>
+  <xs:element name="desc">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="t:term"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- <p> @ana #bk_entry -->
+  <xs:element name="p">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="t:date"/>
+        <xs:element ref="t:lb"/>
+        <xs:element ref="t:measure"/>
+        <xs:element ref="t:name"/>
+        <xs:element ref="t:place"/>
+        <xs:element ref="t:orgName"/>
+        <xs:element ref="t:ref"/>
+        <xs:element ref="t:rs"/>
+      </xs:choice>
+      <xs:attribute name="ana" use="optional">
+        <xs:annotation>
+          <xs:documentation>You can define a p as a #bk_entry. An entry defines a transaction with bk_from, bk_to and bk_measurable (service, money, commoditiy)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="#bk_entry"/>
+            <xs:enumeration value="#bk_entry #bk_assigned"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="corresp" type="xs:anyURI"/>
+      <xs:attribute name="part" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ab">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="t:ref"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="t:item"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="item">
+    <xs:complexType>
+      <xs:choice minOccurs="0">
+        <xs:element ref="t:ref"/>
+        <xs:element ref="t:term"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pb">
+    <xs:complexType>
+      <xs:attribute name="facs"/>
+      <xs:attribute name="n" type="xs:integer"/>
+      
+    </xs:complexType>
+  </xs:element>
+  <!-- <div> @ana #bk_entry -->
+  <xs:element name="div">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice minOccurs="0">
+          <xs:element ref="t:fw"/>
+          <xs:element ref="t:head"/>
+        </xs:choice>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="t:div"/>
+          <xs:element ref="t:lb"/>
+          <xs:element ref="t:p"/>
+          <xs:element ref="t:span"/>
+          <xs:element ref="t:table"/>
+        </xs:choice>
+        <xs:choice>
+          <xs:element ref="t:pb"/>
+          <xs:element minOccurs="0" maxOccurs="unbounded" ref="t:note"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="ana" use="optional">
+        <xs:annotation>
+          <xs:documentation>You can define a div as a #bk_entry. An entry defines a transaction with bk_from, bk_to and bk_measurable (service, money, commoditiy)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="#bk_entry"/>
+            <xs:enumeration value="#bk_entry #bk_assigned"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="corresp" type="xs:anyURI"/>
+      <xs:attributeGroup ref="xml:id"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="note">
+    <xs:complexType mixed="true">
+      <xs:attribute name="resp" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fw">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="type" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="table">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="t:head"/>
+        <xs:element maxOccurs="unbounded" ref="t:row"/>
+      </xs:sequence>
+      <xs:attribute name="cols" type="xs:integer"/>
+      <xs:attributeGroup ref="xml:id"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- <row> @ana #bk_entry -->
+  <xs:element name="row">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="t:cell"/>
+      </xs:sequence>
+      <xs:attribute name="ana" use="optional">
+        <xs:annotation>
+          <xs:documentation>You can define a row as a #bk_entry. An entry defines a transaction with bk_from, bk_to and bk_measurable (service, money, commoditiy)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="#bk_entry"/>
+            <xs:enumeration value="#bk_entry #bk_assigned"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="corresp" type="xs:anyURI"/>
+      <xs:attribute name="cols" type="xs:integer"/>
+      <xs:attribute name="n" type="xs:integer"/>
+      <xs:attribute name="role" type="xs:NCName"/>
+      <xs:attribute name="rows" type="xs:integer"/>
+      <xs:attributeGroup ref="xml:id"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cell">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="t:abbr"/>
+        <xs:element ref="t:date"/>
+        <xs:element ref="t:expan"/>
+        <xs:element ref="t:lb"/>
+        <xs:element ref="t:measure"/>
+        <xs:element ref="t:name"/>
+        <xs:element ref="t:place"/>
+        <xs:element ref="t:orgName"/>
+        <xs:element ref="t:persName"/>
+        <xs:element ref="t:rs"/>
+        <xs:element ref="t:span"/>
+        <xs:element ref="t:choice"/>
+      </xs:choice>
+      <xs:attribute name="ana"/>
+      <xs:attributeGroup ref="xml:id"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="choice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="t:abbr"/>
+        <xs:element maxOccurs="unbounded" ref="t:expan"/>
+      </xs:sequence>
+      <xs:attribute name="rend" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="head">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="t:date"/>
+        <xs:element ref="t:lb"/>
+        <xs:element ref="t:name"/>
+        <xs:element ref="t:place"/>
+        <xs:element ref="t:orgName"/>
+        <xs:element ref="t:rs"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <!-- <persName> @ana #bk_from, #bk_to or #bk_agent  -->
+  <xs:element name="persName">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="t:forename"/>
+        <xs:element ref="t:surname"/>
+      </xs:choice>
+      <xs:attribute name="ana" use="optional">
+        <xs:annotation>
+          <xs:documentation>You can define a person as a #bk_from, #bk_to or #bk_agent.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="#bk_to"/>
+            <xs:enumeration value="#bk_from"/>
+            <xs:enumeration value="#bk_agent"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="ref" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="forename" type="xs:NCName"/>
+  <xs:element name="surname" type="xs:NCName"/>
+  <!-- <name> @ana #bk_from, #bk_to or #bk_agent -->
+  <xs:element name="name">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="t:measure"/>
+        <xs:element ref="t:name"/>
+      </xs:choice>
+      <xs:attribute name="ana" use="optional">
+        <xs:annotation>
+          <xs:documentation>You can define a name as a #bk_from, #bk_to or #bk_agent.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="#bk_to"/>
+            <xs:enumeration value="#bk_from"/>
+            <xs:enumeration value="#bk_agent"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="full" type="xs:NCName"/>
+      <xs:attribute name="instant" type="xs:boolean"/>
+      <xs:attribute name="ref" use="optional"/>
+      <xs:attribute name="type" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- <orgName> @ana #bk_from, #bk_to or #bk_agent -->
+  <xs:element name="orgName">
+    <xs:complexType mixed="true">
+      <xs:attribute name="ana" use="optional">
+        <xs:annotation>
+          <xs:documentation>You can define a name as a #bk_from, #bk_to or #bk_agent.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="#bk_to"/>
+            <xs:enumeration value="#bk_from"/>
+            <xs:enumeration value="#bk_agent"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="corresp" type="xs:anyURI"/>
+      <xs:attribute name="ref"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="place">
+    <xs:complexType mixed="true">
+      <xs:attribute name="ana" use="optional">
+        <xs:annotation>
+          <xs:documentation>Define a place related to the transaction</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="#bk_where"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="ref" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- <date> @ana default: #bk_when -->
+  <xs:element name="date">
+    <xs:complexType mixed="true">
+      <xs:attribute name="ana" use="optional" default="#bk_when">
+        <xs:annotation>
+          <xs:documentation>You can define a date as a #bk_when, which is a the date of transaction.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="instant" type="xs:boolean"/>
+      <xs:attribute name="type" type="xs:NCName"/>
+      <xs:attribute name="when" use="required">
+        <!-- date allowed as YYYY, YYYY-MM, YYYY-MM-DD -->
+        <xs:simpleType>
+          <xs:union memberTypes="xs:date xs:gYear xs:gYearMonth"/>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="term">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="t:ref"/>
+        <xs:element ref="t:rs"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="lb">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="rs">
+    <xs:complexType mixed="true">
+      <xs:attribute name="ana"/>
+      <xs:attribute name="ref" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- <measure> -->
+  <xs:element name="measure">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="t:date"/>
+        <xs:element ref="t:measure"/>
+        <xs:element ref="t:name"/>
+        <xs:element ref="t:persName"/>
+        <xs:element ref="t:rs"/>
+      </xs:choice>
+      <xs:attribute name="ana" use="optional">
+        <xs:annotation>
+          <xs:documentation>You can define a measure as a #bk_service, #bk_commidity, #bk_money or #bk_price.
+            You have further to define the direction where the measure goes. #bk_money #bk_to describes that the Money transaction is connceted to #bk_to</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="#bk_service #bk_to"/>
+            <xs:enumeration value="#bk_commodity #bk_to"/>
+            <xs:enumeration value="#bk_money #bk_to"/>
+            <xs:enumeration value="#bk_service #bk_from"/>
+            <xs:enumeration value="#bk_commodity #bk_from"/>
+            <xs:enumeration value="#bk_money #bk_from"/>
+            <xs:enumeration value="#bk_price"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <!-- @commodity @unit @quanitty  -->
+      <xs:attribute name="commodity" type="xs:normalizedString" use="required"/>
+      <xs:attribute name="quantity" type="xs:decimal" use="required"></xs:attribute>
+      <xs:attribute name="unit" type="xs:normalizedString" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ref">
+    <xs:complexType mixed="true">
+      <xs:attribute name="target" use="required" type="xs:anyURI"/>
+      <xs:attribute name="type" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- <span> @ana #bk_status  -->
+  <xs:element name="span">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="t:date"/>
+        <xs:element ref="t:measure"/>
+        <xs:element ref="t:persName"/>
+      </xs:choice>
+      <xs:attribute name="ana" use="optional">
+        <xs:annotation>
+          <xs:documentation>Define a status of a transaction in a span</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="#bk_status"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="expan">
+    <xs:complexType mixed="true">
+      <xs:attribute name="instant" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="abbr" type="xs:string"/>
+</xs:schema>
