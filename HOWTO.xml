@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="en">DEPCHA - Digital Edition Publishing Cooperative for Historical
+                    Accounts</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher xml:lang="de">Karl-Franzens-Universität Graz</publisher>
+                <publisher xml:lang="en">University of Graz</publisher>
+                <date when="2018">2018</date>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl/>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p/>
+            </projectDesc>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date when="2018">2018</date>
+                <name type="place">Graz, Austria</name>
+            </creation>
+            <langUsage>
+                <language ident="en">English</language>
+            </langUsage>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+                <div type="header">
+                    <head>How to Semantic Bookkeep</head>
+                </div>
+                <div>
+                    <head>TEI/XML</head>
+                    <div type="body">
+                        <p>Coming in the future! :)</p>
+                        <p>huhu</p>
+                    </div>
+                </div>
+                <div>
+                    <head>CSV</head>
+                    <div type="body">
+                        <p>hihi</p>
+                        <p>Coming in the future! :)</p>
+                    </div>
+                </div>
+            <div>
+                <head>How to Ingest Data into GAMS</head>
+                <div type="body">
+                    <p>hihi</p>
+                    <p>To start a new ingest process, choose 'File' and 'Ingest objects'. The dialogue box allows you to configure mass ingest scenarios for 
+                        cirilo:dfgMETS and cirilo:TEI objects. Choose one of the two content model types and click either 'From filesystem' 
+                        (which opens the directory selection dialogue), 'From eXist' (which allows you to connect to an eXist database).
+                        All files from the selected directory (including also all sub-directories) or database will be imported. 
+                         Files are validated upon ingest, i.e. if the source document is not valid, the ingest process fails and 
+                         an error message occurs. If you use the ingest function, it is highly recommended to specify your PIDs in the source documents using the element <hi style="code">&lt;idno @type="PID"&gt;</hi>.
+                        Please note, that if two documents specify the same PID, the first
+                        one ingested will be updated with the content of the second one for all content models except for the cirilo:Ontology model for RDF. 
+                        If more than one RDF document specifies the same PID value in the @rdf:resource of the <hi style="code">&lt;void:Dataset&gt;</hi> the content of the second one will be added to the first one and will not replace it!</p>
+                    <p>
+                        The DC metadata specified in the ingest dialogue box will be copied for all ingested objects. A log file with details on the process is provided by the client; Either click
+                        'Show log' or open it from the ingest source directory in your filesystem, where it is saved.
+                        The ingest of objects can also be simulated. This option is used to detect possible errors in the log files, before actually starting huge mass ingest operations. 
+                        If you want to run a simulation, tick the corresponding box.
+                    </p>
+                    <figure type="web" source="/cirilo_doku/img/ingestobjects.jpg" ana="Ingest objects dialogue box"/>
+                </div>
+            </div>
+        </body>
+        <back/>
+    </text>
+</TEI>

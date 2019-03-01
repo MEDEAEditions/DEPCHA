@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Project: GAMS Projekttemplate
+    Company: ZIM-ACDH (Zentrum fÃ¼r Informationsmodellierung - Austrian Centre for Digital Humanities)
+ -->
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
+    xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
+    xmlns:s="http://www.w3.org/2001/sw/DataAccess/rf1/result" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:t="http://www.tei-c.org/ns/1.0" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/" exclude-result-prefixes="#all">
+
+    <xsl:output method="xml" doctype-system="about:legacy-compat" encoding="UTF-8" indent="no"/>
+
+
+    <xsl:include href="medea-static.xsl"/>
+
+    <xsl:template name="content">
+        <xsl:choose>
+            <!-- COLLECTION -->
+            <xsl:when test="$mode = 'collection'">
+                <section class="row">
+                    <article class="col-md-12">
+                        <div class="panel">
+                            <xsl:call-template name="collection"/>
+                        </div>
+                    </article>
+                </section>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="home"/>
+            </xsl:otherwise>
+        </xsl:choose>
+        
+       
+        
+        
+        
+    </xsl:template>
+    
+    
+    <!-- HOME -->
+    <xsl:template name="home">
+        <section class="row panel">
+            <article class="col-md-6" style="padding-top:20px; padding-bottom: 20px;">
+             
+             <div class="col-md-12">
+                 <img class="img-fluid" src="https://medea.hypotheses.org/files/2016/07/660px-Nuremberg_chronicles_-_CRACOVIA.png" alt="Card image cap"  width="400"/>
+                 <img class="img-fluid" src="https://gams.uni-graz.at/context:srbas/STARTBILD" alt="Card image cap" width="400"/>
+
+             </div>
+                        
+                
+            </article>
+            <article class="col-md-6">
+                <h3 style="font-size: 230%; line-height: 3em;">
+                    Welcome to the MEDEA-Page!
+                </h3>
+                <p>
+                    Since the semantic web offers opportunities to collect and compare data from multiple digital projects, the MEDEA project
+                    looks to the potential of developing broad standards for producing semantically enriched digital editions of accounts. For its
+                    initial stage, the MEDEA project will bring together economic historians, scholarly editors, and technical experts to discuss and test
+                    emerging methods for semantic markup of account books.
+                </p>
+                <p> 
+                    Contact: 
+                    <br></br>
+                    <a href="mailto:medea.workshop@ur.de">medea.workshop@ur.de</a>
+                    <br></br>
+                    <a href="mailto:christopher.pollin@uni-graz.at">christopher.pollin@uni-graz.at</a>
+                </p>
+               
+                    
+                   
+                
+            </article>
+        </section>
+    </xsl:template>
+    
+    <!-- COLLECIOn -->
+    <xsl:template name="collection">
+        <div class="row">
+            <div class="page-header text-center">
+                <h1>Collection</h1>
+            </div> 
+            <div class="col-md-6">
+                <p>
+                    <xsl:text> </xsl:text>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <xsl:text> </xsl:text>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="list-group">
+                    <xsl:for-each select="//s:result">
+                        <xsl:sort/>
+                        <xsl:choose>
+                            <xsl:when test="s:model/@uri='info:fedora/cm:TEI'">
+                                <a href="{concat('http://glossa.uni-graz.at/', s:identifier)}" class="list-group-item">
+                                    <b><xsl:value-of select="s:title"/></b> <br></br>
+                                    <xsl:text> PID: </xsl:text><xsl:value-of select="s:identifier"/>
+                                </a>
+                            </xsl:when>
+                            <xsl:otherwise>
+                               <xsl:text> </xsl:text> 
+                            </xsl:otherwise>
+                        </xsl:choose>
+                       
+                    </xsl:for-each>
+                </div>
+            </div>
+        </div>
+   
+    </xsl:template>
+ 
+    
+    <xsl:template name="visualization">
+        
+        
+        <section class="row equalheight">
+            <article class="col-md-12 col-sm-12 panel"> 
+                <div class="page-header">
+                    <h3>Visualization</h3>
+                </div>  
+                <article class="row">	
+                    <!-- /// NAVIGATION /// -->
+                    <div class="col-md-12">
+                        
+                        <style>
+                            
+                            .links line {
+                            stroke: #999;
+                            stroke-opacity: 0.6;
+                            }
+                            
+                            .nodes circle {
+                            stroke: #fff;
+                            stroke-width: 1.5px;
+                            }
+                            
+                        </style>
+                        
+                        <svg width="960" height="600"></svg>
+                        
+                        
+                        <script>
+                            
+                            var svg = d3.select("svg"),
+                            width = +svg.attr("width"),
+                            height = +svg.attr("height");
+                            
+                            var color = d3.scaleOrdinal(d3.schemeCategory20);
+                            
+                            var simulation = d3.forceSimulation()
+                            .force("link", d3.forceLink().id(function(d) { return d.id; }))
+                            .force("charge", d3.forceManyBody())
+                            .force("center", d3.forceCenter(width / 2, height / 2));
+                            
+                            
+                            
+                            
+                            d3.json("http://glossa.uni-graz.at/gamsdev/pollin/medea/trunk/www/miserables.json", function(error, graph) {
+                            if (error) throw error;
+                            
+                            var link = svg.append("g")
+                            .attr("class", "links")
+                            .selectAll("line")
+                            .data(graph.links)
+                            .enter().append("line")
+                            .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+                            
+                            var node = svg.append("g")
+                            .attr("class", "nodes")
+                            .selectAll("circle")
+                            .data(graph.nodes)
+                            .enter().append("circle")
+                            .attr("r", 5)
+                            .attr("fill", function(d) { return color(d.group); })
+                            .call(d3.drag()
+                            .on("start", dragstarted)
+                            .on("drag", dragged)
+                            .on("end", dragended));
+                            
+                            node.append("title")
+                            .text(function(d) { return d.id; });
+                            
+                            simulation
+                            .nodes(graph.nodes)
+                            .on("tick", ticked);
+                            
+                            simulation.force("link")
+                            .links(graph.links);
+                            
+                            function ticked() {
+                            link
+                            .attr("x1", function(d) { return d.source.x; })
+                            .attr("y1", function(d) { return d.source.y; })
+                            .attr("x2", function(d) { return d.target.x; })
+                            .attr("y2", function(d) { return d.target.y; });
+                            
+                            node
+                            .attr("cx", function(d) { return d.x; })
+                            .attr("cy", function(d) { return d.y; });
+                            }
+                            });
+                            
+                            function dragstarted(d) {
+                            if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+                            d.fx = d.x;
+                            d.fy = d.y;
+                            }
+                            
+                            function dragged(d) {
+                            d.fx = d3.event.x;
+                            d.fy = d3.event.y;
+                            }
+                            
+                            function dragended(d) {
+                            if (!d3.event.active) simulation.alphaTarget(0);
+                            d.fx = null;
+                            d.fy = null;
+                            }
+                            
+                        </script>
+                    </div>
+                </article>
+            </article>
+        </section>
+        
+        
+    </xsl:template>
+    
+   
+
+
+    
+
+</xsl:stylesheet>

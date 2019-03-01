@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Project: GAMS Projekttemplate
+    Company: ZIM-ACDH (Zentrum fÃ¼r Informationsmodellierung - Austrian Centre for Digital Humanities)
+    Author: Hans Clausen, Maximilian MÃ¼ller, Gerlinde Schneider, Martina Semlak, Christian Steiner, Elisabeth Steiner
+    Last update: 2015
+ -->
+
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:s="http://www.w3.org/2001/sw/DataAccess/rf1/result" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:t="http://www.tei-c.org/ns/1.0" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/" exclude-result-prefixes="#all">
+    
+    <xsl:include href="medea-static.xsl"/>
+    
+    <!-- VARIABLES -->   
+    <!-- //////////////////////////////// -->
+    <xsl:variable name="TEI_HEADER" select="//t:teiHeader"/>
+    
+    <xsl:output method="xml" doctype-system="about:legacy-compat" encoding="UTF-8" indent="no"/>
+    
+    
+    <xsl:template name="content">
+        <section class="row equalheight">
+            
+            <!-- ///NAVIGATION/// -->
+            <article class="col-md-4 equal">
+                <div class="panel">
+                    <h3>
+                        Navigation
+                    </h3>
+                </div>
+            </article>
+            
+            <!-- ///CONTENT/// -->
+            <article class="col-md-8 equal">
+                <div class="panel">
+                    <h3>
+                        <xsl:value-of select="$TEI_HEADER/t:fileDesc/t:titleStmt/t:title"/>
+                    </h3>
+                    <div class="row">
+                        <xsl:apply-templates select="//t:text"/>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </xsl:template>
+    
+    <!-- ///TEXT ORIGIN///  -->
+    <xsl:template match="t:choice">
+        <xsl:value-of select="t:abbr"/>
+        <xsl:text>[</xsl:text>
+        <xsl:value-of select="t:expan"/>
+        <xsl:text>]</xsl:text>
+    </xsl:template>
+    
+    <!-- //////////////////// -->
+    
+    <xsl:template match="t:body">
+        <xsl:apply-templates/>
+    </xsl:template>
+    
+    <xsl:template match="t:head | t:front">
+        <h4>
+            <xsl:apply-templates/>
+        </h4>
+    </xsl:template>
+    
+    <xsl:template match="t:pb">
+        <hr/>
+        <xsl:apply-templates/>
+    </xsl:template>
+    
+
+    
+    
+   
+    <!-- ///ONTOLOGY-BASED @ana ///  -->
+    <xsl:template match="node()[tokenize(@ana, ' ') = '#bk_entry']">
+        <!-- @id gleich wie das rdf:about von bk:Entry -->
+        <div class="bk_entry" id="{concat('Entry-', generate-id())}">
+            <xsl:apply-templates/>
+        </div>
+    </xsl:template>
+    
+
+    
+
+    
+    
+</xsl:stylesheet>

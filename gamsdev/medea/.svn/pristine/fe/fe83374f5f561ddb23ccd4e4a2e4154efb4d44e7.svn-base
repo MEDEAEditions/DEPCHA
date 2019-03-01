@@ -1,0 +1,86 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Modeling semantically Enriched Digital Edition of Accounts</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>ZIM-ACDH, Universität Graz</publisher>
+                <date>2017</date>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl/>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p/>
+            </projectDesc>
+            <classDecl>
+                <taxonomy xml:id="kws">
+                    <desc>Default keyword scheme</desc>
+                </taxonomy>
+                <taxonomy xml:lang="de">
+                    <category>
+                        <catDesc>Impressum</catDesc>
+                    </category>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date when="2017">2017</date>
+                <name type="place">Graz, Austria</name>
+            </creation>
+            <langUsage>
+                <language ident="de">German</language>
+            </langUsage>
+            <textClass>
+                <keywords scheme="#kws" xml:lang="deu">
+                    <list type="gloss">
+                        <item/>
+                    </list>
+                </keywords>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="subsection" xml:lang="de">
+                <head>Das Projekt</head>
+                <div>
+                    <head>Modeling semantically Enriched Digital Edition of Accounts</head>
+                    <p>
+                        Alpha-Version.
+                        ToDo: Projektbeschreibung
+                    </p>
+                </div>
+                <div>
+                    <head>Überschrift1</head>
+                    <p>...</p>
+                </div>
+                <div>
+                    <head>Überschrift2</head>
+                    <p>...</p>
+                </div>
+                <div>
+                    <head>Basistechnologien</head>
+                    <p>
+                        Die Daten werden im
+                        <ref target="http://www.fedora-commons.org/">FEDORA-Commons</ref>
+                        basierten Repository GAMS (
+                        <ref target="http://gams.uni-graz.at">Geisteswissenschaftliches Asset Management System</ref>
+                        ) des
+                        <ref target="http://informationsmodellierung.uni-graz.at">
+                            Zentrums für Informationsmodellierung der Universität Graz
+                        </ref>
+                        gehostet. Hier liegen sowohl die TEI- und RDF-Daten, als auch dazugehörige SPARQL-Anfragen. Das GAMS integriert zur Präsentation Cocoon-Services in das FEDORA-Repositorium und benutzt projektspezifische Content Models für die TEI-Daten und die Anfragen an die RDF-Datenbank. Das System verwendet als Triplestore die Open Source Software
+                        <ref target="http://blazegraph.com/">Blazegraph</ref>
+                        , die eine Volltextsuche in die Graphendatenbank integriert. Die RDF-Repräsentation ermöglicht es, sie als Linked Open Data mit Semantic Web Technologien abzufragen.
+                    </p>
+                </div>
+            </div>
+        </body>
+        <back/>
+    </text>
+</TEI>

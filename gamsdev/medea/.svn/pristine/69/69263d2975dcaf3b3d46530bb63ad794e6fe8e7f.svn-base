@@ -1,0 +1,10 @@
+PREFIX bds: <http://www.bigdata.com/rdf/search#>
+PREFIX bk: <http://gams.uni-graz.at/rem/bookkeeping/#>
+
+select ?eintrag ?text ("$1" as ?query)
+where 
+{
+    ?eintrag bk:hasText ?text.
+    ?text bds:search '$1' .
+
+}

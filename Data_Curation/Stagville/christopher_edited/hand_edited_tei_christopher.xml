@@ -1,0 +1,1556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_all.xsd" xml:lang="EN" xml:id="export">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title type="full">
+					<title type="main">00133_sv0061</title>
+					<title type="desc"/>
+				</title>
+				<author>
+					<persName>unknown</persName>
+				</author>
+			</titleStmt>
+			<editionStmt>
+				<edition>Edition created from new transcripts of this manuscript.</edition>
+				<respStmt xml:id="AU460">
+					<resp>Initial upload of this work's facsimile images and metadata to FromThePage.com for editing</resp>
+					<persName>Anna Agbe-Davies</persName>
+				</respStmt>
+				<respStmt xml:id="OU460">
+					<resp>Adminstrator of the Stagville Accounts transcription project on FromThePage.com</resp>
+					<persName>Anna Agbe-Davies</persName>
+				</respStmt>
+				<respStmt xml:id="U460">
+					<persName>Anna Agbe-Davies</persName>
+					<resp> made 125 edits between <date type="first_edit" when="2016-02-25T17:11:08Z">February 25, 2016</date> and <date type="last_edit" when="2018-03-28T18:39:14Z">March 28,
+							2018</date> . </resp>
+				</respStmt>
+				<respStmt xml:id="U4">
+					<persName>Sara Brumfield</persName>
+					<resp> made 6 edits between <date type="first_edit" when="2017-01-12T15:14:19Z">January 12, 2017</date> and <date type="last_edit" when="2018-04-02T14:32:39Z">April 2, 2018</date>
+						. </resp>
+				</respStmt>
+				<respStmt xml:id="U527">
+					<persName/>
+					<resp> made 5 edits between <date type="first_edit" when="2016-03-22T13:50:40Z">March 22, 2016</date> and <date type="last_edit" when="2016-03-22T13:55:42Z">March 22, 2016</date> .
+					</resp>
+				</respStmt>
+				<respStmt>
+					<persName>Christopher Pollin</persName>
+					<resp>Did some manual changes for the bk-ontology, 30.07.2018.</resp>
+				</respStmt>
+			</editionStmt>
+			<publicationStmt>
+				<publisher>Dynamic TEI export from FromThePage</publisher>
+				<idno type="PID">o:medea.stagville.1</idno>
+				<availability>
+					<p/>
+				</availability>
+				<date when="2018-04-04T17:45:35-05:00">April 4, 2018</date>
+			</publicationStmt>
+			<sourceDesc>
+				<p>Accounts of <orgName ana="#bk_to" ref="StagyStagville">Stagville Plantation Store</orgName> from <date ana="#bk_when" when="1808-08-01">August 1808</date>. <ref target="info:fedora/context:medea.stagville" type="context">Wheaton Financial Papers</ref></p>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<!-- TODO: Move people and places back into personography/placeography sections -->
+			<classDecl>
+				<taxonomy>
+					<category xml:id="C272">
+						<catDesc>arms</catDesc>
+						<category xml:id="S10773">
+							<catDesc>
+								<term>gunflint</term>
+							</catDesc>
+						</category>
+						<category xml:id="S10756">
+							<catDesc>
+								<term>powder</term>
+							</catDesc>
+						</category>
+						<category xml:id="S10757">
+							<catDesc>
+								<term>shot</term>
+							</catDesc>
+						</category>
+					</category>
+					<category xml:id="C182">
+						<catDesc>clothing and other adornment</catDesc>
+						<category xml:id="S10784">
+							<catDesc>
+								<term>buttons</term>
+							</catDesc>
+						</category>
+						<category xml:id="S10764">
+							<catDesc>
+								<term>comb</term>
+							</catDesc>
+						</category>
+						<category xml:id="S10520">
+							<catDesc>
+								<term>hat</term>
+							</catDesc>
+						</category>
+					</category>
+					<category xml:id="C186">
+						<catDesc>food and drink</catDesc>
+						<category xml:id="C187">
+							<catDesc>alcohol</catDesc>
+							<category xml:id="S10541">
+								<catDesc>
+									<term>brandy</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10506">
+								<catDesc>
+									<term>rum</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10519">
+								<catDesc>
+									<term>whiskey</term>
+								</catDesc>
+							</category>
+						</category>
+						<category xml:id="C255">
+							<catDesc>food ingredient</catDesc>
+							<category xml:id="S10778">
+								<catDesc>
+									<term>allspice</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10777">
+								<catDesc>
+									<term>alum</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10822">
+								<catDesc>
+									<term>bacon</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10760">
+								<catDesc>
+									<term>coffee</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10759">
+								<catDesc>
+									<term>ginger</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10785">
+								<catDesc>
+									<term>lard</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10780">
+								<catDesc>
+									<term>pepper</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10761">
+								<catDesc>
+									<term>salt</term>
+								</catDesc>
+							</category>
+							<category xml:id="S7930">
+								<catDesc>
+									<term>sugar</term>
+								</catDesc>
+							</category>
+						</category>
+					</category>
+					<category xml:id="C185">
+						<catDesc>hardware</catDesc>
+						<category xml:id="S10758">
+							<catDesc>
+								<term>knife</term>
+							</catDesc>
+						</category>
+						<category xml:id="S10774">
+							<catDesc>
+								<term>nails</term>
+							</catDesc>
+						</category>
+						<category xml:id="S10769">
+							<catDesc>
+								<term>wire</term>
+							</catDesc>
+						</category>
+					</category>
+					<category xml:id="C228">
+						<catDesc>household furnishings</catDesc>
+						<category xml:id="C235">
+							<catDesc>kitchenware</catDesc>
+							<category xml:id="S10781">
+								<catDesc>
+									<term>container</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10821">
+								<catDesc>
+									<term>moulds</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10766">
+								<catDesc>
+									<term>pot</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10776">
+								<catDesc>
+									<term>storage vessel</term>
+								</catDesc>
+							</category>
+						</category>
+						<category xml:id="C229">
+							<catDesc>tableware</catDesc>
+							<category xml:id="S10772">
+								<catDesc>
+									<term>cruet</term>
+								</catDesc>
+							</category>
+						</category>
+					</category>
+					<category xml:id="C274">
+						<catDesc>medicinal</catDesc>
+						<category xml:id="S10765">
+							<catDesc>
+								<term>brimstone</term>
+							</catDesc>
+						</category>
+						<category xml:id="S10771">
+							<catDesc>
+								<term>camphor</term>
+							</catDesc>
+						</category>
+						<category xml:id="S10763">
+							<catDesc>
+								<term>copperas</term>
+							</catDesc>
+						</category>
+					</category>
+					<category xml:id="C206">
+						<catDesc>miscellaneous</catDesc>
+						<category xml:id="S10775">
+							<catDesc>
+								<term>instrument</term>
+							</catDesc>
+						</category>
+						<category xml:id="S10762">
+							<catDesc>
+								<term>iron</term>
+							</catDesc>
+						</category>
+						<category xml:id="S10783">
+							<catDesc>
+								<term>paste board</term>
+							</catDesc>
+						</category>
+						<category xml:id="C212">
+							<catDesc>pipe</catDesc>
+							<category xml:id="S10770">
+								<catDesc>
+									<term>pipe</term>
+								</catDesc>
+							</category>
+						</category>
+					</category>
+					<category xml:id="C256">
+						<catDesc>persons</catDesc>
+						<category xml:id="C276">
+							<catDesc>account holder</catDesc>
+							<category xml:id="S14368">
+								<catDesc>
+									<term>Baxter</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14360">
+								<catDesc>
+									<term>Bryant Cash</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14362">
+								<catDesc>
+									<term>George Carey</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10791">
+								<catDesc>
+									<term>Henry Moize</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14359">
+								<catDesc>
+									<term>James Cash</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14367">
+								<catDesc>
+									<term>James Daniel</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10787">
+								<catDesc>
+									<term>James Haley</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14372">
+								<catDesc>
+									<term>James Meadows</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14352">
+								<catDesc>
+									<term>James Watson</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10789">
+								<catDesc>
+									<term>John Telley Jr</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10792">
+								<catDesc>
+									<term>Jonathan Moize</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10795">
+								<catDesc>
+									<term>Joseph Wood Jr</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14354">
+								<catDesc>
+									<term>Knight Dalby</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14351">
+								<catDesc>
+									<term>Leonard Laws</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14371">
+								<catDesc>
+									<term>M Brown</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14357">
+								<catDesc>
+									<term>Mark Veazey</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14350">
+								<catDesc>
+									<term>Nathaniel Carrington</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14364">
+								<catDesc>
+									<term>Richard Cragg</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14356">
+								<catDesc>
+									<term>Richard Roberts</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14369">
+								<catDesc>
+									<term>Starky Robertson</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14363">
+								<catDesc>
+									<term>Thomas Hunt</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10786">
+								<catDesc>
+									<term>Twitty Chambliss</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14365">
+								<catDesc>
+									<term>William Horton</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14353">
+								<catDesc>
+									<term>William Meadowes</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10788">
+								<catDesc>
+									<term>William Pettigrew, Jr</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14358">
+								<catDesc>
+									<term>William Veazey</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14361">
+								<catDesc>
+									<term>William Walker Jr</term>
+								</catDesc>
+							</category>
+						</category>
+						<category xml:id="C277">
+							<catDesc>creditor</catDesc>
+							<category xml:id="S10790">
+								<catDesc>
+									<term>Thomas Dudley Bennehan</term>
+								</catDesc>
+							</category>
+						</category>
+						<category xml:id="C275">
+							<catDesc>enslaved</catDesc>
+							<category xml:id="S10793">
+								<catDesc>
+									<term>Henry</term>
+								</catDesc>
+							</category>
+						</category>
+						<category xml:id="C278">
+							<catDesc>order-placer</catDesc>
+							<category xml:id="C278S14360">
+								<catDesc>
+									<term>
+										<rs ref="S14360">Bryant Cash</rs>
+									</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10794">
+								<catDesc>
+									<term>Frederick Moize</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14370">
+								<catDesc>
+									<term>George Carrington</term>
+								</catDesc>
+							</category>
+							<category xml:id="C278S10793">
+								<catDesc>
+									<term>
+										<rs ref="S10793">Henry</rs>
+									</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10796">
+								<catDesc>
+									<term>James Wood</term>
+								</catDesc>
+							</category>
+							<category xml:id="C278S10792">
+								<catDesc>
+									<term>
+										<rs ref="S10792">Jonathan Moize</rs>
+									</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14355">
+								<catDesc>
+									<term>Majr Micajah Bullock</term>
+								</catDesc>
+							</category>
+							<category xml:id="S14366">
+								<catDesc>
+									<term>Sarah Cozart</term>
+								</catDesc>
+							</category>
+							<category xml:id="C278S14358">
+								<catDesc>
+									<term>
+										<rs ref="S14358">William Veazey</rs>
+									</term>
+								</catDesc>
+							</category>
+						</category>
+					</category>
+					<category xml:id="C184">
+						<catDesc>textile</catDesc>
+						<category xml:id="S10562">
+							<catDesc>
+								<term>cotton</term>
+							</catDesc>
+						</category>
+						<category xml:id="S10560">
+							<catDesc>
+								<term>thread</term>
+							</catDesc>
+						</category>
+						<category xml:id="C258">
+							<catDesc>fabric</catDesc>
+							<category xml:id="S10768">
+								<catDesc>
+									<term>cambric</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10767">
+								<catDesc>
+									<term>mode</term>
+								</catDesc>
+							</category>
+							<category xml:id="S10580">
+								<catDesc>
+									<term>silk</term>
+								</catDesc>
+							</category>
+						</category>
+						<category xml:id="C257">
+							<catDesc>notions</catDesc>
+							<category xml:id="S10564">
+								<catDesc>
+									<term>ribbon</term>
+								</catDesc>
+							</category>
+							<category xml:id="C257S10580">
+								<catDesc>
+									<term>
+										<rs ref="S10580">silk</rs>
+									</term>
+								</catDesc>
+							</category>
+						</category>
+						<category xml:id="C192">
+							<catDesc>textile tool</catDesc>
+							<category xml:id="S10566">
+								<catDesc>
+									<term>pins</term>
+								</catDesc>
+							</category>
+						</category>
+					</category>
+				</taxonomy>
+			</classDecl>
+		</encodingDesc>
+		<profileDesc/>
+	</teiHeader>
+	<text>
+		<body>
+			<!-- omitted two non-standard pages -->
+			<pb xml:id="F7884" n="3" facs="/image-service/7884/full/full/0/native.jpg"/>
+			<div xml:id="OTP7884">
+				<fw type="pageNum">3</fw>
+				<div corresp="TTP7884P0" xml:id="OTP7884P0">
+					<table>
+						<head>69 <name ana="#bk_from" ref="S10787">James Haley J</name> Self Dr.</head>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-01"/></cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10756">Powder</rs> <measure ana="#bk_price">2/6</measure> </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="1" unit="lb"> 1 lb <rs ref="#S10757">Shot</rs> <measure ana="#bk_price">2/6</measure> </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="sugar" quantity="1" unit="lb"> 1 lb <rs ref="#S7930">Sugar</rs> <measure ana="#bk_price">2/6</measure> </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="7" unit="shillings">7</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6" unit="pence">6</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-01"/></cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="knife"><rs ref="#S10758">Shoe Knife</rs> 1/6 </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="1" unit="shillings">1</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6" unit="pence">6</measure>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell/>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="9" unit="shillings">9</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+					</table>
+					<lb/>
+
+					<lb/>
+					<table>
+						<head>69 <name ana="#bk_from" ref="S10788">William Pettigrew Jr.</name> Self Dr. James Haley J Self Dr.</head>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-01"/>1</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10756">Powder</rs> 2/6 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="2" unit="lb"> 2 lb <rs ref="#S10757">Shot</rs> 5/ </measure>
+							</cell>
+							<cell/>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="7" unit="shillings">7</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6" unit="pence">6</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-08"/>8</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="sugar" quantity="3" unit="lb"> 3 lb <rs ref="#S7930">Sugar</rs> 7/6 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="ginger" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10759">Ginger</rs> 1/3 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="brandy" quantity="1" unit="Gallon"> 1 Gallon <rs ref="#S10541">Brandy</rs> 15/ </measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="1" unit="pounds">1</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="3" unit="shillings">3</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="9" unit="pence">9</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-08">8</date></cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="coffee" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10760">Coffee</rs> 3/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="salt" quantity="1" unit="Peck"> 1 Peck <rs ref="#S10761">Salt</rs> 5/- </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="8" unit="shillings">8</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+					</table>
+					<lb/>
+
+					<lb/>
+				</div>
+				<div corresp="TTP7884P1" xml:id="OTP7884P1">
+					<table>
+						<head>69 <name ana="#bk_from" ref="S10789">John Telley Jr</name> Dr.</head>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-01"/></cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="iron" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10762">Iron work'd at the Shop in July</rs>
+								</measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="9" unit="shillings">9</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="3" unit="pence">3</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-26">26</date></cell>
+							<cell ana="#bk_what">
+								<!-- TODO: there is a bug in the quantity parsing here to resolve -->
+								<measure ana="#bk_commodity #bk_from" commodity="salt" quantity="10" unit="Bushel"> Bushel <rs ref="#S10761">Salt</rs> 10/- </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="10" unit="shillings">10</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell/>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="19" unit="shillings">19</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="3" unit="pence">3</measure>
+							</cell>
+						</row>
+					</table>
+					<lb/>
+					<p> Examd with <rs ref="#S10790">TDB</rs></p>
+					<lb/>
+				</div>
+				<div corresp="TTP7884P3" xml:id="OTP7884P3">
+					<table>
+						<head> 69 <rs ana="#bk_from" ref="#S10791">Henry Moize</rs> PP Bro <rs ana="#bk_to" ref="#S10792">Jonathan</rs> Dr. </head>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-02"/>2</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10756">Powder</rs> 5/- </measure>
+							</cell>
+							<cell/>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="5" unit="shillings">5</measure>
+							</cell>
+							<cell/>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-16"/>16</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="copperas" quantity="2" unit="lb"> 2 lb <rs ref="#S10763">Copperas</rs> 3/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="comb" quantity="1"> 1 <rs ref="#S10764">fine comb</rs> 5/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="pins" quantity="1"> 1 <rs ref="#S10566">P Pins</rs> 3/- </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="11" unit="shillings">11</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-16"/>"</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="iron" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10762">Iron</rs> 13/6 </measure>
+							</cell>
+							<cell/>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="13" unit="shillings">13</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6" unit="pence">6</measure>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell/>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="1" unit="pounds">1</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="9" unit="shillings">9</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6" unit="pence">6</measure>
+							</cell>
+						</row>
+					</table>
+					<lb/>
+
+				</div>
+				<div corresp="TTP7884P4" xml:id="OTP7884P4">
+					<table>
+						<head>69 <rs ana="#bk_from" ref="#S10792">Jonathan Moize Self</rs> Dr.</head>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-02"/>2</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="brimstone" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10765">Brimstone</rs> 1/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="pot" quantity="1"> 1 <rs ref="#S10766">Small Pot</rs> 5/- </measure>
+							</cell>
+							<cell/>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6" unit="shillings">6</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-16"/>16</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="mode" quantity="0.5" unit="yd"> 1/2 yd <rs ref="#S10767">blk Mode</rs> 8/9 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="cambric" quantity="0.25" unit="yd"> 1/4 yd <rs ref="#S10768">Red Cambrick</rs> 3/6 </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="12" unit="shillings">12</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="3" unit="pence">3</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-16"/>"</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="ribbon" quantity="4" unit="yds"> 4 yds <rs ref="#S10564">Ribbon</rs> 4/- </measure>
+								<measure ana="#bk_commodity #bk_from"  commodity="silk" quantity="1"> 1 <rs ref="#S10580">hk Silk</rs> 1/- </measure>
+								<measure ana="#bk_commodity #bk_from"  commodity="wire" quantity="1" unit="bunch"> 1 bunch <rs ref="#S10769">wire</rs> 1/- </measure> PP <rs ana="#bk_party #bk_to" ref="#S10793">B. Henry</rs>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6" unit="shillings">6</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-27"/>27</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="pipe">
+									<rs ref="#S10770">pipes</rs> 6d </measure> PP Bro <rs ana="#bk_party #bk_to" ref="#S10794">Frederick</rs>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="shillings">-</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6" unit="pence">6</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-30"/>30</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="sugar" quantity="2" unit="lb"> 2 lb <rs ref="#S7930">Sugar</rs> 5/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="coffee" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10760">Coffee</rs> 3/0 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="camphor" quantity="0.5" unit="oz"> 1/2 oz <rs ref="#S10771">Camphor</rs> 2/- </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="10" unit="shillings">10</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-30"/>"</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="cruet" unit="piece" quantity="1">
+									<rs ref="#S10772">Cruet</rs> 2/6 </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="2" unit="shillings">2</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6" unit="pence">6</measure>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell/>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="1" unit="pounds">1</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="7" unit="shillings">7</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="3" unit="pence">3</measure>
+							</cell>
+						</row>
+					</table>
+				</div>
+				<div corresp="TTP7884P5" xml:id="OTP7884P5">
+					<table>
+						<head>69 <rs ref="#S10795" ana="#bk_party #bk_to #bk_account">Joseph Wood Jr</rs> Self Dr.</head>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-02"/>2</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10756">powder</rs> 5/ </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10757">Shot</rs> 6/3 </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="11" unit="shillings">11</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="3" unit="pence">3</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-02"/>"</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="comb">
+									<rs ref="#S10764">Hair Comb</rs> 2/16 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="whiskey" quantity="1" unit="qt"> 1 qt <rs ref="#S10519">Whisky</rs> 3/- </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="5" unit="shillings">5</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6" unit="pence">6</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-22"/>22</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="gunflint">
+									<rs ref="#S10773">Gunflints</rs> PP </measure> PP Brother <rs ana="#bk_party #bk_to" ref="#S10796">James</rs>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="shillings">-</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6" unit="pence">6</measure>
+							</cell>
+						</row>
+					</table>
+					<lb/>
+				</div>
+			</div>
+			<pb xml:id="F7885" n="4" facs="/image-service/7885/full/full/0/native.jpg"/>
+			<div xml:id="OTP7885">
+				<fw type="pageNum">4</fw>
+				<div corresp="TTP7885P0" xml:id="OTP7885P0">
+					<p>Stagville August 3rd 1808</p>
+					<lb/>
+				</div>
+				<div corresp="TTP7885P1" xml:id="OTP7885P1">
+					<p> 69 <rs ref="#S14350" ana="#bk_party #bk_to #bk_account">Nathaniel Carrington</rs> PP Son Dr. </p>
+					<lb/>
+				</div>
+				<div corresp="TTP7885P2" xml:id="OTP7885P2">
+					<table>
+						<row ana="#bk_entry">
+							<cell/>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="nails" quantity="0"> 0 <rs ref="#S10774">d8 Nails</rs> 12/6 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="nails" quantity="400"> 400 <rs ref="#S10774">20d Ditto</rs> 22/6 </measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="1" unit="pounds">1</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="15" unit="shillings">15</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell/>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="ribbon" quantity="0.25" unit="yds"> 1/4 yds <rs ref="#S10564">Ribbon</rs> 5/- </measure>
+								<measure  ana="#bk_commodity #bk_from" commodity="instrument" quantity="4"> 4 <rs ref="#S10775">Jews Harps</rs> 4/- </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="9" unit="shillings">9</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell/>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="knife">
+									<rs ref="#S10758">Pocket Knife</rs> 5/- </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="5" unit="shillings">5</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+					</table>
+					<lb/>
+					<div ana="#bk_party #bk_to #bk_account">
+						<p>69 <rs ref="#S14351">Leonard Laws</rs> Self Dr.</p>
+					</div>
+					<lb/>
+				</div>
+				<div corresp="TTP7885P3" xml:id="OTP7885P3">
+					<table>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-03"/>3</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="salt" quantity="1" unit="Peck"> 1 Peck <rs ref="#S10761">Salt</rs> 5/- </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="5" unit="shillings">5</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-13"/>13</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="sugar" quantity="1" unit="lb"> 1 lb <rs ref="#S7930">Sugar</rs> 2/6 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="coffee" quantity="1" unit="lb"> 1 lb <rs ref="#S10760">Coffee</rs> 6/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="storage vessel" quantity="2"> 2 <rs ref="#S10776">Tins</rs> 3/- </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="10" unit="shillings">10</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6" unit="pence">6</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-20"/>20</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="whiskey" quantity="1" unit="qt"> 1 qt <rs ref="#S10519">Whisky</rs> 3/- </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="3" unit="shillings">3</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell/>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="19" unit="shillings">19</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6" unit="pence">6</measure>
+							</cell>
+						</row>
+					</table>
+					<lb/>
+				</div>
+				<div corresp="TTP7885P4" xml:id="OTP7885P4">
+					<p ana="#bk_party #bk_to #bk_account"> 69 <rs ref="#S14352">James Watson</rs> PP Order Dr. </p>
+					<lb/>
+				</div>
+				<div corresp="TTP7885P5" xml:id="OTP7885P5">
+					<table>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-04"/>4</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10756">Powder</rs> 2/6 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="1" unit="lb"> 1 lb <rs ref="#S10757">Shot</rs> 2/6 </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="5" unit="shillings">5</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+					</table>
+					<p> Examd with TDB</p>
+					<lb/>
+				</div>
+				<div corresp="TTP7885P6" xml:id="OTP7885P6">
+					<p ana="#bk_party #bk_to #bk_account"> 69 <rs ref="#S14353">William Meadowes</rs> Self Dr. </p>
+					<lb/>
+				</div>
+				<div corresp="TTP7885P7" xml:id="OTP7885P7">
+					<table>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-04"/>4</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="alum" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10777">Alum</rs> @ </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="ginger" quantity="6" unit="1/4"> 6 1/4 <rs ref="#S10759">Ginger</rs> 1/3 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="allspice" quantity="0.333" unit="1/4"> 1/3 1/4 <rs ref="#S10778">Allspice</rs> 1/3 </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="3" unit="shillings">3</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence"/>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-04"/>4</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="knife">
+									<rs ref="#S10758">Cutting Knife</rs> 15/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="sugar" quantity="3" unit="lb"> 3 lb <rs ref="#S7930">Sugar</rs> 7/6 </measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="1" unit="pounds">1</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="2" unit="shillings">2</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6 " unit="pence">6</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-04"/>4</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="nails" quantity="0"> 0 <rs ref="#S10774">d6 Nails</rs> 1/ </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="pins" quantity="1"> 1 <rs ref="#S10566">Paper pins</rs> 3/ </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="4" unit="shillings">4</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence"/>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell/>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="1" unit="pounds">1</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="9" unit="shillings">9</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6 " unit="pence">6</measure>
+							</cell>
+						</row>
+					</table>
+					<div ana="#bk_party #bk_to #bk_account">
+						<p> 69 <rs ref="#S14354">Knight Dalby</rs> Self Dr.</p>
+					</div>
+					<lb/>
+				</div>
+				<div corresp="TTP7885P8" xml:id="OTP7885P8">
+					<table>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-04"/>4</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="4" unit="lb"> 4 lb <rs ref="#S10757">Shot</rs> 10/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="gunflint" quantity="0.5" unit="doz"> 1/2 doz <rs ref="#S10773">Gunflints</rs> 1/- </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="11" unit="shillings">11</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-04"/>"</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="pins">
+									<rs ref="#S10566">Paper pins</rs> 3/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="cotton" quantity="1" unit="yd"> 1 yd <rs ref="#S10562">India Cotton</rs> 5/- </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="8" unit="shillings">8</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell/>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="19" unit="shillings">19</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence">-</measure>
+							</cell>
+						</row>
+					</table>
+					<lb/>
+					<div ana="#bk_account">
+						<p>69 <rs ana="#bk_party #bk_to_agent" ref="#S14355">Majr Micajah Bullock</rs> PP <rs ana="#bk_party #bk_to" ref="#S14354">Kt Dalby</rs> Dr.</p>
+					</div>
+					<lb/>
+				</div>
+				<div corresp="TTP7885P9" xml:id="OTP7885P9">
+					<table>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-04"/>Chd to KDalby 4</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="powder">
+									<rs ref="#S10756">Powder</rs> 10/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="7" unit="lb"> 7 lb <rs ref="#S10757">Shot</rs> 17/6 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="pins" quantity="1"> 1 <rs ref="#S10566">P Pins</rs> 3/- </measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="1" unit="pounds">1</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="10" unit="shillings">10</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="6" unit="pence">6</measure>
+							</cell>
+						</row>
+					</table>
+					<lb/>
+				</div>
+			</div>
+			<pb xml:id="F7886" n="5" facs="/image-service/7886/full/full/0/native.jpg"/>
+			<div xml:id="OTP7886">
+				<fw type="pageNum">5</fw>
+				<div corresp="TTP7886P0" xml:id="OTP7886P0">
+					<p>Stagville August 4th 1808</p>
+					<lb/>
+				</div>
+				<div corresp="TTP7886P1" xml:id="OTP7886P1">
+					<p ana="#bk_party #bk_to #bk_account"> 69 <rs ref="#S14356">Richard Roberts</rs> Self Dr. </p>
+					<lb/>
+					<table>
+
+
+						<row>
+							<cell/>
+							<cell/>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="5" unit="shillings">5</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="9" unit="pence">9</measure>
+							</cell>
+						</row>
+					</table>
+					<lb/>
+					<div ana="#bk_account">
+						<p> 69 <rs ana="#bk_party #bk_to_agent" ref="#S14357">Mark Veazey</rs> PP Bro <rs ana="#bk_party #bk_to" ref="#S14358">William</rs> Dr.</p>
+					</div>
+					<lb/>
+
+					<lb/>
+					<div ana="#bk_party #bk_to #bk_account">
+						<p> 69 <rs ref="#S14358">William Veazey</rs> Self Dr.</p>
+					</div>
+					<lb/>
+					<div>
+						<table>
+							<row ana="#bk_entry">
+								<cell><date ana="#bk_when"  when="1808-08-04"/></cell>
+								<cell ana="#bk_what">
+									<measure ana="#bk_commodity #bk_from" commodity="powder">
+										<rs ref="#S10756">Powder</rs> &amp;amp; </measure>
+									<measure ana="#bk_commodity #bk_from" commodity="gunflint" quantity="3"> 3 <rs ref="#S10773">flints</rs> d6 </measure>
+								</cell>
+								<cell>
+									<measure ana="#bk_money #bk_to" commodity="currency" unit="pounds"/>
+								</cell>
+								<cell>
+									<measure ana="#bk_money #bk_to" commodity="currency" quantity="5" unit="shillings">5</measure>
+								</cell>
+								<cell>
+									<measure ana="#bk_money #bk_to" commodity="currency" quantity="6" unit="pence">6</measure>
+								</cell>
+							</row>
+						</table>
+					</div>
+					<lb/>
+
+					<lb/>
+				</div>
+				<div corresp="TTP7886P2" xml:id="OTP7886P2">
+					<p ana="#bk_account"> 69 <rs ana="#bk_party #bk_to_agent" ref="#S14359">James Cash</rs> PP Brother <rs ana="#bk_party #bk_to" ref="#S14360">Bryant</rs> Dr. </p>
+					<lb/>
+					<table>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-05"/>5</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10756">Powder</rs> 5/ </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10757">Shot</rs> 6/3 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="sugar" quantity="3" unit="lb"> 3 lb <rs ref="#S7930">Sugar</rs> 7/6 </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="18" unit="shillings">18</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="9" unit="pence">9</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-27"/>27</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="rum" quantity="3" unit="Pts"> 3 Pts <rs ref="#S10506">Rum</rs> 7/6 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="ginger" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10759">Ginger</rs> 1/3 </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="8" unit="shillings">8</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="9" unit="pence">9</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-27"/>27</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="pepper" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10780">Pepper</rs> 1/6 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="silk" quantity="1"> 1 <rs ref="#S10580">hank Silk</rs> 1/3 </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="2" unit="shillings">2</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="9" unit="pence">9</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-27"/>27</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="container">
+									<rs ref="#S10781">Pepper Box</rs> 1/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="comb" quantity="1"> 1 <rs ref="#S10764">Fine Comb</rs> 3/- </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="4" unit="shillings">4</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence"/>
+							</cell>
+						</row>
+						<row>
+							<cell/>
+							<cell/>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="1" unit="pounds">1</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="14" unit="shillings">14</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="3 " unit="pence">3</measure>
+							</cell>
+						</row>
+					</table>
+					<lb/>
+				</div>
+				<div corresp="TTP7886P3" xml:id="OTP7886P3">
+					<p>Examd with TDB <lb/></p>
+				</div>
+				<div corresp="TTP7886P4" xml:id="OTP7886P4">
+					<p ana="#bk_party #bk_to #bk_account"> 69 <rs ref="#S14360">Bryant Cash</rs> Self Dr. </p>
+					<lb/>
+					<table>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-05"/>5</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="powder" quantity="0.5" unit="lb"> 1/2 lb <rs ref="#S10756">Powder</rs> 5/- </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="shot" quantity="2" unit="1/2"> 2 1/2 <rs ref="#S10757">Shot</rs> 6/3 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="knife" quantity="1"> 1 <rs ref="#S10758">P? Knife</rs> 4/- </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="15" unit="shillings">15</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="3" unit="pence">3</measure>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-05"/>5</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="sugar" quantity="2" unit="lb"> 2 lb <rs ref="#S7930">Sugar</rs> 5/- </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="5" unit="shillings">5</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence"/>
+							</cell>
+						</row>
+						<row ana="#bk_entry">
+							<cell><date ana="#bk_when"  when="1808-08-27"/>27</cell>
+							<cell>
+								<measure ana="#bk_commodity #bk_from" commodity="rum" quantity="3" unit="Pts"> 3 Pts <rs ref="#S10506">Rum</rs> 7/6 </measure>
+								<measure ana="#bk_commodity #bk_from" commodity="pepper" quantity="0.25" unit="lb"> 1/4 lb <rs ref="#S10780">Pepper</rs> 1/6 </measure>
+							</cell>
+							<cell>
+								
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="9" unit="shillings">9</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" unit="pence"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="1" unit="pounds">1</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="9" unit="shillings">9</measure>
+							</cell>
+							<cell>
+								<measure ana="#bk_money #bk_to"  commodity="currency" quantity="3" unit="pence">3</measure>
+							</cell>
+						</row>
+					</table>
+					<lb/>
+					<div ana="#bk_party #bk_to #bk_account">
+						<p> 69 <rs ref="#S14361">William Walker Jr</rs> Self Dr</p>
+					</div>
+					<lb/>
+
+					<lb/>
+					<div ana="#bk_party #bk_to #bk_account">
+						<p> 69 <rs ref="#S14362">George Carey</rs> Self Dr</p>
+					</div>
+					<lb/>
+
+					<lb/>
+				</div>
+			</div>
+			<!-- omitted 68 untranscribed pages -->
+			<pb xml:id="F7957" n="76" facs="/image-service/7957/full/full/0/native.jpg"/>
+			<div xml:id="OTP7957">
+				<fw type="pageNum">76</fw>
+				<p corresp="TTP7957P0" xml:id="OTP7957P0"> ARG lost my transcription will do the beginning again later :( <lb/>
+				</p>
+				<p corresp="TTP7957P1" xml:id="OTP7957P1"> *** <lb/> 23| Mark Veazey| in full |7|18|9| <lb/>
+				</p>
+				<p corresp="TTP7957P2" xml:id="OTP7957P2"> 23| James Watson| in part|5|3|| <lb/>
+				</p>
+				<p corresp="TTP7957P3" xml:id="OTP7957P3"> 27| Jeremiah Roberts| in part|9|18|9 <lb/>
+				</p>
+				<p corresp="TTP7957P4" xml:id="OTP7957P4"> 28| Isaac Weaver| in full|2|11|6 <lb/>
+				</p>
+				<p corresp="TTP7957P5" xml:id="OTP7957P5"> 28| Henry Moize| in part| 15||| <lb/>
+				</p>
+				<p corresp="TTP7957P6" xml:id="OTP7957P6"> 31| Wiliam Veazey| in full| 4|5|| <lb/>
+				</p>
+				<p corresp="TTP7957P7" xml:id="OTP7957P7"> 31| Frances Veazey| in full| 4|18|9| <lb/>
+				</p>
+				<p corresp="TTP7957P8" xml:id="OTP7957P8"> 31| Richard Umstead| in full| 3|11|9| <lb/>
+				</p>
+				<p corresp="TTP7957P9" xml:id="OTP7957P9"> 31| Merch.s for Sundries sold this month [??] Sales| 16|18|| <lb/>
+				</p>
+				<p corresp="TTP7957P10" xml:id="OTP7957P10"> 31| Profit &amp; Loss surplus| 1|1|3| <lb/>
+				</p>
+				<p corresp="TTP7957P11" xml:id="OTP7957P11"> |311|5|| <lb/>
+				</p>
+				<p corresp="TTP7957P12" xml:id="OTP7957P12"/>
+				<note resp="#U460">As with the regular day book pages, subtotals are included in the main column, with totals in the rightmost column</note>
+				<note resp="#U460">Can't remember if I should use ditto marks or reenter the information (e.g. the next patron to pay in full or the next patron on the same day)</note>
+			</div>
+			<pb xml:id="F7958" n="77" facs="/image-service/7958/full/full/0/native.jpg"/>
+			<div xml:id="OTP7958">
+				<fw type="pageNum">77</fw>
+				<p corresp="TTP7958P0" xml:id="OTP7958P0"> [struck out: Stagville December 31st 1808] <lb/>
+				</p>
+				<p corresp="TTP7958P1" xml:id="OTP7958P1"> 94|Sundries to Cash Dr <lb/>
+				</p>
+				<p corresp="TTP7958P2" xml:id="OTP7958P2"> Merchandise Vizt <lb/> pd Wm Henry [Haxall?] PP Bill &amp; Receipt $70.34 <lb/> pd Robert Nelson &amp; Co PP Bill &amp; Receipt $29.00 <lb/>
+					pd John W. Campbell PP Bill &amp; Receipt $57.08 <lb/> $156.42|78|4|3| <lb/>
+				</p>
+				<p corresp="TTP7958P3" xml:id="OTP7958P3"> Tobacco accot Vizt <lb/> pd for 6336 [?] 19/6 PP wh $205.93 <lb/> pd for 1331 [?] 20/- PP wh $44.37 <lb/> pd for Turning up 4 Hhd 3/ $2.00
+					<lb/> $252.30|126|3|| <lb/>
+				</p>
+				<p corresp="TTP7958P4" xml:id="OTP7958P4"> Rich Bennehan [Hon?] Vizt <lb/> pd for 1 pr Boots $12 &amp; 1 pr Shoes $3 for TDB|7|10|| <lb/>
+				</p>
+				<p corresp="TTP7958P5" xml:id="OTP7958P5"> Exd With D.C. <lb/>
+				</p>
+				<p corresp="TTP7958P6" xml:id="OTP7958P6"> |General Charges pp Vizt <lb/> |pd B. M. Myers for [Boutting?] <lb/> |Cloths PP Bill &amp; Receipt $66.00 <lb/> |pd Bream &amp; Follett for
+					Mill Screw PP Bill &amp; Receipt $30.00 <lb/> |pd Maben &amp; MOrrison for Leather PP Bill &amp; Receipt $19.50 <lb/> |pd John G Davis for 15 [?] Rum PP Bill &amp; Receipt $25.00
+					<lb/> |pd John V. Wilcox for screw plate $4.00 <lb/> |pd for Beef &amp; Oysters $12.11 <lb/> |pd for 1 Glazed Hat $4.00 1 pr Shoes $1 3/4 for [Jerry?] $5.75 <lb/> 2|pd for Fish
+					&amp; Oysters $1.50 <lb/> 3|pd for Waggon Expences PP John <lb/> |Wilkins's Satement $2.50 <lb/> 23| pd for Expences of 2 Waggons PP John <lb/> |Wilkins's Statement $6.25 <lb/>
+					172.61|86|6|| <lb/>
+				</p>
+				<p corresp="TTP7958P7" xml:id="OTP7958P7"> 2|James Whicker pd him at twice? |7||| <lb/>
+				</p>
+				<p corresp="TTP7958P8" xml:id="OTP7958P8"> 2|John CLose pd Mr. Wadkins|2||| <lb/>
+				</p>
+				<p corresp="TTP7958P9" xml:id="OTP7958P9"> 3| Elijah Patterson pd him |1||| <lb/>
+				</p>
+				<p corresp="TTP7958P10" xml:id="OTP7958P10"> 3| Anthony Cozart pd his Son Robert <lb/> for Tobacco in full|7|5|| <lb/>
+				</p>
+				<p corresp="TTP7958P11" xml:id="OTP7958P11"> 3| John Wilkins pd him at twice|2|11|6| <lb/>
+				</p>
+				<p corresp="TTP7958P12" xml:id="OTP7958P12"> 6|John Telley Jr Lent him ||10|| <lb/>
+				</p>
+				<p corresp="TTP7958P13" xml:id="OTP7958P13"> 10| Shadrach Roberts pd him at twice|18|10|| <lb/>
+				</p>
+				<p corresp="TTP7958P14" xml:id="OTP7958P14"> 17| John Scarlett pd him in full| 1|10|| <lb/>
+				</p>
+				<p corresp="TTP7958P15" xml:id="OTP7958P15"> 23| Robert Seay pd him|6|10|| <lb/>
+				</p>
+				<p corresp="TTP7958P16" xml:id="OTP7958P16"> 27| Charles Roberts pd him in full|10|5|6| <lb/>
+				</p>
+				<p corresp="TTP7958P17" xml:id="OTP7958P17"> 30| William Roberts Jr lent him|1||| <lb/>
+				</p>
+				<p corresp="TTP7958P18" xml:id="OTP7958P18">|356|5|3|</p>
+			</div>
+			<!-- omitted 115 untranscribed pages -->
+		</body>
+	</text>
+</TEI>

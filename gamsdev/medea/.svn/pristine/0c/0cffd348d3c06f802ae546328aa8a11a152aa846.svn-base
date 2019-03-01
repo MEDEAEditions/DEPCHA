@@ -1,0 +1,178 @@
+/*Farbschema fÃƒÂ¼r Navbar:*/
+.navbar-default {
+  background-color: #475862;
+  
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+  font-weight:bold;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff; 
+}
+.navbar-default .navbar-nav>li>a:hover {
+    background-color: #999999;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #999999;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #999999;
+}
+.navbar-default .navbar-toggle {
+  border-color: #999999;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #999999;
+  }  
+}
+
+ /*Eckige Searchbox:*/
+ nav#nav .input-group .form-control {
+     border-radius:0;
+ }
+ nav#nav .input-group-btn>.btn{
+     border-radius:0;
+ }
+ 
+/* Eckige Navbar*/
+.navbar{
+    border-radius:0;
+}
+
+/*Anpassung padding*/
+/*.navbar > div.container:first-child{
+    padding-left:10px;
+    padding-right:10px;
+}*/
+.navbar{
+    margin-bottom:30px;
+    border:none;
+}
+
+/*Responsive Navbar (Klasse hidden-lg etc.) Dadurch:*/
+.navbar-collapse{
+    padding-left:0;
+    
+}
+
+/*damit der aktive punkt auch bei responsive nav ganz hinterlegt ist*/
+.navbar-collapse.in ul, .navbar-collapse.collapsing ul{
+    
+      margin-right:-15px !important;
+}
+form.navbar-form.navbar-right{
+    margin-left: 0;
+   
+}
+
+ul.nav.navbar-nav{
+    margin:0;
+}
+
+/*Sticky Navbar*/
+#nav {
+  width: 100%;
+  position:static;
+}
+
+#nav.affix {
+   position: fixed;
+   top: 0;
+   z-index:10;
+   -webkit-transition: all .6s ease-in-out;
+}
+
+/*Searchbox stylish*/
+.stylish-input-group .input-group-addon{
+    background: white !important;
+    border-left:none;
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+
+/*Dropdown*/
+
+
+.dropdown-menu>li>a{
+    padding: 5px 20px;
+}
+
+.dropdown-menu{
+    padding: 0;   
+    border-style:solid;
+    border-color:#e3e3e3;
+    border-radius:0;
+}
+
+.dropdown-menu>li>a:hover{
+    background-color: #e3e3e3;
+}
+
+.dropdown-menu>.active>a{
+    color: black;
+    text-decoration: none;
+    background-color: #e3e3e3;  
+}
+
+.dropdown-menu>.active>a:hover{
+    color: black;
+    text-decoration: none;
+    background-color: #e3e3e3;
+}
+
+.dropdown-menu .divider{
+    margin: 0;    
+} 
+
+/*hover dropdown bei grÃ¶ÃŸeren bildschirmen*/
+
+.dropdown-menu{	
+	margin-top:0;
+	}
+	
+@media (min-width: 768px) {.dropdown:hover .dropdown-menu {display: block;}}
