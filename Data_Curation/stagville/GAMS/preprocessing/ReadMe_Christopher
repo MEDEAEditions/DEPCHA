@@ -1,0 +1,81 @@
+Christopher Pollin
+
+TEI Export from FromThePage and preprocessing for Bookkeeping-Ontology-TEI
+
+1# wrong clsoing tag </name>:
+line 66: 
+<p>Accounts of <orgName ana="#bk_party  #bk_to" >Stagville Plantation Store</name> from 			<date ana="#bk_when" when="1808-08">August 1808</date>.
+
+2# TEI sourceDesc
+line 65: 
+you can either have a <p> in <sourceDesc> or a more complexe description using <msDesc> etc. 
+
+3# TEI @quantity contains a string, just numbers are allowed
+line 1000:  <measure commodity="currency" quantity="Stagville" unit="pence">
+
+4# "1/2" "3/4" in @quantity; normalization 0.5 and 0.75 is needed.
+line:1167  <measure commodity="coffee" quantity="1/2" unit="lb">
+
+5# "-" in @quantity; i think this are all cases in that a precceding <measure> not containing '-' and with the same @unit  contains the correct value: Xpath: ./preceding::t:measure[@unit = $currentUnit][not(text() = '-')][1]/@quantity"/>
+line:1105   <measure commodity="coffee" quantity="1/2" unit="lb">
+
+6# @when is not allowed in <cell>: better is  <cell><date ana="#bk_when" when="1808-08-01"/></cell>
+line:1117 <cell ana="#bk_when"  when="1808-08-01">1</cell>
+
+7# <head> is not everywhere allowed in TEI; replacing the <p> with a <div> would work
+line:1253 
+<div>
+ <head>69 Henry Moize</head>
+ <lb/>
+</div>
+
+8# bk_what is not supported in the GAMS TORDF, replacing it with bk_commodity
+
+9# bk_amount is not supported in the GAMS TORDF, replacing it with bk_money
+
+10# putting bk_amount (bk_money), bk_what (bk_commodity) directly into the @ana in <measure> 
+<cell ana="#bk_what">
+  <measure commodity="powder" quantity="1/2" unit="lb">
+    1/2 lb
+    <rs ref="#S10756">Powder</rs>5/-
+  </measure>
+</cell>
+
+becomes
+
+<cell>
+  <measure ana="#bk_commodit" commodity="powder" quantity="0.5" unit="lb">
+    1/2 lb <rs ref="#S10756">Powder</rs> 5/-
+  </measure>
+</cell>
+
+11# there is a bk_from too much
+line:2062
+<head ana="#bk_party #bk_from" depth="2">
+  69
+  <rs ana="#bk_party #bk_from #bk_agent" ref="#S14357">Mark Veazey</rs> PP Bro
+  <rs  ana="#bk_party #bk_from #bk_account"ref="#S14358">Bro William</rs> Dr.
+</head>
+
+i think the best way would be: 
+
+<head>
+  69
+  <name ana="#bk_party #bk_from #bk_agent" ref="#S14357">Mark Veazey</rs> PP Bro
+  <name  ana="#bk_party #bk_from" ref="#S14358">Bro William</rs> Dr.
+</head>
+
+12# @quantity and @unit: and the @ref for the Shot should be in the @unit i think
+line:2104
+<measure commodity="shot" quantity="&amp;amp" unit=";">
+  &amp;amp ;
+  <rs ref="#S10757">Shot</rs>5/-
+</measure>
+
+
+
+
+
+
+
+
