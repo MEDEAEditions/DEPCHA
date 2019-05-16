@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <pb n="100"/>
+         <fw type="pageNum">100</fw>
+         <head><date when="1800-01-01" ana="#bk_when">Jan. 1st  1800</date></head>
+         <table>
+            <row ana="#bk_entry">
+               <cell ana="#bk_status" corresp="#">100</cell>
+               <cell>
+                  <name ref="#" ana="#bk_to">Drake</name>
+                  <lb/> 
+                     <measure commodity="potatoe" quantity="1" unit="bag" ana="#bk_commodity #bk_from">1 bag potatoes</measure>
+               </cell>
+               <cell>
+                  <measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_to">1</measure>
+               </cell>
+               <cell>
+                  <measure commodity="currency" quantity="50" unit="cents" ana="#bk_money #bk_to">50</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date when="1800-01-20" ana="#bk_when">20</date></span>
+            <row ana="#bk_entry">
+               <cell ana="#bk_status" corresp="#">100</cell>
+               <cell>
+                  <name ref="#" ana="#bk_to">Drake</name>
+                  <lb/> 
+                  <measure commodity="potatoe" quantity="1" unit="bag" ana="#bk_commodity #bk_from">1 bag potatoes</measure>
+               </cell>
+               <cell>
+                  <measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_to">1</measure>
+               </cell>
+               <cell>
+                  <measure commodity="currency" quantity="50" unit="cents" ana="#bk_money #bk_to">50</measure>
+               </cell>
+               <cell/>
+               <cell/>
+            </row>
+         </table>
+      </body>
+   </text>
+</TEI>

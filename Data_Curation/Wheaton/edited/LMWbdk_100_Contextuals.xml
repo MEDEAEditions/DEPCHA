@@ -37,9 +37,10 @@
 		<body>
 			<pb n="100"/>
 			<fw type="pageNum">100</fw>
-			<table xml:id="p100" cols="6">
-				<head>Norton <date when="1831-09-06">Tuesday Sept 6 1831</date></head>
-				<row xml:id="p100_01">
+			<head>Norton <date when="1831-09-06">Tuesday Sept 6 1831</date></head>
+			<table>
+				<head></head>
+				<row ana="#bk_entry">
 					<cell>393</cell>
 					<cell>
 						<name type="person" ref="pers_WCDH118" ana="#bk_to">Wheaton Wheeler</name>
@@ -47,22 +48,17 @@
 							<abbr>Dr</abbr>
 							<expan>Debtor</expan>
 						</choice>
-					</cell>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p100_02" ana="#bk_entry">
-					<cell/>
-					<cell>To <measure commodity="corn" quantity="0.5" unit="bushells" ana="#bk_commodity #bk_from">1/2 Burhell Corn</measure>
+						<lb/>
+						To <measure commodity="corn" quantity="0.5" unit="bushells" ana="#bk_commodity #bk_from">1/2 Burhell Corn</measure>
 					</cell>
 					<cell/>
 					<cell><measure commodity="currency" quantity="50" unit="cents" ana="#bk_money #bk_to">50</measure></cell>
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_03">
+			</table>
+			<table>
+				<row>
 					<cell/>
 					<cell><date when="1831-09-12" ana="#bk_when">12</date></cell>
 					<cell/>
@@ -70,7 +66,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_04">
+				<row>
 					<cell>396</cell>
 					<cell>
 						<name type="person" ref="pers_WCDH484" ana="#bk_to">Samuel Morey</name>
@@ -84,7 +80,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_05" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>By pension received</cell>
 					<cell><measure commodity="currency" quantity="120" unit="dollars" ana="#bk_money #bk_to">120</measure></cell>
@@ -92,7 +88,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_06">
+				<row>
 					<cell/>
 					<cell>To Expense pd. for certificates L. <abbr>D100</abbr>
 						<expan>Debtor</expan>
@@ -102,7 +98,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_07">
+				<row>
 					<cell/>
 					<cell>"Do. of power 50x</cell>
 					<cell/>
@@ -110,7 +106,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_08" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>" Cash pd. him $62.00</cell>
 					<cell><measure commodity="currency" quantity="53" unit="dollars" ana="#bk_money #bk_to">53</measure></cell>
@@ -118,7 +114,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_09">
+				<row>
 					<cell/>
 					<cell><date when="1831-09-17" ana="#bk_when">17</date></cell>
 					<cell/>
@@ -126,7 +122,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_10">
+				<row>
 					<cell>395</cell>
 					<cell>
 						<name type="person" ref="pers_WCDH621" ana="#bk_to">Thompson Tripp</name>
@@ -140,7 +136,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_11" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To cash 6/ at Smiths</cell>
 					<cell><measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_to">1</measure></cell>
@@ -148,7 +144,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_12">
+				<row>
 					<cell/>
 					<cell><date when="1831-09-24" ana="#bk_when">24</date></cell>
 					<cell/>
@@ -156,7 +152,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_13">
+				<row>
 					<cell>395</cell>
 					<cell>
 						<name type="person" ref="pers_WCDH621" ana="#bk_to">Thompson Tripp</name>
@@ -169,7 +165,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_14" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To cash 30/</cell>
 					<cell><measure commodity="currency" quantity="5" unit="dollars" ana="#bk_money #bk_to">5</measure></cell>
@@ -177,7 +173,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_15">
+				<row>
 					<cell/>
 					<cell><date when="1831-10-08" ana="#bk_when">Oct. 8th 1831</date></cell>
 					<cell/>
@@ -185,7 +181,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_16">
+				<row>
 					<cell>368</cell>
 					<cell><name type="person" ref="pers_WCDH574" ana="#bk_to">Timothy Smith</name>
 						<choice rend="align(right)">
@@ -197,7 +193,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_17" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To <measure commodity="lard" quantity="6" unit="pounds">6 lb. Lard</measure> 10x</cell>
 					<cell/>
@@ -205,7 +201,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_18" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell><measure commodity="lard" quantity="7.25" unit="pounds">"7 1/4 lb do</measure> 10x</cell>
 					<cell><measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_to">1</measure></cell>
@@ -213,7 +209,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_19">
+				<row>
 					<cell/>
 					<cell><date when="1831-10-10" ana="#bk_when">Oct 10th " "</date></cell>
 					<cell/>
@@ -221,7 +217,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_20">
+				<row>
 					<cell>392</cell>
 					<cell><name type="person" ref="pers_WCDH359" ana="#bk_to">Hiram Hodges</name>
 						<choice rend="align(right)">
@@ -233,7 +229,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_21" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To <measure commodity="lard" quantity="5" unit="pounds">5 lb</measure>
 						<measure commodity="lard" quantity="11" unit="ounces">11 oz Lard</measure> - 19d pr lb 71</cell>
@@ -242,13 +238,13 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_22" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To <measure commodity="butter" quantity="4" unit="pound" ana="#bk_commodity #bk_from">4 lb Butter</measure> 13 pr lb 72</cell>
 					<cell><measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_to">1</measure></cell>
 					<cell><measure commodity="currency" quantity="73" unit="cents" ana="#bk_money #bk_to">73</measure></cell>
 				</row>
-				<row xml:id="p100_23">
+				<row>
 					<cell/>
 					<cell><date when="1831-10-11" ana="#bk_when">Oct. 11th " "</date></cell>
 					<cell/>
@@ -256,7 +252,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_24">
+				<row>
 					<cell>368</cell>
 					<cell><name type="person" ref="pers_WCDH574" ana="#bk_to">Timothy Smith</name>
 						<choice rend="align(right)">
@@ -268,7 +264,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_25" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To <measure commodity="butter" quantity="6" unit="pounds">6 LB</measure>
 						<measure commodity="butter" quantity="14" unit="ounces">14 oz Butter</measure> 1/ pr lb 1.15</cell>
@@ -277,7 +273,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_26" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To <measure commodity="milk" quantity="14" unit="quarts">14 Qts New Milk</measure> 56</cell>
 					<cell/>
@@ -285,7 +281,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_27" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To <measure commodity="milk" quantity="6" unit="quarts">6 Qts</measure> &amp; <measure commodity="milk" quantity="1" unit="pint" ana="#bk_commodity #bk_from">1</measure> Pt.
 						do 26.</cell>
@@ -294,7 +290,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_28">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -302,7 +298,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_29">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -310,7 +306,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_30">
+				<row>
 					<cell>396</cell>
 					<cell><name type="person" ref="pers_WCDH484" ana="#bk_to">Samuel Morey</name>
 						<choice rend="align(right)">
@@ -322,7 +318,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_31" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To cash twenty five dollares <measure commodity="currency" quantity="25" unit="dollars" ana="#bk_money #bk_to">25.00</measure></cell>
 					<cell><measure commodity="currency" quantity="25" unit="dollars" ana="#bk_money #bk_to">25</measure></cell>
@@ -330,7 +326,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_32">
+				<row>
 					<cell/>
 					<cell><date when="1831-10-15" ana="#bk_when">15</date></cell>
 					<cell/>
@@ -338,7 +334,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_33">
+				<row>
 					<cell>Settled</cell>
 					<cell><name type="person" ref="pers_WCDH149" ana="#bk_to">Mrs. Babcock</name>
 						<choice rend="align(right)">
@@ -350,7 +346,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_34" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>By work from this day pd</cell>
 					<cell><measure commodity="currency" quantity="2" unit="dollars" ana="#bk_money #bk_to">$2</measure></cell>
@@ -358,7 +354,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_35">
+				<row>
 					<cell/>
 					<cell><date when="1831-10-24" ana="#bk_when">24</date></cell>
 					<cell/>
@@ -366,7 +362,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_36">
+				<row>
 					<cell>392</cell>
 					<cell><name type="person" ref="pers_WCDH359" ana="#bk_to">Hiram Hodges Agt.</name>
 						<choice rend="align(right)">
@@ -378,7 +374,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_37" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To <measure commodity="rosin" quantity=".75" unit="bushels" ana="#bk_commodity #bk_from">3/4 bll. Rosin</measure></cell>
 					<cell/>
@@ -386,7 +382,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_38">
+				<row>
 					<cell/>
 					<cell><date when="1831-10-30" ana="#bk_when">30</date></cell>
 					<cell/>
@@ -394,7 +390,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_39">
+				<row>
 					<cell>395</cell>
 					<cell><name type="person" ref="pers_WCDH126" ana="#bk_to">Thompson Tripp</name>
 						<choice rend="align(right)">
@@ -406,7 +402,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_40" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To cash 20x </cell>
 					<cell/>
@@ -414,7 +410,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_41">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -422,7 +418,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_42">
+				<row>
 					<cell>392</cell>
 					<cell><name type="person" ref="pers_WCDH359" ana="#bk_to">Hiram Hodges</name>
 						<choice rend="align(right)">
@@ -435,7 +431,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_43" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To 3 Lb, Butter 18x</cell>
 					<cell/>
@@ -443,7 +439,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_44">
+				<row>
 					<cell/>
 					<cell><date when="1831-11-07" ana="#bk_when">Nov. 7</date></cell>
 					<cell/>
@@ -451,7 +447,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_45">
+				<row>
 					<cell>395</cell>
 					<cell><name type="person" ref="pers_WCDH126" ana="#bk_to">Thompson Tripp</name>
 						<choice rend="align(right)">
@@ -463,7 +459,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_46" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To cash 6 [/]</cell>
 					<cell><measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_to">1</measure></cell>
@@ -471,7 +467,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_47">
+				<row>
 					<cell/>
 					<cell><date when="1831-11-10" ana="#bk_when">10</date></cell>
 					<cell/>
@@ -479,7 +475,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_48">
+				<row>
 					<cell>77</cell>
 					<cell><name type="person" ref="pers_WCDH167" ana="#bk_to">Davis C. Bates</name><choice rend="align(right)">
 							<abbr>DR</abbr>
@@ -490,7 +486,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_49" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To 50 best brick 60x </cell>
 					<cell/>
@@ -498,7 +494,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_50">
+				<row>
 					<cell/>
 					<cell><date when="1831-11-11" ana="#bk_when">11</date></cell>
 					<cell/>
@@ -506,7 +502,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_51">
+				<row>
 					<cell>392</cell>
 					<cell><name type="person" ref="pers_WCDH359" ana="#bk_to">Hiram Hodges</name>
 						<choice rend="align(right)">
@@ -518,7 +514,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_52" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To B Fresh Pork 6 1/4 t</cell>
 					<cell/>
@@ -526,7 +522,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_53">
+				<row>
 					<cell/>
 					<cell><date when="1831-11-15" ana="#bk_when">15</date></cell>
 					<cell/>
@@ -534,7 +530,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_54">
+				<row>
 					<cell>Settled</cell>
 					<cell><name type="person" ref="pers_WCDH565" ana="#bk_to">John Smith</name>
 						<choice rend="align(right)">
@@ -546,7 +542,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_55">
+				<row>
 					<cell/>
 					<cell>By 2 hours work mailing store</cell>
 					<cell/>
@@ -554,7 +550,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_56">
+				<row>
 					<cell/>
 					<cell><choice rend="align(right)">
 							<abbr>D</abbr>
@@ -565,7 +561,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_57" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell>To Chaise to Mansfield</cell>
 					<cell/>
@@ -573,7 +569,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_58">
+				<row>
 					<cell/>
 					<cell><date when="1831-11-16" ana="#bk_when">16</date> &amp; <date when="1831-11-17" ana="#bk_when">17.</date>
 						<choice rend="align(right)">
@@ -585,7 +581,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_59">
+				<row>
 					<cell/>
 					<cell>By work mailing store</cell>
 					<cell/>
@@ -593,7 +589,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_60">
+				<row>
 					<cell/>
 					<cell><date when="1831-11-24" ana="#bk_when">24</date></cell>
 					<cell/>
@@ -601,7 +597,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_61">
+				<row>
 					<cell>Paid</cell>
 					<cell><name type="person" ref="pers_WCDH167" ana="#bk_to">David C. Bates</name>
 						<choice rend="align(right)">
@@ -613,7 +609,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_62">
+				<row>
 					<cell/>
 					<cell>To cash lent 6 [/]</cell>
 					<cell/>
@@ -621,7 +617,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_63" ana="#bk_entry">
+				<row ana="#bk_entry">
 					<cell/>
 					<cell/>
 					<cell><measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_to">1</measure></cell>
@@ -629,7 +625,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p100_64">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -641,9 +637,9 @@
 			</table>
 			<pb n="000"/>
 			<fw type="pageNum">000</fw>
-			<table xml:id="p000" cols="6">
+			<table>
 				<head> </head>
-				<row xml:id="p000_01">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -651,7 +647,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_02">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -659,7 +655,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_03">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -667,7 +663,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_04">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -675,7 +671,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_05">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -683,7 +679,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_06">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -691,7 +687,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_07">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -699,7 +695,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_08">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -707,7 +703,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_09">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -715,7 +711,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_10">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -723,7 +719,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_11">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -731,7 +727,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_12">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -739,7 +735,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_13">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -747,7 +743,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_14">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -755,7 +751,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_15">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -763,7 +759,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_16">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -771,7 +767,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_17">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -779,7 +775,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_18">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -787,7 +783,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_19">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -795,7 +791,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_20">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -803,7 +799,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_21">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -811,7 +807,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_22">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -819,7 +815,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_23">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -827,7 +823,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_24">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -835,7 +831,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_25">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -843,7 +839,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_26">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -851,7 +847,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_27">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -859,7 +855,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_28">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -867,7 +863,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_29">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -875,7 +871,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_30">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -883,7 +879,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_31">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -891,7 +887,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_32">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -899,7 +895,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_33">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -907,7 +903,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_34">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -915,7 +911,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_35">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -923,7 +919,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_36">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -931,7 +927,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_37">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -939,7 +935,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_38">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -947,7 +943,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_39">
+				<row>
 					<cell/>
 					<cell/>
 					<cell/>
@@ -955,7 +951,7 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_40">
+				<row>
 					<cell/>
 					<cell> To order upon Store 60/ </cell>
 					<cell>10</cell>
@@ -963,199 +959,505 @@
 					<cell/>
 					<cell/>
 				</row>
-				<row xml:id="p000_41">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_42">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_43">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_44">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_45">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_46">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_47">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_48">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_49">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_50">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_51">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_52">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_53">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_54">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_55">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_56">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_57">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_58">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_59">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_60">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_61">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_62">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_63">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
-				<row xml:id="p000_64">
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-					<cell/>
-				</row>
 			</table>
+			<pb n="101"/>
+         <fw type="pageNum">101</fw>
+         <table>
+            <head>Norton <date when="1832-11-28">Nov. 28th 1831</date></head>
+            <row>
+               <cell>77</cell>
+               <cell>
+                  <name type="person" ref="pers_WCDH167" ana="#bk_to">David C Bates</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice>
+               </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>To <measure commodity="lunber" quantity="15" unit="feet" ana="#bk_commodity #bk_from">15 Ftt. Pine Plank</measure> 3x</cell>
+               <cell/>
+               <cell><measure commodity="currency" quantity="45" unit="cents" ana="#bk_money #bk_to">45</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell>Bill</cell>
+               <cell>
+                  <name type="person" ref="pers_CP_115" ana="#bk_to">Summer Knapp</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>To my oxen this day to draw wood</cell>
+               <cell/>
+               <cell><measure commodity="currency" quantity="50" unit="cents" ana="#bk_money #bk_to">50</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell>397</cell>
+               <cell>
+                  <name type="person" ref="pers_WCDH599" ana="#bk_to">Richard T Sweet</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>To <measure commodity="oil" quantity="2" unit="quarts">2 qts.</measure> <measure commodity="oil" quantity="1" unit="pint" ana="#bk_commodity #bk_from">1 pt. L, Oil</measure> 1lb. S Brown</cell>
+               <cell/>
+               <cell><measure commodity="currency" quantity="44" unit="cents" ana="#bk_money #bk_to">44</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell><date when="1831-11-29" ana="#bk_when">29</date></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell>Bill</cell>
+               <cell>
+                  <name type="person" ref="pers_CP_115" ana="#bk_to">Summer Knapp</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To my oxen one day 3/</cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell>Paid</cell>
+               <cell>
+                  <name type="person" ref="pers_WCDH167" ana="#bk_to">David C Bates</name>
+                  <choice rend="align(right)">
+                     <abbr>Cr</abbr>
+                     <expan>credit</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>By <measure commodity="wine" quantity="1" unit="gall">1 Gall L. Wine</measure> 8/</cell>
+               <cell><measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_to">1</measure></cell>
+               <cell><measure commodity="currency" quantity="33" unit="cents" ana="#bk_money #bk_to">33</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell>395</cell>
+               <cell>
+                  <name type="person" ref="pers_WCDH621" ana="#bk_to">Thompson Tripp</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>To 1 pr Buckskin Mittens 2/6</cell>
+               <cell/>
+               <cell><measure commodity="currency" quantity="42" unit="cents" ana="#bk_money #bk_to">42</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell>308</cell>
+               <cell>
+                  <name type="person" ref="pers_WCDH574" ana="#bk_to">Timonthy Smith</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>To <measure commodity="brooms" quantity="3">three Brooms</measure> 1/</cell>
+               <cell/>
+               <cell><measure commodity="currency" quantity="50" unit="cents" ana="#bk_money #bk_to">50</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell><span ana="#bk_transactionStatus">Settled</span></cell>
+               <cell>
+                  <name type="person" ref="pers_WCDH230" ana="#bk_to">Oliver Clapp</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>To <measure commodity="goose" quantity="8.5" unit="pounds">1 goose 8cts pr lb. 8 1/2lbs</measure></cell>
+               <cell/>
+               <cell><measure commodity="currency" quantity="68" unit="cents" ana="#bk_money #bk_to">68</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell>395</cell>
+               <cell><name type="person" ref="pers_WCDH621" ana="#bk_to">Thompson Tripp</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To cash for H.kT. 6/</cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>" 1/pr Blk. Pants 101</cell>
+               <cell><measure commodity="currency" quantity="1" unit="dollars" ana="#bk_money #bk_to">1</measure></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell><span ana="#bk_transactionStatus">Settled</span></cell>
+               <cell><name type="person" ref="pers_CP_116" ana="#bk_to">Henery Clement</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>To goose 8lb at 8x</cell>
+               <cell/>
+               <cell><measure commodity="currency" quantity="14" unit="cents" ana="#bk_money #bk_to">14</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell>373</cell>
+               <cell><name type="person" ref="pers_WCDH579" ana="#bk_to">Amos Starkey </name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To 1/pr compasses taken without leave</cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>"1 miter Box 1/6</cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>" housing rolls since April 1830</cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell><date when="1831-12-09" ana="#bk_when">December 9th 1831</date></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell>Bill</cell>
+               <cell><name type="person" ref="pers_CP_115" ana="#bk_to">Summer Knapp</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>To my oxen a large 1/2 Day 2/</cell>
+               <cell/>
+               <cell><measure commodity="currency" quantity="33" unit="cents" ana="#bk_money #bk_to">33</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell>356</cell>
+               <cell><name type="person" ref="pers_WCDH699" ana="#bk_to">Samuel Wrigley</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>To clabboards 1/</cell>
+               <cell/>
+               <cell><measure commodity="currency" quantity="17" unit="cents" ana="#bk_money #bk_to">17</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell><date when="1831-12-15" ana="#bk_when">15</date></cell><cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell>392</cell>
+               <cell><name type="person" ref="pers_WCDH359" ana="#bk_to">Hiram Hodges</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>To chaise to Taunton 8x</cell>
+               <cell/>
+               <cell><measure commodity="currency" quantity="64" unit="cents" ana="#bk_money #bk_to">64</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell><date when="1831-12-19" ana="#bk_when">19</date></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell>396</cell>
+               <cell><name type="person" ref="pers_WCDH484" ana="#bk_to">Samuel Morey</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>Debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>To 1 board of wood</cell>
+               <cell><measure commodity="currency" quantity="3" unit="dollars" ana="#bk_money #bk_to">3</measure></cell>
+               <cell><measure commodity="currency" quantity="50" unit="cents" ana="#bk_money #bk_to">50</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell><date when="1831-12-30" ana="#bk_when">30</date></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell>393</cell>
+               <cell><name type="person" ref="pers_WCDH118" ana="#bk_to">Wheaton Wheelor</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>Debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>To <measure commodity="rye" quantity="0.5" unit="pounds">1/2 lb of Rye</measure> 6/9</cell>
+               <cell/>
+               <cell><measure commodity="currency" quantity="56" unit="cents" ana="#bk_money #bk_to">56</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell>395</cell>
+               <cell><name type="person" ref="pers_WCDH621" ana="#bk_to">Thompson Tripp</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>Debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>To cash 54</cell>
+               <cell><measure commodity="currency" quantity="9" unit="dollars" ana="#bk_money #bk_to">9</measure></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell><date when="1832-01-10" ana="#bk_when">Jany. 10th 1832</date></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+               
+            <row>
+               <cell>393</cell>
+               <cell><name type="person" ref="pers_WCDH118" ana="#bk_to">Wheaton Wheelor</name>
+                  <choice rend="align(right)">
+                     <abbr>Cr</abbr>
+                     <expan>credit</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>By cash 3/</cell>
+               <cell/>
+               <cell><measure commodity="currency" quantity="50" unit="cents" ana="#bk_money #bk_to">50</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell><date when="1832-01-11" ana="#bk_when">11</date></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell>396</cell>
+               <cell><name type="person" ref="pers_WCDH484" ana="#bk_to">Samuel Morey</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>Debtor</expan>
+                  </choice></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>To <measure commodity="wood" quantity="9" unit="feet" ana="#bk_commodity #bk_from">9 Ft wood</measure> </cell>
+               <cell><measure commodity="currency" quantity="3" unit="dollars" ana="#bk_money #bk_to">3</measure></cell>
+               <cell><measure commodity="currency" quantity="94" unit="cents" ana="#bk_money #bk_to">94</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell><name type="person" ref="pers_WCDH402" ana="#bk_to">Phillip B King</name></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row ana="#bk_entry">
+               <cell/>
+               <cell>To oxen 1 Day 3/</cell>
+               <cell/>
+               <cell><measure commodity="currency" quantity="50" unit="cents" ana="#bk_money #bk_to">50</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+         </table>
 		</body>
 	</text>
 </TEI>
