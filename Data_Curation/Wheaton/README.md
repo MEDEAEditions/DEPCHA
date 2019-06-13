@@ -3,7 +3,7 @@
 Author: Christopher Pollin 
 
 
-# Wheaton to DECPHA
+# Wheaton to DEPCHA
 
 missing TEIs: 	12-99 and 140-159
 ToDo: 			in ToDo_TEI's
