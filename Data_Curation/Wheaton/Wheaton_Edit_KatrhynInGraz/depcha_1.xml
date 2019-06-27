@@ -46,7 +46,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/> To <measure commodity="corn" quantity="0.5"
-                                          unit="bushells" ana="#bk_commodity #bk_from">1/2 Burhell
+                                          unit="bushels" ana="#bk_commodity #bk_from">1/2 Burhell
                                           Corn</measure>
                               </cell>
                               <cell/>
@@ -156,7 +156,7 @@
                                           quantity="5" unit="pounds">5 lb</measure><measure
                                           ana="#bk_commodity #bk_from" commodity="lard"
                                           quantity="11" unit="ounces">11 oz Lard</measure><lb/>
-                                    <lb/> To <measure commodity="butter" quantity="4" unit="pound"
+                                    <lb/> To <measure commodity="butter" quantity="4" unit="pounds"
                                           ana="#bk_commodity #bk_from">4 lb Butter</measure> 13 pr
                                     lb 72 </cell>
                               <cell/>
@@ -267,7 +267,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>
-                                    <measure ana="#bk_commodity #bk_from" unit="pound"
+                                    <measure ana="#bk_commodity #bk_from" unit="pounds"
                                           commodity="butter" quantity="3">To 3 Lb, Butter</measure>
                                     18x</cell>
                               <cell/>
@@ -301,7 +301,7 @@
                                           Bates</name><choice>
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
-                                    </choice><lb/>To <measure ana="#bk_commodity #bk_from"
+                                    </choice><lb/>To <measure ana="#bk_commodity #bk_from" unit="pieces"
                                           quantity="50" commodity="brick">50 best brick</measure>
                                     60x</cell>
                               <cell/>
@@ -477,7 +477,7 @@
                                           Smith</name><choice>
                                           <abbr>D</abbr>
                                           <expan>debtor</expan>
-                                    </choice><lb/>To <measure ana="#bk_commodity #bk_from"
+                                          </choice><lb/>To <measure ana="#bk_commodity #bk_from" unit="pieces"
                                           commodity="brooms" quantity="3">three Brooms</measure>
                                     1/</cell>
                               <cell/>
@@ -723,7 +723,7 @@
                                     <choice>
                                           <abbr>DR</abbr>
                                           <expan>Dabtor</expan>
-                                    </choice><lb/>To<measure ana="#bk_commodity #bk_from"
+                                    </choice><lb/>To<measure ana="#bk_commodity #bk_from" unit="pieces" quantity="10"
                                           commodity="letter">letter</measure>10x</cell>
                               <cell/>
                               <cell><measure quantity="10" unit="cents" ana="#bk_money #bk_to"
@@ -741,7 +741,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Dabtor</expan>
                                     </choice><lb/>To<measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="12.75" unit="pound">12 3/4 Lbs
+                                          commodity="beef" quantity="12.75" unit="pounds">12 3/4 Lbs
                                           Beef</measure><!--?--> 7x</cell>
                               <cell/>
                               <cell><measure quantity="90" unit="cents" ana="#bk_money #bk_to"
@@ -759,7 +759,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Dabtor</expan>
                                     </choice><lb/> To<measure ana="#bk_commodity #bk_from"
-                                          commodity="rye" quantity="1" unit="Bushels">1 Bass
+                                          commodity="rye" quantity="1" unit="bushels">1 Bass
                                           Rye</measure>6/</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
                                           >1</measure></cell>
@@ -775,7 +775,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Dabtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="wood" quantity="6" unit="cord">6Ft Wood 35 pr
+                                          commodity="wood" quantity="6" unit="cords">6Ft Wood 35 pr
                                           cord</measure></cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="2" unit="dollars"
                                           >2</measure></cell>
@@ -793,7 +793,7 @@
                                     <choice>
                                           <abbr>DR</abbr>
                                           <expan>Dabtor</expan>
-                                    </choice><lb/>To<measure ana="#bk_commodity #bk_from"
+                                    </choice><lb/>To<measure ana="#bk_commodity #bk_from" unit="pieces" quantity="10"
                                           commodity="letter">Letter</measure>10x</cell>
                               <cell/>
                               <cell><measure quantity="10" unit="cents" ana="#bk_money #bk_to"
@@ -803,7 +803,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>To<measure commodity="French Braid">French
+                              <cell>To<measure commodity="French Braid" ana="#bk_commodity #bk_from" unit="pieces" quantity="10">French
                                     Braid</measure>10x</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="10" unit="dollars"
                                           >10</measure></cell>
@@ -814,7 +814,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell ana="#bk_status" corresp="#591">591</cell>
-                              <cell>To<measure ana="#bk_commodity #bk_from" commodity="letter"
+                              <cell>To<measure ana="#bk_commodity #bk_from" commodity="letter" unit="pieces" quantity="10"
                                           >letter</measure>10x</cell>
                               <cell/>
                               <cell><measure quantity="10" unit="cents" ana="#bk_money #bk_to"
@@ -825,7 +825,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>To<measure ana="#bk_commodity #bk_from" commodity="cotton cloth"
-                                          quantity="6" unit="yard">6 Yds cotton cloth</measure>14 pr
+                                          quantity="6" unit="yards">6 Yds cotton cloth</measure>14 pr
                                     sd</cell>
                               <cell/>
                               <cell><measure quantity="34" unit="cents" ana="#bk_money #bk_to"
@@ -836,7 +836,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>Do<measure ana="#bk_commodity #bk_from" commodity="flannel"
-                                          quantity="3" unit="yard">3 do E flannel</measure>42
+                                          quantity="3" unit="yards">3 do E flannel</measure>42
                                     sd</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
                                           >1</measure></cell>
@@ -848,7 +848,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>Do <measure ana="#bk_commodity #bk_from" commodity="thread"
-                                          quantity="15" unit="yard">thread 15
+                                          quantity="15" unit="yards">thread 15
                                     skns</measure>1x</cell>
                               <cell/>
                               <cell><measure quantity="15" unit="cents" ana="#bk_money #bk_to"
@@ -980,7 +980,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Dabtor</expan>
                                     </choice><lb/>&gt;To<measure ana="#bk_commodity #bk_from"
-                                          commodity="wood" quantity="1" unit="load">1 load
+                                          commodity="wood" quantity="1" unit="loads">1 load
                                           wood</measure><measure ana="#bk_money #bk_to"
                                           quantity="3.50" unit="dollars">3.50</measure></cell>
                               <cell/>
@@ -1305,7 +1305,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Dabtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="wood" quantity="1" unit="cord">1 cord
+                                          commodity="wood" quantity="1" unit="cords">1 cord
                                           wood</measure>3.50</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="3" unit="dollars"
                                           >3</measure></cell>
@@ -1419,7 +1419,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Dabtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="wood" quantity="3" unit="Feet">3 Ft.
+                                          commodity="wood" quantity="3" unit="feet">3 Ft.
                                           wood</measure>50x ft.</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
                                           >1</measure></cell>
@@ -4344,7 +4344,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To<measure commodity="salt beef" quantity="11.5"
-                                          unit="lbs.">11 1/2 lbs. salt beef</measure>8</cell>
+                                          unit="pounds">11 1/2 lbs. salt beef</measure>8</cell>
                               <cell/>
                               <cell><measure quantity="92" unit="cents" ana="#bk_money #bk_to"
                                           >92</measure></cell>
@@ -4391,7 +4391,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="wood" quantity="1" unit="cord">1 cord
+                                          commodity="wood" quantity="1" unit="cords">1 cord
                                           wood</measure>paid by P. King</cell>
                               <cell/>
                               <cell/>
@@ -4406,7 +4406,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="corn" quantity="1" unit="peak">1 peak corn
+                                          commodity="corn" quantity="1" unit="peck">1 peak corn
                                           1</measure>/6</cell>
                               <cell/>
                               <cell><measure quantity="25" unit="cents" ana="#bk_money #bk_to"
@@ -4465,8 +4465,7 @@
                                     <choice>
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
-                                    </choice><lb/>To <measure commodity="salt beef" quantity="5.75"
-                                          ana="lbs.">5 3/4 lbs. salt beef</measure></cell>
+                                    </choice><lb/>To <measure commodity="salt beef" quantity="5.75" ana="#bk_commodity #bk_to" unit="pounds">5 3/4 lbs. salt beef</measure></cell>
                               <cell/>
                               <cell><measure quantity="46" unit="cents" ana="#bk_money #bk_to"
                                           >46</measure></cell>
@@ -4516,7 +4515,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/> To <measure ana="#bk_commodity #bk_from"
-                                          commodity="paint" quantity="1.50" unit="lbs">1 1/2 lbs.
+                                          commodity="paint" quantity="1.50" unit="pounds">1 1/2 lbs.
                                           paint</measure>20x </cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="30" unit="dollars"
                                           >30</measure></cell>
@@ -4630,7 +4629,7 @@
                                           <abbr/>
                                           <expan/>
                                     </choice><lb/>To<measure commodity="salt beef" quantity="12.5"
-                                          unit="lbs.">12 1/2lbs. Beef Salt</measure> 8x </cell>
+                                          unit="pounds">12 1/2lbs. Beef Salt</measure> 8x </cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
                                           >1</measure></cell>
                               <cell>0</cell>
@@ -4693,7 +4692,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell ana="#bk_status" corresp="#393">393</cell>
-                              <cell>To <measure commodity="salt beef" quantity="5.75" unit="lbs.">5
+                              <cell>To <measure commodity="salt beef" quantity="5.75" unit="pounds">5
                                           3/4lbs. salt beef</measure>84</cell>
                               <cell/>
                               <cell><measure quantity="42" unit="cents" ana="#bk_money #bk_to"
@@ -4745,7 +4744,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="9.75" unit="lbs.">9 3/4lbs.
+                                          commodity="beef" quantity="9.75" unit="pounds">9 3/4lbs.
                                           Beef</measure>84</cell>
                               <cell/>
                               <cell><measure quantity="78" unit="cents" ana="#bk_money #bk_to"
@@ -4829,7 +4828,7 @@
                                     <choice>
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
-                                    </choice><lb/>To cash to <measure commodity="mending shoes">pay
+                                    </choice><lb/>To cash to <measure commodity="mending shoes" quantity="1" unit="pair" ana="#bk_commodity #bk_from">pay
                                           for mending shoes</measure>1/</cell>
                               <cell/>
                               <cell><measure quantity="17" unit="cents" ana="#bk_money #bk_to"
@@ -4925,7 +4924,7 @@
                               <cell/>
                               <cell><name ana="#bk_to" type="person" ref="pers_WCDH375"/><measure
                                           ana="#bk_commodity #bk_from" commodity="butter"
-                                          quantity="2" unit="lbs">2 lbs. butter</measure>4</cell>
+                                          quantity="2" unit="pounds">2 lbs. butter</measure>4</cell>
                               <cell/>
                               <cell><measure quantity="33" unit="cents" ana="#bk_money #bk_to"
                                           >33</measure></cell>
@@ -4960,7 +4959,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure commodity="salt pork" quantity="20"
-                                          unit="lbs">20lbs. salt pork</measure>10</cell>
+                                          unit="pounds">20lbs. salt pork</measure>10</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="2" unit="dollars"
                                           >2</measure></cell>
                               <cell>0</cell>
@@ -4975,7 +4974,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="clover seeds" quantity="10" unit="lbs">10 lbs.
+                                          commodity="clover seeds" quantity="10" unit="pounds">10 lbs.
                                           clover seed</measure>1/</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
                                           >1</measure></cell>
@@ -5071,7 +5070,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="seed corn" quantity="1" unit="peek">1 peek seed
+                                          commodity="seed corn" quantity="1" unit="peck">1 peek seed
                                           corn</measure>7/</cell>
                               <cell/>
                               <cell><measure quantity="29" unit="cents" ana="#bk_money #bk_to"
@@ -5119,7 +5118,7 @@
                               <cell/>
                               <cell><name ana="#bk_to" type="person" ref="pers_WCDH650"/>
                                     <measure ana="#bk_commodity #bk_from" commodity="meal"
-                                          quantity="0.5" unit="peek">1/2 peek
+                                          quantity="0.5" unit="peck">1/2 peek
                                     meal</measure>paid</cell>
                               <cell/>
                               <cell><measure quantity="1.3" unit="cents" ana="#bk_money #bk_to"
@@ -5155,7 +5154,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="lard" quantity="3.5" unit="lbs">3 1/2 lbs.
+                                          commodity="lard" quantity="3.5" unit="pounds">3 1/2 lbs.
                                           lard</measure>10x lbs.</cell>
                               <cell/>
                               <cell><measure quantity="35" unit="cents" ana="#bk_money #bk_to"
@@ -5269,7 +5268,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="potatoes" quantity="1" unit="peek">1 peek
+                                          commodity="potatoes" quantity="1" unit="peck">1 peek
                                           potatoes</measure> 8x</cell>
                               <cell/>
                               <cell/>
@@ -5280,7 +5279,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell><measure ana="#bk_commodity #bk_from" commodity="meal"
-                                          quantity="1" unit="peek">1 peek meal</measure>paid</cell>
+                                          quantity="1" unit="peck">1 peek meal</measure>paid</cell>
                               <cell/>
                               <cell><measure quantity="21" unit="cents" ana="#bk_money #bk_to"
                                           >21</measure></cell>
@@ -5538,7 +5537,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>To <measure ana="#bk_commodity #bk_from" commodity="meal"
-                                          quantity="1" unit="peek">1 peek meal</measure>1/6</cell>
+                                          quantity="1" unit="peck">1 peek meal</measure>1/6</cell>
                               <cell/>
                               <cell><measure quantity="25" unit="cents" ana="#bk_money #bk_to"
                                           >25</measure></cell>
@@ -5630,7 +5629,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="beers" quantity="1" unit="peek">1 peek
+                                          commodity="beers" quantity="1" unit="peck">1 peek
                                           beers</measure>6/</cell>
                               <cell/>
                               <cell><measure quantity="25" unit="cents" ana="#bk_money #bk_to"
@@ -5698,7 +5697,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="potatoes" quantity="1" unit="peek">1 peek
+                                          commodity="potatoes" quantity="1" unit="peck">1 peek
                                           potatoes</measure>4</cell>
                               <cell/>
                               <cell><measure quantity="6" unit="cents" ana="#bk_money #bk_to"
@@ -5735,7 +5734,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="wood" quantity="1" unit="cord">1 cord
+                                          commodity="wood" quantity="1" unit="cords">1 cord
                                           wood</measure>paid by P. King</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="4" unit="dollars"
@@ -5809,7 +5808,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="meal" quantity="1" unit="peek">1 peek
+                                          commodity="meal" quantity="1" unit="peck">1 peek
                                           meal</measure></cell>
                               <cell/>
                               <cell><measure quantity="25" unit="cents" ana="#bk_money #bk_to"
@@ -5828,7 +5827,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="lard" quantity="10" unit="lbs">ten lbs
+                                          commodity="lard" quantity="10" unit="pounds">ten lbs
                                           lard</measure>10 for lb</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
@@ -5871,7 +5870,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="wood" quantity="0.5" unit="cord">half a cord of
+                                          commodity="wood" quantity="0.5" unit="cords">half a cord of
                                           wood</measure>2 paid by P. King</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="2" unit="dollars"
@@ -6218,7 +6217,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell><measure ana="#bk_commodity #bk_from" commodity="pine salt"
-                                          quantity="1" unit="peek">1 peek pine
+                                          quantity="1" unit="peck">1 peek pine
                                     salt</measure>1/6</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="2" unit="dollars"
                                           >2</measure></cell>
@@ -6287,7 +6286,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="meal" quantity="1" unit="peek">1 peek
+                                          commodity="meal" quantity="1" unit="peck">1 peek
                                           meal</measure>1/6</cell>
                               <cell/>
                               <cell><measure quantity="25" unit="cents" ana="#bk_money #bk_to"
@@ -6669,7 +6668,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="hogs lard" quantity="4" unit="lbs">4lbs. hogs
+                                          commodity="hogs lard" quantity="4" unit="pounds">4lbs. hogs
                                           lard</measure>10x</cell>
                               <cell/>
                               <cell><measure quantity="40" unit="cents" ana="#bk_money #bk_to"
@@ -6702,7 +6701,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="wood" quantity="1" unit="cord">1 cord
+                                          commodity="wood" quantity="1" unit="cords">1 cord
                                           wood</measure>paid by P. King <measure
                                           ana="#bk_money #bk_to" quantity="3.50" unit="dollars"
                                           >3.50</measure></cell>
@@ -6723,7 +6722,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="lard" quantity="5" unit="lbs">5lbs.
+                                          commodity="lard" quantity="5" unit="pounds">5lbs.
                                           lard</measure>9</cell>
                               <cell/>
                               <cell><measure quantity="45" unit="cents" ana="#bk_money #bk_to"
@@ -6765,7 +6764,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell><measure ana="#bk_commodity #bk_from" commodity="butter"
-                                          quantity="2" unit="lbs">2 lbs x 2 go butter</measure>
+                                          quantity="2" unit="pounds">2 lbs x 2 go butter</measure>
                                     paid</cell>
                               <cell/>
                               <cell><measure quantity="28" unit="cents" ana="#bk_money #bk_to"
@@ -7106,7 +7105,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="corn" quantity="1" unit="peek">1 peek
+                                          commodity="corn" quantity="1" unit="peck">1 peek
                                           corn</measure>
                                     <measure ana="#bk_commodity #bk_from" commodity="rye"
                                           quantity="1" unit="bushels">1 do. Rye</measure></cell>
@@ -7218,7 +7217,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="lard" quantity="3" unit="lbs">3 lbs 6 ounces
+                                          commodity="lard" quantity="3" unit="pounds">3 lbs 6 ounces
                                           lard</measure>9</cell>
                               <cell/>
                               <cell><measure quantity="43" unit="cents" ana="#bk_money #bk_to"
@@ -7245,7 +7244,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure commodity="English hay" quantity="30"
-                                          unit="lbs">30lbs. English hay</measure>$20.00tm</cell>
+                                          unit="pounds">30lbs. English hay</measure>$20.00tm</cell>
                               <cell/>
                               <cell><measure quantity="30" unit="cents" ana="#bk_money #bk_to"
                                           >30</measure></cell>
@@ -7339,7 +7338,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="logs" quantity="2" unit="cord">two
+                                          commodity="logs" quantity="2" unit="cords">two
                                           logs</measure>9/</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
                                           >1</measure></cell>
@@ -7444,7 +7443,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="195" unit="lbs">195 lbs. Beef
+                                          commodity="beef" quantity="195" unit="pounds">195 lbs. Beef
                                     </measure> $6. 00</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="11" unit="dollars"
                                           >11</measure></cell>
@@ -7497,7 +7496,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure commodity="beef stock" quantity="5"
-                                          unit="lbs">five lbs. beef stock</measure>7x per lb</cell>
+                                          unit="pounds">five lbs. beef stock</measure>7x per lb</cell>
                               <cell/>
                               <cell><measure quantity="31" unit="cents" ana="#bk_money #bk_to"
                                           >31</measure></cell>
@@ -7508,7 +7507,7 @@
                               <cell/>
                               <cell><name ana="#bk_to" type="person" ref="pers_WCDH375"/>To <measure
                                           ana="#bk_commodity #bk_from" commodity="suet" quantity="4"
-                                          unit="lbs">four lbs. Suet</measure>9x per lb</cell>
+                                          unit="pounds">four lbs. Suet</measure>9x per lb</cell>
                               <cell/>
                               <cell><measure quantity="71" unit="cents" ana="#bk_money #bk_to"
                                           >71</measure></cell>
@@ -7612,7 +7611,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="apples" quantity="1" unit="peek">1 peek
+                                          commodity="apples" quantity="1" unit="peck">1 peek
                                           Apples</measure>1/</cell>
                               <cell/>
                               <cell><measure quantity="17" unit="cents" ana="#bk_money #bk_to"
@@ -7628,7 +7627,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="wood" quantity="1" unit="cord">cord
+                                          commodity="wood" quantity="1" unit="cords">cord
                                           wood</measure> paid by P. King</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="3" unit="dollars"
                                           >3</measure></cell>
@@ -7651,7 +7650,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="9.5" unit="lbs">9 1/2 lbs.
+                                          commodity="beef" quantity="9.5" unit="pounds">9 1/2 lbs.
                                           Beef</measure>7x </cell>
                               <cell/>
                               <cell><measure quantity="67" unit="cents" ana="#bk_money #bk_to"
@@ -7667,7 +7666,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="9" unit="lbs">9 lbs.
+                                          commodity="beef" quantity="9" unit="pounds">9 lbs.
                                           Beef</measure>7x</cell>
                               <cell/>
                               <cell><measure quantity="63" unit="cents" ana="#bk_money #bk_to"
@@ -7699,7 +7698,7 @@
                                     <choice>
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
-                                    </choice><lb/>To a <measure ana="#bk_commodity #bk_from"
+                                    </choice><lb/>To a <measure ana="#bk_commodity #bk_from" unit="piece"
                                           commodity="cow" quantity="1">five years old
                                     cow</measure></cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="14" unit="dollars"
@@ -7712,7 +7711,7 @@
                               <cell/>
                               <cell><name ana="#bk_to" type="person" ref="pers_WCDH217"/>By <measure
                                           ana="#bk_commodity #bk_from" commodity="pig"
-                                          quantity="141" unit="lbs">141 lbs. pig</measure>6x</cell>
+                                          quantity="141" unit="pounds">141 lbs. pig</measure>6x</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="8" unit="dollars"
                                           >8</measure></cell>
                               <cell><measure quantity="46" unit="cents" ana="#bk_money #bk_to"
@@ -7746,7 +7745,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="lard" quantity="5" unit="lbs">5 lbs.
+                                          commodity="lard" quantity="5" unit="pounds">5 lbs.
                                           lard</measure>10x</cell>
                               <cell/>
                               <cell><measure quantity="50" unit="cents" ana="#bk_money #bk_to"
@@ -7844,7 +7843,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="116" unit="lbs">116 lbs.
+                                          commodity="beef" quantity="116" unit="pounds">116 lbs.
                                           Beef</measure>4 50</cell>
                               <cell/>
                               <cell><measure quantity="5" unit="cents" ana="#bk_money #bk_to"
@@ -7957,7 +7956,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="tallow" quantity="7" unit="lbs">7 lbs.
+                                          commodity="tallow" quantity="7" unit="pounds">7 lbs.
                                           tallow</measure>8x</cell>
                               <cell/>
                               <cell><measure quantity="56" unit="cents" ana="#bk_money #bk_to"
@@ -7980,7 +7979,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="meal" quantity="1" unit="peek">1 peek
+                                          commodity="meal" quantity="1" unit="peck">1 peek
                                           meal</measure>6/ </cell>
                               <cell/>
                               <cell><measure quantity="25" unit="cents" ana="#bk_money #bk_to"
@@ -8005,7 +8004,7 @@
                         <row ana="#bk_entry">
                               <cell ana="#bk_status" corresp="#393">393</cell>
                               <cell>To <measure ana="#bk_commodity #bk_from" commodity="meal"
-                                          quantity="1" unit="peek">1 peak meal</measure>6/</cell>
+                                          quantity="1" unit="peck">1 peak meal</measure>6/</cell>
                               <cell/>
                               <cell><measure quantity="25" unit="cents" ana="#bk_money #bk_to"
                                           >25</measure></cell>
@@ -8127,7 +8126,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <name type="account" ref="LMWcash"
-                                    >cash</name>lent to buy <measure ana="#bk_commodity #bk_from"
+                                    >cash</name>lent to buy <measure
                                           commodity="hay">hay</measure>, paid Daniel 30/</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="5" unit="dollars"
@@ -8158,7 +8157,7 @@
 
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell><measure commodity="Salt Beef" quantity="19.5" unit="lbs">19 1/2
+                              <cell><measure commodity="Salt Beef" quantity="19.5" unit="pounds">19 1/2
                                           lbs. salt beef</measure>8x</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
                                           >1</measure></cell>
@@ -8178,8 +8177,8 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To a <measure ana="#bk_commodity #bk_from"
-                                          commodity="cock">cock</measure> x <measure
-                                          ana="#bk_commodity #bk_from" commodity="hen"
+                                          commodity="cock" quantity="1" unit="piece">cock</measure> x <measure
+                                                ana="#bk_commodity #bk_from" commodity="hen" quantity="1" unit="piece"
                                     >hen</measure>4/6 </cell>
                               <cell/>
                               <cell><measure quantity="75" unit="cents" ana="#bk_money #bk_to"
@@ -8197,9 +8196,7 @@
                                     <choice>
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
-                                    </choice><lb/>To paying David b. Bates towards <measure
-                                          ana="#bk_commodity #bk_from" commodity="hay"
-                                    >hay</measure></cell>
+                                    </choice><lb/>To paying David b. Bates towards hay</cell>
                               <cell/>
                               <cell><measure quantity="6" unit="cents" ana="#bk_money #bk_to"
                                           >6</measure></cell>
@@ -8214,7 +8211,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="meal" quantity="1" unit="peek">1 peek
+                                          commodity="meal" quantity="1" unit="peck">1 peek
                                           meal</measure></cell>
                               <cell/>
                               <cell><measure quantity="25" unit="cents" ana="#bk_money #bk_to"
@@ -8242,7 +8239,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure commodity="Salt beef" quantity="18.75"
-                                          unit="lbs">18 3/4 lbs. Salt Beef</measure>8x</cell>
+                                          unit="pounds">18 3/4 lbs. Salt Beef</measure>8x</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
                                           >1</measure></cell>
@@ -8291,8 +8288,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>To <name type="account" ref="LMWcash">cash</name> to pay for
-                                          <measure commodity="singing school">singing
-                                          school</measure>30/</cell>
+                                          singing school30/</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="5" unit="dollars"
                                           >5</measure></cell>
                               <cell>0</cell>
@@ -8309,7 +8305,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure commodity="Salt Beef" quantity="73.5"
-                                          unit="lbs">73 1/2 lbs. Salt Beef</measure>8x</cell>
+                                          unit="pounds">73 1/2 lbs. Salt Beef</measure>8x</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="5" unit="dollars"
                                           >5</measure></cell>
@@ -8556,7 +8552,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell><measure ana="#bk_commodity #bk_from" commodity="peas"
-                                          quantity="1" unit="qt">1 qt. Peas</measure>1/</cell>
+                                          quantity="1" unit="quarts">1 qt. Peas</measure>1/</cell>
                               <cell/>
                               <cell/>
                               <cell/>
@@ -8650,7 +8646,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To two men, <measure ana="#bk_service #bk_from"
-                                          commodity="ploughing" quantity="2">two yoke of oxen x , to
+                                          commodity="ploughing" unit="_">two yoke of oxen x , to
                                           plough your garden</measure> 6/</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
@@ -8729,7 +8725,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="tallow" quantity="17.5" unit="lbs">17 1/2 lbs.
+                                          commodity="tallow" quantity="17.5" unit="pounds">17 1/2 lbs.
                                           Tallow</measure> 8x</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
@@ -9135,7 +9131,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="white lard" quantity="8" unit="lbs">8 lbs.
+                                          commodity="white lard" quantity="8" unit="pounds">8 lbs.
                                           white lard</measure>7x</cell>
                               <cell/>
                               <cell><measure quantity="56" unit="cents" ana="#bk_money #bk_to"
@@ -9379,7 +9375,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="rye" quantity="1" unit="peek">1 peek
+                                          commodity="rye" quantity="1" unit="peck">1 peek
                                           Rye</measure>6/</cell>
                               <cell/>
                               <cell><measure quantity="25" unit="cents" ana="#bk_money #bk_to"
@@ -9441,7 +9437,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="cider" quantity="1" unit="Bushels">1 bu. Cider
+                                          commodity="cider" quantity="1" unit="bushels">1 bu. Cider
                                           1</measure>0/6 per bu.</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
@@ -9461,7 +9457,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="rye" quantity="1" unit="peek">1 peek
+                                          commodity="rye" quantity="1" unit="peck">1 peek
                                           rye</measure>6/</cell>
                               <cell/>
                               <cell><measure quantity="25" unit="cents" ana="#bk_money #bk_to"
@@ -9610,7 +9606,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="veal" quantity="9.25" unit="lbs">9 1/4 lbs.
+                                          commodity="veal" quantity="9.25" unit="pounds">9 1/4 lbs.
                                           veal</measure>6x</cell>
                               <cell/>
                               <cell><measure quantity="56" unit="cents" ana="#bk_money #bk_to"
@@ -9626,7 +9622,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="veal" quantity="10.75" unit="lbs">10 3/4
+                                          commodity="veal" quantity="10.75" unit="pounds">10 3/4
                                           veal</measure>54</cell>
                               <cell/>
                               <cell><measure quantity="52" unit="cents" ana="#bk_money #bk_to"
@@ -9821,7 +9817,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>To <measure ana="#bk_commodity #bk_from" commodity="cider"
-                                          quantity="1" unit="lbs">1 lbs. cider</measure> $2
+                                          quantity="1" unit="pounds">1 lbs. cider</measure> $2
                                     00</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="2" unit="dollars"
                                           >2</measure></cell>
@@ -10832,7 +10828,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="155" unit="lbs">155 lbs. 4 1/2
+                                          commodity="beef" quantity="155" unit="pounds">155 lbs. 4 1/2
                                           x for <!--?--> Beef</measure></cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="6" unit="dollars"
@@ -10850,7 +10846,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="128" unit="lbs">128 lbs. 4 1/2
+                                          commodity="beef" quantity="128" unit="pounds">128 lbs. 4 1/2
                                           for <!--?--> Beef</measure></cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="5" unit="dollars"
@@ -12608,7 +12604,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>To <measure ana="#bk_commodity #bk_from" commodity="lard"
-                                          quantity="10" unit="lbs">10 lbs. lard</measure> at
+                                          quantity="10" unit="pounds">10 lbs. lard</measure> at
                                     10x</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
                                           >1</measure></cell>
@@ -12658,7 +12654,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="potatoes" quantity="1" unit="peek">1 peek
+                                          commodity="potatoes" quantity="1" unit="peck">1 peek
                                           potatoes</measure>paid</cell>
                               <cell/>
                               <cell><measure quantity="13" unit="cents" ana="#bk_money #bk_to"
@@ -12740,7 +12736,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="potatoes" quantity="1" unit="peek">1 peek
+                                          commodity="potatoes" quantity="1" unit="peck">1 peek
                                           potatoes</measure></cell>
                               <cell/>
                               <cell/>
@@ -12781,7 +12777,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>To <measure ana="#bk_commodity #bk_from" commodity="butter"
-                                          quantity="3" unit="lbs">3 lbs. Butter</measure>1/</cell>
+                                          quantity="3" unit="pounds">3 lbs. Butter</measure>1/</cell>
                               <cell/>
                               <cell><measure quantity="50" unit="cents" ana="#bk_money #bk_to"
                                           >50</measure></cell>
@@ -12796,7 +12792,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="potatoes" quantity="1" unit="peek">1 peek
+                                          commodity="potatoes" quantity="1" unit="peck">1 peek
                                           potatoes</measure>paid</cell>
                               <cell/>
                               <cell/>
@@ -12817,7 +12813,7 @@
                               <cell/>
                               <cell>
                                     <measure ana="#bk_commodity #bk_from" commodity="butter"
-                                          quantity="6" unit="lbs">6 lbs. Butter</measure>1/</cell>
+                                          quantity="6" unit="pounds">6 lbs. Butter</measure>1/</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="2" unit="dollars"
                                           >2</measure></cell>
                               <cell><measure quantity="13" unit="cents" ana="#bk_money #bk_to"
@@ -12948,7 +12944,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="veal" quantity="3.5" unit="lbs">3 1/2 lbs.
+                                          commodity="veal" quantity="3.5" unit="pounds">3 1/2 lbs.
                                           veal</measure>some time since</cell>
                               <cell/>
                               <cell><measure quantity="21" unit="cents" ana="#bk_money #bk_to"
@@ -12965,7 +12961,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="veal" quantity="8.75" unit="lbs">veal 8 3/4
+                                          commodity="veal" quantity="8.75" unit="pounds">veal 8 3/4
                                           lbs.</measure></cell>
                               <cell/>
                               <cell><measure quantity="53" unit="cents" ana="#bk_money #bk_to"
@@ -12982,7 +12978,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="veal" quantity="26.5" unit="lbs">26 1/2 lbs.
+                                          commodity="veal" quantity="26.5" unit="pounds">26 1/2 lbs.
                                           veal</measure>64</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
@@ -13015,7 +13011,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="veal" quantity="5" unit="lbs">5 lbs.
+                                          commodity="veal" quantity="5" unit="pounds">5 lbs.
                                           Veal</measure></cell>
                               <cell/>
                               <cell><measure quantity="30" unit="cents" ana="#bk_money #bk_to"
@@ -13360,7 +13356,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="white lard" quantity="100" unit="lbs">100 lbs.
+                                          commodity="white lard" quantity="100" unit="pounds">100 lbs.
                                           White lard</measure></cell>
                               <cell/>
                               <cell/>
@@ -13378,7 +13374,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="pork spare" quantity="31" unit="lbs">3lbs. pork
+                                          commodity="pork spare" quantity="31" unit="pounds">3lbs. pork
                                           spare Eile</measure>6x</cell>
                               <cell/>
                               <cell/>
@@ -13407,7 +13403,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="lard" quantity="23.25" unit="lbs">23 1/4 lbs
+                                          commodity="lard" quantity="23.25" unit="pounds">23 1/4 lbs
                                           lard</measure> /9</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="2" unit="dollars"
@@ -13499,7 +13495,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>
-                                    <measure commodity="Salt Pork" quantity="56.25" unit="lbs">56
+                                    <measure commodity="Salt Pork" quantity="56.25" unit="pounds">56
                                           1/4 lbs. Salt pork</measure>paid</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="7" unit="dollars"
                                           >7</measure></cell>
@@ -14042,7 +14038,7 @@
                                           <abbr>DR</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="jallow" quantity="2.10" unit="lbs">2 lbs. 10
+                                          commodity="jallow" quantity="2.10" unit="pounds">2 lbs. 10
                                           ounces jallow</measure>9x</cell>
                               <cell/>
                               <cell><measure quantity="23" unit="cents" ana="#bk_money #bk_to"
@@ -15423,7 +15419,7 @@
                                                 <abbr>D</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/> To <measure commodity="dry wood"
-                                          quantity="1" unit="cord">one cord dry wood </measure>d by
+                                          quantity="1" unit="cords">one cord dry wood </measure>d by
                                     Z Makepeace </cell>
                               <cell>
                                     <measure quantity="4" unit="dollars" ana="#bk_money #bk_to"
@@ -18960,7 +18956,7 @@
                                                 <expan>debtor</expan>
                                           </choice></span><lb/>
                                     <date when="1842-06-07" ana="#bk_when">June 7 </date>to <measure
-                                          commodity="Vinegar" quantity="1" unit="Gallon">Gall.
+                                          commodity="Vinegar" quantity="1" unit="gallons">Gall.
                                           Vinegar </measure>.20x </cell>
                               <cell/>
                               <cell/>
@@ -19241,7 +19237,7 @@
                                                 <abbr>Dr</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/> To <measure
-                                          ana="#bk_commodity #bk_from" unit="lbs" quantity="21"
+                                          ana="#bk_commodity #bk_from" unit="pounds" quantity="21"
                                           commodity="cheese">21 lbs Cheese</measure> 8 1/2 c pr. lb </cell>
                               <cell>1</cell>
                               <cell>.79</cell>
@@ -21234,7 +21230,7 @@
                                                 <abbr>Dr</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/> To <measure commodity="Oil Silk"
-                                          quantity="0.25" unit="yard" ana="#bk_commodity #bk_from"
+                                          quantity="0.25" unit="yards" ana="#bk_commodity #bk_from"
                                           >1/4 Yd. Oil Silk </measure>.25x</cell>
                               <cell/>
                               <cell>
@@ -21561,7 +21557,7 @@
                         <row ana="#bk_entry">
                               <cell ana="#bk_status" corresp="#516">516</cell>
                               <cell>To <name type="account" ref="LMWcash" ana="#bk_to">cash pd. for
-                                                <measure commodity="goods">goods</measure> at
+                                               goods at
                                           Boston</name><span ana="#bk_debit"><choice>
                                                 <abbr>D</abbr>
                                                 <expan>debtor</expan>
@@ -22679,8 +22675,8 @@
                                           >Frank Dowler</name><span ana="#bk_debit"><choice>
                                                 <abbr>D</abbr>
                                                 <expan>debtor</expan>
-                                          </choice></span><lb/> To <measure commodity="goods">goods
-                                    </measure>bot. at Taunton </cell>
+                                          </choice></span><lb/> To goods
+                                    bot. at Taunton </cell>
                               <cell>
                                     <measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
                                           >1</measure>
@@ -22974,7 +22970,7 @@
                                                 <abbr>Dr</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/> To <measure commodity="Squashes"
-                                          quantity="25" unit="pound" ana="#bk_commodity #bk_from">25
+                                          quantity="25" unit="pounds" ana="#bk_commodity #bk_from">25
                                           lb Squashes</measure>
                               </cell>
                               <cell/>
@@ -23899,7 +23895,7 @@
                                                 <abbr>D</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/> To <measure commodity="Veal"
-                                          quantity="18.25" unit="pound" ana="#bk_commodity #bk_from"
+                                          quantity="18.25" unit="pounds" ana="#bk_commodity #bk_from"
                                           >18 1/4 lb Veal </measure>5x </cell>
                               <cell/>
                               <cell>
@@ -25212,7 +25208,7 @@
                                                 <abbr>Dr</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/>
-                                    <measure commodity="goods">Goods of Mr. Kelly </measure>as pr.
+                                    Goods of Mr. Kelly as pr.
                                     Bk. </cell>
                               <cell/>
                               <cell>
@@ -25451,8 +25447,8 @@
                                           Lynch</name><span ana="#bk_credit"><choice>
                                                 <abbr>Dr</abbr>
                                                 <expan>debtor</expan>
-                                          </choice></span><lb/> To <measure commodity="Goods">Goods
-                                          from Store </measure>as pr. book </cell>
+                                          </choice></span><lb/> To Goods
+                                          from Store as pr. book </cell>
                               <cell/>
                               <cell>
                                     <measure quantity="50" unit="cents" ana="#bk_money #bk_to"
@@ -26053,7 +26049,7 @@
                                                 <abbr/>
                                                 <expan/>
                                           </choice></span><lb/> " <measure commodity="Vinegar"
-                                          quantity="1" unit="gallon">1 Gall Vinegar.</measure> 20x </cell>
+                                          quantity="1" unit="gallons">1 Gall Vinegar.</measure> 20x </cell>
                               <cell/>
                               <cell>
                                     <measure quantity="20" unit="cents" ana="#bk_money #bk_to"
@@ -27578,7 +27574,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure commodity="sausage meat"
-                                          quantity="14.5" unit="lbs">14 1/2 lbs sausage
+                                          quantity="14.5" unit="pounds">14 1/2 lbs sausage
                                           meat.</measure> 10x</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
@@ -27597,7 +27593,7 @@
                                           <abbr>D</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/><measure commodity="sausage meat" quantity="3.5"
-                                          unit="lbs">3 1/2 lbs sausage meat.</measure> 10x</cell>
+                                          unit="pounds">3 1/2 lbs sausage meat.</measure> 10x</cell>
                               <cell/>
                               <cell><measure quantity="35" unit="cents" ana="#bk_money #bk_to"
                                           >35</measure></cell>
@@ -27646,7 +27642,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure commodity="sausage meat"
-                                          quantity="5.8" unit="lbs">5 8oz lbs sausage meat</measure>
+                                          quantity="5.8" unit="pounds">5 8oz lbs sausage meat</measure>
                                     10x</cell>
                               <cell/>
                               <cell><measure quantity="55" unit="cents" ana="#bk_money #bk_to"
@@ -27665,7 +27661,7 @@
                                           <expan>debtor</expan>
                                     </choice><lb/>To <name type="account" ref="LMWcash">cash</name>
                                     fr. <measure ana="#bk_commodity #bk_from" commodity="feathers"
-                                          quantity="70" unit="lbs">70 lbs feathers</measure>
+                                          quantity="70" unit="pounds">70 lbs feathers</measure>
                                     2/</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="23" unit="dollars"
@@ -27955,7 +27951,7 @@
                               <cell/>
                               <cell><name ana="#bk_to" type="person" ref="pers_WCDH269"/>" <measure
                                           ana="#bk_commodity #bk_from" commodity="salt beef"
-                                          quantity="7" unit="lbs">7 lbs (ie or) of salt
+                                          quantity="7" unit="pounds">7 lbs (ie or) of salt
                                           beef</measure> 5x</cell>
                               <cell/>
                               <cell><measure quantity="39" unit="cents" ana="#bk_money #bk_to"
@@ -28101,7 +28097,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="butter" quantity="3.5" unit="lbs">3 1/2 lbs
+                                          commodity="butter" quantity="3.5" unit="pounds">3 1/2 lbs
                                           butter</measure>
                                     <measure ana="#bk_money #bk_to" quantity="17" unit="cents"
                                           >.17</measure></cell>
@@ -28152,7 +28148,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="butter" quantity="10" unit="lbs">10 lbs
+                                          commodity="butter" quantity="10" unit="pounds">10 lbs
                                           Butter</measure> .16x</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
                                           >1</measure></cell>
@@ -28219,7 +28215,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure commodity="salt beef" quantity="4.6"
-                                          unit="lbs">4lbs 6.oz salt beef</measure> 5x</cell>
+                                          unit="pounds">4lbs 6.oz salt beef</measure> 5x</cell>
                               <cell/>
                               <cell><measure quantity="24" unit="cents" ana="#bk_money #bk_to"
                                           >24</measure></cell>
@@ -28266,7 +28262,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="butter" quantity="3.5" unit="lbs">3lbs-5oz
+                                          commodity="butter" quantity="3.5" unit="pounds">3lbs-5oz
                                           butter</measure> .16 cts p. lb</cell>
                               <cell/>
                               <cell><measure quantity="53" unit="cents" ana="#bk_money #bk_to"
@@ -28285,7 +28281,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="5.11" unit="lbs">5lbs 11oz
+                                          commodity="beef" quantity="5.11" unit="pounds">5lbs 11oz
                                           Beef</measure></cell>
                               <cell/>
                               <cell/>
@@ -28300,7 +28296,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="butter" quantity="4.14" unit="lbs">4lbs 14oz
+                                          commodity="butter" quantity="4.14" unit="pounds">4lbs 14oz
                                           butter</measure>
                                     <measure ana="#bk_money #bk_to" quantity=".16" unit="cents"
                                           >16</measure></cell>
@@ -28351,7 +28347,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="butter" quantity="3.5" unit="lbs">3 1/2 lbs
+                                          commodity="butter" quantity="3.5" unit="pounds">3 1/2 lbs
                                           butter</measure>
                                     <measure ana="#bk_money #bk_to" quantity="16" unit="cents"
                                           >16</measure></cell>
@@ -28406,7 +28402,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="butter" quantity="2.10" unit="lbs">2lbs 10oz.
+                                          commodity="butter" quantity="2.10" unit="pounds">2lbs 10oz.
                                           butter</measure> 16x-</cell>
                               <cell/>
                               <cell><measure quantity="41" unit="cents" ana="#bk_money #bk_to"
@@ -28457,7 +28453,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="sage cheese" quantity="6.5" unit="lbs">6 1/2
+                                          commodity="sage cheese" quantity="6.5" unit="pounds">6 1/2
                                           lbs sage cheese</measure> 8cts</cell>
                               <cell/>
                               <cell><measure quantity="50" unit="cents" ana="#bk_money #bk_to"
@@ -28968,7 +28964,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>" <measure ana="#bk_commodity #bk_from" commodity="wood"
-                                          quantity="350" unit="ft">wood 350 pr. ???</measure></cell>
+                                          quantity="350" unit="feet">wood 350 pr. ???</measure></cell>
                               <cell/>
                               <cell/>
                               <cell/>
@@ -28977,7 +28973,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>" <measure ana="#bk_commodity #bk_from" commodity="turkey"
-                                          quantity="6.5" unit="lbs">6 1/2 lbs
+                                          quantity="6.5" unit="pounds">6 1/2 lbs
                                     turkey</measure></cell>
                               <cell>(struck through)</cell>
                               <cell><measure quantity="81" unit="cents" ana="#bk_money #bk_to"
@@ -29091,7 +29087,7 @@
 
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>" <measure commodity="stove pipe" quantity="10.5" unit="lbs">10
+                              <cell>" <measure commodity="stove pipe" quantity="10.5" unit="pounds">10
                                           1/2 lbs stove pipe ? pr. lb.</measure></cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
                                           >1</measure></cell>
@@ -29148,7 +29144,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>" <measure ana="#bk_commodity #bk_from" commodity="beef"
-                                          quantity="89" unit="lbs">89 lbs. beef</measure> 5x hind
+                                          quantity="89" unit="pounds">89 lbs. beef</measure> 5x hind
                                     quarts</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="4" unit="dollars"
                                           >4</measure></cell>
@@ -29177,7 +29173,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="90" unit="lbs">90 lbs.
+                                          commodity="beef" quantity="90" unit="pounds">90 lbs.
                                           beef</measure> 5x for quarter</cell>
                               <cell/>
                               <cell><measure quantity="45" unit="cents" ana="#bk_money #bk_to"
@@ -29331,7 +29327,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="pork" quantity="310"
-                                          unit="lbs" ana="#bk_commodity #bk_from">310 lbs fresh
+                                          unit="pounds" ana="#bk_commodity #bk_from">310 lbs fresh
                                           pork</measure> 6x</cell>
                               <cell><measure quantity="18" unit="dollars" ana="#bk_money #bk_to"
                                           >18</measure></cell>
@@ -29348,7 +29344,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="pork" quantity="150"
-                                          unit="lbs" ana="#bk_commodity #bk_from">150 lbs fresh
+                                          unit="pounds" ana="#bk_commodity #bk_from">150 lbs fresh
                                           pork</measure> 6x</cell>
                               <cell><measure quantity="9" unit="dollars" ana="#bk_money #bk_to"
                                           >9</measure></cell>
@@ -29365,7 +29361,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="pork" quantity="175"
-                                          unit="lbs" ana="#bk_commodity #bk_from">175 lbs fresh
+                                          unit="pounds" ana="#bk_commodity #bk_from">175 lbs fresh
                                           pork</measure> 6x</cell>
                               <cell><measure quantity="9" unit="dollars" ana="#bk_money #bk_to"
                                           >9</measure></cell>
@@ -29497,7 +29493,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>" <measure commodity="stove pipe" quantity="7.34" unit="lb">7
+                              <cell>" <measure commodity="stove pipe" quantity="7.34" unit="pounds">7
                                           /34 lb stove pipe</measure></cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
                                           >1</measure></cell>
@@ -29519,7 +29515,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>" <measure commodity="pipe" quantity="1.25" unit="lb">1 1/4 lb
+                              <cell>" <measure commodity="pipe" quantity="1.25" unit="pounds">1 1/4 lb
                                           pipe</measure> 1/</cell>
                               <cell/>
                               <cell><measure quantity="21" unit="cents" ana="#bk_money #bk_to"
@@ -29680,7 +29676,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="lumber" quantity="6.25"
-                                          unit="ft" ana="#bk_commodity #bk_from">6 ft 3/12 basket
+                                          unit="feet" ana="#bk_commodity #bk_from">6 ft 3/12 basket
                                           timber</measure> at 14 $?</cell>
 
                               <cell><measure quantity="10" unit="dollars" ana="#bk_money #bk_to"
@@ -29692,7 +29688,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>" <measure commodity="lumber" quantity="1.33" unit="ft"
+                              <cell>" <measure commodity="lumber" quantity="1.33" unit="feet"
                                           ana="#bk_commodity #bk_from">1ft &amp; 4/12 4red
                                           oak</measure> 700pr</cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -29767,7 +29763,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="lumber" quantity="1"
-                                          unit="ft" ana="#bk_commodity #bk_from">ft of elm
+                                          unit="feet" ana="#bk_commodity #bk_from">ft of elm
                                           timber</measure></cell>
 
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -29787,7 +29783,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="lumber" quantity="7.5"
-                                          unit="ft" ana="#bk_commodity #bk_from">7ft- 8in hard
+                                          unit="feet" ana="#bk_commodity #bk_from">7ft- 8in hard
                                           wood</measure> $4.00</cell>
 
                               <cell><measure quantity="3" unit="dollars" ana="#bk_money #bk_to"
@@ -29807,7 +29803,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="lumber" quantity="7.33"
-                                          unit="ft" ana="#bk_commodity #bk_from">7ft 4in
+                                          unit="feet" ana="#bk_commodity #bk_from">7ft 4in
                                           wood</measure> $4.00</cell>
 
                               <cell><measure quantity="3" unit="dollars" ana="#bk_money #bk_to"
@@ -29846,7 +29842,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="lumber" quantity="6.5"
-                                          unit="ft" ana="#bk_commodity #bk_from">6ft 6in pine
+                                          unit="feet" ana="#bk_commodity #bk_from">6ft 6in pine
                                           wood</measure>, <measure commodity="saw" quantity="1"
                                           unit="count" ana="#bk_commodity #bk_from"
                                     >saw</measure></cell>
@@ -29901,7 +29897,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="shirting" quantity="1.5"
-                                          unit="yard" ana="#bk_commodity #bk_from">1 1/2 yd B.
+                                          unit="yards" ana="#bk_commodity #bk_from">1 1/2 yd B.
                                           shirting</measure> 9/</cell>
                               <cell/>
                               <cell><measure quantity="19" unit="cents" ana="#bk_money #bk_to"
@@ -29963,7 +29959,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="lumber" quantity="1"
-                                          unit="ft" ana="#bk_commodity #bk_from">1 ft
+                                          unit="feet" ana="#bk_commodity #bk_from">1 ft
                                           timber</measure></cell>
                               <cell><measure quantity="6" unit="dollars" ana="#bk_money #bk_to"
                                           >6</measure></cell>
@@ -30001,7 +29997,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="milk" quantity="8" unit="qts">8qts
+                                          commodity="milk" quantity="8" unit="quarts">8qts
                                           Milk</measure> 4x</cell>
                               <cell/>
                               <cell><measure quantity="32" unit="cents" ana="#bk_money #bk_to"
@@ -30095,7 +30091,7 @@
                                     <choice>
                                           <abbr>Dr</abbr>
                                           <expan instant="false">Debtor</expan>
-                                    </choice><lb/>To <measure commodity="lumber" quantity="7" unit="ft"
+                                    </choice><lb/>To <measure commodity="lumber" quantity="7" unit="feet"
                                           ana="#bk_commodity #bk_from">7ft hard wood</measure>
                                     <measure quantity="4" unit="dollars" ana="#bk_money #bk_to"
                                           >400</measure>
@@ -30109,7 +30105,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>" <measure commodity="lumber" quantity="5" unit="ft"
+                              <cell>" <measure commodity="lumber" quantity="5" unit="feet"
                                           ana="#bk_commodity #bk_from">5ft sawed pine</measure> "
                                           <measure quantity="4" unit="dollars"
                                           ana="#bk_money #bk_to">400</measure></cell>
@@ -30144,7 +30140,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="lumber" quantity="7.3"
-                                          unit="ft" ana="#bk_commodity #bk_from">7ft 4 inch hard
+                                          unit="feet" ana="#bk_commodity #bk_from">7ft 4 inch hard
                                           wood</measure> $400</cell>
 
                               <cell><measure quantity="3" unit="dollars" ana="#bk_money #bk_to"
@@ -30240,7 +30236,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>To <measure commodity="lumber" quantity="7.75" unit="ft"
+                              <cell>To <measure commodity="lumber" quantity="7.75" unit="feet"
                                           ana="#bk_commodity #bk_from">7ft 9 inches hard
                                           wood</measure>
                                     <measure quantity="4.5" unit="dollars" ana="#bk_money #bk_to"
@@ -30261,7 +30257,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="lumber" quantity="4.16"
-                                          unit="ft" ana="#bk_commodity #bk_from">4ft 2 inches
+                                          unit="feet" ana="#bk_commodity #bk_from">4ft 2 inches
                                           wood</measure> $4.00 /?</cell>
 
                               <cell><measure quantity="2" unit="dollars" ana="#bk_money #bk_to"
@@ -30550,7 +30546,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="lumber" quantity="4.3"
-                                          unit="ft" ana="#bk_commodity #bk_from">4ft 4in wood sawed
+                                          unit="feet" ana="#bk_commodity #bk_from">4ft 4in wood sawed
                                           pine</measure> $400</cell>
 
                               <cell><measure quantity="2" unit="dollars" ana="#bk_money #bk_to"
@@ -30649,7 +30645,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="lumber" quantity="10.25"
-                                          unit="ft" ana="#bk_commodity #bk_from">10ft 3inches pine
+                                          unit="feet" ana="#bk_commodity #bk_from">10ft 3inches pine
                                           wood sawed</measure> $400</cell>
 
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -30676,7 +30672,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>To <measure commodity="lumber" quantity="4.6" unit="ft"
+                              <cell>To <measure commodity="lumber" quantity="4.6" unit="feet"
                                           ana="#bk_commodity #bk_from">4ft 7inches hard
                                           wood</measure>
                                     <measure quantity="4.5" unit="dollars" ana="#bk_money #bk_to"
@@ -30737,7 +30733,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="butter" quantity="1.125"
-                                          unit="lbs" ana="#bk_commodity #bk_from">1lb. 2oz.
+                                          unit="pounds" ana="#bk_commodity #bk_from">1lb. 2oz.
                                           butter</measure> 23x</cell>
                               <cell/>
                               <cell><measure quantity="25" unit="cents" ana="#bk_money #bk_to"
@@ -30874,7 +30870,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="lumber" quantity="1.96"
-                                          unit="ft" ana="#bk_commodity #bk_from">1ft 11 1/2 inches
+                                          unit="feet" ana="#bk_commodity #bk_from">1ft 11 1/2 inches
                                           oak wood</measure> $10</cell>
 
                               <cell><measure quantity="2" unit="dollars" ana="#bk_money #bk_to"
@@ -31160,7 +31156,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>To <measure ana="#bk_commodity #bk_from" commodity="butter"
-                                          quantity="2" unit="lbs">2 lbs butter</measure>
+                                          quantity="2" unit="pounds">2 lbs butter</measure>
                                     <measure ana="#bk_money #bk_to" quantity="0.5" unit="cents"
                                           >.25</measure></cell>
                               <cell/>
@@ -31267,7 +31263,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="salt pork" quantity="8" unit="lbs">8 lbs salt
+                                          commodity="salt pork" quantity="8" unit="pounds">8 lbs salt
                                           pork</measure> 12x</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
                                           >1</measure></cell>
@@ -31286,7 +31282,7 @@
                                           <abbr>D</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="salt pork" quantity="8.75" unit="lbs">8 3/4 lbs
+                                          commodity="salt pork" quantity="8.75" unit="pounds">8 3/4 lbs
                                           salt pork</measure> 12x</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
                                           >1</measure></cell>
@@ -31313,7 +31309,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="sawed pine wood" quantity="8.16" unit="ft"
+                                          commodity="sawed pine wood" quantity="8.16" unit="feet"
                                           >8ft-2inches sawed pine wood</measure>
                                     <measure ana="#bk_money #bk_to" quantity="4" unit="dollars"
                                           >400</measure></cell>
@@ -32486,7 +32482,7 @@
                                           <abbr/>
                                           <expan/>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="hard wood" quantity="1" unit="load">1 load
+                                          commodity="hard wood" quantity="1" unit="loads">1 load
                                           hardwood</measure></cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="4" unit="dollars"
                                           >4</measure></cell>
@@ -32509,7 +32505,7 @@
                                           <abbr>D</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="pine" quantity="2" unit="load">2 load pine
+                                          commodity="pine" quantity="2" unit="loads">2 load pine
                                           ?ss</measure></cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
                                           >1</measure></cell>
@@ -32607,7 +32603,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="64" unit="lbs">64 lbs
+                                          commodity="beef" quantity="64" unit="pounds">64 lbs
                                           beef</measure> $7.00</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="4" unit="dollars"
@@ -32626,7 +32622,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="64" unit="lbs">64 lbs
+                                          commodity="beef" quantity="64" unit="pounds">64 lbs
                                           beef</measure> $7.00</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="4" unit="dollars"
@@ -32645,7 +32641,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="78" unit="lbs">78 lbs
+                                          commodity="beef" quantity="78" unit="pounds">78 lbs
                                           beef</measure> 6 1/2</cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="5" unit="dollars"
@@ -32806,7 +32802,7 @@
                                           <abbr>D</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure commodity="lumber" quantity="1"
-                                          unit="load" ana="#bk_commodity #bk_from">1 load of
+                                          unit="loads" ana="#bk_commodity #bk_from">1 load of
                                           pine</measure> x</cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
                                           >1</measure></cell>
@@ -32900,7 +32896,7 @@
                         <row ana="#bk_entry">
                               <cell ana="#bk_status">Settled</cell>
                               <cell><name type="person" ref="pers_WCDH269" ana="#bk_to"/>" <measure
-                                          commodity="salt pork" quantity="5" unit="lbs"
+                                          commodity="salt pork" quantity="5" unit="pounds"
                                           ana="#bk_commodity #bk_from">5 lbs. salt pork</measure>
                                     9c</cell>
                               <cell/>
@@ -32920,7 +32916,7 @@
                                           <abbr>D</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure commodity="beef" quantity="60"
-                                          unit="lbs" ana="#bk_commodity #bk_from">60 lbs. fresh
+                                          unit="pounds" ana="#bk_commodity #bk_from">60 lbs. fresh
                                           beef</measure> in Dec. 6 1/2</cell>
                               <cell><measure quantity="3" unit="dollars" ana="#bk_money #bk_to"
                                           >3</measure></cell>
@@ -33155,7 +33151,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice>
-                                    <lb/>To <measure commodity="salt pork" quantity="13" unit="lbs"
+                                    <lb/>To <measure commodity="salt pork" quantity="13" unit="pounds"
                                           ana="#bk_commodity #bk_from">13 lbs. salt pork</measure>
                                     9x</cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -33373,7 +33369,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>Debtor</expan>
                                     </choice>
-                                    <lb/>To <measure commodity="salt pork" quantity="8.5" unit="lbs"
+                                    <lb/>To <measure commodity="salt pork" quantity="8.5" unit="pounds"
                                           ana="#bk_commodity #bk_from">8 1/2 lbs salt pork</measure>
                                     9?</cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -33565,7 +33561,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="salt pork" quantity="8.75"
-                                          unit="lbs" ana="#bk_commodity #bk_from">8 3/4 lb salt
+                                          unit="pounds" ana="#bk_commodity #bk_from">8 3/4 lb salt
                                           pork</measure> 9c</cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
                                           >1</measure></cell>
@@ -33584,7 +33580,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="lumber" quantity="1"
-                                          unit="load" ana="#bk_commodity #bk_from">1 load pine
+                                          unit="loads" ana="#bk_commodity #bk_from">1 load pine
                                           wood</measure> 18/</cell>
                               <cell><measure quantity="3" unit="dollars" ana="#bk_money #bk_to"
                                           >3</measure></cell>
@@ -33658,7 +33654,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="salt beef" quantity="60"
-                                          unit="lbs" ana="#bk_commodity #bk_from">60 lbs salt
+                                          unit="pounds" ana="#bk_commodity #bk_from">60 lbs salt
                                           beef</measure> 6x</cell>
                               <cell><measure quantity="3" unit="dollars" ana="#bk_money #bk_to"
                                           >3</measure></cell>
@@ -33669,7 +33665,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>To <measure commodity="sausage meat" quantity="8.5" unit="lbs"
+                              <cell>To <measure commodity="sausage meat" quantity="8.5" unit="pounds"
                                           ana="#bk_commodity #bk_from">8 1/2 " sausage
                                           meat</measure></cell>
                               <cell/>
@@ -33725,7 +33721,7 @@
                                     <choice>
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
-                                    </choice><lb/>To <measure commodity="lumber" quantity="1" unit="load"
+                                    </choice><lb/>To <measure commodity="lumber" quantity="1" unit="loads"
                                           ana="#bk_commodity #bk_from">load pine wood</measure>
                                     -</cell>
                               <cell/>
@@ -33788,7 +33784,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="pork" quantity="9"
-                                          unit="lbs" ana="#bk_commodity #bk_from">9 lbs? pig
+                                          unit="pounds" ana="#bk_commodity #bk_from">9 lbs? pig
                                           poark</measure>, <span ana="#bk_transactionStatus"
                                           >Settled</span></cell>
 
@@ -34099,9 +34095,9 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>To <measure commodity="butter" quantity="3.62" unit="lbs"
+                              <cell>To <measure commodity="butter" quantity="3.62" unit="pounds"
                                           ana="#bk_commodity #bk_from">3lb t0oz B.</measure>
-                                    <measure commodity="butter" quantity="1.5" unit="lbs"
+                                    <measure commodity="butter" quantity="1.5" unit="pounds"
                                           ana="#bk_commodity #bk_from">1 lb 8 oz. Butter</measure>
                                     1/6</cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -34217,7 +34213,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="butter" quantity="4.12"
-                                          unit="lbs" ana="#bk_commodity #bk_from">4lbs 2o.
+                                          unit="pounds" ana="#bk_commodity #bk_from">4lbs 2o.
                                           butter</measure> .25x</cell>
 
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -34290,7 +34286,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>" <measure commodity="cheese" quantity="3.25" unit="lbs"
+                              <cell>" <measure commodity="cheese" quantity="3.25" unit="pounds"
                                           ana="#bk_commodity #bk_from">3 1/4 lbs
                                     cheese</measure></cell>
                               <cell/>
@@ -34346,7 +34342,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="butter" quantity="3.31"
-                                          unit="lbs" ana="#bk_commodity #bk_from">3lbs 5oz
+                                          unit="pounds" ana="#bk_commodity #bk_from">3lbs 5oz
                                           Butter</measure> 25x</cell>
                               <cell/>
                               <cell><measure quantity="87" unit="cents" ana="#bk_money #bk_to"
@@ -34368,7 +34364,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="butter" quantity="1.25"
-                                          unit="lbs" ana="#bk_commodity #bk_from">1 1/4 lbs
+                                          unit="pounds" ana="#bk_commodity #bk_from">1 1/4 lbs
                                           butter</measure> 1/6 -</cell>
                               <cell/>
                               <cell><measure quantity="31" unit="cents" ana="#bk_money #bk_to"
@@ -34380,7 +34376,7 @@
                               >21</date></span>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>To <measure commodity="butter" quantity="5.56" unit="lbs"
+                              <cell>To <measure commodity="butter" quantity="5.56" unit="pounds"
                                           ana="#bk_commodity #bk_from">5 lbs 9oz butter</measure>
                                     1/6</cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -34539,7 +34535,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="lumber" quantity="1"
-                                          unit="load" ana="#bk_commodity #bk_from">1 load
+                                          unit="loads" ana="#bk_commodity #bk_from">1 load
                                           wood</measure> pr agreement 12/</cell>
 
                               <cell><measure quantity="2" unit="dollars" ana="#bk_money #bk_to"
@@ -34574,7 +34570,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="iron" quantity="2.5"
-                                          unit="lbs" ana="#bk_commodity #bk_from">299 lbs wrough
+                                          unit="pounds" ana="#bk_commodity #bk_from">299 lbs wrough
                                           iron 2 1/2</measure></cell>
 
                               <cell><measure quantity="7" unit="dollars" ana="#bk_money #bk_to"
@@ -34586,7 +34582,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>" <measure commodity="iron" quantity="39" unit="lbs"
+                              <cell>" <measure commodity="iron" quantity="39" unit="pounds"
                                           ana="#bk_commodity #bk_from">39 " " " 1</measure></cell>
                               <cell/>
                               <cell><measure quantity="37" unit="cents" ana="#bk_money #bk_to"
@@ -34691,7 +34687,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="butter" quantity="6.25"
-                                          unit="lbs" ana="#bk_commodity #bk_from">6 1/4 lbs
+                                          unit="pounds" ana="#bk_commodity #bk_from">6 1/4 lbs
                                           butter</measure> 1/6 -</cell>
 
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -34755,7 +34751,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="lumber" quantity="7.16"
-                                          unit="ft" ana="#bk_commodity #bk_from">7ft 2 in pine
+                                          unit="feet" ana="#bk_commodity #bk_from">7ft 2 in pine
                                           wood</measure></cell>
 
                               <cell><measure quantity="2" unit="dollars" ana="#bk_money #bk_to"
@@ -34844,7 +34840,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="butter" quantity="7"
-                                          unit="lbs" ana="#bk_commodity #bk_from">7lbs
+                                          unit="pounds" ana="#bk_commodity #bk_from">7lbs
                                           butter</measure> 25x</cell>
 
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -34865,7 +34861,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="stuff" quantity="1"
-                                          unit="load" ana="#bk_commodity #bk_from">1 load dry
+                                          unit="loads" ana="#bk_commodity #bk_from">1 load dry
                                           stuff</measure> $2/00</cell>
 
                               <cell><measure quantity="2" unit="dollars" ana="#bk_money #bk_to"
@@ -34955,7 +34951,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="billowers" quantity="1"
-                                          unit="yard" ana="#bk_commodity #bk_from">1 pr
+                                          unit="yards" ana="#bk_commodity #bk_from">1 pr
                                           Billowers</measure>, store ect. ????</cell>
 
                               <cell><measure quantity="8" unit="dollars" ana="#bk_money #bk_to"
@@ -35022,7 +35018,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="butter" quantity="3.5"
-                                          unit="lbs" ana="#bk_commodity #bk_from">3 1/2 lbs
+                                          unit="pounds" ana="#bk_commodity #bk_from">3 1/2 lbs
                                           butter</measure> 1/6</cell>
                               <cell/>
                               <cell><measure quantity="88" unit="cents" ana="#bk_money #bk_to"
@@ -35170,7 +35166,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">Debtor</expan>
                                     </choice><lb/>To <measure commodity="beef" quantity="87.5"
-                                          unit="lbs" ana="#bk_commodity #bk_from">87 1/2 lbs
+                                          unit="pounds" ana="#bk_commodity #bk_from">87 1/2 lbs
                                           beef</measure> 6x</cell>
 
                               <cell><measure quantity="5" unit="dollars" ana="#bk_money #bk_to"
@@ -35881,7 +35877,7 @@
                                           <abbr>D</abbr>
                                           <expan>Debtor</expan>
                                     </choice><lb/>To<measure ana="#bk_commodity #bk_from"
-                                          commodity="milk" quantity="66.5" unit="quartz"> 66 ½ qts
+                                          commodity="milk" quantity="66.5" unit="quarts"> 66 ½ qts
                                           milk 4</measure></cell>
                               <cell/>
                               <cell><measure ana="#bk_money #bk_to" quantity="2" unit="dollars"
@@ -35982,7 +35978,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="pork" quantity="7"
-                                          unit="lbs" ana="#bk_commodity #bk_from">7 lbs. fresh
+                                          unit="pounds" ana="#bk_commodity #bk_from">7 lbs. fresh
                                           pork</measure> 11x</cell>
                               <cell/>
                               <cell><measure quantity="77" unit="cents" ana="#bk_money #bk_to"
@@ -35998,7 +35994,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="pork" quantity="5"
-                                          unit="lbs" ana="#bk_commodity #bk_from">5 lbs. fresh
+                                          unit="pounds" ana="#bk_commodity #bk_from">5 lbs. fresh
                                           pork</measure> 11x</cell>
                               <cell/>
                               <cell><measure quantity="55" unit="cents" ana="#bk_money #bk_to"
@@ -36016,7 +36012,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="pork" quantity="9.5"
-                                          unit="lbs" ana="#bk_commodity #bk_from">9 1/2 lbs fresh
+                                          unit="pounds" ana="#bk_commodity #bk_from">9 1/2 lbs fresh
                                           pork</measure> 11x</cell>
 
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -36039,7 +36035,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>To <measure commodity="pork" quantity="7" unit="lbs"
+                              <cell>To <measure commodity="pork" quantity="7" unit="pounds"
                                           ana="#bk_commodity #bk_from">7 lbs fresh pork</measure>
                                     <measure quantity="11" unit="cents" ana="#bk_money #bk_to"
                                           >11</measure></cell>
@@ -36057,7 +36053,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="pork" quantity="7.75"
-                                          unit="lbs" ana="#bk_commodity #bk_from">7 3/4 lbs.
+                                          unit="pounds" ana="#bk_commodity #bk_from">7 3/4 lbs.
                                           pork</measure>
                                     <measure quantity="11" unit="cents" ana="#bk_money #bk_to"
                                           >11</measure></cell>
@@ -36076,7 +36072,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="paint brushes" quantity="4"
-                                          unit="lbs" ana="#bk_commodity #bk_from">4 paint
+                                          unit="pounds" ana="#bk_commodity #bk_from">4 paint
                                           brushes</measure> market 2.75x 2.59x</cell>
 
                               <cell><measure quantity="2" unit="dollars" ana="#bk_money #bk_to"
@@ -36142,7 +36138,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell><measure commodity="butter" quantity="3" unit="lbs"
+                              <cell><measure commodity="butter" quantity="3" unit="pounds"
                                           ana="#bk_commodity #bk_from">3lb butter</measure>
                                     1/8</cell>
                               <cell/>
@@ -36163,7 +36159,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="calico" quantity="10.5"
-                                          unit="yds">10 1/2 yds calico</measure> 11x</cell>
+                                          unit="yards">10 1/2 yds calico</measure> 11x</cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
                                           >1</measure></cell>
 
@@ -36206,7 +36202,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="butter" quantity="1.25"
-                                          unit="lbs" ana="#bk_commodity #bk_from">1 1/4 lbs.
+                                          unit="pounds" ana="#bk_commodity #bk_from">1 1/4 lbs.
                                           butter</measure> 1/6</cell>
                               <cell/>
                               <cell/>
@@ -36225,7 +36221,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="hay" quantity="6560"
-                                          unit="lbs" ana="#bk_commodity #bk_from">6560 lbs English
+                                          unit="pounds" ana="#bk_commodity #bk_from">6560 lbs English
                                           hay</measure> $12.00</cell>
 
                               <cell><measure quantity="39" unit="dollars" ana="#bk_money #bk_to"
@@ -36244,7 +36240,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="beef" quantity="78.5"
-                                          unit="lbs" ana="#bk_commodity #bk_from">78 1/2 lbs.
+                                          unit="pounds" ana="#bk_commodity #bk_from">78 1/2 lbs.
                                           beef</measure> med. last fall</cell>
 
                               <cell><measure quantity="4" unit="dollars" ana="#bk_money #bk_to"
@@ -36377,7 +36373,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="butter" quantity="2"
-                                          unit="lbs" ana="#bk_commodity #bk_from">2 lbs.
+                                          unit="pounds" ana="#bk_commodity #bk_from">2 lbs.
                                           butter</measure> 22x pr lb</cell>
                               <cell/>
                               <cell><measure quantity="44" unit="cents" ana="#bk_money #bk_to"
@@ -36432,7 +36428,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="butter" quantity="4.56"
-                                          unit="lbs" ana="#bk_commodity #bk_from">4lbs-9oz
+                                          unit="pounds" ana="#bk_commodity #bk_from">4lbs-9oz
                                           butter</measure> 25x pr lb</cell>
 
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -36452,7 +36448,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="potatoes" quantity="1"
-                                          unit="lbs" ana="#bk_commodity #bk_from">1 lbs
+                                          unit="pounds" ana="#bk_commodity #bk_from">1 lbs
                                           potatoes</measure></cell>
                               <cell/>
                               <cell/>
@@ -36470,7 +36466,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="butter" quantity="4"
-                                          unit="lbs" ana="#bk_commodity #bk_from">4 lbs
+                                          unit="pounds" ana="#bk_commodity #bk_from">4 lbs
                                           butter</measure> 22x -</cell>
                               <cell/>
                               <cell><measure quantity="88" unit="cents" ana="#bk_money #bk_to"
@@ -36622,7 +36618,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>" <measure commodity="lumber" quantity="6" unit="ft"
+                              <cell>" <measure commodity="lumber" quantity="6" unit="feet"
                                           ana="#bk_commodity #bk_from">6 ft old boards</measure>
                                     <measure quantity="2.5" unit="dollars" ana="#bk_money #bk_to"
                                           >250</measure></cell>
@@ -36695,7 +36691,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>" <measure commodity="ham" quantity="13" unit="lbs"
+                              <cell>" <measure commodity="ham" quantity="13" unit="pounds"
                                           ana="#bk_commodity #bk_from">13 lbs ham</measure> -
                                     10x</cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -36728,7 +36724,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="ham" quantity="21"
-                                          unit="lbs" ana="#bk_commodity #bk_from">21 lb.
+                                          unit="pounds" ana="#bk_commodity #bk_from">21 lb.
                                           Ham</measure> 10x -</cell>
 
                               <cell><measure quantity="2" unit="dollars" ana="#bk_money #bk_to"
@@ -36779,7 +36775,7 @@
                                                 <abbr>Dr</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/> To <measure commodity="tea"
-                                          quantity="3.5" unit="lbs" ana="#bk_commodity #bk_from">3
+                                          quantity="3.5" unit="pounds" ana="#bk_commodity #bk_from">3
                                           1/2 lbs tea</measure> 35x</cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
                                           >1</measure></cell>
@@ -36906,7 +36902,7 @@
                                                 <expan/>
                                           </choice></span><lb/><name type="person" ref="#"
                                           ana="#bk_to">S.A.Chapin</name> To <measure
-                                          commodity="bacon" quantity="38" unit="lbs"
+                                          commodity="bacon" quantity="38" unit="pounds"
                                           ana="#bk_commodity #bk_from">38 lbs bacon</measure> 11x pr
                                     lb</cell>
                               <cell><measure quantity="3" unit="dollars" ana="#bk_money #bk_to"
@@ -36922,7 +36918,7 @@
                                                 <abbr>D</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/> " " " " (struckthrough) " <measure
-                                          commodity="chops" quantity="10.25" unit="lbs"
+                                          commodity="chops" quantity="10.25" unit="pounds"
                                           ana="#bk_commodity #bk_from">10/4 lb chops</measure>
                                     (struckthrough)</cell>
                               <cell/>
@@ -36950,7 +36946,7 @@
                                                 <expan>debtor</expan>
                                           </choice></span><lb/><name type="person"
                                           ref="pers_WCDH373" ana="#bk_to">Linus Howard</name> To
-                                          <measure commodity="rhubarb" quantity="9" unit="lbs"
+                                          <measure commodity="rhubarb" quantity="9" unit="pounds"
                                           ana="#bk_commodity #bk_from">9 lbs rhubarb</measure>
                                     3x</cell>
                               <cell/>
@@ -36970,7 +36966,7 @@
                                                 <expan>debtor</expan>
                                           </choice></span><lb/><name type="person"
                                           ref="pers_WCDH373" ana="#bk_to">Linus Howard</name> To
-                                          <measure commodity="rhubarb" quantity="8.75" unit="lbs"
+                                          <measure commodity="rhubarb" quantity="8.75" unit="pounds"
                                           ana="#bk_commodity #bk_from">8 3/4 lbs rhubarb</measure> 2
                                     1/2</cell>
                               <cell/>
@@ -37043,7 +37039,7 @@
                                                 <abbr>D</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/>To <measure commodity="lumber"
-                                          quantity="7" unit="ft" ana="#bk_commodity #bk_from">7 ft.
+                                          quantity="7" unit="feet" ana="#bk_commodity #bk_from">7 ft.
                                           hard wood</measure> dhd som time since <measure
                                           quantity="4" unit="dollars" ana="#bk_money #bk_to"
                                           >400</measure></cell>
@@ -37062,7 +37058,7 @@
                                                 <abbr>Dr</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/>To <measure commodity="lumber"
-                                          quantity="0.5" unit="cord">1/2 cord kindling
+                                          quantity="0.5" unit="cords">1/2 cord kindling
                                           stuff</measure> 280x</cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
                                           >1</measure></cell>
@@ -37079,7 +37075,7 @@
                                                 <abbr>D</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/>To <measure commodity="lumber"
-                                          quantity="5.5" unit="ft" ana="#bk_commodity #bk_from">5
+                                          quantity="5.5" unit="feet" ana="#bk_commodity #bk_from">5
                                           1/2 ft small wood</measure></cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
                                     />1</cell>
@@ -37115,7 +37111,7 @@
                                                 <abbr>D</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/>To <measure commodity="lumber"
-                                          quantity="5" unit="ft" ana="#bk_commodity #bk_from">5ft.
+                                          quantity="5" unit="feet" ana="#bk_commodity #bk_from">5ft.
                                           cord hardwood small</measure>
                                     <measure quantity="1.3" unit="dollars" ana="#bk_money #bk_to"
                                           >130</measure></cell>
@@ -37236,7 +37232,7 @@
                                                 <abbr>D</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/>To <measure commodity="milk"
-                                          quantity="32" unit="qts">32 qts milk</measure> from may 5x
+                                          quantity="32" unit="quarts">32 qts milk</measure> from may 5x
                                     3x</cell>
                               <cell/>
                               <cell><measure quantity="96" unit="cents" ana="#bk_money #bk_to"
@@ -37269,7 +37265,7 @@
                                                 <abbr>D</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/>To <measure commodity="lumber"
-                                          quantity="4" unit="ft" ana="#bk_commodity #bk_from">4ft
+                                          quantity="4" unit="feet" ana="#bk_commodity #bk_from">4ft
                                           hard wood</measure>
                                     <measure quantity="20" unit="cents" ana="#bk_money #bk_to"
                                           >20</measure></cell>
@@ -37287,7 +37283,7 @@
                                                 <abbr>D</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/>To <measure commodity="lumber"
-                                          quantity="0.5" unit="cord">1/2 cord pine wood</measure>
+                                          quantity="0.5" unit="cords">1/2 cord pine wood</measure>
                                     15/</cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
                                           >1</measure></cell>
@@ -37382,7 +37378,7 @@
                                                 <abbr>D</abbr>
                                                 <expan>debtor</expan>
                                           </choice></span><lb/>To <measure commodity="lumber"
-                                          quantity="1" unit="load" ana="#bk_commodity #bk_from">1
+                                          quantity="1" unit="loads" ana="#bk_commodity #bk_from">1
                                           load wood</measure> 8/</cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
                                           >1</measure></cell>
@@ -37543,7 +37539,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="pork" quantity="6.5"
-                                          unit="lbs" ana="#bk_commodity #bk_from">6 1/2 lbs. salt
+                                          unit="pounds" ana="#bk_commodity #bk_from">6 1/2 lbs. salt
                                           pork</measure></cell>
                               <cell/>
                               <cell/>
@@ -37627,7 +37623,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>" <measure ana="#bk_commodity #bk_from" commodity="lumber"
-                                          quantity="1" unit="cord">1 cord small</measure> dox -
+                                          quantity="1" unit="cords">1 cord small</measure> dox -
                                           <measure commodity="currency" quantity="2" unit="dollars"
                                           ana="#bk_money #bk_to">200</measure></cell>
                               <cell><measure quantity="2" unit="dollars" ana="#bk_money #bk_to"
@@ -37721,7 +37717,7 @@
 
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>" <measure commodity="lumber" quantity="0.5" unit="cord">1/2
+                              <cell>" <measure commodity="lumber" quantity="0.5" unit="cords">1/2
                                           cord wood</measure> $4.00 pr cord</cell>
                               <cell><measure quantity="2" unit="dollars" ana="#bk_money #bk_to"
                                           >2</measure></cell>
@@ -37819,7 +37815,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>" <measure ana="#bk_commodity #bk_from" commodity="lumber"
-                                          quantity="1" unit="cord">1 cord wood</measure></cell>
+                                          quantity="1" unit="cords">1 cord wood</measure></cell>
                               <cell><measure quantity="4" unit="dollars" ana="#bk_money #bk_to"
                                           >4</measure></cell>
                               <cell/>
@@ -37845,7 +37841,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="milk" quantity="88" unit="qts">milk to <date
+                                          commodity="milk" quantity="88" unit="quarts">milk to <date
                                                 when="1849-10-07" instant="false">Oct. 7"</date> 88
                                           qts</measure> 3x</cell>
 
@@ -37888,7 +37884,7 @@
                         <row ana="#bk_entry">
                               <cell/>
                               <cell>To <measure ana="#bk_commodity #bk_from" commodity="milk"
-                                          quantity="46" unit="qts">milk pr. <date when="1849-07-28"
+                                          quantity="46" unit="quarts">milk pr. <date when="1849-07-28"
                                                 instant="false">July 28th</date> to <date
                                                 when="1849-10-07" instant="false">Oct 7</date>
                                           46qts</measure> 3x</cell>
@@ -37901,7 +37897,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>" <measure commodity="butter" quantity="2" unit="lbs"
+                              <cell>" <measure commodity="butter" quantity="2" unit="pounds"
                                           ana="#bk_commodity #bk_from">2 lbs butter md.</measure> in
                                           <date when="1849-09-24" ana="#bk_when">Sept.
                                     24</date></cell>
@@ -37921,7 +37917,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="rails" quantity="215"
-                                          unit="ft" ana="#bk_commodity #bk_from">215ft. as marked of
+                                          unit="feet" ana="#bk_commodity #bk_from">215ft. as marked of
                                           rails</measure></cell>
 
                               <cell><measure quantity="2" unit="dollars" ana="#bk_money #bk_to"
@@ -37974,7 +37970,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="wood" quantity="0.5"
-                                          unit="cord">1/2 cord wood</measure> $4.00</cell>
+                                          unit="cords">1/2 cord wood</measure> $4.00</cell>
                               <cell><measure quantity="2" unit="dollars" ana="#bk_money #bk_to"
                                           >2</measure></cell>
                               <cell/>
@@ -38046,7 +38042,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="milk" quantity="51" unit="qts">51 qts.
+                                          commodity="milk" quantity="51" unit="quarts">51 qts.
                                           milk</measure> 3x to <date when="1849-09"
                                     >Sept.</date></cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -38196,7 +38192,7 @@
                                           <abbr>D</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="squash" quantity="10"
-                                          unit="lbs" ana="#bk_commodity #bk_from">10 lbs.
+                                          unit="pounds" ana="#bk_commodity #bk_from">10 lbs.
                                           squash</measure>
                                     <measure quantity="1" unit="cents" ana="#bk_money #bk_to"
                                           >1</measure></cell>
@@ -38222,7 +38218,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>To <measure commodity="apples" quantity="11" unit="lbs"
+                              <cell>To <measure commodity="apples" quantity="11" unit="pounds"
                                           ana="#bk_commodity #bk_from">11 lbs. No. 1
                                           apples</measure>
                                     <measure quantity="2" unit="dollars" ana="#bk_money #bk_to"
@@ -38235,7 +38231,7 @@
                         </row>
                         <row ana="#bk_entry">
                               <cell/>
-                              <cell>" <measure commodity="apples" quantity="3" unit="lbs"
+                              <cell>" <measure commodity="apples" quantity="3" unit="pounds"
                                           ana="#bk_commodity #bk_from">3 " " 2 </measure>9/ pr
                                     bl.</cell>
                               <cell><measure quantity="4" unit="dollars" ana="#bk_money #bk_to"
@@ -38315,7 +38311,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="squash" quantity="28.5"
-                                          unit="lbs" ana="#bk_commodity #bk_from">28 1/2 lbs. winter
+                                          unit="pounds" ana="#bk_commodity #bk_from">28 1/2 lbs. winter
                                           squash</measure></cell>
                               <cell/>
                               <cell><measure quantity="29" unit="cents" ana="#bk_money #bk_to"
@@ -38333,7 +38329,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="squash" quantity="22"
-                                          unit="lbs" ana="#bk_commodity #bk_from">22 lbs
+                                          unit="pounds" ana="#bk_commodity #bk_from">22 lbs
                                           squash</measure> 1x</cell>
                               <cell/>
                               <cell><measure quantity="22" unit="cents" ana="#bk_money #bk_to"
@@ -38376,7 +38372,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="squash" quantity="160"
-                                          unit="lbs" ana="#bk_commodity #bk_from">160 lbs
+                                          unit="pounds" ana="#bk_commodity #bk_from">160 lbs
                                           squash</measure> 1x</cell>
 
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -38396,7 +38392,7 @@
                                           <abbr>Dr</abbr>
                                           <expan instant="false">debtor</expan>
                                     </choice><lb/>To <measure commodity="pork" quantity="12"
-                                          unit="lbs" ana="#bk_commodity #bk_from">12 lbs. salt
+                                          unit="pounds" ana="#bk_commodity #bk_from">12 lbs. salt
                                           pork</measure> 10x</cell>
 
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
@@ -38420,7 +38416,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="salt pork" quantity="8.5" unit="lbs">8 1/2 lbs
+                                          commodity="salt pork" quantity="8.5" unit="pounds">8 1/2 lbs
                                           salt pork</measure> 8x</cell>
                               <cell/>
                               <cell><measure quantity="68" unit="cents" ana="#bk_money #bk_to"
@@ -38521,7 +38517,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="flannel" quantity="8" unit="yds">8 yds
+                                          commodity="flannel" quantity="8" unit="yards">8 yds
                                           flannel</measure> 1/</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars"
                                           >1</measure></cell>
@@ -38539,7 +38535,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="apples" quantity="3" unit="lbs">3 lbs No. 1
+                                          commodity="apples" quantity="3" unit="pounds">3 lbs No. 1
                                           apples</measure>
                                     <measure ana="#bk_money #bk_to" quantity="2" unit="dollars"
                                           >2.00</measure></cell>
@@ -38553,7 +38549,7 @@
                               <cell/>
                               <cell><name ana="#bk_to" type="person" ref="v"/>" <measure
                                           ana="#bk_commodity #bk_from" commodity="apples"
-                                          quantity="2" unit="lbs">2 " " 2 "</measure>
+                                          quantity="2" unit="pounds">2 " " 2 "</measure>
                                     <measure ana="#bk_money #bk_to" quantity="1.5" unit="dollars"
                                           >1.50</measure></cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="3" unit="dollars"
@@ -38617,7 +38613,7 @@
                                           <abbr>Cr</abbr>
                                           <expan>credit</expan>
                                     </choice><lb/>By <measure ana="#bk_commodity #bk_from"
-                                          commodity="butter" quantity="1.5" unit="lbs">1 1/2 lbs.
+                                          commodity="butter" quantity="1.5" unit="pounds">1 1/2 lbs.
                                           gurhim? butter</measure></cell>
                               <cell/>
                               <cell/>
@@ -38718,7 +38714,7 @@
                               <cell/>
                               <cell><name ana="#bk_to" type="person" ref="pers_WCDH293"/>" <measure
                                           ana="#bk_commodity #bk_from" commodity="wood" quantity="1"
-                                          unit="cord">1 cord wood</measure> $4.00</cell>
+                                          unit="cords">1 cord wood</measure> $4.00</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="4" unit="dollars"
                                           >4</measure></cell>
                               <cell>00</cell>
@@ -38890,7 +38886,7 @@
                                           <abbr>D</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="hard wood" quantity="1" unit="cord">cord of
+                                          commodity="hard wood" quantity="1" unit="cords">cord of
                                           hard wood</measure></cell>
                               <cell/>
                               <cell/>
@@ -38907,7 +38903,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="brick wood" quantity="6" unit="ft">6ft. brick
+                                          commodity="brick wood" quantity="6" unit="feet">6ft. brick
                                           wood</measure> $3.00 cord</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="2" unit="dollars"
                                           >2</measure></cell>
@@ -38960,7 +38956,7 @@
                                           <abbr>Cr</abbr>
                                           <expan>credit</expan>
                                     </choice><lb/>By <measure ana="#bk_commodity #bk_from"
-                                          commodity="butter" quantity="6.63" unit="lbs">6lbs 10 oz
+                                          commodity="butter" quantity="6.63" unit="pounds">6lbs 10 oz
                                           salted? butter</measure></cell>
                               <cell/>
                               <cell/>
@@ -38996,7 +38992,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="41" unit="lbs">41 lbs hind
+                                          commodity="beef" quantity="41" unit="pounds">41 lbs hind
                                           quarter beef</measure> 600</cell>
                               <cell><measure ana="#bk_money #bk_to" quantity="2" unit="dollars"
                                           >2</measure></cell>
@@ -39026,7 +39022,7 @@
                                           <abbr>Cr</abbr>
                                           <expan>credit</expan>
                                     </choice><lb/><measure ana="#bk_commodity #bk_from"
-                                          commodity="table butter" quantity="3.06" unit="lbs">3 lbs.
+                                          commodity="table butter" quantity="3.06" unit="pounds">3 lbs.
                                           1 oz table butter</measure></cell>
                               <cell/>
                               <cell/>
@@ -39096,7 +39092,7 @@
                                           <abbr>Dr</abbr>
                                           <expan>debtor</expan>
                                     </choice><lb/>To <measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="5" unit="lbs">5 lbs fresh
+                                          commodity="beef" quantity="5" unit="pounds">5 lbs fresh
                                           beef-</measure> 5x</cell>
                               <cell/>
                               <cell><measure quantity="25" unit="cents" ana="#bk_money #bk_to"
@@ -39112,7 +39108,7 @@
                                           <abbr>Cr</abbr>
                                           <expan>credit</expan>
                                     </choice><lb/>By <measure ana="#bk_commodity #bk_from"
-                                          commodity="beef" quantity="8" unit="lbs">eight lbs. corn
+                                          commodity="beef" quantity="8" unit="pounds">eight lbs. corn
                                           roast beef</measure>-</cell>
                               <cell/>
                               <cell/>
@@ -40744,7 +40740,7 @@
                                                 <abbr/>
                                                 <expan>Dr debtor</expan>
                                           </choice></span><lb/>To <measure commodity="White Beans"
-                                          quantity="1" unit="Bushels">1 Bush. White Beans</measure>
+                                          quantity="1" unit="bushels">1 Bush. White Beans</measure>
                                     10/16</cell>
                               <cell><measure quantity="1" unit="dollars" ana="#bk_money #bk_to"
                                           >1</measure></cell>
