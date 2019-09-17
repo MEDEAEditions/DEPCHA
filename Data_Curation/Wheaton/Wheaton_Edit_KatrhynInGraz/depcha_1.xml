@@ -10,7 +10,7 @@
             <publicationStmt>
                 <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
                 <idno type="PID">o:depcha.wheaton.1</idno>
-                <ref target="info:fedora/context:depcha.wheaton" type="context">Sample</ref>
+               <ref target="info:fedora/context:depcha.wheaton" type="context">Sample</ref>
             </publicationStmt>
             <sourceDesc>
                 <biblFull>
@@ -38,7 +38,7 @@
                 <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
                     replacementPattern="http://www.wikidata.org/wiki/$1">
                     <p>
-                        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+                       <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
                     </p>
                 </prefixDef>
             </listPrefixDef>
@@ -112,314 +112,322 @@
             <classDecl>
                 <taxonomy ana="bk:Taxonomy">
                     <gloss>Commodities</gloss>
-                    <desc>Lorem Ipsum</desc>
                     <category xml:id="commodity.1">
-                        <gloss xml:lang="eng">vegetable <ref target="wd:Q11004"/></gloss>
+                        <gloss xml:lang="eng">vegetable<ref target="wd:Q11004"/></gloss>
                         <category xml:id="commodity.1.1">
-                            <gloss xml:lang="eng">potatoes <ref target="wd:Q16587531"/></gloss>
+                            <gloss xml:lang="eng">potatoes<ref target="wd:Q16587531"/></gloss>
+                            <category xml:id="commodity.1.1.1">
+                                <gloss xml:lang="eng">black potatoes</gloss>
+                            </category>
+                            <category xml:id="commodity.1.1.2">
+                                <gloss xml:lang="eng">brown potatoes</gloss>
+                            </category>
+                        </category>
+                        <category xml:id="commodity.1.2">
+                            <gloss xml:lang="eng">corn<ref target="wd:Q11575"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.2">
-                        <gloss xml:lang="eng">edible fats and oils <ref target="wd:Q912613"
+                        <gloss xml:lang="eng">edible fats and oils<ref target="wd:Q912613"
                             /></gloss>
                         <category xml:id="commodity.2.1">
-                            <gloss xml:lang="eng">lard <ref target="wd:Q72827"/></gloss>
+                            <gloss xml:lang="eng">lard<ref target="wd:Q72827"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.3">
-                        <gloss xml:lang="eng">dairy product <ref target="wd:Q185217"/></gloss>
+                        <gloss xml:lang="eng">dairy product<ref target="wd:Q185217"/></gloss>
                         <category xml:id="commodity.3.1">
-                            <gloss xml:lang="eng">butter <ref target="wd:Q34172"/></gloss>
+                            <gloss xml:lang="eng">butter<ref target="wd:Q34172"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.4">
-                        <gloss xml:lang="eng">dried fruit <ref target="wd:Q234901"/></gloss>
+                        <gloss xml:lang="eng">dried fruit<ref target="wd:Q234901"/></gloss>
                         <category xml:id="commodity.4.1">
-                            <gloss xml:lang="eng">rosin <ref target="wd:Q13186"/></gloss>
+                            <gloss xml:lang="eng">rosin<ref target="wd:Q13186"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.5">
-                        <gloss xml:lang="eng">artificial stone <ref target="wd:Q944070"/></gloss>
+                        <gloss xml:lang="eng">artificial stone<ref target="wd:Q944070"/></gloss>
                         <category xml:id="commodity.5.1">
-                            <gloss xml:lang="eng">brick <ref target="wd:Q40089"/></gloss>
+                            <gloss xml:lang="eng">brick<ref target="wd:Q40089"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.6">
-                        <gloss xml:lang="eng">activity <ref target="wd:Q1914636"/></gloss>
+                        <gloss xml:lang="eng">activity<ref target="wd:Q1914636"/></gloss>
                         <category xml:id="commodity.6.1">
-                            <gloss xml:lang="eng">work <ref target="wd:Q6958747"/></gloss>
+                            <gloss xml:lang="eng">work<ref target="wd:Q6958747"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.7">
-                        <gloss xml:lang="eng">tissue <ref target="wd:Q40397"/></gloss>
+                        <gloss xml:lang="eng">tissue<ref target="wd:Q40397"/></gloss>
                         <category xml:id="commodity.7.1">
-                            <gloss xml:lang="eng">wood <ref target="wd:Q287"/></gloss>
+                            <gloss xml:lang="eng">wood<ref target="wd:Q287"/></gloss>
                         </category>
                         <category xml:id="commodity.7.2">
-                            <gloss xml:lang="eng">fresh pine <ref target="wd:Q287"/></gloss>
+                            <gloss xml:lang="eng">fresh pine<ref target="wd:Q287"/></gloss>
                         </category>
                         <category xml:id="commodity.7.3">
-                            <gloss xml:lang="eng">pine logs <ref target="wd:Q287"/></gloss>
+                            <gloss xml:lang="eng">pine logs<ref target="wd:Q287"/></gloss>
                         </category>
                         <category xml:id="commodity.7.4">
-                            <gloss xml:lang="eng">pine stick <ref target="wd:Q287"/></gloss>
+                            <gloss xml:lang="eng">pine stick<ref target="wd:Q287"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.8">
-                        <gloss xml:lang="eng">contract <ref target="wd:Q93288"/></gloss>
+                        <gloss xml:lang="eng">contract<ref target="wd:Q93288"/></gloss>
                         <category xml:id="commodity.8.1">
-                            <gloss xml:lang="eng">renting <ref target="wd:Q157171"/></gloss>
+                            <gloss xml:lang="eng">renting<ref target="wd:Q157171"/></gloss>
                         </category>
                         <category xml:id="commodity.8.2">
-                            <gloss xml:lang="eng">heifer rental <ref target="wd:Q157171"/></gloss>
+                            <gloss xml:lang="eng">heifer rental<ref target="wd:Q157171"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.9">
-                        <gloss xml:lang="eng">costume component <ref target="wd:Q28935403"/></gloss>
+                        <gloss xml:lang="eng">costume component<ref target="wd:Q28935403"/></gloss>
                         <category xml:id="commodity.9.1">
-                            <gloss xml:lang="eng">green ribbon <ref target="wd:Q857421"/></gloss>
+                            <gloss xml:lang="eng">green ribbon<ref target="wd:Q857421"/></gloss>
                         </category>
                         <category xml:id="commodity.9.2">
-                            <gloss xml:lang="eng">ribbon <ref target="wd:Q857421"/></gloss>
+                            <gloss xml:lang="eng">ribbon<ref target="wd:Q857421"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.10">
-                        <gloss xml:lang="eng">cotton <ref target="wd:Q11607438"/></gloss>
+                        <gloss xml:lang="eng">cotton<ref target="wd:Q11607438"/></gloss>
                         <category xml:id="commodity.10.1">
-                            <gloss xml:lang="eng">cotton cloth <ref target="wd:Q8231603"/></gloss>
+                            <gloss xml:lang="eng">cotton cloth<ref target="wd:Q8231603"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.11">
-                        <gloss xml:lang="eng">woven fabric <ref target="wd:Q5295538"/></gloss>
+                        <gloss xml:lang="eng">woven fabric<ref target="wd:Q5295538"/></gloss>
                         <category xml:id="commodity.11.1">
-                            <gloss xml:lang="eng">shirting <ref target="wd:Q2236475"/></gloss>
+                            <gloss xml:lang="eng">shirting<ref target="wd:Q2236475"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.12">
-                        <gloss xml:lang="eng">meat <ref target="wd:Q10990"/></gloss>
+                        <gloss xml:lang="eng">meat<ref target="wd:Q10990"/></gloss>
                         <category xml:id="commodity.12.1">
-                            <gloss xml:lang="eng">beef <ref target="wd:Q192628"/></gloss>
+                            <gloss xml:lang="eng">beef<ref target="wd:Q192628"/></gloss>
                         </category>
                         <category xml:id="commodity.12.2">
-                            <gloss xml:lang="eng">pork <ref target="wd:Q191768"/></gloss>
+                            <gloss xml:lang="eng">pork<ref target="wd:Q191768"/></gloss>
                         </category>
                         <category xml:id="commodity.12.3">
-                            <gloss xml:lang="eng">salt beef <ref target="wd:Q1682434"/></gloss>
+                            <gloss xml:lang="eng">salt beef<ref target="wd:Q1682434"/></gloss>
                         </category>
                         <category xml:id="commodity.12.4">
-                            <gloss xml:lang="eng">turkeys <ref target="wd:Q4200953"/></gloss>
+                            <gloss xml:lang="eng">turkeys<ref target="wd:Q4200953"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.13">
-                        <gloss xml:lang="eng">costume accessory <ref target="wd:Q1065579"/></gloss>
+                        <gloss xml:lang="eng">costume accessory<ref target="wd:Q1065579"/></gloss>
                         <category xml:id="commodity.13.1">
-                            <gloss xml:lang="eng">french braid <ref target="wd:Q16752165"/></gloss>
+                            <gloss xml:lang="eng">french braid<ref target="wd:Q16752165"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.14">
-                        <gloss xml:lang="eng">twill <ref target="wd:Q12060020"/></gloss>
+                        <gloss xml:lang="eng">twill<ref target="wd:Q12060020"/></gloss>
                         <category xml:id="commodity.14.1">
-                            <gloss xml:lang="eng">flannel <ref target="wd:Q58162"/></gloss>
+                            <gloss xml:lang="eng">flannel<ref target="wd:Q58162"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.15">
-                        <gloss xml:lang="eng">seat <ref target="wd:Q2207370"/></gloss>
+                        <gloss xml:lang="eng">seat<ref target="wd:Q2207370"/></gloss>
                         <category xml:id="commodity.15.1">
-                            <gloss xml:lang="eng">chaise <ref target="wd:Q15026"/></gloss>
+                            <gloss xml:lang="eng">chaise<ref target="wd:Q15026"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.16">
-                        <gloss xml:lang="eng">timepiece <ref target="wd:Q42622779"/></gloss>
+                        <gloss xml:lang="eng">timepiece<ref target="wd:Q42622779"/></gloss>
                         <category xml:id="commodity.16.1">
-                            <gloss xml:lang="eng">winding watch <ref target="wd:Q178794"/></gloss>
+                            <gloss xml:lang="eng">winding watch<ref target="wd:Q178794"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.17">
-                        <gloss xml:lang="eng">medium of exchange <ref target="wd:Q11105360"
+                        <gloss xml:lang="eng">medium of exchange<ref target="wd:Q11105360"
                             /></gloss>
                         <category xml:id="commodity.17.1">
-                            <gloss xml:lang="eng">curency <ref target="wd:Q8142"/></gloss>
+                            <gloss xml:lang="eng">curency<ref target="wd:Q8142"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.18">
-                        <gloss xml:lang="eng">pork <ref target="wd:Q191768"/></gloss>
+                        <gloss xml:lang="eng">pork<ref target="wd:Q191768"/></gloss>
                         <category xml:id="commodity.18.1">
-                            <gloss xml:lang="eng">ham <ref target="wd:Q170486"/></gloss>
+                            <gloss xml:lang="eng">ham<ref target="wd:Q170486"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.19">
-                        <gloss xml:lang="eng">artificial physical object <ref target="wd:Q8205328"
+                        <gloss xml:lang="eng">artificial physical object<ref target="wd:Q8205328"
                             /></gloss>
                         <category xml:id="commodity.19.1">
-                            <gloss xml:lang="eng">pipe <ref target="wd:Q41551"/></gloss>
+                            <gloss xml:lang="eng">pipe<ref target="wd:Q41551"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.20">
-                        <gloss xml:lang="eng">consumables <ref target="wd:Q1681365"/></gloss>
+                        <gloss xml:lang="eng">consumables<ref target="wd:Q1681365"/></gloss>
                         <category xml:id="commodity.20.1">
-                            <gloss xml:lang="eng">nails <ref target="wd:Q37077"/></gloss>
+                            <gloss xml:lang="eng">nails<ref target="wd:Q37077"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.21">
-                        <gloss xml:lang="eng">forest product <ref target="wd:Q5469189"/></gloss>
+                        <gloss xml:lang="eng">forest product<ref target="wd:Q5469189"/></gloss>
                         <category xml:id="commodity.21.1">
-                            <gloss xml:lang="eng">lumber <ref target="wd:Q1370714"/></gloss>
+                            <gloss xml:lang="eng">lumber<ref target="wd:Q1370714"/></gloss>
                         </category>
                         <category xml:id="commodity.21.2">
-                            <gloss xml:lang="eng">pine boards <ref target="wd:Q1370714"/></gloss>
+                            <gloss xml:lang="eng">pine boards<ref target="wd:Q1370714"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.22">
-                        <gloss xml:lang="eng">staple food <ref target="wd:Q736427"/></gloss>
+                        <gloss xml:lang="eng">staple food<ref target="wd:Q736427"/></gloss>
                         <category xml:id="commodity.22.1">
-                            <gloss xml:lang="eng">grain <ref target="wd:Q2995529"/></gloss>
+                            <gloss xml:lang="eng">grain<ref target="wd:Q2995529"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.23">
-                        <gloss xml:lang="eng">tool <ref target="wd:Q39546"/></gloss>
+                        <gloss xml:lang="eng">tool<ref target="wd:Q39546"/></gloss>
                         <category xml:id="commodity.23.1">
-                            <gloss xml:lang="eng">brooms <ref target="wd:Q172833"/></gloss>
+                            <gloss xml:lang="eng">brooms<ref target="wd:Q172833"/></gloss>
                         </category>
                         <category xml:id="commodity.23.2">
-                            <gloss xml:lang="eng">clipboards <ref target="wd:Q204461"/></gloss>
+                            <gloss xml:lang="eng">clipboards<ref target="wd:Q204461"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.24">
-                        <gloss xml:lang="eng">Anatidae <ref target="wd:Q7556"/></gloss>
+                        <gloss xml:lang="eng">Anatidae<ref target="wd:Q7556"/></gloss>
                         <category xml:id="commodity.24.1">
-                            <gloss xml:lang="eng">goose <ref target="wd:Q16529344"/></gloss>
+                            <gloss xml:lang="eng">goose<ref target="wd:Q16529344"/></gloss>
                         </category>
                         <category xml:id="commodity.24.2">
-                            <gloss xml:lang="eng">geese <ref target="wd:Q16529344"/></gloss>
+                            <gloss xml:lang="eng">geese<ref target="wd:Q16529344"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.25">
-                        <gloss xml:lang="eng">base material <ref target="wd:Q214609"/></gloss>
+                        <gloss xml:lang="eng">base material<ref target="wd:Q214609"/></gloss>
                         <category xml:id="commodity.25.1">
-                            <gloss xml:lang="eng">paint <ref target="wd:Q174219"/></gloss>
+                            <gloss xml:lang="eng">paint<ref target="wd:Q174219"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.26">
-                        <gloss xml:lang="eng">cotton fabric <ref target="wd:Q8231603"/></gloss>
+                        <gloss xml:lang="eng">cotton fabric<ref target="wd:Q8231603"/></gloss>
                         <category xml:id="commodity.26.1">
-                            <gloss xml:lang="eng">calico <ref target="wd:Q1132695"/></gloss>
+                            <gloss xml:lang="eng">calico<ref target="wd:Q1132695"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.27">
-                        <gloss xml:lang="eng">hand tool <ref target="wd:Q2578402"/></gloss>
+                        <gloss xml:lang="eng">hand tool<ref target="wd:Q2578402"/></gloss>
                         <category xml:id="commodity.27.1">
-                            <gloss xml:lang="eng">hammer <ref target="wd:Q25294"/></gloss>
+                            <gloss xml:lang="eng">hammer<ref target="wd:Q25294"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.28">
-                        <gloss xml:lang="eng">product <ref target="wd:Q2424752"/></gloss>
+                        <gloss xml:lang="eng">product<ref target="wd:Q2424752"/></gloss>
                         <category xml:id="commodity.28.1">
-                            <gloss xml:lang="eng">meal <ref target="wd:Q2095"/></gloss>
+                            <gloss xml:lang="eng">meal<ref target="wd:Q2095"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.29">
-                        <gloss xml:lang="eng">building material <ref target="wd:Q206615"/></gloss>
+                        <gloss xml:lang="eng">building material<ref target="wd:Q206615"/></gloss>
                         <category xml:id="commodity.29.1">
-                            <gloss xml:lang="eng">plank <ref target="wd:Q1355652"/></gloss>
+                            <gloss xml:lang="eng">plank<ref target="wd:Q1355652"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.30">
-                        <gloss xml:lang="eng">cattle <ref target="wd:Q830"/></gloss>
+                        <gloss xml:lang="eng">cattle<ref target="wd:Q830"/></gloss>
                         <category xml:id="commodity.30.1">
-                            <gloss xml:lang="eng">cow <ref target="wd:Q11748378"/></gloss>
+                            <gloss xml:lang="eng">cow<ref target="wd:Q11748378"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.31">
-                        <gloss xml:lang="eng">part of a plant <ref target="wd:Q20011319"/></gloss>
+                        <gloss xml:lang="eng">part of a plant<ref target="wd:Q20011319"/></gloss>
                         <category xml:id="commodity.31.1">
-                            <gloss xml:lang="eng">seed corn <ref target="wd:Q40763"/></gloss>
+                            <gloss xml:lang="eng">seed corn<ref target="wd:Q40763"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.32">
-                        <gloss xml:lang="eng">alcoholic beverage <ref target="wd:Q154"/></gloss>
+                        <gloss xml:lang="eng">alcoholic beverage<ref target="wd:Q154"/></gloss>
                         <category xml:id="commodity.32.1">
-                            <gloss xml:lang="eng">beers <ref target="wd:Q44"/></gloss>
+                            <gloss xml:lang="eng">beers<ref target="wd:Q44"/></gloss>
                         </category>
                         <category xml:id="commodity.32.2">
-                            <gloss xml:lang="eng">cider <ref target="wd:Q167296"/></gloss>
+                            <gloss xml:lang="eng">cider<ref target="wd:Q167296"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.33">
-                        <gloss xml:lang="eng">herbaceous plant <ref target="wd:Q190903"/></gloss>
+                        <gloss xml:lang="eng">herbaceous plant<ref target="wd:Q190903"/></gloss>
                         <category xml:id="commodity.33.1">
-                            <gloss xml:lang="eng">hay <ref target="wd:Q336989"/></gloss>
+                            <gloss xml:lang="eng">hay<ref target="wd:Q336989"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.34">
-                        <gloss xml:lang="eng">trousers <ref target="wd:Q39908"/></gloss>
+                        <gloss xml:lang="eng">trousers<ref target="wd:Q39908"/></gloss>
                         <category xml:id="commodity.34.1">
-                            <gloss xml:lang="eng">pantaloons <ref target="wd:Q38795853"/></gloss>
+                            <gloss xml:lang="eng">pantaloons<ref target="wd:Q38795853"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.35">
-                        <gloss xml:lang="eng">pome <ref target="wd:Q41274"/></gloss>
+                        <gloss xml:lang="eng">pome<ref target="wd:Q41274"/></gloss>
                         <category xml:id="commodity.35.1">
-                            <gloss xml:lang="eng">apples <ref target="wd:Q89"/></gloss>
+                            <gloss xml:lang="eng">apples<ref target="wd:Q89"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.36">
-                        <gloss xml:lang="eng">poultry <ref target="wd:Q178559"/></gloss>
+                        <gloss xml:lang="eng">poultry<ref target="wd:Q178559"/></gloss>
                         <category xml:id="commodity.36.1">
-                            <gloss xml:lang="eng">chicken <ref target="wd:Q780"/></gloss>
+                            <gloss xml:lang="eng">chicken<ref target="wd:Q780"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.37">
-                        <gloss xml:lang="eng">headgear <ref target="wd:Q14952"/></gloss>
+                        <gloss xml:lang="eng">headgear<ref target="wd:Q14952"/></gloss>
                         <category xml:id="commodity.37.1">
-                            <gloss xml:lang="eng">hat <ref target="wd:Q80151"/></gloss>
+                            <gloss xml:lang="eng">hat<ref target="wd:Q80151"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.38">
-                        <gloss xml:lang="eng">footwear <ref target="wd:Q161928"/></gloss>
+                        <gloss xml:lang="eng">footwear<ref target="wd:Q161928"/></gloss>
                         <category xml:id="commodity.38.1">
-                            <gloss xml:lang="eng">boots <ref target="wd:Q190868"/></gloss>
+                            <gloss xml:lang="eng">boots<ref target="wd:Q190868"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.39">
-                        <gloss xml:lang="eng">handwear <ref target="wd:Q28932195"/></gloss>
+                        <gloss xml:lang="eng">handwear<ref target="wd:Q28932195"/></gloss>
                         <category xml:id="commodity.39.1">
-                            <gloss xml:lang="eng">gloves <ref target="wd:Q169031"/></gloss>
+                            <gloss xml:lang="eng">gloves<ref target="wd:Q169031"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.40">
-                        <gloss xml:lang="eng">softwood <ref target="wd:Q252108"/></gloss>
+                        <gloss xml:lang="eng">softwood<ref target="wd:Q252108"/></gloss>
                         <category xml:id="commodity.40.1">
-                            <gloss xml:lang="eng">pine wood <ref target="wd:Q1503211"/></gloss>
+                            <gloss xml:lang="eng">pine wood<ref target="wd:Q1503211"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.41">
-                        <gloss xml:lang="eng">food <ref target="wd:Q2095"/></gloss>
+                        <gloss xml:lang="eng">food<ref target="wd:Q2095"/></gloss>
                         <category xml:id="commodity.41.1">
-                            <gloss xml:lang="eng">milk <ref target="wd:Q8495"/></gloss>
+                            <gloss xml:lang="eng">milk<ref target="wd:Q8495"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.42">
-                        <gloss xml:lang="eng">Oil Islands <ref target="wd:Q22432558"/></gloss>
+                        <gloss xml:lang="eng">Oil Islands<ref target="wd:Q22432558"/></gloss>
                         <category xml:id="commodity.42.1">
-                            <gloss xml:lang="eng">oil <ref target="wd:Q42962"/></gloss>
+                            <gloss xml:lang="eng">oil<ref target="wd:Q42962"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.43">
-                        <gloss xml:lang="eng">powder <ref target="wd:Q2908004"/></gloss>
+                        <gloss xml:lang="eng">powder<ref target="wd:Q2908004"/></gloss>
                         <category xml:id="commodity.43.1">
-                            <gloss xml:lang="eng">flour <ref target="wd:Q36465"/></gloss>
+                            <gloss xml:lang="eng">flour<ref target="wd:Q36465"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.44">
-                        <gloss xml:lang="eng">food coloring <ref target="wd:Q753009"/></gloss>
+                        <gloss xml:lang="eng">food coloring<ref target="wd:Q753009"/></gloss>
                         <category xml:id="commodity.44.1">
-                            <gloss xml:lang="eng">sky blue <ref target="wd:Q420087"/></gloss>
+                            <gloss xml:lang="eng">sky blue<ref target="wd:Q420087"/></gloss>
                         </category>
                     </category>
                     <category xml:id="commodity.45">
-                        <gloss xml:lang="eng">fruit vegetable <ref target="wd:Q1470762"/></gloss>
+                        <gloss xml:lang="eng">fruit vegetable<ref target="wd:Q1470762"/></gloss>
                         <category xml:id="commodity.45.1">
-                            <gloss xml:lang="eng">squash <ref target="wd:Q7533"/></gloss>
+                            <gloss xml:lang="eng">squash<ref target="wd:Q7533"/></gloss>
                         </category>
                     </category>
                 </taxonomy>
