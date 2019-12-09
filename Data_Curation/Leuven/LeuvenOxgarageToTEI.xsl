@@ -42,15 +42,18 @@
         </TEI>
     </xsl:template>
     
+    <xsl:template match="*:head">
+        <span type="head">
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
     
-    <xsl:template match="*:p">
+    <xsl:template match="*:list">
+            <xsl:apply-templates/>
+    </xsl:template>
+    
+    <xsl:template match="*:item">
         <p ana="bk:entry">
-           <!-- <xsl:apply-templates/>-->
-           <!-- <xsl:choose>
-                <xsl:when test="contains(., 'guld(en)')">
-                    
-                </xsl:when>
-            </xsl:choose>-->
             <xsl:variable name="Person" select="substring-before(., ' –')"/>
             <xsl:variable name="Measurable" select="substring-after(., '– ')"/>
             <xsl:choose>
@@ -59,42 +62,56 @@
                         <xsl:value-of select="$Person"/>
                     </span>
                     <measure>
-                            <xsl:choose>
-                                <xsl:when test="contains($Measurable, 'guld(en)')">
-                                    <xsl:attribute name="ana">
-                                        <xsl:text>bk:money</xsl:text>
-                                    </xsl:attribute>
-                                    <xsl:attribute name="unit">
-                                        <xsl:text>guilders</xsl:text>
-                                    </xsl:attribute>
-                                    <xsl:attribute name="quantity">
-                                        <xsl:text>0</xsl:text>
-                                        <!--<xsl:call-template name="for-each-character">  
-                                            <xsl:with-param name="sum" select="0"/>
-                                            <xsl:with-param name="data" select="substring-before($Measurable, ' guld(en)')"/>
-                                        </xsl:call-template>-->
-                                    </xsl:attribute>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:attribute name="ana">
-                                        <xsl:text>bk:commodity</xsl:text>
-                                    </xsl:attribute>
-                                    <xsl:attribute name="unit">
-                                        <xsl:text>_</xsl:text>
-                                    </xsl:attribute>
-                                    <xsl:attribute name="quantity">
-                                        <xsl:text>1</xsl:text>
-                                    </xsl:attribute>
-                                </xsl:otherwise>
-                            </xsl:choose>
+                        <xsl:choose>
+                            <xsl:when test="contains($Measurable, 'guld(en)')">
+                                <xsl:attribute name="ana">
+                                    <xsl:text>bk:money</xsl:text>
+                                </xsl:attribute>
+                                <xsl:attribute name="unit">
+                                    <xsl:text>guilders</xsl:text>
+                                </xsl:attribute>
+                                <xsl:attribute name="quantity">
+                                    <xsl:text>0</xsl:text>
+                                    <!--<xsl:call-template name="for-each-character">  
+                                                <xsl:with-param name="sum" select="0"/>
+                                                <xsl:with-param name="data" select="substring-before($Measurable, ' guld(en)')"/>
+                                            </xsl:call-template>-->
+                                </xsl:attribute>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:attribute name="ana">
+                                    <xsl:text>bk:commodity</xsl:text>
+                                </xsl:attribute>
+                                <xsl:attribute name="unit">
+                                    <xsl:text>_</xsl:text>
+                                </xsl:attribute>
+                                <xsl:attribute name="quantity">
+                                    <xsl:text>1</xsl:text>
+                                </xsl:attribute>
+                            </xsl:otherwise>
+                        </xsl:choose>
                         <xsl:value-of select="$Measurable"/>
                     </measure>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:apply-templates/>
+                    <span ana="bk:from">
+                        <xsl:apply-templates/>
+                    </span>
                 </xsl:otherwise>
             </xsl:choose>
-            
+        </p>
+    </xsl:template>
+    
+    <xsl:template match="*:p[@rend='Zitat']">
+        <p ana="bk:sum">
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
+    
+    
+    <xsl:template match="*:p">
+        <p>
+           <xsl:apply-templates/>
         </p>
     </xsl:template>
     
