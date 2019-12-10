@@ -42,10 +42,24 @@
         </TEI>
     </xsl:template>
     
-    <xsl:template match="*:head">
-        <span type="head">
+    <xsl:template match="*:div">
+        <div>
             <xsl:apply-templates/>
-        </span>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="*:hi[@rend='Heading_2_Char']">
+        <div>
+        <head type="subcategory">
+            <xsl:apply-templates/>
+        </head>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="*:head">
+        <head type="maincategory">
+            <xsl:apply-templates/>
+        </head>
     </xsl:template>
     
     <xsl:template match="*:list">
@@ -108,7 +122,7 @@
         </p>
     </xsl:template>
     
-    
+
     <xsl:template match="*:p">
         <p>
            <xsl:apply-templates/>
@@ -116,7 +130,7 @@
     </xsl:template>
     
     <xsl:template match="*:note">
-        <note place="foot">
+        <note>
             <xsl:apply-templates/>
         </note>
     </xsl:template>
