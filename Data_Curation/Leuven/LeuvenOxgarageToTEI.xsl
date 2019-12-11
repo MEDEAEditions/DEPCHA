@@ -72,9 +72,9 @@
             <xsl:variable name="Measurable" select="substring-after(., '– ')"/>
             <xsl:choose>
                 <xsl:when test="contains(., '–') or contains(., '–')">
-                    <span ana="bk:from">
+                    <name ana="bk:from" ref="{concat('#', substring(replace($Person, ' ', ''), 0, 20))}">
                         <xsl:value-of select="$Person"/>
-                    </span>
+                    </name>
                     <measure>
                         <xsl:choose>
                             <xsl:when test="contains($Measurable, 'guld(en)')">

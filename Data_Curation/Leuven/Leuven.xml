@@ -12,105 +12,226 @@
             <publicationStmt>
                 <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
                 <idno type="PID">o:depcha.leuven</idno>
-                <ref target="context:depcha.leuven" type="context">Leuven City
-                    Accounts</ref>
+                <ref type="context" target="context:depcha.leuven">Leuven City Accounts</ref>
             </publicationStmt>
             <sourceDesc>
                 <p>Converted from a Word document</p>
             </sourceDesc>
         </fileDesc>
+
+        <encodingDesc>
+            <listPrefixDef>
+                <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+                    <p>Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs.</p>
+                </prefixDef>
+                <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="http://www.wikidata.org/wiki/$1">
+                    <p><ref target="https://www.wikidata.org/wiki/Help:Namespaces"/></p>
+                </prefixDef>
+            </listPrefixDef>
+            <!-- here all currencies and the exchange rates are defines, than represented as SKOS -->
+            <unitDecl ana="bk:Taxonomy">
+                <unitDef type="currency" xml:id="unit.1">
+                    <label>gulden</label>
+                    <country>Belgium</country>
+                    <unit>guld</unit>
+                </unitDef>
+                <unitDef type="currency" xml:id="unit.2">
+                    <label>quart</label>
+                    <country>Belgium</country>
+                    <unit>qrt</unit>
+                </unitDef>
+                <unitDef type="currency" xml:id="unit.3">
+                    <label>placken</label>
+                    <country>Belgium</country>
+                    <unit>pl</unit>
+                </unitDef>
+                <unitDef type="currency" xml:id="unit.4">
+                    <label>denier</label>
+                    <country>Belgium</country>
+                    <unit>d</unit>
+                </unitDef>
+            </unitDecl>
+            <classDecl>
+                <!-- here all currencies and the exchange rates are defines, than represented as SKOS -->
+                <taxonomy ana="bk:Taxonomy">
+                    <gloss>Revenues</gloss>
+                    <category xml:id="assize">
+                        <gloss>assize</gloss>
+                        <desc>excise duties levied by the city administration</desc>
+                        <category xml:id="wijnass">
+                            <desc>Tax on wine?</desc>
+                        </category>
+                        <category xml:id="wolleass">
+                            <desc>Tax on wool?</desc>
+                        </category>
+                    </category>
+                    <category xml:id="buteporters">
+                        <gloss>bute(n)porters jaerrenten</gloss>
+                        <desc>annuities/charges on 'outer' citizens</desc>
+                    </category>
+                    <category xml:id="lijftochte">
+                        <gloss>Category (pensions)</gloss>
+                    </category>
+                    <category xml:id="erfrenten">
+                        <gloss>erfrenten</gloss>
+                        <desc>2nd category of expenses (heriditary annuities)</desc>
+                    </category>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+
     </teiHeader>
     <text>
         <body>
             <div>
                 <p>SAL, OA 5066 (rekening 1 augustus 1438-31 juli
                         1439)<note>https://www.itineranova.be/in/SAL5066/1R%C2%B0/folio-account-book.</note></p>
-                <p>Rekeninghe der vier rentmeest(er)s der stat van love(n) te weten meest(er) jan
-                    van ov(er)winghe, henr(ic) wante, arde vincke ende jan den prike(re) van al dat
-                    sij ontfaen en(de) uutghegeven hebben, vand(en) rente(n) ende opcomi(n)ghe der
-                    rentmeest(er)scappe vand(er) stat toebehoren(de), van opten yersten dach
-                    vand(er) maent van oexst int jae(r) ons he(re)n 1438 tot opten lesten dach
-                    vand(er) maent van octobri int selve jaer, als vand(en) yersten q(ua)rt jaers,
-                    welke rekeni(n)ge gedaen es in div(er)sche mu(n)te(n), de allen ghevalueert sijn
-                    in rijnsche guld(en), stuc te 54 pl(acken)</p>
+                <pb n="1v°" facs="https://www.itineranova.be/in/SAL5066/1R°/folio-account-book"/>
+                <p>Rekeninghe der <name ana="bk:to" ref="#cityoflove">vier rentmeest(er)s der stat
+                        van love(n)</name> te weten meest(er) jan van ov(er)winghe, henr(ic) wante,
+                    arde vincke ende jan den prike(re) van al dat sij ontfaen en(de) uutghegeven
+                    hebben, vand(en) rente(n) ende opcomi(n)ghe der rentmeest(er)scappe vand(er)
+                    stat toebehoren(de), van opten yersten dach vand(er) <date ana="bk:when"
+                        when="1438-08-01">maent van oexst int jae(r) ons he(re)n 1438</date> tot
+                    opten lesten dach vand(er) maent van octobri int selve jaer, als vand(en)
+                    yersten q(ua)rt jaers, welke rekeni(n)ge gedaen es in div(er)sche mu(n)te(n), de
+                    allen ghevalueert sijn in rijnsche guld(en), stuc te 54 pl(acken)</p>
                 <div>
-                    <head type="maincategory">ontfanck<note>= revenues</note>
+                    <head>
+                        <span>ontfanck<note>= revenues(Einnahmen)</note></span>
+                        <lb/>
+                        <span>Eerst ontfaen <term ana="bk:to" ref="#assize">vand(er) stat vercochten
+                                ass(ize)</term>, <note>= category (assize = excise duties levied by
+                                the city administration).</note>die alle jae(re) verande(re)n op
+                            diversche p(er)sone(n) vand(en) yersten q(ua)rt jaers </span>
                     </head>
-                    <p>Eerst ontfaen vand(er) stat vercochten ass(ize), <note>= category (assize =
-                            excise duties levied by the city administration).</note>die alle jae(re)
-                        verande(re)n op diversche p(er)sone(n) vand(en) yersten q(ua)rt jaers </p>
-
-                    <p ana="bk:entry"><span ana="bk:from"/><measure ana="bk:money" unit="guilders"
-                            quantity="0">vii lxii Sum of this entryguld(en) = currency
-                            (guilders)mett(er) edic assi(ze)</measure></p>
-                    <p ana="bk:entry"><span ana="bk:from"/><measure ana="bk:money" unit="guilders"
-                            quantity="0">xxix guld(en) iii q(ua)rt xii pl(acken) xi s
-                        p</measure></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan m(er)cels vand(er) laken
-                            ass(ize)</span><measure ana="bk:commodity" unit="_" quantity="1">lxxx
-                            guldt(en) i(1/2) q(ua)rtSum of this entry = 80 (amount) guilders (top
+                    <!-- in this entry "van janne pa(n)nest(er)t" pays "vii lxii -->
+                    <p ana="bk:entry"> Eerst <name ana="bk:from" ref="#jannepa(n)nest(er)t">van
+                            janne pa(n)nest(er)t</name> va(n)d(er) <term ana="bk:tax bk:to"
+                            ref="#wijnass">wijn ass(ize)</term> – <measure ana="bk:money bk:from"
+                            unit="guilders" quantity="62">vii lxii<note>Sum of this entry</note>
+                                guld(en)<note>= currency (guilders)</note> mett(er) edic
+                            assi(ze)</measure>
+                    </p>
+                    <p ana="bk:entry">
+                        <name ana="bk:from" ref="#quitnenvalkenborch">qui(n)ten van
+                            valkenborch</name> vand(er) <term ana="bk:tax bk:to" ref="#wolleass"
+                            >wolle ass(ize)</term> - <measure ana="bk:money bk:from" unit="guilders"
+                            quantity="29" corresp="#unit.1">xxix guld(en)</measure>
+                        <measure ana="bk:money bk:from" unit="quarts" quantity="3">iii
+                            q(ua)rt</measure>
+                        <measure ana="bk:money bk:from" unit="placken" quantity="7">xii
+                            pl(acken)</measure> xi s p </p>
+                    <p ana="bk:entry">
+                        <name ana="bk:from" ref="#janm(er)celsvand(er">jan m(er)cels vand(er)</name>
+                        <term ana="bk:tax bk:to" ref="#lakenass">laken ass(ize)</term> - <measure
+                            ana="bk:money bk:from" unit="guilders" quantity="80">lxxx
+                            guldt(en)</measure>
+                        <measure ana="bk:money bk:from" unit="quarts" quantity="1.5">i(1/2)
+                            q(ua)rt</measure><note>Sum of this entry = 80 (amount) guilders (top
                             part of the guilder currency), 1.5 (amount) quart (lower part of the
-                            guilder currency)</measure></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan van colen vander) weet
-                            ass(ize)</span><measure ana="bk:money" unit="guilders" quantity="0">xiii
+                            guilder currency)</note>
+                    </p>
+                    <p ana="bk:entry">
+                        <name ana="bk:from" ref="#janvancolenvander)w">jan van colen vander)</name>
+                        <term ana="bk:tax bk:to" ref="#weet">weet ass(ize)</term> - <measure
+                            ana="bk:money bk:from" unit="guilders" quantity="0">xiii
                             guld(en)</measure></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan gheerlex vand(er) zied(er)
-                            ass(ize)</span><measure ana="bk:money" unit="guilders" quantity="0">iii
-                            guld(en) iii q(ua)rt vii pl(acken)Currency gulden – quart – placken. –
-                            iii </measure></p>
-                    <p ana="bk:entry"><span ana="bk:from">henr(ic) van vucht vand(er) zout
-                            ass(ise)</span><measure ana="bk:money" unit="guilders" quantity="0"
-                            >v(1/2) guld(en) xiii pl(acken)</measure></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan van dieve(n) vande(n) corne ass(ize) -
-                            v(1/2) guld(en)</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">claes van dormale vand(er) pont
-                            ass(ize)</span><measure ana="bk:commodity" unit="_" quantity="1">xcvi
-                            gul(den) i(1/2) q(ua)rt</measure></p>
-                    <p ana="bk:entry"><span ana="bk:from">ja(n)nes van royde vand(er)
-                            ca(u)chien</span><measure ana="bk:money" unit="guilders" quantity="0"
-                            >lviii guld(en) iii q(ua)rt</measure></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan de joede vand(er)
-                            vleeschuys</span><measure ana="bk:commodity" unit="_" quantity="1">c
-                            xxxii gul(den) i(1/2) q(ua)rt</measure></p>
-
-                    <p><pb n="1V°"
+                    <p ana="bk:entry"><name ana="bk:from" ref="#jangheerlexvand(er)">jan gheerlex
+                            vand(er) </name><term ana="bk:tax bk:to" ref="#zieder">zied(er)
+                            ass(ize)</term> - <measure ana="bk:money bk:from" unit="guilders"
+                            quantity="0">iii guld(en)</measure>
+                        <measure ana="bk:money bk:from" unit="quart" quantity="3">iii
+                            q(ua)rt</measure>
+                        <measure ana="bk:money bk:from" unit="placken" quantity="7">vii
+                            pl(acken)</measure>
+                        <note>Currency gulden – quart – placken. –</note> iii </p>
+                    <p ana="bk:entry">
+                        <name ana="bk:from" ref="#henr(ic)vanvuchtvan">henr(ic) van vucht
+                            vand(er)</name><term ana="bk:tax bk:to" ref="#zout">zout ass(ise)</term>
+                        - <measure ana="bk:money bk:from" unit="guilders" quantity="5.5">v(1/2)
+                            guld(en)</measure>
+                        <measure ana="bk:money bk:from" unit="placken" quantity="13">xiii
+                            pl(acken)</measure>
+                    </p>
+                    <p ana="bk:entry">
+                        <name ana="bk:from">jan van dieve(n) vande(n)</name>
+                        <term ana="bk:tax bk:to" ref="#corne">corne ass(ize)</term> - <measure
+                            ana="bk:money bk:from" unit="guilders" quantity="5.5">v(1/2)
+                            guld(en)</measure>
+                    </p>
+                    <p ana="bk:entry">
+                        <name ana="bk:from" ref="#claesvandormalevand"> claes van dormale
+                            vand(er)</name>
+                        <term ana="bk:tax bk:to" ref="#pont">pont ass(ize)</term> - <measure
+                            ana="bk:money bk:from" unit="guilders" quantity="96">xcvi
+                            gul(den)</measure>
+                        <measure ana="bk:money bk:from" unit="quart" quantity="1.5">i(1/2)
+                            q(ua)rt</measure>
+                    </p>
+                    <p ana="bk:entry">
+                        <name ana="bk:from" ref="#ja(n)nesvanroydevan">ja(n)nes van royde</name>
+                        vand(er) <term ana="bk:tax bk:to" ref="#cachie">ca(u)chien</term> - <measure
+                            ana="bk:money bk:from" unit="guilders" quantity="0">lviii guld(en) iii
+                            q(ua)rt</measure>
+                    </p>
+                    <p ana="bk:entry">
+                        <name ana="bk:from" ref="#jandejoedevand(er)v"> jan de joede </name>
+                        vand(er) <term ana="bk:tax bk:to" ref="#vleeschuys">vleeschuys</term>
+                        <measure ana="bk:money bk:from" unit="guilders" quantity="132">c xxxii
+                            gul(den)</measure>
+                        <measure ana="bk:money bk:from" unit="quart" quantity="1.5">i(1/2)
+                            q(ua)rt</measure>
+                    </p>
+                    <p>
+                        <pb n="1V°"
                             facs="https://www.itineranova.be/in/SAL5066/1V°/folio-account-book"
                         /></p>
-
-                    <p ana="bk:entry"><span ana="bk:from">jan de joede vand(er)
-                            vischmerct</span><measure ana="bk:commodity" unit="_" quantity="1">xcii
-                            gul(den) i(1/2) q(ua)rt</measure></p>
-                    <p ana="bk:entry"><span ana="bk:from">symoen vand(er) meersb(er)ge va(n)d(er)
-                            tolleke(n)</span><measure ana="bk:money" unit="guilders" quantity="0"
-                            >xxvi guld(en) i q(ua)rt ii pl(acken) xvi sp</measure></p>
+                    <p ana="bk:entry"><name ana="bk:from" ref="#jandejoedevand(er)v">jan de joede
+                            vand(er) vischmerct</name><measure ana="bk:money bk:from" unit="_"
+                            quantity="1">xcii gul(den) i(1/2) q(ua)rt</measure></p>
+                    <p ana="bk:entry"><name ana="bk:from" ref="#symoenvand(er)meers">symoen vand(er)
+                            meersb(er)ge va(n)d(er) tolleke(n)</name><measure ana="bk:money bk:from"
+                            unit="guilders" quantity="0">xxvi guld(en) i q(ua)rt ii pl(acken) xvi
+                            sp</measure></p>
                     <p ana="bk:entry"><span ana="bk:from">gheert van rotselae(r) vand(er) bleyk
                             ass(ise) - i guld(en) iii q(ua)rt x pl(acken) xviii sp</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">henr(ic) mette(n) gelde vand(er) vett(en)
-                            ass(ize)</span><measure ana="bk:money" unit="guilders" quantity="0">xxvi
-                            guld(en)</measure></p>
-                    <p ana="bk:entry"><span ana="bk:from">jasp(er) kimpe vand(er)
-                            snedeken</span><measure ana="bk:commodity" unit="_" quantity="1"
-                            >vii(1/2) vi pl(acken)</measure></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan gilanis vand(er)
-                            mershalle</span><measure ana="bk:money" unit="guilders" quantity="0">xx
-                            guld(en) iii q(ua)rt xi pl(acken) xi sp</measure></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan de joede vand(er) inde
-                            gelde</span><measure ana="bk:money" unit="guilders" quantity="0">xix
-                            guld(en) v pl(acken) xii d(enier) Same gulden currency but now also with
-                            ‘denieren’, which are actually part of another currency, the pound
-                            currency, but are also used within the guilder currency.p</measure></p>
-
-                    <p ana="bk:sum">Su(mma)<note>Total of all excise duties.</note> van dat die
-                        rentmeest(er)s ontfaen hebben vand(er) stat vercocht ass(izen) bi(n)ne(n)
-                        den yersten q(ua)rt jaers compt op xiii[c] guld(en) rijn(sch) xxiii(1/2)
-                        pl(acken) <note>Total sum of all excise duties = 1400 ‘rijnsche’ gulden 24.5
-                            ‘placken’ (lower division of the guilder with a fixed ratio).</note>stuc
-                        te liii pl(acken) get</p>
-                    <p>Ander ontfanck vand(en) bier ass(ize) die <note>Some other (beer) excise
-                            duties, that were levied later.</note>dit jae(r) onv(er)cocht was en(de)
-                        der stat bleve(n) es, en(de) heeft de doen inhale(n) en(de) op heffen bi
-                        wout(er) borgelijn, arde willems, ard inde(n) rop en(de) met ja(n)nes
-                        vleege(n) en(de) roele(n) van(der) elst, hae(re)n clercken </p>
+                    <p ana="bk:entry"><name ana="bk:from" ref="#henr(ic)mette(n)gel">henr(ic)
+                            mette(n) gelde vand(er) <term ana="bk:tax bk:to" ref="#vett">vett(en)
+                                ass(ize)</term></name><measure ana="bk:money bk:from"
+                            unit="guilders" quantity="0">xxvi guld(en)</measure></p>
+                    <p ana="bk:entry"><name ana="bk:from" ref="#jasp(er)kimpevand(e">jasp(er) kimpe
+                            vand(er) snedeken</name><measure ana="bk:money bk:from" unit="_"
+                            quantity="1">vii(1/2) vi pl(acken)</measure></p>
+                    <p ana="bk:entry"><name ana="bk:from" ref="#jangilanisvand(er)m">jan gilanis
+                            vand(er) mershalle</name><measure ana="bk:money bk:from" unit="guilders"
+                            quantity="0">xx guld(en) iii q(ua)rt xi pl(acken) xi sp</measure></p>
+                    <p ana="bk:entry"><name ana="bk:from" ref="#jandejoedevand(er)i">jan de joede
+                            vand(er) inde gelde</name><measure ana="bk:money bk:from"
+                            unit="guilders" quantity="0">xix guld(en) v pl(acken) xii d(enier) Same
+                            gulden currency but now also with ‘denieren’, which are actually part of
+                            another currency, the pound currency, but are also used within the
+                            guilder currency.p</measure></p>
+                    <!-- bk:sum needs somehow a connection to the category  -->
+                    <p ana="bk:sum" corresp="#assize">Su(mma)<note>Total of all excise
+                            duties.</note> van dat die rentmeest(er)s ontfaen hebben vand(er) stat
+                        vercocht ass(izen) bi(n)ne(n) den yersten q(ua)rt jaers compt op <measure
+                            ana="bk:money" quantity="1400" unit="guilders">xiii[c] guld(en)
+                            rijn(sch)</measure>
+                        <measure ana="bk:money" quantity="24.5" unit="placken">xxiii(1/2)
+                            pl(acken)</measure>
+                        <note>Total sum of all excise duties = 1400 ‘rijnsche’ gulden 24.5 ‘placken’
+                            (lower division of the guilder with a fixed ratio).</note>stuc te liii
+                        pl(acken) get</p>
+                    <p>Ander ontfanck vand(en) <term ana="bk:tax" ref="#bierass">bier
+                            ass(ize)</term> die <note>Some other (beer) excise duties, that were
+                            levied later.</note>dit jae(r) onv(er)cocht was en(de) der stat bleve(n)
+                        es, en(de) heeft de doen inhale(n) en(de) op heffen bi wout(er) borgelijn,
+                        arde willems, ard inde(n) rop en(de) met ja(n)nes vleege(n) en(de) roele(n)
+                        van(der) elst, hae(re)n clercken </p>
                     <p>Ierst soe hebben die bried(er)s binne(n) d(er) stat van love(n) binne(n) den
                         voirs(creven) yerste(n) q(ua)rts jaers gebrouwen also dat inne den
                         regist(er) der stadt voirs(creven) den voirs(creven) rentmeest(er) bide(n)
@@ -123,80 +244,124 @@
                         hoppe(n) val te ii p(er)se als bove(n) - xc guld(en)</p>
                     <p>En(de) vand(er) koyte(n) de van bute(n) love(n) come(n) es binne(n) de(n)
                         voirs(creven) q(ua)rts jaers xvi(1/2) guld(en)</p>
-                    <p ana="bk:sum">So(mma) <note>Sum of these unpaid, later levied beer excise
-                            duties, again in guilders.</note>vand(en) onv(er)cochten ass(ize)
-                        binne(n) de(n) voirs(creven) yersten q(ua)rts jafolers – xii[c] xis(1/2)
-                        guld(en)</p>
+                    <!-- sum of the ber taxes -->
+                    <p ana="bk:sum" corresp="#bierass">So(mma) <note>Sum of these unpaid, later
+                            levied beer excise duties, again in guilders.</note>vand(en)
+                        onv(er)cochten ass(ize) binne(n) de(n) voirs(creven) yersten q(ua)rts
+                        jafolers – xii[c] xis(1/2) guld(en)</p>
                     <p><pb n="2V°"
                             facs="https://www.itineranova.be/in/SAL5066/2V°/folio-account-book"
                         /></p>
-                    <p>Ander ontfanc vanden bute(n)porters jaerrenten<note>= new category,
-                            annuities/charges on ‘outer’ citizens.</note>, die sij der stat sculdich
-                        hebben geweest van outs en(de) van nuws binne(n) den yersten q(ua)rt(en)
-                        jaers en(de) eerst vand(er) maent van oexst xiiii[c] xxxviii<note>Date of
-                            first list: all persons charged in august 1438</note></p>
-
-                    <p ana="bk:entry"><span ana="bk:from">Eest van pauwels vand(en) beveleList with
-                            names from whom this charges were levied. First names</span><measure
-                            ana="bk:commodity" unit="_" quantity="1">surnames + some with origin or
-                            alias.</measure></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan florida van bram alloir</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">henr(ic) <note>First name</note>vand(er)
-                            lynden <note>Surname</note>van h(er)selt<note>Origin</note></span></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan van lymelettez</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">ard van nde(er)hem van waemale</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan jaket van clabbeet</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">geerd qua(n)telaet van
-                        hev(er)le</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">gheert le keu van tubeec</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">willem trippin van molenb(ais)</span></p>
-
-                    <p><pb n="3R°"
-                            facs="https://www.itineranova.be/in/SAL5066/3R°/folio-account-book"
-                        /></p>
+                    <p>Ander ontfanc vanden <term ana="bk:to" ref="#buteporters">bute(n)porters
+                            jaerrenten</term><note>= new category, annuities/charges on ‘outer’
+                            citizens.</note>, die sij der stat sculdich hebben geweest van outs
+                        en(de) van nuws binne(n) den yersten q(ua)rt(en) jaers en(de) eerst <date
+                            ana="bk:when" when="1438-08">vand(er) maent van oexst xiiii[c]
+                            xxxviii</date><note>Date of first list: all persons charged in august
+                            1438</note></p>
+                    <list>
+                        <item ana="bk:entry">
+                            <name ana="bk:from" ref="#Eestvanpauwelsvand">Eest van pauwels vand(en)</name>
+                                <note>
+                                beveleList with names from whom this charges were levied. First
+                                names surnames + some
+                                with origin or alias.</note>
+                        </item>
+                        <item ana="bk:entry">
+                            <name ana="bk:from">
+                                <forename>jan</forename>
+                                <surname>florida</surname> van bram alloir</name>
+                        </item>
+                        <item ana="bk:entry">
+                            <!-- Person: forename, surname, origin -->
+                            <name ana="bk:from"><forename>henr(ic)</forename>
+                                <note>First name</note><surname>vand(er) lynden</surname>
+                                <note>Surname</note>
+                                <origPlace> van h(er)selt </origPlace><note>Origin</note></name>
+                        </item>
+                        <item ana="bk:entry">
+                            <name ana="bk:from"><forename>jan</forename>
+                                <surname>van lymelettez</surname></name>
+                        </item>
+                        <item ana="bk:entry">
+                            <name ana="bk:from"><forename>ard</forename> van nde(er)hem van
+                                waemale</name>
+                        </item>
+                        <item ana="bk:entry">
+                            <name ana="bk:from"><forename>jan</forename> jaket van clabbeet</name>
+                        </item>
+                        <item ana="bk:entry">
+                            <name ana="bk:from"><forename>geerd</forename> qua(n)telaet van
+                                hev(er)le</name>
+                        </item>
+                        <item ana="bk:entry">
+                            <name ana="bk:from"><forename>gheert</forename> le keu van tubeec</name>
+                        </item>
+                        <item ana="bk:entry">
+                            <name ana="bk:from"><forename>willem</forename>
+                                <surname>trippin</surname> van molenb(ais)</name>
+                        </item>
+                    </list>
+                    <pb n="3R°" facs="https://www.itineranova.be/in/SAL5066/3R°/folio-account-book"
+                    />
                 </div>
                 <div>
-                    <head type="maincategory">In septembri 1438<note>Date (september 1438), and then
-                            again a list of persons (outer citizens) charged.</note>
+                    <head>
+                        <!-- new date -->
+                        <!-- all following entries, until a new bk:when comes, are connected to this date -->
+                        <date ana="bk:when" when="1438-09-01">In septembri 1438</date>
+                        <note>Date (september 1438), and then again a list of persons (outer
+                            citizens) charged.</note>
                     </head>
-
-                    <p ana="bk:entry"><span ana="bk:from">eerst jan michiels van
-                        buedingen</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan da(m)me? oede van dion</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">henr(ic) de clerc van
-                        he(re)ntals</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan nuwestat van duffle</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan megenels van wuestmeers</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan van ramseer van beets</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan <note>First name</note>van basel
-                                <note>surname</note>gehete(n) van rome(n)<note>geheten = alias, ‘van
-                                romen’ the actual alias.</note></span></p>
-                    <p ana="bk:entry"><span ana="bk:from">willem le latre van valiopont</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">lam(bert) snex van
-                        coytenb(er)ge</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">colijn de roysart</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">pauwels van viersel</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">philips vand(en) bosch van
-                        asten</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan de cleit van luick</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan van rikemode van waelhem</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan vand(en) bome van yersel</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">hubr(echt) mattelot van
-                        ha(n)nuyt</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan hoyxken van visenaken</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan le fienet van =ho= ophain</span></p>
-                    <p ana="bk:entry"><span ana="bk:from">jan <note>first name</note>lint(er)ma(n)
-                                <note>surname</note>gehete(n) claes<note>alias</note></span></p>
-
-                    <p><pb n="3V°"
-                            facs="https://www.itineranova.be/in/SAL5066/3V°/folio-account-book"
-                        /></p>
+                    <list>
+                        <item ana="bk:entry"><span ana="bk:from">eerst jan michiels van
+                                buedingen</span> 
+                            <!-- CP measure add for testing -->
+                            - <measure unit="guilders" quantity="1">i gul</measure> </item>
+                        <item ana="bk:entry"><span ana="bk:from">jan da(m)me? oede van dion</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">henr(ic) de clerc van
+                                he(re)ntals</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">jan nuwestat van duffle</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">jan megenels van wuestmeers</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">jan van ramseer van beets</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">jan <note>First name</note>van
+                                basel <note>surname</note>gehete(n) van rome(n)<note>geheten =
+                                    alias, ‘van romen’ the actual alias.</note></span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">willem le latre van
+                                valiopont</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">lam(bert) snex van
+                                coytenb(er)ge</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">colijn de roysart</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">pauwels van viersel</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">philips vand(en) bosch van
+                                asten</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">jan de cleit van luick</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">jan van rikemode van
+                            waelhem</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">jan vand(en) bome van
+                            yersel</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">hubr(echt) mattelot van
+                                ha(n)nuyt</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">jan hoyxken van visenaken</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">jan le fienet van =ho=
+                                ophain</span>- </item>
+                        <item ana="bk:entry"><span ana="bk:from">jan <note>first
+                                name</note>lint(er)ma(n) <note>surname</note>gehete(n)
+                                    claes<note>alias</note></span>- </item>
+                    </list>
                 </div>
+                <pb n="3V°" facs="https://www.itineranova.be/in/SAL5066/3V°/folio-account-book"/>
+                <!-- this can bei a <list> with <item> or just <p> -->
                 <div>
-                    <head type="maincategory">In oct(obris) xiiii[c] xxxviii<note>Again a month
+                    <head>In
+                        <!-- new bk:when -->
+                        <date ana="bk:date" when="1438-10-01">oct(obris) xiiii[c] xxxviii</date>
+                        <note>Again a month
                             (october 1438) and a list of persons charged.</note></head>
-
-                    <p ana="bk:entry"><span ana="bk:from">Eerst jan van wesenbeet</span></p>
+                    <p ana="bk:entry"><span ana="bk:from">Eerst jan van wesenbeet</span>
+                        <!-- CP measure add for testing -->
+                        - <measure unit="guilders" quantity="2">ii gul</measure>
+                    </p>
                     <p ana="bk:entry"><span ana="bk:from">goeswijn vand(en) b(er)ghe van
                             wambeet</span></p>
                     <p ana="bk:entry"><span ana="bk:from">ard lavet van yttre</span></p>
@@ -230,10 +395,8 @@
                     <p ana="bk:entry"><span ana="bk:from">philips van beafont</span></p>
                     <p ana="bk:entry"><span ana="bk:from">philips dabin van vileer</span></p>
                     <p ana="bk:entry"><span ana="bk:from">willem bairon van beertreez</span></p>
-
                     <p><pb n="4" facs="https://www.itineranova.be/in/SAL5066/4/folio-account-book"
                         /></p>
-
                     <p ana="bk:entry"><span ana="bk:from">weri van chasteal van ha(n)nuyt</span></p>
                     <p ana="bk:entry"><span ana="bk:from">reyner vand(en) kerchove van
                         leeuwe</span></p>
@@ -257,13 +420,19 @@
                     <p ana="bk:entry"><span ana="bk:from">steven retlar van goye</span></p>
                     <p ana="bk:entry"><span ana="bk:from">col(art)? conet varlet va(n)
                             chastre</span></p>
-
-                    <p ana="bk:sum">So(mma) <note>Sum of</note>vand(en) voirs(creven) buten
-                        poirt(er)gelde <note>Category = charges for outer citizens</note>dat come(n)
+                    <!-- the sum of  -->
+                    <p ana="bk:sum" corresp="#poirt(er)gelde">So(mma) <note>Sum of</note>vand(en) voirs(creven)
+                        
+                        <term ana="bk:tax" ref="#buteporters">buten
+                            poirt(er)gelde</term> <note>Category = charges for outer citizens</note>dat come(n)
                         yerst binne(n) den voirs(creven) yersten q(uar)ts jaers <note>For all these
                             months together, being the first quarter of the year</note>compt
                             op<note>Is together… (no amount or not transcribed?)</note></p>
-                    <p ana="bk:sum">So(m)ma so(m)marum <note>Total sum</note>van alden ontfanghe
+                    <!-- the sum of; missing measure  -->
+                    <p ana="bk:sum">So(m)ma so(m)marum <note>Total sum</note>
+                        <term ref="#aldenontfanghe">
+                        van alden ontfanghe
+                        </term>
                             <note>Of all revenues</note>binne(n) desen yersten q(ua)rt(en)
                             jaers<note>In this first quarter of the year</note> compt te gad(er)
                             <note>Is together… </note>op …<note>No amount/not transcribed (I can
@@ -271,37 +440,41 @@
                     <p><pb n="4V°"
                             facs="https://www.itineranova.be/in/SAL5066/4V°/folio-account-book"
                         /></p>
+                    
+                    
                     <p>LEEG<note>Empty page.</note></p>
                     <p>
                         <pb n="5R°"
                             facs="https://www.itineranova.be/in/SAL5066/5R°/folio-account-book"
                         /></p>
-                    <p>Jeghen dit voirs(creven) ontfanc, dat de voirs(creven) rent</p>
-                    <p>meest(er)s ontfaen ende innegehave(n) hebben</p>
-                    <p> vand(er) stat ass(ize) ende vand(en) port(er)s jaerrenten, gelijc</p>
-                    <p> in dontfaen vanden selve(n) yersten q(ua)rts jaers ver</p>
-                    <p>claert es <note>Towards these revenues…</note>Soe hebben sij wed(er)
-                        uutgegeve(n) </p>
-                    <p>en(de) betailt binne(n) den selven q(ua)rts jaers, gelijc </p>
-                    <p>volgt <note>… follow the expenses (uutgegeven).</note></p>
+                    <p>Jeghen dit voirs(creven) ontfanc, dat de voirs(creven) rent
+                    meest(er)s ontfaen ende innegehave(n) hebben
+                    vand(er) stat ass(ize) ende vand(en) port(er)s jaerrenten, gelijc
+                    in dontfaen vanden selve(n) yersten q(ua)rts jaers ver
+                    claert es <note>Towards these revenues…</note>Soe hebben sij wed(er)
+                        uutgegeve(n)
+                    en(de) betailt binne(n) den selven q(ua)rts jaers, gelijc 
+                    volgt <note>… follow the expenses (uutgegeven).</note></p>
                 </div>
                 <div>
-                    <head type="maincategory">Eerst in lijftochte(n)<note>Category
+                    <head type="maincategory">Eerst in <term ana="bk:to" ref="#lijftochte">lijftochte(n)</term><note>Category
                         (pensions)</note></head>
-
-                    <p ana="bk:entry"><span ana="bk:from">Te brux(el) <note>Place where these
+                    <!-- what is the other party in this entries? -->
+                    <p ana="bk:entry">
+                        <span ana="bk:from">
+                            Te <placeName ana="bk:where">brux(el)</placeName> <note>Place where these
                                 ‘lijftochten’ are paid (Brussels).</note>in lijftochte(n) die de
-                            stad aldae(r)</span></p>
-
-                    <p>sculdich was vand(er) mae(n)t va(n) sept(ember) xiiii[c] xxxviii x s gr
+                            stad aldae(r)</span>
+                        sculdich was vand(er) mae(n)t va(n) <date>sept(ember)</date>
+                        <!-- other currencies -->
+                        <measure unit="pound" quantity="140">xiiii[c]</measure> <measure unit="shilling" quantity="38">xxxviii</measure> x s gr
                             oude<note>Other currency: pond (pound) – schelling (shilling) ‘grote
                             oude’ (the name of the currency), as this is an older commitment in an
-                            older currency.</note></p>
-
+                            older currency.</note>
+                    </p>
                     <p ana="bk:entry"><span ana="bk:from">te brux(el) in lijft(ochten) die de stat
                             aldae(r) sculd(ichwas binne(n) der maent va(n) oct(ober) xxxviii x s gr
                             oude</span></p>
-
                     <p ana="bk:sum">So(mma) vand(er) lijft(ochten) die de rentmeest(er)s
                         voirs(creven)</p>
                     <p ana="bk:sum">betaelt hebben binne(n) den yerste(n) q(ua)rts</p>
@@ -315,48 +488,39 @@
                             currency used in this account – gulden (guilder).</note>– xxx gul(den)
                             rij(n)s<note>The sum converted to the otherwise used rijnsgulden
                             (guilders from the Rhine area).</note></p>
-
                     <p ana="bk:entry"><span ana="bk:from">Te vilvorde in lijftochte(n) die de stat
                             ald(ae(r) sculdich was vand(er) mae(n)t van sept(embris) voirs(creven)v
                             s gr oude en(de) dae(r) voir : iii gul i qrt rijns<note>Same, normal
                                 currency of 3 gulden 1 quart rijns.</note></span></p>
-
                     <p><pb n="5V°"
                             facs="https://www.itineranova.be/in/SAL5066/5V°/folio-account-book"
                         /></p>
-
-                    <p ana="bk:entry"><span ana="bk:from">te mechlen 2nd place (Mechelen)in
-                            lijf(tochten) die de stat ald(aer) ae(n) sculd(ich)was vand(er) maent
-                            oexst voirs</span><measure ana="bk:commodity" unit="_" quantity="1">xlv
-                            s gr oudeFirst in the older currency</measure></p>
-                    <p ana="bk:entry"><span ana="bk:from">te mechlen in lijf(tochten) die de stat
-                            ald(aer) sculd(ich)was vand(er) maent van oct(obris)
-                            voirs</span><measure ana="bk:commodity" unit="_" quantity="1">xiii s gr
-                            oude</measure></p>
-
+                    <p ana="bk:entry"><name ana="bk:from" ref="#temechlen2ndplace(M">te mechlen 2nd
+                            place (Mechelen)in lijf(tochten) die de stat ald(aer) ae(n)
+                            sculd(ich)was vand(er) maent oexst voirs</name><measure
+                            ana="bk:money bk:from" unit="_" quantity="1">xlv s gr oudeFirst in the
+                            older currency</measure></p>
+                    <p ana="bk:entry"><name ana="bk:from" ref="#temechleninlijf(toc">te mechlen in
+                            lijf(tochten) die de stat ald(aer) sculd(ich)was vand(er) maent van
+                            oct(obris) voirs</name><measure ana="bk:money bk:from" unit="_"
+                            quantity="1">xiii s gr oude</measure></p>
                     <p ana="bk:sum">so(mma) vand(er) lijft(ochten) die de rentmeest(er)s
                         voirs(creven)bet(aelt) hebben te mechlen binne(n) de(n) voirs(creven)
                         yerste(n) q(ua)rts jaers compt opv l vi s vi d gro oude die make(n)in
                         rijnsche xiii gul rijns voir elc <note>But then converted to the currency of
                             rijnsgulden.</note>l gro oude ger(ekent) lxix gul rij(n)s xii pl iii s
                         p</p>
-
                     <p ana="bk:entry"><span ana="bk:from">tandwerpe(n) <note>3th place
                                 (Antwerpen)</note>in lijft(ochten) die de stat aldae(r)
                             sculd(ich)was vand(er) maent van oexst <note>The category ‘lijftochten’
                                 in the town of Antwerpen divided per month (august, september
                                 etc)</note>voirs(creven)</span></p>
-
-
                     <p ana="bk:entry"><span ana="bk:from">tandwerpe(n) in lijft(ochten) die de stad
                             aldae(r) sculd(ich)was vand(er) mae(n)t va(n) septe(mbris)
                             voirs(creven)</span></p>
-
-
                     <p ana="bk:entry"><span ana="bk:from">tandwerpe(n) in lijft(ochten) die de stad
                             aldae(r) sculd(ich)was vand(er) mae(n)t va(n) oct(ober)
                             voirs(creven)</span></p>
-
                     <p ana="bk:sum">So(m)ma <note>Sum…</note>vand(er) lijft(ochten) <note>…Of this
                             category…</note>die de rentmeest(er)svoirs(creven) bet(aelt) hebbe(n)
                             tandwerpe(n)<note>… in this 3th place, being Antwerp…</note> binne(n)den
@@ -364,16 +528,12 @@
                             currency</note>de make(n) xiii gul<note>Converted to the gulden
                             currency</note>voir elc l gr oude ger(ekent)<note>Conversion
                         used</note></p>
-
                     <p ana="bk:entry"><span ana="bk:from">Te love(n) <note>The same category in the
                                 4th place, Leuven, etc.</note>in lijft(ochten) de de stat aldae(r)
                             sculd(ich) was</span></p>
-
                     <p>van(der) maent van oexst voirs(creven)</p>
-
                     <p ana="bk:entry"><span ana="bk:from">Te love(n) in lijft(ochten) die de stat
                             aldae(r) sculd(ich) was</span></p>
-
                     <p>van(der) maent van oct(obris) voirs(creven)</p>
                     <p ana="bk:sum">So(m)ma vand(er) lijft(ochten) die de rentmeest(er)s
                         voirs(creven) bet(aelt) hebbe(n) te love(n) binne(n) den yerste(n) q(ua)rts
@@ -390,7 +550,8 @@
                         /></p>
                 </div>
                 <div>
-                    <head type="maincategory">Ander uutgheve(n) in erfrenten<note>2nd category of
+                    <head>Ander uutgheve(n) in 
+                        <term ana="bk:to" ref="#erfrenten">erfrenten</term><note>2nd category of
                             expenses (heriditary annuities)</note> die de stat v(er)cocht heeft
                         o(m)me grote node ende orber wille van ouden acht(er)stelle lijft(ochten)
                         die de stat sculdich was bute(n) lants dae(r) me(n) den voirscreven
@@ -399,27 +560,21 @@
                 <div>
                     <head type="maincategory">niet gequijt heeft </head>
                     <p>Eerst <note>First entry</note>hebben de voirs(creven) rentmeest(er)s
-                        betaelt</p>
-                    <p>in erve dat de stat sculd(ich) was hae(re)n por(ter)s</p>
-                    <p>van binne(n) love(n) <note>what</note>dat hem viel opten yerste(n)</p>
-                    <p>dach vand(er) mae(n)t van oexst xiii[c] xxx viii<note>when (date)</note></p>
-                    <p>dae(r) de som af compt op</p>
-
-                    <p ana="bk:entry"><span ana="bk:from">It(em) <note>Second entry,
+                        betaelt
+                        <term ana="bk:to" ref="#erfrenten_1">in erve dat de stat sculd(ich) was hae(re)n por(ter)s
+                        van binne(n) love(n)</term> <note>what</note>dat hem viel <date ana="bk:when" when="1438-11-01">opten yerste(n)
+                            dach vand(er) mae(n)t van oexst xiii[c] xxx viii</date><note>when (date) CP: i dont know the date^^, just defined is as nov</note>
+                        dae(r) de som af compt op</p>
+                    <p ana="bk:entry">It(em) <note>Second entry,
                             etc.</note>hebben sij bet(aelt) in erve dat de port(er)svan binne(n)
                             love(n) viel xv dage(n) in oexstvoirs(creven) dae(r) de som af compt op
-                        </span></p>
-
-
-                    <p ana="bk:entry"><span ana="bk:from">It(em) noch hebben sij bet(aelt) in
+                        </p>
+                    <p ana="bk:entry">It(em) noch hebben sij bet(aelt) in
                             erfrente(n) dat de(n)port(er)s van binne(n) love(n) viel opte(n)
-                            yerste(n) dachvand(er) mae(n)t van oct(obris) voirs(creven)</span></p>
-
-
-                    <p ana="bk:entry"><span ana="bk:from">It(em) hebben sij bet(aelt) in erfrente(n)
+                            yerste(n) dachvand(er) mae(n)t van oct(obris) voirs(creven)</p>
+                    <p ana="bk:entry">It(em) hebben sij bet(aelt) in erfrente(n)
                             dat den port(er)svan binne(n) viel viii dage in oct(obris)
-                            voirs(creven)dae(r) de som af compt op </span></p>
-
+                            voirs(creven)dae(r) de som af compt op</p>
                     <p ana="bk:sum">So(mma) vand(en) erfrente(n) dat de rentmeest(er)svoirs(creven)
                         betaelt hebben binne(n) den yerste(n)q(ua)rts jaers compt op </p>
                     <p><pb n="7R°"
@@ -441,7 +596,6 @@
                 <div>
                     <head type="maincategory">In ghemeinen uutgheve(n) vand(er) mae(n)t van oexst
                         xiii[c] xxxviii in schincke(n)</head>
-
                     <p ana="bk:entry"><span ana="bk:from">Eerst ghegeve(n) <note>Given
                             to…</note>meest(er) <note>title</note>janne <note>first name</note>den
                             bonte(n) <note>surname</note>cancelie(r)van brabant<note>function</note>
@@ -458,135 +612,92 @@
                             voirs(creven) vand(er) gelt(en) xvi pl val</span></p>
                     <p ana="bk:entry"><span ana="bk:from">Gvi? gillebout ov(er)ste tresorie(r) van
                             ons gened(igen)</span></p>
-
                     <p>he(re)n van brabant xxiii iii oexst was geschinct</p>
                     <p>iiii gelt(en) rijns wijns inde fontein val</p>
-
                     <p ana="bk:entry"><span ana="bk:from">Die stad van andwerpe(n) xxv iii oexst
                             iiii gelt(en)</span></p>
-
                     <p>rij(n)s wijns inde fontein val<note>what means “val”, is it always the end of
                             this entries?</note></p>
-
                     <p ana="bk:entry"><span ana="bk:from">Den voirs(creven) meest(er) jan den bonte
                             cancelie(r) va(n)</span></p>
-
                     <p>brabant xxviii oexst iiii gelt(en) r(ijns) wijns</p>
                     <p>inde fontein ten p(er)se voirs(creven) val</p>
-
                     <p ana="bk:entry"><span ana="bk:from">henr(ic) magn(us) mij(n)s gened(igen)
                             he(re)n rade van braba(n)t</span></p>
-
                     <p>xxviii oexst iii gelt(en) r(ijns) wij(n)s inde fontein</p>
                     <p>gehaelt ten perse voirs(creven) maken</p>
                     <p><pb n="8R°"
                             facs="https://www.itineranova.be/in/SAL5066/8R°/folio-account-book"
                         /></p>
-
                     <p ana="bk:entry"><span ana="bk:from">Den he(r) van hev(er)le mij(n)s
                             gened(igen) he(re)n rade voirs(creven)</span></p>
-
                     <p>xxviii oexst iiii gelt(en) rijns wij(n)s inde fo(n)tein val</p>
-
                     <p ana="bk:entry"><span ana="bk:from">den meye(r) van loven als raet mij(n)s
                             gened(igen) he(re)n</span></p>
-
                     <p>voirs(creven) xxviii oexst iiii gelt(en) rijns wij(n)s val</p>
-
                     <p ana="bk:entry"><span ana="bk:from">pete(re)n vand(er) eiken rentmeest(er)
                             g(e)n(er)ael(ijc) mij(n)s gened(igen)</span></p>
-
                     <p>he(re)n xxviii oexst iii gelt(en) rij(n)s wijns</p>
                     <p>inde fontein ten p(er)se voirs(creven) val</p>
-
                     <p ana="bk:entry"><span ana="bk:from">ambrosius van dint(er) sec(re)tar(is)
                             mij(n)s gened(igen) he(re)n</span></p>
-
                     <p>ii gelt(en) rijns inde fontein val</p>
-
                     <p ana="bk:entry"><span ana="bk:from">den voirs(creven) cancelie(r) van brabant
                             xxix oexst</span></p>
-
                     <p>iiii gelt(en) rijns wijns ten p(er)se voirs(creven) die gehaelt</p>
                     <p>wae(re)n inde fontein val</p>
-
                     <p ana="bk:entry"><span ana="bk:from">der stat rade van brux(el) xxxi iii
                             oexst</span></p>
-
                     <p>viii gelt(en) rijns wijns de gehaelt wae(re)n tot</p>
                     <p>roelof roelofs de gelt te xvi pl val </p>
-
                     <p ana="bk:entry"><span ana="bk:from">der stad rade van antwerpe(n) ten selve(n)
                             tijde</span></p>
-
                     <p>iii gelt(en) rijns wijns tot roelofs voirs(creven) val </p>
-
                     <p ana="bk:entry"><span ana="bk:from">gorden pierarts van iii gelt(en) rijns
                             wijns de</span></p>
-
                     <p>gehaelt en(de) gedroncke(n) wae(re)n bid(en) stede(n) van</p>
                     <p>brux(el) en(de) van antw(er)pe(n) opt(er) stat h(uis) val</p>
-
                     <p ana="bk:entry"><span ana="bk:from">lod(ewijk) inde crone van ii gelt(en)
                             rij(n)s wijns val</span></p>
-
                     <p>goird liemi(n)x van brode</p>
                     <p><pb n="8V°"
                             facs="https://www.itineranova.be/in/SAL5066/8V°/folio-account-book"
                         /></p>
-
                     <p ana="bk:entry"><span ana="bk:from">Gord pierarts inde fontein van viii
                             gelt(en) rijns wij(n)s</span></p>
-
                     <p>die de voirs(creven) steden en(de) tmij(n)s he(re)n rade droncke(n</p>
                     <p>opt(er) stat huys xxix i(n) oexst val</p>
-
                     <p ana="bk:entry"><span ana="bk:from">lamb(recht) stopgat ten selve(n) tijde van
                             iii potten</span></p>
-
                     <p>musthadelle(n) den pot te xii pl val</p>
-
                     <p ana="bk:entry"><span ana="bk:from">lod(ewijk) opten kerchof ten selve(n)
                             tijde (1/2) pot muscha</span></p>
-
                     <p>dellen den pot te xii pl val</p>
-
                     <p ana="bk:entry"><span ana="bk:from">henr(ic) lie(m)inx en(de) pete(re)n
                             pottens van brode vii pl</span></p>
-
                     <p>der rouwen sma(n)demek(er)s van iiii pende(re)n sfruyts</p>
                     <p>elken pender te ix pl val</p>
-
                     <p ana="bk:entry"><span ana="bk:from">lodewijc opten kerchof xxii oexst van
                         </span></p>
-
                     <p>i pot musthadellen opt(er) stat h(uys) voirs(creven)</p>
                     <p>henr(ic) liemi(n)x van brode</p>
                 </div>
                 <div>
                     <head type="maincategory">in schinken in sept(embris) xiiii[c] xxxviii</head>
-
                     <p ana="bk:entry"><span ana="bk:from">Ghijsbrecht van wesel iiii i(n)
                             sept(embris) i gelt</span></p>
-
                     <p>rijns wij(n)s de gehaelt was bid(er) steden</p>
                     <p>voir(creven) opte stat huys ten p(er)se voirs(creven)</p>
-
                     <p ana="bk:entry"><span ana="bk:from">gord lie(m)inx van brode</span></p>
                     <p ana="bk:entry"><span ana="bk:from">der voruwen sma(n)demek(er)s van i
                             pend(er) fruyts </span></p>
-
                     <p>lodewijc opten kerchof viii sept(embris) van i pot</p>
-
                     <p ana="bk:entry"><span ana="bk:from">musthadellen en(de) i pot
                                     maleviseie(n)<note><p> maleviseien: zoete griekse
                                 wijn</p></note></span></p>
-
                     <p>gord lie(m)inx van brode ten selve(n) tijde</p>
-
                     <p ana="bk:entry"><span ana="bk:from">den selve(n) lod(ewijc) xiiii i(n)
                             sept(embris) van i pot maleviseie(n)</span></p>
-
                     <p>en(de) i pot musthadelle(n) bid(er) voirs(creven) steden</p>
                     <p>gord lie(m)inx van brode ten selve(n) tijde</p>
                     <p><pb n="9R°"
@@ -668,11 +779,9 @@
                             (travel expenses of city personel).</note>uutrijde(n) van boyen loon
                         ind(er) stat orb(er) biden burg(er)meest(er) en(de) ande(re)n diene(re)n
                         v(er)clert bi(n)ne(n) den voirs(creven) yersten q(ua)rt(en) jaers</head>
-
                     <p ana="bk:entry"><span ana="bk:from">Eerst <note>First entry</note>meest(er)
                                 <note>title</note>giel(is) <note>first name</note>vand(er) stoct
                                 <note>surname</note>gesent ii i(n) oexst<note>date</note></span></p>
-
                     <p>te mechlen <note>place he travelled to</note>ane de stat o(m)me met hem
                         te</p>
                     <p>spreken dat de bischops van love(n) mochten </p>
@@ -680,30 +789,24 @@
                     <p>gelijc den innegesetn(en) bischops van mechle(n)</p>
                     <p>doen <note>reason of travel</note>va(n) i dage<note>duration of travel</note>
                         met ii p(er)den<note>method of travel: two horses</note></p>
-
                     <p ana="bk:entry"><span ana="bk:from">pete(r) <note>second entry: first
                                 name</note>sfrayen<note>surname</note> gesent ix i(n) oexst
                                 <note>date</note>te brux(el) <note>place he traveled
                             to</note>iii(1/2)</span></p>
-
                     <p>brieve ane de stat o(m)me i dachv(er)t te ordine(re)n</p>
                     <p>te cortenb(er)gen o(m)me te gad(er) te spreke(n) en(de) ordinan(cien)</p>
                     <p>te maken dat tcoren ute(n) lande van brabant</p>
                     <p>niet en vue(re) <note>reason of travel</note>van ii dage(n) <note>duration of
                             the trip</note>te voet<note>method of travel: by foot.</note></p>
-
                     <p ana="bk:entry"><span ana="bk:from">Jacop<note>Start of third entry, first
                                 name</note> ute liemi(n)ge(n) borg(er)meest(er)
                                 <note>function</note>meest(er) giel(is)</span></p>
-
                     <p>vand(en) stoct en(de) jan de pape gesent te corte(n)b(er)ge</p>
                     <p>o(m)me de saken te tractere(n) vande(n) corne(n) dat dat</p>
                     <p>binne(n) brabant blive(n mocht vna i dage en(de) </p>
                     <p>v p(er)den</p>
-
                     <p ana="bk:entry"><span ana="bk:from">Jacop ute liemi(n)ge(n) voirs(creven) rde
                             kippe en(de) jan de(n)</span></p>
-
                     <p>pape ges(ent) xvi i(n) oexst te maestricht met</p>
                     <p>den he(re) den cancelie(r) en(de) ande(re)n he(re)n mij(n)s</p>
                     <p>gened(igen) he(re)n rade o(m)me dachv(er)t t ehouden mege(n)</p>
@@ -891,7 +994,6 @@
                     <p>en(de omme dat hi de misse dede uut(er) hem geschinct</p>
                     <p>ii gelt(en) wij(n)s meer dan den ande(re)n en(de) o(m)me dat</p>
                     <p>hi de p(ro)cessie in sijne(n) p(re)latelike(n) abijte eerde(n)</p>
-
                     <p ana="bk:entry"><span ana="bk:from">vi gelt(en) rx wij(n)s maken
                         tsamen</span></p>
                     <p ana="bk:entry"><span ana="bk:from">den abd van p(er)ric savo(n)ts en(de)
@@ -935,7 +1037,6 @@
                             va(n) heda meest(er)</span></p>
                     <p ana="bk:entry"><span ana="bk:from">giel(is) vand(er) stoct ja(n)nes va(n)
                             oppendorp ja(n)nes</span></p>
-
                     <p><pb n="14R°"
                             facs="https://www.itineranova.be/in/SAL5066/14R°/folio-account-book"
                         /></p>
@@ -977,19 +1078,14 @@
                     <p><pb n="14V"
                             facs="https://www.itineranova.be/in/SAL5066/14V/folio-account-book"
                         />°</p>
-
                     <p ana="bk:entry"><span ana="bk:from">den selve(n) van xvii nuwe(n) schilde te
                             maken totte(n)</span></p>
-
                     <p>xvii lanshe(re)n vir sij verwe en(de) arbeit</p>
-
                     <p ana="bk:entry"><span ana="bk:from">den acht cnechte(n) die de kersse(n)
                             droege(n)</span></p>
                     <p ana="bk:entry"><span ana="bk:from">wille(m) de bere o(m)me te hebben gemaect
                             die</span></p>
-
                     <p>stellinge voir der stat huys dae(r) me(n) op speelde(n)</p>
-
                     <p ana="bk:entry"><span ana="bk:from">en(de) die clede(re)n inde kerke te
                             sperre(n) ende die</span></p>
                     <p ana="bk:entry"><span ana="bk:from">wed(er) af te doen van iii dage(n)
@@ -1036,7 +1132,6 @@
                     <p ana="bk:entry"><span ana="bk:from">o(m)me te drage(n) plach op hae(re)n dahc
                             na(tivi)[tas] iii rijd(er)s</span></p>
                     <p ana="bk:entry"><span ana="bk:from">stuc te lxxii pl</span></p>
-
                     <p ana="bk:sum">So(mma) vand(er) cost vand(er) p(ro)cessie(n)
                             voirs(creven)<note>sum of all costs for this procession (amount not
                             given or not transcribed)</note></p>
@@ -1050,7 +1145,6 @@
                         van love(n) ende meer ande(re)nhier na verclaert<note>new category:
                             salaries. Subcategory: salaries of university professors and
                             teachers</note>, vanden yersten quart(en) jaers</head>
-
                     <p ana="bk:entry"><span ana="bk:from">eerst <note>first entry</note>meest(er)
                                 <note>title</note>heymer(is)<note>first name</note> vand(en) velde
                                 <note>surname</note>dien voer sijn</span></p>
@@ -1114,8 +1208,6 @@
                             hebben most</span></p>
                     <p ana="bk:entry"><span ana="bk:from">dan de ande(re) meest(er)s op elken
                             gul(den) i pl make(n) c xxv pl</span></p>
-
-
                     <p ana="bk:entry"><span ana="bk:from">Den buten poirtiers der stad
                                 <note>Subcategory: salaries of gatekeepers</note>voirs(creven) dien
                             geor</span></p>
@@ -1161,7 +1253,6 @@
                     <p ana="bk:entry"><span ana="bk:from">borchporte(n) en(de) jan hubr(cht)
                             vand(er) blakeporten</span></p>
                     <p ana="bk:entry"><span ana="bk:from">elken xx pl xx sp val</span></p>
-
                     <p><pb n="16R°"
                             facs="https://www.itineranova.be/in/SAL5066/16R°/folio-account-book"
                         /></p>
@@ -1225,10 +1316,8 @@
                     <head type="maincategory">Ander uutgeve(n) van jaerrente(n) <note>Category of
                             annuities</note>die de stat jaerlijx betailt den p(er)sonen hierna
                         bescreven binne(n) den vors(creven) yersten q(ua)rten) jaers</head>
-
                     <p ana="bk:entry"><span ana="bk:from">Eerst onsen gened(igen) he(r) van brabant
                             dieme(n)</span></p>
-
                     <p>jaerlijx sculd(ich) es vand(en) octroye d(er) assizen der</p>
                     <p>stat voirs(creven) alsoe langhe als de t(er)mine dae(r)</p>
                     <p>af deurt de so(m)me van ii[c] rijnsche guld(en) te</p>
@@ -1287,19 +1376,18 @@
                         toe dienende<note>category</note>gedaen binne(n) den voirs(creven) yerste(n)
                         q(ua)rt(en) jaersAnde halle<note>subcategory: building works on the
                             ‘halle’.</note>
+                        <!-- <head type="subcategory">mestwerck</head>
+                     
+                            <head type="subcategory"><note>Sub-subcategory: masonry</note></head>-->
                     </head>
-                    <head type="subcategory">mestwerck</head>
-                    <note>Sub-subcategory: masonry</note>
                     <p ana="bk:entry"><span ana="bk:from">Eerst van vi(1/2) vaten <note>Amount in
                                 ‘vaten’</note>calx <note>What: chalk</note>opte merct
                                 gecocht<note>Where bought</note></span></p>
                     <p ana="bk:entry"><span ana="bk:from">dmud xix(1/2) stuv(er)s<note>Price per
                                 amount</note></span></p>
-
                     <p>it(em) van v vaten calx dmud li pl val en(de) iii pl ane den hoop</p>
                     <p>Item van vii vaten calx dmud liiii pl val</p>
                     <p>item jan leeuken van xxiii kerre(n) wat(er)s den</p>
-
                     <p ana="bk:entry"><span ana="bk:from">voirs(creven) calc met te beslaen van
                             elk(en) k(er)re xxxx sp</span></p>
                     <p ana="bk:entry"><span ana="bk:from">den voirs(creven) van xvi kerre(n) savels
@@ -1312,9 +1400,7 @@
                             pl</span></p>
                     <p ana="bk:entry"><span ana="bk:from">symoen suerb(er)te van ene(n) mure inde
                             halle</span></p>
-
                     <p>opte sijde ten vrijthove waert af te breken</p>
-
                     <p ana="bk:entry"><span ana="bk:from">inde maent va(n) oexst van viii dage(n)
                             xii pl</span></p>
                     <p ana="bk:entry"><span ana="bk:from">hene(n) zijben van vii(1/2) dage x
@@ -1325,25 +1411,19 @@
                             d</span></p>
                     <p ana="bk:entry"><span ana="bk:from">meest(er) pliss(is) van vorst d(er) stat
                             wercma(n) van </span></p>
-
                     <p>xi dagen xii pl </p>
-
                     <p ana="bk:entry"><span ana="bk:from">hen(ric) van guetrode van ix(1/2) vate(n)
                             calx opte</span></p>
-
                     <p>merct gecocht dmud liiii pl</p>
-
                     <p ana="bk:entry"><span ana="bk:from">jan steve(n)s van xxi kerre(n) savels te
                             i(1/2) pl de k(er)re</span></p>
                     <p ana="bk:entry"><span ana="bk:from">jan de cock van beslaen</span></p>
-
                     <p><pb n="19R°"
                             facs="https://www.itineranova.be/in/SAL5066/19R°/folio-account-book"
                         /></p>
                     <div>
                         <head type="maincategory">decwerkc met tiechele(n)<note>Subsubcategory:
                                 roofing works</note></head>
-
                         <p ana="bk:entry"><span ana="bk:from">hen(ric) kerma(n)s van ii[m]
                                 tiechle(n) elc duse(n)t liii pl</span></p>
                         <p ana="bk:entry"><span ana="bk:from">hem selve(n) van v(1/2)[c]
@@ -1390,7 +1470,6 @@
                                 liiii pl val</span></p>
                         <p ana="bk:entry"><span ana="bk:from">jan den cock vand(en) calc te
                                 beslae(n)</span></p>
-
                         <p><pb n="19V°"
                                 facs="https://www.itineranova.be/in/SAL5066/19V°/folio-account-book"
                             /></p>
