@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="taille_1296">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Guido di Filippo Fagni (Orphan Accoutns)</title>
+                <author>Laura Morreal</author>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+                <idno type="PID">o:depcha.orphan.1</idno>
+                <ref target="context:depcha.orphan" type="context">Orphan Accoutns</ref>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <country>Italy</country>
+                        <settlement>Firenze</settlement>
+                        <institution>Archivio di Stato di Firenze</institution>
+                        <collection>xy</collection>
+                        <idno>Shelf Number 4</idno>
+                        <msName>Guido di Filippo Fagni</msName>
+                    </msIdentifier>
+                    <msContents>
+                        <msItem>
+                            <title>Guido di Filippo Fagni</title>
+                            <author>XY</author>
+                            <docDate>07 June 1391</docDate>
+                            <textLang>
+                                <lang>Italian</lang>
+                            </textLang>
+                        </msItem>
+                    </msContents>
+                </msDesc>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <ab>
+                    <ref
+                        target="https://drive.google.com/file/d/148ireqjPNlgpowsoBvCgUbeD2j9kuUCa/view"
+                        >Slides</ref>
+                </ab>
+            </projectDesc>
+            <listPrefixDef>
+                <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+                    <p>Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs.</p>
+                </prefixDef>
+                <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="http://www.wikidata.org/wiki/$1">
+                    <p>
+                        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+                    </p>
+                </prefixDef>
+            </listPrefixDef>
+        </encodingDesc>
+        <profileDesc>
+            <particDesc>
+                <listPerson ana="bk:Between">
+                    <person xml:id="pers_1">
+                        <name>Comune die firenze</name>
+                    </person>
+                    <person xml:id="pers_2">
+                        <name>Filippo di Guido Fagni et fratelli</name>
+                    </person>
+                    <person xml:id="pers_3">
+                        <name>Jacopo di Niccolob degrocti</name>
+                    </person>
+                </listPerson>
+            </particDesc>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <quote resp="Laura Morreale">Eighth of ten folios of the estate of Guido di Filippo
+                Fagni. This is the second folio containing credits and debits to the estate, not
+                transcribed.</quote>
+            <div>
+                <head><date ana="bk:when" when="1391">mccclxxxxi</date></head>
+                <p ana="bk:entry"><name ana="bk:from" ref="#pers_1">Comune die firenze</name> de
+                    dare <name ana="bk:to" ref="#pers_2">Filippo di Guido Fagni et fratelli</name>
+                    quartiere di sancta trinita per <measure ana="bk:commodity"
+                        commodity="first loan" quantity="4" unit="loan">le 4 prime</measure> e
+                        <measure ana="bk:commodity" commodity="second loan" quantity="4" unit="loan"
+                        >4 secondo prestanze </measure>
+                    <measure ana="bk:money" quantity="92" unit="florin">fiorini lxxxxii</measure>
+                    <measure ana="bk:money" quantity="17" unit="solidi">soldi xvii
+                        </measure><measure ana="bk:money" quantity="4" unit="dinari">dinarii iiii<hi
+                            rend="superscript">o</hi>
+                    </measure> anno</p>
+                <p ana="bk:entry"> E de dar <date ana="bk:when" when="1391-07-10">di x di lulglio
+                        391</date>per <measure ana="bk:commodity" commodity="third loan"
+                        quantity="4" unit="loan">le 4 prestanze terze prestane</measure> pago simone
+                    seragli a sua uscita a carte 30<metamark function="leader" rend="dashes"/>
+                    <measure ana="bk:money" quantity="46" unit="florin">fiorini
+                        xlvi</measure><measure ana="bk:money" quantity="8" unit="soldi"> soldi
+                        viii</measure>
+                    <measure ana="bk:money" quantity="8" unit="dinarii">dinarii viii anno</measure>
+                </p>
+                <p ana="bk:entry"> E <date ana="bk:when" when="1391-08-21"> di xxi dagosto 391
+                    </date>per le 4 prestanze quarte pago il detto carte 32<measure ana="bk:money"
+                        quantity="46" unit="florin"> fiorini xlvi </measure><measure ana="bk:money"
+                        quantity="8" unit="soldi">solidi viii </measure>
+                    <measure ana="bk:money" quantity="8" unit="dinari">dinarii viii</measure>
+                    anno</p>
+                <p ana="bk:entry"> E <date ana="bk:when" when="1391-09-28">di xxviii di settembre
+                        391</date> per le 4 prestanze quinte pago il detto carte 33 <measure
+                        ana="bk:money" quantity="46" unit="florin">fiorini xlvi</measure><measure
+                        ana="bk:money" quantity="8" unit="soldi"> soldi viii</measure>
+                    <measure ana="bk:money" quantity="8" unit="dinarii">dinarii viii</measure> anno </p>
+                <p ana="bk:entry"> E <date ana="bk:when" when="1391-11-28">di xxviii di novembre
+                        391</date> per le 4 prestanze sesto pago il detto carte 34 <measure
+                        ana="bk:money" quantity="46" unit="florin">fiorini xlvi</measure><measure
+                        ana="bk:money" quantity="8" unit="soldi"> soldi viii</measure>
+                    <measure ana="bk:money" quantity="8" unit="dinarii">dinarii viii </measure>anno </p>
+                <p ana="bk:entry"> E <date ana="bk:when" when="1391-12-28">di xxviii di dicembre
+                        391</date> per le 4 prestanze septimo pago il detto carte 36 <measure
+                        ana="bk:money" quantity="46" unit="florin">fiorini xlvi</measure><measure
+                        ana="bk:money" quantity="8" unit="soldi"> soldi viii</measure>
+                    <measure ana="bk:money" quantity="8" unit="dinarii">dinarii viii</measure> anno </p>
+                <p ana="bk:entry"> E <date ana="bk:when" when="1391-01-03">di iii di gennaio
+                        391</date> per le 4 prestanze ottane pago il detto carte 37 <measure
+                        ana="bk:money" quantity="46" unit="florin">fiorini xlvi</measure><measure
+                        ana="bk:money" quantity="8" unit="soldi"> soldi viii</measure>
+                    <measure ana="bk:money" quantity="8" unit="dinarii">dinarii viii </measure>anno </p>
+                <p ana="bk:entry"> E <date ana="bk:when" when="1391-01-27">di 27 di gennaio 391
+                    </date>per le 4 none pago il detto a uscita a carte 37 <measure ana="bk:money"
+                        quantity="46" unit="florin">fiorini xlvi</measure><measure ana="bk:money"
+                        quantity="8" unit="soldi"> soldi viii</measure>
+                    <measure ana="bk:money" quantity="8" unit="dinarii">dinarii viii </measure>anno </p>
+                <p ana="bk:entry"> E <date ana="bk:when" when="1392-04-04">di 4 daprile 392 </date>
+                    per le 4 decime pago il detto a uscita a carte 39 <measure ana="bk:money"
+                        quantity="46" unit="florin">fiorini xlvi</measure><measure ana="bk:money"
+                        quantity="8" unit="soldi"> soldi viii</measure>
+                    <measure ana="bk:money" quantity="8" unit="dinarii">dinarii viii</measure> anno </p>
+                <p ana="bk:entry"> E <date ana="bk:when" when="1392-06-10">di x di gugno 392</date>
+                    per le xi<hi rend="superscript">a</hi> prestanza pago il detto a uscita a carte
+                    41 fiorini xxiii solidi iiii<hi rend="superscript">o</hi> dinarii iiii<hi
+                        rend="superscript">o</hi> anno </p>
+                <p ana="bk:entry"> E <date ana="bk:when" when="1392-03-05">di vi di marzo 392
+                    </date>per la xii<hi rend="superscript">a</hi> prestanza scampa pago simone a
+                    carte <gap/>.. xi fiorini xii solidi ii<hi rend="superscript">o</hi> dinarii
+                        iiii<hi rend="superscript">o</hi> anno</p>
+                <metamark function="leader" rend="line"/>
+                <p ana="bk:entry"> Raporto duna ragi dellatavola di Guido fagni e decompangi fatte
+                    per papero cavalcanti <hi rend="indent1">di xxxi di lulglio 1391 Come appresso
+                        di Remo</hi></p>
+                <p ana="bk:entry"> Restano adavere le Rede di gido fagni da franchescho ar <hi
+                        rend="indent1">dinghelli e compagni per lo detto conto<metamark
+                            function="leader" rend="dashes"/>fiorini 949 solidi 4 dinarii</hi><hi
+                        rend="indent">dinghelli e compagni per lo detto conto <metamark
+                            function="leader" rend="dashes"/>
+                        <measure ana="bk:money" quantity="949" unit="florin">fiorini 949</measure>
+                        <measure ana="bk:money" quantity="79" unit="solidi"> solidi 4</measure>
+                        <measure ana="bk:money" quantity="10" unit="dinarii"> dinarii </measure>10
+                        affr</hi>
+                </p>
+                <p ana="bk:entry"> E deono avere da detti compagni per lo 1/3 di fiorini 500
+                    cheritengo no per certe quistioni che sono loro fatte <metamark
+                        function="leader" rend="dashes"/>fiorini 166 solidi 19 dinarii 4 affr</p>
+                <p ana="bk:entry"> E deono avere da datti compagni per piu cose comapare per lo
+                    raporto <measure ana="bk:money" quantity="229" unit="florin">fiorini 229
+                        </measure><measure ana="bk:money" quantity="1" unit="solidi">solidi
+                        1</measure><measure ana="bk:money" quantity="10" unit="dinarii">dinarii 10
+                    </measure> affr</p>
+                <p ana="bk:entry"><name ana="bk:from" ref="#pers_3">Jacopo di Niccolo
+                        degrocti</name> darezzo de dare <name ana="bk:from" ref="#pers_2">alle dette
+                        rede</name>
+                    <measure ana="bk:money" quantity="79" unit="florin">fiorini 79 </measure>
+                    <measure ana="bk:money" quantity="3" unit="solidi">solidi</measure> 3 anno </p>
+                <p ana="bk:entry"> Una casa posta nella vigna in sulcanto delglu strozzi per la sua
+                    parte di fiorini 342 solidi 16 anno deveano avere daglinozzo di bartolo
+                    orlandini <del rend="overstrike">per laterzo deldette di</del> toccane fiorini
+                    109 solidi 13 anno </p>
+                <p ana="bk:entry">Agnolo gualfredi da perugia de dare per lo ternzo di fiorini 201
+                    solidi 7 dinarii 10 fiorini 67 solidi 2 dinarii 7 affr</p>
+                <p ana="bk:entry">messer Giovanni boltotto inghilese de dare per lo terzo di fri 747
+                    solidi 13 dinarii 13 fiorini 239 solidi 11 dinarii 2 affr francescho ardignhelli
+                    e Agnolo digual fredi da perugia deono</p>
+                <p ana="bk:entry">dare per la parte toccha alle dette Rede<metamark
+                        function="leader" rend="dashes"/> fiorini 558 dinarii 9 affr</p>
+                <p ana="bk:entry">Dino e bartolomeo di Jacopo di dino deondare<metamark
+                        function="leader" rend="dashes"/> fiorini 34 solidi 18 dinarii 1 affr</p>
+                <p ana="bk:entry">Antonio di cola di messer mattero dallaquila de dare<metamark
+                        function="leader" rend="dashes"/> fiorini 119 solidi 18 dinarii 8 affr</p>
+                <p ana="bk:entry">Agnolo del maestro <gap/><del rend="overstrike">agnolo</del><hi
+                        rend="superscript">Giovanni</hi> lavoratore acastelfrancho dedare fiorini
+                    50</p>
+                <p ana="bk:entry"> E dedare per buoi<metamark function="leader" rend="dashes"
+                    />fiorini 34 solidi 18 dinarii 1 affr</p>
+                <p ana="bk:entry">Simone di Gianno lavoratore a castelfrancho de dare fiorini 31
+                        <measure ana="bk:money" quantity="22" unit="soldi"> solidi 22 affr</measure>
+                    e de dare il detto simone di cenni per buoi<metamark function="leader"
+                        rend="dots"/><measure ana="bk:money" quantity="36" unit="soldi">fiorini
+                        36</measure></p>
+                <p ana="bk:entry">Geri digiovani da chastelfrancho dedare<metamark function="leader"
+                        rend="dots"/><measure ana="bk:money" quantity="50" unit="fiorini"
+                        >50</measure> fiorini</p>
+                <p ana="bk:entry">Casino dicenni da chastelfrancho dedare<metamark function="leader"
+                        rend="dots"/><measure ana="bk:money" quantity="6" unit="fiorini">6
+                        fiorini</measure></p>
+                <p ana="bk:entry">Biagio diduccio damoncione dedare<metamark function="leader"
+                        rend="dots"/><measure ana="bk:money" quantity="13" unit="soldi">13</measure>
+                    <measure ana="bk:money" quantity="18" unit="soldi"> solidi 18</measure></p>
+                <p ana="bk:entry">Michele diciapo loro lavoratore a san miniato de dare <measure
+                        ana="bk:money" quantity="11" unit="fiorini">11 fiorini</measure></p>
+                <p ana="bk:entry">Antonio di bonino da sanminiato loro lavoratore de dare<measure
+                        ana="bk:money" quantity="2" unit="fiorini"> 2 fiorini</measure></p>
+            </div>
+        </body>
+    </text>
+    <facsimile>
+        <surface>
+            <graphic url="file:///img/fagni_1.jpg" xml:id="IMG.1" mimeType="image/jpeg"/>
+        </surface>
+    </facsimile>
+</TEI>
