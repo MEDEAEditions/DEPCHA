@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?oxygen RNGSchema="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>LMW Day Book, pp. 193-194</title>
+            <author>L.M. Wheaton</author>
+         </titleStmt>
+         <publicationStmt>
+            <p>Indication of work done and date, Wheaton College</p>
+         </publicationStmt>
+         <sourceDesc>
+            <biblFull>
+               <titleStmt>
+                  <title>Account Books, pp.193-193</title>
+                  <author>L.M. Wheaton</author>
+                  <respStmt>
+                     <resp> TEI-compatible XML markup by <name type="person">Alyssa Russell</name>
+                        with corrections by <name type="person">Name</name>, <name type="person"
+                           >Name</name>, and <name type="person">Name</name>.</resp>
+                     <name type="person">Name</name>
+                  </respStmt>
+               </titleStmt>
+               <publicationStmt>
+                  <p>Indication of work done and date, Wheaton College</p>
+               </publicationStmt>
+               <sourceDesc>
+                  <p> From the Marion B. Gebbie Archives and Special Collections at the Madeleine
+                     Clark Wallace Library, Wheaton College </p>
+               </sourceDesc>
+            </biblFull>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <pb n="193"/>
+         <fw type="pageNum">193</fw>
+         <table>
+            <head>Monday <date ana="#bk_when" when="1846-01-26">January 26th 1846.</date></head>
+            <row>
+               <cell/>
+               <cell/>
+               <cell>&#36;</cell>
+               <cell>cts</cell>
+               <cell>&#36;</cell>
+               <cell>cts</cell>
+            </row>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#settled">settled</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH164">K Barrows</name>
+                  <choice rend="align(right)">
+                     <abbr>Cr</abbr>
+                     <expan>credit</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars">1</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="cents">75</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="2" unit="dollars">2</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity=".05" unit="cents">05</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="3" unit="dollars">3</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="80" unit="cents">80</measure></cell>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-03-03">Feb. 3rd.</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#529">529</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH269">Frank Dunahoe</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <name type="account" ref="LMWcash">cash</name> <measure ana="#bk_money #bk_to" quantity="10" unit="dollars">ten
+                     dollars</measure> fr. Wife</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="10" unit="dollars">10</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="00" unit="cents">00</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="10" unit="dollars">10</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="00" unit="cents">00</measure></cell>
+            </row>
+            <row>
+               <cell/>
+               <cell>?</cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH270">Catherine Dunahoe (struck
+                     through)</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-02-05">5</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#Paid">Paid</cell>
+               <cell><name ana="#bk_to" type="person" ref="v">Lydia Bradstreet</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure ana="#bk_commodity #bk_from" commodity="potatoes"  quantity="10" unit="bushels">10 buss.
+                     Potatoes</measure> 3/</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="5" unit="dollars">5</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="00" unit="cents">00</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-02-10">10</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#167">167</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH529">Charles Reed</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure commodity="sausage meat" quantity="14.5" unit="lbs">14 1/2 lbs
+                     sausage meat.</measure>
+                  10x</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars">1</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="cents">45</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-02-12">12</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#Paid">Paid</cell>
+               <cell><name ana="#bk_to" type="person" ref="v">Lydia Bradstreet</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell><measure commodity="sausage meat" quantity="3.5" unit="lbs">3 1/2 lbs sausage
+                     meat.</measure>
+                  10x</cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="cents">35</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            
+            <span type="subheading"><date ana="#bk_when" when="1846-03-03">March 3rd</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#Paid">Paid</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH650">Wheaton Wheeler</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure ana="#bk_commodity #bk_from" commodity="rye"  quantity="0.5" unit="bushels">1/2 buss.
+                     Rye</measure> 6/</cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="50" unit="cents">50</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>" <measure ana="#bk_commodity #bk_from" commodity="corn"  quantity="0.5" unit="bushels">1/2 " corn</measure>
+                  6/</cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="50" unit="cents">50</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars">1</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="00" unit="cents">00</measure></cell>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-03-12">12</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#167">167</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH529">Charles Reed</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure commodity="sausage meat" quantity="5.8" unit="lbs">5 8oz lbs
+                     sausage meat</measure>
+                  10x</cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="cents">55</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-03-16">16</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#529">529</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH269">Frank Dunahoe</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <name type="account" ref="LMWcash">cash</name> fr. <measure ana="#bk_commodity #bk_from" commodity="feathers"  quantity="70" unit="lbs">70 lbs
+                     feathers</measure> 2/</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="23" unit="dollars">23</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="33" unit="cents">33</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>? <measure ana="#bk_money #bk_to" quantity="50" unit="cents">.50</measure> &amp;
+                     30x</cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="80" unit="cents">80</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>" " for <measure ana="#bk_commodity #bk_from" commodity="burlap"  quantity="1" unit="count">burlap</measure>
+                  at Taunton</cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="29" unit="cents">29</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="24" unit="dollars">24</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="42" unit="cents">42</measure></cell>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-03-16">16</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#529">529</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH269">Frank Dunahoe</name>
+                  <choice rend="align(right)">
+                     <abbr>Cr</abbr>
+                     <expan>credit</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>By <measure commodity="bed ticking" quantity="13" unit="yards">13 yds bed
+                     ticking</measure>
+                  .20x</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="2" unit="dollars">2</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="60" unit="cents">60</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>" <measure commodity="bed binding" quantity="1" unit="count">bed
+                     binding</measure></cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="18" unit="cents">18</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>" <measure ana="#bk_commodity #bk_from" commodity="mohair"  quantity="1" unit="count">mohair</measure> &amp;
+                     <measure ana="#bk_commodity #bk_from" commodity="thread"  quantity="1" unit="count">thread</measure> 6/6</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars">1</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="08" unit="cents">08</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="3" unit="dollars">3</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="80" unit="cents">80</measure></cell>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-03-18">18</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#settled">settled</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH373">Linus Howard</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure ana="#bk_commodity #bk_from" commodity="rye"  quantity="0.5" unit="bushels">1/2 buss.
+                     Rye</measure> 6/</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars">1</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="50" unit="cents">50</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#115">115</cell>
+               <cell><name ana="#bk_to" type="person" ref="WCDH633">William A West</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1845">1845</date></span>
+            <span type="subheading"><date ana="#bk_when" when="1846-04-10">Apr. 10</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#529">529</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH269">Frank Dunahoe</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure ana="#bk_commodity #bk_from" commodity="sheeting"  quantity="31.25" unit="yards">31 1/4 yds
+                     sheeting</measure> 9 3/4</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="3" unit="dollars">3</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="cents">05</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>" <measure ana="#bk_commodity #bk_from" commodity="patch"  quantity="22.33" unit="yards">22 1/3 "
+                     Patch</measure> 63</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars">1</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="34" unit="cents">34</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>" <measure ana="#bk_commodity #bk_from" commodity="thread"  quantity="1" unit="count">thread</measure> &amp;
+                     <measure ana="#bk_commodity #bk_from" commodity="batting"  quantity="1" unit="count">batting</measure></cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="37" unit="cents">37</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="4" unit="dollars">4</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="76" unit="cents">76</measure></cell>
+            </row>
+            
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#returned">returned</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH164">Ka Barrows</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure ana="#bk_commodity #bk_from" commodity="lumber"  quantity="1" unit="count">pine
+                  limbs?</measure></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-04-10">10</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#529">529</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH269">Frank Dunahoe</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <name type="account" ref="LMWcash">cash</name> fr. goods as pr. Bill</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="33" unit="dollars">33</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="91" unit="cents">91</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#529">529</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH269">Frank Dunahoe</name>
+                  <choice rend="align(right)">
+                     <abbr>Cr</abbr>
+                     <expan>credit</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>By <measure ana="#bk_commodity #bk_from" commodity="labor" >work</measure> of himself &amp; <measure
+                     ana="#bk_commodity #bk_from" commodity="labor" >wife</measure> from April 1st? to date -</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="5" unit="dollars">5</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="cents">95</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-04-28">28</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#514">514</cell>
+               <cell><name ana="#bk_to" type="person" ref="WCDH633">Henry M Paine</name> &amp; <name
+                     type="person" ref="WCDH633">Otis Blandin</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure ana="#bk_commodity #bk_from" commodity="chimney"  quantity="1" unit="count">old
+                     chimney.</measure> Otis b. ? half</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="dollars">15</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="00" unit="cents">00</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="7" unit="dollars">7</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="50" unit="cents">50</measure></cell>
+            </row>
+            
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#Settled">Settled</cell>
+               <cell><name ana="#bk_to" type="person" ref="WCDH633">George Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To ? p. in Williams' Bill</cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="cents">85</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>" Order on Williams</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="100" unit="dollars"
+                  >100</measure></cell>
+               <cell>-</cell>
+               <cell/>
+               <cell/>
+            </row>
+            
+         </table>
+         <pb n="194"/>
+         <fw type="pageNum">194</fw>
+         <table>
+            <head>Thursday <date ana="#bk_when" when="1846-05-07">May 7, 1846</date></head>
+            <row>
+               <cell/>
+               <cell/>
+               <cell>&#36;</cell>
+               <cell>cts</cell>
+               <cell>&#36;</cell>
+               <cell>cts</cell>
+            </row>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#529">529</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH269">Frank Dunahoe</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure ana="#bk_commodity #bk_from" commodity="potatoes"  quantity="2.5" unit="bushels">2 1/2 buss. of
+                     potatoes</measure> 2/6</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars">1</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="04" unit="cents">04</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>" <measure commodity="salt beef" quantity="7" unit="lbs">7 lbs (ie or) of salt
+                     beef</measure>
+                  5x</cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="39" unit="cents">39</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars">1</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="43" unit="cents">43</measure></cell>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-05-19">19</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#76">76</cell>
+               <cell><name ana="#bk_to" type="person" ref="WCDH633">Jas. 0. Mussinger</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To paying Brown, Chapin &amp; Co.</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="9" unit="dollars">9</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="41" unit="cents">41</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>" <name type="account" ref="LMWcash">cash</name></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="13" unit="dollars">13</measure></cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="22" unit="dollars">22</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="41" unit="cents">41</measure></cell>
+            </row>
+            
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#settled">settled</cell>
+               <cell><name ana="#bk_to" type="person" ref="WCDH633">William H. Wrigley</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-05-15">May 15th</date></span>
+            
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#settled">settled</cell>
+               <cell><name ana="#bk_to" type="person" ref="WCDH633">Sumner Blandin</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-05-16">May 16th</date></span>
+            
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#76">76</cell>
+               <cell><name ana="#bk_to" type="person" ref="WCDH633">James O Mussinger</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To pay Brown &amp; Chapin &amp; co. for <measure ana="#bk_commodity #bk_from" commodity="oil"  quantity="1"
+                     unit="barrel">1 bll. Oil</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="31" unit="dollars">31</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="cents">45</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To (?) to cars?</cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="cents">25</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="31" unit="dollars">31</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="70" unit="cents">70</measure></cell>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-05-23">23</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#510">510</cell>
+               <cell><name ana="#bk_to" type="person" ref="WCDH633">Caty Nolen</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <name type="account" ref="LMWcash">cash</name> fr. (?ing) <measure ana="#bk_commodity #bk_from" commodity="bonnet"  quantity="1" unit="count"
+                  />Bonnet</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="2" unit="dollars">2</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="33" unit="cents">33</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>" " (?) <measure commodity="sock rounds" quantity="1" unit="count"/>sock
+                  rounds</cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="cents">5</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="2" unit="dollars">2</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="58" unit="cents">58</measure></cell>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-06-01">June 1st</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#529">529</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH269">Frank Dunahoe</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure ana="#bk_commodity #bk_from" commodity="butter"  quantity="3.5" unit="lbs">3 1/2 lbs
+                     butter</measure>
+                  <measure ana="#bk_money #bk_to" quantity="17" unit="cents">.17</measure></cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="59" unit="cents">59</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>" <measure ana="#bk_commodity #bk_from" commodity="corn"  quantity="1" unit="bushels">1 bush corn</measure>
+                  6/</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars">1</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="00" unit="cents">00</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars">1</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="59" unit="cents">59</measure></cell>
+            </row>
+            
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#76">76</cell>
+               <cell><name ana="#bk_to" type="person" ref="WCDH633">James O Mussinger</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To frieght(?) of <measure ana="#bk_commodity #bk_from" commodity="oil"  quantity="1" unit="barrel">1 bll.
+                     Oil</measure> on R.R. <measure ana="#bk_money #bk_to" quantity="50" unit="cents"
+                     >50x</measure> (to?)</cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-06-04">4</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#159">159</cell>
+               <cell><name ana="#bk_to" type="person" ref="WCDH633">M. Couper</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure ana="#bk_commodity #bk_from" commodity="butter"  quantity="10" unit="lbs">10 lbs Butter</measure>
+                  .16x</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="1" unit="dollars">1</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="60" unit="cents">60</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-06-08">8</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#settled">settled</cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell><name ana="#bk_to" type="person" ref="WCDH633">George W. Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <name type="account" ref="LMWcash">cash</name> to (?) house</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="400" unit="dollars"
+                  >400</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="00" unit="cents">00</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>" <measure commodity="covered wagon" quantity="1" unit="count">covered
+                     wagon</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="dollars">85</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="00" unit="cents">00</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-06-10">10</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#settled">settled</cell>
+               <cell><name ana="#bk_to" type="person" ref="WCDH633">Otis Blandin</name>
+                  <choice rend="align(right)">
+                     <abbr>D</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <name type="account" ref="LMWcash">cash</name> as p. receipt</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="dollars">25</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="0" unit="cents">00</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-06-15">15</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#529">529</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH269">Frank Dunahoe</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure commodity="salt beef" quantity="4.6" unit="lbs">4lbs 6.oz salt
+                     beef</measure>
+                  5x</cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="24" unit="cents">24</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-06-18">18</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#529">529</cell>
+               <cell>" <name type="account" ref="LMWcash">cash</name> <measure ana="#bk_money #bk_to" quantity="10" unit="dollars">ten
+                     dollars</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="10" unit="dollars">10</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="00" unit="cents">00</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-06-18">18</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#159">159</cell>
+               <cell><name ana="#bk_to" type="person" ref="WCDH633">M. Couper</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <name type="account" ref="LMWcash">cash</name> <measure ana="#bk_money #bk_to" quantity="0.5" unit="dollars">fifteen
+                     dollars</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="dollars">15</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="00" unit="cents">00</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-06-19">19</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#paid">paid</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH650">Wheaton Wheeler</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure ana="#bk_commodity #bk_from" commodity="butter"  quantity="3.5" unit="lbs">3lbs-5oz
+                     butter</measure>
+                  <measure ana="#bk_money #bk_to" quantity="16" unit="cents">.16 cts</measure> p.
+                  lb</cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="53" unit="cents">53</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-06-23">23</date></span>
+            <row>
+               <cell>529 (something struck through)</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH269">Frank Dunahoe</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure ana="#bk_commodity #bk_from" commodity="beef"  quantity="5.11" unit="lbs">5lbs 11oz
+                     Beef</measure></cell>
+               <cell/>
+               <cell>(struck through)</cell>
+               <cell/>
+               <cell/>
+            </row>
+            
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#settled">settled</cell>
+               <cell><name ana="#bk_to" type="person" ref="WCDH633">George W. Braman</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure ana="#bk_commodity #bk_from" commodity="butter"  quantity="4.14" unit="lbs">4lbs 14oz
+                     butter</measure>
+                  <measure ana="#bk_money #bk_to" quantity=".16" unit="cents">16</measure></cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="78" unit="cents">78</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>" <name type="account" ref="LMWcash">cash</name> <measure ana="#bk_money #bk_to" quantity="0.5" unit="dollars">sixty five
+                     dollars</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="dollars">65</measure></cell>
+               <cell/>
+               <cell><measure ana="#bk_money #bk_to" quantity="0.5" unit="dollars">65</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="78" unit="cents">78</measure></cell>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-06-27">27</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#529">529</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH269">Frank Dunahoe</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <name type="account" ref="LMWcash">cash</name> fr. Bill at Uxbridge</cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="7" unit="dollars">7</measure></cell>
+               <cell><measure ana="#bk_money #bk_to" quantity="41" unit="cents">41</measure></cell>
+               <cell/>
+               <cell/>
+            </row>
+            <span type="subheading"><date ana="#bk_when" when="1846-07-11">July 11.</date></span>
+            <row ana="#bk_entry">
+<cell ana="#bk_status" corresp="#Paid">Paid</cell>
+               <cell><name ana="#bk_to" type="person" ref="pers_WCDH650">Wheaton Wheeler</name>
+                  <choice rend="align(right)">
+                     <abbr>Dr</abbr>
+                     <expan>debtor</expan>
+                  </choice><lb/></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+            <row>
+               <cell/>
+               <cell>To <measure ana="#bk_commodity #bk_from" commodity="butter"  quantity="3.5" unit="lbs">3 1/2 lbs
+                     butter</measure>
+                  <measure ana="#bk_money #bk_to" quantity="16" unit="cents">16</measure></cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
+            </row>
+         </table>
+      </body>
+   </text>
+</TEI>
