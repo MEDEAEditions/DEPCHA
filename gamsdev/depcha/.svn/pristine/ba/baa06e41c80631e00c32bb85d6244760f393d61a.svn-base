@@ -1,0 +1,60 @@
+// DEPCHA - DATA VIEW
+// name: dataView.js; 
+// author: Christopher Pollin
+// date: 2020
+// dependencies DataTable.js
+
+/* 
+ * 
+*/
+
+function getJsonDATA(PID){
+    console.log(PID);
+    let Base_URL = "https://glossa.uni-graz.at/archive/objects/query:depcha.data-context/methods/sdef:Query/getJSON?params="
+    let Param = encodeURIComponent("$1|<https://gams.uni-graz.at/"+PID+">");
+    let Query_URL = Base_URL + Param;
+    
+    console.log(Query_URL);
+    
+   // call the fetch function passing the url of the API as a parameter
+    fetch(Query_URL, {method: 'get'})
+      // transform the data into text
+      .then(response => response.json())
+      .then(function(data)
+      {
+        console.log(data);
+      })
+    //
+    .catch(function(error) 
+    {
+      console.log('Request failed', error);
+    });    
+    
+}
+
+ /* var AdverbNumber = 0;
+            var TypesLemmata = [];
+            
+            //go through json result of every corpus
+            PIDs.forEach(function(PID){
+                $.getJSON("https://gams.uni-graz.at/archive/objects/query:aaif.corpusview/methods/sdef:Query/getJSON?params=$1|%3Co:"+PID+"%3E", function(json) {
+                    //
+                    Object.keys(json).forEach(function(key){
+                        AdverbNumber += Number(json[key].count_adverb) ;
+                        TypesLemmata.push(json[key].lemma);
+                     });
+
+                     //print result
+                     var elem_AllWords       = document.getElementById(PID+"_AllWords").innerHTML = json[0].all_words;
+                     var elem_AdverbNumber   = document.getElementById(PID+"_AdverbNumber").innerHTML = AdverbNumber;
+                     var elem_TypesLemmata   = document.getElementById(PID+"_TypesLemmata").innerHTML = countUnique(TypesLemmata);
+                     
+                     //free variables
+                     AdverbNumber = 0;
+                     TypesLemmata = [];
+                });
+            });
+            
+            function countUnique(iterable) {
+            return new Set(iterable).size;
+            } */

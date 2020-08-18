@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    Project: GAMS Projekttemplate
+    Company: ZIM-ACDH (Zentrum für Informationsmodellierung - Austrian Centre for Digital Humanities)
+    Author: Hans Clausen, Maximilian Müller, Gerlinde Schneider, Martina Scholger, Christian Steiner, Elisabeth Steiner
+    Last update: 2015
+ -->
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
+	xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
+	xmlns:s="http://www.w3.org/2001/sw/DataAccess/rf1/result" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:t="http://www.tei-c.org/ns/1.0" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:lido="http://www.lido-schema.org" xmlns:bibtex="http://bibtexml.sf.net/" exclude-result-prefixes="#all">
+
+	<xsl:output method="xml" doctype-system="about:legacy-compat" encoding="UTF-8" indent="no"/>
+
+	<!-- häufig verwendete variablen... -->
+
+	<xsl:param name="mode"/>
+	<xsl:param name="search"/>
+
+	<xsl:variable name="model"
+		select="substring-after(/s:sparql/s:results/s:result/s:model/@uri, '/')"/>
+
+	<xsl:variable name="cid">
+		<!-- das ist der pid des contextes, kommt aus dem sparql (ggfs. query anpassen) - wenn keine objekte zugeordnet sind, gibt es ihn nicht! -->
+		<xsl:value-of select="/s:sparql/s:results/s:result[1]/s:cid"/>
+	</xsl:variable>
+
+	<xsl:variable name="teipid">
+		<xsl:value-of select="//t:idno[@type = 'PID']"/>
+	</xsl:variable>
+
+	<xsl:variable name="lidopid">
+		<xsl:value-of select="//lido:lidoRecID"/>
+	</xsl:variable>
+
+	<!--variablen für Suchergebnisse-->
+	<xsl:variable name="query" select="sparql/head/query"/>
+	<xsl:variable name="hitTotal" select="/sparql/head/hitTotal"/>
+	<xsl:variable name="hitPageStart" select="/sparql/head/hitPageStart"/>
+	<xsl:variable name="hitPageSize" select="/sparql/head/hitPageSize"/>
+	<xsl:variable name="hitsFrom" select="sparql/navigation/hits/from"/>
+	<xsl:variable name="hitsTo" select="sparql/navigation/hits/to"/>
+
+
+	<!-- GAMS global variables -->
+	<xsl:variable name="zim">Zentrum für Informationsmodellierung - Austrian Centre for Digital
+		Humanities</xsl:variable>
+	<xsl:variable name="zim-acdh">ZIM-ACDH</xsl:variable>
+	<xsl:variable name="gams">Geisteswissenschaftliches Asset Management System</xsl:variable>
+	<xsl:variable name="uniGraz">Universität Graz</xsl:variable>
+	
+	
+	
+	<!-- project-specific variables -->
+	<!--<xsl:variable name="server">https://glossa.uni-graz.at</xsl:variable>-->
+	<xsl:variable name="gamsdev">/depcha/www</xsl:variable>
+
+	<xsl:variable name="projectTitle">
+		<xsl:text>DEPCHA - Digital Edition Publishing Cooperative for Historical Accounts</xsl:text>
+	</xsl:variable>
+	<xsl:variable name="subTitle">
+		<xsl:text>Alpha-Version</xsl:text> 
+	</xsl:variable>
+
+	<!-- gesamtes css ist in dieser Datei zusammengefasst mit Ausnahme der Navigation -->
+	<xsl:variable name="projectCss">
+		<xsl:value-of select="concat($gamsdev, '/css/depcha.css')"/>
+	</xsl:variable>
+	<!--css für die navigation-->
+	<xsl:variable name="projectNav">
+		<xsl:value-of select="concat($gamsdev, '/css/navbar.css')"/>
+	</xsl:variable>
+
+
+	<xsl:template match="/">
+
+		<html lang="de">
+			<head>
+				<meta charset="utf-8"/>
+				<meta  content="IE=edge"/>
+				<meta name="viewport" content="width=device-width, initial-scale=1"/>
+				<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+				<meta name="keywords"
+					content="template, GAMS, repository, digital, archive, edition"/>
+				<meta name="description"
+					content="Template for projects in GAMS - Geisteswissenschaftliches Asset Management System"/>
+
+				<meta name="publisher"
+					content="Zentrum für Informationsmodellierung - Austrian Centre for Digital Humanities"/>
+				<meta name="content-language" content="de"/>
+
+				<!--Projekttitel-->
+				<title>
+					<xsl:value-of select="$projectTitle"/>
+				</title>
+
+				<!-- Bootstrap 4 core CSS -->
+				<link href="/lib/2.0/bootstrap-4.1.0-dist/css/bootstrap.min.css" rel="stylesheet"/>
+				
+				<!-- Custom styles for this template -->
+				<link href="{concat($gamsdev,'/css/depcha.css')}" rel="stylesheet" type="text/css"/>
+				<link href="{concat($gamsdev,'/css/navbar.css')}" rel="stylesheet" type="text/css"/>
+				<!-- sidebar -->
+				<link href="{concat($gamsdev,'/css/sidebar.css')}" rel="stylesheet" type="text/css" />
+				<!-- icons -->
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+				<link rel="stylesheet" type="text/css" href="{concat($gamsdev,'/css/datatable.css')}"/>
+				<!-- source code highlighter -->
+				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css"/>
+				<!--<link type="text/css" rel="stylesheet" href="/lib/1.0/plugins/fancybox_v2.1.5/source/jquery.fancybox.css?v=2.1.5"/>-->
+				
+				
+				<!-- jQuery -->
+			<script type="text/javascript" src="/lib/2.0/jquery-3.3.1.min.js"><xsl:text> </xsl:text></script>
+			<!-- bootstrap 4 -->
+			<script type="text/javascript" src="/lib/2.0/bootstrap-4.1.0-dist/js/bootstrap.min.js"><xsl:text> </xsl:text></script>
+				
+				<!--<script type="text/javascript" src="/lib/1.0/plugins/fancybox_v2.1.5/source/jquery.fancybox.js?v=2.1.5"><xsl:text> </xsl:text></script>-->
+				
+				
+
+				<!-- jQuery core JavaScript ================================================== -->
+				<!--<script type="text/javascript" src="/lib/1.0/jquery-2.2.4.min.js"><xsl:text> </xsl:text></script>-->
+			
+				<!-- Bootstrap core JavaScript ================================================== -->
+				<script type="text/javascript" src="/lib/2.0/bootstrap-4.1.0-dist/js/bootstrap.min.js"><xsl:text> </xsl:text></script>
+				<!-- jQuery Plugin für Responsive Equal Height bei Columns: https://github.com/liabru/jquery-match-height -->
+				<script type="text/javascript" src="/lib/1.0/plugins/matchHeight/jquery.matchHeight.js"><xsl:text> </xsl:text></script>
+				<script type="text/javascript" src="/lib/1.0/plugins/matchHeight/matchHeight.js"><xsl:text> </xsl:text></script>
+			    
+				<!-- Projectspecific JavaScript ================================================== -->
+				<script type="text/javascript" src="{concat($gamsdev,'/js/scrolldown.js')}"><xsl:text> </xsl:text></script>
+				<script src="/backbone/js/buildquery.js" type="application/javascript"><xsl:text> </xsl:text></script>
+				<script type="text/javascript" src="{concat($gamsdev,'/js/d3.v4.min.js')}"><xsl:text> </xsl:text></script>
+				<!-- source code highlighter -->
+				<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"><xsl:text> </xsl:text></script>
+				
+				
+				
+				
+				
+			
+				
+			</head>
+			
+			
+			<!-- matchHeight -->
+			<script type="text/javascript" src="/lib/1.0/plugins/matchHeight/jquery.matchHeight.js"><xsl:text> </xsl:text></script>
+			<script type="text/javascript" src="/lib/1.0/plugins/matchHeight/matchHeight.js"><xsl:text> </xsl:text></script>
+			<!-- datatables.js -->
+			<script type="text/javascript" charset="utf8" src="{concat($gamsdev,'/js/datatable.js')}"><xsl:text> </xsl:text></script>
+			<!-- databasket -->
+			<script type="text/javascript" src="{concat($gamsdev,'/js/databasket.js')}"><xsl:text> </xsl:text></script>
+			<!-- fancybox -->
+			<!--<script type="text/javascript" src="/lib/1.0/plugins/fancybox_v2.1.5/source/jquery.fancybox.js?v=2.1.5"><xsl:text> </xsl:text></script>-->
+		
+
+			<body>
+				<header>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12 col-sm-12">
+								<h1>
+									<xsl:value-of select="$projectTitle"/>
+								</h1>
+								<h2 class="d-none d-sm-block">
+									<xsl:value-of select="$subTitle"/>
+								</h2>
+							</div>
+							
+						</div>
+					</div>
+				</header>
+				
+				<nav class="navbar navbar-expand-lg navbar-light sticky-top"><!-- fixed/sticky nav benötigt; muss noch nach rechts angepasst werden (margin) -->
+					<div class="container">
+						<div class="collapse navbar-collapse" id="nav">
+							<ul class="navbar-nav mr-auto">
+								<li class="nav-item">
+									<a class="nav-link" href="/context:depcha"><xsl:text>HOME</xsl:text></a>
+								</li>
+								<li  class="nav-item">
+									<a class="nav-link" href="/archive/objects/context:depcha/methods/sdef:Context/get?mode=collection"><xsl:text>DATA SETS</xsl:text></a>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<xsl:text>INDICIES</xsl:text>
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href="/query:depcha.commodity"><xsl:text>Commodities</xsl:text></a>
+										<a class="dropdown-item" href="/query:depcha.accounts"><xsl:text>Accounts</xsl:text></a>
+									</div>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="/o:depcha.bookkeeping">ONTOLOGY</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="/archive/objects/context:depcha/methods/sdef:Context/get?mode=databasket" >
+										<xsl:text>DATABASKET</xsl:text>
+										<span id="databasket_static">
+											<xsl:text> </xsl:text>
+										</span>
+									</a>
+								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<xsl:text>PROJECT</xsl:text>
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<a class="dropdown-item" href="/archive/objects/context:depcha/methods/sdef:Context/get?mode=about"><xsl:text>About</xsl:text></a>
+										<a class="dropdown-item" href="/archive/objects/context:depcha/methods/sdef:Context/get?mode=howto"><xsl:text>How To Semantic Bookkeep</xsl:text></a>
+									</div>
+								</li>
+							</ul>
+							<!--<form action="" id="suche" method="get"><p><label for="n$1">$1</label>: <input id="n$1" name="$1" type="text" /></p><p><input type="submit" /></p></form>-->
+							<form action="/archive/objects/query:depcha.fulltext/methods/sdef:Query/get" id="suche" method="get">
+								<div class="form-row">
+									<div class="input-group">
+										<input class="form-control border" id="n$1" name="$1" type="text"  placeholder="Fulltextsearch" />
+										<!--<input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2"/>-->
+										<div class="input-group-prepend">
+											<button class="btn border-left-0 border" type="button">
+												<i class="fa fa-search"><xsl:text> </xsl:text></i>
+											</button>
+											<!--<span class="input-group-text" id="inputGroupPrepend2">@</span>-->
+										</div>
+									</div>
+								</div>
+							</form>
+					</div>
+				</div>
+			</nav>
+				<!-- /////////////////////////////////// -->
+				<main>
+					<div class="container">
+						<!-- call depcha-context.xsl -->
+						<xsl:call-template name="content"/>
+					</div>
+				</main>
+
+				<footer class="footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<h6>Further Information</h6>
+								<p>
+									<a href="/archive/objects/context:depcha/methods/sdef:Context/get?mode=imprint"
+										>Impressum</a><br/>
+									<a href="/archive/objects/context:gams/methods/sdef:Context/get?mode=dataprotection&amp;locale=en" target="_blank"
+										>Data protection declaration</a>
+								</p>
+								<div class="icons">
+									<a href="" target="_blank">
+										<img class="footer_icons"
+											src="/templates/img/gamslogo_weiss.gif"
+											height="48" title="{$gams}" alt="{$gams}"/>
+									</a>
+									<a href="//informationsmodellierung.uni-graz.at/"
+										target="_blank">
+										<img class="footer_icons"
+										    src="/templates/img/ZIM_weiss.png"
+											height="48" title="{$zim-acdh}" alt="{$zim-acdh}"/>
+									</a>
+									<a href="//creativecommons.org/licenses/by-nc/4.0/"
+										target="_blank">
+										<img class="footer_icons"
+										    src="/templates/img/by-nc.png"
+											height="45" title="Lizenz" alt="Lizenz"/>
+									</a>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<h6>Contact</h6>
+								<p><xsl:text>Prof. Dr. Georg Vogeler</xsl:text><br/>
+									<xsl:text>University of Graz</xsl:text>
+									<br/></p>
+								<p>
+									<a href="mailto:christopher.pollin@uni-graz.at">christopher.pollin@uni-graz.at</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</body>
+		</html>
+	</xsl:template>
+	
+	
+	 <xsl:template name="info_box_tei">
+        <div id="info_box_tei">
+	        <ul class="list-group">
+	       		<li class="list-group-item"><xsl:text>Title: </xsl:text>
+	       			<xsl:value-of select="//t:fileDesc/t:titleStmt/t:title"/>
+	       		</li>
+	        	<xsl:if test="//t:fileDesc/t:titleStmt/t:author">
+				  <li class="list-group-item"><xsl:text>Author: </xsl:text>
+				  	<xsl:for-each select="//t:fileDesc/t:titleStmt/t:author">
+	        			<xsl:value-of select="."/>
+	        			<xsl:if test="not(position()=last())">
+	        				<xsl:text>,</xsl:text>
+	        			</xsl:if>
+	        		</xsl:for-each>
+				  </li>
+	        	</xsl:if>
+	        	<xsl:if test="//t:fileDesc/t:titleStmt/t:editor">
+	        	<li class="list-group-item"><xsl:text>Editor: </xsl:text>
+				  	<xsl:for-each select="//t:fileDesc/t:titleStmt/t:editor">
+	        			<xsl:value-of select="."/>
+	        			<xsl:if test="not(position()=last())">
+	        				<xsl:text>,</xsl:text>
+	        			</xsl:if>
+	        		</xsl:for-each>
+				  </li>
+	        	</xsl:if>
+	        	  <xsl:if test="//t:revisionDesc">
+	        	  	<li class="list-group-item">
+	        	  		<xsl:text>Last updatet: </xsl:text><xsl:value-of select="."/>
+	        	  	</li>
+	        	  </xsl:if>
+	        	<li class="list-group-item">
+	        		<xsl:text>Permalink: </xsl:text><xsl:text>https://gams.uni-graz.at/</xsl:text><xsl:value-of select="//t:publicationStmt/t:idno[@type='PID']"/>
+	        	</li>
+			</ul>
+        </div>
+    </xsl:template>
+
+</xsl:stylesheet>

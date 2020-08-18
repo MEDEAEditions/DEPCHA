@@ -1,0 +1,416 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title xml:lang="en">"How to Semantic Bookkeep". A Tutorial for annotationg digital editions of historical accounts based on the Bookkeeping Ontology.</title>
+        <author>Christopher Pollin</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher xml:lang="de">Karl-Franzens-Universität Graz</publisher>
+        <publisher xml:lang="en">University of Graz</publisher>
+        <date when="2018">2018</date>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl/>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DEPCHA - Digital Edition Publishing Cooperative for Historical Accounts</p>
+      </projectDesc>
+    </encodingDesc>
+    <profileDesc>
+      <creation>
+        <date when="2018">2018</date>
+        <name type="place">Graz, Austria</name>
+      </creation>
+      <langUsage>
+        <language ident="en">English</language>
+      </langUsage>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div type="header">
+        <head>How to Semantic Bookkeep</head>
+      </div>
+      <div xml:id="div.1">
+        <head xml:id="head.1">TEI/XML</head>
+        <div type="body">
+
+          <p>The following snippet of a historical accounting book (image and transcription) is used as an example to illustrate a possible way of annotating a digital edition using TEI/XML
+						and its connection the <ref target="/o:depcha.bookkeeping">Bookkeeping Ontology</ref>.</p>
+          <figure source="/archive/objects/context:depcha/datastreams/STAGVILLE/content" type="web"/>
+          <p>Here you see the transcription of the given example:</p>
+          <table type="example">
+            <head>Stagville August 1st 1808 <lb/> 69 James Haley Self Dr.</head>
+            <row>
+              <cell/>
+              <cell>1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6</cell>
+              <cell/>
+              <cell>7</cell>
+              <cell>6</cell>
+            </row>
+            <row>
+              <cell/>
+              <cell>1 Shoe Knife 1/6</cell>
+              <cell/>
+              <cell>1</cell>
+              <cell>6</cell>
+            </row>
+            <row>
+              <cell/>
+              <cell/>
+              <cell/>
+              <cell>9</cell>
+              <cell>-</cell>
+            </row>
+          </table>
+          <p>This structure in the source describes two <hi style="code">bk:Transactions</hi> with their textual representation (<hi style="code">bk:Entry</hi>). If something in this tutorial begins with the
+						prefix (namespace) <hi style="code">bk:</hi> it means, that it is a concept defined in the Bookkeeping Ontology.</p>
+          <list>
+            <item>
+              <hi style="italic">1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6 | 7 | 6</hi>
+            </item>
+            <item>
+              <hi style="italic">1 Shoe Knife 1/6 | 1 | 6</hi>
+            </item>
+          </list>
+          <p>Having a look at the first <hi style="code">bk:Entry</hi> we can summarize the interpretation of it as the following: <lb/> The person <hi style="italic">James Haley</hi> buys
+							<hi style="italic">1/4 lb Powder</hi> for the price of <hi style="italic">2/6</hi> and he further buys <hi style="italic">1 lb Shot</hi> for the price of <hi style="italic">2/6</hi> and at last he buys <hi style="italic">1 lb Sugar</hi> for the price of <hi style="italic">2/6</hi> from <hi style="italic">Stagville</hi>. Stagville represents a
+						farm (plantage). James Haley transfers therefore the monetary value of 7 shilling and 6 pence to Stagville. Some information is not explicit inside a bk:Entry and can be found
+						in the header or is known by the domain expert of the source.<lb/> In this case a table seems to describe the text structure the best way and the following TEI can be an
+						example for that: </p>
+          <p style="XML">
+&lt;text&gt;
+  &lt;body&gt;
+     &lt;head&gt;Stagville August 1st 1808&lt;/head&gt;
+ &lt;table&gt;
+	&lt;head&gt;69 James Haley J Self Dr.&lt;/head&gt;
+  &lt;row&gt;
+    &lt;cell&gt;1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6&lt;/cell&gt;
+    &lt;cell/&gt;
+    &lt;cell&gt;7&lt;/cell&gt;
+    &lt;cell&gt;6&lt;/cell&gt;
+  &lt;/row&gt;
+  &lt;row&gt;
+      &lt;cell&gt;Shoe Knife 1/6&lt;/cell&gt;
+    &lt;cell/&gt;
+    &lt;cell&gt;1&lt;/cell&gt;
+    &lt;cell&gt;6&lt;/cell&gt;
+  &lt;/row&gt;
+  &lt;row&gt;
+      &lt;cell/&gt;
+    &lt;cell/&gt;
+    &lt;cell&gt;9&lt;/cell&gt;
+    &lt;cell&gt;-&lt;/cell&gt;
+  &lt;/row&gt;
+&lt;/table&gt;
+  &lt;/body&gt;
+&lt;/text&gt;
+&lt;/TEI&gt;</p>
+
+          <p> You can use the full expressiveness TEI. Is offering to describe text. For the Bookkeeping Ontology only some annotations using the TEI attribute ana are relevant, next to some
+						attributes for formalizing data. We will look at that in more detail now. The starting point is to define a container for a <hi style="code">bk:Transaction</hi> by annotating
+						the textual representation of an <hi style="code">bk:Entry</hi> like <hi style="element">div</hi>, <hi style="element">row</hi> or <hi style="element">span</hi> (or any other
+						element that fits to your data and the TEI guidlines). Using <hi style="attribute">@ana</hi> with the value "#bk_entry" a TEI structure is defined as an <hi style="code">bk:Entry</hi> according to the Bookkeeping Ontology.</p>
+          <p style="XML">
+&lt;row ana="#bk_entry"&gt;
+	&lt;cell&gt;1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6&lt;/cell&gt;
+	&lt;cell/&gt;
+	&lt;cell&gt;7&lt;/cell&gt;
+	&lt;cell&gt;6&lt;/cell&gt;
+&lt;/row&gt;</p>
+          <div>
+            <head xml:id="head.1.2">Commodities, Services and Monetary Values</head>
+            <p> Now we can define inside the row element (<hi style="code">bk:Entry</hi>) further concepts which describe a <hi style="code">bk:Transaction</hi> . A <hi style="code">bk:Transaction</hi> consists of at least one <hi style="code">bk:Transfer</hi>. A <hi style="code">bk:Transfer</hi> defines the transfer of a <hi style="code">bk:Commodity</hi>, <hi style="code">bk:Service</hi> or <hi style="code">bk:MonetaryValue</hi>
+              <hi style="code">bk:from</hi> one <hi style="code">bk:Between</hi> (abstract class for groups, persons, organizations, accounts etc.) <hi style="code">bk:to</hi> another.
+							We first deal with the question: "what is transferd?". In this example three different <hi style="code">bk:Commodity</hi> are mentioned: <list>
+                <item>
+                  <hi style="italic">1/4 lb Powder</hi>
+                </item>
+                <item>
+                  <hi style="italic">1 lb Shot</hi>
+                </item>
+                <item>
+                  <hi style="italic">1 lb Sugar </hi>
+                </item>
+              </list>
+            </p>
+            <p>As well as two <hi style="code">bk:MonetaryValue</hi>: <list>
+                <item>
+                  <hi style="italic">7 shilling</hi>
+                </item>
+                <item>
+                  <hi style="italic">6 pence</hi>
+                </item>
+              </list>
+            </p>
+            <p> Whereas three further <hi style="code">bk:MonetaryValues</hi> can be found, interpreted as <hi style="code">bk:Price</hi>. The <hi style="code">bk:Price</hi> belongs to the
+								<hi style="code">bk:Commodity</hi> named before: <hi style="italic">¼ lb Powder for 2 shilling and 6 pence</hi>. By the way: 1 shilling (s) = 12 pence (d) </p>
+            <p> The <hi style="element">measure</hi> element in TEI allows to annotated countable entities using the attributes <hi style="attribute">@unit</hi>, <hi style="attribute">@commodity</hi> and <hi style="attribute">@quantity</hi>. So we can annotated them and normalize the data using the attributes. To bring together <hi style="code">bk:Commodity</hi> and <hi style="code">bk:Price</hi> we put them together in one <hi style="element">measure</hi> and mark the <hi style="code">bk:Price</hi>
+							explicitly in an additional measure element. </p>
+            <p style="XML">
+&lt;row ana="#bk_entry"&gt;
+	&lt;cell&gt;
+		&lt;measure commodity="powder" quantity="0.25" unit="lb"&gt;
+			1/4 lb Powder 
+			&lt;measure quantity="2" unit="shilling"&gt;2&lt;/measure&gt;
+			/
+			&lt;measure quantity="6" unit="pence"&gt;6&lt;/measure&gt;
+		&lt;/measure&gt;
+		&lt;measure commodity="shot" quantity="1" unit="lb"&gt;
+			1 lb Shot 
+			&lt;measure quantity="2" unit="shilling"&gt;2&lt;/measure&gt;
+			/
+			&lt;measure quantity="6" unit="pence"&gt;6&lt;/measure&gt;
+		&lt;/measure&gt;
+		&lt;measure commodity="sugar" quantity="1" unit="lb"&gt;
+			1 lb Sugar 
+			&lt;measure quantity="2" unit="shilling"&gt;2&lt;/measure&gt;
+			/
+			&lt;measure quantity="6" unit="pence"&gt;6&lt;/measure&gt;
+		&lt;/measure&gt;
+	&lt;/cell&gt;
+	&lt;cell/&gt;
+	&lt;cell&gt;&lt;measure&gt;7&lt;/measure&gt;&lt;/cell&gt;
+	&lt;cell&gt;&lt;measure&gt;6&lt;/measure&gt;&lt;/cell&gt;
+&lt;/row&gt;</p>
+            <p> Now we reference the <hi style="element">measure</hi> to the Bookkeeping Ontology using <hi style="attribute">@ana</hi>. We want to say that <hi style="italic">powder,
+								sugar and shot</hi> are commodities with the price each 2 shilling and 6 pence. Therefor we add <hi style="code">ana="#bk_commodity"</hi>, <hi style="code">ana="#bk_money"</hi> and <hi style="code">ana="#bk_price"</hi> to the elements. </p>
+            <p style="XML">
+&lt;row ana=“bk_entry“&gt;
+	&lt;cell&gt;
+		&lt;measure ana=”#bk_commodity”  commodity=”powder” quantity=”0.25” unit=”lb”&gt;
+		  1/4 lb Powder 
+		  &lt;measure ana=”#bk_price” quantity=”2” unit=”shilling”&gt;2&lt;/measure&gt;
+		  /
+		  &lt;measure ana=”#bk_price” quantity=”6” unit=”pence”&gt;6&lt;/measure&gt;
+		&lt;/measure&gt;
+		&lt;measure ana=”#bk_commodity” commodity=”shot” quantity=”1” unit=”lb”&gt;
+		  1 lb Shot 
+		  &lt;measure ana=”#bk_price”  quantity=”2” unit=”shilling”&gt;2&lt;/measure&gt;
+		  /
+		  &lt;measure ana=”#bk_price” quantity=”6” unit=”pence”&gt;6&lt;/measure&gt;
+		&lt;/measure&gt;
+		&lt;measure ana=”#bk_commodity” commodity=”sugar” quantity=”1” unit=”lb”&gt;
+		  1 lb Sugar 
+		  &lt;measure ana=”#bk_price” quantity=”2” unit=”shilling”&gt;2&lt;/measure&gt;
+		  /
+		  &lt;measure ana=”#bk_price” quantity=”6” unit=”pence”&gt;6&lt;/measure&gt;
+		&lt;/measure&gt;
+	&lt;/cell&gt;
+	&lt;cell/&gt;
+	&lt;cell&gt;&lt;measure ana=”#bk_money” quantity=”7” unit=”shilling”&gt;7&lt;/measure&gt;&lt;/cell&gt;
+	&lt;cell&gt;&lt;measure ana=”#bk_money” quantity=”6” unit=”pence”&gt;6&lt;/measure&gt;&lt;/cell&gt;
+&lt;/row&gt;</p>
+            <p> This very <hi style="code">bk:Transaction</hi> consists now of 2 <hi style="code">bk:Transfers</hi>. One transferring powder, sugar and shot, the other <hi style="code">bk:Transfers</hi> transfers 7 shilling and 6 pence. </p>
+          </div>
+          <div>
+            <head xml:id="head.1.3">Flow of Measurable: from - to</head>
+            <p> In a next step we want to define the directions of the flow of moneys and goods which can be summarized as the following: <list>
+                <item>
+                  <hi style="italic">powder, sugar, shot from Stagville to James Haley</hi>
+                </item>
+                <item>
+                  <hi style="italic">7 shilling, 6 pence from James Haley to Stagville</hi>
+                </item>
+              </list> Therefore we use <hi style="code">ana="#bk_from"</hi> and <hi style="code">ana="#bk_to"</hi>. We add this kind of annotation to any TEI structure you are using for
+							annotating agents in your document like <hi style="element">name</hi>, <hi style="element">persName</hi> or <hi style="element">orgName</hi>. This can also be an unknown
+							group of people like “<hi style="italic">4 farmers pay a 5 $ tax</hi>”. For such cases you can use an element like <hi style="element">span</hi> with an additional <hi style="code">ana="#bk_group"</hi>. As for the RDF representation URI’s are needed, we have to assign a unique ID for every agent (even for a unknown group) using <hi style="attribute">@ref</hi>. <lb/> Additionally to that we have to make the direction of the transfer explicit by extending the <hi style="attribute">@ana</hi> of the <hi style="element">measure</hi>. Putting <hi style="code">#bk_commodity</hi>, <hi style="code">#bk_service</hi> or <hi style="code">#bk_money</hi> together with <hi style="code">#bk_from</hi> or <hi style="code">#bk_to</hi> in the same <hi style="attribute">@ana</hi>-attribute indicates the receiver of the respective economic good as indicated in the close context of the annotation. Therefore, a transaction recorded in an account of the Stagville company identifies one party in the every transaction already in the heading:</p>
+              <p style="XML">
+&lt;head&gt;&lt;name ana="#bk_to" ref="#between.1"&gt;Stagville&lt;/name&gt; August 1st 1808&lt;/head&gt;
+              </p>
+            <p>The other parties can occur in each single entry:</p>
+              <p style="XML">
+&lt;p ana="#bk_entry">paid to &lt;name ana="#bk_from" ref="#between.2">James Haley&lt;/name> for
+   &lt;measure ana="#bk_service" commodity="labor" unit="day" quantity="3">3 days woodcutting&lt;/measure>
+   &lt;measure ana="#bk_money" quantity="6" unit="dollar">6 d.&lt;/measure>&lt;/p>
+              </p>
+            <p>To make clear, which party is receiving the money, the encoding with @ana="#bk_money" has to carry the appropriate #bk_from / #bk_to:</p>
+            <p style="XML">
+&lt;p ana="#bk_entry">paid to &lt;name ana="#bk_from" ref="#between.2">James Haley&lt;/name> for 
+  &lt;measure ana="#bk_service #bk_to" commodity="labor" unit="day" quantity="3">3 days woodcutting&lt;/measure> 
+  &lt;measure ana="#bk_money #bk_from" quantity="6" unit="dollar">6 d.&lt;/measure>
+&lt;/p>
+            </p>
+              <p>The transfer of a monetary value is always encoded explicitely in the DEPCHA.</p> 
+              <p>All of this can lead, for instance, to the following encoding, in which the parties in the transaction are both encoded external to the single entry:</p>
+            <p style="XML">
+&lt;body&gt;
+&lt;head&gt;&lt;name ana="#bk_to" ref="#between.1"&gt;Stagville&lt;/name&gt; August 1st 1808&lt;/head&gt;
+&lt;table&gt;
+	&lt;head&gt;69 &lt;name ana="#bk_from" ref="#between.2"&gt;James Haley&lt;/name&gt; J Self Dr.&lt;/head&gt;
+	&lt;row ana="#bk_entry"&gt;
+		&lt;cell&gt;
+			&lt;measure ana="#bk_commodity #bk_from" commodity="powder" quantity="0.25" unit="lb"&gt; 1/4 lb Powder &lt;measure ana="#bk_price" quantity="2" unit="shilling"&gt;2&lt;/measure&gt; / &lt;measure
+					ana="#bk_price" quantity="6" unit="pence"&gt;6&lt;/measure&gt;
+			&lt;/measure&gt;
+			&lt;measure ana="#bk_commodity #bk_from" commodity="shot" quantity="1" unit="lb"&gt; 1 lb Shot &lt;measure ana="#bk_price" quantity="2" unit="shilling"&gt;2&lt;/measure&gt; / &lt;measure ana="#bk_price"
+					quantity="6" unit="pence"&gt;6&lt;/measure&gt;
+			&lt;/measure&gt;
+			&lt;measure ana="#bk_commodity #bk_from" commodity="sugar" quantity="1" unit="lb"&gt; 1 lb Sugar &lt;measure ana="#bk_price" quantity="2" unit="shilling"&gt;2&lt;/measure&gt; / &lt;measure ana="#bk_price"
+					quantity="6" unit="pence"&gt;6&lt;/measure&gt;
+			&lt;/measure&gt;
+		&lt;/cell&gt;
+		&lt;cell/&gt;
+		&lt;cell&gt;&lt;measure ana="#bk_money #bk_to" quantity="7" unit="shilling"&gt;7&lt;/measure&gt;&lt;/cell&gt;
+		&lt;cell&gt;&lt;measure ana="#bk_money #bk_to" quantity="6" unit="pence"&gt;6&lt;/measure&gt;&lt;/cell&gt;
+	&lt;/row&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+</p>
+          </div>
+          <div>
+            <head xml:id="head.1.4">Date and Debit/Credit</head>
+            <p>Further information we may want to add to this <hi style="code">bk:Transaction</hi> is the date and the booking with debit or credit. Using the TEI <hi style="element">date</hi> element with <hi style="attribute">@when</hi> like <hi style="code">@ana=”#bk_when”</hi> adds the date of transaction to the entry. To add the information of
+							booking on credit or debit you can use a TEI <hi style="element">span</hi> with a <hi style="code">@ana="#bk_debit"</hi> or <hi style="code">@ana="#bk_credit"</hi>: </p>
+            <p style="XML">
+&lt;body&gt;
+&lt;head&gt;
+	&lt;name ana="#bk_to" ref="#between.1"&gt;Stagville&lt;/name&gt; 
+	&lt;date ana="#bk_when" when="1808-08-01"&gt;August 1st 1808&lt;/date&gt;
+&lt;/head&gt;
+&lt;table&gt;
+&lt;head&gt;
+	69 &lt;name ana="#bk_from" ref="#between.2"&gt;James Haley&lt;/name&gt; J Self &lt;span ana="#bk_debit"&gt;Dr.&lt;/span&gt;
+&lt;/head&gt;
+		...</p>
+          </div>
+          <div>
+            <head xml:id="head.1.5">Transaction Status and Agent</head>
+            <p> Here is another example of a transcription of a <hi style="code">bk:Entry</hi> in the Wheaton day book. <table type="example">
+                <head>Monday September 15th 1828</head>
+                <row>
+                  <cell>settled</cell>
+                  <cell>Derius Drake D <lb/>To ax dlvd By Puffer 9/1<lb/>By cutting two sticks</cell>
+                  <cell>1</cell>
+                  <cell>59</cell>
+                  <cell>6</cell>
+                </row>
+
+              </table> Two further entities may be relevant for editing an account: 'what is the transaction status?' and 'are other people involved in the transaction?' The <hi style="code">bk:Entry</hi> of the next example describes that a person named Derius Drake worked for Wheaton (owner of the shop and main author of the day book) and
+							payed with this work his debt of 1 $ 50 cents <hi style="italic">"by cutting two sticks"</hi>. Darius got an axe to do the job. This axe comes from the <hi style="code">bk:Agent</hi>
+              <hi style="italic">Puffer</hi>. </p>
+
+            <p> In this example the status of the transaction is "settled", which means it is paid. The second entity is the involvement of a third person. In this example the text “By
+							Puffer” can be interpreted as somebody who is carrying out the transaction for somebody else. Adding <hi style="code">@ana="#bk_agent"</hi> annotated a the person as a <hi style="code">bk:Agent</hi>. </p>
+            <p style="XML">
+&lt;table&gt;
+&lt;head&gt;Monday &lt;date ana="#bk_when" when="1828-09-15"&gt;September-15th-1828&lt;/date&gt;&lt;/head&gt;
+&lt;row&gt;
+	&lt;cell&gt;&lt;span ana="#bk_status"&gt;settled&lt;/span&gt;&lt;/cell&gt;
+	&lt;cell&gt;
+		&lt;name ana="#bk_to" ref="#pers_WCDH276"&gt;Derius Drake&lt;/name&gt; 
+		&lt;span ana="#bk_debit"&gt;D &lt;/span&gt;To ax dlvd By 
+		&lt;name ana="#bk_agent" ref="#pers_WCDH280"&gt;Puffer&lt;/name&gt; 9/1
+	&lt;/cell&gt;
+	&lt;cell&gt;&lt;measure ana="#bk_money #bk_to" commodity="currency" quantity="1" unit="dollars"&gt;1&lt;/measure&gt;&lt;/cell&gt;
+	&lt;cell&gt;&lt;measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents"&gt;50&lt;/measure&gt;&lt;/cell&gt;
+	&lt;cell/&gt;
+&lt;/row&gt;
+&lt;/table&gt;</p>
+          </div>
+          <div>
+            <head xml:id="head.1.6">Group, Taxes and Places</head>
+            <p> In the next example - a tax list - we find unknown groups that are taxable in a certain village. The <hi style="code">bk:Entry</hi> represents that at the place <hi style="italic">Marczinkowo</hi> two craftsmen have to pay a tax in the amount of 3 floren and 14 grosz. <table type="example">
+                <head>[784r]Parochia Iunivladislaviensis 1565</head>
+                <row>
+                  <cell>Marczinkowo</cell>
+                  <cell>de quinque mansis possessis, et duobus artificibus solvit</cell>
+                  <cell/>
+                  <cell>3</cell>
+                  <cell>14</cell>
+                </row>
+              </table> The Bookkeeping Ontology allows to describe this entities by using <hi style="code">@ana="#bk_where"</hi>, <hi style="code">@ana="#bk_tax"</hi> and <hi style="code">@ana="#bk_group"</hi>. The addition #bk_from i <hi style="code">ana="#bk_money #bk_from"</hi> defines that money goes away from the group and is booked on
+							the account of the main author of the tax list (e.g. the king). </p>
+            <p style="XML">
+&lt;row ana="#bk_entry"&gt;
+&lt;cell&gt;
+	&lt;placeName ref="#village.3" xml:id="SID.4" ana="#bk_where"&gt;Marczinkowo&lt;/placeName&gt;,
+	de &lt;name ana="#bk_from #bk_tax" ref="#C000004"&gt;quinque mansis possessis&lt;/name&gt;,
+	et &lt;span ana="#bk_from #bk_group"&gt;duobus artificibus&lt;/span&gt;
+	solvit
+&lt;/cell&gt;
+&lt;cell&gt;
+	&lt;measure ana="#bk_money #bk_from" quantity="3" unit="floren"&gt;3&lt;/measure&gt;
+&lt;/cell&gt;
+&lt;cell&gt;
+	&lt;measure ana="#bk_money #bk_from" quantity="14" unit="grosz"&gt;14&lt;/measure&gt;
+&lt;/cell&gt;
+&lt;/row&gt;</p>
+          </div>
+          <div>
+            <head xml:id="head.1.7">XML-Schema</head>
+            <p> Here is a very restrictiv <ref target="/archive/objects/context:depcha/datastreams/BKSCHEMA/content">Bookkeeping Ontology XML-Schema</ref> based on all current ingested
+							data. You can associat this schema in your Oxygen Editor and the editor offers you elements and annotations according to the Ontology. </p>
+          </div>
+        </div>
+      </div>
+      <div xml:id="div.2">
+        <head xml:id="head.2">Linked Open Data</head>
+        <div type="body">
+          <p>DEPCHA tries to offer its data in the LOD cloud. Therefore you can add Wikidata concepts directly into the attributes or you define your vocabulary in the TEI header in form of
+						a taxonomy. In the following TEI example and one figure are given to explain that.</p>
+          <p style="XML">
+&lt;body&gt;
+&lt;head&gt;&lt;name ana="#bk_to" ref="#between.1"&gt;Stagville&lt;/name&gt; August 1st 1808&lt;/head&gt;
+&lt;table&gt;
+	&lt;head&gt;69 &lt;name ana="#bk_from" ref="#between.2"&gt;James Haley&lt;/name&gt; J Self Dr.&lt;/head&gt;
+	&lt;row ana="#bk_entry"&gt;
+		&lt;cell&gt;
+			&lt;measure ana="#bk_commodity #bk_from" commodity="#wiki_Q11002" quantity="1" unit="#wiki_Q100995"&gt; 1 lb Sugar &lt;measure ana="#bk_price" quantity="2" unit="#wiki_Q213142"&gt;2&lt;/measure&gt; / &lt;measure ana="#bk_price"
+					quantity="6" unit="#wiki_Q234129"&gt;6&lt;/measure&gt;
+			&lt;/measure&gt;
+		&lt;/cell&gt;
+		&lt;cell/&gt;
+		&lt;cell&gt;&lt;measure ana="#bk_money #bk_to" quantity="7" unit="#wiki_Q213142"&gt;7&lt;/measure&gt;&lt;/cell&gt;
+		&lt;cell&gt;&lt;measure ana="#bk_money #bk_to" quantity="6" unit="#wiki_Q234129"&gt;6&lt;/measure&gt;&lt;/cell&gt;
+	&lt;/row&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+</p>
+          <figure source="/archive/objects/context:depcha/datastreams/GRAPH_WIKIDATA/content" type="web"/>
+          <p>In this example the editor as defined is own concepts in the TEI header and links them to it.</p>
+          
+        </div>
+      </div>
+      <div xml:id="div.3">
+        <head xml:id="head.3">CSV</head>
+        <div type="body">
+
+          <p>Having data in CSV or Excel is a way to work with the data (and not the transciption). In DEPCHA you have to transform your CSV into a simple TEI/XML for standardisation
+						purpose. You can use this <ref target="/archive/objects/context:depcha/datastreams/CSVTOTEI/content">XSLT</ref> to do so. <lb/> 
+						Your CSV has to look like this <ref target="/archive/objects/context:depcha/datastreams/CSV_EXAMPLE/content">example</ref>. Check your EXCEL export for that and use a <ref target="https://csvlint.io/">CSV validator</ref>.</p>
+          <p>
+						The '|' is used to seperate multiple values inside a cell.
+					</p>
+        </div>
+      </div>
+      <div xml:id="div.4">
+        <head xml:id="head.4">RDF</head>
+        <div type="body">
+          <p>The last option is to directly create RDF compliant with the bookkeeping ontology. You can use Protege to check the consistency of your RDF with the ontology.</p>
+        </div>
+      </div>
+      <div xml:id="div.5">
+        <head xml:id="head.5">How to Ingest Data into GAMS</head>
+        <div type="body">
+
+          <p>To start a new ingest process, choose 'File' and 'Ingest objects'. The dialogue box allows you to configure mass ingest scenarios for cirilo:TEI objects.
+						Choose the TEI content model type and click either 'From filesystem' (which opens the directory selection dialogue), 'From eXist' (which allows you to
+						connect to an eXist database). All files from the selected directory (including also all sub-directories) or database will be imported. Files are validated upon ingest, i.e. if
+						the source document is not valid, the ingest process fails and an error message occurs. If you use the ingest function, it is highly recommended to specify your PIDs in the
+						source documents using the element <hi style="code">&lt;idno @type="PID"&gt;</hi>. Please note, that if two documents specify the same PID, the first one ingested
+						will be updated with the content of the second one for all content models except for the cirilo:Ontology model for RDF. If more than one RDF document specifies the same PID
+						value in the @rdf:resource of the <hi style="code">&lt;void:Dataset&gt;</hi> the content of the second one will be added to the first one and will not replace it!</p>
+          <p> The DC metadata specified in the ingest dialogue box will be copied for all ingested objects. A log file with details on the process is provided by the client; Either click
+						'Show log' or open it from the ingest source directory in your filesystem, where it is saved. The ingest of objects can also be simulated. This option is used to
+						detect possible errors in the log files, before actually starting huge mass ingest operations. If you want to run a simulation, tick the corresponding box. </p>
+          <figure source="/cirilo_doku/img/ingestobjects.jpg" type="web"/>
+        </div>
+      </div>
+    </body>
+    <back/>
+  </text>
+</TEI>

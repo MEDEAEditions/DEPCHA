@@ -1,0 +1,20 @@
+PREFIX bds: <http://www.bigdata.com/rdf/search#>
+PREFIX bk: <https://gams.uni-graz.at/o:depcha.bookkeeping#>
+PREFIX t: <http://www.tei-c.org/ns/1.0/>
+PREFIX gams:<https://gams.uni-graz.at/o:gams-ontology/#>
+
+#author:Georg Vogeler
+#param: $1 = URI of data set = Collection, referenced by gams:isMemberOfCollection, e.g. <https://gams.uni-graz.at/context:depcha.wheaton>
+
+SELECT  (?Commodity as ?name) (count(?Entry) as ?size) (str(?q) as ?query)
+WHERE {
+  BIND('$1' as ?q)
+  BIND(IF(regex(?q, '^<.*?>$'), uri(strbefore(strafter(?q,'<'),'>')), ?Collection) as ?Collection)
+  BIND(IF(regex(?q, '^<.*?>$'), ?Commodity, ?q) as ?Commodity)  ?Transaction bk:entry ?Entry .
+  ?Transaction gams:isMemberOfCollection ?Collection .
+  ?Collection bk:name ?Collection_name .
+  ?Transaction bk:consistsOf ?Transfer .
+  ?Transfer bk:transfers ?Measurable .
+  ?Measurable bk:commodity ?Commodity .
+}
+GROUP BY ?Commodity ?q
