@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+            <idno type="PID">o:depcha.graves.1</idno>
+            <ref target="context:depcha.graves" type="context">Diary of Jeremiah White Graves</ref>
+         </publicationStmt>
+         
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+         
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <ab>Lorem</ab>
+         </projectDesc>
+         <listPrefixDef>
+            <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)" replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+               <p>Analytical descriptors are considered to represent concepts from the DEPCHA
+                  bookkeeping ontology and can be extended to respective URIs.</p>
+            </prefixDef>
+            <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)" replacementPattern="http://www.wikidata.org/wiki/$1">
+               <p>
+                  <ref target="https://www.wikidata.org/wiki/Help:Namespaces"></ref>
+               </p>
+            </prefixDef>
+         </listPrefixDef>
+      </encodingDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <p>Memorandum of Days of work done by David Neal &amp; his son John @ 3/ pr day for
+            himself &amp; 1/6 for John which is to entered as a credit on his <name ana="bk:to" ref="#ColemanEst">Bond Due Capt
+            Coleman's Est in my possession by</name></p>
+         <p>1850</p>
+         <table>
+            <row ana="bk:entry">
+               <cell><date ana="bk:when" when="1850-08-21">August 21st</date></cell>
+               <cell><name ana="bk:from" ref="#between.1">self &amp; John</name> <measure ana="bk:service" commodity="work">1 days 3/- &amp; 1/6</measure></cell>
+               <cell><measure ana="bk:money" unit="dollers" quantity="0.75">$0.75</measure></cell>
+            </row>
+            <row ana="bk:entry">
+               <cell><date ana="bk:when" when="1850-08-22">- 22</date></cell>
+               <cell><name ana="bk:from" ref="#between.1">Self &amp; John</name> <measure ana="bk:service" commodity="work">½ day @ 1/6 9</measure></cell>
+               <cell><measure ana="bk:money" unit="dollers" quantity="0.37">$0.37</measure></cell>
+            </row>
+         </table>
+         <p>1850</p>
+         <p>Dec 25 Entered on yr Bond Due Geo W Coleman Estate in full 100 Tobacco Augt 28th</p>
+         <p>$1.00<lb/>
+            0.13</p>
+      </body>
+   </text>
+</TEI>
