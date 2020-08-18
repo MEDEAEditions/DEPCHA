@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
-	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
       <teiHeader>
             <fileDesc>
                   <titleStmt>
                         <title>Thos. W. Ward Disbursement Ledger</title>
+                         <author>Naoki Kokaze</author>
                   </titleStmt>
                   <publicationStmt>
                         <publisher>Naoki Kokaze</publisher>
-                        <idno type="PID">o:depcha.ward_ledger.1</idno>
-                          <ref type="context" target="context:depcha.ward_ledger">Ward Ledger</ref>
-                        <availability>
-                              <p/>
-                        </availability>
+                        <idno type="PID">o:depcha.ward.1</idno>
+                         <ref type="context" target="context:depcha.ward">Thos. W. Ward Disbursement Ledger</ref>
                         <date when="2019-10-16">16 October 2019</date>
                   </publicationStmt>
                   <sourceDesc>
@@ -29,7 +24,8 @@
                               </msIdentifier>
                               <msContents>
                                     <msItem>
-                                          <author>Thos. W. Ward</author>
+                                          <docAuthor>Thos. W. Ward</docAuthor>
+                                            <docDate>June 1934</docDate>
                                           <title>Ledger No. 2</title>
                                           <note>
                                                 <p>Accounts of <orgName ana="bk:from"
@@ -37,10 +33,13 @@
                                                   <date ana="bk:when" when="1934-06-01">June
                                                   1934</date>. </p>
                                           </note>
+                                          <textLang>
+                                                  <lang>English</lang>
+                                          </textLang>
                                     </msItem>
                               </msContents>
                         </msDesc>
-                        <listPlace>
+                          <listPlace ana="bk:Between">
                               <place xml:id="barrow">
                                     <placeName>Barrow</placeName>
                                     <location>
@@ -105,8 +104,25 @@
                   </sourceDesc>
             </fileDesc>
             <encodingDesc>
+                    <projectDesc>
+                            <ab>Accounts of <orgName ana="bk:from"
+                                    ref="ThosWardLtd">Thos W. Ward Ltd</orgName> from
+                                    <date ana="bk:when" when="1934-06-01">June
+                                            1934</date>.
+                            </ab>
+                    </projectDesc>
+                    <listPrefixDef>
+                            <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)" replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+                                    <p>Analytical descriptors are considered to represent concepts from the DEPCHA
+                                            bookkeeping ontology and can be extended to respective URIs.</p>
+                            </prefixDef>
+                            <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)" replacementPattern="http://www.wikidata.org/wiki/$1">
+                                    <p><ref target="https://www.wikidata.org/wiki/Help:Namespaces"></ref></p>
+                            </prefixDef>
+                    </listPrefixDef>
                   <classDecl>
                         <taxonomy ana="bk:Taxonomy">
+                                <gloss>Ships</gloss>
                               <category xml:id="HMS">
                                     <catDesc>His/Her Majesty's Ships of the British Royal
                                           Navy</catDesc>
