@@ -150,13 +150,12 @@ LEFT OUTER JOIN TYPE_PRODUIT ON PRODUITS.TYPE_PRODUIT_ID = TYPE_PRODUIT.ID
   
   
   
-# EXPORT to CSV; select distinct; ID BETWEEN
+# EXPORT to CSV
 
 
-call CSVWRITE ( 'C:/MyFolder/magprof.csv', 'select DISTINCT
+call CSVWRITE ( 'C:/MyFolder/magprof.txt', 'select 
 ECRITURES.DATE_ECR as bk_when, 
 ECRITURES.DESCRIPTION as bk_entry, 
-ACTEURS.ACTEUR_ID as bk_betweenID, 
 ACTEURS.TITRE as bk_name, 
 ACTEURS.OBSERVATIONS as bk_betweenComment, 
 ACTEURS.PROFESSION as bk_betweenProfession,

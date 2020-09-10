@@ -6636,6 +6636,7 @@ INSERT INTO `liens_ecriture` (`lien_id`, `page_id`, `ecr_id`, `niveau`, `identif
 (913, 85, 1703, 1, 747, 'A', 23, 99, NULL, 32, NULL, 0),
 (914, 85, 1703, 1, 749, 'A', 9, 99, NULL, 32, NULL, 0),
 (915, 85, 1704, 1, 750, 'A', 9, 99, NULL, 32, NULL, 0);
+
 INSERT INTO `liens_ecriture` (`lien_id`, `page_id`, `ecr_id`, `niveau`, `identifiant_id`, `type_identifiant`, `role_id`, `degres_proximite`, `observations`, `user_id`, `nom`, `is_externe`) VALUES
 (916, 85, 1704, 1, 751, 'A', 23, 99, NULL, 32, NULL, 0),
 (917, 85, 1704, 1, 755, 'A', 23, 99, NULL, 32, NULL, 0),
@@ -7323,7 +7324,7 @@ CREATE TABLE `lieux` (
   `lieu_id` int(11) NOT NULL,
   `libelle` varchar(45)  DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
+);
 
 --
 -- Contenu de la table `lieux`
@@ -7405,7 +7406,7 @@ CREATE TABLE `nature_deplacement_a` (
   `code` varchar(20)  NOT NULL,
   `libelle` varchar(45)  NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
+);
 
 --
 -- Contenu de la table `nature_deplacement_a`
@@ -7428,7 +7429,7 @@ CREATE TABLE `nature_deplacement_c` (
   `code` varchar(20)  NOT NULL,
   `libelle` varchar(45)  NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
+);
 
 --
 -- Contenu de la table `nature_deplacement_c`
@@ -7449,7 +7450,7 @@ CREATE TABLE `objet_ecriture` (
   `code` varchar(20)  NOT NULL,
   `libelle` varchar(45)  DEFAULT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci COMMENT='table de type d''écriture';
+);
 
 --
 -- Contenu de la table `objet_ecriture`
@@ -7483,7 +7484,7 @@ CREATE TABLE `pages` (
   `feuillet` varchar(30)  NOT NULL,
   `r_v` char(1)  NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=146 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
+);
 
 --
 -- Contenu de la table `pages`
@@ -7648,7 +7649,7 @@ CREATE TABLE `photos` (
   `page_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `etat` varchar(20)  NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
+);
 
 --
 -- Contenu de la table `photos`
@@ -7668,7 +7669,7 @@ CREATE TABLE `produits` (
   `libelle` varchar(250)  DEFAULT NULL,
   `type_produit_id` tinyint(11) DEFAULT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=474 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci COMMENT='table de type d''écriture';
+);
 
 --
 -- Contenu de la table `produits`
@@ -8147,7 +8148,7 @@ CREATE TABLE `qualif_ecriture` (
   `code` varchar(20)  DEFAULT NULL,
   `libelle` varchar(45)  DEFAULT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci COMMENT='table de type de transaction';
+);
 
 --
 -- Contenu de la table `qualif_ecriture`
@@ -8214,7 +8215,7 @@ CREATE TABLE `qualites` (
   `type_qualite_id` tinyint(11) NOT NULL,
   `libelle` varchar(45)  DEFAULT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=325 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
+);
 
 --
 -- Contenu de la table `qualites`
@@ -8550,7 +8551,7 @@ CREATE TABLE `qualites_produit` (
   `qualite_id` int(11) NOT NULL,
   `produit_id` int(11) DEFAULT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
+);
 
 --
 -- Contenu de la table `qualites_produit`
@@ -9374,7 +9375,7 @@ CREATE TABLE `role_lien` (
   `code` varchar(20)  NOT NULL,
   `libelle` varchar(45)  NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
+);
 
 --
 -- Contenu de la table `role_lien`
@@ -9420,7 +9421,7 @@ CREATE TABLE `type_acteur` (
   `id` int(11) NOT NULL,
   `libelle` varchar(45)  DEFAULT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci COMMENT='type d''acteur';
+);
 
 --
 -- Contenu de la table `type_acteur`
@@ -9446,7 +9447,7 @@ CREATE TABLE `type_civilte` (
   `id` int(11) NOT NULL,
   `libelle` varchar(45)  DEFAULT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
+) ;
 
 --
 -- Contenu de la table `type_civilte`
@@ -9480,7 +9481,7 @@ CREATE TABLE `type_compte` (
   `code` varchar(20)  NOT NULL,
   `libelle` varchar(45)  NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
+);
 
 --
 -- Contenu de la table `type_compte`
@@ -9505,7 +9506,7 @@ CREATE TABLE `type_ecriture` (
   `code` varchar(20)  NOT NULL,
   `libelle` varchar(45)  NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
+);
 
 --
 -- Contenu de la table `type_ecriture`
@@ -9527,7 +9528,7 @@ CREATE TABLE `type_etat` (
   `code` varchar(20)  NOT NULL,
   `libelle` varchar(45)  DEFAULT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci COMMENT='type etat';
+);
 
 --
 -- Contenu de la table `type_etat`
@@ -9548,7 +9549,7 @@ CREATE TABLE `type_produit` (
   `code` varchar(20)  NOT NULL,
   `libelle` varchar(45)  DEFAULT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci COMMENT='type etat';
+);
 
 --
 -- Contenu de la table `type_produit`
@@ -9607,7 +9608,7 @@ CREATE TABLE `type_qualite_produit` (
   `id` int(11) NOT NULL,
   `libelle` varchar(45)  DEFAULT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci COMMENT='table de type d''écriture';
+);
 
 --
 -- Contenu de la table `type_qualite_produit`
@@ -9643,7 +9644,7 @@ CREATE TABLE `type_unite` (
   `code` varchar(20)  NOT NULL,
   `libelle` varchar(45)  DEFAULT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci COMMENT='type etat';
+);
 
 --
 -- Contenu de la table `type_unite`
@@ -9678,56 +9679,6 @@ INSERT INTO `type_unite` (`id`, `code`, `libelle`, `user_id`) VALUES
 (28, '', 'Quart', 23),
 (29, '', 'Panier', 23);
 
--- --------------------------------------------------------
-
---
--- Structure de la table `user`
---
-
-CREATE TABLE `user` (
-  `id_user` int(11) NOT NULL,
-  `email` varchar(200)  NOT NULL,
-  `pseudo` varchar(100)  NOT NULL,
-  `password` varchar(200)  NOT NULL,
-  `nom` varchar(250)  NOT NULL,
-  `prenom` varchar(250)  NOT NULL,
-  `profil` int(1) NOT NULL DEFAULT '3',
-  `modif` tinyint(1) NOT NULL DEFAULT '1'
-) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
-
---
--- Contenu de la table `user`
---
-
-INSERT INTO `user` (`id_user`, `email`, `pseudo`, `password`, `nom`, `prenom`, `profil`, `modif`) VALUES
-(1, 'npetit00@hotmail.com', 'Garra', 'garra010', 'Petit de la Villéon', 'Nora', 2, 1),
-(7, 'pierre.gervais@ehess.fr', 'Admin', 'MARPROF2009', 'Admin', 'Admin', 1, 0),
-(23, 'pgervais@ehess.fr', 'Gervais', 'gervais001', 'Gervais', 'Pierre', 2, 1),
-(26, 'Anne.Wegener-Sleeswijk@univ-paris1.fr', 'Wegener', 'wegener001', 'Wegener-Sleeswijk', 'Anne', 2, 1),
-(25, 'manuel.covo@gmail.com', 'Covo', 'covo001', 'Covo', 'Manuel', 2, 1),
-(28, 'Yannick.Lemarchand@univ-nantes.fr', 'Lemarchand', 'lemarchand001', 'Lemarchand', 'Yannick', 2, 1),
-(29, 'villain@ens.fr', 'Villain', 'villain001', 'Villain', 'Julien', 2, 1),
-(30, 'Allan.Potofsky@univ-paris-diderot.fr', 'Potofsky', 'potofsky001', 'Potofsky', 'Allan', 2, 1),
-(31, 'dmargairaz@wanadoo.fr', 'Margairaz', 'margairaz001', 'Margairaz', 'Dominique', 2, 1),
-(32, 'cecrobin@yahoo.fr', 'Robin', 'robin001', 'Robin', 'Cecile', 2, 1),
-(33, 'dlamparello@hsp.org', 'Lamparello', 'lamparello001', 'Lamparello', 'Dana', 3, 1),
-(34, 'margotzxw@hotmail.com', 'Martin', 'martin001', 'Martin', 'Marguerite', 2, 1),
-(35, 'laure.pineau-defois@hotmail.fr', 'Pineau', 'pineau001', 'Pineau-Defois', 'Laure', 2, 1),
-(36, 'Jacques.Bottin@ens.fr', 'Bottin', 'bottin001', 'Bottin', 'Jacques', 2, 1),
-(37, 'gdaudin@me.com', 'Daudin', 'daudin001', 'Daudin', 'Guillaume', 2, 1),
-(38, 'natacha.coquery@wanadoo.fr', 'Coquery', 'coquery001', 'Coquery', 'Natacha', 2, 1),
-(39, 'gdaudin@mac.com', 'gdaudin', 'sbg', 'Daudin', 'Guillaume', 3, 1),
-(40, 'denise.ogilvie@cult.gouv.fr', 'Ogilvie', 'ogilvie001', 'Ogilvie', 'Denise', 2, 1),
-(41, 'paulbcheney@gmail.com', 'Cheney', 'cheney001', 'Cheney', 'Paul', 3, 1),
-(42, 'mathieubeaud@hotmail.fr', 'Beaud', 'beaud001', 'Beaud', 'Mathieu', 2, 1),
-(43, 'Marzagalli@wanadoo.fr', 'sm', 'Matteo', 'Marzagalli', 'Silvia', 3, 1),
-(44, 'marie-laure.legay@univ-lille3.fr', 'irhis', 'irhis', 'Legay', 'Marie', 3, 1),
-(45, 'sebastien.martin2@wanadoo.fr', 'smvad', '33602015', 'martin', 'sebastien', 3, 1),
-(46, 'cmatson@UDel.Edu', 'Matson', 'matson001', 'Matson', 'Cathy', 3, 1),
-(47, 'aude.seillan@hotmail.fr', 'Aude', 'Silverwish18', 'Seillan', 'Aude', 3, 1),
-(48, 'sebastien.martin2@wanadoo.fr', 'smnantes', '33602015', 'martin', 'sebastien', 3, 1),
-(49, 'giovannivenegoni@gmail.com', 'gvenegon', 'jopapaya', 'Venegoni', 'Giovanni', 3, 1),
-(50, 'olivier.arroues@ge.com', 'BFTT', 'Zong', 'ARROUES', 'Olivier', 3, 1);
 
 --
 -- Index pour les tables exportées
