@@ -10,7 +10,7 @@ BK = Namespace("https://gams.uni-graz.at/o:depcha.bookkeeping#")
 GAMS = Namespace("https://gams.uni-graz.at/o:gams-ontology#")
 # 
 baseURL = "https://gams.uni-graz.at/"
-CONTEXT = "context:marprof"
+CONTEXT = "context:depcha.marprof"
 PID = "o:marprof.1"
 
 # make a graph
@@ -42,18 +42,26 @@ for count, row in enumerate(input_file):
     To = URIRef(baseURL + PID + "#pers." + str(row['BK_TO']) )
     # Data
     normalizedEntry = " ".join(row['BK_ENTRY'].split())
+    normalizedEntry =  normalizedEntry.replace('"',"'")
     
     #TRANSACTION
     output_graph.add((Transaction, RDF.type,  BK.Transaction))
     output_graph.add((Transaction, BK.when,  Literal(row['BK_WHEN']) ))
-    # normalize whitespace
+    
+    #BK.entry
+    #normalie whitesapce and " and ,
     output_graph.add((Transaction, BK.entry,  Literal(normalizedEntry) ))
+    
     output_graph.add((Transaction, BK.consistsOf,  Transfer1))
     if(row['BK_COMMODITY']):
         output_graph.add((Transaction, BK.consistsOf,  Transfer2))
     output_graph.add((Transaction, BK.type,  Literal(row['OBJECT_'])))
     output_graph.add((Transaction, GAMS.isMemberOfCollection,  URIRef(baseURL + CONTEXT) ))
-    output_graph.add((Transaction, GAMS.isPartofTEI,  URIRef(baseURL + PID) ))
+    
+    # isPartofRDF needed?
+    #output_graph.add((Transaction, GAMS.isPartofTEI,  URIRef(baseURL + PID) ))
+    
+    #GAMS.textualContent
     output_graph.add((Transaction, GAMS.textualContent,  Literal(normalizedEntry) ))
     
     #TRANSFER 1
@@ -108,4 +116,7 @@ for count, row in enumerate(input_file):
     output_graph.add((To, RDF.type,  BK.Between))
 
 ####
-output_graph.serialize(destination='marprof.ttl', format="turtle")
+# format="xml" creates plain rdf/XML (rdf:type bk:Entry)
+# format="pretty-xml" ,  abbreviated RDF/XML syntax like bk:Entry
+# format="turtle"
+output_graph.serialize(destination='marprof.xml', format="pretty-xml")

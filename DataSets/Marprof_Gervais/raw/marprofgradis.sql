@@ -1118,7 +1118,7 @@ CREATE TABLE `archivistique` (
   `fonds` varchar(250)  NOT NULL,
   `cote` varchar(250)  NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
+) ;
 
 --
 -- Contenu de la table `archivistique`
@@ -1139,7 +1139,7 @@ CREATE TABLE `comptabilite_de` (
   `code` varchar(20)  NOT NULL,
   `libelle` varchar(45)  DEFAULT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
+) ;
 
 --
 -- Contenu de la table `comptabilite_de`
