@@ -2,16 +2,47 @@ import csv
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import DCTERMS, RDF, RDFS, SKOS, XSD
 import pandas as pd
+import json
+import hashlib
 
+########################################################################################
+# FUNCTIONS
+
+# check is a key exists in a dict
+def checkKey(dict, key):  
+    if key in dict.keys(): 
+        return True
+    else: 
+        print("Not present") 
+
+# ccreates a bk:Money and add bk:unit and bk:quantity 
+def getMoney(Measurable_Money1, bk_money, bk_unit_config):
+    if(row[bk_money] != ""):
+        output_graph.add((Measurable_Money1, RDF.type,  BK.Money))
+        output_graph.add((Measurable_Money1, BK.quantity, Literal(row[bk_money]) ))
+        # if unit is defined in config file
+        if(config_data[bk_unit_config]):
+            output_graph.add((Measurable_Money1, BK.unit, Literal(config_data[bk_unit_config]) ))
+        # a column for bk:unit exists
+        else:
+            output_graph.add((Measurable_Money1, BK.unit, Literal(row["BK_UNIT1"]) ))
+
+########################################################################################
+########################################################################################
+# MAIN
+path = "gwfp/"
+
+with open(path + "csvToRDF_config.json") as json_config_file:
+    config_data = json.load(json_config_file)
 #
-input_file = csv.DictReader(open("magprof.csv"))
+input_file = csv.DictReader(open(path + config_data["FILENAME"], encoding="utf8"))
 #
 BK = Namespace("https://gams.uni-graz.at/o:depcha.bookkeeping#")
 GAMS = Namespace("https://gams.uni-graz.at/o:gams-ontology#")
 # 
 baseURL = "https://gams.uni-graz.at/"
-CONTEXT = "context:depcha.marprof"
-PID = "o:marprof.1"
+CONTEXT = config_data["CONTEXT"]
+PID = config_data["PID"]
 
 # make a graph
 output_graph = Graph()
@@ -29,8 +60,12 @@ output_graph.add((DataSet, RDF.type,  BK.DataSet))
 for count, row in enumerate(input_file):
     # convert it from an OrderedDict to a regular dict
     row = dict(row)
- 
-    # URIs
+    
+    To = Literal("anonymous")
+    From = Literal("anonymous")
+    
+    ### VARIABLES
+    ## URIs
     Transaction = URIRef(baseURL + PID + "#T" + str(count))
     Transfer1 = URIRef(baseURL + PID + "#T" + str(count) + "T1")
     Transfer2 = URIRef(baseURL + PID + "#T" + str(count) + "T2")
@@ -38,11 +73,34 @@ for count, row in enumerate(input_file):
     Measurable_Money2 = URIRef(baseURL + PID + "#T" + str(count) + "M2")
     Measurable_Money3 = URIRef(baseURL + PID + "#T" + str(count) + "M3")
     Commodity = URIRef(baseURL + PID + "#T" + str(count) + "C1")
-    From = URIRef(baseURL + PID + "#pers." + str(row['BK_FROM']) )
-    To = URIRef(baseURL + PID + "#pers." + str(row['BK_TO']) )
-    # Data
+    
+    ## Data
     normalizedEntry = " ".join(row['BK_ENTRY'].split())
     normalizedEntry =  normalizedEntry.replace('"',"'")
+    # debit or credit
+    debitOrCredit = row['BK_DEBIT_CREDIT']
+
+    #if a single column exists containing information about debit or credit
+    if(debitOrCredit): 
+        # debit = Money from X to Washington
+        if(debitOrCredit == "Debit"):
+            print("Money from Washington to X")
+            From = URIRef(baseURL + PID + "#Between." + config_data["BK_MAIN_BETWEEN_ID"])
+            To = URIRef(baseURL + PID + "#Between." + str(id(row['BK_BETWEEN'])) )   
+        # credit = Money from Washington to X
+        elif (debitOrCredit == "Credit"):
+            print("Money from X to Washington")
+            To = URIRef(baseURL + PID + "#Between." + config_data["BK_MAIN_BETWEEN_ID"] )
+            From = URIRef(baseURL + PID + "#Between." + str(id(row['BK_BETWEEN'])) )           
+    # a column for BK_FROM and BK_TO         
+    elif (checkKey(row, 'BK_FROM')):
+        From = URIRef(baseURL + PID + "#Between." + str(row['BK_FROM']) )
+    elif (checkKey(row, 'BK_TO')):
+        To = URIRef(baseURL + PID + "#Between." + str(row['BK_TO']) )
+    else:
+        print("ERROR with bk:to or bk:from")
+    
+
     
     #TRANSACTION
     output_graph.add((Transaction, RDF.type,  BK.Transaction))
@@ -53,9 +111,12 @@ for count, row in enumerate(input_file):
     output_graph.add((Transaction, BK.entry,  Literal(normalizedEntry) ))
     
     output_graph.add((Transaction, BK.consistsOf,  Transfer1))
-    if(row['BK_COMMODITY']):
+    if(checkKey(row, 'BK_COMMODITY')):
         output_graph.add((Transaction, BK.consistsOf,  Transfer2))
-    output_graph.add((Transaction, BK.type,  Literal(row['OBJECT_'])))
+    if(checkKey(row, 'OBJECT_')):
+        output_graph.add((Transaction, BK.type,  Literal(row['OBJECT_'])))
+    if(checkKey(row, 'BK_SOURCE')):
+        output_graph.add((Transaction, BK.source,  Literal(row['BK_SOURCE'])))
     output_graph.add((Transaction, GAMS.isMemberOfCollection,  URIRef(baseURL + CONTEXT) ))
     
     # isPartofRDF needed?
@@ -64,59 +125,75 @@ for count, row in enumerate(input_file):
     #GAMS.textualContent
     output_graph.add((Transaction, GAMS.textualContent,  Literal(normalizedEntry) ))
     
-    #TRANSFER 1
+    # Money - TRANSFER 1
     output_graph.add((Transfer1, RDF.type,  BK.Transfer))
     output_graph.add((Transfer1, BK.transfers,  Measurable_Money1))
-    if(row['BK_MONEY2'] != "0.0"):
+    if(row['BK_MONEY2'] != ""):
         output_graph.add((Transfer1, BK.transfers, Measurable_Money2))
-    if(row['BK_MONEY3'] != "0.0"):
+    if(row['BK_MONEY3'] != ""):
         output_graph.add((Transfer1, BK.transfers, Measurable_Money3))
-    output_graph.add((Transfer1, bk_from, From))
-    output_graph.add((Transfer1, BK.to,  To ))
-    #TRANSFER 2
-    if(row['BK_COMMODITY']):
+    # if a column exists containt debit or credit
+    if(debitOrCredit):
+        output_graph.add((Transfer1, bk_from, From))
+        output_graph.add((Transfer1, BK.to,  To ))
+      #  if(debitOrCredit == "Debit"):
+      #      output_graph.add((Transfer1, bk_from, From))
+      #  elif(debitOrCredit == "Credit"):
+      #      output_graph.add((Transfer1, BK.to,  To ))  
+    else:
+        output_graph.add((Transfer1, bk_from, From))  
+        output_graph.add((Transfer1, BK.to,  To))
+        
+    #Commodity - TRANSFER 2
+    if(checkKey(row, 'BK_COMMODITY')):
         output_graph.add((Transfer2, RDF.type,  BK.Transfer))
         output_graph.add((Transfer2, BK.transfers, Commodity))
         output_graph.add((Transfer2, BK.to, To))
         output_graph.add((Transfer2, bk_from, From))
     
-    #MONEY: Money1, Livre
-    output_graph.add((Measurable_Money1, RDF.type,  BK.Money))
-    output_graph.add((Measurable_Money1, BK.unit, Literal('Livre tournois') ))
-    output_graph.add((Measurable_Money1, BK.quantity, Literal(row['BK_MONEY1']) ))
+    #MONEY: Money1 (like Livre or Dollar)
+    getMoney(Measurable_Money1, "BK_MONEY1", "BK_UNIT1_config")
     
-    #MONEY: Money2, Sous
-    if(row['BK_MONEY2'] != "0.0"):
-        output_graph.add((Measurable_Money2, RDF.type,  BK.Money))
-        output_graph.add((Measurable_Money2, BK.unit, Literal('Sous') ))
-        output_graph.add((Measurable_Money2, BK.quantity, Literal(row['BK_MONEY2']) ))
+    #MONEY: Money2, (like Sous or Shilling)
+    getMoney(Measurable_Money2, "BK_MONEY2", "BK_UNIT2_config")
     
-    #MONEY: Money3, Deniers
-    if(row['BK_MONEY3'] != "0.0"): 
-        output_graph.add((Measurable_Money3, RDF.type,  BK.Money))
-        output_graph.add((Measurable_Money3, BK.unit, Literal('Deniers') ))
-        output_graph.add((Measurable_Money3, BK.quantity, Literal(row['BK_MONEY3']) ))
+    #MONEY: Money2, (like Deniers or Pence)
+    getMoney(Measurable_Money3, "BK_MONEY3", "BK_UNIT3_config")
     
     #COMMODIY
-    if(row['BK_COMMODITY']):
+    if(checkKey(row, 'BK_COMMODITY')):
         output_graph.add((Commodity, RDF.type,  BK.Commodity))
         output_graph.add((Commodity, BK.commodity,  Literal(row['BK_COMMODITY']) ))
-        output_graph.add((Commodity, BK.unit, Literal('Zwetschgen?') ))
+        output_graph.add((Commodity, BK.unit, Literal('error: missing Unit') ))
         output_graph.add((Commodity, BK.quantity, Literal(row['QUANTITE1']) ))
          
     #BETWEEN
+    # if a BK_BETWEEN column exists create a distinct set of them
+    if(checkKey(row, 'BK_BETWEEN')):
+        Between = URIRef(baseURL + PID + "#Between." + str(id(row['BK_BETWEEN'])) )
+        output_graph.add((Between, RDF.type,  BK.Between))
+        output_graph.add((Between, BK.name,  Literal(row['BK_BETWEEN']) ))
+    else:
+        if(checkKey(row, 'BK_NAME_FROM')):
+            output_graph.add((From, RDF.type,  BK.Between))
+            if(checkKey(row, 'BK_NAME_FROM')):
+                output_graph.add((From, BK.name,  Literal(row['BK_NAME_FROM']) ))
+            if(checkKey(row, 'BK_BETWEENPROFESSION')):
+                output_graph.add((From, BK.profession,  Literal(row['BK_BETWEENPROFESSION']) ))
+            if(checkKey(row, 'BK_BETWEENCIVILTE')):
+                output_graph.add((From, BK.status,  Literal(row['BK_BETWEENCIVILTE']) ))
     # FROM with name, status and profession 
     output_graph.add((From, RDF.type,  BK.Between))
-    output_graph.add((From, BK.name,  Literal(row['BK_NAME_FROM']) ))
-    if row['BK_BETWEENPROFESSION']:
-        output_graph.add((From, BK.profession,  Literal(row['BK_BETWEENPROFESSION']) ))
-    if row['BK_BETWEENCIVILTE']:
-        output_graph.add((From, BK.status,  Literal(row['BK_BETWEENCIVILTE']) ))
+    if(checkKey(row, 'BK_NAME_FROM')):
+        output_graph.add((From, BK.name,  Literal(row['BK_NAME_FROM']) ))
+   
     # TO only ID    
-    output_graph.add((To, RDF.type,  BK.Between))
+    #output_graph.add((To, RDF.type,  BK.Between))
+    
+    #### free variables
 
 ####
 # format="xml" creates plain rdf/XML (rdf:type bk:Entry)
 # format="pretty-xml" ,  abbreviated RDF/XML syntax like bk:Entry
 # format="turtle"
-output_graph.serialize(destination='marprof.xml', format="pretty-xml")
+output_graph.serialize(destination= config_data["OUTPUT-FILE-NAME"] + '.xml', format="pretty-xml")
