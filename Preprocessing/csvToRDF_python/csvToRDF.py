@@ -32,7 +32,7 @@ def getMoney(Measurable_Money1, bk_money, bk_unit_config):
 # MAIN
 path = "gwfp/"
 
-with open(path + "csvToRDF_config.json") as json_config_file:
+with open(path + "csvToRDF_config__Ledger_A.json") as json_config_file:
     config_data = json.load(json_config_file)
 #
 input_file = csv.DictReader(open(path + config_data["FILENAME"], encoding="utf8"))
@@ -61,8 +61,8 @@ for count, row in enumerate(input_file):
     # convert it from an OrderedDict to a regular dict
     row = dict(row)
     
-    To = Literal("anonymous")
-    From = Literal("anonymous")
+    To = Literal("anon")
+    From = Literal("anon")
     
     ### VARIABLES
     ## URIs
@@ -84,12 +84,12 @@ for count, row in enumerate(input_file):
     if(debitOrCredit): 
         # debit = Money from X to Washington
         if(debitOrCredit == "Debit"):
-            print("Money from Washington to X")
+            #print("Money from Washington to X")
             From = URIRef(baseURL + PID + "#Between." + config_data["BK_MAIN_BETWEEN_ID"])
             To = URIRef(baseURL + PID + "#Between." + str(id(row['BK_BETWEEN'])) )   
         # credit = Money from Washington to X
         elif (debitOrCredit == "Credit"):
-            print("Money from X to Washington")
+            #print("Money from X to Washington")
             To = URIRef(baseURL + PID + "#Between." + config_data["BK_MAIN_BETWEEN_ID"] )
             From = URIRef(baseURL + PID + "#Between." + str(id(row['BK_BETWEEN'])) )           
     # a column for BK_FROM and BK_TO         
@@ -104,7 +104,8 @@ for count, row in enumerate(input_file):
     
     #TRANSACTION
     output_graph.add((Transaction, RDF.type,  BK.Transaction))
-    output_graph.add((Transaction, BK.when,  Literal(row['BK_WHEN']) ))
+    if(checkKey(row, 'BK_WHEN')):
+        output_graph.add((Transaction, BK.when,  Literal(row['BK_WHEN']) ))
     
     #BK.entry
     #normalie whitesapce and " and ,
@@ -172,7 +173,10 @@ for count, row in enumerate(input_file):
     if(checkKey(row, 'BK_BETWEEN')):
         Between = URIRef(baseURL + PID + "#Between." + str(id(row['BK_BETWEEN'])) )
         output_graph.add((Between, RDF.type,  BK.Between))
-        output_graph.add((Between, BK.name,  Literal(row['BK_BETWEEN']) ))
+        if(row['BK_BETWEEN']):
+            output_graph.add((From, BK.name,  Literal(row['BK_BETWEEN']) ))
+        else:
+            output_graph.add((From, BK.name,  Literal('anon') ))
     else:
         if(checkKey(row, 'BK_NAME_FROM')):
             output_graph.add((From, RDF.type,  BK.Between))
