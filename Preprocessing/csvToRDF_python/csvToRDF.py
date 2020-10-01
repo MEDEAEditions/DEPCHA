@@ -1,6 +1,7 @@
 import csv
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import DCTERMS, RDF, RDFS, SKOS, XSD
+import re
 import pandas as pd
 import json
 import hashlib
@@ -8,14 +9,46 @@ import hashlib
 ########################################################################################
 # FUNCTIONS
 
+# 
+def createDataSet(): 
+    # define 2 sets
+    Years = dict()
+    yearRegex = re.compile('([1-3][0-9]{3})') 
+    sum_incomeInYear = 0
+    sum_expenseInYear = 0
+    
+    
+    #TODO make the same for debit/credit for each distinct year
+    # go through the rows; select BK_WHEN; goues through all entries and add the years (selected via regEx) to a set;
+    for row in input_file:
+        mo = yearRegex.search(row["BK_WHEN"])
+        if(row["BK_MONEY1"].isdigit() and row["BK_MONEY2"].isdigit() and row["BK_MONEY3"].isdigit()):
+            # Englisch:   	1 Pound = 	20 Shillings  = 240 Pence
+            row_sum = float(row["BK_MONEY1"]) + round(float(row["BK_MONEY2"])/20) + round(float(row["BK_MONEY3"])/240)
+        
+        if(mo != None):
+            #Years.add(mo.group())
+            Years[mo.group()] = row_sum
+            #if(row["BK_MONEY1"].isdigit()):
+            #    sum_incomeInYear += int(row["BK_MONEY1"])
+
+    print(Years)
+    # create a bk:Dataset for every year
+    for year in Years: 
+        DataSet = URIRef(baseURL + PID + "#DataSet" + year)
+        output_graph.add((DataSet, RDF.type,  BK.DataSet))
+        output_graph.add((DataSet, BK.date,  Literal(year) ))
+        output_graph.add((DataSet, BK.incomeInYear,  Literal(sum_incomeInYear) ))
+        output_graph.add((DataSet, BK.expenseInYear,  Literal(sum_expenseInYear) ))
+    
 # check is a key exists in a dict
 def checkKey(dict, key):  
     if key in dict.keys(): 
         return True
     else: 
-        print("Not present") 
+        return False 
 
-# ccreates a bk:Money and add bk:unit and bk:quantity 
+# creates a bk:Money and add bk:unit and bk:quantity 
 def getMoney(Measurable_Money1, bk_money, bk_unit_config):
     if(row[bk_money] != ""):
         output_graph.add((Measurable_Money1, RDF.type,  BK.Money))
@@ -32,7 +65,9 @@ def getMoney(Measurable_Money1, bk_money, bk_unit_config):
 # MAIN
 path = "gwfp/"
 
-with open(path + "csvToRDF_config__Ledger_A.json") as json_config_file:
+########################################################################################
+# load CSV
+with open(path + "csvToRDF_config__Ledger_C.json") as json_config_file:
     config_data = json.load(json_config_file)
 #
 input_file = csv.DictReader(open(path + config_data["FILENAME"], encoding="utf8"))
@@ -53,9 +88,10 @@ output_graph.bind("gams", GAMS)
 # from is reserved term
 bk_from = URIRef("https://gams.uni-graz.at/o:depcha.bookkeeping#from")
 
-# BK_DataSet
-DataSet = URIRef(baseURL + PID + "#DataSet")
-output_graph.add((DataSet, RDF.type,  BK.DataSet))
+########################################################################################
+# BK:DataSet
+createDataSet()
+
 
 for count, row in enumerate(input_file):
     # convert it from an OrderedDict to a regular dict
@@ -99,8 +135,6 @@ for count, row in enumerate(input_file):
         To = URIRef(baseURL + PID + "#Between." + str(row['BK_TO']) )
     else:
         print("ERROR with bk:to or bk:from")
-    
-
     
     #TRANSACTION
     output_graph.add((Transaction, RDF.type,  BK.Transaction))
