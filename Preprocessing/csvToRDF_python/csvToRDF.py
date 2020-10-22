@@ -5,6 +5,11 @@ import re
 import pandas as pd
 import json
 import hashlib
+from locale import atof, setlocale, LC_NUMERIC
+
+# https://stackoverflow.com/questions/6633523/how-can-i-convert-a-string-with-dot-and-comma-into-a-float-in-python
+# . and , in float numbers depending on default locale
+setlocale(LC_NUMERIC, '') 
 
 ########################################################################################
 # FUNCTIONS
@@ -16,22 +21,22 @@ def createDataSet():
     yearRegex = re.compile('([1-3][0-9]{3})') 
     sum_incomeInYear = 0
     sum_expenseInYear = 0
-    
-    
+    '''
     #TODO make the same for debit/credit for each distinct year
-    # go through the rows; select BK_WHEN; goues through all entries and add the years (selected via regEx) to a set;
+    # go through the rows; select BK_WHEN; goes through all entries and add the years (selected via regEx) to a set;
     for row in input_file:
         mo = yearRegex.search(row["BK_WHEN"])
         if(row["BK_MONEY1"].isdigit() and row["BK_MONEY2"].isdigit() and row["BK_MONEY3"].isdigit()):
             # Englisch:   	1 Pound = 	20 Shillings  = 240 Pence
             row_sum = float(row["BK_MONEY1"]) + round(float(row["BK_MONEY2"])/20) + round(float(row["BK_MONEY3"])/240)
-        
+        else:
+            print("Error: BK_MONEY is not a digit:1 " + row["BK_MONEY1"] +";2 " + row["BK_MONEY2"] + ";3 " + row["BK_MONEY3"])
         if(mo != None):
             #Years.add(mo.group())
             Years[mo.group()] = row_sum
             #if(row["BK_MONEY1"].isdigit()):
             #    sum_incomeInYear += int(row["BK_MONEY1"])
-
+    '''
     print(Years)
     # create a bk:Dataset for every year
     for year in Years: 
@@ -89,27 +94,70 @@ output_graph.bind("gams", GAMS)
 bk_from = URIRef("https://gams.uni-graz.at/o:depcha.bookkeeping#from")
 
 ########################################################################################
-# BK:DataSet
-createDataSet()
 
-
+########################################################################################
+# iteration over all rows in CSV input file
 for count, row in enumerate(input_file):
+    
     # convert it from an OrderedDict to a regular dict
     row = dict(row)
-    
-    To = Literal("anon")
-    From = Literal("anon")
+
+    # BK:DataSet
+    DataSets = dict()
+    # bk:To bk:From
+    To = Literal("anonym")
+    From = Literal("anonym")
     
     ### VARIABLES
     ## URIs
-    Transaction = URIRef(baseURL + PID + "#T" + str(count))
-    Transfer1 = URIRef(baseURL + PID + "#T" + str(count) + "T1")
-    Transfer2 = URIRef(baseURL + PID + "#T" + str(count) + "T2")
-    Measurable_Money1 = URIRef(baseURL + PID + "#T" + str(count) + "M1")
-    Measurable_Money2 = URIRef(baseURL + PID + "#T" + str(count) + "M2")
-    Measurable_Money3 = URIRef(baseURL + PID + "#T" + str(count) + "M3")
-    Commodity = URIRef(baseURL + PID + "#T" + str(count) + "C1")
+    if(row['BK_ENTRY'] != '[Total]' and row['BK_ENTRY'] != ''):
+        Transaction = URIRef(baseURL + PID + "#T" + str(count))
+        Transfer1 = URIRef(baseURL + PID + "#T" + str(count) + "T1")
+        Transfer2 = URIRef(baseURL + PID + "#T" + str(count) + "T2")
+        Measurable_Money1 = URIRef(baseURL + PID + "#T" + str(count) + "M1")
+        Measurable_Money2 = URIRef(baseURL + PID + "#T" + str(count) + "M2")
+        Measurable_Money3 = URIRef(baseURL + PID + "#T" + str(count) + "M3")
+        Commodity = URIRef(baseURL + PID + "#T" + str(count) + "C1")
+        
+        ###########################
+        ### only take bk:Transaction (and not bk:Sum) for creating bk:DataSet
+        # BK:DataSet
+        
+        sum_incomeInYear = 0
+        sum_expenseInYear = 0
+        # select
+        BK_Money1_Sum = 0
+        BK_Money2_Sum = 0
+        BK_Money3_Sum = 0
+
+        # Pound
+        if(row["BK_MONEY1"].isdigit()):
+            BK_Money1_Sum = atof(row["BK_MONEY1"])
+        # 1 Pound = 20 Shilling
+        if(row["BK_MONEY2"].isdigit()):
+            BK_Money2_Sum = atof(row["BK_MONEY2"])/20
+        # 1 Pound = 240 Pence
+        if(row["BK_MONEY3"].isdigit()):
+            BK_Money3_Sum = atof(row["BK_MONEY3"])/240
+        # for every found bk:Transaction with a year in bk:when
+        yearRegex = re.compile('([1-3][0-9]{3})') 
+        DataSet = yearRegex.search(row["BK_WHEN"])
+        if(DataSet != None):
+            print(DataSet.group())
+            #DataSets[DataSet.group()] += round(BK_Money1_Sum + BK_Money2_Sum + BK_Money3_Sum)
+            #print(DataSet)
+    else:
+        # Transaction is a bk:Sum
+        Transaction = URIRef(baseURL + PID + "#S" + str(count))
+        Transfer1 = URIRef(baseURL + PID + "#S" + str(count) + "T1")
+        Transfer2 = URIRef(baseURL + PID + "#S" + str(count) + "T2")
+        Measurable_Money1 = URIRef(baseURL + PID + "#S" + str(count) + "M1")
+        Measurable_Money2 = URIRef(baseURL + PID + "#S" + str(count) + "M2")
+        Measurable_Money3 = URIRef(baseURL + PID + "#S" + str(count) + "M3")
+        Commodity = URIRef(baseURL + PID + "#S" + str(count) + "C1")
     
+    
+    #print(DataSets)
     ## Data
     normalizedEntry = " ".join(row['BK_ENTRY'].split())
     normalizedEntry =  normalizedEntry.replace('"',"'")
@@ -134,12 +182,20 @@ for count, row in enumerate(input_file):
     elif (checkKey(row, 'BK_TO')):
         To = URIRef(baseURL + PID + "#Between." + str(row['BK_TO']) )
     else:
-        print("ERROR with bk:to or bk:from")
+        # anonym person uri
+        #print("ERROR with bk:to or bk:from")
+        From = URIRef(baseURL + PID + "#Between.anonym")
+        To = URIRef(baseURL + PID + "#Between.anonym")
     
     #TRANSACTION
-    output_graph.add((Transaction, RDF.type,  BK.Transaction))
-    if(checkKey(row, 'BK_WHEN')):
-        output_graph.add((Transaction, BK.when,  Literal(row['BK_WHEN']) ))
+    if(row['BK_ENTRY'] != '[Total]' ):
+        output_graph.add((Transaction, RDF.type,  BK.Transaction))
+        # only bk:Entry have bk:when
+        if(checkKey(row, 'BK_WHEN')):
+            output_graph.add((Transaction, BK.when,  Literal(row['BK_WHEN']) ))
+    else:
+        output_graph.add((Transaction, RDF.type,  BK.Sum))
+    
     
     #BK.entry
     #normalie whitesapce and " and ,
@@ -171,10 +227,10 @@ for count, row in enumerate(input_file):
     if(debitOrCredit):
         output_graph.add((Transfer1, bk_from, From))
         output_graph.add((Transfer1, BK.to,  To ))
-      #  if(debitOrCredit == "Debit"):
-      #      output_graph.add((Transfer1, bk_from, From))
-      #  elif(debitOrCredit == "Credit"):
-      #      output_graph.add((Transfer1, BK.to,  To ))  
+    #  if(debitOrCredit == "Debit"):
+    #      output_graph.add((Transfer1, bk_from, From))
+    #  elif(debitOrCredit == "Credit"):
+    #      output_graph.add((Transfer1, BK.to,  To ))  
     else:
         output_graph.add((Transfer1, bk_from, From))  
         output_graph.add((Transfer1, BK.to,  To))
@@ -201,7 +257,7 @@ for count, row in enumerate(input_file):
         output_graph.add((Commodity, BK.commodity,  Literal(row['BK_COMMODITY']) ))
         output_graph.add((Commodity, BK.unit, Literal('error: missing Unit') ))
         output_graph.add((Commodity, BK.quantity, Literal(row['QUANTITE1']) ))
-         
+        
     #BETWEEN
     # if a BK_BETWEEN column exists create a distinct set of them
     if(checkKey(row, 'BK_BETWEEN')):
@@ -224,12 +280,27 @@ for count, row in enumerate(input_file):
     output_graph.add((From, RDF.type,  BK.Between))
     if(checkKey(row, 'BK_NAME_FROM')):
         output_graph.add((From, BK.name,  Literal(row['BK_NAME_FROM']) ))
-   
+
     # TO only ID    
     #output_graph.add((To, RDF.type,  BK.Between))
     
     #### free variables
-
+    ##########################
+    '''## bk:Sum
+    else:
+        ### SUM
+        ## URIs
+        Transaction_Sum = URIRef(baseURL + PID + "#S" + str(count))
+        Transfer1_Sum = URIRef(baseURL + PID + "#S" + str(count) + "T1")
+        Transfer2_Sum = URIRef(baseURL + PID + "#S" + str(count) + "T2")
+        Measurable_Money1_Sum = URIRef(baseURL + PID + "#S" + str(count) + "M1")
+        Measurable_Money2_Sum = URIRef(baseURL + PID + "#S" + str(count) + "M2")
+        Measurable_Money3_Sum = URIRef(baseURL + PID + "#S" + str(count) + "M3")
+        Commodity_Sum = URIRef(baseURL + PID + "#S" + str(count) + "C1"
+        print(row['BK_ENTRY'])
+    '''
+   
+  
 ####
 # format="xml" creates plain rdf/XML (rdf:type bk:Entry)
 # format="pretty-xml" ,  abbreviated RDF/XML syntax like bk:Entry
