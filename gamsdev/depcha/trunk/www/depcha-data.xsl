@@ -41,7 +41,7 @@
                 	    <!-- HEADER -->
                 	    <div class="card-header">
                 	        <h1>
-                	            <xsl:text>Data View: </xsl:text>
+                	            <xsl:text>Data View:</xsl:text>
                 	            <strong>
                 	                <xsl:value-of select="concat($BASE_URL, '/', $PID, '/METADATA')"/>
                 	            </strong>
@@ -82,12 +82,14 @@
                 	    <xsl:variable name="Query_URL" select="'/archive/objects/query:depcha.data-context/methods/sdef:Query/get?params='"/>
                 	    
 
-                	    
+                	
                 	    <div id="datatable">
                 	       <script>
                 	           getJsonDATA(<xsl:value-of select="concat('&quot;',$PID,'&quot;')"/>);
                 	       </script>
                 	    </div>
+                	 
+                	    
                 	    
                 	    
 	                    <!--<div id="datatable">

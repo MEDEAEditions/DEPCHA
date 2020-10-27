@@ -7,6 +7,102 @@
 /* 
  * 
 */
+////////////////////////////////////////////////
+//
+function getDatasetDateIncomeExpenses(PID){
+    let Base_URL = "https://glossa.uni-graz.at/archive/objects/query:depcha.dataset-date-income-expenses/methods/sdef:Query/getJSON?params="
+    let Param = encodeURIComponent("$1|<https://gams.uni-graz.at/"+PID+">");
+    let Query_URL = Base_URL + Param;
+       console.log(Query_URL);
+    
+    //fetch JSON-SPARQL-Result
+    fetch(Query_URL, {method: 'get'})
+      // transform the data into json
+      .then(response => response.json())
+      //here you can further process the json (=data)
+      .then(function(data)
+      {
+        console.log(data);
+        
+        const width = 1100;
+        const height = 800;
+        const margin = {'top': 20, 'right': 50, 'bottom': 100, 'left': 50};
+        //const graphWidth = width - margin.left - margin.right;
+        //const graphHeight = height - margin.top - margin.bottom;
+        const graphWidth = width - margin.left - margin.right;
+        const graphHeight = height - margin.top - margin.bottom;
+        
+        
+        // Create the SVG canvas
+        const svg = d3.select('#dataset_stacked_bar_chart')
+          .append('svg')
+          .attr('width', width)
+          .attr('height', height);const graph = svg.append('g')
+          .attr('width', graphWidth)
+          .attr('height', graphHeight)
+          .attr('transform', 'translate(${margin.left}, ${margin.top})');
+          
+          
+        const gXAxis = graph.append('g')
+          .attr('transform', 'translate(0, ${graphHeight})');
+          
+        const gYAxis = graph.append('g')
+
+        const y = d3.scaleLinear()
+          .domain([0, d3.max(data, d => d.income)])
+          .range([graphHeight, 0]);  
+          //.domain([100, d3.max(data, d => d.income)])
+          //.range([graphHeight, 800]);
+        
+        // d3.scaleBand() is for an ordinal scale, like categories
+        const x = d3.scaleBand()
+          .domain(data.map(item => item.date))
+          .range([0, 1000])
+          .paddingInner(0.2)
+          .paddingOuter(0.2);  
+            
+        const rects = graph.selectAll('rect')
+          .data(data);  
+            
+        rects.attr('width', x.bandwidth)
+          .attr('class', 'bar-rect')
+          .attr('height', d => graphHeight - y(d.income))
+          .attr('x', d => x(d.date))
+          .attr('y', d => y(d.income));  rects.enter()
+          .append('rect')
+          .attr('class', 'bar-rect')
+          .attr('width', x.bandwidth)
+          .attr('height', d => graphHeight - y(d.income))
+          .attr('x', d => x(d.date))
+          .attr('y', d => y(d.income));  
+          
+          
+        const xAxis = d3.axisBottom(x);
+
+        const yAxis = d3.axisLeft(y)
+          .ticks(1)
+          .tickFormat(d => '£');  
+
+         
+              
+        gXAxis.call(xAxis);
+        gYAxis.call(yAxis);  
+            
+            
+            //gXAxis.selectAll('text')
+            //  .style('font-size', 14);
+            
+            //gYAxis.selectAll('text')
+            //  .style('font-size', 14);
+      })
+    .catch(function(error) 
+    {
+      console.log('Request failed', error);
+    });    
+    
+}
+
+
 
 ////////////////////////////////////////////////
 //
@@ -90,6 +186,8 @@ function getJsonBuildDataTable(PID){
 			       
                 } );
             } );
+
+            
     })
     .catch(function(error) 
     {
@@ -170,4 +268,19 @@ function selectAllCheckboxes(table)
 {
    let rows = table.querySelectorAll('tbody > tr > td > input')
    rows.forEach(input => input.checked = true);
+}
+
+
+     ////////////////////////////////////////////////
+            ////////////////////////////////////////////////
+            // InfoVis
+function InfoVis()
+{
+                
+    var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
+    console.log(svg);
+            
+            
 }

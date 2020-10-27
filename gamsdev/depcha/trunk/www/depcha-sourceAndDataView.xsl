@@ -53,14 +53,15 @@
                                 responsive: true,
                             </li>
                             <li>autoFill: true</li>
+                            <xsl:value-of select="concat('&quot;',//s:result[1]/s:cid,'&quot;')"/>
                         </ul>
                     </div>
-                    <div class="row">
+                    <!--<div class="row" id="dataset_stacked_bar_chart">
                         <div class="table-responsive">
                             <table class="table" id="data_view_table">
                                 <thead>
                                     <tr>
-                                        <!-- selectAllCheckboxes() with id of table -->
+                                        <!-\- selectAllCheckboxes() with id of table -\->
                                         <th scope="col"><input type="checkbox" name="select_all" value="1" id="example-select-all" onclick="selectAllCheckboxes(data_view_table)"/> ENTRY</th>
                                         <th scope="col">WHEN</th>
                                         <th scope="col">MEARSURMENT</th>
@@ -68,7 +69,7 @@
                                         <th scope="col">TO</th>
                                     </tr>
                                 </thead>
-                                <!--<tbody id="data_view_table">
+                                <!-\-<tbody id="data_view_table">
                                    <tr>
                                        <td rowspan="2">ENTRY</td>
                                        <td rowspan="2">WHEN</td>
@@ -81,13 +82,29 @@
                                        <td>FROM2</td>
                                        <td>TO2</td>   
                                    </tr>
-                                </tbody>-->
+                                </tbody>-\->
                             </table>
                         </div>
-                    </div>
+                    </div>-->
+                    
+                        <div class="row" id="dataset_stacked_bar_chart">
+                            <xsl:text> </xsl:text>
+                        </div>
+                    
+                    <style>
+                        rect.bar-rect { fill: #189ad3; }
+                        rect.bar-rect:hover { 
+                        fill: #107dac;
+                        transition: all .2s;
+                        }
+                    </style>
                     <script>
-                        getJsonBuildDataTable(<xsl:value-of select="concat('&quot;',//s:result[1]/s:cid,'&quot;')"/>);
+                        getDatasetDateIncomeExpenses(<xsl:value-of select="concat('&quot;',//s:result[1]/s:cid,'&quot;')"/>);
                     </script>
+                   
+                    <!--<script>
+                        getJsonBuildDataTable(<xsl:value-of select="concat('&quot;',//s:result[1]/s:cid,'&quot;')"/>);
+                    </script>-->
                 </div>
             </xsl:when>
             <!-- //////// -->

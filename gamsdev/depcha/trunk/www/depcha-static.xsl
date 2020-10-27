@@ -320,7 +320,7 @@
 				})
 			</script>
 			<!-- needed for datatable excel export -->
-			<script src="{concat($gamsdev,'/js/d3.v5.js')}"><xsl:text> </xsl:text></script>
+			<script src="{concat($gamsdev,'/js/d3.v6.js')}"><xsl:text> </xsl:text></script>
 			
 			<script src="{concat($gamsdev, '/js/dataTables.buttons.min.js')}"><xsl:text> </xsl:text></script>
 			<script src="{concat($gamsdev, '/js/buttons.html5.min.js')}"><xsl:text> </xsl:text></script>

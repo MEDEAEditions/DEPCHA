@@ -48,63 +48,21 @@
         <rdf:RDF>
             <xsl:choose>
                 <xsl:when test="$Currrent_TEI_PID">
-                    <!-- COLLECTION rdf:about -->
-                    <!--<xsl:for-each select="//t:teiHeader//*[@type='context']">
-                        <xsl:variable name="MEASURES" select="//t:measure"/>
-                        
-                        <bk:DataSet rdf:about="{concat($BASE-URL, //t:teiHeader//*[@type='context']/@target)}">
-                            <bk:name>
-                                <xsl:value-of select="."/>
-                            </bk:name>
-                            <!-\- sum of all monetary values -\->
-                            <xsl:variable name="Sum">
-                                <xsl:variable name="Dollar" select="sum($MEASURES[@unit='dollars']/@quantity)"/>
-                                <xsl:variable name="Cents" select="sum($MEASURES[@unit='cents']/@quantity) div 100"/>
-                                <xsl:value-of select="number($Dollar) + number($Cents)"/>
-                            </xsl:variable>
-                            <bk:sum><xsl:value-of select="$Sum"/></bk:sum>
-                            <!-\- COMMODITIES -\->
-                            <xsl:for-each-group select="$MEASURES[contains(@ana, 'bk:commodity')]" group-by="@commodity">
-                                <xsl:variable name="Type" select="current-grouping-key()"/>
-                                <xsl:variable name="Count" select="count(current-group())"/>
-                                <xsl:for-each-group select="current-group()" group-by="@unit">
-                                    <bk:distinctCommodity>
-                                        <bk:type><xsl:value-of select="$Type"/></bk:type>
-                                        <bk:unit><xsl:value-of select="current-grouping-key()"/></bk:unit>
-                                        <!-\- summe für die current unit -\->
-                                        <bk:sum><xsl:value-of select="sum(current-group()/@quantity)"/></bk:sum>
-                                        <!-\- wie oft es im dokument genannt wird -\->
-                                        <bk:count><xsl:value-of select="$Count"/></bk:count>
-                                        <bk:maincategory>Commodity</bk:maincategory>
-                                        <xsl:call-template name="fakeCategory">
-                                            <xsl:with-param name="Type" select="$Type"/>
-                                        </xsl:call-template>
-                                    </bk:distinctCommodity>
-                                </xsl:for-each-group>
-                            </xsl:for-each-group>
-                            <!-\- SERVICE -\->
-                            <xsl:for-each-group select="$MEASURES[contains(@ana, 'bk:service')]" group-by="@commodity">
-                                <xsl:variable name="Type" select="current-grouping-key()"/>
-                                <xsl:variable name="Count" select="count(current-group())"/>
-                                <bk:distinctCommodity>
-                                    <type><xsl:value-of select="$Type"/></type>
-                                    <bk:count><xsl:value-of select="$Count"/></bk:count>
-                                    <bk:maincategory>Service</bk:maincategory>
-                                </bk:distinctCommodity>
-                            </xsl:for-each-group>
-                        </bk:DataSet>
-                    </xsl:for-each>-->
-                    
+                    <!-- ////////////////// -->
+                    <!-- create bk:Transaction -->
                     <xsl:apply-templates select="//t:text//*[tokenize(@ana, ' ') = 'bk:entry']"/>
                     
-                    <!-- BETWEEN rdf:about -->
-                    <!--<xsl:choose>
-                        <!-\- if there is a list of person in the TEI -\->
-                        <xsl:when test="//t:listPerson">
-                            
-                            
-                        </xsl:when>
-                    </xsl:choose>-->
+                    <!-- ////////////////// -->
+                    <!-- create bk:Sum -->
+                    <xsl:apply-templates select="//t:text//*[tokenize(@ana, ' ') = 'bk:sum']"/>
+                    
+                    <!-- ////////////////// -->
+                    <!-- create bk:Total -->
+                    <xsl:apply-templates select="//t:text//*[tokenize(@ana, ' ') = 'bk:total']"/>
+                    
+                    
+                    <!-- ////////////////// -->
+                    <!-- create bk:Between -->
                     <xsl:for-each-group select="//.[tokenize(@ana, ' ') = 'bk:to'][not(local-name() ='measure')] | //.[tokenize(@ana, ' ') = 'bk:from'][not(local-name() ='measure')]" group-by=".//@ref | .//@corresp">
 	            	    <xsl:variable name="Between-URI">
 	            	        <xsl:choose>
@@ -241,6 +199,8 @@
     
 
     
+
+    
     <!-- ////////////////////////// -->
 	<!-- bk_Entry -->
     <!-- goes through all Entries in a given TEI. Entries must be defined with @ana='bk:entry'. -->
@@ -316,27 +276,8 @@
             
             <!-- /////////// -->
             <!-- bk:when -->
-                <xsl:choose>
-                    <!-- bk_ in entry -->
-                    <xsl:when test=".//.[@ana = 'bk:when'][1]/@when">
-                        <bk:when>
-                            <xsl:value-of select=".//.[@ana = 'bk:when'][1]/@when"/>
-                        </bk:when>
-                    </xsl:when>
-                    <!-- if a <head> is before containing bk_when -->
-                    <xsl:when test="preceding::t:head[1]//.[tokenize(@ana, ' ') = 'bk:when']/@when">
-                        <bk:when>
-                            <xsl:value-of select="preceding::t:head[1]//.[tokenize(@ana, ' ') = 'bk:when']/@when"/>
-                        </bk:when>
-                    </xsl:when>
-                    <xsl:when test="preceding::t:date[@ana='bk:when'][1]/@when">
-                        <bk:when>
-                            <xsl:value-of select="preceding::t:date[@ana='bk:when'][1]/@when"/>
-                        </bk:when>
-                    </xsl:when>
-                    <xsl:otherwise/>
-                </xsl:choose>
-           
+            <xsl:call-template name="getWhen"/>
+              
            <!-- /////////// -->
            <!-- transactionStatus pp. ; in full -->
              <xsl:for-each select=".//.[tokenize(@ana, ' ') = 'bk:status']">
@@ -829,4 +770,141 @@
         </xsl:choose>
     </xsl:template>
     
+    <!-- ///////////////// -->
+    <!-- get bk:when -->
+    <xsl:template name="getWhen">
+        <xsl:choose>
+            <!-- bk_ in entry -->
+            <xsl:when test=".//.[@ana = 'bk:when'][1]/@when">
+                <bk:when>
+                    <xsl:value-of select=".//.[@ana = 'bk:when'][1]/@when"/>
+                </bk:when>
+            </xsl:when>
+            <!-- if a <head> is before containing bk_when -->
+            <xsl:when test="preceding::t:head[1]//.[tokenize(@ana, ' ') = 'bk:when']/@when">
+                <bk:when>
+                    <xsl:value-of select="preceding::t:head[1]//.[tokenize(@ana, ' ') = 'bk:when']/@when"/>
+                </bk:when>
+            </xsl:when>
+            <xsl:when test="preceding::t:date[@ana='bk:when'][1]/@when">
+                <bk:when>
+                    <xsl:value-of select="preceding::t:date[@ana='bk:when'][1]/@when"/>
+                </bk:when>
+            </xsl:when>
+            <xsl:otherwise/>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- ///////////////// -->
+    <!-- bk:Sum -->
+    <xsl:template match="//t:text//*[tokenize(@ana, ' ') = 'bk:sum']">
+        
+        
+        <!-- /////////// -->
+        <!--  BK:FROM -->
+        <xsl:variable name="bk_From">
+            <xsl:call-template name="getFromTO">
+                <xsl:with-param name="Direction" select="'bk:from'"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <!--  BK:TO @ref -->
+        <xsl:variable name="bk_From_ref">
+            <xsl:call-template name="getFromTO_ref">
+                <xsl:with-param name="Direction" select="'bk:from'"/>
+            </xsl:call-template>
+        </xsl:variable>
+        
+        <!-- /////////// -->
+        <!-- BK:TO -->
+        <xsl:variable name="bk_To">
+            <xsl:call-template name="getFromTO">
+                <xsl:with-param name="Direction" select="'bk:to'"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <!--  BK:TO @ref -->
+        <xsl:variable name="bk_To_ref">
+            <xsl:call-template name="getFromTO_ref">
+                <xsl:with-param name="Direction" select="'bk:to'"/>
+            </xsl:call-template>
+        </xsl:variable>
+        
+        
+        <xsl:variable name="Position" select="count(preceding::node()[tokenize(@ana, ' ') = 'bk:sum'])"/>
+        <xsl:variable name="Sum-ID" select="concat($BASE-URL, $Currrent_TEI_PID, '#S',  $Position)"/>
+        <bk:Sum rdf:about="{$Sum-ID}">
+            <xsl:call-template name="getWhen"/>
+          <!--  <bk:from rdf:resource="{concat($Sum-ID, $Currrent_TEI_PID, .//*[@ana='bk:from']/@ref)}"/>
+            <bk:to rdf:resource="{concat($Sum-ID, $Currrent_TEI_PID, .//*[@ana='bk:zo']/@ref)}"/>-->
+            <bk:from rdf:resource="{concat($BASE-URL, $Currrent_TEI_PID, substring-after($bk_From_ref, '#'))}"/>
+            <bk:to rdf:resource="{concat($BASE-URL, $Currrent_TEI_PID, substring-after($bk_To_ref, '#'))}"/>
+            
+            <xsl:for-each select=".//.[tokenize(@ana, ' ') = 'bk:money']">
+                <bk:consistsOf>
+                    <bk:Money rdf:about="{concat($Sum-ID, 'M', position())}">
+                        <xsl:call-template name="getQuantity"/>
+                        <xsl:call-template name="getUnit"/>
+                    </bk:Money>
+                </bk:consistsOf>
+            </xsl:for-each>
+            
+            <bk:entry><xsl:value-of select="."/></bk:entry>
+        </bk:Sum>
+    </xsl:template>
+    
+    <!-- ///////////////// -->
+    <!-- bk:Total -->
+    <xsl:template match="//t:text//*[tokenize(@ana, ' ') = 'bk:total']">
+        
+        
+        <!-- /////////// -->
+        <!--  BK:FROM -->
+        <xsl:variable name="bk_From">
+            <xsl:call-template name="getFromTO">
+                <xsl:with-param name="Direction" select="'bk:from'"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <!--  BK:TO @ref -->
+        <xsl:variable name="bk_From_ref">
+            <xsl:call-template name="getFromTO_ref">
+                <xsl:with-param name="Direction" select="'bk:from'"/>
+            </xsl:call-template>
+        </xsl:variable>
+        
+        <!-- /////////// -->
+        <!-- BK:TO -->
+        <xsl:variable name="bk_To">
+            <xsl:call-template name="getFromTO">
+                <xsl:with-param name="Direction" select="'bk:to'"/>
+            </xsl:call-template>
+        </xsl:variable>
+        <!--  BK:TO @ref -->
+        <xsl:variable name="bk_To_ref">
+            <xsl:call-template name="getFromTO_ref">
+                <xsl:with-param name="Direction" select="'bk:to'"/>
+            </xsl:call-template>
+        </xsl:variable>
+        
+        
+        
+        <xsl:variable name="Position" select="count(preceding::node()[tokenize(@ana, ' ') = 'bk:sum'])"/>
+        <xsl:variable name="Sum-ID" select="concat($BASE-URL, $Currrent_TEI_PID, '#S',  $Position)"/>
+        <bk:Total rdf:about="{$Sum-ID}">
+            <xsl:call-template name="getWhen"/>
+            <!--  <bk:from rdf:resource="{concat($Sum-ID, $Currrent_TEI_PID, .//*[@ana='bk:from']/@ref)}"/>
+            <bk:to rdf:resource="{concat($Sum-ID, $Currrent_TEI_PID, .//*[@ana='bk:zo']/@ref)}"/>-->
+            <bk:from rdf:resource="{concat($BASE-URL, $Currrent_TEI_PID, substring-after($bk_From_ref, '#'))}"/>
+            <bk:to rdf:resource="{concat($BASE-URL, $Currrent_TEI_PID, substring-after($bk_To_ref, '#'))}"/>
+            
+            <xsl:for-each select=".//.[tokenize(@ana, ' ') = 'bk:money']">
+                <bk:consistsOf>
+                    <bk:Money rdf:about="{concat($Sum-ID, 'M', position())}">
+                        <xsl:call-template name="getQuantity"/>
+                        <xsl:call-template name="getUnit"/>
+                    </bk:Money>
+                </bk:consistsOf>
+            </xsl:for-each>
+            
+            <bk:entry><xsl:value-of select="."/></bk:entry>
+        </bk:Total>
+    </xsl:template>
 </xsl:stylesheet>

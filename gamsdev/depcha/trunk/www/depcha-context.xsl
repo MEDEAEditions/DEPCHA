@@ -166,7 +166,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <xsl:text>aaa</xsl:text>
+                    <xsl:text>aa</xsl:text>
                 </div>
             </xsl:when>
             
@@ -188,7 +188,7 @@
         <!-- PARAM context:depcha.wheaton for querying all data in a context  -->
         <xsl:variable name="Query_URL" select="'/archive/objects/query:depcha.data-context/methods/sdef:Query/get?params='"/>
         
-        <!-- every context:depcha.xy is a dataset; depcha:context is the root context of all of them -->
+        <!-- every context:depcha.xy is a dataset; depcha:context is the root context from all of them -->
         <xsl:variable name="Context" select="document('/context:depcha/METADATA')"/>
       
         <div class="row">
