@@ -15,3 +15,14 @@
     * bk:Expense
   * bk:Transaction with $ and cents (?)
   * mark entries with [Total] as bk:sum, as they have other useage
+
+## Errors found in Data
+
+*  <bk:date>1969</bk:date>
+
+
+
+### GWFP_Ledger_C_1790_1799
+
+* what means this line: 
+  To Amount Brought over
