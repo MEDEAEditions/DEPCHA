@@ -36,15 +36,7 @@ def createDataSet():
             Years[mo.group()] = row_sum
             #if(row["BK_MONEY1"].isdigit()):
             #    sum_incomeInYear += int(row["BK_MONEY1"])
-    '''
-    print(Years)
-    # create a bk:Dataset for every year
-    for year in Years: 
-        DataSet = URIRef(baseURL + PID + "#DataSet" + year)
-        output_graph.add((DataSet, RDF.type,  BK.DataSet))
-        output_graph.add((DataSet, BK.date,  Literal(year) ))
-        output_graph.add((DataSet, BK.incomeInYear,  Literal(sum_incomeInYear) ))
-        output_graph.add((DataSet, BK.expenseInYear,  Literal(sum_expenseInYear) ))
+    ''' 
     
 # check is a key exists in a dict
 def checkKey(dict, key):  
@@ -53,6 +45,19 @@ def checkKey(dict, key):
     else: 
         return False 
 
+########################################################################################
+# input: csv
+# defines an empty dict with years as keys and a nested dict with income (bk:debit) and expense (bk:credit) set 0
+# {'1790': {'income': '0', 'expense':'0'}, '1791': {'income': '0', 'expense':'0'}, ...} 
+def getYearsforDataSet(input_file):
+    for count, row in enumerate(input_file):
+        row = dict(row)
+        yearRegex = re.compile('([1-3][0-9]{3})') 
+        Years = yearRegex.search(row["BK_WHEN"])
+        if(Years != None):
+            DataSets.update( {Years.group(): {'income': '0', 'expense':'0'}} )
+
+########################################################################################
 # creates a bk:Money and add bk:unit and bk:quantity 
 def getMoney(Measurable_Money1, bk_money, bk_unit_config):
     if(row[bk_money] != ""):
@@ -72,7 +77,7 @@ path = "gwfp/"
 
 ########################################################################################
 # load CSV
-with open(path + "csvToRDF_config__Ledger_C.json") as json_config_file:
+with open(path + "csvToRDF_config__Ledger_A.json") as json_config_file:
     config_data = json.load(json_config_file)
 #
 input_file = csv.DictReader(open(path + config_data["FILENAME"], encoding="utf8"))
@@ -95,20 +100,33 @@ bk_from = URIRef("https://gams.uni-graz.at/o:depcha.bookkeeping#from")
 
 ########################################################################################
 
+
+# bk:DataSet
+DataSets = dict()
+getYearsforDataSet(csv.DictReader(open(path + config_data["FILENAME"], encoding="utf8")))
+
+        
 ########################################################################################
 # iteration over all rows in CSV input file
 for count, row in enumerate(input_file):
     
     # convert it from an OrderedDict to a regular dict
     row = dict(row)
-
-    # BK:DataSet
-    DataSets = dict()
-    # bk:To bk:From
-    To = Literal("anonym")
-    From = Literal("anonym")
     
     ### VARIABLES
+    # bk:entry
+    normalizedEntry = " ".join(row['BK_ENTRY'].split())
+    normalizedEntry =  normalizedEntry.replace('"',"'")
+    # bk:debit, bk:credit
+    debitOrCredit = row['BK_DEBIT_CREDIT']
+    # bk:to bk:from
+    To = Literal("anonym")
+    From = Literal("anonym")
+    #
+    BK_Money1_Sum = 0
+    BK_Money2_Sum = 0
+    BK_Money3_Sum = 0
+    
     ## URIs
     if(row['BK_ENTRY'] != '[Total]' and row['BK_ENTRY'] != ''):
         Transaction = URIRef(baseURL + PID + "#T" + str(count))
@@ -126,9 +144,7 @@ for count, row in enumerate(input_file):
         sum_incomeInYear = 0
         sum_expenseInYear = 0
         # select
-        BK_Money1_Sum = 0
-        BK_Money2_Sum = 0
-        BK_Money3_Sum = 0
+        
 
         # Pound
         if(row["BK_MONEY1"].isdigit()):
@@ -141,11 +157,20 @@ for count, row in enumerate(input_file):
             BK_Money3_Sum = atof(row["BK_MONEY3"])/240
         # for every found bk:Transaction with a year in bk:when
         yearRegex = re.compile('([1-3][0-9]{3})') 
-        DataSet = yearRegex.search(row["BK_WHEN"])
-        if(DataSet != None):
-            print(DataSet.group())
-            #DataSets[DataSet.group()] += round(BK_Money1_Sum + BK_Money2_Sum + BK_Money3_Sum)
-            #print(DataSet)
+        Years = yearRegex.search(row["BK_WHEN"])
+        if(Years != None):
+            # sums all bk:Money for every year and stores them in a dict {"year":"sum"}
+            row_sum = BK_Money1_Sum + BK_Money2_Sum + BK_Money3_Sum
+            if(row_sum>0):
+                # shows the calculation for every row
+                #print( debitOrCredit + ": " + str(Years.group()) + ": " + str(BK_Money1_Sum) + "+" + str(BK_Money2_Sum) + "+" + str(BK_Money3_Sum) + " = " +str(BK_Money1_Sum + BK_Money2_Sum + BK_Money3_Sum) )
+                # add current value with existing value in dict;
+                if(debitOrCredit == "Debit"):
+                    DataSets[Years.group()]['income'] = float(DataSets[Years.group()]['income']) + row_sum
+                elif(debitOrCredit == "Credit"):
+                    DataSets[Years.group()]['expense'] = float(DataSets[Years.group()]['expense']) + row_sum  
+                else:
+                    print("Error: no Debit or Credit in BK_DEBIT_CREDIT")
     else:
         # Transaction is a bk:Sum
         Transaction = URIRef(baseURL + PID + "#S" + str(count))
@@ -156,14 +181,6 @@ for count, row in enumerate(input_file):
         Measurable_Money3 = URIRef(baseURL + PID + "#S" + str(count) + "M3")
         Commodity = URIRef(baseURL + PID + "#S" + str(count) + "C1")
     
-    
-    #print(DataSets)
-    ## Data
-    normalizedEntry = " ".join(row['BK_ENTRY'].split())
-    normalizedEntry =  normalizedEntry.replace('"',"'")
-    # debit or credit
-    debitOrCredit = row['BK_DEBIT_CREDIT']
-
     #if a single column exists containing information about debit or credit
     if(debitOrCredit): 
         # debit = Money from X to Washington
@@ -186,6 +203,7 @@ for count, row in enumerate(input_file):
         #print("ERROR with bk:to or bk:from")
         From = URIRef(baseURL + PID + "#Between.anonym")
         To = URIRef(baseURL + PID + "#Between.anonym")
+    
     
     #TRANSACTION
     if(row['BK_ENTRY'] != '[Total]' ):
@@ -301,6 +319,20 @@ for count, row in enumerate(input_file):
     '''
    
   
+
+# create a bk:Dataset for every year
+print(DataSets)
+for year in DataSets:
+    DataSet = URIRef(baseURL + PID + "#DataSet" + year)
+    output_graph.add((DataSet, RDF.type,  BK.DataSet))
+    output_graph.add((DataSet, BK.date,  Literal(year) ))
+    if(float(DataSets[year]['income']) > 0):
+        output_graph.add((DataSet, BK.income,  Literal(round(float(DataSets[year]['income']))) ))
+    if(float(DataSets[year]['expense']) > 0):
+        output_graph.add((DataSet, BK.expense,  Literal(round(float(DataSets[year]['expense']))) ))
+    #output_graph.add((DataSet, BK.sum,  Literal(round(DataSets[year])) ))
+    #print(DataSets[year])
+          
 ####
 # format="xml" creates plain rdf/XML (rdf:type bk:Entry)
 # format="pretty-xml" ,  abbreviated RDF/XML syntax like bk:Entry
