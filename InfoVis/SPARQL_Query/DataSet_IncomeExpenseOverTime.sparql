@@ -1,0 +1,19 @@
+PREFIX bds: <http://www.bigdata.com/rdf/search#>
+PREFIX bk: <https://gams.uni-graz.at/o:depcha.bookkeeping#>
+PREFIX t: <http://www.tei-c.org/ns/1.0/>
+PREFIX gams:<https://gams.uni-graz.at/o:gams-ontology#>
+
+# author:Christopher pollin
+# param: URI of data set = Collection, referenced by gams:isMemberOfCollection
+
+
+SELECT ?dataset ?date ?income ?expens ("$1" as ?context)
+where{
+  
+  ?dataset a bk:DataSet ;
+           gams:isMemberOfCollection $1;
+           bk:date ?date.
+  OPTIONAL{?dataset bk:income ?income}.
+  OPTIONAL{?dataset bk:expense ?expens}.
+           
+}

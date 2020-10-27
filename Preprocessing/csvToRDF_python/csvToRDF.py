@@ -82,7 +82,7 @@ path = "gwfp/"
 
 ########################################################################################
 # load CSV
-with open(path + "csvToRDF_config__Ledger_C.json") as json_config_file:
+with open(path + "csvToRDF_config__Ledger_A.json") as json_config_file:
     config_data = json.load(json_config_file)
 #
 input_file = csv.DictReader(open(path + config_data["FILENAME"], encoding="utf8"))
@@ -317,6 +317,8 @@ for count, row in enumerate(input_file):
 for year in DataSets:
     DataSet = URIRef(baseURL + PID + "#DataSet" + year)
     output_graph.add((DataSet, RDF.type,  BK.DataSet))
+    output_graph.add((DataSet, GAMS.isMemberOfCollection,  URIRef(baseURL + CONTEXT) ))
+    
     output_graph.add((DataSet, BK.date,  Literal(year) ))
     if(float(DataSets[year]['income']) > 0):
         output_graph.add((DataSet, BK.income,  Literal(round(float(DataSets[year]['income']))) ))
