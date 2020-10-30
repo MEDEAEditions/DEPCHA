@@ -8,13 +8,14 @@
   * its an income if in column "BK_DEBIT_CREDIT"  --> Debit
   * its an expense if in column "BK_DEBIT_CREDIT"  -->Credit
   * row exists with no Debit or Credit in BK_DEBIT_CREDIT
-
 * first columns defines the type
   * bk:Transaction
     * bk:Income
     * bk:Expense
   * bk:Transaction with $ and cents (?)
   * mark entries with [Total] as bk:sum, as they have other useage
+* i think its necessary to explicitly say that expense or income is 0 (d3.js, d3.max())
+* normalization of persons is needed like a person-id 
 
 ## Errors found in Data
 

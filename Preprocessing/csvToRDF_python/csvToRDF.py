@@ -18,31 +18,7 @@ Debug_DebitCreditEmptyRow = 0;
 
 ########################################################################################
 # FUNCTIONS
-
-# 
-def createDataSet(): 
-    # define 2 sets
-    Years = dict()
-    yearRegex = re.compile('([1-3][0-9]{3})') 
-    sum_incomeInYear = 0
-    sum_expenseInYear = 0
-    '''
-    #TODO make the same for debit/credit for each distinct year
-    # go through the rows; select BK_WHEN; goes through all entries and add the years (selected via regEx) to a set;
-    for row in input_file:
-        mo = yearRegex.search(row["BK_WHEN"])
-        if(row["BK_MONEY1"].isdigit() and row["BK_MONEY2"].isdigit() and row["BK_MONEY3"].isdigit()):
-            # Englisch:   	1 Pound = 	20 Shillings  = 240 Pence
-            row_sum = float(row["BK_MONEY1"]) + round(float(row["BK_MONEY2"])/20) + round(float(row["BK_MONEY3"])/240)
-        else:
-            print("Error: BK_MONEY is not a digit:1 " + row["BK_MONEY1"] +";2 " + row["BK_MONEY2"] + ";3 " + row["BK_MONEY3"])
-        if(mo != None):
-            #Years.add(mo.group())
-            Years[mo.group()] = row_sum
-            #if(row["BK_MONEY1"].isdigit()):
-            #    sum_incomeInYear += int(row["BK_MONEY1"])
-    ''' 
-    
+   
 # check is a key exists in a dict
 def checkKey(dict, key):  
     if key in dict.keys(): 
@@ -82,7 +58,7 @@ path = "gwfp/"
 
 ########################################################################################
 # load CSV
-with open(path + "csvToRDF_config__Ledger_A.json") as json_config_file:
+with open(path + "csvToRDF_config__Ledger_C.json") as json_config_file:
     config_data = json.load(json_config_file)
 #
 input_file = csv.DictReader(open(path + config_data["FILENAME"], encoding="utf8"))
@@ -319,11 +295,11 @@ for year in DataSets:
     output_graph.add((DataSet, RDF.type,  BK.DataSet))
     output_graph.add((DataSet, GAMS.isMemberOfCollection,  URIRef(baseURL + CONTEXT) ))
     
-    output_graph.add((DataSet, BK.date,  Literal(year) ))
-    if(float(DataSets[year]['income']) > 0):
-        output_graph.add((DataSet, BK.income,  Literal(round(float(DataSets[year]['income']))) ))
-    if(float(DataSets[year]['expense']) > 0):
-        output_graph.add((DataSet, BK.expense,  Literal(round(float(DataSets[year]['expense']))) ))
+    output_graph.add((DataSet, BK.date, Literal(year) ))
+    output_graph.add((DataSet, BK.income, Literal(round(float(DataSets[year]['income']))) ))
+    output_graph.add((DataSet, BK.expense, Literal(round(float(DataSets[year]['expense']))) ))
+    # unit defined in _config
+    output_graph.add((DataSet, BK.unit, Literal(config_data[bk_unit_config]) ))
     #output_graph.add((DataSet, BK.sum,  Literal(round(DataSets[year])) ))
     #print(DataSets[year])
           
