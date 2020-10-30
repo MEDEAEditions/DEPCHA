@@ -1,0 +1,3208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:rem="http://gams.uni-graz.at/rem/bookkeeping/#">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Annata SS. Pietro e Sebastiano 1485</title>
+        <editor>Ciro Romano</editor>
+        <principal>Antonella Ambrosio</principal>
+        <sponsor>Università Federico II, Napoli</sponsor>
+        <respStmt>
+          <resp>Conversion into TEI</resp>
+          <persName>Georg Vogeler</persName>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+        <idno type="PID">o:depcha.ssps1485</idno>
+        <availability>
+          <p>Alpha version, internal use only</p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Napoli, Archivio di Stato, ###</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <classDecl>
+        <taxonomy xml:id="units">
+          <bibl>N.F. Faraglia, Storia dei prezzi in Napoli dal 1131 al 1860, Napoli, 1878, p. 22.</bibl>
+          <category xml:id="unc.">
+            <catDesc ana="rem:conversion">
+              <measure quantity="1" type="rem:monetaryValue" unit="unc.">1 Oncia</measure> = <measure quantity="6" type="rem:monetaryValue" unit="duc.">6 ducati</measure>
+            </catDesc>
+          </category>
+          <category xml:id="duc.">
+            <catDesc ana="rem:conversion">
+              <measure quantity="1" type="rem:monetaryValue" unit="duc.">1 ducato</measure> = <measure quantity="5" type="rem:monetaryValue" unit="t.">5 tarì</measure>
+            </catDesc>
+          </category>
+          <category xml:id="t.">
+            <catDesc ana="rem:conversion">
+              <measure quantity="1" type="rem:monetaryValue" unit="t.">1 tarì</measure> = <measure quantity="20" type="rem:monetaryValue" unit="g.">20 grana</measure>
+            </catDesc>
+          </category>
+          <category xml:id="gr.">
+            <catDesc>
+              <name>grana</name>
+            </catDesc>
+          </category>
+        </taxonomy>
+      </classDecl>
+    </encodingDesc>
+    <revisionDesc>
+      <change>Conversion from ODT to TEI, addition of measurement markup (regex), addition of #bk-analysis (regex and manually) by <persName>Georg Vogeler</persName>, <date>2015-12-23/2016-01-01</date>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <pb n="f. 1r"></pb>
+      <head rend="center">
+        <lb></lb>Iesus Christus.
+               <space dim="vertical" extent="5 lines"></space>
+        <lb></lb>Quaternus continens homnes exitus victui monasterio
+               <lb></lb>Sanctorum Petri e Sebastiani de Neapuli, in <date>anno 
+               <lb></lb>Domini M CCCC LXXX V, III indictione</date>
+        <lb></lb>in tempore hofficii prioratus <persName>sororis Agneti
+               <lb></lb>Turde de Salerno</persName> et cetera</head>
+      <div>
+        <head>
+          <lb></lb>Mensis marcii</head>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>Li die XIIII mensis marcii, III indictione, 1485</date>,
+<lb></lb>lo monasterio have liberato per pesse			<measureGrp ana="#bk_amount">unc. 		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per finuchi, per burracze et per 
+<lb></lb>sparaci								<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XV</date> per carne et per pane de pucza
+<lb></lb>per li infirmi							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XVII mensis marcii, III indictione</date>, lo monasterio<note n="1" place="margin" rend="left">per fra Mariano</note>
+          <lb></lb>have liberato a fra Mariano per le scarpe			<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>	g.	</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVIII</date> per pulli per li infirmi				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per finuchi et per burracze,			<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XVII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXI</date> per finuchi et per burracze  et per sparaci 
+<lb></lb>et per brocculi							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per carne et per pane de pucza per li
+<lb></lb>infirmi								<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXIII mensis marcii, III indictione, 1485</date>, lo monasterio<note n="2" place="margin" rend="left">per hoglo</note>
+
+          <lb></lb>have liberato a notare Salvatore de Vita de la cita 
+<lb></lb>di Tropea per vinti tre sostara de hoglo, comparato da 
+<lb></lb>lo supra dicto notare Salvatore, per preczo de t. 
+<lb></lb>dui lo sostaro, che somma in tucto unc. dua, t. XVI, 
+<lb></lb>pagati per manu de fra Iohanni Marablo et 
+<lb></lb>de fra Mariano, presente Jeronimo de Flore 
+<lb></lb>de Neapoli, dico						<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XVI</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XXV</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <pb n="f. 1v"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Li die XXIIII</date>, per pulli per li infirmi				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date>, per brocculi et per finuchi et per pane de 
+<lb></lb>pucza per li infirmi						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXVI</date>, per pesse et per sparachi et per pane
+<lb></lb>de pucza 							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXVII mensis marcii, III indictione, 1485<note n="3" place="margin" rend="left">per hoglo</note>
+
+          </date>,
+<lb></lb>lo monasterio have liberato a notare Salvatore de 
+<lb></lb>Tropea per finale pagamento de quaranta tre 
+<lb></lb>et mezo sostara de hoglo comparato da
+<lb></lb> lo supra dicto notare Salvatore, pagato
+<lb></lb>per manu de domino Iacobo de Larino, presente
+<lb></lb>notare Marcho Antonio et Cola Sanzaco et 
+<lb></lb>Ambrosio et Iohanni Muscheta 				<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XVIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> lo monasterio have liberato ad uno<note n="4" place="margin" rend="left">per hoglo</note>
+
+          <lb></lb>altro mercante per causa dece secte sustara de hoglo, che have comparato
+<lb></lb>lo monasterio per manu de lo supra dicto domino
+<lb></lb>Iacobo, presenti supra dicti 
+<lb></lb>testimonii dico	  					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>III</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXVIII</date> per pulli et hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per brocculi et finuchi et sparaci			<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> lo monasterio have liberato per<note n="5" place="margin" rend="left">per mendole</note>
+          <lb></lb>LVIIIIa rotula de ammendole, per manu de fra Mariano
+<lb></lb>per persona Iuliano Speciale					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>XVIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius facies est 					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>III</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p>
+          <lb></lb>
+          <measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">
+              <num>V</num> unc.</measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius mensis marcii est				<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">
+              <num>V</num> unc.		</measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XXVIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <pb n="f. 2r"></pb>
+      </div>
+      <div>
+        <head>
+          <lb></lb>Mensis aprilis</head>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>Li die primo mensis aprilis, III  indictione 1485</date>, lo monasterio
+<lb></lb>have liberato per pesse					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>  
+      <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per tunnina et per sparaci et per pane 
+<lb></lb>de pucza et per lactuche					<measureGrp ana="#bk_amount">unc. 		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die II</date> per carne per li infirmi e per li famigli		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die IIII</date> per pulli et per hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die V</date>  per carne per li famigli et per li infirmi		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g.<num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cauli et per lactuche				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pulli et per hova				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cauli et per lactuche et per pane 
+   <lb></lb>de pucza							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g.<num>XIIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die VIIII</date> per carne per li famigli et per 
+<lb></lb>gli infirmi 							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XI</date> per hova						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>III</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XIII</date> per carne per li famigli et per
+<lb></lb>gli infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XV</date> per pulli et per hova et per pane
+<lb></lb>de pucza							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVI</date> per carne per li infirmi et per li 
+<lb></lb>famigli								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>    
+        </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVIII</date> per pulli						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure> 	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>die XVIIII</date> per carne per li famigli et per li infirmi
+<lb></lb>et per pane de pucza  						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius facies est 					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>VIIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <pb n="f. 2v"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XX</date> per carne pr li infirmi et per li famigli		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>I</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXII</date> per pulli et per hova				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXIII</date> per carne per li famigli et per li
+<lb></lb>infirmi								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXV</date> per pulli et per chicoire				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXVI</date> per carne per li famigli et per li infirmi		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXVII</date> per pulli et per hova				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per burracza et per lingua bove 
+<lb></lb>et per chicoire et per camamilla				<measureGrp ana="#bk_amount">unc. 		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XVII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die ultimo</date>  per carne per li famigli et per
+<lb></lb>li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>    
+      </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius facies est 					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>XXIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>I</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius facies mensis aprilis est 			<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>IIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>I</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <pb n="f. 3r"></pb>
+      </div>
+      <div>
+        <head>
+          <lb></lb>Mensis madii</head>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>Li die I mensis madii, III  indictione, 1485</date> lo
+<lb></lb>monasterio have liberato per pulli et hova			<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per burracze et per chicoire per
+<lb></lb>disstillare aqua						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per uno paro de scarpe per le
+<lb></lb>donne								<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die III</date> per carne per li famigli et per li 
+<lb></lb>infirmi et per le masserie					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die IIII</date> per rose indui volte					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pane de pucza					<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die V</date> per carne per li infirmi et per 
+<lb></lb>li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>I</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die VI</date> per hova, per li pulli					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>III</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XIIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die VII</date> per carne per li famigli et per li 
+   <lb></lb>infirmi								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t.  <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die VIIII</date> per hova et per pulli				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per lingua bove et per burracza
+<lb></lb>et per vetronica per distillare 					<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die X</date> per carne per li infirmi et 
+<lb></lb>per li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g.<num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XII</date> per carne per li famigli et per
+<lb></lb>li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius facies est 					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <pb n="f. 3v"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XIII</date> per pulli et per hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XIIII</date> per carne per li infirmi et per li
+<lb></lb>ini famigli 							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per rose						unc.		t.	g. VII
+<lb></lb>
+          <lb></lb>
+          <date>li die XV</date> per cerasa per lo convento et per pane de
+<lb></lb>pucza								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVI</date> per pulli et per hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVII</date> per carne per li famigli et per li
+<lb></lb>infirmi								<measureGrp ana="#bk_amount">unc.  		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per lactuche in dui volte				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XVIII</date> per le scarpe de frate Leone<note n="6" place="margin" rend="left">per frate Leone</note>
+          <lb></lb>et per farle solare						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVIIII</date> per carne per li infirmi et per li
+<lb></lb>famigli								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per lactuche					<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per quactro para de scarpe per le
+<lb></lb>donne								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pane de pucza in piu volte per
+<lb></lb>li infirmi							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XX</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXI</date> per carne per li infirmi et per li
+<lb></lb>famigli								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per lactuche et per chicoire in dui
+<lb></lb>volte								<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius facies est					<measureGrp ana="#bk_amount">unc. 		<measure type="rem:monetaryValue" unit="t.">t. <num>XXV</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVIIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <pb n="f. 4r"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Die XXIII</date> per carne per li famigli et
+   <lb></lb>per li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t.<num>II</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per hova et per pulli				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>III</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXVI</date> per pulli et per hova				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per carne per li infirmi et per li
+<lb></lb>famigli								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per le scarpe di fra Mariano			<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse et per lactuche				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per finuchiii fiuri de lingua
+<lb></lb>bove et de fiuri de buzzacza					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cerasa per lo convento			<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XVIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXVII, mensis madii, III  indictione 1485</date>
+          <note n="7" place="margin" rend="left">per lo zuccaro</note>,
+<lb></lb>lo monasterio have liberato per hoctanta quactro rotula
+<lb></lb>de zuccaro a rajone de ducati XVII lo cantaro che monta
+<lb></lb>intucto 							unc. II		t. XI	g. VIII													
+      <lb></lb>
+          <date>eodem die</date> lo monasterio have liberato per cantara<note n="8" place="margin" rend="left">per lo caso</note>
+
+          <lb></lb>tre de caso cacellese a rajone de t. XII lo cantaro, et cantara VIII de caso 
+<lb></lb>cavallo a rajone de t. XII lo cantaro che monta intucto	<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per hova et per pulli				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXVIII</date> per pulli						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>   
+         <measure type="rem:monetaryValue" unit="g.">g. <num>XVI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per carne per li famigli et per li
+<lb></lb>infirmi								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XIIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="d.">d. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <pb n="f. 4v"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die ultimo</date>  per carne per li famigli et per
+<lb></lb>li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pane de pucza et per taralli et
+<lb></lb>per agresta per li infirmi					<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pulli						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>IIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per scope						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius facies est					<measureGrp>unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VIIII</num>
+            </measure>   d.</measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius mensis madii est				<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XXIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g <num>XI</num>
+            </measure>	    d.</measureGrp>
+        </p>
+      </div>
+      <div>
+        <head>
+          <lb></lb>Mensis iunii</head>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Li die primo, mensis iunii, III  indictione 1485,
+</date>
+          <lb></lb>lo monasterio have liberato per carne per li famigli
+<lb></lb>et per li infirmi						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XIIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>eodem die</date> per cicoire et per pane de 
+<lb></lb>pucza et per amendole et per taralli per 
+<lb></lb>li infirmi							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>en die III</date> per pulli et per hova				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VIII</num>
+            </measure>         
+   <measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per per vasselli de creta per
+<lb></lb>la rota								<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>          
+  </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc. 		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius facies est 					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>X</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XIIII</num>
+            </measure>   d.</measureGrp>
+        </p>
+        <pb n="f. 5r"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die IIII</date> per carne per li famigli et
+<lb></lb>per li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pane de pucza					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per carta de scriviri				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g.	<num>XI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die VI</date> per hova et per pulli					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per lactuche et per fraule				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die VII</date> per rotula dui de pepe				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>IIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per carne per li famigli et per li infirmi		<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per uno paro de scarpe per le donne		<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pane de pucza et per lactuche et per
+<lb></lb>citruli								<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XVIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die VIII</date> per carne per li famigli et per li infirmi		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XIIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> a fra Leone per fare le spese a li metituri 
+<lb></lb>a Sancto Nicandro						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per citruli et per pane de pucza et per
+<lb></lb>pruna								<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die VIIII</date> per hova et per pulli				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VIII</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die X</date> per cocoze et per citruli et per pane de 
+<lb></lb>pucza et per taralli						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XVI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per carne per li famigli e per gli infirmi	
+<lb></lb>et per le massarie						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>III</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XIII</date> per pulli et per hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>in die XIIII</date> per carne per li infirmi et per li famigli		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>eodem die</date> per frate Leone per fare la spesa ali		
+   <lb></lb>metituri  de Sancto Nicandro					<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g.<num>XI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>eodem die</date> a frate Mariano per fare le spese			
+<lb></lb>quando ando a Melito				       		<measureGrp>unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius facies est 					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XIII</num>
+            </measure>	    d.</measureGrp>
+        </p>
+        <pb n="f. 5v"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XVI</date> per carne per li famigli et per gli infirmi 		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pane de pucza per li infirmi			<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVII</date> per pulli et per hova				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XIIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pane de pucza et per lactuche			<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XVIIII</date> per melle per la speciaria			<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>I</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per carne per li famigli et per li infirmi		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XX</date> per pulli et hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>eodem die</date> per cococze per lo convento et per carne		
+<lb></lb>per li famigli et per pane de pucza 				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXI</date> per carne per li famigli e per li
+<lb></lb>infirmi								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXIII</date> per cococze et per pesse et per pane de pucza	<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXIIII</date> per pulli et hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXV</date> a fra Leone per le spese de li metituri 
+<lb></lb>de Sancto Nicandro						<measureGrp ana="#bk_amount">unc.		t. 	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cococze et per fico				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXVI</date> per carne per li infirmi et per famigli		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXVIII</date> a fra Leone per le scarpe et per le<note n="9" place="margin" rend="left">per fra Leone</note>
+          <lb></lb>spese a li metituri  de Sancto Nicandro			<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXVIIII</date> per hova et per pulli				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius facies est 					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XV</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>	d.</measureGrp>
+        </p>
+        <pb n="f. 6r"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die ultimo</date>  per carne per li famigli e per li infirmi		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cocoze per sectare				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>eodem die</date> a fra Leone per fare la spesa alli
+<lb></lb>metituri che haveno metuto a Sancto Nicandro		<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> a fra Mariano per farese le spese 
+<lb></lb>quando anno a Melito						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>	g.	d.</measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius mensis iunii					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>III</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>	d.</measureGrp>
+        </p>
+      </div>
+      <div>
+        <head>
+          <lb></lb>Mensis iulii</head>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>Li die primo, mensis Iulii, III  indictione 1485</date>, lo
+<lb></lb>monasterio have liberato per hovaiii et per pulli 		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die III</date> per carne per li infirmi et per li famigli		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die IIII</date> per pulli et hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cococze et per pane de pucza			<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XIIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die V</date> per carne per li famigli et per li infirmi		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pruna et per pane de pucza			<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est 					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>XX</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="d.">d. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <pb n="f. 6v"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die VI</date> per cococze per lo convento			<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> a fra Mariano per spesa				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>eodem die</date> a fra Leone per fare le spese
+<lb></lb>ali metituri che haveno metuto a Sancto 
+<lb></lb>Nicandro							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per fare solare dui para de 
+<lb></lb>pianelli per le donne						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XIIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die VII</date> per hova et per pulli				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die VIII</date> per pane de pucza et per lingua
+<lb></lb>bove et per lactuche						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die VIIII</date> per carne per li famigli et 
+<lb></lb>per li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per lactuche et per pane
+<lb></lb>de pucza							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die X</date> per carne per li famigli e
+<lb></lb>per li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per tunnina et per taralli
+<lb></lb>et per pignatelli						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XI</date> per pulli et hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cococze					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVI</date> per pane de pucza et per lactuche			<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XVIII</date> per hova et pulli					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cipolle						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXI</date> per carne per li infirmi et per 
+<lb></lb>li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est 					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>IIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VIII</num>
+            </measure>	    d.</measureGrp>
+        </p>
+        <pb n="f. 7r"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Li die XXII</date> per hova et per pulli				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>III</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cococze et per meluni 			<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> a fra Mariano per spesa				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXV</date> per pulli et hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXVII</date> per carne per li infirmi et per
+<lb></lb>li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXVIII</date> per hova et pulli					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>die ultimo per carne per li famigli et
+<lb></lb>per li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est 					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>XXI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVI</num>
+            </measure>	   d.</measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius mensis iulii est 				<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XVI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>	 div	</measureGrp>
+        </p>
+      </div>
+      <div>
+        <head>
+          <lb></lb>Mensis augusti</head>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>Li die primo, mensis augusti, III  indictione 1485</date>, lo
+<lb></lb>monasterio have liberato per hova et per pulli		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>I</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per le scarpe de lo priore				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die II</date> per carne per li famigli et per li infirmi		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die III</date> per le spese de fra Tomasi				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est 					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g.<num>XI</num>
+            </measure>     d.</measureGrp>
+        </p>
+        <pb n="f. 7v"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Li die IIII</date> per carne per li famigli et per li
+<lb></lb>infirmi								<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per meluni et per pesse				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die V</date> per pulli et hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pane de pucza per fare
+<lb></lb>la pitanza a Sancto Dominico					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>	g. </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per meluni						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die VII</date> per carne per li famigli et per
+<lb></lb>li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die VIII</date> per pulli et per hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VIII</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cepulle 					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die VIIII</date> per meluni						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die X</date> per insalata et per pane de pucza			<measureGrp ana="#bk_amount">unc.		t. 	<measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XI</date> per carne per li infirmi et per li famigli		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XII</date> per pulli et hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse et per meluni				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die X</date> per insalata et per pane de pucza			<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XI</date> per carne per li infirmi et per
+<lb></lb>li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XII</date> per pulla et hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse et per meluni				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>eodem die</date> a fra Tomasi per fare se le
+<lb></lb>spese per ipso et per li vindignaturi de
+<lb></lb>Sancto Nicandro						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XIII</date> a fra Mariano per li<note n="10" place="margin" rend="left">per fra Mariano</note>
+          <lb></lb>scarpe soye							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XVII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est 					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure> 		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XIIII</num>
+            </measure>   d.</measureGrp>
+        </p>
+        <pb n="f. 8r"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Li die XIIII</date> per pesse et per pane de 
+<lb></lb>pucza et per taralli						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per meluni						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XV</date> per hova et pulli					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVIII</date> per carne per li famigli et 
+<lb></lb>per li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVIIII</date> per hova et pulli					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per tre corune de agli
+<lb></lb>et una mesura de semente de rape				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XX</date> per fra Tomasi per le spese
+<lb></lb>de li vindignaturi 						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXI</date> per carne per li infirmi et
+<lb></lb>per li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XII</date> lo monasterio have liberato per
+<lb></lb>cassa incannelli						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VIII</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XIII</date> per pulli et hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse et per pane de pucza			<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXIIII</date> per carne per li infirmi
+<lb></lb>et per li famigli						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per lactuche et per pane 
+<lb></lb>de pucza							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXV</date> per pulli et hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>I</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pane de pucza					<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per uno paro de scarpe
+<lb></lb>per le donne							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius facies est 					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>	d.</measureGrp>
+        </p>
+        <pb n="f. 8v"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Li die XVI, mensis augusti, III  indictione</date>
+          <note n="11" place="margin" rend="left">per zuccaro</note>, lo
+<lb></lb>lo monasterio have liberato alo mercante per 
+<lb></lb>dua cassa de zuccaro						<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per carne per li famigli et
+<lb></lb>per li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pane de pucza et per
+<lb></lb>insalata							unc.		t.	g. IIII
+<lb></lb>
+          <lb></lb>die XVII per pesse per lo convento				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XVIII</date> per pulli et per hova				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per una duzana de correge			<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>III</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVIIII</date> per carne per li infirmi
+<lb></lb>et per li famigli						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XX</date> per cauli et per cicoire et per 
+<lb></lb>pane de pucza							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXV</date> per cantari per li infirmi				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pane et per fusa				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>die ultime per carne per li infirmi
+<lb></lb>et per famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius facies est 					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>II</num>
+            </measure>		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XVIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="d.">d. <num>III</num>           
+ </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius mensis augusti est				<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>IIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XXII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XIIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="d.">d. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+      </div>
+      <div>
+        <pb n="f. 11r"></pb>
+        <fw>v</fw>
+        <head>
+          <lb></lb>Iesus Cristus
+<lb></lb>Quaternus continens homnes exitus victui monasterio
+<lb></lb>Sanctorum Petri et Sebastiani de Neapuli,
+<lb></lb>in anno Domini M  CCCCLXXXV , IIII  indictione,
+   <lb></lb>in tempore<metamark></metamark>
+          <note n="12" place="margin" rend="left">hofficii</note> prioratus sororis Agneti Turde de Salerno et cetera</head>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>Li die primo, mensis septembris, IIII  Indictione 1485</date>,
+<lb></lb>lo monasterio have liberato per carne per li infirmi et per li
+<lb></lb>famigli								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per vaselli de creta et per fusa 			<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die II</date> per pulli et per hova per convento			<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse per lo convento et per pane
+<lb></lb>de pucza							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die III</date> per carne per li infirmi et per li
+<lb></lb>famigli et per pane de pucza					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cipolle per lo convento			<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die IIII</date> per hova et per pulli				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem diem</date> a fra Tomasi per le scarpe<note n="13" place="margin" rend="left">per fra Tomasi</note>
+          <measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die V</date> per carne per li famigli et per li
+<lb></lb>infirmi								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>III</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per insalata inpiu volte				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die VII</date> per hova et per pulli					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>		t. 	<measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>	d.</measureGrp>
+        </p>
+        <pb n="f. 11v"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die VIII</date> per pullastre grasse per fare hova			<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>XIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per sapone et per pane de pucza per
+<lb></lb>li infirmi							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die VIIII</date> per carne per li infirmi
+<lb></lb>et per li famigli						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die X</date> per pullastrevi grasse per fare
+<lb></lb>hova et per hova per lo convento				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>XI</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per uno paro de scarpe				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XI</date> per carne per li infirmi 
+<lb></lb>et per li famigli						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XII</date> a fravii Tomasi per fare
+<lb></lb>la spesa ali vindignaturi 					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> a fra Simone per fare
+<lb></lb>solare le scarpe						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per uno paro de zucculi				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XIII</date> per pulli et hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse et per cicoire				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="h.">h. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XV</date> per pulli per fare hova				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>III</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per carne per li infirmi 
+<lb></lb>ed per li famigli						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>I</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pane de pucza et per
+<lb></lb>cicoira								<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVII</date> per pulli et hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>III</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est 					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XIIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>	d.</measureGrp>
+        </p>
+        <pb n="f. 12r"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Li die XVIII</date> per candele de sivo et per cicoire
+<lb></lb>et per pesse per lo convento					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVIIII</date> per carne per li infirmi 
+<lb></lb>et per li famigli						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XX mensis septembris IIII  indictione 1485</date>
+          <note n="14" place="margin" rend="left">per manna</note>
+          <lb></lb>lo monasterio have liberato per manna de 
+<lb></lb>Calabria fina							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>XIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> lo monasterio have liberato per 
+  <lb></lb>uno rotulo de pepe<note n="15" place="margin" rend="left">per pepe</note>
+          <measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per spesa a fra Tomasi 
+<lb></lb>che stava a Sancto Nicandro					<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXI</date> per carne per li famigli et per li
+<lb></lb>infirmi								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>        
+</p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pane de pucza et per insalata			<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> a fra Leone per le scarpe<note n="16" place="margin" rend="left">per fra Leone</note>
+          <measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XVII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXII</date> per semente de rape per semminare		<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse et per cauli et per cicoire		<measureGrp ana="#bk_amount">unc.	<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXIII mensis Septembris IIII   indictione 1485</date>
+          <note n="17" place="margin" rend="left">per manna</note>
+          <lb></lb>lo monasterio have liberato per manna 
+<lb></lb>de Calabria fina						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>XXVI</num>
+            </measure>g.</measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est 					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XXIIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVIIII</num>
+            </measure>     d. </measureGrp>
+        </p>
+        <pb n="f. 12v"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Li die XXIIII</date> per pulli et per hova per lo convento		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cauli per cicoire et per pane
+<lb></lb>de pucza							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VII</num> 
+           </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXVIII</date> per carne per li infirmi et 
+<lb></lb>per li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>die ultimo per pulli et per hova				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est 					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>XVI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>	    d.</measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius mensis septembris				<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>IIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XXV</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>	    d.</measureGrp>
+        </p>
+      </div>
+      <div>
+        <head>
+          <lb></lb>Mensis octubris</head>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>Li die II, mensis octubris, IIII  Indictione 1485</date>,
+<lb></lb>lo monasterio have liberato per pulli et per hova		<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cauli et per cicoire				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die III</date> per carne per li infirmi et per
+<lb></lb>li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per insalata et per pane
+<lb></lb>de pucza							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per solatura de due paro
+<lb></lb>de pianelli							<measureGrp>unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est					<measureGrp ana="#bk_amount">unc. 		<measure type="rem:monetaryValue" unit="t.">t. <num>VIIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>I</num>
+            </measure>          d.</measureGrp>
+        </p>
+        <pb n="f. 13r"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Die V</date> per pulli et per hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per carne per li infirmi et per li
+<lb></lb>famigli								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die VI</date> per pulli per li infirmi					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>III</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per lo procuratore et per le
+<lb></lb>spese de li vindignaturi					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>I</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die VII</date> per pulli et per hova				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per tre para de scarpe
+<lb></lb>per le donne							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cauli et per insalata 				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die VIII</date> per pulli et per hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>IIII</num>
+            </measure>	g.	</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die X</date> per carne per li famigli et
+<lb></lb>per li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse per lo convento				 <measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XI</date> per carne per li infirmi 
+<lb></lb>et per li famigli						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>eodem die</date> per farina de pane de
+<lb></lb>pucza per fare le hostie et per 
+<lb></lb>cicoire								<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XII</date> per carne per li infirmi
+<lb></lb>et per li famigli						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XIII</date> per pulli et per hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est 					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="d.">d. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <pb n="f. 13v"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Li die XIIII</date> per pesse per lo convento			<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XIII</num>
+            </measure>    
+      </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XV</date> per carne per li infirmi et per
+<lb></lb>li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per hova et per pullastri				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XIIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVII</date> per carne per li infirmi et per
+<lb></lb>li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per tre para de scarpe le
+<lb></lb>le donne							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per hova fresche per li infirmi
+<lb></lb>et per pane de pucza et per cauli				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XVIII</date> per carne per li infirmi et 
+<lb></lb>per li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per hova et per pullastri				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>eodem die</date> per hova fresche et per pane 
+<lb></lb>de pucza per li infirmi et per cauli et
+   <lb></lb>per insalata per lo convento					<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g.<num>VIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVIIII</date> per carne per li infirmi et
+<lb></lb>per li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cicoire per lo convento			<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XX</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc. 		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>      
+  <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per carne per li infirmi et
+<lb></lb>per li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est 					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>XXI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="d.">d. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <pb n="f. 14r"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Li die XXI</date> per pulli et per hova				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXII mensis octubris IIII  indictione 1485</date>
+          <note n="18" place="margin" rend="left">per amendole</note>
+
+          <lb></lb>lo monasterio have liberato per uno cantaro et rotula
+      <lb></lb>deice de amendole brusine					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc.	<num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per carne per li famigli et per
+<lb></lb>li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pulli et per hova				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>	g.		</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXIII</date> per carne per li famigli et per
+<lb></lb>li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXV</date> per hova et per pulli				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cauli et per burracze et per
+<lb></lb>pane de pucza							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die ultimo</date>  per carne per li famigli et
+<lb></lb>per li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>          
+</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per burracza et per cauli et per
+<lb></lb>pane de pucza							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est  					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XXV</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>   d.</measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huis mensis octubris	 				<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>IIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>	d.</measureGrp>
+        </p>
+        <pb n="f. 14v"></pb>
+      </div>
+      <div>
+        <head>
+          <lb></lb>Mensis novembris</head>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>li die primo, mensis novembris, IIII  indictione 1486</date>, lo
+<lb></lb>monasterio have liberato per carne per li famigli et 
+<lb></lb>per li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per inzalata et per cauli et per
+<lb></lb>burracza							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die II</date> per pulli et per hova					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>IIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per carne per li famigli et
+<lb></lb>per li infirmi							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die III</date> per hova et per pullastri				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>IIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die IIII</date> per pullastre grasse per fare
+<lb></lb>hova per lo convento						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die V</date> per uno paro de scarpe per le
+<lb></lb>donne								<measureGrp ana="#bk_amount">unc. 		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die VI</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die VII</date> per hova et per pulli					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>III</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per a fra Mariano per scarpe			<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>	g.	</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die VIII</date> per carne per famigli et
+<lb></lb>per li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huis faciei est 					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>XXV</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="d.">d.<num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <pb n="f. 15r"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Li die VIIII</date> per cauli et burracze et per
+<lb></lb>pane de pucza per li infirmi					<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>die X	per hova et per pulastri				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>IIII</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cauli et per burracze et 
+<lb></lb>per chicoire							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XIII</date> per pullastre grosse per fare
+<lb></lb>hova								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>IIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVI</date> per hova et per pullastri per
+<lb></lb>li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cauli et per chicoire				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XVIII</date> per hova per lo convento			<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>I</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVIIII</date> per cauli et per burracza
+<lb></lb>et per spinaci							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XX</date> per hova et per pullastri etviii			<measureGrp ana="#bk_amount">unc. 		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cauli et per chicoire et
+<lb></lb>per pane de pucza						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXI</date> per hova et per pulli					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>V</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>V</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cauli et per chicoire 				<measureGrp ana="#bk_amount">unc.		t. 	<measure type="rem:monetaryValue" unit="g.">g. <num>VI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXVI</date> per carne per li infirmi et
+<lb></lb>per li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVIIII</date> per assogna fracida				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est 					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>	    d.</measureGrp>
+        </p>
+        <pb n="f. 15v"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Li die XXX</date> per galline per fare hova
+<lb></lb>per lo convento						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>die ultimo per carne per li famigli et
+<lb></lb>per li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>eodem die</date> per cauli et burracza et per
+<lb></lb>spinaci e funuchi et per pane de 
+<lb></lb>pucza								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est 					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>XI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>	d.</measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius mensis novembris				<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="d.">d. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+      </div>
+      <div>
+        <head>
+          <lb></lb>Mensis decembris</head>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>Li die primo, mensis decembris,  IIII 
+<lb></lb>indictione 1486</date>, lo monasterio have 
+<lb></lb>liberato per carne per li famigli et per
+<lb></lb>li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die III</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XVI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die IIII</date> per carne per li famigli et per 
+<lb></lb>li infirmi							<measureGrp ana="#bk_amount">unc. 		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cauli et per chicoire				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>III</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die V</date> per hova et per pulli					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>IIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die VI</date> per carne per li famigli et
+<lb></lb>per li infirmi							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est 					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VIIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVI</num>
+            </measure>	    d.</measureGrp>
+        </p>
+        <pb n="f. 16r"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Li die VII</date> per pesse per lo convento				<measureGrp ana="#bk_amount">unc. 		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per hova et per pulli				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>III</num>           
+ </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XI</date> per pastenache et per insalata
+<lb></lb>et per pane de pucza						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XII</date> per carne per li infirmi et per
+<lb></lb>li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per burracza et cauli et 
+<lb></lb>chicoire et per pane de pucza					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XIIII</date> per hova et per pulli				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XVII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XVII</date> per carne per li infirmi et per 
+<lb></lb>li famigli							<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>IIII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> a Donato per fare le spese
+<lb></lb>a Sancto Nicandro 						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XVIIII</date> per carne per li famigli
+<lb></lb>et per li infirmi						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>I</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per hova et per pulli				<measureGrp ana="#bk_amount">unc. 		<measure type="rem:monetaryValue" unit="t.">t. <num>IIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXI</date> per burracza et per pastenache 			<measureGrp ana="#bk_amount">unc.		t. 	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per galline per fare hova
+<lb></lb>per lo convento						<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>III</num>
+            </measure>	g.	</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+
+          <date>die XXXIII</date> per una duzana de pelle
+<lb></lb>biancha per fare inforra de li 
+<lb></lb>pianelli de le donne						<measureGrp ana="#bk_amount">unc. 		<measure type="rem:monetaryValue" unit="t.">t. <num>III</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciei est					<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>XXVIIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>	d.</measureGrp>
+        </p>
+        <pb n="f. 16v"></pb>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>Li die XXVIII</date> per carne per li infirmi
+<lb></lb>et per li famigli						<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die XXVIIII</date> per hova et per pulli				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VI</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XI</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per uno paro de pianelli
+<lb></lb>per le donne							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>die XXX</date> per carne per li famigli et per li 
+<lb></lb>infirmi								<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per sarde salate et per
+<lb></lb>tunnina							<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>XV</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pulli et per hova				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VIII</num>
+            </measure>    
+        <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per lo porco per li famigli				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>li die ultimo</date>  per hova et per pulli				<measureGrp ana="#bk_amount">unc.		<measure type="rem:monetaryValue" unit="t.">t. <num>VII</num>
+            </measure>	g.</measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per cauli et per chicoire				<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>X</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_entry">
+          <lb></lb>
+          <date>eodem die</date> per pane de pucza et per
+<lb></lb>scarole								<measureGrp ana="#bk_amount">unc.		t.	<measure type="rem:monetaryValue" unit="g.">g. <num>VII</num>
+            </measure>
+          </measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius faciesi est 					<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>I</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>IIII</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="g.">g. <num>II</num>
+            </measure>	d.</measureGrp>
+        </p>
+        <p ana="#bk_total">
+          <lb></lb>summa huius mensis decembris 				<measureGrp ana="#bk_amount">
+            <measure type="rem:monetaryValue" unit="unc.">unc. <num>II</num>
+            </measure>
+            <measure type="rem:monetaryValue" unit="t.">t. <num>XIII</num>
+            </measure>	g.	d.</measureGrp>
+        </p>
+      </div>
+    </body>
+  </text>
+</TEI>
