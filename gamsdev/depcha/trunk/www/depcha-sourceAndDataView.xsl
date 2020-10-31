@@ -87,19 +87,47 @@
                         </div>
                     </div>-->
                     
-                        <div class="row" id="dataset_stacked_bar_chart">
-                            <xsl:text> </xsl:text>
-                        </div>
+                    
+                    <div class="row">
+                        <h3>Debit</h3>
+                        <svg id="income"><xsl:text> </xsl:text></svg>
+                    </div>
+                    <div class="row" >
+                        <h3>Credit</h3>
+                        <svg id="expens"><xsl:text> </xsl:text></svg>
+                    </div>
                     
                     <style>
-                        rect.bar-rect { fill: #189ad3; }
+ 
+                        rect.bar-rect { fill: steelblue; }
+                        
+                       
                         rect.bar-rect:hover { 
-                        fill: #107dac;
-                        transition: all .2s;
+                            fill: #349dc9;
+                            transition: all .2s;
+                        }
+                        
+                        text{
+                            font-size: 1.2em;
+                            fill: #635F5D;
+                            
+                        }
+                        
+                        .tick line {
+                            stroke: #C0C0BB;
+                            stroke-opacity:0.75;
+                            stroke-dasharray:2,2,2;
                         }
                     </style>
+                    
+                    
+                    <!-- getBarChart_Date_Value(query_pid, pid, value_type) -->
                     <script>
-                        getDatasetDateIncomeExpenses(<xsl:value-of select="concat('&quot;',//s:result[1]/s:cid,'&quot;')"/>);
+                        getBarChart_Date_Value('query:depcha.dataset-date-income-expenses', <xsl:value-of select="concat('&quot;',//s:result[1]/s:cid,'&quot;')"/>, 'expens');
+                    </script>
+                    
+                    <script>
+                        getBarChart_Date_Value('query:depcha.dataset-date-income-expenses', <xsl:value-of select="concat('&quot;',//s:result[1]/s:cid,'&quot;')"/>, 'income');
                     </script>
                    
                     <!--<script>

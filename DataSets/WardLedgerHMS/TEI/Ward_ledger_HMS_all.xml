@@ -120,6 +120,25 @@
                                     <p><ref target="https://www.wikidata.org/wiki/Help:Namespaces"></ref></p>
                             </prefixDef>
                     </listPrefixDef>
+                    <unitDecl ana="bk:Taxonomy">
+                            <unitDef type="currency" xml:id="pound" ana="bk:unit">
+                                 <label xml:lang="eng">pound</label>
+                                 <country>UK</country>
+                                 <unit>£</unit>
+                                 <conversion fromUnit="#shilling" toUnit="#pound" formula="$fromUnit div 20"/>
+                                 <conversion fromUnit="#pence" toUnit="#pound" formula="$fromUnit div 240"/>
+                         </unitDef>
+                         <unitDef type="currency" xml:id="shilling">
+                                 <label xml:lang="eng">shilling</label>
+                                 <country>UK</country>
+                                 <unit>sh</unit>
+                         </unitDef>
+                            <unitDef type="currency" xml:id="pence">
+                                    <label xml:lang="eng">pence</label>
+                                    <country>UK</country>
+                                    <unit>p</unit>
+                            </unitDef>
+                    </unitDecl>
                   <classDecl>
                         <taxonomy ana="bk:Taxonomy">
                                 <gloss>Ships</gloss>

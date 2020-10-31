@@ -147,7 +147,7 @@
 				<script src="{concat($gamsdev,'/js/scrolldown.js')}"><xsl:text> </xsl:text></script>
 				<script src="/backbone/js/buildquery.js" type="application/javascript"><xsl:text> </xsl:text></script>
 				<!-- https://d3js.org/ -->
-				<script src="{concat($gamsdev,'/js/d3.v5.js')}"><xsl:text> </xsl:text></script>
+				<script src="{concat($gamsdev,'/js/d3.v6.js')}"><xsl:text> </xsl:text></script>
 				<!-- TODO source code highlighter -->
 				<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"><xsl:text> </xsl:text></script>
 				
@@ -161,11 +161,15 @@
 			</head>
 
 			<!-- datatables.js -->
-			<script  charset="utf8" src="{concat($gamsdev,'/js/datatable_1.10.21.js')}"><xsl:text> </xsl:text></script>
+			<script src="{concat($gamsdev,'/js/datatable_1.10.21.js')}"><xsl:text> </xsl:text></script>
 			<!-- databasket -->
 			<script  src="{concat($gamsdev,'/js/databasket.js')}"><xsl:text> </xsl:text></script>
 			<!-- dataview -->
-			<script  charset="utf8" src="{concat($gamsdev,'/js/dataView.js')}"><xsl:text> </xsl:text></script>
+			<script src="{concat($gamsdev,'/js/dataView.js')}"><xsl:text> </xsl:text></script>
+			<!--  -->
+			<script src="{concat($gamsdev,'/js/gamsInfoVis.js')}"><xsl:text> </xsl:text></script>
+			<!--  -->
+			<script src="{concat($gamsdev,'/js/d3.v6.js')}"><xsl:text> </xsl:text></script>
 			
 			<!-- fancybox -->
 			<!--<script  src="/lib/1.0/plugins/fancybox_v2.1.5/source/jquery.fancybox.js?v=2.1.5"><xsl:text> </xsl:text></script>-->
@@ -319,12 +323,14 @@
 				$('[data-toggle="tooltip"]').tooltip()
 				})
 			</script>
+			
 			<!-- needed for datatable excel export -->
-			<script src="{concat($gamsdev,'/js/d3.v6.js')}"><xsl:text> </xsl:text></script>
+			
 			
 			<script src="{concat($gamsdev, '/js/dataTables.buttons.min.js')}"><xsl:text> </xsl:text></script>
 			<script src="{concat($gamsdev, '/js/buttons.html5.min.js')}"><xsl:text> </xsl:text></script>
 			<script src="{concat($gamsdev, '/js/jszip.js')}"><xsl:text> </xsl:text></script>
+			
 		</html>
 	</xsl:template>
 	

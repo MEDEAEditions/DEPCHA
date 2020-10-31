@@ -11,6 +11,10 @@
     xmlns:foaf="http://xmlns.com/foaf/spec/">
     <xsl:strip-space elements="*"/>
     
+    
+    <!-- XPath -->
+    <!-- select all bk:money from a specific bk:when/year -->
+    <!-- //*[@ana='bk:entry'][.//date[@ana='bk:when'][year-from-date(@when)=1934]]//*[tokenize(@ana, ' ') = 'bk:money'] -->
 
     <!--<xsl:include href="https://gams.uni-graz.at/gamsdev/pollin/depcha/trunk/www/depcha-templates.xsl"/>-->
     <!-- VARIABLES -->   
@@ -48,6 +52,11 @@
         <rdf:RDF>
             <xsl:choose>
                 <xsl:when test="$Currrent_TEI_PID">
+                    
+                    <!-- ////////////////// -->
+                    <!-- Create bk:DataSet with bk:date, bk:income, bk:expens, bk:unit -->
+                    <xsl:call-template name="createDataSet"/>
+                  
                     <!-- ////////////////// -->
                     <!-- create bk:Transaction -->
                     <xsl:apply-templates select="//t:text//*[tokenize(@ana, ' ') = 'bk:entry']"/>
@@ -105,7 +114,7 @@
                                                             <xsl:value-of select="$TEIHeader//t:taxonomy//*[@xml:id = substring-after(current-grouping-key(), '#')]"/>
                                                         </xsl:when>
                                                         <xsl:otherwise>
-                                                            <xsl:comment>@ref failed to find person in taxonomy</xsl:comment>
+                                                            <xsl:value-of select="."/>
                                                         </xsl:otherwise>
                                                     </xsl:choose>
                                                 </xsl:when>
@@ -117,7 +126,6 @@
                                     </xsl:for-each-group>
                                 </xsl:otherwise>
                             </xsl:choose>
-                            
 				    	</bk:Between>
 	            	</xsl:for-each-group>
                     
@@ -541,7 +549,7 @@
          </xsl:for-each-group>
         </xsl:if>
     </xsl:template>
-    
+
     <!-- ////////////////////////////////////////////////////////////////////// -->
     <!-- MAP listPerson to FOAF -->
     <xsl:template name="maplistPersontoFOAF">
@@ -553,7 +561,22 @@
         <bk:name>
             <xsl:choose>
                 <xsl:when test="$Person/t:persName">
-                    <xsl:apply-templates select="$Person/t:persName/t:surename"/><xsl:text>, </xsl:text><xsl:apply-templates select="$Person/t:persName/t:forename"/>
+                    <xsl:choose>
+                        <xsl:when test="$Person/t:persName/t:name">
+                            <xsl:apply-templates select="$Person/t:persName/t:name"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:if test="$Person/t:persName/t:surname">
+                                <xsl:apply-templates select="$Person/t:persName/t:surname"/><xsl:text>, </xsl:text>
+                            </xsl:if>
+                            <xsl:for-each select="$Person/t:persName/t:forename">
+                                <xsl:value-of select="."/>
+                                <xsl:if test="not(position()=last())">
+                                    <xsl:text> </xsl:text>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </xsl:when>
                 <xsl:when test="$Person/t:name">
                     <xsl:apply-templates select="$Person/t:name"/>
@@ -562,11 +585,27 @@
                     <xsl:comment>Error in called Template 'maplistPersontoFOAF' not t:persName or t:name</xsl:comment>
                 </xsl:otherwise>
             </xsl:choose>
-          
         </bk:name>
         <!--  -->
         <xsl:if test="$Person/t:persName/t:forename">
-            <foaf:familyName><xsl:apply-templates select="$Person/t:persName/t:forename"/></foaf:familyName>
+            <foaf:firstName>
+                <xsl:for-each select="$Person/t:persName/t:forename">
+                    <xsl:value-of select="."/>
+                    <xsl:if test="not(position()=last())">
+                        <xsl:text> </xsl:text>
+                    </xsl:if>
+                </xsl:for-each>
+            </foaf:firstName>
+        </xsl:if>
+        <xsl:if test="$Person/t:persName/t:surname">
+            <foaf:familyName>
+                <xsl:for-each select="$Person/t:persName/t:surname">
+                    <xsl:value-of select="."/>
+                    <xsl:if test="not(position()=last())">
+                        <xsl:text> </xsl:text>
+                    </xsl:if>
+                </xsl:for-each>
+            </foaf:familyName>
         </xsl:if>
         <!-- ToDO -->
         <xsl:if test="$Person/t:persName/t:nameLink">
@@ -791,7 +830,9 @@
                     <xsl:value-of select="preceding::t:date[@ana='bk:when'][1]/@when"/>
                 </bk:when>
             </xsl:when>
-            <xsl:otherwise/>
+            <xsl:otherwise>
+                <xsl:comment>Error in called tempalte getWhen</xsl:comment>
+            </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
     
@@ -907,4 +948,70 @@
             <bk:entry><xsl:value-of select="."/></bk:entry>
         </bk:Total>
     </xsl:template>
+    
+    
+    <!-- //////////////////////////////////// -->
+    <!-- 
+     // this template creates a bk:Dataset. it creats a bk:Dataset for all distinct years in bk:when from all bk:entry. 
+     // it uses the information in <t:unitDef> to do the conversion of currencies and calucaltes the sum of bk:income and bk:expense
+    -->
+    <xsl:template name="createDataSet">
+        <xsl:variable name="bk_when" select="//.[tokenize(@ana, ' ') = 'bk:when']/year-from-date(@when)"/>
+        <xsl:variable name="all_bk_money" select="//*[tokenize(@ana, ' ') = 'bk:money']"/>
+        <xsl:variable name="mainCurrency" select="//t:unitDef[@ana ='bk:unit']"/>
+        <xsl:variable name="sum_bk_money" select="sum(//*[tokenize(@ana, ' ') = 'bk:money'][@unit = $mainCurrency/t:label]/@quantity)"/>
+        <xsl:choose>
+            <xsl:when test="//.[tokenize(@ana, ' ') = 'bk:when']/@when">
+                <xsl:variable name="allEntries" select="//t:text//*[tokenize(@ana, ' ') = 'bk:entry']"/>
+                <xsl:for-each-group select="//.[tokenize(@ana, ' ') = 'bk:when']" group-by="year-from-date(@when)">
+                    <xsl:variable name="year" select="current-grouping-key()"/>
+                    <bk:DataSet rdf:about="{concat('https://gams.uni-graz.at/', $Currrent_TEI_PID, '#', current-grouping-key())}">
+                        <bk:date>
+                            <xsl:value-of select="$year"/>
+                        </bk:date>
+                        <gams:isMemberOfCollection rdf:resource="{concat('https://gams.uni-graz.at/', $Currrent_Context)}"/>
+                        <bk:income rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">
+                            <!-- variable of <money> elements containing @quantity from bk:money -->
+                            <xsl:variable name="allMoneyofEntriesofCurrentYear">
+                                <xsl:for-each select="$allEntries">
+                                    <xsl:variable name="bk_when">
+                                        <xsl:call-template name="getWhen"/>
+                                    </xsl:variable>
+                                    <xsl:if test="year-from-date($bk_when/bk:when) = $year">
+                                        <xsl:if test=".//*[tokenize(@ana, ' ') = 'bk:money'][@unit][1]/@quantity">
+                                            <money type="a">
+                                                <xsl:value-of select="sum(.//*[tokenize(@ana, ' ') = 'bk:money'][@unit = $mainCurrency/t:label][1]/@quantity)"/>
+                                            </money>
+                                            <xsl:if test="$mainCurrency/t:conversion[1]">
+                                                <money type="b">
+                                                    <xsl:value-of select="sum(.//*[tokenize(@ana, ' ') = 'bk:money'][@unit = substring-after($mainCurrency/t:conversion[1]/@fromUnit, '#')][1]/@quantity) 
+                                                        div number(substring-after($mainCurrency/t:conversion[1]/@formula, '$fromUnit div '))"/>
+                                                </money>
+                                            </xsl:if>
+                                            <xsl:if test="$mainCurrency/t:conversion[2]">
+                                                <money type="c">
+                                                    <xsl:value-of select="sum(.//*[tokenize(@ana, ' ') = 'bk:money'][@unit = substring-after($mainCurrency/t:conversion[1]/@fromUnit, '#')][1]/@quantity) 
+                                                        div number(substring-after($mainCurrency/t:conversion[2]/@formula, '$fromUnit div '))"/>
+                                                </money>
+                                            </xsl:if>
+                                        </xsl:if>
+                                    </xsl:if>
+                                </xsl:for-each>
+                            </xsl:variable>
+                            <!-- /// -->
+                            <xsl:value-of select="round(sum($allMoneyofEntriesofCurrentYear/money))"/>
+                        </bk:income>
+                        <bk:expense rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</bk:expense>
+                        <bk:unit>
+                            <xsl:value-of select="$mainCurrency/t:label"/>
+                        </bk:unit>
+                    </bk:DataSet>
+                </xsl:for-each-group>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:comment>Error: no normalized date in bk:when (@when); bk:DataSet not created</xsl:comment>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
 </xsl:stylesheet>
