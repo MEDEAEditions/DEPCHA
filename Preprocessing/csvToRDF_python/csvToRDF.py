@@ -1,4 +1,4 @@
-import csv
+#import csv
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import DCTERMS, RDF, RDFS, SKOS, XSD
 import re
@@ -14,7 +14,8 @@ setlocale(LC_NUMERIC, '')
 # Debug Variables
 Debug_CountEmptyRow = 0;
 Debug_DebitCreditEmptyRow = 0;
-
+Debug_missedTotal = 0;
+Debug_CurrencyInformation = "BK_MAIN_CURRENCY: check"
 
 ########################################################################################
 # FUNCTIONS
@@ -30,82 +31,204 @@ def checkKey(dict, key):
 # input: csv
 # defines an empty dict with years as keys and a nested dict with income (bk:debit) and expense (bk:credit) set 0
 # {'1790': {'income': '0', 'expense':'0'}, '1791': {'income': '0', 'expense':'0'}, ...} 
-def getYearsforDataSet(input_file):
-    for count, row in enumerate(input_file):
+def getYearsforDataSet(df):
+    for count, row in enumerate(df):
         row = dict(row)
         yearRegex = re.compile('([1-3][0-9]{3})') 
         Years = yearRegex.search(row["BK_WHEN"])
         if(Years != None):
             DataSets.update( {Years.group(): {'income': '0', 'expense':'0'}} )
-
+            
 ########################################################################################
-# creates a bk:Money and add bk:unit and bk:quantity 
-def getMoney(Measurable_Money1, bk_money, bk_unit_config):
-    if(row[bk_money] != ""):
-        output_graph.add((Measurable_Money1, RDF.type,  BK.Money))
-        output_graph.add((Measurable_Money1, BK.quantity, Literal(row[bk_money]) ))
-        # if unit is defined in config file
-        if(config_data[bk_unit_config]):
-            output_graph.add((Measurable_Money1, BK.unit, Literal(config_data[bk_unit_config]) ))
-        # a column for bk:unit exists
-        else:
-            output_graph.add((Measurable_Money1, BK.unit, Literal(row["BK_UNIT1"]) ))
+# creates a bk:Money and add bk:unit (uri) and bk:quantity (literal)
+# param: getBKMoney(URIRef(), double, string)
+def getBKMoney(Measurable_Money, bk_quantity, bk_unit):
+    output_graph.add((Measurable_Money, RDF.type,  BK.Money))
+    output_graph.add((Transfer_Money, BK.transfers, Measurable_Money))
+    # <bk:quantity>
+    output_graph.add((Measurable_Money, BK.quantity, Literal(str(money))))
+    # <bk:unit>  https://gams.uni-graz.at/context:depcha.gwfp#pence
+    output_graph.add((Measurable_Money, BK.unit, URIRef(baseURL + CONTEXT + "#" + bk_unit) ))
+        
+########################################################################################
+# this function add bk:entry, gams:isMemberOfCollection to the output_graph
+# param: URIRef() of the bk:Transaction
+def getBKCoreElements(Class):
+    output_graph.add((Class, BK.entry, Literal(row["bk_entry"].replace('"',"'")) )) 
+    output_graph.add((Class, GAMS.isMemberOfCollection,  URIRef(baseURL + CONTEXT) ))   
+    
 
 ########################################################################################
 ########################################################################################
 # MAIN
 path = "gwfp/"
 
-########################################################################################
-# load CSV
+### open confic file
 with open(path + "csvToRDF_config__Ledger_C.json") as json_config_file:
     config_data = json.load(json_config_file)
-#
-input_file = csv.DictReader(open(path + config_data["FILENAME"], encoding="utf8"))
-#
-BK = Namespace("https://gams.uni-graz.at/o:depcha.bookkeeping#")
-GAMS = Namespace("https://gams.uni-graz.at/o:gams-ontology#")
-# 
-baseURL = "https://gams.uni-graz.at/"
+df_path = path + config_data["FILENAME"]
+### load CSV with pd
+df = pd.read_csv(open(df_path, encoding="utf8")) 
+
+### normalize all colum names to bk_entry etc.
+df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_').str.replace('(', '').str.replace(')', '')
+
+#############################
+### load data from confic file
 CONTEXT = config_data["CONTEXT"]
 PID = config_data["PID"]
 
+##############################
+### define variables for RDF graph
+BK = Namespace("https://gams.uni-graz.at/o:depcha.bookkeeping#")
+GAMS = Namespace("https://gams.uni-graz.at/o:gams-ontology#") 
+OM = Namespace("http://www.ontology-of-units-of-measure.org/resource/om-2/")
+baseURL = "https://gams.uni-graz.at/"
 # make a graph
 output_graph = Graph()
 # define namespace in output file
 output_graph.bind("bk", BK)
 output_graph.bind("gams", GAMS)
+output_graph.bind("om", OM)
 
-# from is reserved term
-bk_from = URIRef("https://gams.uni-graz.at/o:depcha.bookkeeping#from")
+
+# from is reserved term in python
+#bk_from = URIRef("https://gams.uni-graz.at/o:depcha.bookkeeping#from")
+
+
 
 ########################################################################################
+### Currency <om:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#pound">
+if(config_data["BK_MAIN_CURRENCY"]):
+    for currency in config_data["BK_MAIN_CURRENCY"]:
+        OM_Unit = URIRef(baseURL + CONTEXT + "#" + config_data["BK_MAIN_CURRENCY"][str(currency)])
+        output_graph.add((OM_Unit, RDF.type, OM.Unit ))
+        output_graph.add((OM_Unit, RDFS.label, Literal(config_data["BK_MAIN_CURRENCY"][str(currency)]) ))
+# if bk_currency is in the spreadsheet?
+# case 1: bk_currency column with multiple values in it like: pound, shilling, cents
+# case 2: for each bk:currency a column and every cell is filled up with the same value 
+elif('bk_currency' in df.columns):
+    print("ToDo bk_currency")
+    #for column in df.columns:
+    # if(column == "bk_currency"):
+        # OM_Unit = URIRef(baseURL + CONTEXT + "#" + config_data["BK_MAIN_CURRENCY"][str(currency)])
+        # output_graph.add((OM_Unit, RDF.type, OM.Unit ))
+        # output_graph.add((OM_Unit, RDFS.label, Literal(config_data["BK_MAIN_CURRENCY"][str(currency)]) )) 
+else:
+    Debug_CurrencyInformation = "Error 'BK_MAIN_CURRENCY' missing: no Information about currency in spreadsheet or in confic file"
+    
+
+########################################################################################
+# iterate over all rows; every row is a bk:Transaction or bk:Total 
+# (itertuples does not support coulmns with same name like bk_money.1, bk_money.2 etc. ?)
+for index, row in df.iterrows():
+ 
+    #############################
+    ### <bk:Transaction>
+    if (pd.notnull(row["bk_entry"]) and not "[Total]" in str(row["bk_entry"])):
+        Transaction_URI = baseURL + PID + "#T" + str(index)
+        Transaction = URIRef(Transaction_URI)
+        output_graph.add((Transaction, RDF.type,  BK.Transaction))
+        getBKCoreElements(Transaction)
+        
+        ### bk:when
+        # <bk:Transaction> <bk:when> "YYYY-MM-DD" or "YYYY-MM" or "YYYY" 
+        if(pd.notnull(row["bk_when"])):
+            output_graph.add((Transaction, BK.when,  Literal(row['bk_when']) ))
+        
+        ### bk:Transfer of Money
+        # bk:consistsOf <bk:Transfer>
+        if(pd.notnull(row["bk_money"])):
+            # selects all coumns bk_money, bk_money1 ... it is assumed that the first bk_money is the main currency
+            monetaryValues = row.filter(like='bk_money')
+            
+            # <bk:Transaction> <bk:consistsOf> <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#T220T2">
+            Transfer_Money = URIRef(Transaction_URI + "T" + str(index))
+            output_graph.add((Transaction, BK.consistsOf,  Transfer_Money))
+            output_graph.add((Transfer_Money, RDF.type, BK.Transfer))
+            
+            # for all cells with content in columns name bk_money
+            for count, money in enumerate(monetaryValues):
+                if (pd.notnull(money)):
+                    # <bk:Transfer> <bk:transfers> <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#T220M1">
+                    # in confic file: "0":"pound" so 0 is a string
+                    getBKMoney(URIRef(Transaction_URI + "M" + str(count)), money, config_data["BK_MAIN_CURRENCY"][str(count)])
+                   
+        
+        # optional   
+        # Transfer_Commodity = URIRef(Transaction_URI + "T2")
+        #if(pd.notnull(row.BK_COMMODITY)):
+        #    output_graph.add((Transaction, BK.consistsOf,  Transfer_Commodity))
+        #output_graph.add((Transaction, BK.consistsOf,  Transfer))
+        
+        # bk:entry (replace " for JSON query result in DEPCHA)
+       
+        output_graph.add((Transaction, BK.entry,  Literal(row["bk_entry"].replace('"',"'")) ))
+    ############################# 
+    ### GWFP: [Total] in bk:entry marks bk:Total, Todo optional row.BK_TOTAL ?
+    elif ("[Total]" in str(row["bk_entry"])):  
+        Total = URIRef(baseURL + PID + "#To" + str(index))
+        output_graph.add((Total, RDF.type,  BK.Total))
+        getBKCoreElements(Total)
+        #print(str(index) + ": " + str(row["bk_entry"]))  
+        # bk:entry, replace all " because they are a problem for the JSON in DEPCHA
+    else:
+        Debug_CountEmptyRow += 1
+    #############################
+    ### VARIABLES
+    # bk:entry
+    # normalization why?     #normalizedEntry = " ".join(df['BK_ENTRY'][row].split())    
+    #bk_source = str(df['BK_SOURCE'][row])
+    # bk_entry = str(df['BK_ENTRY'][row])
+    #bk_debit_credit = str(df['BK_DEBIT_CREDIT'][row])
+    
+   
+   
+ 
+    #print(bk_source)
 
 
-# bk:DataSet
+
+
+""" 
+# bk:DataSets
 DataSets = dict()
-getYearsforDataSet(csv.DictReader(open(path + config_data["FILENAME"], encoding="utf8")))
+# updates dates to DataSets <https://gams.uni-graz.at/o:depcha.gwfp.3#1789>
+getYearsforDataSet(csv.DictReader(open(df_path, encoding="utf8")))
+
+# load the data with pd.read_csv 
+csvViaPD = pd.read_csv(open(df_path, encoding="utf8")) 
+DistinctBetween = csvViaPD.BK_BETWEEN.unique()
 
         
 ########################################################################################
 # iteration over all rows in CSV input file
-for count, row in enumerate(input_file):
+for count, row in enumerate(df):
     
     # convert it from an OrderedDict to a regular dict
     row = dict(row)
     
-    ### VARIABLES
-    # bk:entry
-    normalizedEntry = " ".join(row['BK_ENTRY'].split())
-    normalizedEntry =  normalizedEntry.replace('"',"'")
+
     
+    # bk:Between
+    # multiple names in column, seperator from forename and surname is the same as seperator from names
+    # hack: if 1 or less , than its just on name or cash or orgName
+    if(str(row['BK_BETWEEN']).count(",") <= 1):
+        # normalize for URI
+        bk_Between = str(row['BK_BETWEEN'].replace(", ", "")).replace(" ", "") 
+    else:
+        bk_Between = "anonym"
+    
+    
+    ########################
+    ########################
     if(row['BK_ENTRY'] != ''):
         # bk:debit, bk:credit
         debitOrCredit = row['BK_DEBIT_CREDIT']
         # bk:to bk:from
         To = Literal("anonym")
         From = Literal("anonym")
-        #
+        # todo dynamic array of bk:money depending on gthe columns
         BK_Money1_Sum = 0
         BK_Money2_Sum = 0
         BK_Money3_Sum = 0
@@ -128,7 +251,7 @@ for count, row in enumerate(input_file):
             sum_expenseInYear = 0
             # select
             
-
+            # ToDo: get conversion information from input confic file
             # Pound
             if(row["BK_MONEY1"].isdigit()):
                 BK_Money1_Sum = atof(row["BK_MONEY1"])
@@ -155,46 +278,55 @@ for count, row in enumerate(input_file):
                     else:
                         Debug_DebitCreditEmptyRow += 1
         else:
-            # Transaction is a bk:Sum
-            Transaction = URIRef(baseURL + PID + "#S" + str(count))
-            Transfer1 = URIRef(baseURL + PID + "#S" + str(count) + "T1")
-            Transfer2 = URIRef(baseURL + PID + "#S" + str(count) + "T2")
+            # Transaction is a bk:Total
+            bk_Total = URIRef(baseURL + PID + "#To" + str(count))
+            Transfer1 = URIRef(baseURL + PID + "#To" + str(count) + "T1")
+            #Transfer2 = URIRef(baseURL + PID + "#S" + str(count) + "T2")
             Measurable_Money1 = URIRef(baseURL + PID + "#S" + str(count) + "M1")
             Measurable_Money2 = URIRef(baseURL + PID + "#S" + str(count) + "M2")
             Measurable_Money3 = URIRef(baseURL + PID + "#S" + str(count) + "M3")
-            Commodity = URIRef(baseURL + PID + "#S" + str(count) + "C1")
         
         #if a single column exists containing information about debit or credit
         if(debitOrCredit): 
             # debit = Money from X to Washington
             if(debitOrCredit == "Debit"):
                 #print("Money from Washington to X")
-                From = URIRef(baseURL + PID + "#Between." + config_data["BK_MAIN_BETWEEN_ID"])
-                To = URIRef(baseURL + PID + "#Between." + str(id(row['BK_BETWEEN'])) )   
+                From = URIRef(baseURL + PID + "#B." + config_data["BK_MAIN_BETWEEN_ID"])
+                To = URIRef(baseURL + PID + "#B." + bk_Between)
             # credit = Money from Washington to X
             elif (debitOrCredit == "Credit"):
                 #print("Money from X to Washington")
-                To = URIRef(baseURL + PID + "#Between." + config_data["BK_MAIN_BETWEEN_ID"] )
-                From = URIRef(baseURL + PID + "#Between." + str(id(row['BK_BETWEEN'])) )           
+                To = URIRef(baseURL + PID + "#B." + config_data["BK_MAIN_BETWEEN_ID"] )
+                From = URIRef(baseURL + PID + "#B." + bk_Between)           
         # a column for BK_FROM and BK_TO         
         elif (checkKey(row, 'BK_FROM')):
-            From = URIRef(baseURL + PID + "#Between." + str(row['BK_FROM']) )
+            From = URIRef(baseURL + PID + "#B." + str(row['BK_FROM']) )
         elif (checkKey(row, 'BK_TO')):
-            To = URIRef(baseURL + PID + "#Between." + str(row['BK_TO']) )
+            To = URIRef(baseURL + PID + "#B." + str(row['BK_TO']) )
         else:
             # anonym person uri
             #print("ERROR with bk:to or bk:from")
-            From = URIRef(baseURL + PID + "#Between.anonym")
-            To = URIRef(baseURL + PID + "#Between.anonym")
+            From = URIRef(baseURL + PID + "#.anonym")
+            To = URIRef(baseURL + PID + "#B.anonym")
         
         #TRANSACTION
-        if(row['BK_ENTRY'] != '[Total]' ):
+        if('[Total]' not in row['BK_ENTRY']):
+            # bk:Transaction
             output_graph.add((Transaction, RDF.type,  BK.Transaction))
+            # bk:source
+            output_graph.add((BK.Transaction, BK.source,  Literal(row['BK_SOURCE'])))
             # only bk:Entry have bk:when
             if(checkKey(row, 'BK_WHEN') and row['BK_WHEN'] != ""):
                 output_graph.add((Transaction, BK.when,  Literal(row['BK_WHEN']) ))
+        # bk:Total  
+        elif (row['BK_ENTRY'] == '[Total]'):
+            output_graph.add((Transaction, RDF.type,  BK.Total))
+        # RegEx to match what is after "[Total] " and use this information for the unit? : "[Total] Virginia Currency"
+        elif ('[Total] ' in row['BK_ENTRY']):
+            #bk:Total
+            output_graph.add((Transaction, RDF.type,  BK.Total))
         else:
-            output_graph.add((Transaction, RDF.type,  BK.Sum))
+            Debug_missedTotal += 1
         
         #BK.entry
         #normalie whitesapce and " and ,
@@ -261,9 +393,9 @@ for count, row in enumerate(input_file):
         #BETWEEN
         # if a BK_BETWEEN column exists create a distinct set of them
         if(checkKey(row, 'BK_BETWEEN')):
-            Between = URIRef(baseURL + PID + "#Between." + str(id(row['BK_BETWEEN'])) )
+            Between = URIRef(baseURL + PID + "#B." + bk_Between)
             output_graph.add((Between, RDF.type,  BK.Between))
-            if(row['BK_BETWEEN']):
+            if(row['BK_BETWEEN'] != ''):
                 output_graph.add((From, BK.name,  Literal(row['BK_BETWEEN']) ))
             else:
                 output_graph.add((From, BK.name,  Literal('anon') ))
@@ -286,20 +418,51 @@ for count, row in enumerate(input_file):
 
     else:
         Debug_CountEmptyRow += 1 
-   
-  
 
+# create om:Unit
+
+
+ 
+
+  
 # create a bk:Dataset for every year
 for year in DataSets:
-    DataSet = URIRef(baseURL + PID + "#DataSet" + year)
-    output_graph.add((DataSet, RDF.type,  BK.DataSet))
+    #   <bk:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#1771">
+    bk_Dataset_URI = baseURL + PID + "#" + year
+    DataSet = URIRef(bk_Dataset_URI)
+    output_graph.add((DataSet, RDF.type,  BK.Dataset))
+    
+    # <bk:date>1771</bk:date>
+    output_graph.add((DataSet, BK.date, Literal(year) ))
+    
+    # <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
     output_graph.add((DataSet, GAMS.isMemberOfCollection,  URIRef(baseURL + CONTEXT) ))
     
-    output_graph.add((DataSet, BK.date, Literal(year) ))
-    output_graph.add((DataSet, BK.income, Literal(round(float(DataSets[year]['income']))) ))
-    output_graph.add((DataSet, BK.expense, Literal(round(float(DataSets[year]['expense']))) ))
-    # unit defined in _config
-    output_graph.add((DataSet, BK.unit, Literal(config_data[bk_unit_config]) ))
+    # <bk:Income rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#1789I"/>
+    bk_Income = URIRef(bk_Dataset_URI + "I")
+    # <bk:debit>
+    output_graph.add((DataSet, BK.debit, bk_Income))
+    output_graph.add((bk_Income, RDF.type,  BK.Income))
+        # bk:sum
+    output_graph.add((bk_Income, BK.sum, Literal(round(float(DataSets[year]['income']))) ))
+        # bk:unit
+    output_graph.add((bk_Income, BK.unit, Literal(config_data["BK_UNIT1_config"]) ))
+        # bk:aggregates
+
+    #########
+    # <bk:Expense rdf:about="https://gams.uni-graz.at/o:depcha.wheaton.1#1828E">
+    bk_Expense = URIRef(bk_Dataset_URI + "E")
+    # <bk:credit>
+    output_graph.add((DataSet, BK.credit, bk_Expense))
+    output_graph.add((bk_Expense, RDF.type,  BK.Expense))
+        # bk:sum
+    output_graph.add((bk_Expense, BK.sum, Literal(round(float(DataSets[year]['expense']))) ))
+        # bk:unit (defined in _config)
+    output_graph.add((bk_Expense, BK.unit, Literal(config_data["BK_UNIT1_config"]) ))
+    
+
+    # 
+    
     #output_graph.add((DataSet, BK.sum,  Literal(round(DataSets[year])) ))
     #print(DataSets[year])
           
@@ -307,9 +470,17 @@ for year in DataSets:
 # format="xml" creates plain rdf/XML (rdf:type bk:Entry)
 # format="pretty-xml" ,  abbreviated RDF/XML syntax like bk:Entry
 # format="turtle"
-output_graph.serialize(destination= config_data["OUTPUT-FILE-NAME"] + '.xml', format="pretty-xml")
-print("################## DATASET:")
-print(DataSets)
-print("################## DEBUG:")
+"""
+#print("################## DATASET:")
+#print(DataSets)
+#print("################## Disticnt bk:Between:")
+#print(DistinctBetween)
+print("################## Columns:")
+print(df.columns.values)
+print("################## Log:")
 print("Debug: skipped " + str(Debug_CountEmptyRow) + " rows with empty bk:entry")
 print("Debug: no bk:debit or bk:credit found for " + str(Debug_DebitCreditEmptyRow) + " bk:entry")
+print("Debug: missed " + str(Debug_missedTotal) + " bk:Total")
+print(Debug_CurrencyInformation)
+
+output_graph.serialize(destination= config_data["OUTPUT-FILE-NAME"] + '.xml', format="pretty-xml")

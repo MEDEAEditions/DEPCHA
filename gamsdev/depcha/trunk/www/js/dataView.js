@@ -24,8 +24,8 @@ function getDatasetDateIncomeExpenses(PID){
       {
         console.log(data);
         
-        const width = 1100;
-        const height = 800;
+        const width = 100;
+        const height = 00;
         const margin = {'top': 20, 'right': 50, 'bottom': 100, 'left': 50};
         //const graphWidth = width - margin.left - margin.right;
         //const graphHeight = height - margin.top - margin.bottom;
@@ -56,7 +56,10 @@ function getDatasetDateIncomeExpenses(PID){
         
         // d3.scaleBand() is for an ordinal scale, like categories
         const x = d3.scaleBand()
-          .domain(data.map(item => item.date))
+          .domain(
+                    // sorting values on y-axis
+                   data.map(item => item.date).sort(function(a, b) {return a - b; })
+                 )
           .range([0, 1000])
           .paddingInner(0.2)
           .paddingOuter(0.2);  
