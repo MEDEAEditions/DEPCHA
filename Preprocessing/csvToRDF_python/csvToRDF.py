@@ -5,17 +5,20 @@ import re
 import pandas as pd
 import json
 import hashlib
+import glob
 from locale import atof, setlocale, LC_NUMERIC
+import math
 
 # https://stackoverflow.com/questions/6633523/how-can-i-convert-a-string-with-dot-and-comma-into-a-float-in-python
 # . and , in float numbers depending on default locale
 setlocale(LC_NUMERIC, '') 
 
-# Debug Variables
+########################################################################################
+# VARIABLES
 Debug_CountEmptyRow = 0;
 Debug_DebitCreditEmptyRow = 0;
 Debug_missedTotal = 0;
-Debug_CurrencyInformation = "BK_MAIN_CURRENCY: check"
+Debug_CurrencyInformation = "BK_CURRENCY: check"
 
 ########################################################################################
 # FUNCTIONS
@@ -26,6 +29,7 @@ def checkKey(dict, key):
         return True
     else: 
         return False 
+
 
 ########################################################################################
 # input: csv
@@ -38,158 +42,228 @@ def getYearsforDataSet(df):
         Years = yearRegex.search(row["BK_WHEN"])
         if(Years != None):
             DataSets.update( {Years.group(): {'income': '0', 'expense':'0'}} )
+       
             
 ########################################################################################
 # creates a bk:Money and add bk:unit (uri) and bk:quantity (literal)
 # param: getBKMoney(URIRef(), double, string)
-def getBKMoney(Measurable_Money, bk_quantity, bk_unit):
-    output_graph.add((Measurable_Money, RDF.type,  BK.Money))
-    output_graph.add((Transfer_Money, BK.transfers, Measurable_Money))
-    # <bk:quantity>
-    output_graph.add((Measurable_Money, BK.quantity, Literal(str(money))))
-    # <bk:unit>  https://gams.uni-graz.at/context:depcha.gwfp#pence
-    output_graph.add((Measurable_Money, BK.unit, URIRef(baseURL + CONTEXT + "#" + bk_unit) ))
+# <bk:Transfer> <bk:transfers> <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#T220M1">
+def get_Money(Measurable_Money, bk_quantity, bk_unit_index, Transfer):
+    if (pd.notnull(bk_quantity)):
+        output_graph.add((Measurable_Money, RDF.type,  BK.Money))
+        output_graph.add((Transfer, BK.transfers, Measurable_Money))
+        # <bk:quantity>
+        output_graph.add((Measurable_Money, BK.quantity, Literal(str(bk_quantity))))
+        # <bk:unit>  https://gams.uni-graz.at/context:depcha.gwfp#pence
+        for currency in config_data["BK_CURRENCY"]["currency"]:
+            if(currency.get("id") == bk_unit_index):
+                bk_unit = currency.get("unit")        
+        output_graph.add((Measurable_Money, BK.unit, URIRef(baseURL + CONTEXT + "#" + bk_unit) ))
+        
+########################################################################################
+def create_Transfer_of_Money(Transaction_URI, Transaction):
+    #<bk:Transfer> <bk:transfers> <bk:Money>
+    if(pd.notnull(row["bk_money"])):
+        # selects all coumns bk_money, bk_money1 ... it is assumed that the first bk_money is the main currency
+        monetaryValues = row.filter(like='bk_money')
+        # <bk:Transfer>
+        Transfer = URIRef(Transaction_URI + "T" + str(index))
+        output_graph.add((Transaction, BK.consistsOf,  Transfer))
+        output_graph.add((Transfer, RDF.type, BK.Transfer))
+        ### for all cells with content in columns name bk_money
+        for count, bk_quantity in enumerate(monetaryValues):
+            get_Money(URIRef(Transaction_URI + "M" + str(count)), bk_quantity, str(count), Transfer)
+                        
+                          
         
 ########################################################################################
 # this function add bk:entry, gams:isMemberOfCollection to the output_graph
 # param: URIRef() of the bk:Transaction
 def getBKCoreElements(Class):
     output_graph.add((Class, BK.entry, Literal(row["bk_entry"].replace('"',"'")) )) 
-    output_graph.add((Class, GAMS.isMemberOfCollection,  URIRef(baseURL + CONTEXT) ))   
+    output_graph.add((Class, GAMS.isMemberOfCollection,  URIRef(baseURL + CONTEXT) )) 
+    output_graph.add((Transaction, BK.entry,  Literal(row["bk_entry"].replace('"',"'")) ))  
+
+
+########################################################################################
+########################################################################################
+#### MAIN
+# this programm iterate over all .json (=confic files) in a folder. it gets the needed infomration from 
+# this file including the filename of the.csv
+# the .csv is loaded and for every row is mapped to a RDF-Serialization  a bk:Transaction is created 
+
+folder = "gwfp"
+file_extension = ".json"
+
+# get all JSON confic files in a folder
+# for a single file: 
+all_JSON_filenames = [i for i in glob.glob(f"{folder}/csvToRDF_config__Ledger_C{file_extension}")]
+#all_JSON_filenames = [i for i in glob.glob(f"{folder}/*{file_extension}")]
+########################################################################################
+for json_file in all_JSON_filenames:
+    # open confic file
+    with open(json_file) as json_config_file:
+        config_data = json.load(json_config_file)
+
+    df = pd.read_csv(open(folder + "/" + config_data["FILENAME"], encoding="utf8"))
     
+    # normalize all colum names to bk_entry etc. [for JSON query result in DEPCHA needed!]
+    df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_').str.replace('(', '').str.replace(')', '')
 
-########################################################################################
-########################################################################################
-# MAIN
-path = "gwfp/"
-
-### open confic file
-with open(path + "csvToRDF_config__Ledger_C.json") as json_config_file:
-    config_data = json.load(json_config_file)
-df_path = path + config_data["FILENAME"]
-### load CSV with pd
-df = pd.read_csv(open(df_path, encoding="utf8")) 
-
-### normalize all colum names to bk_entry etc.
-df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_').str.replace('(', '').str.replace(')', '')
-
-#############################
-### load data from confic file
-CONTEXT = config_data["CONTEXT"]
-PID = config_data["PID"]
-
-##############################
-### define variables for RDF graph
-BK = Namespace("https://gams.uni-graz.at/o:depcha.bookkeeping#")
-GAMS = Namespace("https://gams.uni-graz.at/o:gams-ontology#") 
-OM = Namespace("http://www.ontology-of-units-of-measure.org/resource/om-2/")
-baseURL = "https://gams.uni-graz.at/"
-# make a graph
-output_graph = Graph()
-# define namespace in output file
-output_graph.bind("bk", BK)
-output_graph.bind("gams", GAMS)
-output_graph.bind("om", OM)
-
-
-# from is reserved term in python
-#bk_from = URIRef("https://gams.uni-graz.at/o:depcha.bookkeeping#from")
-
-
-
-########################################################################################
-### Currency <om:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#pound">
-if(config_data["BK_MAIN_CURRENCY"]):
-    for currency in config_data["BK_MAIN_CURRENCY"]:
-        OM_Unit = URIRef(baseURL + CONTEXT + "#" + config_data["BK_MAIN_CURRENCY"][str(currency)])
-        output_graph.add((OM_Unit, RDF.type, OM.Unit ))
-        output_graph.add((OM_Unit, RDFS.label, Literal(config_data["BK_MAIN_CURRENCY"][str(currency)]) ))
-# if bk_currency is in the spreadsheet?
-# case 1: bk_currency column with multiple values in it like: pound, shilling, cents
-# case 2: for each bk:currency a column and every cell is filled up with the same value 
-elif('bk_currency' in df.columns):
-    print("ToDo bk_currency")
-    #for column in df.columns:
-    # if(column == "bk_currency"):
-        # OM_Unit = URIRef(baseURL + CONTEXT + "#" + config_data["BK_MAIN_CURRENCY"][str(currency)])
-        # output_graph.add((OM_Unit, RDF.type, OM.Unit ))
-        # output_graph.add((OM_Unit, RDFS.label, Literal(config_data["BK_MAIN_CURRENCY"][str(currency)]) )) 
-else:
-    Debug_CurrencyInformation = "Error 'BK_MAIN_CURRENCY' missing: no Information about currency in spreadsheet or in confic file"
-    
-
-########################################################################################
-# iterate over all rows; every row is a bk:Transaction or bk:Total 
-# (itertuples does not support coulmns with same name like bk_money.1, bk_money.2 etc. ?)
-for index, row in df.iterrows():
- 
     #############################
-    ### <bk:Transaction>
-    if (pd.notnull(row["bk_entry"]) and not "[Total]" in str(row["bk_entry"])):
-        Transaction_URI = baseURL + PID + "#T" + str(index)
-        Transaction = URIRef(Transaction_URI)
-        output_graph.add((Transaction, RDF.type,  BK.Transaction))
-        getBKCoreElements(Transaction)
-        
-        ### bk:when
-        # <bk:Transaction> <bk:when> "YYYY-MM-DD" or "YYYY-MM" or "YYYY" 
-        if(pd.notnull(row["bk_when"])):
-            output_graph.add((Transaction, BK.when,  Literal(row['bk_when']) ))
-        
-        ### bk:Transfer of Money
-        # bk:consistsOf <bk:Transfer>
-        if(pd.notnull(row["bk_money"])):
-            # selects all coumns bk_money, bk_money1 ... it is assumed that the first bk_money is the main currency
-            monetaryValues = row.filter(like='bk_money')
-            
-            # <bk:Transaction> <bk:consistsOf> <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#T220T2">
-            Transfer_Money = URIRef(Transaction_URI + "T" + str(index))
-            output_graph.add((Transaction, BK.consistsOf,  Transfer_Money))
-            output_graph.add((Transfer_Money, RDF.type, BK.Transfer))
-            
-            # for all cells with content in columns name bk_money
-            for count, money in enumerate(monetaryValues):
-                if (pd.notnull(money)):
-                    # <bk:Transfer> <bk:transfers> <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#T220M1">
-                    # in confic file: "0":"pound" so 0 is a string
-                    getBKMoney(URIRef(Transaction_URI + "M" + str(count)), money, config_data["BK_MAIN_CURRENCY"][str(count)])
-                   
-        
-        # optional   
-        # Transfer_Commodity = URIRef(Transaction_URI + "T2")
-        #if(pd.notnull(row.BK_COMMODITY)):
-        #    output_graph.add((Transaction, BK.consistsOf,  Transfer_Commodity))
-        #output_graph.add((Transaction, BK.consistsOf,  Transfer))
-        
-        # bk:entry (replace " for JSON query result in DEPCHA)
-       
-        output_graph.add((Transaction, BK.entry,  Literal(row["bk_entry"].replace('"',"'")) ))
-    ############################# 
-    ### GWFP: [Total] in bk:entry marks bk:Total, Todo optional row.BK_TOTAL ?
-    elif ("[Total]" in str(row["bk_entry"])):  
-        Total = URIRef(baseURL + PID + "#To" + str(index))
-        output_graph.add((Total, RDF.type,  BK.Total))
-        getBKCoreElements(Total)
-        #print(str(index) + ": " + str(row["bk_entry"]))  
-        # bk:entry, replace all " because they are a problem for the JSON in DEPCHA
+    ### load data from confic file
+    CONTEXT = config_data["CONTEXT"]
+    PID = config_data["PID"]
+
+    ##############################
+    ### define variables for RDF graph
+    BK = Namespace("https://gams.uni-graz.at/o:depcha.bookkeeping#")
+    GAMS = Namespace("https://gams.uni-graz.at/o:gams-ontology#") 
+    OM = Namespace("http://www.ontology-of-units-of-measure.org/resource/om-2/")
+    baseURL = "https://gams.uni-graz.at/"
+    # make a graph
+    output_graph = Graph()
+    # define namespace in output file
+    output_graph.bind("bk", BK)
+    output_graph.bind("gams", GAMS)
+    output_graph.bind("om", OM)
+
+    # from is reserved term in python
+    #bk_from = URIRef("https://gams.uni-graz.at/o:depcha.bookkeeping#from")
+
+
+    ########################################################################################
+    ### Currency <om:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#pound">
+    if(config_data["BK_CURRENCY"]):
+        # the first mentioned currency is the main currency all other are mapepd to
+        BK_MAIN_CURRENCY = config_data["BK_CURRENCY"]["currency"][0]
+        # <om:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#shilling"> <om:hasBaseUnit>, <rdfs:label>, <bk:conversionFormular> (?)
+        for currency in config_data["BK_CURRENCY"]["currency"]:
+            OM_Unit = URIRef(baseURL + CONTEXT + "#" + currency["unit"])
+            output_graph.add((OM_Unit, RDF.type, OM.Unit ))
+            output_graph.add((OM_Unit, RDFS.label, Literal(currency["unit"]) ))
+            if(currency.get("conversion", False)):
+                BaseUnit = URIRef(baseURL + CONTEXT + "#" + currency["conversion"]["hasBaseUnit"])
+                output_graph.add((OM_Unit, OM.hasBaseUnit, BaseUnit ))
+                # Todo find om:proeprty for conversion: ConversionStmt with value and operator in property ?
+                output_graph.add((OM_Unit, BK.conversionFormular, Literal(currency["conversion"]["formular"]) ))     
+    #########################################
+        # if bk_currency is in the spreadsheet?
+        # case 1: bk_currency column with multiple values in it like: pound, shilling, cents
+        # case 2: for each bk:currency a column and every cell is filled up with the same value 
+    elif('bk_currency' in df.columns):
+        print("ToDo bk_currency")
+    ######################################### 
     else:
-        Debug_CountEmptyRow += 1
-    #############################
-    ### VARIABLES
-    # bk:entry
-    # normalization why?     #normalizedEntry = " ".join(df['BK_ENTRY'][row].split())    
-    #bk_source = str(df['BK_SOURCE'][row])
-    # bk_entry = str(df['BK_ENTRY'][row])
-    #bk_debit_credit = str(df['BK_DEBIT_CREDIT'][row])
+        Debug_CurrencyInformation = "Error 'BK_CURRENCY' missing: no Information about currency in spreadsheet or in confic file"
+        
+        
+    ########################################################################################
+    ### BETWEEN 
+    # if a BK_BETWEEN column exists create a distinct set of <bk:Between>
+    for name in df.bk_between.unique():
+        # normalize for URI
+        if(type(name)==str):
+            if(str(name).count(",") <= 1):
+                normalized_name = (str(name).replace(", ", "")).replace(" ", "") 
+            else:
+                normalized_name = "anonym"
+            Between_URI = baseURL + PID + "#B." + str(normalized_name)
+            Between = URIRef(Between_URI)
+            output_graph.add((Between, RDF.type,  BK.Between))
+            output_graph.add((Between , BK.name,  Literal(name) ))
+    '''
+    if(pd.notnull(row["bk_between"])):
+        # normalize for URI
+        if(str(row["bk_between"]).count(",") <= 1):
+            bk_Between = str(row['bk_between'].replace(", ", "")).replace(" ", "") 
+        else:
+            bk_Between = "anonym"
+      
+        #if(row['BK_BETWEEN'] != ''):
+        #    output_graph.add((From, BK.name,  Literal(row['BK_BETWEEN']) ))
+        #else:
+        #    output_graph.add((From, BK.name,  Literal('anon') ))
+    else:
+        print("bk between is not a a singl column in the spreadsheet")
+    # FROM with name, status and profession 
+    #output_graph.add((From, RDF.type,  BK.Between))
+    #if(checkKey(row, 'BK_NAME_FROM')):
+    #    output_graph.add((From, BK.name,  Literal(row['BK_NAME_FROM']) ))
+    '''
+   
+
+
+    # bk:Between
+    # multiple names in column, seperator from forename and surname is the same as seperator from names
+    # hack: if 1 or less , than its just on name or cash or orgName
+   
+        
+        
+    ########################################################################################
+    # iterate over all rows; every row is a bk:Transaction or bk:Total 
+    # (itertuples does not support coulmns with same name like bk_money.1, bk_money.2 etc. ?)
+    for index, row in df.iterrows():
     
-   
-   
- 
-    #print(bk_source)
+        #########################################
+        ### <bk:Transaction>
+        if (pd.notnull(row["bk_entry"]) and not "[Total]" in str(row["bk_entry"])):
+            
+            ###
+            Transaction_URI = baseURL + PID + "#T" + str(index)
+            Transaction = URIRef(Transaction_URI)
+            output_graph.add((Transaction, RDF.type,  BK.Transaction))
+            ### 
+            getBKCoreElements(Transaction)
+            ###
+            create_Transfer_of_Money(Transaction_URI, Transaction)
+                 
+            ### bk:when
+            # <bk:Transaction> <bk:when> "YYYY-MM-DD" or "YYYY-MM" or "YYYY" 
+            if(pd.notnull(row["bk_when"])):
+                output_graph.add((Transaction, BK.when,  Literal(row['bk_when']) ))
+            
+        
+            #ToDo
+            
+            ### bk:Transfer of Commodity
+            #if(pd.notnull(row.get["bk_commodity"])):
+            #    print("todo")
+                
+            ### bk:Transfer of Service
+            #if(pd.notnull(row["bk_service"])):
+            #    print("todo")
+            
+            
+        #########################################
+        ### <bk:Total>
+        # GWFP: [Total] in bk:entry marks bk:Total, Todo optional row.BK_TOTAL ?
+        elif ("[Total]" in str(row["bk_entry"])):  
+            ###
+            Total_URI = baseURL + PID + "#To" + str(index)
+            Total = URIRef(Total_URI)
+            output_graph.add((Total, RDF.type,  BK.Total))
+            ###
+            getBKCoreElements(Total)
+            ###
+            create_Transfer_of_Money(Total_URI, Total)
+            
+        #########################################
+        else:
+            Debug_CountEmptyRow += 1
+        #########################################
+        
+        ### VARIABLES
+        # bk:entry
+        # normalization why?     #normalizedEntry = " ".join(df['BK_ENTRY'][row].split())    
+        #bk_source = str(df['BK_SOURCE'][row])
+        # bk_entry = str(df['BK_ENTRY'][row])
+        #bk_debit_credit = str(df['BK_DEBIT_CREDIT'][row])
 
-
-
-
+    ########################################################################################
+    ### output file .xml
+    output_graph.serialize(destination= config_data["OUTPUT-FILE-NAME"] + '.xml', format="pretty-xml")
+    
 """ 
 # bk:DataSets
 DataSets = dict()
@@ -209,15 +283,7 @@ for count, row in enumerate(df):
     row = dict(row)
     
 
-    
-    # bk:Between
-    # multiple names in column, seperator from forename and surname is the same as seperator from names
-    # hack: if 1 or less , than its just on name or cash or orgName
-    if(str(row['BK_BETWEEN']).count(",") <= 1):
-        # normalize for URI
-        bk_Between = str(row['BK_BETWEEN'].replace(", ", "")).replace(" ", "") 
-    else:
-        bk_Between = "anonym"
+
     
     
     ########################
@@ -390,28 +456,6 @@ for count, row in enumerate(df):
             output_graph.add((Commodity, BK.unit, Literal('error: missing Unit') ))
             output_graph.add((Commodity, BK.quantity, Literal(row['QUANTITE1']) ))
             
-        #BETWEEN
-        # if a BK_BETWEEN column exists create a distinct set of them
-        if(checkKey(row, 'BK_BETWEEN')):
-            Between = URIRef(baseURL + PID + "#B." + bk_Between)
-            output_graph.add((Between, RDF.type,  BK.Between))
-            if(row['BK_BETWEEN'] != ''):
-                output_graph.add((From, BK.name,  Literal(row['BK_BETWEEN']) ))
-            else:
-                output_graph.add((From, BK.name,  Literal('anon') ))
-        else:
-            if(checkKey(row, 'BK_NAME_FROM')):
-                output_graph.add((From, RDF.type,  BK.Between))
-                if(checkKey(row, 'BK_NAME_FROM')):
-                    output_graph.add((From, BK.name,  Literal(row['BK_NAME_FROM']) ))
-                if(checkKey(row, 'BK_BETWEENPROFESSION')):
-                    output_graph.add((From, BK.profession,  Literal(row['BK_BETWEENPROFESSION']) ))
-                if(checkKey(row, 'BK_BETWEENCIVILTE')):
-                    output_graph.add((From, BK.status,  Literal(row['BK_BETWEENCIVILTE']) ))
-        # FROM with name, status and profession 
-        output_graph.add((From, RDF.type,  BK.Between))
-        if(checkKey(row, 'BK_NAME_FROM')):
-            output_graph.add((From, BK.name,  Literal(row['BK_NAME_FROM']) ))
 
         # TO only ID    
         #output_graph.add((To, RDF.type,  BK.Between))
@@ -471,16 +515,18 @@ for year in DataSets:
 # format="pretty-xml" ,  abbreviated RDF/XML syntax like bk:Entry
 # format="turtle"
 """
-#print("################## DATASET:")
+print("################## DATASET:")
 #print(DataSets)
-#print("################## Disticnt bk:Between:")
+print("################## Disticnt bk:Between:")
 #print(DistinctBetween)
 print("################## Columns:")
 print(df.columns.values)
 print("################## Log:")
-print("Debug: skipped " + str(Debug_CountEmptyRow) + " rows with empty bk:entry")
-print("Debug: no bk:debit or bk:credit found for " + str(Debug_DebitCreditEmptyRow) + " bk:entry")
-print("Debug: missed " + str(Debug_missedTotal) + " bk:Total")
+print(f"Log: Processed the following config files: {all_JSON_filenames}")
+print(f"Log: skipped {str(Debug_CountEmptyRow)} rows with empty bk:entry")
+print(f"Log: no bk:debit or bk:credit found for {str(Debug_DebitCreditEmptyRow)} bk:entry")
+print(f"Log: missed {str(Debug_missedTotal)} bk:Total")
 print(Debug_CurrencyInformation)
+print(f"The BK_MAIN_CURRENCY is {BK_MAIN_CURRENCY}")
 
-output_graph.serialize(destination= config_data["OUTPUT-FILE-NAME"] + '.xml', format="pretty-xml")
+

@@ -2,9 +2,15 @@
   "FILENAME":"GWFP_Ledger_A_1750_1772.csv",  
   "CONTEXT":"context:depcha.gwfp",
   "PID":"o:depcha.gwfp.1",
-  "BK_UNIT1_config":"pound",
-  "BK_UNIT2_config":"shilling",
-  "BK_UNIT3_config":"pence",
+  "BK_MAIN_CURRENCY": {
+    "0":"pound",
+    "1":"shilling",
+    "2":"pence"
+  },
+  "BK_CURRENCY": {
+    "0":"dollar",
+    "1":"cent"
+  },
   "BK_MAIN_BETWEEN_NAME":"George Washington",
   "BK_MAIN_BETWEEN_ID":"washington",
   "OUTPUT-FILE-NAME":"depcha-washington.1"

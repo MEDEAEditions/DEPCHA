@@ -27,7 +27,7 @@
                 </application>
             </appInfo>
             <classDecl>
-                <taxonomy ana="bk:Between" xml:id="leuven">
+                <taxonomy ana="bk:Account" xml:id="leuven">
                     <gloss>Leuven</gloss>
                     <category xml:id="ontfanck">
                         <gloss>Income</gloss>
@@ -179,14 +179,14 @@
             <table rend="rules">
                 <row>
                     <cell cols="6">
-                        <term ana="bk:to" ref="#leuven">
+                        <term ana="bk:to bk:account" ref="#leuven">
                             <hi rend="bold underline">ontfanck</hi>
                         </term>
                     </cell>
                 </row>
                 <row>
                     <cell cols="2">
-                        <term rend="bold" ana="bk:from" ref="#assizeFirstQuarter">eerst ontfaen
+                        <term rend="bold" ana="bk:from bk:account" ref="#assizeFirstQuarter">eerst ontfaen
                             vand(er) stat vercochten ass(ize), die alle jae(re) verande(re)n op
                             div(er)sche p(er)sone(n) vand(en) yersten q(ua)rt jaers</term>
                     </cell>
@@ -293,7 +293,7 @@
                     <cell cols="3">xix guld(en) v pl(acken) xii d(enier) p</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#assize"><hi rend="underline">su(mma)</hi> van dat die
+                    <cell><term ana="bk:from bk:account" ref="#assize"><hi rend="underline">su(mma)</hi> van dat die
                             rentmeest(er)s ontfaen hebben vand(er) stat vercocht ass(izen)
                             bi(n)ne(n) den yersten q(ua)rt jaers compt op </term></cell>
                     <cell><measure ana="bk:money" unit="gulders" quantity="1459">xiii[c] lxix guld(en) rijn(sch)
@@ -306,7 +306,7 @@
                 </row>
                 <row>
                     <cell cols="2">
-                        <term rend="bold" ana="bk:from" ref="#beerAssize">ander ontfanck vand(en)
+                        <term rend="bold" ana="bk:from bk:account" ref="#beerAssize">ander ontfanck vand(en)
                             bie(r) ass(ize) die dit jae(r) onv(er)cocht was en(de) d(er) stat
                             bleve(n) es, en(de) heeft de doen inhale(n) en(de) op heffen bi wout(er)
                             borgelijn, arde willems, ard inde(n) rop en(de) met ja(n)nes vliege(n)
@@ -334,7 +334,7 @@
                     <cell cols="2">xvi(½) guld(en)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#assize"><hi rend="underline">so(mma)</hi> vand(en)
+                    <cell><term ana="bk:from bk:account" ref="#assize"><hi rend="underline">so(mma)</hi> vand(en)
                             onv(er)cochten ass(ize) binne(n) de(n) voirs(creven) yersten q(ua)rts
                             jaers</term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="1211.5"> xii[c] xis(½) gul(den)
@@ -401,7 +401,7 @@
                     <cell>i gul(den) xxxi (in) oext</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#jaerrrenten">
+                    <cell><term ana="bk:from bk:account" ref="#jaerrrenten">
                             <hi rend="underline">som(ma)</hi>
                         </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="30">xxx gul(den)</measure></cell>
@@ -510,7 +510,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell>
-                        <term ana="bk:from" ref="#jaerrrenten">
+                        <term ana="bk:from bk:account" ref="#jaerrrenten">
                             <hi rend="underline">so(mma)</hi>
                         </term>
                     </cell>
@@ -770,14 +770,14 @@
                     <cell>viii gul(den) xxix (in) oct(obris)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#jaerrrenten_income"><hi rend="underline">so(mma)</hi> van(den)
+                    <cell><term ana="bk:from bk:account" ref="#jaerrrenten_income"><hi rend="underline">so(mma)</hi> van(den)
                             voir(screven) buten poir(ter)gelde dat com(m)e yerst binne(n) den
                             voirs(creven) yersten q(uar)t jaers compt op</term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="337">iii[c] xxx vii
                         gul(den)</measure></cell>
                 </row>
                 <row ana="bk:total">
-                    <cell><term ana="bk:from" ref="#totalsumincomethisquarter">
+                    <cell><term ana="bk:from bk:account" ref="#totalsumincomethisquarter">
                         <hi rend="underline">so(m)ma so(m)marum </hi>van alden
                             ontfanghe binne(n) desen yersten q(ua)rt(en) jaers compt te gad(er)
                             op</term></cell>
@@ -833,7 +833,7 @@
                     <cell>xiiii[c] xxxviii x s gr(oten) oude</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#lijftochten"><hi rend="underline">so(mma)</hi> vand(er)
+                    <cell><term ana="bk:to bk:account" ref="#lijftochten"><hi rend="underline">so(mma)</hi> vand(er)
                             lijft(ochten) die de rentmeest(er)s voirs(creven) betaelt hebben
                             binne(n) den yerste(n) q(ua)rts jaers compt xlv s gr(oten) oude xv torne
                             voir elc l gr(oten) oude en(de) xlviii pl(acken) voir den torne
@@ -874,7 +874,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="5">
-                        <term ana="bk:to" ref="#lijftochten"><hi rend="underline">so(mma)</hi>
+                        <term ana="bk:to bk:account" ref="#lijftochten"><hi rend="underline">so(mma)</hi>
                             vand(er) ijft(ochten) die de rentmeest(er)s voirs(creven) bet(aelt)
                             hebben te mechlen binne(n) de(n) voirs(creven) yerste(n) q(ua)rts jaers
                             compt op v l vi s vi d gr(oten) oude die make(n) in rijnsche xiii
@@ -906,7 +906,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="5">
-                        <term ana="bk:to" ref="#lijftochten"><hi rend="underline">so(m)ma</hi>
+                        <term ana="bk:to bk:account" ref="#lijftochten"><hi rend="underline">so(m)ma</hi>
                             vand(er) lijft(ochten) die de rentmeest(er)s voirs(creven) bet(aelt)
                             hebbe(n) tandwerpe(n) binne(n) den yerste(n) q(ua)rts jaers compt op
                             xxvi(1/2) s gr oude de make(n) xiii gul(den) voir elc l gr oude
@@ -935,7 +935,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="5">
-                        <term ana="bk:to" ref="#lijftochten">
+                        <term ana="bk:to bk:account" ref="#lijftochten">
                             <hi rend="underline">so(m)ma</hi> vand(er) lijft(ochten) die de
                             rentmeest(er)s voirs(creven) bet(aelt) hebbe(n) te love(n) binne(n) den
                             yerste(n) q(ua)rts jaers voirs(creven compt op iii (pond) i (½) s
@@ -948,7 +948,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="5">
-                        <term ana="bk:to" ref="#lijftochten"><hi rend="underline">so(m)ma</hi>
+                        <term ana="bk:to bk:account" ref="#lijftochten"><hi rend="underline">so(m)ma</hi>
                             vand(er) lijft(ochten) die de rentmeest(er)s voirs(creven) betaelt
                             hebbe(n) binne(n) den yerste(n) q(ua)rts jaers te brux(el) te
                             vilvoird(en) te mechlen tandwerpen en(de) te love(n) compt op</term>
@@ -1001,7 +1001,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="5">
-                        <term ana="bk:to" ref="#erfrenten"><hi rend="underline">so(mma)</hi>
+                        <term ana="bk:to bk:account" ref="#erfrenten"><hi rend="underline">so(mma)</hi>
                             vand(en) erfrente(n) dat de rentmeest(er)s voirs(creven) betaelt hebben
                             binne(n) den yerste(n) q(ua)rts jaers compt op</term>
                     </cell>
@@ -1015,7 +1015,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="5">
-                        <term ana="bk:to" ref="#lijftochten"><hi rend="underline">so(mma)</hi> van
+                        <term ana="bk:to bk:account" ref="#lijftochten"><hi rend="underline">so(mma)</hi> van
                             dat de rentmeest(er)s voirs(creven) bet(aelt) hebben in lijft(ochten) te
                             weten te brux(el) te vilvorde(n) te mechle(n) tandw(er)pe(n) te love(n)
                             en(de) in erfelicheiden binne(n) den voirs(creven) yerste(n) q(ua)rts
@@ -1212,7 +1212,7 @@
                 <row>
                     <cell cols="2">
                         <hi rend="bold">
-                            <term ana="bk:to" ref="#schinken">in schinken</term><date ana="bk:when"
+                            <term ana="bk:to bk:account" ref="#schinken">in schinken</term><date ana="bk:when"
                                 when="1438-09">in sept(embris) xiiii[c] xxxviii</date>
                         </hi>
                     </cell>
@@ -1420,7 +1420,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="5">
-                        <term ana="bk:to" ref="#schinken"><hi rend="underline">so(m)ma</hi> vand(en)
+                        <term ana="bk:to bk:account" ref="#schinken"><hi rend="underline">so(m)ma</hi> vand(en)
                             schincke(n) vii[m] ii[c] liiii pl(acken) xviii s(chellingen) p(ayments)
                             maken</term></cell>
                     <cell>
@@ -1774,7 +1774,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="5">
-                        <term ana="bk:to" ref="#voyagien">
+                        <term ana="bk:to bk:account" ref="#voyagien">
                             <hi rend="underline">so(mma)</hi> vand(en) voyagie(n) iiii[m] iii[c]
                             lxxii pl(acken) maken </term>
                     </cell>
@@ -1959,7 +1959,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="5">
-                        <term ana="bk:to" ref="#voyagien"><hi rend="underline">so(mma)</hi> ii[c]
+                        <term ana="bk:to bk:account" ref="#voyagien"><hi rend="underline">so(mma)</hi> ii[c]
                             xix(½) gelte(n) wij(n)s de</term> gelt te xvi pl(acken) mak(en) </cell>
                     <cell><measure ana="bk:money" unit="placken" quantity="3512">xxxv[c] xii
                         pl(acken)</measure></cell>
@@ -2085,7 +2085,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="5">
-                        <term ana="bk:to" ref="#processie"><hi rend="underline">so(mma)</hi>
+                        <term ana="bk:to bk:account" ref="#processie"><hi rend="underline">so(mma)</hi>
                             vand(er) cost vand(er) p(ro)cessie(n) voirs(creven) v[m] iii[c]
                             lxxxix(½) pl(acken) mak(en)</term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="99">xcix gul(den)</measure>
@@ -2184,7 +2184,7 @@
                     <cell>x gul(den)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#university">
+                    <cell><term ana="bk:to bk:account" ref="#university">
                             <hi rend="underline">come(n) tsame(n) de voirs(creven)
                                 p(ar)thije(n)</hi> lxxxiii scilde iii q(uar)t(en) te xl pl stuc
                             ger(ekent) val(ent) lxii gul(den) ii pl(acken) end(e) iii[c] xc guld(en)
@@ -2355,7 +2355,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="5">
-                        <term ana="bk:to" ref="#university"><hi rend="underline">so(mma)</hi> van
+                        <term ana="bk:to bk:account" ref="#university"><hi rend="underline">so(mma)</hi> van
                             lone en(de) wedden voirs(creven) vii[c] xvii guld(en) i q(uar)t end€
                             xxix[c] xcii pl(acken) xii d(eniers) p maken tsame(n)</term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="772">vii[c] lxxii gul(den)</measure>
@@ -2451,7 +2451,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="5">
-                        <term ana="bk:to" ref="#jaerrrenten">
+                        <term ana="bk:to bk:account" ref="#jaerrrenten">
                             <hi rend="underline">so(mma)</hi> vand(en) voirs(creven) renten x[m]
                             ii[c] lxxvi pl(acken) maken </term>
                     </cell>
@@ -2692,7 +2692,7 @@
                 </row>
                 <row>
                     <cell cols="2">
-                        <term rend="bold" ana="bk:to" ref="#">ty(m)merwerck ane de halle</term>
+                        <term rend="bold" ana="bk:to bk:account" ref="#">ty(m)merwerck ane de halle</term>
                     </cell>
                     <cell cols="3"> willme de bere vand(en) ouden kep(er)s inde halle de verrot
                         wae(re)n te cortene(n) and(er) kep(er)s in te settene(n) vinst(er)gate
@@ -2738,7 +2738,7 @@
                 </row>
                 <row>
                     <cell cols="2">
-                        <term rend="bold" ana="bk:to" ref="#tiechelen">decw(erc) met tiechle(n) ane
+                        <term rend="bold" ana="bk:to bk:account" ref="#tiechelen">decw(erc) met tiechle(n) ane
                             div(er)sche p(ar)tijen</term>
                     </cell>
                     <cell cols="3"> henr(ic) kercmeest(er)s van decken met tiechle(n) inde mae(nd)
@@ -2852,7 +2852,7 @@
                 </row>
                 <row>
                     <cell cols="2">
-                        <term rend="bold" ana="bk:to" ref="#">ty(m)merwerc ane div(er)sche
+                        <term rend="bold" ana="bk:to bk:account" ref="#">ty(m)merwerc ane div(er)sche
                             p(ar)thije(n)</term>
                     </cell>
                     <cell cols="3"> willem de bere vand(en) hout dat de stat gecocht heeft te
@@ -3271,7 +3271,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="5">
-                        <term ana="bk:to" ref="#summaSummarumWercke">
+                        <term ana="bk:to bk:account" ref="#summaSummarumWercke">
                             <hi rend="underline">viiie so(mma)</hi> vand(en) voirs(creven) wercke
                             xi[m] lii pl(acken ii s p maken</term>
                     </cell>
@@ -3781,7 +3781,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="5">
-                        <term ana="bk:to" ref="#diversche_parthijen"><hi rend="underline"
+                        <term ana="bk:to bk:account" ref="#diversche_parthijen"><hi rend="underline"
                                 >so(mma)</hi> vand(en) voirs(creven) alrehande div(er)sche(n)
                             weg(en) xix[m] l pl(acken) v s(chellingen) p(ayments)
                         make(</term>)</cell>
@@ -4396,7 +4396,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell rend="left" cols="5">
-                        <term ana="bk:to" ref="#summaSummarumWercke"><hi rend="underline"
+                        <term ana="bk:to bk:account" ref="#summaSummarumWercke"><hi rend="underline"
                                 >so(m)ma</hi> vand(en) voirs(creven) werck ane de vest xli[m] lix[c]
                             lxxxiiii pl(acken) make(n)</term>
                     </cell>
@@ -4462,7 +4462,7 @@
             <table rend="rules">
                 <row>
                     <cell cols="3">
-                        <term ana="bk:to" ref="#leuven">
+                        <term ana="bk:to bk:account" ref="#leuven">
                             <hi rend="bold underline">ontfanck</hi>
                         </term>
                     </cell>
@@ -4574,7 +4574,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell rend="left" cols="2">
-                        <term ana="bk:from" ref="#assizeSecondQuarter"><hi rend="underline"
+                        <term ana="bk:from bk:account" ref="#assizeSecondQuarter"><hi rend="underline"
                                 >so(mma)</hi> van alden vercochte(n) ass(ize) vand(er) ande(re)n
                             q(uar)ts jaers</term>
                     </cell>
@@ -4624,7 +4624,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell rend="left" cols="2">
-                        <term ana="bk:from" ref="#assizeGuild"><hi rend="underline">so(mma)</hi>
+                        <term ana="bk:from bk:account" ref="#assizeGuild"><hi rend="underline">so(mma)</hi>
                             vand(er) ambachte(n) vand(er) halve(n) jae(re)</term>
                     </cell>
                     <cell>
@@ -4767,7 +4767,7 @@
                     <cell rend="left">xiiii gelt(en)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#lijcoop">
+                    <cell><term ana="bk:to bk:account" ref="#lijcoop">
                             <hi rend="underline">so(m)ma </hi>van desen lijcoop ii[c] lxi gelte(n)
                             rijns wijns voe(r) de gelt xii pl(acken) make(n) </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="58">lviii gul(den)</measure></cell>
@@ -4802,7 +4802,7 @@
                     <cell rend="left">xcvii gul(den) iii(½) q(uar)t(en)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#beerAssize">
+                    <cell><term ana="bk:to bk:account" ref="#beerAssize">
                             <hi rend="underline">so(mma) </hi>van al dat voirs(creven) voirs(creven)
                             bie(r) ass(ize) come(n) es binne(n) den voirs(creven) andere(n)
                             q(uar)t(en) jaers co(m)pt op </term></cell>
@@ -5212,7 +5212,7 @@
                     <cell rend="left">lvii gul(den)</cell>
                 </row>
                 <row ana="bk:total">
-                    <cell><term ana="bk:to" ref="#butenpoirters">
+                    <cell><term ana="bk:to bk:account" ref="#butenpoirters">
                             <hi rend="underline">so(mma)</hi> vand(en) voirs(creven) buten
                             port(er)gelde dat come(n) es binne(n) den voirs(creven) ander(en)
                             q(ua)rt(en) jaers co(m)pt op </term></cell>
@@ -5376,7 +5376,7 @@
                     <cell rend="left">xiiii gul(den) xxxv pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell cols="2"><term ana="bk:from" ref="#jaerrrenten"><hi rend="underline"
+                    <cell cols="2"><term ana="bk:from bk:account" ref="#jaerrrenten"><hi rend="underline"
                                 >so(mma)</hi> vand(er) div(er)sche p(ar)thijen liii
                         guld(en)</term></cell>
                     <cell><measure ana="bk:money" unit="placken" quantity="30">xxx pl(acken)</measure></cell>
@@ -5501,7 +5501,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="2">
-                        <term ana="bk:to" ref="#lijftochten"><hi rend="underline">so(mma)</hi>
+                        <term ana="bk:to bk:account" ref="#lijftochten"><hi rend="underline">so(mma)</hi>
                             vand(er) voirs(creven) lijft(ochten) betailt inde ii sted(en) van
                             heneg(ouden) voirs(creven) xlvii s(chellingen) i(½) d(eniers) g(roten)
                             oude voir elc pont gr(oten) oude x guld(en) rij(n)s betailt maken</term>
@@ -5513,7 +5513,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="2">
-                        <term ana="bk:to" ref="#sommaSommarumLijftochten"><hi rend="underline"
+                        <term ana="bk:to bk:account" ref="#sommaSommarumLijftochten"><hi rend="underline"
                                 >so(m)ma </hi>vand(er) voirs(creven) lijftocht gevallen binne(n) den
                             ander(en) q(uar)ten jaers compt op</term>
                     </cell>
@@ -5557,7 +5557,7 @@
                     <cell rend="left">clx gul(den)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#erfrenten">
+                    <cell><term ana="bk:from bk:account" ref="#erfrenten">
                             <hi rend="underline">so(mma)</hi> vand(er) voirs(creven) erfrenten in
                             rijnschen guld(en) binne(n) den voirs(creven) ande(r)en q(ua)rt(en)
                             jaers </term></cell>
@@ -5681,7 +5681,7 @@
                     <cell rend="left">xxiiii pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#schinken"><hi rend="underline">so(mma)</hi> vand(er) schincken
+                    <cell><term ana="bk:from bk:account" ref="#schinken"><hi rend="underline">so(mma)</hi> vand(er) schincken
                             xlv[m] iii[c] lxxix pl(acken) maken</term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="840">viii[c] xl guld(en) xix
                             pl(acken)</measure></cell>
@@ -6169,7 +6169,7 @@
                     <cell rend="left">x pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell cols="2"><term ana="bk:to" ref="#schinken"><hi rend="underline"
+                    <cell cols="2"><term ana="bk:to bk:account" ref="#schinken"><hi rend="underline"
                                 >so(m)ma</hi> vand(en) voyagie(n) x[m] vii[c] xcvi pl(acken)
                             maken</term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="199">cxcix gul(den)</measure>
@@ -6302,7 +6302,7 @@
                     <cell rend="left">xvii gul(den) xviii pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#wedden">
+                    <cell><term ana="bk:from bk:account" ref="#wedden">
                             <hi rend="underline">so(mma) </hi>
                         </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="34">xxxiiii gul(den)</measure>
@@ -6364,7 +6364,7 @@
                     <cell rend="left">iii gul(den) i q(ua)rt(en)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#wedden">
+                    <cell><term ana="bk:from bk:account" ref="#wedden">
                             <hi rend="underline">som(ma)</hi>
                         </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="88">lxxxviii gul(den)</measure></cell>
@@ -6514,7 +6514,7 @@
                     <cell rend="left">v[c] xl pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#wedden"><hi rend="underline">som(ma)</hi> iii[m] vi[c] lxxviii
+                    <cell><term ana="bk:from bk:account" ref="#wedden"><hi rend="underline">som(ma)</hi> iii[m] vi[c] lxxviii
                             pl(acken) maken</term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="68">lxviii gul(den)</measure>
                         <measure ana="bk:money" unit="placken" quantity="6">vi pl(acken)</measure></cell>
@@ -6620,14 +6620,14 @@
                     <cell rend="left">xxxvi pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#wedden">
+                    <cell><term ana="bk:from bk:account" ref="#wedden">
                             <hi rend="underline">so(mma)</hi>
                         </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="273">ii[c] lxxiii gul(den)</measure>
                         <measure ana="bk:money" unit="placken" quantity="30">xxx pl(acken)</measure></cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#wedden"><hi rend="underline">so(mma)</hi> vand(en)
+                    <cell><term ana="bk:from bk:account" ref="#wedden"><hi rend="underline">so(mma)</hi> vand(en)
                             voirsc(reven) v beden</term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="892">viii[c] xcii gul(den)</measure>
                         <measure ana="bk:money" unit="placken" quantity="2">ii pl(acken)</measure></cell>
@@ -6755,7 +6755,7 @@
                     <cell rend="left">xlii pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#wedden">
+                    <cell><term ana="bk:from bk:account" ref="#wedden">
                             <hi rend="underline">som(ma)</hi> van desen voed(er)gelde met meest(er)
                             henr(ic) van loon en(de) h(er)ma(en) vi[m] viii[c] lv pl(acken) maken
                         </term></cell>
@@ -6838,7 +6838,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="2">
-                        <term ana="bk:to" ref="#erfrenten"><hi rend="underline">som(ma)</hi> xxv
+                        <term ana="bk:to bk:account" ref="#erfrenten"><hi rend="underline">som(ma)</hi> xxv
                             guld(en) ½ q(ua)rt(en) stuc te liiii pl(acken) i q(ua)rt(en) holl(ants)
                             d(aer) voe(ren) xii pl(acken) sijn tsame(n)</term>
                     </cell>
@@ -6848,7 +6848,7 @@
                 </row>
                 <row>
                     <cell>
-                        <term ana="bk:to" ref="#erfrenten"><hi rend="bold">vand(en) selve(n)
+                        <term ana="bk:to bk:account" ref="#erfrenten"><hi rend="bold">vand(en) selve(n)
                                 raemhoffin oude(n) gr(oten)</hi></term>
                     </cell>
                     <cell>joos absloen</cell>
@@ -6876,7 +6876,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="2">
-                        <term ana="bk:to" ref="#erfrenten"><hi rend="underline">som(ma)</hi> van
+                        <term ana="bk:to bk:account" ref="#erfrenten"><hi rend="underline">som(ma)</hi> van
                             dese(n) chijse xx oude gr(oten) end(e) xxi cap voir den oude(n) gr(oten)
                             iii pl(acken) end(e) voir den cap vi pl(acken) val(ent)</term>
                     </cell>
@@ -6889,7 +6889,7 @@
                 </row>
                 <row>
                     <cell>
-                        <term rend="bold" ana="bk:to" ref="#erfrenten">erfchijs de de stat
+                        <term rend="bold" ana="bk:to bk:account" ref="#erfrenten">erfchijs de de stat
                             sculd(ich) es div(er)schen p(er)sone(n) te kersmisse voirs(creven) van
                             erve datsij houden(de) es</term>
                     </cell>
@@ -6933,7 +6933,7 @@
                 </row>
                 <row ana="bk:sum">
                     <cell cols="2">
-                        <term ana="bk:to" ref="#erfrenten"><hi rend="underline">som(ma)</hi> xlvi
+                        <term ana="bk:to bk:account" ref="#erfrenten"><hi rend="underline">som(ma)</hi> xlvi
                             cap(…) elke(n) vi pl(acken) make(n)</term>
                     </cell>
                     <cell><measure ana="bk:money" unit="placken" quantity="276">ii[c] lxxvi
@@ -6954,7 +6954,7 @@
                     <cell rend="left">xxv(½) pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#erfrenten">
+                    <cell><term ana="bk:from bk:account" ref="#erfrenten">
                             <hi rend="underline">som(ma) </hi>
                         </term></cell>
                     <cell><measure ana="bk:money" unit="placken" quantity="70.5">lxx(½) pl(acken)</measure></cell>
@@ -7062,7 +7062,7 @@
                     <cell rend="left">xviii oude g(roten) iiii d(eniers)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#erfrenten">
+                    <cell><term ana="bk:from bk:account" ref="#erfrenten">
                             <hi rend="underline">som(ma)</hi> ii[c]xlv oude gr(oten) x(½) d(eniers)
                             groots voir elke(n) oude g(roo)t iii pl(acken) make(n) </term></cell>
                     <cell><measure ana="bk:money" unit="schellingen" quantity="737">vii[c] xxxvii pl(acken) xv
@@ -7124,7 +7124,7 @@
                     <cell rend="left">v cap(…)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#erfrenten">
+                    <cell><term ana="bk:from bk:account" ref="#erfrenten">
                             <hi rend="underline">som(ma)</hi> xiii oude g(roten) stuc te iii
                             pl(acken) iii gul(den) hol(ants) stuc te xlvii pl(acken) viii cap(…)
                             stuc te vi pl(acken) make(n) </term></cell>
@@ -7219,7 +7219,7 @@
                     <cell rend="left">iii (pond) v s(chellingen)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#erfrenten"><hi rend="underline">s(omma)</hi> lii (pond) xi(½)
+                    <cell><term ana="bk:from bk:account" ref="#erfrenten"><hi rend="underline">s(omma)</hi> lii (pond) xi(½)
                             s(chellingen) p(ayments) make(n)</term></cell>
                     <cell><measure ana="bk:money" unit="placken" quantity="43">xliii p(lacken)</measure>
                         <measure ana="bk:money" unit="schellingen" quantity="19.5">xix(½) s(chellingen)
@@ -7248,7 +7248,7 @@
                     <cell rend="left">iii gul(den) i d(er)d(edeel) rij(n)s</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#erfrenten">
+                    <cell><term ana="bk:from bk:account" ref="#erfrenten">
                             <hi rend="underline">som(ma)</hi> v gul(den) r(ijns) stuc te liiii
                             pl(acken) maken </term></cell>
                     <cell><measure ana="bk:money" unit="placken" quantity="270">ii[c] lxx
@@ -7283,7 +7283,7 @@
                     <cell rend="left">lxxvi pl(acken) viii s(chellingen) p(ayments)</cell>
                 </row>
                 <row ana="bk:total">
-                    <cell><term ana="bk:from" ref="#totalsumannuities">
+                    <cell><term ana="bk:from bk:account" ref="#totalsumannuities">
                             <hi rend="underline">so(mma)</hi> vand(en) erfchijse binne(n) den
                             voirs(creven) andere(n) q(ua)rt(en) jaers </term></cell>
                     <cell><measure ana="bk:money" unit="placken" quantity="3626">iii[m] vi[c] xxvi
@@ -7482,7 +7482,7 @@
                     <cell rend="left">lxvi p(lacken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#werken">
+                    <cell><term ana="bk:from bk:account" ref="#werken">
                             <hi rend="underline">som</hi>
                         </term></cell>
                     <cell><measure ana="bk:money" unit="placken" quantity="2559">xxv[c] lix pl(acken)</measure>
@@ -7643,7 +7643,7 @@
                     <cell rend="left">xii pl(acken) iiii s(chellingen) p(ayments)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#metswerk">
+                    <cell><term ana="bk:from bk:account" ref="#metswerk">
                             <hi rend="underline">som</hi>
                         </term></cell>
                     <cell><measure ana="bk:money" unit="placken" quantity="974">ix[c]lxxiiii pl(acken)</measure>
@@ -7687,7 +7687,7 @@
                     <cell rend="left">xi pl(acken) xvi s(chellingen) p(ayments)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#/">
+                    <cell><term ana="bk:from bk:account" ref="#/">
                             <hi rend="underline">som</hi>
                         </term></cell>
                     <cell><measure ana="bk:money" unit="placken" quantity="113">cxiii pl(acken)</measure>
@@ -8137,7 +8137,7 @@
                     <cell rend="left">ii(½) pl(acken</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#/">
+                    <cell><term ana="bk:from bk:account" ref="#/">
                             <hi rend="underline">som</hi>
                         </term></cell>
                     <cell><measure ana="bk:money" unit="placken" quantity="2827">xxviii[c] xxvii
@@ -8215,7 +8215,7 @@
                     <cell rend="left">iii[c] xxii pl(acken)</cell>
                 </row>
                 <row ana="bk:total">
-                    <cell><term ana="bk:from" ref="#totalsumcoestrate">
+                    <cell><term ana="bk:from bk:account" ref="#totalsumcoestrate">
                             <hi rend="underline">som(ma)</hi> van desen werck van refectien met
                             alrehande stoffen end(e) ande(r) p(ar)tie(n) dae(r) toe behore(n) xii[m]
                             iii[c] lvi pl(acken) xv s(chellingen) p(ayments) maken </term></cell>
@@ -8489,7 +8489,7 @@
                     <cell rend="left">ii[c] lxxiii pl(acken)</cell>
                 </row>
                 <row ana="bk:total">
-                    <cell><term ana="bk:from" ref="#alrehandeWerken">
+                    <cell><term ana="bk:from bk:account" ref="#alrehandeWerken">
                             <hi rend="underline">som(ma)</hi> vand(en) voirs(creven) alrehande
                             div(er)sche uutgheve iiii[m] viii[c] lxxxviii pl(acken) </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="90">xc gul(den)</measure>
@@ -8504,7 +8504,7 @@
                     </cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#totalSumThisQuarter">
+                    <cell><term ana="bk:from bk:account" ref="#totalSumThisQuarter">
                             <hi rend="underline">somma</hi> van alden uutgheve(n) binne(n) den
                             voirscreven ande(re)n q(ua)rt(en) jaers van deser rekeningen compt
                             tegad(er) op </term></cell>
@@ -8686,14 +8686,14 @@
                     <cell>xix gul(den) v pl(acken) xii d(eniers) p(arisis)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="assizeThirdQuarter">
+                    <cell><term ana="bk:to bk:account" ref="assizeThirdQuarter">
                             <hi rend="underline">so(m)ma</hi> van alden ass(ize) vand(en) derden
                             q(ua)rt(en) jaers </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="1369">xiii[c] lxix gul(den)</measure>
                         <measure ana="bk:money" unit="placken" quantity="23.5">xxiii(½) pl(acken)</measure></cell>
                 </row>
                 <row ana="bk:total">
-                    <cell><term ana="bk:to" ref="van alden
+                    <cell><term ana="bk:to bk:account" ref="van alden
                         ontfanghe binne(n) den voirs(creven) derden q(uar)t(en) jaers"> <hi rend="underline">som(m)a </hi>van alden
                             ontfanghe binne(n) den voirs(creven) derden q(uar)t(en) jaers xxiiii[c]=
                         </term></cell>
@@ -8989,7 +8989,7 @@
                     </cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#">
+                    <cell><term ana="bk:to bk:account" ref="#">
                             <hi rend="underline">so(m)ma</hi> van alden ontfanghe(n) lone(n) den
                             voirs(creven) derden q(ua)rt(en) jaers co(m)pt </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="2499">xxiiii[c] xcviii
@@ -9027,7 +9027,7 @@
                     <cell>x s(chellingen) g(oten) oude</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#lijftochten">
+                    <cell><term ana="bk:from bk:account" ref="#lijftochten">
                             <hi rend="underline">som(ma)</hi> vand(en) voirs(creven) lijft(ocht) van
                             brux(el) binne(n) den voirs(creven) derden q(ua)rt(en) jaers
                             uutgegeve(n) xlv s(chellingen) gr(oten) oude xv torne voir elc (pond)
@@ -9083,7 +9083,7 @@
                     <cell>lii s(chellingen) vi d(eniers) gr(oten)</cell>
                 </row>
                 <row ana="bk:total">
-                    <cell><term ana="bk:from" ref="#total sum usufruct out of town">
+                    <cell><term ana="bk:from bk:account" ref="#total sum usufruct out of town">
                             <hi rend="underline">som(ma)</hi> vand(en) voirs(creven) lijftocht te
                             vilvoirden te mechlen tandwerpen end(e) te love(n) binne(n) den
                             voirs(creven) derden q(ua)rt(en) jaers betailt compt op viii (pond) xvii
@@ -9093,7 +9093,7 @@
                         <measure ana="bk:money" unit="quarten" quantity="1.5">i(½) q(ua)rt(en)</measure></cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#total sum of the usufruct">
+                    <cell><term ana="bk:from bk:account" ref="#total sum of the usufruct">
                             <hi rend="underline">so(mma)</hi> van ald(en) lijftochte(n) binne(n) den
                             voirs(creven) derden q(ua)rt(en) jaers uutggven co(m)pt op
                         </term></cell>
@@ -9136,7 +9136,7 @@
                     <cell>xcii(½) gul(den) r(ijn)s</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#erfrenten">
+                    <cell><term ana="bk:from bk:account" ref="#erfrenten">
                             <hi rend="underline">som(ma)</hi> vand(en) voirs(creven) erfenten
                             binne(n) de(n) voirs(creven) derden q(ua)rt(en) jaers </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="282">ii[c] lxxxii gul(den)</measure>
@@ -9225,7 +9225,7 @@
                     <cell>lxviii pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#schinken">
+                    <cell><term ana="bk:from bk:account" ref="#schinken">
                             <hi rend="underline">so(m)ma</hi> vand(en) schincken binne(n) den
                             voirs(creven) derden q(ua)rt(en) jaes viii[c] lxxxiiii pl(acken) maken
                         </term></cell>
@@ -9612,7 +9612,7 @@
                     <cell>xxx pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#butenpoirters">
+                    <cell><term ana="bk:from bk:account" ref="#butenpoirters">
                             <hi rend="underline">so(m)ma</hi> vand(er) voyage(n) end(e) uutrijden
                             binne(n) den tijt van deser rekeni(n)ge viii[m] vii[c] xlviii pl(acken)
                             maken </term></cell>
@@ -9713,7 +9713,7 @@
                     <cell>x gul(den)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#university">
+                    <cell><term ana="bk:from bk:account" ref="#university">
                             <hi rend="underline">so(mma)</hi> xcii scilde iii q(ua)rt(en) te xl
                             pl(acken) maken lxviii gul(den) xxxviii pl(acken) en(de) iii[c] lxv
                             gul(den) sij(n) tsame(n) </term></cell>
@@ -9888,7 +9888,7 @@
                     <cell>ii[c] lii pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#wedden">
+                    <cell><term ana="bk:from bk:account" ref="#wedden">
                             <hi rend="underline">som(ma)</hi> xv[m] v[c] lii pl(acken) xi
                             s(chellingen) p(ayments) maken </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="258">ii[c] lxxx viii gul(den)</measure>
@@ -9896,7 +9896,7 @@
                             p(ayments)</measure></cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#totalSumSalaries">
+                    <cell><term ana="bk:from bk:account" ref="#totalSumSalaries">
                             <hi rend="underline">som(ma)</hi> vand(en) voirs(creven) stipenden
                             end(e) wedde(n) </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="721">vii[c] xxi gul(den)</measure>
@@ -9954,7 +9954,7 @@
                     <cell>iiii[c] xxxii pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#jaerrrenten_expenses">
+                    <cell><term ana="bk:from bk:account" ref="#jaerrrenten_expenses">
                             <hi rend="underline">so(m)ma</hi> van desen jaerrente(n) ix[m] vii[c]
                             lxxxii pl(acken) maken </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="170">clxx</measure></cell>
@@ -10429,7 +10429,7 @@
                     <cell>iiii pl(acken) ii s(chellingen) p(ayments)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#pleckwerck">
+                    <cell><term ana="bk:from bk:account" ref="#pleckwerck">
                             <hi rend="underline">so(mma)</hi>
                         </term></cell>
                     <cell>
@@ -10589,7 +10589,7 @@
                     <cell>ix[c] xxxvi pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#calcsthien">
+                    <cell><term ana="bk:from bk:account" ref="#calcsthien">
                             <hi rend="underline">so(mma)</hi>
                         </term></cell>
                     <cell><measure ana="bk:money" unit="placken" quantity="8621">viii[m] vi[c] xxi
@@ -10737,7 +10737,7 @@
                     <cell>xv pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#metswerk">
+                    <cell><term ana="bk:from bk:account" ref="#metswerk">
                             <hi rend="underline">som(ma)</hi>
                         </term></cell>
                     <cell><measure ana="bk:money" unit="placken" quantity="1022">x[c] xxii
@@ -11106,7 +11106,7 @@
                             p(ayments)</measure></cell>
                 </row>
                 <row ana="bk:total">
-                    <cell><term ana="bk:from" ref="somma sommarum opte leye">
+                    <cell><term ana="bk:from bk:account" ref="somma sommarum opte leye">
                             <hi rend="underline">so(mma)</hi> vand(en) werck opte leye xxiiii[m]
                             ii[c] xli pl(acken) vi s(chellingen) p(ayments) make(n) </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="4048">iiii[m] xlviii guld(en)</measure>
@@ -11488,13 +11488,13 @@
                     <cell>iii[c] liiii gul(den) ix pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#?"><hi rend="underline">so(mma)</hi> vand(en)
+                    <cell><term ana="bk:from bk:account" ref="#?"><hi rend="underline">so(mma)</hi> vand(en)
                             div(er)sche(n) uutgeve(n)</term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="4047">iiii[m] xlvii gul(den)</measure>
                         <measure ana="bk:money" unit="placken" quantity="28.5">xxviii(½) pl(acken)</measure></cell>
                 </row>
                 <row ana="bk:total">
-                    <cell><term ana="bk:from" ref="#total sum income this quarter"> (marge<hi rend="underline">) total(e) so(mma)</hi>
+                    <cell><term ana="bk:from bk:account" ref="#total sum income this quarter"> (marge<hi rend="underline">) total(e) so(mma)</hi>
                             van alden uutgeve(n) binne(n) den voirs(creven) d(er)den q(ua)rt jaers
                         </term></cell>
                     <cell><measure ana="bk:money" unit="guilder" quantity="6005">vi[m]v gul(den) r(ijns)</measure>
@@ -11649,7 +11649,7 @@
                     <cell>xix gul(den) v pl(acken) xii s(chellingen) p(ayments)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#assizeFourthQuarter">
+                    <cell><term ana="bk:to bk:account" ref="#assizeFourthQuarter">
                             <hi rend="underline">som(m)a</hi> van alden assizen vand(en) lesten
                             q(ua)rt(en) jaers voirs(creven) </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="1369"> xiii[c] lxix gul(den)</measure>
@@ -11703,7 +11703,7 @@
                     <cell>viii gul(den) iii(½) q(ua)rt(en)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#guildAssize">
+                    <cell><term ana="bk:to bk:account" ref="#guildAssize">
                             <hi rend="underline">so(m)ma</hi> vand(en) ambachten vand(en) lesten
                             halven jae(r) </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="40">xl gul(den) i
@@ -11765,7 +11765,7 @@
                     <cell>ix gul(den)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#beerAssize">
+                    <cell><term ana="bk:from bk:account" ref="#beerAssize">
                             <hi rend="underline">so(mma)</hi> van alden on(ver)cochten ass(izen)
                             gelijc voirs(creven) es compt </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="1610">xvi[c] x gul(den)</measure>
@@ -12374,7 +12374,7 @@
                     <cell>iii[c] lxxxv pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#erfrenten">
+                    <cell><term ana="bk:from bk:account" ref="#erfrenten">
                             <hi rend="underline">so(mma)</hi> van desen p(er)chu(s)e voirs(creven)
                             xiii[c] lxxiiii pl(acken) val(ent) </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="25">xxv gul(den)</measure>
@@ -12431,7 +12431,7 @@
                     <cell>vii gul(den)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#erfrenten">
+                    <cell><term ana="bk:from bk:account" ref="#erfrenten">
                             <hi rend="underline">so(mma)</hi> vand(en) voirs(creven) epplete(n)
                             end(e) vualle visthene(n) binne(n) dese rekeni(n)ge(n) </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="334">iii[c] xxxiiii gul(den)</measure>
@@ -12535,7 +12535,7 @@
                     <cell>lxxxvi plet(ers) l pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:from" ref="#belastingOpGraan">
+                    <cell><term ana="bk:from bk:account" ref="#belastingOpGraan">
                             <hi rend="underline">so(mma)</hi> vand(en) voirs(creven) coren gevallen
                             binne(n) desen voirs(creven) jae(r) =lxxxvii gul(den)= iiii[c] lxxxvii
                             pet(ers) xxiiii pl(acken) stuc te lii pl(acken) maken in gul(den) stuc
@@ -12621,7 +12621,7 @@
                     <cell>xii s(chellingen) vi d(eniers) gr(oten) oude</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#lijftochten">
+                    <cell><term ana="bk:to bk:account" ref="#lijftochten">
                             <hi rend="underline">som(ma)</hi> iiii (pond) xii s(chellingen) vi
                             d(eniers) gr(oten) oude voir elc (pond) gr(oten) xiii gul(den) rijnsch
                         </term></cell>
@@ -12652,7 +12652,7 @@
                     <cell>xvii s(chellingen) x d(eniers) ob(olen) gr(oten) oude</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#lijftochten">
+                    <cell><term ana="bk:to bk:account" ref="#lijftochten">
                             <hi rend="underline">som(ma)</hi> vand(en) voirs(creven) lijft(ochten)
                             betailt inde voirs(creve)n steden van heneg(ouwen) xxxvii s(chellingen)
                             i(½) d(eniers) gr(oten) oude voir elc (pond) g(roten) oude x gul(den)
@@ -12663,7 +12663,7 @@
                             p(ayments)</measure></cell>
                 </row>
                 <row ana="bk:total">
-                    <cell><term ana="bk:to" ref="#totalsumofusufruct">
+                    <cell><term ana="bk:to bk:account" ref="#totalsumofusufruct">
                             <hi rend="underline">so(m)ma</hi> van ald(en) lijft(ochten) die de stat
                             van loven sculd(ich) was binne(n) den voirs(creven) lesten q(ua)rt(en)
                             jaers compt op </term></cell>
@@ -12696,7 +12696,7 @@
                     <cell>clx gul(den)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#?">
+                    <cell><term ana="bk:to bk:account" ref="#?">
                             <hi rend="underline">so(mma)</hi> vand(en) erfeliken renten dat de
                             rentmeest(er)s betailt hebben binne(n) den voirs(creven) lesten
                             q(ua)rt(en) jaers </term></cell>
@@ -12969,7 +12969,7 @@
                         <measure ana="bk:money" unit="schellingen" quantity="18">xviii miten</measure></cell>
                 </row>
                 <row ana="bk:total">
-                    <cell><term ana="bk:to" ref="#totalsumdrinkingmoney">
+                    <cell><term ana="bk:to bk:account" ref="#totalsumdrinkingmoney">
                             <hi rend="underline">so(mma</hi>) vand(en) schincken binne(n) desen
                             q(ua)rt(en) jaers iii[m] iiii[c] l pl(acken) vi s(chellingen) p(ayments)
                             maken </term></cell>
@@ -13375,7 +13375,7 @@
                     <cell>iiii[c] pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#voyagien">
+                    <cell><term ana="bk:to bk:account" ref="#voyagien">
                             <hi rend="underline">so(mma)</hi> vand(en) voyagen voirs(creven) xii[m]
                             vii[c] xxii pl(acken) val(ent) </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="235">ii[c] xxxv gul(den)</measure>
@@ -13492,7 +13492,7 @@
                     <cell>x gul(den)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#universiteiten">
+                    <cell><term ana="bk:to bk:account" ref="#universiteiten">
                             <hi rend="underline">so(mma)</hi> xcii scilde iii q(ua)rt(en) te xl
                             pl(acken) maken lxviii gul(den) xxxviii pl(acken) end(e) iii[c] lxxv
                             gul(den) sijn tsamen </term></cell>
@@ -13602,7 +13602,7 @@
                         <measure ana="bk:money" unit="placken" quantity="36">xxxvi pl(acken)</measure></cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#wedden">
+                    <cell><term ana="bk:to bk:account" ref="#wedden">
                             <hi rend="underline">som(ma)</hi>
                         </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="177">clxxvii gul(den)</measure>
@@ -13728,7 +13728,7 @@
                     <cell>xix[c] xiii pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#totalsumsalaries">
+                    <cell><term ana="bk:to bk:account" ref="#totalsumsalaries">
                             <hi rend="underline">som(ma)</hi> vand(en) weden binne(n) den
                             voirs(creven) q(ua)rt(en) </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="656">vi[c] lvi gul(den)</measure>
@@ -13810,7 +13810,7 @@
                     <cell>iiii(½) gul(den)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#erfrenten">
+                    <cell><term ana="bk:to bk:account" ref="#erfrenten">
                             <hi rend="underline">som(ma)</hi> xxv gul(den) (½) q(ua)rt(en) rijns
                             stuc te liiii pl(acken) end€ i q(ua)rt(en) holl(ants) d(er) voe(ren) xii
                             pl(acken) sijn tsamen </term></cell>
@@ -14900,7 +14900,7 @@
                     <cell>v[m] v[c] lxvi pl(acken) xxi s(chellingen) p(ayments)</cell>
                 </row>
                 <row ana="bk:total">
-                    <cell><term ana="bk:to" ref="#totalsumbuildingworks">
+                    <cell><term ana="bk:to bk:account" ref="#totalsumbuildingworks">
                             <hi rend="underline">so(mma)</hi> vand(en) voirs(creven) refectie(n)
                             binne(n) den voirs(creven) q(ua)rt(en) xx[m] v[c] xxxvii pl(acken) vi
                             s(chellingen) p(ayments) val(ent) </term></cell>
@@ -15343,7 +15343,7 @@
                     <cell>vi[c] xcii pl(acken) viii s(chellingen) p(ayments)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#miscellaneous parts">
+                    <cell><term ana="bk:to bk:account" ref="#miscellaneous parts">
                             <hi rend="underline">som(ma)</hi> vand(en) div(er)se voirs(creven)
                             xxxi[m] ii[c] lxvi pl(acken) vi s(chellingen) p(ayments) val(ent)
                         </term></cell>
@@ -15737,7 +15737,7 @@
                     <cell>ii[c] lxiiii pl(acken)</cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#overslach">
+                    <cell><term ana="bk:to bk:account" ref="#overslach">
                             <hi rend="underline">so(m)ma</hi> van dat den ov(er)slach gecost heeft
                             vi[m] c xiiii pl(acken) xvi s(chellingen) p(ayments) val(ent) c xiii
                             gul(den) xii pl(acken) xvi s(chellingen) p(ayments) dae(r) af de
@@ -17269,7 +17269,7 @@
                     </cell>
                 </row>
                 <row ana="bk:sum">
-                    <cell><term ana="bk:to" ref="#total sum of all building works to the new house">
+                    <cell><term ana="bk:to bk:account" ref="#total sum of all building works to the new house">
                             <hi rend="underline">so(mma)</hi> vand(en) uutghevene(n) vand(er) nuwen
                             huse acht(er) den rosenhoet v[c] xvii (pond) xi s(chellingen) g(roten)
                             b(rabants) xxiiii miten val(ent) </term></cell>
@@ -17283,7 +17283,7 @@
                     </cell>
                 </row>
                 <row ana="bk:total">
-                    <cell><term ana="bk:to" ref="#total sum of this quater">
+                    <cell><term ana="bk:to bk:account" ref="#total sum of this quater">
                             <hi rend="underline">so(mma)</hi> van alden uutgheve(n) binne(n) den
                             voirs(creven) lesten q(ua)rt(en) jaers </term></cell>
                     <cell><measure ana="bk:money" unit="guilders" quantity="4835">iiii[m] viii[c] xxxv
