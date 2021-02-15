@@ -29,6 +29,14 @@ def normalizeStringforURI(string):
      else:
             return "anonym"
 
+########################################################################################
+# 
+def normalizeStringforJSON(string):
+    string = string.replace('"', '\\"')
+    string = " ".join(string.split())
+    return string 
+
+
              
 ########################################################################################
 # creates a bk:Money and add bk:unit (uri) and bk:quantity (literal)
@@ -45,7 +53,7 @@ def get_Money(Measurable_Money, bk_quantity, bk_unit_index, Transfer):
                 if(currency.get("id") == bk_unit_index):
                     bk_unit = currency.get("unit")        
             output_graph.add((Measurable_Money, BK.unit, URIRef(BASE_URL + CONTEXT + "#" + bk_unit) ))
-            print(bk_quantity)
+            # print(bk_quantity)
     except:
         print(f"No valid number in BK_MONEY: Currencies cannot contain commas, spaces, or characters:{bk_quantity}")
     # <bk:unit>  https://gams.uni-graz.at/context:depcha.gwfp#pence
@@ -252,7 +260,7 @@ for json_file in all_JSON_filenames:
             Between_URI = BASE_URL + PID + "#B." + str(normalized_name)
             Between = URIRef(Between_URI)
             output_graph.add((Between, RDF.type,  BK.Between))
-            output_graph.add((Between , BK.name,  Literal(name) ))
+            output_graph.add((Between , BK.name,  Literal(normalizeStringforJSON(name)) ))
             
     print("Log: distinct BK_BETWEEN ... check")  
 
@@ -364,12 +372,12 @@ for json_file in all_JSON_filenames:
     
     expense_sum = 0
     income_sum = 0
-
-    for year in yearSet:
+    
+    ''' for year in yearSet:
         
         sumQuantityFromQueryResult(Money_From_AccotunHolder_To_X)
         sumQuantityFromQueryResult(Money_From_X_To_AccotunHoler)
-        '''
+      
         for query_result_row in Money_From_AccotunHolder_To_X:
             if(patternforYear.search(query_result_row[0]) is not None):
                 date = patternforYear.search(query_result_row[0]).group(0)               
@@ -385,9 +393,6 @@ for json_file in all_JSON_filenames:
                         add_Quantity_To_Sum(income_sum, quantity, 240) 
                     Dataset_Dict[year]["expense"] = expense_sum 
         expense_sum = 0
-        '''
-        
-        '''
         for query_result_row in Money_From_X_To_AccotunHoler:
             if(patternforYear.search(query_result_row[0]) is not None):
                 date = patternforYear.search(query_result_row[0]).group(0)
@@ -401,8 +406,8 @@ for json_file in all_JSON_filenames:
                     elif(str(unit) == "https://gams.uni-graz.at/context:depcha.gwfp#pence"):
                         add_Quantity_To_Sum(income_sum, quantity, 240)
                     Dataset_Dict[year]["income"] = income_sum 
-        income_sum = 0
-        '''
+        income_sum = 0'''
+        
     print("Log: income_sum and expense_sum  ... check")    
 
     for year in yearSet:

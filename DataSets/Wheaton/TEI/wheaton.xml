@@ -61,494 +61,482 @@
       </listPrefixDef>
       <unitDecl ana="bk:Taxonomy">
         <unitDef ref="wd:Q4917" type="currency" xml:id="dollar" ana="bk:unit">
-          <label xml:lang="eng">dollar</label>
+          <label xml:lang="en">dollar</label>
           <country>USA</country>
           <unit>$</unit>
           <conversion fromUnit="#dollars" toUnit="#cents" formula="$fromUnit div 100"/>
         </unitDef>
         <unitDef ref="wd:Q58093" type="currency" xml:id="cent">
-          <label xml:lang="eng">cent</label>
+          <label xml:lang="en">cent</label>
           <country>USA</country>
           <unit>c</unit>
         </unitDef>
         <unitDef ref="wd:Q216658" type="weight" xml:id="unit.1">
-          <label xml:lang="eng">bushels</label>
+          <label xml:lang="en">bushels</label>
         </unitDef>
         <unitDef ref="wd:Q100995" type="weight" xml:id="unit.2">
-          <label xml:lang="eng">pounds</label>
+          <label xml:lang="en">pounds</label>
         </unitDef>
         <unitDef ref="wd:Q48013" type="weight" xml:id="unit.14">
-          <label xml:lang="eng">ounces</label>
+          <label xml:lang="en">ounces</label>
         </unitDef>
         <unitDef ref="wd:Q218593" type="length" xml:id="unit.18">
-          <label xml:lang="eng">inches</label>
+          <label xml:lang="en">inches</label>
         </unitDef>
         <unitDef ref="wd:Q3710" type="length" xml:id="unit.5">
-          <label xml:lang="eng">feet</label>
+          <label xml:lang="en">feet</label>
         </unitDef>
         <unitDef ref="wd:Q482798" type="length" xml:id="unit.7">
-          <label xml:lang="eng">yards</label>
+          <label xml:lang="en">yards</label>
         </unitDef>
         <unitDef ref="wd:Q844338" type="length" xml:id="unit.23">
-          <label xml:lang="eng">hectometer</label>
+          <label xml:lang="en">hectometer</label>
         </unitDef>
         <unitDef ref="wd:Q61793198" type="length" xml:id="unit.24">
-          <label xml:lang="eng">rods</label>
+          <label xml:lang="en">rods</label>
         </unitDef>
         <unitDef ref="wd:Q351646" type="capacity" xml:id="unit.15">
-          <label xml:lang="eng">peck</label>
+          <label xml:lang="en">peck</label>
         </unitDef>
         <unitDef ref="wd:Q178413" type="capacity" xml:id="unit.20">
-          <label xml:lang="eng">gallons</label>
+          <label xml:lang="en">gallons</label>
         </unitDef>
         <unitDef ref="wd:Q178506" type="capacity" xml:id="unit.25">
-          <label xml:lang="eng">barrels</label>
+          <label xml:lang="en">barrels</label>
         </unitDef>
         <unitDef type="capacity" xml:id="unit.29">
-          <label xml:lang="eng">tub</label>
+          <label xml:lang="en">tub</label>
         </unitDef>
         <unitDef ref="wd:Q81292" type="surface" xml:id="unit.17">
-          <label xml:lang="eng">acres</label>
+          <label xml:lang="en">acres</label>
         </unitDef>
         <unitDef ref="wd:Q188869" type="surface" xml:id="unit.27">
-          <label xml:lang="eng">field</label>
+          <label xml:lang="en">field</label>
         </unitDef>
         <unitDef ref="wd:Q2360918" type="number" xml:id="unit.3">
-          <label xml:lang="eng">pieces</label>
+          <label xml:lang="en">pieces</label>
         </unitDef>
         <unitDef ref="wd:Q25235" type="time" xml:id="unit.4">
-          <label xml:lang="eng">hours</label>
+          <label xml:lang="en">hours</label>
         </unitDef>
         <unitDef ref="wd:Q573" type="time" xml:id="unit.12">
-          <label xml:lang="eng">days</label>
+          <label xml:lang="en">days</label>
         </unitDef>
         <unitDef ref="wd:Q23387" type="time" xml:id="unit.19">
-          <label xml:lang="eng">weeks</label>
+          <label xml:lang="en">weeks</label>
         </unitDef>
         <unitDef ref="wd:Q5151" type="time" xml:id="unit.22">
-          <label xml:lang="eng">months</label>
+          <label xml:lang="en">months</label>
         </unitDef>
       </unitDecl>
       <classDecl>
         <taxonomy ana="bk:Taxonomy">
-          <gloss>Commodities</gloss>
-          <category xml:id="commodity.1">
-            <gloss xml:lang="eng">vegetable<ref target="wd:Q11004"/>
-            </gloss>
-            <category xml:id="commodity.1.1">
-              <gloss xml:lang="eng">potatoes<ref target="wd:Q16587531"/>
-              </gloss>
-              <category xml:id="commodity.1.1.1">
-                <gloss xml:lang="eng">black potatoes</gloss>
-              </category>
-              <category xml:id="commodity.1.1.2">
-                <gloss xml:lang="eng">brown potatoes</gloss>
-              </category>
-            </category>
-            <category xml:id="commodity.1.2">
-              <gloss xml:lang="eng">corn<ref target="wd:Q11575"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.2">
-            <gloss xml:lang="eng">edible fats and oils<ref target="wd:Q912613"/>
-            </gloss>
-            <category xml:id="commodity.2.1">
-              <gloss xml:lang="eng">lard<ref target="wd:Q72827"/>
-              </gloss>
-            </category>
-          </category>
+          <gloss xml:lang="en">Commodities</gloss>
           <category xml:id="commodity.3">
-            <gloss xml:lang="eng">dairy product<ref target="wd:Q185217"/>
-            </gloss>
+            <catDesc><term ref="wd:Q185217" xml:lang="en">dairy product</term></catDesc>
             <category xml:id="commodity.3.1">
-              <gloss xml:lang="eng">butter<ref target="wd:Q34172"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.4">
-            <gloss xml:lang="eng">dried fruit<ref target="wd:Q234901"/>
-            </gloss>
-            <category xml:id="commodity.4.1">
-              <gloss xml:lang="eng">rosin<ref target="wd:Q13186"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.5">
-            <gloss xml:lang="eng">artificial stone<ref target="wd:Q944070"/>
-            </gloss>
-            <category xml:id="commodity.5.1">
-              <gloss xml:lang="eng">brick<ref target="wd:Q40089"/>
-              </gloss>
+              <catDesc><term ref="wd:Q34172" xml:lang="en">butter</term></catDesc>
             </category>
           </category>
           <category xml:id="commodity.6">
-            <gloss xml:lang="eng">activity<ref target="wd:Q1914636"/>
-            </gloss>
+            <catDesc><term ref="wd:Q7406919" xml:lang="en">service</term></catDesc>
             <category xml:id="commodity.6.1">
-              <gloss xml:lang="eng">work<ref target="wd:Q6958747"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.7">
-            <gloss xml:lang="eng">tissue<ref target="wd:Q40397"/>
-            </gloss>
-            <category xml:id="commodity.7.1">
-              <gloss xml:lang="eng">wood<ref target="wd:Q287"/>
-              </gloss>
-            </category>
-            <category xml:id="commodity.7.2">
-              <gloss xml:lang="eng">fresh pine<ref target="wd:Q287"/>
-              </gloss>
-            </category>
-            <category xml:id="commodity.7.3">
-              <gloss xml:lang="eng">pine logs<ref target="wd:Q287"/>
-              </gloss>
-            </category>
-            <category xml:id="commodity.7.4">
-              <gloss xml:lang="eng">pine stick<ref target="wd:Q287"/>
-              </gloss>
+              <catDesc><term ref="wd:Q6958747" xml:lang="en">work</term></catDesc>
             </category>
           </category>
           <category xml:id="commodity.8">
-            <gloss xml:lang="eng">contract<ref target="wd:Q93288"/>
-            </gloss>
+            <catDesc><term ref="wd:Q93288" xml:lang="en">contract</term></catDesc>
             <category xml:id="commodity.8.1">
-              <gloss xml:lang="eng">renting<ref target="wd:Q157171"/>
-              </gloss>
+              <catDesc><term ref="wd:Q157171" xml:lang="en">renting</term></catDesc>
             </category>
             <category xml:id="commodity.8.2">
-              <gloss xml:lang="eng">heifer rental<ref target="wd:Q157171"/>
-              </gloss>
+              <catDesc><term ref="wd:Q157171" xml:lang="en">heifer rental</term></catDesc>
             </category>
           </category>
           <category xml:id="commodity.9">
-            <gloss xml:lang="eng">costume component<ref target="wd:Q28935403"/>
-            </gloss>
+            <catDesc><term ref="wd:Q28935403" xml:lang="en">costume component</term></catDesc>
             <category xml:id="commodity.9.1">
-              <gloss xml:lang="eng">green ribbon<ref target="wd:Q857421"/>
-              </gloss>
+              <catDesc><term ref="wd:Q857421" xml:lang="en">green ribbon</term></catDesc>
             </category>
             <category xml:id="commodity.9.2">
-              <gloss xml:lang="eng">ribbon<ref target="wd:Q857421"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.10">
-            <gloss xml:lang="eng">cotton<ref target="wd:Q11607438"/>
-            </gloss>
-            <category xml:id="commodity.10.1">
-              <gloss xml:lang="eng">cotton cloth<ref target="wd:Q8231603"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.11">
-            <gloss xml:lang="eng">woven fabric<ref target="wd:Q5295538"/>
-            </gloss>
-            <category xml:id="commodity.11.1">
-              <gloss xml:lang="eng">shirting<ref target="wd:Q2236475"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.12">
-            <gloss xml:lang="eng">meat<ref target="wd:Q10990"/>
-            </gloss>
-            <category xml:id="commodity.12.1">
-              <gloss xml:lang="eng">beef<ref target="wd:Q192628"/>
-              </gloss>
-            </category>
-            <category xml:id="commodity.12.2">
-              <gloss xml:lang="eng">pork<ref target="wd:Q191768"/>
-              </gloss>
-            </category>
-            <category xml:id="commodity.12.3">
-              <gloss xml:lang="eng">salt beef<ref target="wd:Q1682434"/>
-              </gloss>
-            </category>
-            <category xml:id="commodity.12.4">
-              <gloss xml:lang="eng">turkeys<ref target="wd:Q4200953"/>
-              </gloss>
+              <catDesc><term ref="wd:Q857421" xml:lang="en">ribbon</term></catDesc>
             </category>
           </category>
           <category xml:id="commodity.13">
-            <gloss xml:lang="eng">costume accessory<ref target="wd:Q1065579"/>
-            </gloss>
+            <catDesc><term ref="wd:Q1065579" xml:lang="en">costume accessory</term></catDesc>
             <category xml:id="commodity.13.1">
-              <gloss xml:lang="eng">french braid<ref target="wd:Q16752165"/>
-              </gloss>
+              <catDesc><term ref="wd:Q16752165" xml:lang="en">french braid</term></catDesc>
             </category>
           </category>
-          <category xml:id="commodity.14">
-            <gloss xml:lang="eng">twill<ref target="wd:Q12060020"/>
-            </gloss>
-            <category xml:id="commodity.14.1">
-              <gloss xml:lang="eng">flannel<ref target="wd:Q58162"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.15">
-            <gloss xml:lang="eng">seat<ref target="wd:Q2207370"/>
-            </gloss>
-            <category xml:id="commodity.15.1">
-              <gloss xml:lang="eng">chaise<ref target="wd:Q15026"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.16">
-            <gloss xml:lang="eng">timepiece<ref target="wd:Q42622779"/>
-            </gloss>
-            <category xml:id="commodity.16.1">
-              <gloss xml:lang="eng">winding watch<ref target="wd:Q178794"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.17">
-            <gloss xml:lang="eng">medium of exchange<ref target="wd:Q11105360"/>
-            </gloss>
-            <category xml:id="commodity.17.1">
-              <gloss xml:lang="eng">curency<ref target="wd:Q8142"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.18">
-            <gloss xml:lang="eng">pork<ref target="wd:Q191768"/>
-            </gloss>
-            <category xml:id="commodity.18.1">
-              <gloss xml:lang="eng">ham<ref target="wd:Q170486"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.19">
-            <gloss xml:lang="eng">artificial physical object<ref target="wd:Q8205328"/>
-            </gloss>
-            <category xml:id="commodity.19.1">
-              <gloss xml:lang="eng">pipe<ref target="wd:Q41551"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.20">
-            <gloss xml:lang="eng">consumables<ref target="wd:Q1681365"/>
-            </gloss>
-            <category xml:id="commodity.20.1">
-              <gloss xml:lang="eng">nails<ref target="wd:Q37077"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.21">
-            <gloss xml:lang="eng">forest product<ref target="wd:Q5469189"/>
-            </gloss>
-            <category xml:id="commodity.21.1">
-              <gloss xml:lang="eng">lumber<ref target="wd:Q1370714"/>
-              </gloss>
-            </category>
-            <category xml:id="commodity.21.2">
-              <gloss xml:lang="eng">pine boards<ref target="wd:Q1370714"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.22">
-            <gloss xml:lang="eng">staple food<ref target="wd:Q736427"/>
-            </gloss>
-            <category xml:id="commodity.22.1">
-              <gloss xml:lang="eng">grain<ref target="wd:Q2995529"/>
-              </gloss>
-            </category>
-          </category>
+          <!--  -->
           <category xml:id="commodity.23">
-            <gloss xml:lang="eng">tool<ref target="wd:Q39546"/>
-            </gloss>
+            <catDesc><term ref="wd:Q39546" xml:lang="en">tool</term></catDesc>
+            <category xml:id="commodity.27">
+              <catDesc><term ref="wd:Q2578402" xml:lang="en">hand tool</term></catDesc>
+              <category xml:id="commodity.27.1">
+                <catDesc><term ref="wd:Q25294" xml:lang="en">hammer</term></catDesc>
+              </category>
+            </category>
+            <category xml:id="commodity.23.3">
+              <catDesc>
+                <term ref="wd:Q178692" xml:lang="en">crane</term>
+              </catDesc>
+            </category>
             <category xml:id="commodity.23.1">
-              <gloss xml:lang="eng">brooms<ref target="wd:Q172833"/>
-              </gloss>
+              <catDesc><term ref="wd:Q172833" xml:lang="en">brooms</term></catDesc>
             </category>
             <category xml:id="commodity.23.2">
-              <gloss xml:lang="eng">clipboards<ref target="wd:Q204461"/>
-              </gloss>
+              <catDesc><term ref="wd:Q204461" xml:lang="en">clipboards</term></catDesc>
             </category>
           </category>
           <category xml:id="commodity.24">
-            <gloss xml:lang="eng">Anatidae<ref target="wd:Q7556"/>
-            </gloss>
+            <catDesc><term ref="wd:Q1797813" xml:lang="en">productive animal</term></catDesc>
             <category xml:id="commodity.24.1">
-              <gloss xml:lang="eng">goose<ref target="wd:Q16529344"/>
-              </gloss>
+              <catDesc><term ref="wd:Q16529344" xml:lang="en">goose</term></catDesc>
             </category>
             <category xml:id="commodity.24.2">
-              <gloss xml:lang="eng">geese<ref target="wd:Q16529344"/>
-              </gloss>
+              <catDesc><term ref="wd:Q16529344" xml:lang="en">geese</term></catDesc>
+            </category>
+            <category xml:id="commodity.24.3">
+              <catDesc><term ref="wd:Q11748378" xml:lang="en">cow</term></catDesc>
+            </category>
+            <category xml:id="commodity.24.4">
+              <catDesc>
+                <term ref="wd:Q2935" xml:lang="en">calf</term>
+              </catDesc>
+            </category>
+            <category xml:id="commodity.24.5">
+              <catDesc>
+                <term ref="wd:Q787" xml:lang="en">pig</term>
+              </catDesc>
+            </category>
+            <category xml:id="commodity.24.6">
+              <catDesc>
+                <term ref="wd:Q830" xml:lang="en">cattle</term>
+              </catDesc>
+            </category>
+            <category xml:id="commodity.24.7">
+              <catDesc>
+                <term ref="wd:Q473194" xml:lang="en">oxen</term>
+              </catDesc>
+            </category>
+            <category xml:id="commodity.24.8">
+              <catDesc>
+                <term ref="wd:Q726" xml:lang="en">horse</term>
+              </catDesc>
+            </category>
+            <category xml:id="commodity.24.9">
+              <catDesc>
+                <term ref="wd:Q81564" xml:lang="en">alpaca</term>
+              </catDesc>
             </category>
           </category>
+          <!--  -->
           <category xml:id="commodity.25">
-            <gloss xml:lang="eng">base material<ref target="wd:Q214609"/>
-            </gloss>
+            <catDesc><term ref="wd:Q214609" xml:lang="en">base material</term></catDesc>
+            <category xml:id="commodity.40">
+              <catDesc><term ref="wd:Q252108" xml:lang="en">softwood</term></catDesc>
+              <category xml:id="commodity.40.1">
+                <catDesc><term ref="wd:Q1503211" xml:lang="en">pine wood</term></catDesc>
+              </category>
+              <category xml:id="commodity.7.2">
+                <catDesc><term ref="wd:Q1503211" xml:lang="en">fresh pine</term></catDesc>
+              </category>
+              <category xml:id="commodity.7.3">
+                <catDesc><term ref="wd:Q3737064" xml:lang="en">pine logs</term></catDesc>
+              </category>
+              <category xml:id="commodity.7.4">
+                <catDesc><term ref="wd:Q287" xml:lang="en">pine stick</term></catDesc>
+              </category>
+            </category>
+            <category xml:id="commodity.21">
+              <catDesc><term ref="wd:Q5469189" xml:lang="en">forest product</term></catDesc>
+              <category xml:id="commodity.21.1">
+                <catDesc><term ref="wd:Q1370714" xml:lang="en">lumber</term></catDesc>
+                <category xml:id="commodity.21.2">
+                  <catDesc><term ref="wd:Q1370714" xml:lang="en">pine board</term></catDesc>
+                </category>
+              </category>
+            </category>
+            <category xml:id="commodity.29">
+              <catDesc><term ref="wd:Q206615" xml:lang="en">building material</term></catDesc>
+              <category xml:id="commodity.5.1">
+                <catDesc><term ref="wd:Q40089" xml:lang="en">brick</term></catDesc>
+              </category>
+              <category xml:id="commodity.29.1">
+                <catDesc><term ref="wd:Q1355652" xml:lang="en">plank</term></catDesc>
+              </category>
+              <category xml:id="commodity.20.1">
+                <catDesc><term ref="wd:Q37077" xml:lang="en">nails</term></catDesc>
+              </category>
+              <category xml:id="commodity.19.1">
+                <catDesc><term ref="wd:Q41551" xml:lang="en">pipe</term></catDesc>
+              </category>
+            </category>
             <category xml:id="commodity.25.1">
-              <gloss xml:lang="eng">paint<ref target="wd:Q174219"/>
-              </gloss>
+              <catDesc><term ref="wd:Q174219" xml:lang="en">paint</term></catDesc>
             </category>
           </category>
-          <category xml:id="commodity.26">
-            <gloss xml:lang="eng">cotton fabric<ref target="wd:Q8231603"/>
-            </gloss>
-            <category xml:id="commodity.26.1">
-              <gloss xml:lang="eng">calico<ref target="wd:Q1132695"/>
-              </gloss>
+          <category xml:id="commodity.65">
+            <catDesc><term ref="wd:Q1314278" xml:lang="en">textile</term></catDesc>
+            <category xml:id="commodity.26">
+              <catDesc><term ref="wd:Q8231603" xml:lang="en">cotton fabric</term></catDesc>
+              <category xml:id="commodity.26.1">
+                <catDesc><term ref="wd:Q1132695" xml:lang="en">calico</term></catDesc>
+              </category>
+              <category xml:id="commodity.10.1">
+                <catDesc><term ref="wd:Q8231603" xml:lang="en">cotton cloth</term></catDesc>
+              </category>
             </category>
-          </category>
-          <category xml:id="commodity.27">
-            <gloss xml:lang="eng">hand tool<ref target="wd:Q2578402"/>
-            </gloss>
-            <category xml:id="commodity.27.1">
-              <gloss xml:lang="eng">hammer<ref target="wd:Q25294"/>
-              </gloss>
+            <category xml:id="commodity.11">
+              <catDesc><term ref="wd:Q5295538" xml:lang="en">woven fabric</term></catDesc>
+              <category xml:id="commodity.11.1">
+                <catDesc><term ref="wd:Q2236475" xml:lang="en">shirting</term></catDesc>
+              </category>
+            </category>
+            <category xml:id="commodity.14">
+              <catDesc><term ref="wd:Q12060020" xml:lang="en">twill</term></catDesc>
+              <category xml:id="commodity.14.1">
+                <catDesc><term ref="wd:Q58162" xml:lang="en">flannel</term></catDesc>
+              </category>
             </category>
           </category>
           <category xml:id="commodity.28">
-            <gloss xml:lang="eng">product<ref target="wd:Q2424752"/>
-            </gloss>
+            <catDesc><term ref="wd:Q2424752" xml:lang="en">products</term></catDesc>
             <category xml:id="commodity.28.1">
-              <gloss xml:lang="eng">meal<ref target="wd:Q2095"/>
-              </gloss>
+              <catDesc><term ref="wd:Q2095" xml:lang="en">meal</term></catDesc>
             </category>
-          </category>
-          <category xml:id="commodity.29">
-            <gloss xml:lang="eng">building material<ref target="wd:Q206615"/>
-            </gloss>
-            <category xml:id="commodity.29.1">
-              <gloss xml:lang="eng">plank<ref target="wd:Q1355652"/>
-              </gloss>
+            <category xml:id="commodity.16.1">
+              <catDesc><term ref="wd:Q178794" xml:lang="en">winding watch</term></catDesc>
             </category>
-          </category>
-          <category xml:id="commodity.30">
-            <gloss xml:lang="eng">cattle<ref target="wd:Q830"/>
-            </gloss>
-            <category xml:id="commodity.30.1">
-              <gloss xml:lang="eng">cow<ref target="wd:Q11748378"/>
-              </gloss>
+            <category xml:id="commodity.15.1">
+              <catDesc><term ref="wd:Q15026" xml:lang="en">chaise</term></catDesc>
             </category>
           </category>
           <category xml:id="commodity.31">
-            <gloss xml:lang="eng">part of a plant<ref target="wd:Q20011319"/>
-            </gloss>
+            <catDesc><term ref="wd:Q235352" xml:lang="en">crop</term></catDesc>
             <category xml:id="commodity.31.1">
-              <gloss xml:lang="eng">seed corn<ref target="wd:Q40763"/>
-              </gloss>
+              <catDesc><term ref="wd:Q40763" xml:lang="en">seed corn</term></catDesc>
             </category>
-          </category>
-          <category xml:id="commodity.32">
-            <gloss xml:lang="eng">alcoholic beverage<ref target="wd:Q154"/>
-            </gloss>
-            <category xml:id="commodity.32.1">
-              <gloss xml:lang="eng">beers<ref target="wd:Q44"/>
-              </gloss>
-            </category>
-            <category xml:id="commodity.32.2">
-              <gloss xml:lang="eng">cider<ref target="wd:Q167296"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.33">
-            <gloss xml:lang="eng">herbaceous plant<ref target="wd:Q190903"/>
-            </gloss>
             <category xml:id="commodity.33.1">
-              <gloss xml:lang="eng">hay<ref target="wd:Q336989"/>
-              </gloss>
+              <catDesc><term ref="wd:Q336989" xml:lang="en">hay</term></catDesc>
             </category>
           </category>
-          <category xml:id="commodity.34">
-            <gloss xml:lang="eng">trousers<ref target="wd:Q39908"/>
-            </gloss>
-            <category xml:id="commodity.34.1">
-              <gloss xml:lang="eng">pantaloons<ref target="wd:Q38795853"/>
-              </gloss>
+          <!--  -->
+          <category xml:id="commodity.62">
+            <catDesc><term ref="wd:Q11460" xml:lang="en">clothing</term></catDesc>
+            <category xml:id="commodity.34">
+              <catDesc><term ref="wd:Q39908" xml:lang="en">trousers</term></catDesc>
+              <category xml:id="commodity.34.1">
+                <catDesc><term ref="wd:Q38795853" xml:lang="en">pantaloons</term></catDesc>
+              </category>
+            </category>
+            <category xml:id="commodity.37">
+              <catDesc><term ref="wd:Q14952" xml:lang="en">headgear</term></catDesc>
+              <category xml:id="commodity.37.1">
+                <catDesc><term ref="wd:Q80151" xml:lang="en">hat</term></catDesc>
+              </category>
+            </category>
+            <category xml:id="commodity.38">
+              <catDesc><term ref="wd:Q161928" xml:lang="en">footwear</term></catDesc>
+              <category xml:id="commodity.38.1">
+                <catDesc><term ref="wd:Q190868" xml:lang="en">boots</term></catDesc>
+              </category>
+              <category xml:id="commodity.38.2">
+                <catDesc>
+                  <term ref="wd:Q22676" xml:lang="en">shoes</term>
+                </catDesc>
+                <category xml:id="commodity.38.2.1">
+                  <catDesc>
+                    <term xml:lang="en">thick shoes</term>
+                  </catDesc>
+                </category>
+              </category>
+            </category>
+            <category xml:id="commodity.39">
+              <catDesc><term ref="wd:Q28932195" xml:lang="en">handwear</term></catDesc>
+              <category xml:id="commodity.39.1">
+                <catDesc><term ref="wd:Q169031" xml:lang="en">gloves</term></catDesc>
+              </category>
             </category>
           </category>
-          <category xml:id="commodity.35">
-            <gloss xml:lang="eng">pome<ref target="wd:Q41274"/>
-            </gloss>
-            <category xml:id="commodity.35.1">
-              <gloss xml:lang="eng">apples<ref target="wd:Q89"/>
-              </gloss>
+          <!--  -->
+          <category xml:id="commodity.1">
+            <catDesc><term ref="wd:Q2095" xml:lang="en">food</term></catDesc>
+            <category xml:id="commodity.151">
+              <catDesc><term ref="wd:Q32106920" xml:lang="en">Sugar and sugar products</term></catDesc>
+              <category xml:id="commodity.151.1">
+                <catDesc>
+                  <term ref="wd:Q11002" xml:lang="en">sugar</term>
+                </catDesc>
+              </category>
+              <category xml:id="commodity.151.2">
+                <catDesc>
+                  <term ref="wd:Q154389" xml:lang="en">molasses</term>
+                </catDesc>
+              </category>
+              <category xml:id="commodity.151.3">
+                <catDesc>
+                  <term ref="wd:Q227864" xml:lang="en">loaf sugar</term>
+                </catDesc>
+              </category>
+            </category>
+            <category xml:id="commodity.2">
+              <catDesc><term ref="wd:Q912613" xml:lang="en">edible fats and oils</term></catDesc>
+              <category xml:id="commodity.2.1">
+                <catDesc><term ref="wd:Q72827" xml:lang="en">lard</term></catDesc>
+              </category>
+              <category xml:id="commodity.42.1">
+                <catDesc><term ref="wd:Q42962" xml:lang="en">oil</term></catDesc>
+              </category>
+            </category>
+            <category xml:id="commodity.60">
+              <catDesc><term ref="wd:Q40050" xml:lang="en">beverage</term></catDesc>
+              <category xml:id="commodity.61">
+                <catDesc><term ref="wd:Q2647467" xml:lang="en">non alcoholic</term></catDesc>
+                <category xml:id="commodity.41.1">
+                  <catDesc><term ref="wd:Q8495" xml:lang="en">milk</term></catDesc>
+                </category>
+              </category>
+              <category xml:id="commodity.32">
+                <catDesc><term ref="wd:Q154" xml:lang="en">alcoholic</term></catDesc>
+                <category xml:id="commodity.32.1">
+                  <catDesc><term ref="wd:Q44" xml:lang="en">beers</term></catDesc>
+                </category>
+                <category xml:id="commodity.32.2">
+                  <catDesc xml:lang="en"><term ref="wd:Q167296" xml:lang="en">cider</term>
+                  </catDesc>
+                </category>
+                <category xml:id="commodity.32.3">
+                  <catDesc xml:lang="en"><term ref="wd:Q83376" xml:lang="en">rum</term></catDesc>
+                  <category xml:id="commodity.32.3.1">
+                    <catDesc>
+                      <term xml:lang="en">St. Rum</term>
+                    </catDesc>
+                  </category>
+                  <category xml:id="commodity.32.3.2">
+                    <catDesc>
+                      <term xml:lang="en">B Rum</term>
+                    </catDesc>
+                  </category>
+                  <category xml:id="commodity.32.3.3">
+                    <catDesc>
+                      <term xml:lang="en">N E Rum</term>
+                    </catDesc>
+                  </category>
+                </category>
+                <category xml:id="commodity.32.4">
+                  <catDesc>
+                    <term ref="wd:Q959362" xml:lang="en">gin</term>
+                  </catDesc>
+                </category>
+                <category xml:id="commodity.32.5">
+                  <catDesc>
+                    <term ref="wd:Q146470" xml:lang="en">brandy</term>
+                  </catDesc>
+                </category>
+              </category>
+            </category>
+            <category xml:id="commodity.22">
+              <catDesc><term ref="wd:Q736427" xml:lang="en">staple food</term></catDesc>
+              <category xml:id="commodity.43.1">
+                <catDesc><term ref="wd:Q36465" xml:lang="en">flour</term></catDesc>
+              </category>
+              <category xml:id="commodity.22.1">
+                <catDesc xml:lang="en"><term ref="wd:Q2995529" xml:lang="en">grain</term>
+                </catDesc>
+              </category>
+              <category xml:id="commodity.1.1">
+                <catDesc><term ref="wd:Q16587531" xml:lang="en">potatoes</term></catDesc>
+                <category xml:id="commodity.1.1.1">
+                  <catDesc><term xml:lang="en">black potatoes</term></catDesc>
+                </category>
+                <category xml:id="commodity.1.1.2">
+                  <catDesc><term xml:lang="en">brown potatoes</term></catDesc>
+                </category>
+                <category xml:id="commodity1.3">
+                  <catDesc>
+                    <term ref="wd:Q12099" xml:lang="en">rye</term>
+                  </catDesc>
+                </category>
+                <category xml:id="commodity.1.2">
+                  <catDesc><term ref="wd:Q11575" xml:lang="en">corn</term></catDesc>
+                </category>
+              </category>
+              <category xml:id="commodity.12">
+                <catDesc><term ref="wd:Q10990" xml:lang="en">meat</term></catDesc>
+                <category xml:id="commodity.36">
+                  <catDesc><term ref="wd:Q178559" xml:lang="en">poultry</term></catDesc>
+                  <category xml:id="commodity.36.1">
+                    <catDesc><term ref="wd:Q780" xml:lang="en">chicken</term></catDesc>
+                  </category>
+                  <category xml:id="commodity.12.4">
+                    <catDesc><term ref="wd:Q4200953" xml:lang="en">turkeys</term></catDesc>
+                  </category>
+                </category>
+                <category xml:id="commodity.12.5">
+                  <catDesc>
+                    <term ref="wd:Q957434" xml:lang="en">veal</term>
+                  </catDesc>
+                </category>
+                <category xml:id="commodity.17.1">
+                  <catDesc><term ref="wd:Q192628" xml:lang="en">beef</term></catDesc>
+                  <category xml:id="commodity.17.1.1">
+                    <catDesc><term ref="wd:Q1682434" xml:lang="en">salt beef</term></catDesc>
+                  </category>
+                  <category xml:id="commodity.17.1.2">
+                    <catDesc>
+                      <term xml:lang="en">dryed beef</term>
+                    </catDesc>
+                  </category>
+                </category>
+                <category xml:id="commodity.12.2">
+                  <catDesc><term ref="wd:Q191768" xml:lang="en">pork</term></catDesc>
+                  <category xml:id="commodity.12.2.1">
+                    <catDesc><term ref="wd:Q170486" xml:lang="en">ham</term></catDesc>
+                  </category>
+                </category>
+              </category>
+              <category xml:id="commodity.45">
+                <catDesc><term ref="wd:Q1470762" xml:lang="en">fruit vegetable</term></catDesc>
+                <category xml:id="commodity.45.1">
+                  <catDesc><term ref="wd:Q7533" xml:lang="en">squash</term></catDesc>
+                </category>
+                <category xml:id="commodity.35">
+                  <catDesc><term ref="wd:Q41274" xml:lang="en">pome</term></catDesc>
+                  <category xml:id="commodity.35.1">
+                    <catDesc><term ref="wd:Q89" xml:lang="en">apples</term></catDesc>
+                  </category>
+                </category>
+                <category xml:id="commodity.4">
+                  <catDesc><term ref="wd:Q234901" xml:lang="en">dried fruit</term></catDesc>
+                  <category xml:id="commodity.4.1">
+                    <catDesc><term ref="wd:Q13186" xml:lang="en">rosin</term></catDesc>
+                  </category>
+                </category>
+              </category>
+              <category xml:id="commodity.121">
+                <catDesc>
+                  <term ref="wd:Q41534" xml:lang="en">starch</term>
+                </catDesc>
+              </category>
+              <category xml:id="commodity.44">
+                <catDesc><term ref="wd:Q753009" xml:lang="en">food coloring</term></catDesc>
+                <category xml:id="commodity.44.1">
+                  <catDesc><term ref="wd:Q420087" xml:lang="en">sky blue</term></catDesc>
+                </category>
+              </category>
             </category>
           </category>
-          <category xml:id="commodity.36">
-            <gloss xml:lang="eng">poultry<ref target="wd:Q178559"/>
-            </gloss>
-            <category xml:id="commodity.36.1">
-              <gloss xml:lang="eng">chicken<ref target="wd:Q780"/>
-              </gloss>
-            </category>
+          <category xml:id="commodity.50">
+            <catDesc>
+              <term ref="wd:Q1566" xml:lang="en">tobacco</term>
+            </catDesc>
           </category>
-          <category xml:id="commodity.37">
-            <gloss xml:lang="eng">headgear<ref target="wd:Q14952"/>
-            </gloss>
-            <category xml:id="commodity.37.1">
-              <gloss xml:lang="eng">hat<ref target="wd:Q80151"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.38">
-            <gloss xml:lang="eng">footwear<ref target="wd:Q161928"/>
-            </gloss>
-            <category xml:id="commodity.38.1">
-              <gloss xml:lang="eng">boots<ref target="wd:Q190868"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.39">
-            <gloss xml:lang="eng">handwear<ref target="wd:Q28932195"/>
-            </gloss>
-            <category xml:id="commodity.39.1">
-              <gloss xml:lang="eng">gloves<ref target="wd:Q169031"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.40">
-            <gloss xml:lang="eng">softwood<ref target="wd:Q252108"/>
-            </gloss>
-            <category xml:id="commodity.40.1">
-              <gloss xml:lang="eng">pine wood<ref target="wd:Q1503211"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.41">
-            <gloss xml:lang="eng">food<ref target="wd:Q2095"/>
-            </gloss>
-            <category xml:id="commodity.41.1">
-              <gloss xml:lang="eng">milk<ref target="wd:Q8495"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.42">
-            <gloss xml:lang="eng">Oil Islands<ref target="wd:Q22432558"/>
-            </gloss>
-            <category xml:id="commodity.42.1">
-              <gloss xml:lang="eng">oil<ref target="wd:Q42962"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.43">
-            <gloss xml:lang="eng">powder<ref target="wd:Q2908004"/>
-            </gloss>
-            <category xml:id="commodity.43.1">
-              <gloss xml:lang="eng">flour<ref target="wd:Q36465"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.44">
-            <gloss xml:lang="eng">food coloring<ref target="wd:Q753009"/>
-            </gloss>
-            <category xml:id="commodity.44.1">
-              <gloss xml:lang="eng">sky blue<ref target="wd:Q420087"/>
-              </gloss>
-            </category>
-          </category>
-          <category xml:id="commodity.45">
-            <gloss xml:lang="eng">fruit vegetable<ref target="wd:Q1470762"/>
-            </gloss>
-            <category xml:id="commodity.45.1">
-              <gloss xml:lang="eng">squash<ref target="wd:Q7533"/>
-              </gloss>
-            </category>
+          <category xml:id="commodity.51">
+          <catDesc>
+            <term ref="wd:Q41354" xml:lang="en">vinegar</term>
+          </catDesc>
           </category>
         </taxonomy>
       </classDecl>
@@ -7178,7 +7166,7 @@
           <cell ana="bk:status" corresp="#126"> 126</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH509" type="person">Ms Fanny Perry</name>
-            <lb/> To<measure ana="bk:commodity" commodity="Crane" quantity="1" unit="count">1
+            <lb/> To<measure ana="bk:commodity" commodity="crane" quantity="1" unit="count">1
               Crane</measure>
           </cell>
           <cell/>
@@ -7188,7 +7176,7 @@
         </row>
         <row ana="bk:entry">
           <cell/>
-          <cell> To<measure ana="bk:commodity" commodity="Crane" quantity="1" unit="count">1
+          <cell> To<measure ana="bk:commodity" commodity="crane" quantity="1" unit="count">1
               Crane</measure>
           </cell>
           <cell/>
@@ -7467,7 +7455,7 @@
         </row>
         <row ana="bk:entry">
           <cell ana="bk:status" corresp="#Settled">Settled</cell>
-          <cell>Amos Wilbur<lb/> To<measure ana="bk:commodity" commodity="Rye" quantity="3"
+          <cell>Amos Wilbur<lb/> To<measure ana="bk:commodity" commodity="rye" quantity="3"
               unit="pecks">three pecks Rye 90t</measure>
           </cell>
           <cell/>
@@ -7562,7 +7550,7 @@
           <cell ana="bk:status" corresp="#126">126</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH509" type="person">Mrs Fanny Perry</name>
-            <lb/> To <measure ana="bk:commodity" commodity="Nails" quantity="6.5" unit="pounds">6 ½
+            <lb/> To <measure ana="bk:commodity" commodity="nails" quantity="6.5" unit="pounds">6 ½
               lbs 6 Nails 10t</measure>
           </cell>
           <cell/>
@@ -7577,8 +7565,8 @@
         </span>
         <row ana="bk:entry">
           <cell ana="bk:status" corresp="#Settled">Settled</cell>
-          <cell>Amos Wilbur<lb/> To an order upon <name ana="bk:to" ref="#pers_WCDH167" type="person"
-              >D. Bates</name> 3/</cell>
+          <cell>Amos Wilbur<lb/> To an order upon <name ana="bk:to" ref="#pers_WCDH167"
+              type="person">D. Bates</name> 3/</cell>
           <cell/>
           <cell>
             <measure ana="bk:money" commodity="currency" quantity="50" unit="cent">50</measure>
@@ -7622,8 +7610,8 @@
         </span>
         <row ana="bk:entry">
           <cell ana="bk:status" corresp="#Settled">Settled</cell>
-          <cell>Amos Wilbur<lb/> To order upon <name ana="bk:to" ref="#pers_WCDH167" type="person">D.
-              Bates</name> for two Dollars</cell>
+          <cell>Amos Wilbur<lb/> To order upon <name ana="bk:to" ref="#pers_WCDH167" type="person"
+              >D. Bates</name> for two Dollars</cell>
           <cell>
             <measure ana="bk:money" commodity="currency" quantity="2" unit="dollar">2</measure>
           </cell>
@@ -7673,8 +7661,8 @@
         </row>
         <row ana="bk:entry">
           <cell/>
-          <cell> To an order upon <name ana="bk:to" ref="#pers_WCDH167" type="person">D. Bates</name>
-            3/</cell>
+          <cell> To an order upon <name ana="bk:to" ref="#pers_WCDH167" type="person">D.
+              Bates</name> 3/</cell>
           <cell/>
           <cell>
             <measure ana="bk:money" commodity="currency" quantity="50" unit="cent">50</measure>
@@ -7748,9 +7736,9 @@
         </row>
         <row ana="bk:entry">
           <cell ana="bk:status" corresp="#364">364</cell>
-          <cell>To order upon <name ana="bk:to" ref="#pers_WCDH574" type="person">T. Smith</name> for
-            57<lb/> &quot;<measure ana="bk:commodity" commodity="T lound" quantity="5" unit="pounds"
-              >5 lbs. T lound</measure> dlvd by Alice 40</cell>
+          <cell>To order upon <name ana="bk:to" ref="#pers_WCDH574" type="person">T. Smith</name>
+            for 57<lb/> &quot;<measure ana="bk:commodity" commodity="T lound" quantity="5"
+              unit="pounds">5 lbs. T lound</measure> dlvd by Alice 40</cell>
           <cell/>
           <cell>
             <measure ana="bk:money" commodity="currency" quantity="97" unit="cent">97</measure>
@@ -7979,7 +7967,7 @@
         </span>
         <row ana="bk:entry">
           <cell ana="bk:status" corresp="#Paid to ballance">Paid to ballance</cell>
-          <cell>Nathaniel Lincoln<lb/> To<measure ana="bk:commodity" commodity="pine boards"
+          <cell>Nathaniel Lincoln<lb/> To<measure ana="bk:commodity" commodity="pine board"
               quantity="5.5" unit="feet">5 ½ ft. Mereht. Pine Boards</measure>
           </cell>
           <cell/>
@@ -8066,8 +8054,8 @@
         </row>
         <row ana="bk:entry">
           <cell ana="bk:status" corresp="#368">368</cell>
-          <cell>By boarding<name ana="bk:to" ref="#pers_WCDH427" type="person">Charles Leonard</name>
-            from April 1st 1828 to Jary 1st 1829</cell>
+          <cell>By boarding<name ana="bk:to" ref="#pers_WCDH427" type="person">Charles
+              Leonard</name> from April 1st 1828 to Jary 1st 1829</cell>
           <cell>
             <measure ana="bk:money" commodity="currency" quantity="117" unit="dollar">117</measure>
           </cell>
@@ -8137,12 +8125,11 @@
           <cell ana="bk:status" corresp="#368">368</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH574" type="person">Timothy Smith</name>
-            <lb/> To<measure ana="bk:commodity" commodity="Rum" quantity="4" unit="gallons">4 galls.
+            <lb/> To<measure ana="bk:commodity" commodity="rum" quantity="4" unit="gallons">4 galls.
               St. Rum 6/</measure>
           </cell>
           <cell>
-            <measure ana="bk:commodity" commodity="currrency" quantity="4" unit="dollar"
-              >4</measure>
+            <measure ana="bk:commodity" quantity="4" unit="dollar">4</measure>
           </cell>
           <cell> 00</cell>
           <cell/>
@@ -8168,7 +8155,7 @@
           <cell ana="bk:status" corresp="#375">375</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-            <lb/> To<measure ana="bk:commodity" commodity="Rum" quantity="1" unit="gallon">1 gall.
+            <lb/> To<measure ana="bk:commodity" commodity="rum" quantity="1" unit="gallon">1 gall.
               St. Rum</measure> 6/</cell>
           <cell>
             <measure ana="bk:money" commodity="currency" quantity="1" unit="dollar">1</measure>
@@ -8220,7 +8207,7 @@
           <cell ana="bk:status" corresp="#375">375</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-            <lb/> To<measure ana="bk:commodity" commodity="Starch" quantity="0.5" unit="pound"> 1/2
+            <lb/> To<measure ana="bk:commodity" commodity="starch" quantity="0.5" unit="pound"> 1/2
               lb Starch</measure>
           </cell>
           <cell/>
@@ -8296,8 +8283,7 @@
             <measure ana="bk:money" commodity="currency" quantity="3" unit="dollar">3</measure>
           </cell>
           <cell>
-            <measure ana="bk:money" commodity="currency" quantity="2.5" unit="cent">02
-              1/2</measure>
+            <measure ana="bk:money" commodity="currency" quantity="2.5" unit="cent">02 1/2</measure>
           </cell>
           <cell/>
           <cell/>
@@ -8465,7 +8451,7 @@
           <cell ana="bk:status" corresp="#375">375</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-            <lb/> To<measure ana="bk:commodity" commodity="Tea" quantity=".5" unit="pound">½ lb R H
+            <lb/> To<measure ana="bk:commodity" commodity="tea" quantity=".5" unit="pound">½ lb R H
               Tea</measure>
           </cell>
           <cell/>
@@ -8481,7 +8467,7 @@
           <cell ana="bk:status" corresp="#367">367</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-            <lb/> To <measure ana="bk:commodity" commodity="Gin" quantity="1" unit="pint">1 pt
+            <lb/> To <measure ana="bk:commodity" commodity="gin" quantity="1" unit="pint">1 pt
               Gin</measure>
           </cell>
           <cell/>
@@ -8610,7 +8596,7 @@
           <cell ana="bk:status" corresp="#367">367</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-            <lb/> To 1<measure ana="bk:commodity" commodity="Gin" quantity="1" unit="pint">1 pt
+            <lb/> To 1<measure ana="bk:commodity" commodity="gin" quantity="1" unit="pint">1 pt
               Gin</measure>
           </cell>
           <cell/>
@@ -8683,7 +8669,7 @@
           <cell ana="bk:status" corresp="#367">367</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-            <lb/> To<measure ana="bk:commodity" commodity="Gin" quantity="1" unit="pint">1 pt
+            <lb/> To<measure ana="bk:commodity" commodity="gin" quantity="1" unit="pint">1 pt
               Gin</measure>
           </cell>
           <cell/>
@@ -8745,7 +8731,7 @@
           <cell/>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH483" type="person"/> &quot;<measure ana="bk:commodity"
-              commodity="Loaf Sugar" quantity="1" unit="pound">1 lb L Sugar 20</measure>
+              commodity="loaf sugar" quantity="1" unit="pound">1 lb L Sugar 20</measure>
           </cell>
           <cell/>
           <cell>
@@ -9100,7 +9086,7 @@
         </row>
         <row ana="bk:entry">
           <cell ana="bk:status" corresp="#On Bill">On Bill </cell>
-          <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" commodity="Gin" quantity="1"
+          <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" commodity="gin" quantity="1"
               unit="pint">1 pt Gin</measure>
           </cell>
           <cell/>
@@ -9134,7 +9120,7 @@
           <cell ana="bk:status" corresp="#367">367</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-            <lb/> To <measure ana="bk:commodity" commodity="Gin" quantity="1" unit="pint">1 pt
+            <lb/> To <measure ana="bk:commodity" commodity="gin" quantity="1" unit="pint">1 pt
               Gin</measure>
           </cell>
           <cell/>
@@ -9148,7 +9134,7 @@
         </row>
         <row ana="bk:entry">
           <cell ana="bk:status" corresp="#On Bill">On Bill</cell>
-          <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" commodity="Gin" quantity="1"
+          <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" commodity="gin" quantity="1"
               unit="pint">1 pt Gin</measure>
           </cell>
           <cell/>
@@ -9180,7 +9166,7 @@
           <cell ana="bk:status" corresp="#200">200</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH483" type="person">Doct Samuel Morey</name>
-            <lb/> To <measure ana="bk:commodity" commodity="Brandy" quantity="1" unit="pint">1 pt
+            <lb/> To <measure ana="bk:commodity" commodity="brandy" quantity="1" unit="pint">1 pt
               Brandy</measure>
           </cell>
           <cell/>
@@ -9209,7 +9195,7 @@
           <cell ana="bk:status" corresp="#367">367</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-            <lb/> To <measure ana="bk:commodity" commodity="Gin" quantity="1" unit="pint">1 pt
+            <lb/> To <measure ana="bk:commodity" commodity="gin" quantity="1" unit="pint">1 pt
               Gin</measure>
           </cell>
           <cell/>
@@ -9223,7 +9209,7 @@
         </row>
         <row ana="bk:entry">
           <cell ana="bk:status" corresp="#On Bill">On Bill</cell>
-          <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" commodity="Gin" quantity="1"
+          <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" commodity="gin" quantity="1"
               unit="pint">1 pt Gin</measure>
           </cell>
           <cell/>
@@ -9335,7 +9321,7 @@
           <cell ana="bk:status" corresp="#367">367</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-            <lb/> To <measure ana="bk:commodity" commodity="Gin" quantity="1" unit="pint">1 pt
+            <lb/> To <measure ana="bk:commodity" commodity="gin" quantity="1" unit="pint">1 pt
               Gin</measure>
           </cell>
           <cell/>
@@ -9349,7 +9335,7 @@
         </row>
         <row ana="bk:entry">
           <cell/>
-          <cell> To <measure ana="bk:commodity" commodity="Gin" quantity="1" unit="pint">1 pt
+          <cell> To <measure ana="bk:commodity" commodity="gin" quantity="1" unit="pint">1 pt
               Gin</measure>
           </cell>
           <cell/>
@@ -9372,7 +9358,7 @@
           <cell ana="bk:status" corresp="#367">367</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-            <lb/> To<measure ana="bk:commodity" commodity="Gin" quantity="1" unit="pint">1 pt
+            <lb/> To<measure ana="bk:commodity" commodity="gin" quantity="1" unit="pint">1 pt
               Gin</measure>
           </cell>
           <cell/>
@@ -9424,7 +9410,7 @@
         </row>
         <row ana="bk:entry">
           <cell ana="bk:status" corresp="#370">370</cell>
-          <cell>Peter Leirhman<lb/> To<measure ana="bk:commodity" commodity="Gin" quantity="1"
+          <cell>Peter Leirhman<lb/> To<measure ana="bk:commodity" commodity="gin" quantity="1"
               unit="quart">1 qt Gin</measure>
           </cell>
           <cell/>
@@ -9536,7 +9522,7 @@
           <cell ana="bk:status" corresp="#367">367</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-            <lb/> To<measure ana="bk:commodity" commodity="Gin" quantity="1" unit="pint">1 pt
+            <lb/> To<measure ana="bk:commodity" commodity="gin" quantity="1" unit="pint">1 pt
               Gin</measure>
           </cell>
           <cell/>
@@ -9694,7 +9680,7 @@
         </row>
         <row ana="bk:entry">
           <cell ana="bk:status" corresp="#370">370</cell>
-          <cell>Peter Leirhman<lb/> To <measure ana="bk:commodity" commodity="Gin" quantity="1"
+          <cell>Peter Leirhman<lb/> To <measure ana="bk:commodity" commodity="gin" quantity="1"
               unit="quart">1 qt Gin</measure>
           </cell>
           <cell/>
@@ -9706,7 +9692,7 @@
         </row>
         <row ana="bk:entry">
           <cell/>
-          <cell>&quot;<measure ana="bk:commodity" commodity="Starch" quantity=".25" unit="pounds">¼
+          <cell>&quot;<measure ana="bk:commodity" commodity="starch" quantity=".25" unit="pounds">¼
               lb Starch</measure>
           </cell>
           <cell/>
@@ -9794,7 +9780,7 @@
           <cell ana="bk:status" corresp="#367">367</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-            <lb/> To<measure ana="bk:commodity" commodity="pint" quantity="1" unit="Gin">1 pt
+            <lb/> To<measure ana="bk:commodity" commodity="pint" quantity="1" unit="gin">1 pt
               Gin</measure>
           </cell>
           <cell/>
@@ -9846,7 +9832,7 @@
           <cell ana="bk:status" corresp="#375">375</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-            <lb/> To<measure ana="bk:commodity" commodity="Brandy" quantity="1" unit="quarts">1 qts
+            <lb/> To<measure ana="bk:commodity" commodity="brandy" quantity="1" unit="quarts">1 qts
               Brandy</measure>
           </cell>
           <cell/>
@@ -9887,7 +9873,7 @@
           <cell ana="bk:status" corresp="#367">367</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-            <lb/> To<measure ana="bk:commodity" commodity="Gin" quantity="1" unit="pint">1 pt
+            <lb/> To<measure ana="bk:commodity" commodity="gin" quantity="1" unit="pint">1 pt
               Gin</measure>
           </cell>
           <cell/>
@@ -9901,7 +9887,7 @@
           <cell ana="bk:status" corresp="#372">372</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH579" type="person">Amos Starkey</name>
-            <lb/> To<measure ana="bk:commodity" commodity="Gin" quantity="1" unit="pint">1 pt
+            <lb/> To<measure ana="bk:commodity" commodity="gin" quantity="1" unit="pint">1 pt
               Gin</measure>
           </cell>
           <cell/>
@@ -9996,7 +9982,7 @@
           <cell ana="bk:status" corresp="#367">367</cell>
           <cell>
             <name ana="bk:to" ref="#pers_WCDH535" type="person">Holmes Richmond</name>
-            <lb/> To<measure ana="bk:commodity" commodity="Rum" quantity="1" unit="pint">1 pt N E
+            <lb/> To<measure ana="bk:commodity" commodity="rum" quantity="1" unit="pint">1 pt N E
               Rum</measure>
           </cell>
           <cell/>
@@ -10193,7 +10179,7 @@
         </row>
         <row ana="bk:entry">
           <cell ana="bk:status" corresp="#370">370</cell>
-          <cell>Peter Leirhman<lb/> To <measure ana="bk:commodity" commodity="Gin" quantity="1"
+          <cell>Peter Leirhman<lb/> To <measure ana="bk:commodity" commodity="gin" quantity="1"
               unit="quart">1 qt Gin</measure>
           </cell>
           <cell/>
@@ -10425,7 +10411,7 @@
         </row>
         <row ana="bk:entry">
           <cell ana="bk:status" corresp="#370">370</cell>
-          <cell>Peter Leishman<lb/> To<measure ana="bk:commodity" commodity="Gin" quantity="1"
+          <cell>Peter Leishman<lb/> To<measure ana="bk:commodity" commodity="gin" quantity="1"
               unit="quarts">1 qt Gin</measure>
           </cell>
           <cell/>
@@ -12366,8 +12352,8 @@
         <row ana="bk:entry">
           <cell/>
           <cell>
-            <name ana="bk:to" ref="#pers_WCDH495" type="person"/>To <measure ana="bk:service bk:from"
-              commodity="work" unit="_">work</measure> 3/</cell>
+            <name ana="bk:to" ref="#pers_WCDH495" type="person"/>To <measure
+              ana="bk:service bk:from" commodity="work" unit="_">work</measure> 3/</cell>
           <cell/>
           <cell>
             <measure ana="bk:money" quantity="50" unit="cent">50</measure>
@@ -12836,8 +12822,7 @@
               <abbr>DR</abbr>
               <expan>Debtor</expan>
             </choice>
-            <lb/>To cost on on your action vs Epson Allen
-          </cell>
+            <lb/>To cost on on your action vs Epson Allen </cell>
           <cell>
             <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
           </cell>
@@ -12889,8 +12874,7 @@
               <abbr>DR</abbr>
               <expan>Debtor</expan>
             </choice>
-            <lb/>To cost vs Epson Allen Jr
-          </cell>
+            <lb/>To cost vs Epson Allen Jr </cell>
           <cell>
             <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
           </cell>
@@ -15773,9 +15757,9 @@
         <row ana="bk:entry">
           <cell/>
           <cell>
-            <name ana="bk:to" ref="#pers_WCDH118" type="person"/>By <measure ana="bk:service bk:from"
-              commodity="work" quantity="1.5" unit="day">one x 1/2 days work</measure>this week
-            2/6</cell>
+            <name ana="bk:to" ref="#pers_WCDH118" type="person"/>By <measure
+              ana="bk:service bk:from" commodity="work" quantity="1.5" unit="day">one x 1/2 days
+              work</measure>this week 2/6</cell>
           <cell/>
           <cell>
             <measure ana="bk:money" quantity="63" unit="cent">63</measure>
@@ -16163,7 +16147,7 @@
           <cell ana="bk:status" corresp="#203">203</cell>
           <cell>
             <name ref="#pers_WCDH375" ana="bk:to" type="person">Horace Hulet</name>
-           <choice>
+            <choice>
               <abbr>Dr</abbr>
               <expan>Debtor</expan>
             </choice>
@@ -16388,10 +16372,8 @@
         </span>
         <row ana="bk:entry">
           <cell ana="bk:status" corresp="#393">393</cell>
-          <cell>
-            To <measure ana="bk:commodity"
-              commodity="potatoes" quantity="2" unit="bushels">2 Bushel potatoes</measure>
-            1/6</cell>
+          <cell> To <measure ana="bk:commodity" commodity="potatoes" quantity="2" unit="bushels">2
+              Bushel potatoes</measure> 1/6</cell>
           <cell/>
           <cell>
             <measure ana="bk:money" quantity="50" unit="cent">50</measure>
@@ -16539,10 +16521,8 @@
         </row>
         <row ana="bk:entry">
           <cell/>
-          <cell>
-            To <measure ana="bk:commodity"
-              commodity="potatoes" quantity="1" unit="bushels">one Bushel
-            potatoes</measure>1/6</cell>
+          <cell> To <measure ana="bk:commodity" commodity="potatoes" quantity="1" unit="bushels">one
+              Bushel potatoes</measure>1/6</cell>
           <cell/>
           <cell>
             <measure ana="bk:money" quantity="25" unit="cent">25</measure>
@@ -23086,7 +23066,7 @@
               <abbr>DR</abbr>
               <expan>Debtor</expan>
             </choice>
-            <lb/>To <measure ana="bk:commodity" commodity="pine boards" quantity="99" unit="feet">99
+            <lb/>To <measure ana="bk:commodity" commodity="pine board" quantity="99" unit="feet">99
               feet. Pine boards</measure>2 1/2 lbs. per feet.</cell>
           <cell/>
           <cell>
@@ -23323,7 +23303,7 @@
               <abbr>DR</abbr>
               <expan>Debtor</expan>
             </choice>
-            <lb/>To <measure ana="bk:commodity" commodity="pine boards" quantity="455" unit="feet"
+            <lb/>To <measure ana="bk:commodity" commodity="pine board" quantity="455" unit="feet"
               >455 feet. Pine boards</measure>at $14. 00</cell>
           <cell/>
           <cell>
@@ -25125,7 +25105,7 @@
               <abbr>DR</abbr>
               <expan>Debtor</expan>
             </choice>
-            <lb/>To <measure ana="bk:commodity" commodity="pine boards" quantity="28" unit="feet">28
+            <lb/>To <measure ana="bk:commodity" commodity="pine board" quantity="28" unit="feet">28
               Feet Pine boards</measure>
           </cell>
           <cell/>
@@ -29771,7 +29751,7 @@
                 <expan>debtor</expan>
               </choice>
             </span>
-            <lb/> To <measure ana="bk:commodity" commodity="pine boards" quantity="77" unit="feet"
+            <lb/> To <measure ana="bk:commodity" commodity="pine board" quantity="77" unit="feet"
               >seventy seven ft. Pine Boards </measure>$15 </cell>
           <cell>
             <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -29810,7 +29790,7 @@
                 <expan>debtor</expan>
               </choice>
             </span>
-            <lb/> To <measure ana="bk:commodity" commodity="pine boards" quantity="561" unit="feet"
+            <lb/> To <measure ana="bk:commodity" commodity="pine board" quantity="561" unit="feet"
               >561 ft. Pine Boards </measure> + 14.00 Thos. </cell>
           <cell>
             <measure ana="bk:money" quantity="8" unit="dollar">8</measure>
@@ -51047,8 +51027,8 @@
               </choice>
             </span>
             <lb/>
-            <name ana="bk:to" ref="#pers_WCDH352" type="person">John Hill</name> To <name ana="bk:to"
-              ref="LMWcash" type="account">cash</name> twenty dollars</cell>
+            <name ana="bk:to" ref="#pers_WCDH352" type="person">John Hill</name> To <name
+              ana="bk:to" ref="LMWcash" type="account">cash</name> twenty dollars</cell>
           <cell>
             <measure ana="bk:money" quantity="20" unit="dollar">20</measure>
           </cell>
@@ -55960,7 +55940,7 @@
             </span>
             <lb/>To <name ana="bk:to" ref="LMWcash" type="account">cash</name> twenty dollars</cell>
           <cell>
-            <measure ana="bk:money" commodity="currrency" quantity="20" unit="dollar">20</measure>
+            <measure ana="bk:money" quantity="20" unit="dollar">20</measure>
           </cell>
           <cell/>
           <cell/>
@@ -56160,8 +56140,8 @@
         <row ana="bk:entry">
           <cell/>
           <cell>
-            <name ana="bk:to" ref="#pers_WCDH703" type="person">William H. Wrigley</name> To H. 5mih.
-            Store pipe ?? </cell>
+            <name ana="bk:to" ref="#pers_WCDH703" type="person">William H. Wrigley</name> To H.
+            5mih. Store pipe ?? </cell>
           <cell/>
           <cell/>
           <cell/>
@@ -58478,7 +58458,7 @@
             <lb/>To <measure ana="bk:commodity" commodity="corn" quantity="1" unit="bushels">1 Bush.
               Corn</measure> 6/</cell>
           <cell>
-            <measure ana="bk:money" commodity="currrency" quantity="1" unit="dollar">1</measure>
+            <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
           </cell>
           <cell/>
           <cell/>
