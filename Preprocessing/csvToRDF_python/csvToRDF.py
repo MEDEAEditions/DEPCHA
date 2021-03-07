@@ -10,6 +10,7 @@ from locale import atof, setlocale, LC_NUMERIC
 import math
 from datetime import datetime
 import numpy as np
+import dateutil.parser
 
 # https://stackoverflow.com/questions/6633523/how-can-i-convert-a-string-with-dot-and-comma-into-a-float-in-python
 # . and , in float numbers depending on default locale
@@ -44,7 +45,7 @@ def normalizeStringforJSON(string):
 # <bk:Transfer> <bk:transfers> <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#T220M1">
 def get_Money(Measurable_Money, bk_quantity, bk_unit_index, Transfer): 
     try:
-        if (pd.notnull(bk_quantity)):
+        if(pd.notnull(bk_quantity)):
             output_graph.add((Measurable_Money, RDF.type,  BK.Money))
             output_graph.add((Transfer, BK.transfers, Measurable_Money))
             # <bk:quantity>
@@ -53,9 +54,27 @@ def get_Money(Measurable_Money, bk_quantity, bk_unit_index, Transfer):
                 if(currency.get("id") == bk_unit_index):
                     bk_unit = currency.get("unit")        
             output_graph.add((Measurable_Money, BK.unit, URIRef(BASE_URL + CONTEXT + "#" + bk_unit) ))
-            # print(bk_quantity)
+            
+            if(pd.notnull(row["bk_when"]) and pd.notnull(row["bk_debit_credit"])):
+                try:
+                    normalized_date = dateutil.parser.parse(row["bk_when"], default=datetime(1000, 1, 1))
+                    if(normalized_date.date().year != 1000):
+                        year = normalized_date.date().strftime("%Y")
+                        
+                        # select the income_db|expense_db via year as key and depending on bk:debit|bk:credit 
+                        # add {bk_unit : bk_quantity} to the list; from this list the sum for every year can be calculated
+                        debitOrCredit = row['bk_debit_credit']
+                        if re.search('debit', debitOrCredit, re.IGNORECASE):
+                            income_db[year].append({bk_unit : bk_quantity} )
+                        elif re.search('credit', debitOrCredit, re.IGNORECASE):
+                            expense_db[year].append({bk_unit : bk_quantity} )
+                        else:
+                            False
+            #Debug_DebitCreditEmptyCell += 1     
+                except:
+                    print(f"Exception: failed to add money and unit to key YYYY-MM: {bk_quantity} {bk_unit}")
     except:
-        print(f"No valid number in BK_MONEY: Currencies cannot contain commas, spaces, or characters:{bk_quantity}")
+        print(f"Exception: no valid number in BK_MONEY: Currencies must not contain commas, spaces, or characters: {bk_quantity}")
     # <bk:unit>  https://gams.uni-graz.at/context:depcha.gwfp#pence
        
  
@@ -69,7 +88,7 @@ def getBKCoreElements(Class):
     helpString = row["bk_entry"].replace('"',"'")
     normalizedEntry = (helpString.replace('\u000B', ' ')).strip()
     output_graph.add((Class, BK.entry, Literal(normalizedEntry) )) 
-    output_graph.add((Class, GAMS.isMemberOfCollection,  URIRef(BASE_URL + CONTEXT) )) 
+    output_graph.add((Class, GAMS.isMemberOfCollection, URIRef(BASE_URL + CONTEXT) )) 
 
 
 ########################################################################################
@@ -116,14 +135,16 @@ def getFromOrTo(Transfer):
         Between_URI = BASE_URL + PID + "#B." + normalizeStringforURI(row["bk_between"])
         Between = URIRef(Between_URI)
         # check the already graph pattern if the current transfer has bk:debit or bk:credit
-        # if bk:debit than Washington is spending money
+        # if bk:debit than Washington is getting money
+        # A debit entry in an account represents a transfer of value to that account
         if (Transfer, BK.debit, None) in output_graph:
-            output_graph.add((Transfer, BK.to,  Between))
-            output_graph.add((Transfer, BK_from_property, ACCOUNTHOLDER ))    
-        # if bk:credit than Washington is getting money
-        elif (Transfer, BK.credit, None) in output_graph:
             output_graph.add((Transfer, BK.to, ACCOUNTHOLDER))
-            output_graph.add((Transfer, BK_from_property, Between))  
+            output_graph.add((Transfer, BK_from_property, Between)) 
+        # if bk:credit than Washington is spending money
+        # and a credit entry represents a transfer from the account.
+        elif (Transfer, BK.credit, None) in output_graph:
+            output_graph.add((Transfer, BK.to,  Between))
+            output_graph.add((Transfer, BK_from_property, ACCOUNTHOLDER ))  
         else:
             False
             #Debug_FromToEmpty += 1
@@ -137,31 +158,8 @@ def add_Quantity_To_Sum(sum_, quantity, ConversionValue):
         sum_ += atof(quantity)/ConversionValue
         return sum_
     except:
-        print("Not a valid number in add_Quantity_To_Sum function")
-        
- 
-########################################################################################
-#
-#     
-def sumQuantityFromQueryResult(QueryResult):
-    sum_ = 0
-    for row in QueryResult:
-        if(patternforYear.search(row[0]) is not None):
-            date = patternforYear.search(row[0]).group(0)               
-            if(date == year):
-                unit = row[1]
-                quantity = row[2]
-                
-                if(str(unit) == "https://gams.uni-graz.at/context:depcha.gwfp#pound"):
-                    sum_ = add_Quantity_To_Sum(sum_, quantity, 1) 
-                elif(str(unit) == "https://gams.uni-graz.at/context:depcha.gwfp#shilling"):
-                    sum_ = add_Quantity_To_Sum(sum_, quantity, 20) 
-                elif(str(unit) == "https://gams.uni-graz.at/context:depcha.gwfp#pence"):
-                    sum_ = add_Quantity_To_Sum(sum_, quantity, 240) 
-                Dataset_Dict[year]["expense"] = sum_
-    sum_ = 0
-        
-        
+        print("Exception: Not a valid number in add_Quantity_To_Sum function")
+   
 ########################################################################################
 ########################################################################################
 #### MAIN
@@ -184,7 +182,7 @@ file_extension = ".json"
 ###
 # get all JSON confic files in a folder
 # for a single file: 
-all_JSON_filenames = [i for i in glob.glob(f"{folder}/csvToRDF_config__Ledger_C{file_extension}")]
+all_JSON_filenames = [i for i in glob.glob(f"{folder}/csvToRDF_config__Ledger_B{file_extension}")]
 #all_JSON_filenames = [i for i in glob.glob(f"{folder}/*{file_extension}")]
 ########################################################################################
 for json_file in all_JSON_filenames:
@@ -261,21 +259,50 @@ for json_file in all_JSON_filenames:
             Between = URIRef(Between_URI)
             output_graph.add((Between, RDF.type,  BK.Between))
             output_graph.add((Between , BK.name,  Literal(normalizeStringforJSON(name)) ))
-            
-    print("Log: distinct BK_BETWEEN ... check")  
-
-
+    print("Log: distinct BK_BETWEEN ... check") 
+    
     # bk:Between
     # multiple names in column, seperator from forename and surname is the same as seperator from names
     # hack: if 1 or less , than its just on name or cash or orgName
-        
-        
+         
     ########################################################################################
+    ### data structure which contains sums for income/expense fpr each year
+    income_db = {}
+    expense_db = {}
+    
+    ########################################################################################
+    ### Distinct dates
+    ########################################################################################
+    # define a set with all dates from bk_when column
+    #  * 10 March 1772 --> 1772-03-10
+    #  * March 1772 --> 1772-03-01
+    #  * 1772 --> 1772-01-01
+    #  * skip empty cells; catch invalid dates; make 1000-01-01 default and skip it  
+    #  * fill  income_db|expense_db with they years as key 
+    dates = set()
+    for date_string in df.bk_when:
+        if(pd.notnull(date_string)):
+            try:
+                normalized_date = dateutil.parser.parse(date_string, default=datetime(1000, 1, 1))
+                if(normalized_date.date().year != 1000):
+                    #dates.add(normalized_date.date().strftime("%Y-%m"))
+                    year = normalized_date.date().strftime("%Y")
+                    dates.add(year)
+                    income_db[year] = []
+                    expense_db[year] = []
+            except:
+                print(f"Exception: invalid date {date_string}")            
+    print("Log: Distinct dates ... check")
+                
+    ########################################################################################
+    ### <bk:Transaction>
+    ########################################################################################   
     # iterate over all rows; every row is a bk:Transaction or bk:Total 
     # (itertuples does not support coulmns with same name like bk_money.1, bk_money.2 etc. ?)
     for index, row in df.iterrows():
     
-        #########################################
+        ###
+        # a bk_Transaction is not a "[Total]" and has a date
         if (pd.notnull(row["bk_entry"]) and not "[Total]" in str(row["bk_entry"])):
             ### <bk:Transaction>
             Transaction_URI = BASE_URL + PID + "#T" + str(index)
@@ -284,11 +311,18 @@ for json_file in all_JSON_filenames:
             ### <bk:entry>, <gams:isMemberOfCollection>
             getBKCoreElements(Transaction)
             ### <bk:Transfer> <bk:Money>
+            
+            ###
             createTransferOfMoney(Transaction_URI, Transaction)
             
             ### <bk:when>
+            # try to parse string with dateutil and get YYYY-MM-DD
             if(pd.notnull(row["bk_when"])):
-                output_graph.add((Transaction, BK.when,  Literal(row['bk_when']) ))
+                try:
+                    normalized_date = dateutil.parser.parse(row['bk_when'], ignoretz=True).strftime('%Y-%m-%d')
+                    output_graph.add((Transaction, BK.when,  Literal(normalized_date) ))
+                except:
+                    print(f"Log: Found invalid date {row['bk_when']} in row {index}")           
                     
             #ToDo
             ### bk:Transfer of Commodity
@@ -313,133 +347,56 @@ for json_file in all_JSON_filenames:
             
         #########################################
         else:
-            Debug_CountEmptyRow += 1
-            
+            Debug_CountEmptyRow += 1         
     print("Log: bk:Transactions|bk:Total ... check")       
-        
+    
+    
+    #print(income_db)   
+    #print("########")
+    #print(expense_db)
+
+
     ########################################################################################
     ### <bk:Dataset>
     ########################################################################################
-    # get all distinct dates like YYYY or YYYY-MM (todo); store them in a set()
-    # query the already created graph for all Transactions with bk:from and bk:to refering to the account holder
-    # iteration over the result set of the queries and create sum up income and expense in Dataset_Dict  {'1793': {'income': 0, 'expense': 0}
-    # ToDo conversion information from confic file
-    
-    Dataset_Dict = dict()
-    yearSet = set()
-    patternforYear = re.compile('\d{4}')  
-    # maybe this coudl be done better?
-    for datestring in df['bk_when']:
-        if (pd.notnull(datestring)):
-            if(patternforYear.search(datestring) is not None):
-                yearSet.add(patternforYear.search(datestring).group(0))
-                
-    for year in yearSet:
-        Dataset_Dict.update( {year: {'income': '0', 'expense':'0'}} )
-    
-    
-    
-    # Money from AccotunHolder to X = EXPENSE
-    Money_From_AccotunHolder_To_X = output_graph.query(
-    """SELECT ?d ?unit ?quantity
-       WHERE {
-          ?Transaction a bk:Transaction ;
-                       bk:when ?d ;
-                       bk:consistsOf ?Transfer.   
-          ?Transfer bk:from <https://gams.uni-graz.at/context:depcha.gwfp#B.GeorgeWashington> ;
-                    bk:transfers ?Money.
-          ?Money bk:unit ?unit;
-                 bk:quantity ?quantity.
-                 
-       }""")
-    
-    print("Log: Query bk:from ... check") 
-    
-    # Money from  X to AccotunHolder = INCOME
-    Money_From_X_To_AccotunHoler = output_graph.query(
-    """SELECT ?d ?unit ?quantity
-       WHERE {
-          ?Transaction a bk:Transaction ;
-                       bk:when ?d ;
-                       bk:consistsOf ?Transfer.
-          ?Transfer bk:to <https://gams.uni-graz.at/context:depcha.gwfp#B.GeorgeWashington> ;
-                    bk:transfers ?Money.
-          ?Money bk:unit ?unit;
-                 bk:quantity ?quantity.
-       }""")
-
-    print("Log: Query bk:to ... check") 
-    
-    expense_sum = 0
-    income_sum = 0
-    
-    ''' for year in yearSet:
-        
-        sumQuantityFromQueryResult(Money_From_AccotunHolder_To_X)
-        sumQuantityFromQueryResult(Money_From_X_To_AccotunHoler)
-      
-        for query_result_row in Money_From_AccotunHolder_To_X:
-            if(patternforYear.search(query_result_row[0]) is not None):
-                date = patternforYear.search(query_result_row[0]).group(0)               
-                if(date == year):
-                    unit = query_result_row[1]
-                    quantity = query_result_row[2]
-                    
-                    if(str(unit) == "https://gams.uni-graz.at/context:depcha.gwfp#pound"):
-                        add_Quantity_To_Sum(income_sum, quantity, 1) 
-                    elif(str(unit) == "https://gams.uni-graz.at/context:depcha.gwfp#shilling"):
-                        add_Quantity_To_Sum(income_sum, quantity, 20) 
-                    elif(str(unit) == "https://gams.uni-graz.at/context:depcha.gwfp#pence"):
-                        add_Quantity_To_Sum(income_sum, quantity, 240) 
-                    Dataset_Dict[year]["expense"] = expense_sum 
-        expense_sum = 0
-        for query_result_row in Money_From_X_To_AccotunHoler:
-            if(patternforYear.search(query_result_row[0]) is not None):
-                date = patternforYear.search(query_result_row[0]).group(0)
-                if(date == year):
-                    unit = query_result_row[1]
-                    quantity = query_result_row[2]
-                    if(str(unit) == "https://gams.uni-graz.at/context:depcha.gwfp#pound"):
-                        add_Quantity_To_Sum(income_sum, quantity, 1) 
-                    elif(str(unit) == "https://gams.uni-graz.at/context:depcha.gwfp#shilling"):
-                        add_Quantity_To_Sum(income_sum, quantity, 20)
-                    elif(str(unit) == "https://gams.uni-graz.at/context:depcha.gwfp#pence"):
-                        add_Quantity_To_Sum(income_sum, quantity, 240)
-                    Dataset_Dict[year]["income"] = income_sum 
-        income_sum = 0'''
-        
-    print("Log: income_sum and expense_sum  ... check")    
-
-    for year in yearSet:
-        
+    # create a bk:Dataset for every year
+    # it contains info about the sum of all expense and income          
+    for year in dates:
         # <bk:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#1771">
         bk_Dataset_URI = BASE_URL + PID + "#" + year
+        bk_Dataset_income = URIRef(bk_Dataset_URI + 'I')
+        bk_Dataset_expense = URIRef(bk_Dataset_URI + 'E')
         DataSet = URIRef(bk_Dataset_URI)
         output_graph.add((DataSet, RDF.type,  BK.Dataset))
         output_graph.add((DataSet, GAMS.isMemberOfCollection,  URIRef(BASE_URL + CONTEXT) ))
-        
         # <bk:date>1771</bk:date>
         output_graph.add((DataSet, BK.date, Literal(year) ))
         
-        # <bk:credit> <bk:Income>
-        bk_Income = URIRef(bk_Dataset_URI + "I")
-        output_graph.add((DataSet, BK.credit, bk_Income))
-        output_graph.add((bk_Income, RDF.type,  BK.Income))
-        # bk:sum
-        output_graph.add((bk_Income, BK.sum, Literal(round(float(Dataset_Dict[year]['income']),2)) ))
-        # bk:unit
-        output_graph.add((bk_Income, BK.unit, URIRef(BASE_URL + CONTEXT + "#" + BK_MAIN_CURRENCY["unit"]) ))
+        # income
+        output_graph.add((DataSet, BK.income, bk_Dataset_income ))
+        output_graph.add((bk_Dataset_income, RDF.type,  BK.IncomeStmt))
+        output_graph.add((bk_Dataset_income, BK.unit, URIRef(BASE_URL + CONTEXT + "#" + BK_MAIN_CURRENCY["unit"]) ))
+        income_sum = 0
+        for money in income_db[year]:
+            if(money.get("pound")):
+                try:
+                    income_sum += float(money.get("pound"))
+                except:
+                    print(f"Exception: invalid quantity for income_sum {money.get('pound')}")
+        output_graph.add((bk_Dataset_income, BK.sum, Literal(income_sum) ))
         
-        # <bk:debit> <bk:Expense>
-        bk_Expense = URIRef(bk_Dataset_URI + "E")
-        output_graph.add((DataSet, BK.debit, bk_Expense))
-        output_graph.add((bk_Expense, RDF.type,  BK.Expense))
-        # bk:sum
-        output_graph.add((bk_Expense, BK.sum, Literal(round(float(Dataset_Dict[year]['expense']),2)) ))
-        # bk:unit
-        output_graph.add((bk_Expense, BK.unit, URIRef(BASE_URL + CONTEXT + "#" + BK_MAIN_CURRENCY["unit"]) ))
-
-    print(Dataset_Dict)
+        # expense
+        output_graph.add((DataSet, BK.expense, bk_Dataset_expense ))
+        output_graph.add((bk_Dataset_expense, RDF.type,  BK.ExpenseStmt))
+        output_graph.add((bk_Dataset_income, BK.unit, URIRef(BASE_URL + CONTEXT + "#" + BK_MAIN_CURRENCY["unit"]) )) 
+        expense_sum = 0
+        for money in expense_db[year]:
+            if(money.get("pound")):
+                try:
+                    expense_sum += float(money.get("pound"))
+                except:
+                    print(f"Exception: invalid quantity for expense_sum {money.get('pound')}")        
+        output_graph.add((bk_Dataset_expense, BK.sum, Literal(expense_sum) ))
     ########################################################################################
     ########################################################################################
     ### OUTPUT file .xml
@@ -447,9 +404,10 @@ for json_file in all_JSON_filenames:
     
 ########################################################################################
 ### DEBUGGING
+'''
 print("################## DATASET:")
 #print(DataSets)
-print("################## Disticnt bk:Between:")
+print("################## Distinct bk:Between:")
 #print(DistinctBetween)
 print("################## Columns:")
 print(df.columns.values)
@@ -460,8 +418,9 @@ print(f"Log: no bk:debit or bk:credit found for {str(Debug_DebitCreditEmptyCell)
 print(f"Log: was not able to identify bk:from or bk:to for {str(Debug_FromToEmpty)} bk:entry")
 print(f"Log: missed {str(Debug_missedTotal)} bk:Total")
 print(Debug_CurrencyInformation)
-print(f"The BK_MAIN_CURRENCY is {BK_MAIN_CURRENCY}")   
-
+print(f"The BK_MAIN_CURRENCY is {BK_MAIN_CURRENCY}") 
+print(f"new file: {config_data['OUTPUT-FILE-NAME']}")     
+'''
 
 """ 
 
