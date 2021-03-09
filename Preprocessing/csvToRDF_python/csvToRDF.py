@@ -8,13 +8,24 @@ import hashlib
 import glob
 from locale import atof, setlocale, LC_NUMERIC
 import math
-from datetime import datetime
+from datetime import datetime, date
 import numpy as np
 import dateutil.parser
 
 # https://stackoverflow.com/questions/6633523/how-can-i-convert-a-string-with-dot-and-comma-into-a-float-in-python
 # . and , in float numbers depending on default locale
 setlocale(LC_NUMERIC, '') 
+
+
+########################################################################################
+# VARIABLES
+count_transactions = 0
+count_totals = 0
+count_transfers = 0
+count_moneys = 0
+count_commodities = 0
+count_services = 0
+count_betweens = 0
 
 ########################################################################################
 # FUNCTIONS
@@ -36,9 +47,7 @@ def normalizeStringforJSON(string):
     string = string.replace('"', '\\"')
     string = " ".join(string.split())
     return string 
-
-
-             
+        
 ########################################################################################
 # creates a bk:Money and add bk:unit (uri) and bk:quantity (literal)
 # param: getBKMoney(URIRef(), double, string)
@@ -76,9 +85,7 @@ def get_Money(Measurable_Money, bk_quantity, bk_unit_index, Transfer):
     except:
         print(f"Exception: no valid number in BK_MONEY: Currencies must not contain commas, spaces, or characters: {bk_quantity}")
     # <bk:unit>  https://gams.uni-graz.at/context:depcha.gwfp#pence
-       
- 
-                                                
+                                                    
 ########################################################################################
 # this function add bk:entry, gams:isMemberOfCollection to the output_graph
 # param: URIRef() of the bk:Transaction
@@ -105,7 +112,6 @@ def getCreditOrDebit(Transfer):
             False
             #Debug_DebitCreditEmptyCell += 1
 
-
 ########################################################################################
 def createTransferOfMoney(Transaction_URI, Transaction):
     #<bk:Transfer> <bk:transfers> <bk:Money>
@@ -113,19 +119,24 @@ def createTransferOfMoney(Transaction_URI, Transaction):
         # selects all coumns bk_money, bk_money1 ... it is assumed that the first bk_money is the main currency
         monetaryValues = row.filter(like='bk_money')
         # <bk:Transfer>
-        Transfer = URIRef(Transaction_URI + "T" + str(index))
+        Transfer = URIRef(Transaction_URI + "TM")
         output_graph.add((Transaction, BK.consistsOf,  Transfer))
         output_graph.add((Transfer, RDF.type, BK.Transfer))
+        global count_transfers
+        count_transfers = count_transfers + 1
+        
         ### for all cells with content in columns name bk_money
         for count, bk_quantity in enumerate(monetaryValues):
+            global count_moneys
+            count_moneys = count_moneys + 1
             get_Money(URIRef(Transaction_URI + "M" + str(count)), bk_quantity, str(count), Transfer)
+
         ### <bk:debit>, <bk:credit>
         getCreditOrDebit(Transfer) 
         ##################
         ### bk:from, bk:to
         getFromOrTo(Transfer)
-        
-        
+                
 ########################################################################################
 #
 # 
@@ -149,7 +160,40 @@ def getFromOrTo(Transfer):
             False
             #Debug_FromToEmpty += 1
     
+########################################################################################
+# returns conversion according to main currency depending on conversion info in confic file
+#  * checks is quantitiy is 0 or invalid or transforms "2,5" to valid float "2.5"
+def convert_Money_to_MainCurrency(quantity, unit):
     
+    # TODO: skip second currency for now: add a second bk:IncomeStmt with its bk:unit and bk:
+    # !!!
+    if(unit == "pound" or unit == "shilling" or unit == "pence"):
+        BK_MAIN_CURRENCY = config_data["BK_CURRENCY"]["currency"][0]
+        # catch if quantity is not castable as float --> return 0
+        converted_quantity = ""
+        try:
+            converted_quantity = quantity.replace(" ", "")
+            if("," in converted_quantity):
+                converted_quantity = converted_quantity.replace(",", ".")
+                
+            # catch if quantity = 0
+            if(float(converted_quantity) > 0):
+                for currency in config_data["BK_CURRENCY"]["currency"]:
+                    if(unit == currency["unit"]):
+                        try:
+                            # $BaseUnit / 20; $BaseUnit / 240
+                            conversionDivisor = (currency["conversion"]["formular"]).split("/ ", 1)[1]
+                            return float(converted_quantity) / float(conversionDivisor)
+                        except:
+                            #print(f"Exception: {currency['unit']}")
+                            return float(converted_quantity)
+            else:
+                return 0.0
+        except:
+            print(f"Exception: invalid quantitiy '{converted_quantity}' in converting to main currency")
+            return 0.0
+    else:
+        return 0.0
 ########################################################################################
 #
 #     
@@ -159,11 +203,19 @@ def add_Quantity_To_Sum(sum_, quantity, ConversionValue):
         return sum_
     except:
         print("Exception: Not a valid number in add_Quantity_To_Sum function")
-   
-########################################################################################
-########################################################################################
-#### MAIN
 
+
+
+
+
+
+########################################################################################
+
+
+
+
+########################################################################################
+### MAIN
 ########################################################################################
 # VARIABLES
 Debug_CountEmptyRow = 0
@@ -201,6 +253,9 @@ for json_file in all_JSON_filenames:
     BK = Namespace("https://gams.uni-graz.at/o:depcha.bookkeeping#")
     GAMS = Namespace("https://gams.uni-graz.at/o:gams-ontology#") 
     OM = Namespace("http://www.ontology-of-units-of-measure.org/resource/om-2/")
+    VOID = Namespace("http://rdfs.org/ns/void#")
+    FOAF = Namespace("http://xmlns.com/foaf/spec/")
+    DCTERMS = Namespace("http://purl.org/dc/terms/")
     BASE_URL = "https://gams.uni-graz.at/"
     # make a graph
     output_graph = Graph()
@@ -208,6 +263,9 @@ for json_file in all_JSON_filenames:
     output_graph.bind("bk", BK)
     output_graph.bind("gams", GAMS)
     output_graph.bind("om", OM)
+    output_graph.bind("void", VOID)
+    output_graph.bind("foaf", FOAF)
+    output_graph.bind("dcterms", DCTERMS)
 
     #############################
     ### load data from confic file
@@ -219,9 +277,48 @@ for json_file in all_JSON_filenames:
     # from is reserved term in python
     BK_from_property = URIRef("https://gams.uni-graz.at/o:depcha.bookkeeping#from")
 
+    #
+    count_transactions = 0
+    count_totals = 0
+    count_transfers = 0
+    count_moneys = 0
+    count_commodities = 0
+    count_services = 0
+    count_betweens = 0
 
     ########################################################################################
+    ### https://www.w3.org/TR/void/
+    ########################################################################################
+    VOID_Dataset = URIRef(BASE_URL + PID)
+    output_graph.add((VOID_Dataset, RDF.type, VOID.Dataset ))
+    # foaf
+    output_graph.add((VOID_Dataset, FOAF.homepage, URIRef(BASE_URL + PID)))
+    # dcterms from confic_file
+    output_graph.add((VOID_Dataset, DCTERMS.title, Literal("Titel")))
+    output_graph.add((VOID_Dataset, DCTERMS.description, Literal("description")))
+    output_graph.add((VOID_Dataset, DCTERMS.source, Literal("source")))
+    output_graph.add((VOID_Dataset, DCTERMS.subject, Literal("subject")))
+    # generated
+    output_graph.add((VOID_Dataset, DCTERMS.modified, Literal(date.today())))
+    # void 
+    output_graph.add((VOID_Dataset, VOID.feature, URIRef("http://www.w3.org/ns/formats/RDF_XML")))
+    output_graph.add((VOID_Dataset, VOID.dataDump, URIRef(BASE_URL + PID  + "/ONTOLOGY")))
+    output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("https://gams.uni-graz.at/o:depcha.bookkeeping#")))
+    output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("https://gams.uni-graz.at/o:gams-ontology#")))
+    output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("http://xmlns.com/foaf/spec/")))
+    output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("http://purl.org/dc/terms/")))
+    output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("http://www.ontology-of-units-of-measure.org/resource/om-2/")))
+    output_graph.add((VOID_Dataset, VOID.triples, Literal(0)))
+   
+    # dcterms:title "DBPedia";
+    # dc:title
+    # date
+    #
+    
+    ########################################################################################
     ### Currency <om:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#pound">
+    ########################################################################################
+    ### currency info in confic file
     if(config_data["BK_CURRENCY"]):
         # the first mentioned currency is the main currency all other are mapepd to
         BK_MAIN_CURRENCY = config_data["BK_CURRENCY"]["currency"][0]
@@ -235,14 +332,13 @@ for json_file in all_JSON_filenames:
                 output_graph.add((OM_Unit, OM.hasBaseUnit, BaseUnit ))
                 # Todo find om:proeprty for conversion: ConversionStmt with value and operator in property ?
                 output_graph.add((OM_Unit, BK.conversionFormular, Literal(currency["conversion"]["formular"]) ))  
-        print("Log: BK_CURRENCY ... check")   
-    #########################################
-        # if bk_currency is in the spreadsheet?
-        # case 1: bk_currency column with multiple values in it like: pound, shilling, cents
-        # case 2: for each bk:currency a column and every cell is filled up with the same value 
+        print("Log: BK_CURRENCY ... check") 
+    ###  currency info in csv
+    # if bk_currency is in the spreadsheet?
+    # case 1: bk_currency column with multiple values in it like: pound, shilling, cents
+    # case 2: for each bk:currency a column and every cell is filled up with the same value 
     elif('bk_currency' in df.columns):
         print("ToDo bk_currency")
-    ######################################### 
     else:
         Debug_CurrencyInformation = "Error 'BK_CURRENCY' missing: no Information about currency in spreadsheet or in confic file"
         print("Log: BK_CURRENCY ... failed")   
@@ -308,12 +404,15 @@ for json_file in all_JSON_filenames:
             Transaction_URI = BASE_URL + PID + "#T" + str(index)
             Transaction = URIRef(Transaction_URI)
             output_graph.add((Transaction, RDF.type,  BK.Transaction))
+            # count
+            count_transactions = count_transactions + 1
             ### <bk:entry>, <gams:isMemberOfCollection>
             getBKCoreElements(Transaction)
             ### <bk:Transfer> <bk:Money>
             
             ###
             createTransferOfMoney(Transaction_URI, Transaction)
+            
             
             ### <bk:when>
             # try to parse string with dateutil and get YYYY-MM-DD
@@ -340,6 +439,9 @@ for json_file in all_JSON_filenames:
             Total_URI = BASE_URL + PID + "#To" + str(index)
             Total = URIRef(Total_URI)
             output_graph.add((Total, RDF.type,  BK.Total))
+            # count
+            count_totals = count_totals + 1
+            
             ### <bk:entry>, <gams:isMemberOfCollection>
             getBKCoreElements(Total)
             ### <bk:Transfer> <bk:Money>
@@ -378,12 +480,11 @@ for json_file in all_JSON_filenames:
         output_graph.add((bk_Dataset_income, BK.unit, URIRef(BASE_URL + CONTEXT + "#" + BK_MAIN_CURRENCY["unit"]) ))
         income_sum = 0
         for money in income_db[year]:
-            if(money.get("pound")):
-                try:
-                    income_sum += float(money.get("pound"))
-                except:
-                    print(f"Exception: invalid quantity for income_sum {money.get('pound')}")
-        output_graph.add((bk_Dataset_income, BK.sum, Literal(income_sum) ))
+            unit = list(money)[0]
+            quantity = money.get(unit)
+            # return converted money according to predefined main currency (confic file); add to income sum
+            income_sum += convert_Money_to_MainCurrency(quantity, unit)
+        output_graph.add((bk_Dataset_income, BK.sum, Literal(round(income_sum)) ))
         
         # expense
         output_graph.add((DataSet, BK.expense, bk_Dataset_expense ))
@@ -391,36 +492,47 @@ for json_file in all_JSON_filenames:
         output_graph.add((bk_Dataset_income, BK.unit, URIRef(BASE_URL + CONTEXT + "#" + BK_MAIN_CURRENCY["unit"]) )) 
         expense_sum = 0
         for money in expense_db[year]:
-            if(money.get("pound")):
-                try:
-                    expense_sum += float(money.get("pound"))
-                except:
-                    print(f"Exception: invalid quantity for expense_sum {money.get('pound')}")        
-        output_graph.add((bk_Dataset_expense, BK.sum, Literal(expense_sum) ))
-    ########################################################################################
+            unit = list(money)[0]
+            quantity = money.get(unit)
+            # 
+            expense_sum += convert_Money_to_MainCurrency(quantity, unit)      
+        output_graph.add((bk_Dataset_expense, BK.sum, Literal(round(expense_sum)) ))
+        
+        
+        
+    output_graph.add((VOID_Dataset, BK.numberOfTransaction, Literal(count_transactions)))
+    output_graph.add((VOID_Dataset, BK.numberOfTotal, Literal(count_totals)))     
     ########################################################################################
     ### OUTPUT file .xml
+    ########################################################################################
     output_graph.serialize(destination = config_data["OUTPUT-FILE-NAME"] + '.xml', format="pretty-xml")
     
 ########################################################################################
 ### DEBUGGING
-'''
 print("################## DATASET:")
 #print(DataSets)
 print("################## Distinct bk:Between:")
 #print(DistinctBetween)
 print("################## Columns:")
-print(df.columns.values)
+#print(df.columns.values)
 print("################## Log:")
 print(f"Log: Processed the following config files: {all_JSON_filenames}")
 print(f"Log: skipped {str(Debug_CountEmptyRow)} rows with empty bk:entry")
 print(f"Log: no bk:debit or bk:credit found for {str(Debug_DebitCreditEmptyCell)} bk:entry")
 print(f"Log: was not able to identify bk:from or bk:to for {str(Debug_FromToEmpty)} bk:entry")
 print(f"Log: missed {str(Debug_missedTotal)} bk:Total")
-print(Debug_CurrencyInformation)
+#print(Debug_CurrencyInformation)
 print(f"The BK_MAIN_CURRENCY is {BK_MAIN_CURRENCY}") 
-print(f"new file: {config_data['OUTPUT-FILE-NAME']}")     
-'''
+print(f"Log: {count_transactions} bk:Transaction created")
+print(f"Log: {count_totals} bk:Total created")
+print(f"Log: {count_transfers} bk:Transfer created")
+print(f"Log: {count_moneys} bk:Money created")
+print(f"Log: {count_commodities} bk:Commodity created")
+print(f"Log: {count_services} bk:Service created")
+print(f"Log: {count_betweens} bk:Between created")
+
+
+print(f"new file: {config_data['OUTPUT-FILE-NAME']}.xml")     
 
 """ 
 
@@ -579,9 +691,6 @@ print(f"new file: {config_data['OUTPUT-FILE-NAME']}")
 # create om:Unit
 
 
- 
-
-  
 # create a bk:Dataset for every year
 for year in DataSets:
     #   <bk:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#1771">
