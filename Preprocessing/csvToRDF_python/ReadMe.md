@@ -27,3 +27,13 @@
 
 * what means this line: 
   To Amount Brought over
+
+
+
+this are nor bk:entry: 
+
+* [Total]
+* To amount brought forward from
+* Carried to Folio 350
+
+this row must be clearly define as no bk:Transaction; so it needs a column bk:Type

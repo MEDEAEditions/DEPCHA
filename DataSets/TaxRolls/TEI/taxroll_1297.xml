@@ -55,6 +55,25 @@
           </p>
         </prefixDef>
       </listPrefixDef>
+      <unitDecl>
+        <unitDef type="currency" xml:id="livres" ana="bk:unit">
+          <label xml:lang="en">livres</label>
+          <country>France</country>
+          <unit>?</unit>
+        </unitDef>
+        <unitDef type="currency" xml:id="sous">
+          <label xml:lang="en">sous</label>
+          <country>France</country>
+          <unit>?</unit>
+          <conversion fromUnit="#livres" toUnit="#sous" formula="$fromUnit div 20"/>
+        </unitDef>
+        <unitDef type="currency" xml:id="deniers">
+          <label xml:lang="en">deniers</label>
+          <country>France</country>
+          <unit>?</unit>
+          <conversion fromUnit="#livres" toUnit="#deniers" formula="$fromUnit div 240"/>
+        </unitDef>
+      </unitDecl>
     </encodingDesc>
     <profileDesc>
       <langUsage>

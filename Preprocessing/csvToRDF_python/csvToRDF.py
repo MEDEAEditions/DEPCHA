@@ -234,7 +234,7 @@ file_extension = ".json"
 ###
 # get all JSON confic files in a folder
 # for a single file: 
-all_JSON_filenames = [i for i in glob.glob(f"{folder}/csvToRDF_config__Ledger_B{file_extension}")]
+all_JSON_filenames = [i for i in glob.glob(f"{folder}/csvToRDF_config__Ledger_C{file_extension}")]
 #all_JSON_filenames = [i for i in glob.glob(f"{folder}/*{file_extension}")]
 ########################################################################################
 for json_file in all_JSON_filenames:
@@ -398,8 +398,10 @@ for json_file in all_JSON_filenames:
     for index, row in df.iterrows():
     
         ###
+        ### TODO: row with "Carried to" or "[Total]" or "Amount brought over" must be exluded or explicitly defined
         # a bk_Transaction is not a "[Total]" and has a date
-        if (pd.notnull(row["bk_entry"]) and not "[Total]" in str(row["bk_entry"])):
+        if ( pd.notnull(row["bk_entry"]) and not "[Total]" in str(row["bk_entry"]) and
+            (not "Carried to" in row["bk_entry"]) and (not "Amount brought over" in row["bk_entry"])):
             ### <bk:Transaction>
             Transaction_URI = BASE_URL + PID + "#T" + str(index)
             Transaction = URIRef(Transaction_URI)
@@ -484,6 +486,11 @@ for json_file in all_JSON_filenames:
             quantity = money.get(unit)
             # return converted money according to predefined main currency (confic file); add to income sum
             income_sum += convert_Money_to_MainCurrency(quantity, unit)
+            #if(str(year) == "1787"):
+            #    print(income_sum)  
+            
+
+          
         output_graph.add((bk_Dataset_income, BK.sum, Literal(round(income_sum)) ))
         
         # expense
