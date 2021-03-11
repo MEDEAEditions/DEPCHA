@@ -83,13 +83,12 @@
                 	    
 
                 	
-                	    <div id="datatable">
+                	   <!-- <div id="datatable">
                 	       <script>
                 	           getJsonDATA(<xsl:value-of select="concat('&quot;',$PID,'&quot;')"/>);
                 	       </script>
-                	    </div>
-                	 
-                	    
+                	    </div>-->
+                	   
                 	    
                 	    
 	                    <!--<div id="datatable">

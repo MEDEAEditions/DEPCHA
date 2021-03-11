@@ -1,0 +1,24 @@
+PREFIX bds: <http://www.bigdata.com/rdf/search#>
+PREFIX bk: <https://gams.uni-graz.at/o:depcha.bookkeeping#>
+PREFIX t: <http://www.tei-c.org/ns/1.0/>
+PREFIX gams: <https://gams.uni-graz.at/o:gams-ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+# author:Christopher pollin
+# param: URI of data set = Collection, referenced by gams:isMemberOfCollection
+# expenses ?ex; income in, ?ds bk:Dataset, ?w bk:when
+
+
+SELECT (COUNT(?t) As ?t_count) ?c ?c_broader ?c_broaderer
+where{
+  
+  ?t a bk:Transaction ;
+     gams:isMemberOfCollection $1;
+     bk:consistsOf ?tr.
+  ?tr bk:transfers ?m.
+  ?m bk:commodity ?c.
+  ?c skos:prefLabel ?cn.
+  ?c skos:broader ?c_broader.
+  ?c_broader skos:broader ?c_broaderer.
+}
+GROUP BY ?c ?c_broader ?c_broaderer

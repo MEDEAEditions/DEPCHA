@@ -18,9 +18,9 @@
   
         <gmr:Workbook>
             <gmr:Sheets>
-                <xsl:for-each-group select="//s:results/s:result" group-by="s:Collection/@uri">
+                <!--<xsl:for-each-group select="//s:results/s:result" group-by="s:Collection/@uri">-->
                     <xsl:call-template name="createSheet"/>
-                </xsl:for-each-group>
+                <!--</xsl:for-each-group>-->
                 
             </gmr:Sheets>
         </gmr:Workbook>
@@ -31,270 +31,29 @@
     </xd:doc>
     <xsl:template name="createSheet">
         <gmr:Sheet>
-            <gmr:Name>
-                <xsl:value-of select="substring-after(current-grouping-key(), 'depcha.')"/>
-            </gmr:Name>
-            <gmr:MaxCol>
-                <xsl:value-of select="count(//s:variable)"></xsl:value-of>
-            </gmr:MaxCol>
-            <gmr:MaxRow>
-                <xsl:value-of select="(count(//s:result) + 1)"></xsl:value-of>
-            </gmr:MaxRow>
+           
+            
             <gmr:Cells>
-                <gmr:Cell Col="0" Row="0" ValueType="60">
-                    <gmr:Content>
-                        <xsl:text>ENTRY</xsl:text>
-                    </gmr:Content>
+                <gmr:Cell Col="1" Row="1" ValueType="30">
+                    <xsl:value-of select="1"/>
+                    
                 </gmr:Cell>
-                <gmr:Cell Col="1" Row="0" ValueType="60">
-                    <gmr:Content>
-                        <xsl:text>WHEN</xsl:text>
-                    </gmr:Content>
-                </gmr:Cell>
-                <gmr:Cell Col="2" Row="0" ValueType="60">
-                    <gmr:Content>
-                        <xsl:text>FROM</xsl:text>
-                    </gmr:Content>
-                </gmr:Cell>
-                <gmr:Cell Col="3" Row="0" ValueType="60">
-                    <gmr:Content>
-                        <xsl:text>TO</xsl:text>
-                    </gmr:Content>
-                </gmr:Cell>
-                <!--<gmr:Cell Col="4" Row="0" ValueType="60">
-                    <gmr:Content>
-                        <xsl:text>MEASURABLE</xsl:text>
-                    </gmr:Content>
-                </gmr:Cell>     -->          
-                <gmr:Cell Col="4" Row="0" ValueType="60">
-                    <gmr:Content>
-                        <xsl:text>QUANTITY</xsl:text>
-                    </gmr:Content>
-                </gmr:Cell>
-                <gmr:Cell Col="5" Row="0" ValueType="60">
-                    <gmr:Content>
-                        <xsl:text>UNIT</xsl:text>
-                    </gmr:Content>
-                </gmr:Cell>
-                <gmr:Cell Col="6" Row="0" ValueType="60">
-                    <gmr:Content>
-                        <xsl:text>COMMODITY</xsl:text>
-                    </gmr:Content>
-                </gmr:Cell>
-                <gmr:Cell Col="7" Row="0" ValueType="60">
-                    <gmr:Content>
-                        <xsl:text>QUANTITY 2</xsl:text>
-                    </gmr:Content>
-                </gmr:Cell>
-                <gmr:Cell Col="8" Row="0" ValueType="60">
-                    <gmr:Content>
-                        <xsl:text>UNIT 2</xsl:text>
-                    </gmr:Content>
-                </gmr:Cell>
-                <gmr:Cell Col="9" Row="0" ValueType="60">
-                    <gmr:Content>
-                        <xsl:text>COMMODITY 2</xsl:text>
-                    </gmr:Content>
-                </gmr:Cell>
-                <gmr:Cell Col="10" Row="0" ValueType="60">
-                    <gmr:Content>
-                        <xsl:text>QUANTITY 3</xsl:text>
-                    </gmr:Content>
-                </gmr:Cell>
-                <gmr:Cell Col="11" Row="0" ValueType="60">
-                    <gmr:Content>
-                        <xsl:text>UNIT 3</xsl:text>
-                    </gmr:Content>
-                </gmr:Cell>
-                <gmr:Cell Col="12" Row="0" ValueType="60">
-                    <gmr:Content>
-                        <xsl:text>COMMODITY 3</xsl:text>
-                    </gmr:Content>
-                </gmr:Cell>
-            </gmr:Cells>
-            <xsl:for-each-group select="current-group()" group-by="s:Transfer/@uri">
-                <xsl:sort select="s:When"></xsl:sort>
+          
+            <!--<xsl:for-each-group select="//s:result" group-by="s:tr/@uri">
                 <xsl:variable name="row" select="position()"></xsl:variable>
-                <!--  <gmr:Cell ValueType="10"> is needed if Cells are empty to keep them empty -->
+                <!-\-  <gmr:Cell ValueType="10"> is needed if Cells are empty to keep them empty -\->
                 <gmr:Cell Col="0" Row="{$row}" ValueType="60">
                     <xsl:choose>
-                        <xsl:when test="s:Entry">
-                            <xsl:attribute name="ValueType" select="60"/>
-                            <gmr:Content>
-                                <xsl:value-of select="s:Entry"/>
-                            </gmr:Content>
+                        <xsl:when test="s:e">
+                            <xsl:text>sdd</xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:attribute name="ValueType" select="10"/>
                         </xsl:otherwise>
                     </xsl:choose>                                   
                 </gmr:Cell>
-                <gmr:Cell Col="1" Row="{$row}" ValueType="60">
-                    <xsl:choose>
-                        <xsl:when test="s:When">
-                            <xsl:attribute name="ValueType" select="60"/>
-                            <gmr:Content>
-                                <xsl:value-of select="s:When"></xsl:value-of>
-                            </gmr:Content>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:attribute name="ValueType" select="10"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </gmr:Cell>
-                <gmr:Cell Col="2" Row="{$row}" ValueType="60">
-                    <xsl:choose>
-                        <xsl:when test="s:From_name">
-                            <xsl:attribute name="ValueType" select="60"/>
-                            <gmr:Content>
-                                <xsl:value-of select="s:From_name"></xsl:value-of>
-                            </gmr:Content>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:attribute name="ValueType" select="10"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </gmr:Cell>
-                <gmr:Cell Col="3" Row="{$row}" ValueType="60">
-                    <xsl:choose>
-                        <xsl:when test="s:To_name">
-                            <xsl:attribute name="ValueType" select="60"/>
-                            <gmr:Content>
-                                <xsl:value-of select="s:To_name"></xsl:value-of>
-                            </gmr:Content>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:attribute name="ValueType" select="10"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </gmr:Cell>
-                <!--<gmr:Cell Col="4" Row="{$row}" ValueType="60">
-                    <xsl:variable name="Measurable_type" select="substring-after(s:Measurable_type/@uri, '#')"/>
-                    <xsl:choose>
-                        <xsl:when test="$Measurable_type">
-                            <xsl:attribute name="ValueType" select="60"/>
-                            <gmr:Content>
-                                <xsl:choose>
-                                    <xsl:when test="$Measurable_type = 'Money'">
-                                        <!-\- for every shilling, pence, dollar, etc. -\->
-                                        <xsl:for-each-group select="current-group()" group-by="s:Unit">
-                                            <xsl:value-of select="s:Quantity"/><xsl:text> </xsl:text><xsl:value-of select="s:Unit"/><xsl:text> </xsl:text><xsl:value-of select="s:Commodity"/><br/>
-                                        </xsl:for-each-group>
-                                    </xsl:when>
-                                    <xsl:when test="$Measurable_type = 'Service'">
-                                        <xsl:for-each-group select="current-group()" group-by="s:Unit">
-                                            <xsl:value-of select="s:Quantity"/><xsl:text> </xsl:text><xsl:value-of select="s:Unit"/><xsl:text> </xsl:text><xsl:value-of select="s:Commodity"/><br/>
-                                        </xsl:for-each-group>
-                                    </xsl:when>
-                                    <xsl:when test="$Measurable_type = 'Commodity'">
-                                        <!-\- as commodity is always something different (powder, knife) -\->
-                                        <xsl:for-each-group select="current-group()" group-by="s:Commodity">
-                                            <xsl:value-of select="s:Quantity"/><xsl:text> </xsl:text><xsl:value-of select="s:Unit"/><xsl:text> </xsl:text><xsl:value-of select="s:Commodity"/><br/>
-                                        </xsl:for-each-group>
-                                    </xsl:when>
-                                    <xsl:otherwise>nope</xsl:otherwise>
-                                </xsl:choose>
-                                <xsl:text> </xsl:text>
-                            </gmr:Content>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:attribute name="ValueType" select="10"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </gmr:Cell>-->
-                
-
-      
-                <!-- 1. Measurable -->
-                <xsl:for-each-group select="current-group()" group-by="s:Unit">
-                
-                <!-- this is a strange part of code
-                     grouping the already grouped Transfers by Unit to sperate 1 $ 50 Cents
-                     position() returns the position if it 
-                -->
-                
-                <xsl:variable name="Col5">
-                    <xsl:choose>
-                        <xsl:when test="position() = 1">
-                            <xsl:value-of select="4"/>
-                        </xsl:when>
-                        <xsl:when test="position() = 2">
-                            <xsl:value-of select="7"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:value-of select="10"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:variable>
-                <xsl:variable name="Col6">
-                    <xsl:choose>
-                        <xsl:when test="position() = 1">
-                            <xsl:value-of select="5"/>
-                        </xsl:when>
-                        <xsl:when test="position() = 2">
-                            <xsl:value-of select="8"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:value-of select="11"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:variable>
-                <xsl:variable name="Col7">
-                    <xsl:choose>
-                        <xsl:when test="position() = 1">
-                            <xsl:value-of select="6"/>
-                        </xsl:when>
-                        <xsl:when test="position() = 2">
-                            <xsl:value-of select="9"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:value-of select="12"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:variable>
-                <gmr:Cell Col="{$Col5}" Row="{$row}" ValueType="60">
-                    <xsl:choose>
-                        <xsl:when test="s:Quantity">
-                            <xsl:attribute name="ValueType" select="60"/>
-                            <gmr:Content>
-                                <xsl:value-of select="s:Quantity"/>
-                            </gmr:Content>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:attribute name="ValueType" select="10"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </gmr:Cell>
-                <gmr:Cell Col="{$Col6}" Row="{$row}" ValueType="60">
-                    <xsl:choose>
-                        <xsl:when test="s:Unit">
-                            <xsl:attribute name="ValueType" select="60"/>
-                            <gmr:Content>
-                                <xsl:value-of select="s:Unit"/>
-                            </gmr:Content>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:attribute name="ValueType" select="10"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </gmr:Cell>
-                    <gmr:Cell Col="{$Col7}" Row="{$row}" ValueType="60">
-                    <xsl:choose>
-                        <xsl:when test="s:Commodity">
-                            <xsl:attribute name="ValueType" select="60"/>
-                            <gmr:Content>
-                                <xsl:value-of select="s:Commodity"/>
-                            </gmr:Content>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:attribute name="ValueType" select="10"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </gmr:Cell>
-                </xsl:for-each-group>
-                
-                
-            </xsl:for-each-group>
+            </xsl:for-each-group>-->
+            </gmr:Cells>
         </gmr:Sheet>
     </xsl:template>
     

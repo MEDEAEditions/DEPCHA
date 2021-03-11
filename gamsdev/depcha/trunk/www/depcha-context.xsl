@@ -101,37 +101,33 @@
             <!-- HOWTO -->
             <xsl:when test="$mode = 'howto'">
             	<xsl:variable name="HOWTO_TEI" select="document(concat('/context:depcha/', 'HOWTO'))"/>
-                <div class="row">
-                   <!-- <script type="text/javascript">
-                        $(document).ready(function(){
-                        $('a.fancybox').fancybox({'type' : 'image'});
-                        });
-                    </script>-->
-                	<div class="col-md-3">
-                			<div class="card" style=" position :  position: -webkit-sticky;
-	    	        position: sticky;
-	    	        top: 50px;">
-		                		<div class="card-body">
-		                			<xsl:for-each select="$HOWTO_TEI//t:TEI/t:text/t:body/t:div">
-			                            <div class="pb-2">
-			                                <a href="{concat('#',@xml:id)}" onclick="scrolldown(this)">
-			                                    <xsl:apply-templates select="t:head[@xml:id]"/>
-			                                </a>
-			                            	<!-- hier unterpunkte der Hauptpunkte -->
-			                            	<!--<xsl:if test="t:div/t:head[@xml:id]">
-			                            		<xsl:for-each select="t:div/t:head[@xml:id]"></xsl:for-each>
-			                            	</xsl:if>-->
-			                            </div>
-			                        </xsl:for-each>
-		                		</div>
-                			</div>
-                	</div>
-                	<div class="col-md-9">
-                		<div class="card">
-	                        <div class="card-body">
-	                            <xsl:apply-templates select="$HOWTO_TEI//t:TEI/t:text/t:body/t:div"/>
-	                        </div>
-	                     </div>
+                <div class="row row-offcanvas row-offcanvas-left">
+                    <!-- sidebar, which will move to the top on a small screen -->
+                    <div class="col-sm-2 pt-3 mt-2">
+                        <nav id="toc" data-toggle="toc" class="sticky-top">
+                            <ul class="nav">
+                             <xsl:for-each select="$HOWTO_TEI//t:TEI/t:text/t:body/t:div/t:div[t:head[@xml:id]]">
+                                 <a class="text-body" href="{concat('#',t:head/@xml:id)}">
+                                     <xsl:value-of select="t:head"/>
+                                 </a>
+                                 <xsl:if test=".//t:div[t:head[@xml:id]]">
+                                     <ul class="small">
+                                         <xsl:for-each select=".//t:div[t:head[@xml:id]]">
+                                           <li>
+                                               <a href="{concat('#',t:head/@xml:id)}" class="text-body">
+                                                   <xsl:value-of select="t:head"/>
+                                               </a>
+                                           </li>
+                                       </xsl:for-each>
+                                     </ul>
+                                 </xsl:if>
+                             </xsl:for-each>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- main content area -->
+                	<div class="col">
+	                   <xsl:apply-templates select="$HOWTO_TEI//t:TEI/t:text/t:body/t:div"/>
                 	</div>
                  </div>
             </xsl:when>
@@ -217,9 +213,9 @@
                                     <!-- VIEWS and EXPORTS -->
                                     <div class="col-sm-4">
                                         <!--<a class="btn btn-light mt-1 btn-block" href="{concat($Query_URL, $PARAM)}">Data View</a>-->
-                                        <a class="btn btn-light mt-1 btn-block" href="{concat('/archive/objects/', s:identifier, '/methods/sdef:Context/get?mode=dataview')}">Data View</a>
+                                        <a class="btn btn-light mt-1 btn-block" href="{concat('/archive/objects/', s:identifier, '/methods/sdef:Context/get?mode=dataview')}">Data</a>
                                             
-                                        <a class="btn btn-light mt-1 btn-block" href="{concat('/', s:identifier)}">Source View</a>
+                                        <a class="btn btn-light mt-1 btn-block" href="{concat('/', s:identifier)}">Sources</a>
                                         <a class="btn btn-light mt-1 btn-block" href="#">Discover</a>
                                         <a class="btn btn-light mt-1 btn-block" href="#">About</a>
                                     </div>

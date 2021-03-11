@@ -9,8 +9,9 @@
 */
 ////////////////////////////////////////////////
 //
-function getDatasetDateIncomeExpenses(PID){
-    let Base_URL = "https://glossa.uni-graz.at/archive/objects/query:depcha.dataset-date-income-expenses/methods/sdef:Query/getJSON?params="
+/*function getBarChart_Date_Value(query, PID, date, value)
+{
+    let Base_URL = "https://glossa.uni-graz.at/archive/objects/" + query + "/methods/sdef:Query/getJSON?params="
     let Param = encodeURIComponent("$1|<https://gams.uni-graz.at/"+PID+">");
     let Query_URL = Base_URL + Param;
        console.log(Query_URL);
@@ -23,88 +24,161 @@ function getDatasetDateIncomeExpenses(PID){
       .then(function(data)
       {
         console.log(data);
-        
-        const width = 100;
-        const height = 00;
-        const margin = {'top': 20, 'right': 50, 'bottom': 100, 'left': 50};
-        //const graphWidth = width - margin.left - margin.right;
-        //const graphHeight = height - margin.top - margin.bottom;
-        const graphWidth = width - margin.left - margin.right;
-        const graphHeight = height - margin.top - margin.bottom;
-        
-        
-        // Create the SVG canvas
-        const svg = d3.select('#dataset_stacked_bar_chart')
-          .append('svg')
-          .attr('width', width)
-          .attr('height', height);const graph = svg.append('g')
-          .attr('width', graphWidth)
-          .attr('height', graphHeight)
-          .attr('transform', 'translate(${margin.left}, ${margin.top})');
-          
-          
-        const gXAxis = graph.append('g')
-          .attr('transform', 'translate(0, ${graphHeight})');
-          
-        const gYAxis = graph.append('g')
+        const width = 1100;
+        const height = 750;
+        const margin = {'top':35, 'right': 35, 'bottom': 35, 'left': 45};
+        const innerWidth = width - margin.left - margin.right;
+        const innerHeight = height - margin.top - margin.bottom;
 
-        const y = d3.scaleLinear()
-          .domain([0, d3.max(data, d => d.income)])
-          .range([graphHeight, 0]);  
-          //.domain([100, d3.max(data, d => d.income)])
-          //.range([graphHeight, 800]);
+        const svg = d3.select('svg')
+          //.attr('width', width)
+          //.attr('height', height);
+          .attr("viewBox", [0, 0, width, height]);
         
-        // d3.scaleBand() is for an ordinal scale, like categories
+        const graph = svg.append('g')
+          .attr('width', innerWidth)
+          .attr('height', innerHeight)
+          .attr('transform', `translate(${margin.left}, ${margin.top})`);
+        
+        const bk_income = d => d.income;
+        const bk_expens = d => d.expens;
+        const bk_date = d => d.date;
+        
+        const y = d3.scaleLinear()
+          .domain([0, d3.max(data, bk_expens)]) 
+          .range([innerHeight, 0])
+          .nice();  
+
         const x = d3.scaleBand()
-          .domain(
-                    // sorting values on y-axis
-                   data.map(item => item.date).sort(function(a, b) {return a - b; })
-                 )
-          .range([0, 1000])
-          .paddingInner(0.2)
-          .paddingOuter(0.2);  
-            
+          .domain(data.map(bk_date))
+          .range([0,innerWidth])
+          .padding(0.05);
+
+        // y-Axis
+        const gYAxis = graph.append('g');
+      
+        const yAxis = d3.axisLeft(y)
+          .ticks(10)
+          .tickSize(-innerWidth)
+          .tickFormat(d => `£ ${d / 1000}K`);  
+        
+        gYAxis.call(yAxis);
+   
         const rects = graph.selectAll('rect')
-          .data(data);  
+        .data(data);  
+
+      
             
         rects.attr('width', x.bandwidth)
           .attr('class', 'bar-rect')
-          .attr('height', d => graphHeight - y(d.income))
+          .attr('height', d => innerHeight - y(d.expens))
           .attr('x', d => x(d.date))
-          .attr('y', d => y(d.income));  rects.enter()
+          .attr('y', d => y(d.expens));  
+            
+        rects.enter()
           .append('rect')
           .attr('class', 'bar-rect')
           .attr('width', x.bandwidth)
-          .attr('height', d => graphHeight - y(d.income))
+          .attr('height', d => innerHeight - y(d.expens))
           .attr('x', d => x(d.date))
-          .attr('y', d => y(d.income));  
-          
-          
+          .attr('y', d => y(d.expens));  
+
+        const gXAxis = graph.append('g')
+          .attr('transform', `translate(0, ${innerHeight})`);
+
         const xAxis = d3.axisBottom(x);
-
-        const yAxis = d3.axisLeft(y)
-          .ticks(1)
-          .tickFormat(d => '£');  
-
-         
-              
+        // show x-axis  
         gXAxis.call(xAxis);
-        gYAxis.call(yAxis);  
-            
-            
-            //gXAxis.selectAll('text')
-            //  .style('font-size', 14);
-            
-            //gYAxis.selectAll('text')
-            //  .style('font-size', 14);
+        // style text of x-axis
+        gXAxis.selectAll('text')
+          .style("text-anchor", "end")
+          .attr("dx", "-.8em")
+          .attr("dy", ".15em")
+          .attr("transform", "rotate(-65)");
       })
     .catch(function(error) 
     {
       console.log('Request failed', error);
     });    
     
-}
+}*/
 
+function a()
+{
+                        ! function (e) {
+                        function r(r) {
+                        for (var n, a, l = r[0], f = r[1], i = r[2], p = 0, s =[]; p < l.length; p++) a = l[p], Object.prototype.hasOwnProperty.call(o, a) && o[a] && s.push(o[a][0]), o[a] = 0;
+                        for (n in f) Object.prototype.hasOwnProperty.call(f, n) &&(e[n] = f[n]);
+                        for (c && c(r);
+                        s.length;) s.shift()();
+                        return u.push.apply(u, i ||[]), t()
+                        }
+                        function t() {
+                        for (var e, r = 0; r < u.length; r++) {
+                        for (var t = u[r], n = ! 0, l = 1; l < t.length; l++) {
+                        var f = t[l];
+                        0 !== o[f] &&(n = ! 1)
+                        }
+                        n &&(u.splice(r--, 1), e = a(a.s = t[0]))
+                        }
+                        return e
+                        }
+                        var n = {
+                        },
+                        o = {
+                        1: 0
+                        },
+                        u =[];
+                        function a(r) {
+                        if (n[r]) return n[r].exports;
+                        var t = n[r] = {
+                        i: r, l: ! 1, exports: {
+                        }
+                        };
+                        return e[r].call(t.exports, t, t.exports, a), t.l = ! 0, t.exports
+                        }
+                        a.m = e, a.c = n, a.d = function (e, r, t) {
+                        a.o(e, r) || Object.defineProperty(e, r, {
+                        enumerable: ! 0, get: t
+                        })
+                        },
+                        a.r = function (e) {
+                        "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+                        value: "Module"
+                        }), Object.defineProperty(e, "__esModule", {
+                        value: ! 0
+                        })
+                        },
+                        a.t = function (e, r) {
+                        if (1 & r &&(e = a(e)), 8 & r) return e;
+                        if (4 & r && "object" == typeof e && e && e.__esModule) return e;
+                        var t = Object.create(null);
+                        if (a.r(t), Object.defineProperty(t, "default", {
+                        enumerable: ! 0, value: e
+                        }), 2 & r && "string" != typeof e) for (var n in e) a.d(t, n, function (r) {
+                        return e[r]
+                        }.bind(null, n));
+                        return t
+                        },
+                        a.n = function (e) {
+                        var r = e && e.__esModule ? function () {
+                        return e. default
+                        }: function () {
+                        return e
+                        };
+                        return a.d(r, "a", r), r
+                        },
+                        a.o = function (e, r) {
+                        return Object.prototype.hasOwnProperty.call(e, r)
+                        },
+                        a.p = "/";
+                        var l = this[ "webpackJsonpreact-d3-dashboard"] = this[ "webpackJsonpreact-d3-dashboard"] ||[], f = l.push.bind(l);
+                        l.push = r, l = l.slice();
+                        for (var i = 0; i < l.length; i++) r(l[i]);
+                        var c = f;
+                        t()
+                        }
+                        ([])}
 
 
 ////////////////////////////////////////////////
@@ -239,7 +313,7 @@ function buildTable(objectWithMaps) {
     // do this better!! and for more than 2 measurables
      let Measurable = objectWithMaps[map].get('quantity').includes(",") ? 
        objectWithMaps[map].get('quantity').split(", ")[0] + " " + objectWithMaps[map].get('unit').split(", ")[0] + " " +
-         objectWithMaps[map].get('quantity').split(", ")[1] + " " + objectWithMaps[map].get('unit').split(", ")[1] :
+      objectWithMaps[map].get('quantity').split(", ")[1] + " " + objectWithMaps[map].get('unit').split(", ")[1] :
        objectWithMaps[map].get('quantity') + " " + objectWithMaps[map].get('unit');
         
      let row = document.createElement("tr");

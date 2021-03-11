@@ -14,3 +14,9 @@ counts how often commodities are traded
 
 [call query](https://glossa.uni-graz.at/archive/objects/query:depcha.commodities_numberinTransactions/methods/sdef:Query/getJSON?params=%241|%3Chttps%3A%2F%2Fgams.uni-graz.at%2Fcontext%3Adepcha.wheaton%3E)
 
+### depcha.commodities_treemap.sparql
+
+counts how often commodities are traded adn gives its taxonomy hierachy level
+
+[call query](https://glossa.uni-graz.at/archive/objects/query:depcha.commodities_treemap/methods/sdef:Query/getJSON?params=%241|%3Chttps%3A%2F%2Fgams.uni-graz.at%2Fcontext%3Adepcha.wheaton%3E)
+

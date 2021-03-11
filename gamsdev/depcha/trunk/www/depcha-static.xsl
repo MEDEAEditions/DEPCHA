@@ -135,41 +135,54 @@
 				<link rel="stylesheet" type="text/css" href="{concat($gamsdev,'/css/datatable.css')}"/>
 				<!-- TODO: source code highlighter -->
 				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css"/>
-
+					
+				<!--<link href="{concat($gamsdev,'/react-d3-dashboard/css/2.ea9b1cc9.chunk.css')}" rel="stylesheet"/>
+				<link href="{concat($gamsdev,'/react-d3-dashboard/css/main.450bfb41.chunk.css')}" rel="stylesheet"/>-->
 				
 				<!-- jQuery core JavaScript ================================================== -->
 				<script src="/lib/2.0/jquery-3.5.1.min.js"><xsl:text> </xsl:text></script>
-			
 				<!-- Bootstrap core JavaScript ================================================== -->
 				<script src="/lib/2.0/bootstrap-4.5.0-dist/js/bootstrap.bundle.js"><xsl:text> </xsl:text></script>
-			    
-				<!-- ToDO: Projectspecific JavaScript ================================================== -->
-				<script src="{concat($gamsdev,'/js/scrolldown.js')}"><xsl:text> </xsl:text></script>
-				<script src="/backbone/js/buildquery.js" type="application/javascript"><xsl:text> </xsl:text></script>
-				<!-- https://d3js.org/ -->
-				<script src="{concat($gamsdev,'/js/d3.v6.js')}"><xsl:text> </xsl:text></script>
-				<!-- TODO source code highlighter -->
-				<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"><xsl:text> </xsl:text></script>
+				<!-- GAMS JS ================================================== -->
+				<script src="/lib/3.0/gamsJS/1.x/gams.js"><xsl:text> </xsl:text></script>
+				<!-- Projectspecific JavaScript ================================================== -->
+				<script src="{concat($gamsdev,'/js/depcha.js')}"><xsl:text> </xsl:text></script>
 				
+				
+				
+				
+				<!--<script src="{concat($gamsdev,'/js/scrolldown.js')}"><xsl:text> </xsl:text></script>-->
+				<!--<script src="/backbone/js/buildquery.js"><xsl:text> </xsl:text></script>-->
+				<!-- https://d3js.org/ -->
+				<!--<script src="{concat($gamsdev,'/js/d3.v6.js')}"><xsl:text> </xsl:text></script>-->
+				<!-- TODO source code highlighter -->
+				<!--<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"><xsl:text> </xsl:text></script>-->
+				
+			
 				
 				<!-- GAMS JS -->
-				<!-- The script writes the global variable "gamsJs" onto global scope. So that you can use it in all following js code, like: -->
-				<script src="/lib/3.0/gamsJS/0.x/gams.js"><xsl:text> </xsl:text></script>
+				<!-- https://zimlab.uni-graz.at/gams/frontend/gamsjs -->
 				
+				
+				
+				<!--<script>
+					gamsJs.build("https://gams.uni-graz.at",{"$1":"home", "$2":"something else"})
+				</script>
+				-->
 			
 				
 			</head>
 
 			<!-- datatables.js -->
-			<script src="{concat($gamsdev,'/js/datatable_1.10.21.js')}"><xsl:text> </xsl:text></script>
+			<script src="/lib/2.0/plugins/bootstrap-datatable/jquery.dataTables.min.js"><xsl:text> </xsl:text></script>
 			<!-- databasket -->
-			<script  src="{concat($gamsdev,'/js/databasket.js')}"><xsl:text> </xsl:text></script>
+			<!--<script  src="{concat($gamsdev,'/js/databasket.js')}"><xsl:text> </xsl:text></script>-->
 			<!-- dataview -->
-			<script src="{concat($gamsdev,'/js/dataView.js')}"><xsl:text> </xsl:text></script>
+			<!--<script src="{concat($gamsdev,'/js/dataView.js')}"><xsl:text> </xsl:text></script>-->
 			<!--  -->
-			<script src="{concat($gamsdev,'/js/gamsInfoVis.js')}"><xsl:text> </xsl:text></script>
+			<script src="{concat($gamsdev,'/js/depcha-InfoVis-Library.js')}"><xsl:text> </xsl:text></script>
 			<!--  -->
-			<script src="{concat($gamsdev,'/js/d3.v6.js')}"><xsl:text> </xsl:text></script>
+			<script src="{concat($gamsdev,'/js/d3.v6.min.js')}"><xsl:text> </xsl:text></script>
 			
 			<!-- fancybox -->
 			<!--<script  src="/lib/1.0/plugins/fancybox_v2.1.5/source/jquery.fancybox.js?v=2.1.5"><xsl:text> </xsl:text></script>-->
@@ -178,16 +191,12 @@
 			<body>
 				<header>
 					<div class="container">
-						<div class="row">
-							<div class="col-sm-12">
-								<h1>
-									<xsl:value-of select="$projectTitle"/>
-								</h1>
-								<h2 class="d-none d-sm-block">
-									<xsl:value-of select="$subTitle"/>
-								</h2>
-							</div>	
-						</div>
+						<h1>
+							<xsl:value-of select="$projectTitle"/>
+						</h1>
+						<h2 class="d-none d-sm-block">
+							<xsl:value-of select="$subTitle"/>
+						</h2>						
 					</div>
 				</header>
 				
@@ -199,14 +208,14 @@
 						<div class="collapse navbar-collapse" id="nav">
 							<ul class="navbar-nav mr-auto">
 								<li class="nav-item">
-									<a class="nav-link" href="/context:depcha"><xsl:text>HOME</xsl:text></a>
+									<a class="nav-link" href="/context:depcha"><xsl:text>Home</xsl:text></a>
 								</li>
 								<li  class="nav-item">
-									<a class="nav-link" href="/archive/objects/context:depcha/methods/sdef:Context/get?mode=datasets"><xsl:text>DATA SETS</xsl:text></a>
+									<a class="nav-link" href="/archive/objects/context:depcha/methods/sdef:Context/get?mode=datasets"><xsl:text>Datasets</xsl:text></a>
 								</li>
 								<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										<xsl:text>INDICIES</xsl:text>
+										<xsl:text>Indicies</xsl:text>
 									</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<a class="dropdown-item" href="/query:depcha.commodity"><xsl:text>Commodities</xsl:text></a>
@@ -214,11 +223,11 @@
 									</div>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="/o:depcha.bookkeeping">ONTOLOGY</a>
+									<a class="nav-link" href="/o:depcha.bookkeeping">Ontology</a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link" href="/archive/objects/context:depcha/methods/sdef:Context/get?mode=databasket" >
-										<xsl:text>DATABASKET</xsl:text>
+										<xsl:text>Databasket</xsl:text>
 										<span id="databasket_static">
 											<xsl:text> </xsl:text>
 										</span>
@@ -226,7 +235,7 @@
 								</li>
 								<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										<xsl:text>PROJECT</xsl:text>
+										<xsl:text>Project</xsl:text>
 									</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<a class="dropdown-item" href="/archive/objects/context:depcha/methods/sdef:Context/get?mode=about"><xsl:text>About</xsl:text></a>
@@ -234,20 +243,20 @@
 									</div>
 								</li>	
 							</ul>
-							<form class="form-inline ml-auto" action="/archive/objects/query:depcha.fulltext/methods/sdef:Query/get" id="suche" method="get">
+							<!--<form class="form-inline ml-auto" action="/archive/objects/query:depcha.fulltext/methods/sdef:Query/get" id="suche" method="get">
 								<div class="form-row">
 									<div class="input-group">
 										<input class="form-control border" id="n$1" name="$1" type="text"  placeholder="Fulltext-Search" />
-										<!--<input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2"/>-->
+										<!-\-<input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2"/>-\->
 										<div class="input-group-prepend">
 											<button class="btn border-left-0 border" type="button">
 												<i class="fas fa-search"><xsl:text> </xsl:text></i>
 											</button>
-											<!--<span class="input-group-text" id="inputGroupPrepend2">@</span>-->
+											<!-\-<span class="input-group-text" id="inputGroupPrepend2">@</span>-\->
 										</div>
 									</div>
 								</div>
-							</form>
+							</form>-->
 							<!--<form action="" id="suche" method="get"><p><label for="n$1">$1</label>: <input id="n$1" name="$1" type="text" /></p><p><input type="submit" /></p></form>-->
 							
 					</div>
@@ -255,15 +264,8 @@
 			</nav>
 				<!-- /////////////////////////////////// -->
 				<main role="main">
-					<div class="container">
-						<!-- call depcha-context.xsl -->
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="card">
-									<xsl:call-template name="content"/>
-								</div>
-							</div>
-						</div>
+					<div class="container card">
+							<xsl:call-template name="content"/>
 					</div>
 				</main>
 
@@ -369,39 +371,45 @@
     </xsl:template>
 	
 	
-	<xsl:template match="t:div[@type='header']/t:head">
-		<div class="card-header"> 
-			<h1 class="card-title"><xsl:apply-templates/></h1>
-		</div>
-	</xsl:template>
-	
 	<xsl:template match="t:figure[@type='web']">
 		<!-- <a class="fancybox" data-fancybox-group="group" href="{@source}" title="{@ana}">-->
 		<img src="{@source}" class="rounded" alt="GAMS Workflow" style="display:block;margin-left:auto;margin-right:auto;margin-bottom:10px;margin-top:10px;max-width:50%"/>
 		<!--</a>-->
 	</xsl:template>
 	
-	<xsl:template match="t:head[@type='main']">
-		<h1 class="card-title">
-			<xsl:apply-templates/>
-		</h1>
-	</xsl:template>
-	
-	<xsl:template match="t:head[not(@type='main')]">
-		<h2 class="card-title">
-			<xsl:choose>
-				<xsl:when test="@xml:id">
-					<h3 id="{@xml:id}">
+	<xsl:template match="t:div/t:head">
+		<xsl:choose>
+			<xsl:when test="parent::t:div[@type='main']">
+				<div class="col main pt-3 mt-2">
+					<h1 class="d-none d-sm-block font-weight-bold">
 						<xsl:apply-templates/>
-					</h3>
-				</xsl:when>
-				<xsl:otherwise>
-					<h2>
-						<xsl:apply-templates/>
-					</h2>
-				</xsl:otherwise>
-			</xsl:choose>
-		</h2>
+					</h1>
+					<p class="d-none d-sm-block">
+						<small class="font-weight-light">
+							<xsl:text> </xsl:text>
+							<xsl:for-each select="//t:teiHeader/t:fileDesc/t:titleStmt/t:author">
+								<xsl:value-of select="."/><xsl:value-of select="if(not(position()=last())) then ', ' else ()"/>
+							</xsl:for-each>
+							<xsl:text>: </xsl:text>
+							<xsl:value-of select="//t:teiHeader/t:fileDesc/t:titleStmt/t:title"/>
+							<xsl:text>. In: DEPCHA. </xsl:text>
+							<xsl:value-of select="//t:teiHeader/t:fileDesc/t:publicationStmt/t:date[1]"/>
+							<xsl:text>. </xsl:text>
+							<i class="fas fa-quote-right"><xsl:text> </xsl:text></i>
+						</small>
+					</p>
+				</div>
+			</xsl:when>
+			<xsl:otherwise>
+				<h3 class="pt-3">
+					<xsl:if test="@xml:id"><xsl:attribute name="xml:id" select="@xml:id"/></xsl:if>
+					<xsl:apply-templates/>
+				</h3>
+			</xsl:otherwise>
+			
+			
+				
+		</xsl:choose>
 	</xsl:template>
 	
 	
@@ -510,11 +518,11 @@
 	</xsl:template>
 	
 	<xsl:template match="t:p[@style='XML']">
-		<pre>
-			<code class="XML">
+		<code class="XML">
+			<pre>
 				<xsl:value-of select="."/>
-			</code>
-		</pre>
+			</pre>
+		</code>
 	</xsl:template>
 	
 	<xsl:template match="t:list">
