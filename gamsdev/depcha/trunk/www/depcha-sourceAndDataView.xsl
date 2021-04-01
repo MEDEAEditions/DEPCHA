@@ -127,10 +127,24 @@
                                     </div>
                                 </div>
                                 <hr/>
+                            <div class="card">
+                                <script src="https://vega.github.io/vega/vega.min.js"><xsl:text> </xsl:text></script>
+                                <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"><xsl:text> </xsl:text></script>
+                                <script src="https://cdn.jsdelivr.net/npm/vega@5/build/vega-core.min.js"><xsl:text> </xsl:text></script>
+                                <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"><xsl:text> </xsl:text></script>
+                                <h3 class="card-title">https://vega.github.io/vega/usage/</h3>
+                                <div>
+                                    <div id="view"></div>
+                                    <script>
+                                        getVEGABarChart_Date_Value('query:depcha.incomevega', '<xsl:value-of select="$CONTEXT"/>');
+                                    </script>
+                                </div>
+                            </div>
+                            
                                 <div class="card">
                                     <h3 class="card-title">Barchar</h3>
                                     <div>
-                                        <svg id="in"></svg>
+                                        <svg id="BarChart_Date_Value"></svg>
                                         
                                         <script>
                                             getBarChart_Date_Value('query:depcha.dataset_incomeExpense_date', '<xsl:value-of select="$CONTEXT"/>');
@@ -142,7 +156,7 @@
                             <div class="card">
                                 <h3 class="card-title">Treemap</h3>
                                 <div>
-                                    <svg id="tree"></svg>
+                                    <svg id="Treemap"></svg>
                                     
                                     <script>
                                         getTreemap('query:depcha.commodities_treemap', '<xsl:value-of select="$CONTEXT"/>');

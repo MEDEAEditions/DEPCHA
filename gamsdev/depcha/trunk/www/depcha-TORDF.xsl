@@ -279,7 +279,7 @@
     <!-- ////////////////////////// -->
     <!--  -->
     <xsl:template match="*[tokenize(@ana, ' ') = 'bk:Taxonomy']">
-        <skos:ConceptScheme rdf:about="{concat($BASE-URL, $Currrent_Context)}">
+        <skos:ConceptScheme rdf:about="{concat($BASE-URL, $Currrent_Context, '#Taxonomy')}">
             <xsl:if test="t:gloss">
                 <dc:title>
                     <xsl:value-of select="normalize-space(t:gloss)"/>
@@ -1123,7 +1123,8 @@
                 </bk:unit>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:comment>Error: no @unitRef or @unit in bk:measurable</xsl:comment>
+                <bk:unit>piece</bk:unit>
+                <xsl:comment>Error: no @unitRef or @unit in bk:measurable -- added default "piece"</xsl:comment>
             </xsl:otherwise>
         </xsl:choose>
 
@@ -1556,15 +1557,27 @@
                         <gams:isMemberOfCollection
                             rdf:resource="{concat($BASE-URL, $Currrent_Context)}"/>
                         <!--  -->
+                        
+                        <!-- /////////////// -->
+                        <!-- if  $allMoneyofEntriesofCurrentYear has an <from> than we have income -->
                         <bk:income>
                             <bk:IncomeStmt rdf:about="{concat($DatasetURI, 'I')}">
-                                <bk:sum>
-                                    <xsl:value-of select="
-                                            if ($allMoneyofEntriesofCurrentYear/money) then
+                                <!-- bk:sum -->
+                                <xsl:choose>
+                                    <xsl:when test="$allMoneyofEntriesofCurrentYear/from">
+                                        <bk:sum>
+                                            <xsl:value-of select="
+                                                if ($allMoneyofEntriesofCurrentYear/money) then
                                                 round(sum($allMoneyofEntriesofCurrentYear/money))
-                                            else
+                                                else
                                                 0"/>
-                                </bk:sum>
+                                        </bk:sum>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <bk:sum>0</bk:sum>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                <!-- bk:unit -->
                                 <bk:unit>
                                     <xsl:value-of select="$mainCurrency/t:label"/>
                                 </bk:unit>
@@ -1592,16 +1605,26 @@
 
                             </bk:IncomeStmt>
                         </bk:income>
-                        <!--  -->
+                        
+                        <!-- /////////////// -->
+                        <!-- if  $allMoneyofEntriesofCurrentYear has an <to> than we have expenses -->
                         <bk:expense>
                             <bk:ExpenseStmt rdf:about="{concat($DatasetURI, 'E')}">
-                                <bk:sum>
-                                    <xsl:value-of select="
-                                            if ($allMoneyofEntriesofCurrentYear/money) then
+                                <xsl:choose>
+                                    <xsl:when test="$allMoneyofEntriesofCurrentYear/to">
+                                        <bk:sum>
+                                            <xsl:value-of select="
+                                                if ($allMoneyofEntriesofCurrentYear/money) then
                                                 round(sum($allMoneyofEntriesofCurrentYear/money))
-                                            else
+                                                else
                                                 0"/>
-                                </bk:sum>
+                                        </bk:sum>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <bk:sum>0</bk:sum>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                
                                 <bk:unit>
                                     <xsl:value-of select="$mainCurrency/t:label"/>
                                 </bk:unit>
@@ -1627,6 +1650,7 @@
                                 </xsl:for-each-group>-->
                             </bk:ExpenseStmt>
                         </bk:expense>
+                        
                         <!--  -->
 
 

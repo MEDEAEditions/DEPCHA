@@ -8,17 +8,23 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 # param: URI of data set = Collection, referenced by gams:isMemberOfCollection
 # expenses ?ex; income in, ?ds bk:Dataset, ?w bk:when
 
+# selects all skos:concepts of bk:Commodities in bk:Transactions.
+# select all property paths (+) from this
+# binds via skos:hasTopConcept all broadest (top) concepts
+# c_broader contains all inbetween
+# return number of bk:Transfer
 
-SELECT (COUNT(?t) As ?t_count) ?c ?c_broader ?c_broaderer
+SELECT (COUNT(?tr) As ?t_count) ?c ?c_broader ?c_broadest
 where{
   
   ?t a bk:Transaction ;
-     gams:isMemberOfCollection $1;
+     gams:isMemberOfCollection <https://gams.uni-graz.at/context:depcha.wheaton>;
      bk:consistsOf ?tr.
   ?tr bk:transfers ?m.
   ?m bk:commodity ?c.
-  ?c skos:prefLabel ?cn.
-  ?c skos:broader ?c_broader.
-  ?c_broader skos:broader ?c_broaderer.
+  ?c  skos:broader+ ?c_broader .
+  ?c  skos:broader+ ?c_broadest .
+  ?top skos:hasTopConcept ?c_broadest.
+
 }
-GROUP BY ?c ?c_broader ?c_broaderer
+GROUP BY ?c ?c_broader ?c_broadest

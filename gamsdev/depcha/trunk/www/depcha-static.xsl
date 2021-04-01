@@ -130,6 +130,8 @@
 				<link href="{concat($gamsdev,'/css/navbar.css')}" rel="stylesheet" type="text/css"/>
 				<!-- sidebar -->
 				<link href="{concat($gamsdev,'/css/sidebar.css')}" rel="stylesheet" type="text/css" />
+				<!-- infovis -->
+				<link href="{concat($gamsdev,'/css/infovis.css')}" rel="stylesheet" type="text/css" />
 				<!-- icons -->
 				<link rel="stylesheet" href="/lib/2.0/fa/css/all.css"/>
 				<link rel="stylesheet" type="text/css" href="{concat($gamsdev,'/css/datatable.css')}"/>
