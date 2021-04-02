@@ -13,15 +13,13 @@
     xmlns:t="http://www.tei-c.org/ns/1.0" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
     xmlns:dc="http://purl.org/dc/elements/1.1/" exclude-result-prefixes="#all">
     
+    <!-- ///////////////////////// -->
     <xsl:strip-space elements="*"/>
     <xsl:include href="depcha-static.xsl"/>
     <xsl:output method="xml" doctype-system="about:legacy-compat" encoding="UTF-8" indent="no"/>
     
     <xsl:template name="content">
-        
         <xsl:choose>
-            <!-- ///////////////////////// -->
-            <!-- DATA VIEW -->
             <xsl:when test="$mode = 'dataview'">
                 <!-- ///////////////////////// -->
                 <!-- VARIABLES -->
@@ -30,35 +28,25 @@
                 <!-- dc metadata of context -->
                 <xsl:variable name="DC_Context-Metadata" select="document(concat('/', $CONTEXT, '/DC'))"/>
                 
-                <div id="main">
-                    <div class="row row-offcanvas row-offcanvas-left">
-                        <!--<div class="col-md-2 col-lg-2 sidebar-offcanvas bg-secondary pl-0" id="sidebar" role="navigation">
-                            <ul class="nav flex-column sticky-top pl-0 pt-5 mt-3">
-                                <li class="nav-item"><a class="nav-link" href="#">Overview</a></li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Source▾</a>
-                                    <ul class="list-unstyled flex-column pl-3 collapse" id="submenu1" aria-expanded="false">
-                                        <xsl:for-each select="//s:result">
-                                            <xsl:sort select="s:title" data-type="text" lang="en"/>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{concat('/', s:identifier)}" target="_blank">
-                                                    <xsl:value-of select="s:title"/>
-                                                </a>
-                                            </li>
-                                        </xsl:for-each>
-                                    </ul>
-                                </li>
-                                <li class="nav-item"><a class="nav-link" href="{concat('/', $CONTEXT)}">About</a></li>
-                            </ul>
-                        </div>-->
-                        <!--/col-->
-                        
-                        <div class="col main pt-3 mt-2">
-                            
-                            <h1 class="d-none d-sm-block font-weight-bold">
+                <!-- ///////////////////////// -->
+                <!-- QUERY RESULTS -->
+                <xsl:variable name="BASE_URL" select="'https://gams.uni-graz.at/'"/>
+                <xsl:variable name="Query_URL" select="encode-for-uri(concat('$1|&lt;',$BASE_URL, $CONTEXT, '&gt;'))"/>
+                <!-- index.between -->
+                <xsl:variable name="Query_index.between" select="document(concat('/archive/objects/query:depcha.index.between/methods/sdef:Query/getXML?params=', $Query_URL))//s:results"/>
+                <!-- index.goods -->
+                <xsl:variable name="Query_index.goods" select="document(concat('/archive/objects/query:depcha.index.goods/methods/sdef:Query/getXML?params=', $Query_URL))//s:results"/>
+                
+                <!-- ///////////////////////// -->
+                <!-- MAIN -->
+                <div id="dataset_view">
+                    <div class="row">
+                        <div class="card mt-1">
+                            <div class="card-body">
+                            <h1 class="d-none d-sm-block font-weight-bold card-title">
                                 <xsl:value-of select="$Result/s:container"/>
                             </h1>
-                            <p class="d-none d-sm-block">
+                            <p class="d-none d-sm-block card-subtitle">
                                 <xsl:if test="$DC_Context-Metadata//*:date">
                                     <xsl:value-of select="$DC_Context-Metadata//*:date"/>
                                     <xsl:text> | </xsl:text>
@@ -77,7 +65,7 @@
                                     <xsl:text>: </xsl:text>
                                     <xsl:value-of select="$DC_Context-Metadata//*:title"/>
                                     <xsl:text>. In: DEPCHA. </xsl:text>
-                                    <!-- but this is just the lastModifiedDate og the first o: inside the contect:  -->
+                                    <!-- but this is just the lastModifiedDate og the first o: inside the context:  -->
                                     <xsl:value-of select="format-dateTime($Result//s:lastModifiedDate, '[D].[M].[Y]')"/>
                                     <xsl:text>. </xsl:text>
                                     <xsl:value-of select="concat('https://gams.uni-graz.at/', $DC_Context-Metadata//*:identifier)"/>
@@ -85,19 +73,223 @@
                                     <i class="fas fa-quote-right"><xsl:text> </xsl:text></i>
                                 </small>
                             </p>
-                            
-                            <div class="alert alert-warning fade collapse" role="alert" id="myAlert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                    <span class="sr-only">Close</span>
-                                </button>
-                                <strong>Holy guacamole!</strong> It's free.. this is an example theme.
                             </div>
+                        </div>
+                    </div>
+                    <!-- ////////////////////////////////////////// -->
+                    <!-- NAV TAB -->
+                    <div class="row card-body">
+                        <ul class="nav nav-tabs" id="nav-tabs" role="tablist">
+                            <!-- style to overwrite nav-link -->
+                            <li class="nav-item">
+                                <a href="#overview" class="nav-link font-weight-bold active" style="color: #000000 !important;" data-toggle="tab" id="overview-tab">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#source" class="nav-link font-weight-bold" style="color: #000000 !important;" data-toggle="tab" id="source-tab">Source</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#about" class="nav-link font-weight-bold" style="color: #000000 !important;"  data-toggle="tab" id="about-tab">About</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" data-toggle="dropdown" style="color: #000000 !important;">Indices</a>
+                                <div class="dropdown-menu">
+                                    <xsl:if test="$Query_index.between/s:result">
+                                        <a class="dropdown-item" href="#indices_between" data-toggle="tab" id="indices_between-tab">Parties</a>
+                                    </xsl:if>
+                                    <xsl:if test="$Query_index.goods/s:result">
+                                        <a class="dropdown-item" href="#indices_good" data-toggle="tab" id="indices_good-tab">Economic Goods</a>
+                                    </xsl:if>
+                                    <a class="dropdown-item" href="#indices_where" data-toggle="tab" id="indices_where-tab">Places</a>
+                                </div>
+                            </li>
+                            <!--<li class="nav-item">
+                                <a href="#" class="nav-link font-weight-bold" style="color: #000000 !important;"  data-toggle="tab" id="edition-tab">Edition</a>
+                            </li>-->
+                        </ul>
+                    </div>
+                    
+                    <!-- ////////////////////////////////////////// -->
+                    <!-- TAB CONTENT -->
+                    <div class="row card-body">
+                        <div class="col-sm-12 tab-content">
+                            <!-- OVERVIEW -->
+                            <div class="tab-pane active" id="overview" role="tabpanel">
+                                <h3 class="card-title">Overview</h3>
+                                
+                                <!-- /// -->
+                                
+                                <div>
+                                    <script src="https://vega.github.io/vega/vega.min.js"><xsl:text> </xsl:text></script>
+                                    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"><xsl:text> </xsl:text></script>
+                                    <script src="https://cdn.jsdelivr.net/npm/vega@5/build/vega-core.min.js"><xsl:text> </xsl:text></script>
+                                    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"><xsl:text> </xsl:text></script>
+                                    <h3 class="card-title">https://vega.github.io/vega/usage/</h3>
+                                    <div>
+                                        <div id="view"><xsl:text> </xsl:text></div>
+                                        <script>
+                                            getVEGABarChart_Date_Value('query:depcha.incomevega', '<xsl:value-of select="$CONTEXT"/>');
+                                        </script>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="card-title">Barchar</h3>
+                                    <div>
+                                        <svg id="BarChart_Date_Value"><xsl:text> </xsl:text></svg>
+                                        
+                                        <script>
+                                            getBarChart_Date_Value('query:depcha.dataset_incomeExpense_date', '<xsl:value-of select="$CONTEXT"/>');
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <h3 class="card-title">Treemap</h3>
+                                    <div>
+                                        <svg id="Treemap"><xsl:text> </xsl:text></svg>
+                                        <script>
+                                            getTreemap('query:depcha.commodities_treemap', '<xsl:value-of select="$CONTEXT"/>');
+                                        </script>
+                                    </div>
+                                </div>
+                                
+                                <!-- /// -->
+                                
+                            </div> 
+                            <!-- METADATA BODY -->
+                            <div class="tab-pane" id="source" role="tabpanel">
+                                <h3 class="card-title">Source</h3>
+                            </div>
+                            <!-- ABOUT -->
+                            <div class="tab-pane" id="about" role="tabpanel">
+                                <h3 class="card-title">About</h3>
+                            </div>
+                            <!-- INDICES -->
+                            <!-- between -->
+                            <xsl:if test="$Query_index.between/s:result">
+                                <div class="tab-pane" id="indices_between" role="tabpanel">
+                                    <h3 class="card-title">Index - Between</h3>
+                                    <ul>
+                                        <!--  -->
+                                        <xsl:variable name="SumOfTransactions">
+                                            <xsl:for-each-group select="$Query_index.between/s:result" group-by="s:be/@uri">
+                                                <count><xsl:value-of select="s:count"/></count>
+                                            </xsl:for-each-group>
+                                        </xsl:variable>
+                                        <p>
+                                            <xsl:value-of select="count(distinct-values($Query_index.between/s:result/s:be/@uri))"/>
+                                            <xsl:text> involved parties in </xsl:text><xsl:value-of select="sum($SumOfTransactions/*:count)"/><xsl:text> Transactions</xsl:text>
+                                        </p>
+                                    </ul>
+                                    <div class="list-group list-group-flush">
+                                        <xsl:for-each-group select="$Query_index.between/s:result" group-by="s:be/@uri">
+                                            <xsl:sort select="s:count" data-type="number" order="descending"/>
+                                            <div class="list-group-item list-group-item-action border-top">
+                                                <a class="arrow" data-toggle="collapse" href="{concat('#c' , generate-id())}">
+                                                    <i>
+                                                        <xsl:text>▼ </xsl:text>
+                                                    </i>
+                                                    <!--<xsl:value-of select="current-grouping-key()"/>-->
+                                                    <xsl:value-of select="s:name"/>
+                                                </a>
+                                                <br/>
+                                                <!-- Between_Query_URL to search result -->
+                                                <xsl:variable name="Between_Query_URL" select="concat('/archive/objects/query:depcha.search.between/methods/sdef:Query/get?params=', encode-for-uri(concat('$1|&lt;', current-grouping-key(), '&gt;')))"/>
+                                                <a href="{$Between_Query_URL}" class="text-muted" target="blank_">
+                                                    <xsl:value-of select="s:count"/><xsl:text> Transactions </xsl:text><i class="fas fa-search"><xsl:text> </xsl:text></i>
+                                                </a>
+                                                <!-- COLLAPSABLE CARD WITH TABLE FOR bk:Between information -->
+                                                <div class="collapse" id="{concat('c' , generate-id())}">
+                                                    <div class="card card-body">
+                                                        <table class="table table-sm">
+                                                            <tbody>
+                                                                <!-- iterating over all properties and there literal|uri -->
+                                                                <xsl:for-each select="current-group()">
+                                                                    <xsl:sort select="s:prop/@uri"/>
+                                                                    <xsl:variable name="Property" select="s:prop/@uri"/>
+                                                                    <xsl:if test="not($Property = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type')">
+                                                                        <tr>
+                                                                            <th class="col-4">
+                                                                                <xsl:choose>
+                                                                                    <xsl:when test="contains($Property,'http://xmlns.com/foaf/spec/')">
+                                                                                        <xsl:value-of select="concat('foaf:', substring-after($Property,'http://xmlns.com/foaf/spec/'))"/>
+                                                                                    </xsl:when>
+                                                                                    <xsl:when test="contains($Property,'https://schema.org/')">
+                                                                                        <xsl:value-of select="concat('schema:', substring-after($Property,'https://schema.org/'))"/>
+                                                                                    </xsl:when>
+                                                                                    <xsl:otherwise>
+                                                                                        <xsl:value-of select="s:prop/@uri"/>
+                                                                                    </xsl:otherwise>
+                                                                                </xsl:choose>
+                                                                            </th>
+                                                                            <td class="col-8">
+                                                                                <xsl:value-of select="normalize-space(s:value)"/>
+                                                                                <xsl:text> </xsl:text>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </xsl:if>
+                                                                </xsl:for-each>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                        </xsl:for-each-group>
+                                    </div>
+                                </div>
+                            </xsl:if>
+                            <!-- //// -->
+                            <!-- GOODS-->
+                            <xsl:if test="$Query_index.goods/s:result">
+                                <div class="tab-pane" id="indices_good" role="tabpanel">
+                                    <h3 class="card-title">Index - Economic Goods</h3>
+                                    <xsl:for-each-group select="$Query_index.goods/s:result" group-by="s:c_s/@uri">
+                                        <xsl:sort select="s:count" data-type="number" order="descending"/>
+                                        <div class="list-group-item list-group-item-action border-top">
+                                                <xsl:value-of select="s:pl"/>
+                                            <br/>
+                                            <!-- Between_Query_URL to search result -->
+                                            <xsl:variable name="Between_Query_URL" select="concat('/archive/objects/query:depcha.search.goods/methods/sdef:Query/get?params=', encode-for-uri(concat('$1|&lt;', current-grouping-key(), '&gt;')))"/>
+                                            <a href="{$Between_Query_URL}" class="text-muted" target="blank_">
+                                                <xsl:value-of select="s:count"/><xsl:text> Transactions </xsl:text><i class="fas fa-search"><xsl:text> </xsl:text></i>
+                                            </a>
+                                        </div>
+                                    </xsl:for-each-group>
+                                </div>
+                            </xsl:if>
+                            <!-- //// -->
+                            <!-- Places -->
+                            <div class="tab-pane" id="indices_where" role="tabpanel">
+                                <h3 class="card-title">Index - Places</h3>
+                            </div>
+                        </div>
+                    </div>
+                    
                             
-                            <hr/>
-                                <div class="row placeholders mb-3">
+                            <!--<div class="col-md-2 col-lg-2 sidebar-offcanvas bg-secondary pl-0" id="sidebar" role="navigation">
+                            <ul class="nav flex-column sticky-top pl-0 pt-5 mt-3">
+                                <li class="nav-item"><a class="nav-link" href="#">Overview</a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Source▾</a>
+                                    <ul class="list-unstyled flex-column pl-3 collapse" id="submenu1" aria-expanded="false">
+                                        <xsl:for-each select="//s:result">
+                                            <xsl:sort select="s:title" data-type="text" lang="en"/>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{concat('/', s:identifier)}" target="_blank">
+                                                    <xsl:value-of select="s:title"/>
+                                                </a>
+                                            </li>
+                                        </xsl:for-each>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="{concat('/', $CONTEXT)}">About</a></li>
+                            </ul>
+                        </div>-->
+                            <!--/col-->
+                            
+                            
+                            
+                                <!--<div class="row placeholders mb-3">
                                     <div class="col-6 col-sm-3 placeholder text-center">
-                                        <!--<img src="//placehold.it/200/dddddd/fff?text=1" class="mx-auto img-fluid rounded-circle" alt="Generic placeholder thumbnail"/>-->
+                                        <!-\-<img src="//placehold.it/200/dddddd/fff?text=1" class="mx-auto img-fluid rounded-circle" alt="Generic placeholder thumbnail"/>-\->
                                         <h4>Analysis</h4>
                                         <span class="text-muted">
                                             <xsl:text>Loremp Ipsum</xsl:text>
@@ -117,54 +309,16 @@
                                     </div>
                                     <div class="col-6 col-sm-3 placeholder text-center">
                                         <h4>Export</h4>
-                                        <!-- http://glossa.uni-graz.at/archive/objects/query:depcha.data-context/methods/sdef:Query/getHSSF?params=%241%7C%22context%3Adepcha.gwfp%22 -->
+                                        <!-\- http://glossa.uni-graz.at/archive/objects/query:depcha.data-context/methods/sdef:Query/getHSSF?params=%241%7C%22context%3Adepcha.gwfp%22 -\->
                                         <xsl:variable name="Query_HSSF_Param" select="encode-for-uri(concat('$1|&lt;', 'https://gams.uni-graz.at/', //s:result[1]/s:cid,'&gt;'))"/>
-                                        <!--<a class="mb-1 row" href="{concat('/archive/objects/query:depcha.data-context/methods/sdef:Query/getHSSF?params=', $Query_HSSF_Param)}" role="button">
+                                        <!-\-<a class="mb-1 row" href="{concat('/archive/objects/query:depcha.data-context/methods/sdef:Query/getHSSF?params=', $Query_HSSF_Param)}" role="button">
                                                 <span class="col-sm-2"><img alt="Excel" height="25" id="excel" src="{concat($gamsdev, '/img/TABELLENSYMBOL.png')}" title="Excel Export"/><xsl:text> </xsl:text></span>
                                              
-                                            </a>-->
+                                            </a>-\->
                                         
                                     </div>
-                                </div>
-                                <hr/>
-                            <div class="card">
-                                <script src="https://vega.github.io/vega/vega.min.js"><xsl:text> </xsl:text></script>
-                                <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"><xsl:text> </xsl:text></script>
-                                <script src="https://cdn.jsdelivr.net/npm/vega@5/build/vega-core.min.js"><xsl:text> </xsl:text></script>
-                                <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"><xsl:text> </xsl:text></script>
-                                <h3 class="card-title">https://vega.github.io/vega/usage/</h3>
-                                <div>
-                                    <div id="view"></div>
-                                    <script>
-                                        getVEGABarChart_Date_Value('query:depcha.incomevega', '<xsl:value-of select="$CONTEXT"/>');
-                                    </script>
-                                </div>
-                            </div>
-                            
-                                <div class="card">
-                                    <h3 class="card-title">Barchar</h3>
-                                    <div>
-                                        <svg id="BarChart_Date_Value"></svg>
-                                        
-                                        <script>
-                                            getBarChart_Date_Value('query:depcha.dataset_incomeExpense_date', '<xsl:value-of select="$CONTEXT"/>');
-                                        </script>
-                                        
-                                        
-                                    </div>
-                                </div>
-                            <div class="card">
-                                <h3 class="card-title">Treemap</h3>
-                                <div>
-                                    <svg id="Treemap"></svg>
-                                    
-                                    <script>
-                                        getTreemap('query:depcha.commodities_treemap', '<xsl:value-of select="$CONTEXT"/>');
-                                    </script>
-                                    
-                                    
-                                </div>
-                            </div>
+                                </div>-->
+                    
                             
                             
                             
@@ -189,8 +343,8 @@
                                         </div>
                                     </div>-->
                         </div>
-                    </div>
-                </div>
+                  
+              
                 
                 
                 

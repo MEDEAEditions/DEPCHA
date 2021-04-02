@@ -143,16 +143,15 @@
 				
 				<!-- jQuery core JavaScript ================================================== -->
 				<script src="/lib/2.0/jquery-3.5.1.min.js"><xsl:text> </xsl:text></script>
+				<!-- https://popper.js.org/ -->
+				<!-- Important: You must include popper after jquery but BEFORE bootstrap.-->
+				<!--<script src="{concat($gamsdev,'/aaif/js/popper.min.js')}"><xsl:text> </xsl:text></script>-->
 				<!-- Bootstrap core JavaScript ================================================== -->
 				<script src="/lib/2.0/bootstrap-4.5.0-dist/js/bootstrap.bundle.js"><xsl:text> </xsl:text></script>
 				<!-- GAMS JS ================================================== -->
 				<script src="/lib/3.0/gamsJS/1.x/gams.js"><xsl:text> </xsl:text></script>
-				<!-- Projectspecific JavaScript ================================================== -->
-				<script src="{concat($gamsdev,'/js/depcha.js')}"><xsl:text> </xsl:text></script>
-				
-				
-				
-				
+			
+
 				<!--<script src="{concat($gamsdev,'/js/scrolldown.js')}"><xsl:text> </xsl:text></script>-->
 				<!--<script src="/backbone/js/buildquery.js"><xsl:text> </xsl:text></script>-->
 				<!-- https://d3js.org/ -->
@@ -160,19 +159,13 @@
 				<!-- TODO source code highlighter -->
 				<!--<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"><xsl:text> </xsl:text></script>-->
 				
-			
-				
 				<!-- GAMS JS -->
 				<!-- https://zimlab.uni-graz.at/gams/frontend/gamsjs -->
-				
-				
 				
 				<!--<script>
 					gamsJs.build("https://gams.uni-graz.at",{"$1":"home", "$2":"something else"})
 				</script>
 				-->
-			
-				
 			</head>
 
 			<!-- datatables.js -->
@@ -215,7 +208,7 @@
 								<li  class="nav-item">
 									<a class="nav-link" href="/archive/objects/context:depcha/methods/sdef:Context/get?mode=datasets"><xsl:text>Datasets</xsl:text></a>
 								</li>
-								<li class="nav-item dropdown">
+								<!--<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 										<xsl:text>Indicies</xsl:text>
 									</a>
@@ -223,7 +216,7 @@
 										<a class="dropdown-item" href="/query:depcha.commodity"><xsl:text>Commodities</xsl:text></a>
 										<a class="dropdown-item" href="/query:depcha.accounts"><xsl:text>Accounts</xsl:text></a>
 									</div>
-								</li>
+								</li>-->
 								<li class="nav-item">
 									<a class="nav-link" href="/o:depcha.bookkeeping">Ontology</a>
 								</li>
@@ -322,6 +315,8 @@
 			<!-- //////////////////////////////////////////////////////////// -->
 			<!-- //////////////////////////////////////////////////////////// -->
 			<!-- SCRIPTS at the end -->
+			<!-- Projectspecific JavaScript ================================================== -->
+			<script src="{concat($gamsdev,'/js/depcha.js')}"><xsl:text> </xsl:text></script>
 			<script>
 				$(function () {
 				$('[data-toggle="tooltip"]').tooltip()

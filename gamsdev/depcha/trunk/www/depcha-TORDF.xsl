@@ -34,6 +34,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
+    
     <!-- BK URI -->
     <xsl:variable name="BK_URI">
         <xsl:choose>
@@ -43,7 +44,7 @@
                 />
             </xsl:when>
             <xsl:otherwise>
-                <xsl:comment>bk prefix Def missing</xsl:comment>
+                <xsl:comment>Log: bk prefix Def missing</xsl:comment>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:variable>
@@ -79,6 +80,26 @@
                             <xsl:apply-templates
                                 select="//t:teiHeader//t:listPerson[@ana = 'bk:Between']/t:person"/>
                         </xsl:when>
+                        <xsl:when test="//.[tokenize(@ana, ' ') = 'bk:to']/@ref | //.[tokenize(@ana, ' ') = 'bk:from']/@ref">
+                            <xsl:comment>Log: bk:Between is extracted from data, because no listPerson is available or tagged with @ana = 'bk:Between'</xsl:comment>
+                            <xsl:for-each-group select="//.[tokenize(@ana, ' ') = 'bk:to'] | //.[tokenize(@ana, ' ') = 'bk:from']" group-by="@ref">
+                                <xsl:variable name="Between-URI">
+                                    <xsl:choose>
+                                        <xsl:when test="contains(current-grouping-key(), '#')">
+                                            <xsl:value-of select="concat($BASE-URL, $Currrent_TEI_PID, current-grouping-key())"/>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:value-of select="concat($BASE-URL, $Currrent_TEI_PID, '#', current-grouping-key())"/>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+                                </xsl:variable>
+                                <bk:Between rdf:about="{$Between-URI}">
+                                    <foaf:name>
+                                        <xsl:value-of select="."/>
+                                    </foaf:name>
+                                </bk:Between>
+                            </xsl:for-each-group>
+                        </xsl:when>
                         <xsl:otherwise>
                             <xsl:comment>Error: not listperson defined: todo: define extraction</xsl:comment>
                         </xsl:otherwise>
@@ -112,7 +133,7 @@
                         
                       
                         
-                        <!-\-<bk:Between rdf:about="{$Between-URI}">
+                        <!-\-
                             <xsl:choose>
                                 <xsl:when test="//t:teiHeader//t:listPerson[@ana='bk:Between']">
                                     <xsl:apply-templates select="//t:teiHeader//t:listPerson[@ana='bk:Between']/t:person[@xml:id = substring-after(current-grouping-key(), '#')]"/>
@@ -679,11 +700,11 @@
             <xsl:for-each-group select="$bk_Agent" group-by=".">
                 <bk:Agent
                     rdf:about="{concat($BASE-URL, $Currrent_TEI_PID, 'A',  $Position, $bk_Agent-ID)}">
-                    <bk:name>
+                    <foaf:name>
                         <xsl:if test="./@ref = $bk_Agent-ID">
                             <xsl:value-of select="normalize-space(.)"/>
                         </xsl:if>
-                    </bk:name>
+                    </foaf:name>
                 </bk:Agent>
             </xsl:for-each-group>
         </xsl:if>
@@ -692,10 +713,10 @@
     <!-- ////////////////////////////////////////////////////////////////////// -->
     <!-- MAP listPerson to FOAF and SCHEMA  -->
     <!-- https://schema.org/Person -->
-    <xsl:template name="maplistPersontoFOAF">
+    <!--<xsl:template name="maplistPersontoFOAF">
         <xsl:param name="Person"/>
 
-        <!--<bk:name>
+        <!-\-<bk:name>
             <xsl:choose>
                 <xsl:when test="$Person/t:persName">
                     <xsl:choose>
@@ -722,8 +743,8 @@
                     <xsl:comment>Error in called Template 'maplistPersontoFOAF' not t:persName or t:name</xsl:comment>
                 </xsl:otherwise>
             </xsl:choose>
-        </bk:name>-->
-        <!--  -->
+        </bk:name>-\->
+        <!-\-  -\->
         <xsl:if test="$Person/t:persName/t:forename">
             <foaf:firstName>
                 <xsl:for-each select="$Person/t:persName/t:forename">
@@ -744,41 +765,54 @@
                 </xsl:for-each>
             </foaf:familyName>
         </xsl:if>
-        <!--  -->
+        <!-\-  -\->
         <xsl:if test="$Person/t:persName/t:addName">
-            <!-- todo -->
+            <!-\- todo -\->
         </xsl:if>
-        <!-- ToDO -->
+        <!-\- ToDO -\->
         <xsl:if test="$Person/t:persName/t:nameLink">
             <t:nameLink>
                 <xsl:apply-templates select="$Person/t:persName/t:nameLink"/>
             </t:nameLink>
         </xsl:if>
 
-    </xsl:template>
+    </xsl:template>-->
 
     <!-- //////////////////////////////////// -->
     <!-- templates mapping to foaf and schema -->
-
     <xsl:template match="t:listPerson[@ana = 'bk:Between']/t:person">
         <xsl:variable name="Between-URI" select="concat($BASE-URL, $Currrent_TEI_PID, '#', @xml:id)"/>
         <bk:Between rdf:about="{$Between-URI}">
-            <xsl:apply-templates>
-                <xsl:with-param name="Between-URI" select="$Between-URI"/>
-            </xsl:apply-templates>
+            <xsl:choose>
+                <xsl:when test="t:persName[2]">
+                    <xsl:comment>Exception: multiple persName are not supported</xsl:comment>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates>
+                        <xsl:with-param name="Between-URI" select="$Between-URI"/>
+                    </xsl:apply-templates>
+                </xsl:otherwise>
+            </xsl:choose>
         </bk:Between>
-
     </xsl:template>
 
     <xsl:template match="t:persName">
         <xsl:choose>
             <xsl:when test="*">
                 <xsl:apply-templates/>
+                <!-- add foaf:name for everyone -->
+                <foaf:name>
+                    <xsl:for-each select="*">
+                        <xsl:value-of select="."/>
+                        <xsl:if test="not(position() = last())"></xsl:if>
+                        <xsl:text> </xsl:text>
+                    </xsl:for-each>
+                </foaf:name>
             </xsl:when>
             <xsl:otherwise>
-                <bk:name>
+                <foaf:name>
                     <xsl:value-of select="normalize-space(.)"/>
-                </bk:name>
+                </foaf:name>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>

@@ -4,7 +4,7 @@
         <fileDesc>
             <titleStmt>
                 <title>Alhambra Theater p177</title>
-                <author ana="#bk_to" ref="pers_TheSchlitzBros">Schlitz</author>
+                <author ana="bk:to" ref="pers_TheSchlitzBros">Schlitz</author>
             </titleStmt>
             <publicationStmt>
                 <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
@@ -19,6 +19,30 @@
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
+            <listPrefixDef>
+                <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+                    <p>Analytical descriptors are considered to represent concepts from the DEPCHA bookkeeping
+                        ontology and can be extended to respective URIs.</p>
+                </prefixDef>
+                <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="http://www.wikidata.org/wiki/$1">
+                    <p><ref target="https://www.wikidata.org/wiki/Help:Namespaces"/></p>
+                </prefixDef>
+            </listPrefixDef>
+            <unitDecl>
+                <unitDef ref="wd:Q4917" type="currency" xml:id="dollar" ana="bk:unit" from="1690">
+                    <label xml:lang="en">dollar</label>
+                    <country>USA</country>
+                    <unit>$</unit>
+                </unitDef>
+                <unitDef ref="wd:Q58093" type="currency" xml:id="cent">
+                    <label xml:lang="en">cent</label>
+                    <country>USA</country>
+                    <unit>c</unit>
+                    <conversion fromUnit="#dollar" toUnit="#cent" formula="$fromUnit div 100"/>
+                </unitDef>
+            </unitDecl>
             <classDecl>
                 <taxonomy>
                     <category xml:id="context.1">
@@ -37,173 +61,173 @@
         <body>
             <table>
                 <head>1897</head>
-                <row ana="#bk_entry" n="3" corresp="#context.1">
+                <row ana="bk:entry" n="3" corresp="#context.1">
                     <cell>Febry</cell>
                     <cell>
-                        <date ana="#bk_when" when="1897-02-18">18</date>
+                        <date ana="bk:when" when="1897-02-18">18</date>
                     </cell>
                     <cell>
-                        <measure ana="#bk_commodity #bk_from" commodity="Boiler" quantity="1" unit="piece">Boiler</measure>
-                        <span ana="#bk_status">in full</span>
-                        <name ana="#bk_from" ref="org.1">Heine Safety Boiler Co.</name>
+                        <measure ana="bk:commodity" commodity="Boiler" quantity="1" unit="piece">Boiler</measure>
+                        <span ana="bk:status">in full</span>
+                        <name ana="bk:from" ref="org.1">Heine Safety Boiler Co.</name>
                     </cell>
                     <cell>3</cell>
                     <cell>415</cell>
                     <cell>2</cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="212" unit="dollars">212</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="212" unit="dollars">212</measure>
                     </cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents">50</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">50</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="4" corresp="#context.1">
+                <row ana="bk:entry" n="4" corresp="#context.1">
                     <cell></cell>
                     <cell>
-                        <date ana="#bk_when" when="1897-02-20">20</date>
+                        <date ana="bk:when" when="1897-02-20">20</date>
                     </cell>
                     <cell>
-                        <span ana="#bk_status">pp.</span>
-                        <measure ana="#bk_commodity #bk_from" commodity="Elevator" quantity="1" unit="piece">Elevator</measure> - <name ana="#bk_from" ref="org.2">Sielzer &amp; Vogt</name>(2/3. Heady)</cell>
+                        <span ana="bk:status">pp.</span>
+                        <measure ana="bk:commodity" commodity="Elevator" quantity="1" unit="piece">Elevator</measure> - <name ana="bk:from" ref="org.2">Sielzer &amp; Vogt</name>(2/3. Heady)</cell>
                     <cell>5</cell>
                     <cell>417</cell>
                     <cell></cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="dollars">50</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="dollars">50</measure>
                     </cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="5" corresp="#context.2">
+                <row ana="bk:entry" n="5" corresp="#context.2">
                     <cell></cell>
                     <cell>
-                        <date ana="#bk_when" when="1897-02-20">&quot;</date>
+                        <date ana="bk:when" when="1897-02-20">&quot;</date>
                     </cell>
                     <cell>
-                        <measure ana="#bk_commodity #bk_from" commodity="Interior finish" quantity="1" unit="piece">Interior finish</measure>
-                        <span ana="#bk_status">in full</span>
-                        <name ana="#bk_from" ref="org.3">Wollaeger</name>
+                        <measure ana="bk:commodity" commodity="Interior finish" quantity="1" unit="piece">Interior finish</measure>
+                        <span ana="bk:status">in full</span>
+                        <name ana="bk:from" ref="org.3">Wollaeger</name>
                     </cell>
                     <cell>8</cell>
                     <cell>129</cell>
                     <cell></cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="260" unit="dollars">260</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="260" unit="dollars">260</measure>
                     </cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="6" corresp="#context.2">
+                <row ana="bk:entry" n="6" corresp="#context.2">
                     <cell></cell>
                     <cell>
-                        <date ana="#bk_when" when="1897-02-23">23</date>
+                        <date ana="bk:when" when="1897-02-23">23</date>
                     </cell>
                     <cell>
-                        <measure ana="#bk_commodity #bk_from" commodity="Adamant" quantity="1" unit="piece">Adamant</measure>
-                        <span ana="#bk_status">in full</span>-<name ana="#bk_from" ref="org.3">Ad. Mfg. Co</name>
+                        <measure ana="bk:commodity" commodity="Adamant" quantity="1" unit="piece">Adamant</measure>
+                        <span ana="bk:status">in full</span>-<name ana="bk:from" ref="org.3">Ad. Mfg. Co</name>
                     </cell>
                     <cell>7</cell>
                     <cell>134</cell>
                     <cell>3</cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="778" unit="dollars">778</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="778" unit="dollars">778</measure>
                     </cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="7" corresp="#context.1">
+                <row ana="bk:entry" n="7" corresp="#context.1">
                     <cell></cell>
                     <cell>
-                        <date ana="#bk_when" when="1897-02-25">25</date>
+                        <date ana="bk:when" when="1897-02-25">25</date>
                     </cell>
                     <cell>
-                        <span ana="#bk_status">pp.</span>
-                        <measure ana="#bk_commodity #bk_from" commodity="Elevator door safeties" quantity="1" unit="piece">Elevator door safeties</measure> - <name ana="#bk_from" ref="org.4">Runkel Weiler Barth</name>
+                        <span ana="bk:status">pp.</span>
+                        <measure ana="bk:commodity" commodity="Elevator door safeties" quantity="1" unit="piece">Elevator door safeties</measure> - <name ana="bk:from" ref="org.4">Runkel Weiler Barth</name>
                     </cell>
                     <cell>2</cell>
                     <cell>419</cell>
                     <cell></cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="200" unit="dollars">200</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="200" unit="dollars">200</measure>
                     </cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="8" corresp="#context.1">
+                <row ana="bk:entry" n="8" corresp="#context.1">
                     <cell></cell>
                     <cell>
-                        <date ana="#bk_when" when="1897-02-25">&quot;</date>
+                        <date ana="bk:when" when="1897-02-25">&quot;</date>
                     </cell>
-                    <cell>&quot; <measure ana="#bk_commodity #bk_from" commodity="Gas fixtures" quantity="1" unit="piece">Gas fixtures</measure>
-                        <name ana="#bk_from" ref="org.5">engel &amp; Co.</name>
+                    <cell>&quot; <measure ana="bk:commodity" commodity="Gas fixtures" quantity="1" unit="piece">Gas fixtures</measure>
+                        <name ana="bk:from" ref="org.5">engel &amp; Co.</name>
                     </cell>
                     <cell>3</cell>
                     <cell>138</cell>
                     <cell>2</cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="100" unit="dollars">100</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="100" unit="dollars">100</measure>
                     </cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="9" corresp="#context.1">
+                <row ana="bk:entry" n="9" corresp="#context.1">
                     <cell></cell>
                     <cell>
-                        <date ana="#bk_when" when="1897-02-25">&quot;</date>
+                        <date ana="bk:when" when="1897-02-25">&quot;</date>
                     </cell>
                     <cell>
-                        <measure ana="#bk_commodity #bk_from" commodity="Dynamo" quantity="1" unit="piece">Dynamo</measure>
-                        <span ana="#bk_status">in full</span> - <name ana="#bk_from" ref="org.6">Rohn Meyer</name>
+                        <measure ana="bk:commodity" commodity="Dynamo" quantity="1" unit="piece">Dynamo</measure>
+                        <span ana="bk:status">in full</span> - <name ana="bk:from" ref="org.6">Rohn Meyer</name>
                     </cell>
                     <cell>2</cell>
                     <cell>&quot;</cell>
                     <cell>1</cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="100" unit="dollars">100</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="100" unit="dollars">100</measure>
                     </cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="10" corresp="#context.2">
+                <row ana="bk:entry" n="10" corresp="#context.2">
                     <cell></cell>
                     <cell>
-                        <date ana="#bk_when" when="1897-02-27">27</date>
+                        <date ana="bk:when" when="1897-02-27">27</date>
                     </cell>
                     <cell>
-                        <span ana="#bk_status">pp.</span>
-                        <measure ana="#bk_commodity #bk_from" commodity="Heating" quantity="1" unit="piece">Heating</measure> - <name ana="#bk_from" ref="org.7">Johns &amp; Wegner &amp; Co.</name>
+                        <span ana="bk:status">pp.</span>
+                        <measure ana="bk:commodity" commodity="Heating" quantity="1" unit="piece">Heating</measure> - <name ana="bk:from" ref="org.7">Johns &amp; Wegner &amp; Co.</name>
                     </cell>
                     <cell>3</cell>
                     <cell>141</cell>
                     <cell></cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="138" unit="dollars">138</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="138" unit="dollars">138</measure>
                     </cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="45" unit="cents">45</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="45" unit="cents">45</measure>
                     </cell>
                 </row>
-                <row ana="#bk_entry" n="11" corresp="#context.2">
+                <row ana="bk:entry" n="11" corresp="#context.2">
                     <cell></cell>
                     <cell>
-                        <date ana="#bk_when" when="1897-02-27">&quot;</date>
+                        <date ana="bk:when" when="1897-02-27">&quot;</date>
                     </cell>
-                    <cell>&quot; <measure ana="#bk_commodity #bk_from" commodity="Iron" quantity="1" unit="piece">Iron</measure> - <name ana="#bk_from" ref="org.7">J.G. Wagner</name>
+                    <cell>&quot; <measure ana="bk:commodity" commodity="Iron" quantity="1" unit="piece">Iron</measure> - <name ana="bk:from" ref="org.7">J.G. Wagner</name>
                     </cell>
                     <cell>5</cell>
                     <cell>&quot;</cell>
                     <cell>5</cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="0" unit="dollars">0</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="0" unit="dollars">0</measure>
                     </cell>
                     <cell>
-                        <measure ana="#bk_money #bk_to" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
                     </cell>
                 </row>
             </table>

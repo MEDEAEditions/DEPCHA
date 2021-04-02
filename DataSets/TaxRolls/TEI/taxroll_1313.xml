@@ -42,7 +42,7 @@
       <projectDesc>
         <ab>
           <title>The Tax Rolls of Medieval Paris</title> is a TEI (Text Encoding Initiative)-based digital edition of the seven extant tax rolls from the tailles
-          levied on the city of <placeName>Paris</placeName> by Philip the Fair between <date from="1292" to="1313">1292 and 1313</date>. 
+          levied on the city of <placeName>Paris</placeName> by <name ana="bk:to" ref="#P04">Philip the Fair</name> between <date from="1292" to="1313">1292 and 1313</date>. 
           These documents provide a wealth of information about the individual people, demographics, and history of the city.</ab>
       </projectDesc>
       <listPrefixDef>
@@ -2389,7 +2389,7 @@
               </surname>
             </persName>
           </person>
-          <person xml:id="P04">
+          <person xml:id="P04" ana="bk:to">
             <persName key="Philippe IV &apos;le Bel&apos;, roi de France" type="reg">
               <forename>Philippe</forename>
               <genName>IV</genName>
@@ -3400,7 +3400,7 @@
       <div type="incipit">
         <head xml:id="head_gd4_qbh_ghb">
           <locus n="1" target="#bib_buchon"></locus>
-          <g type="initial">C</g>est le livre de la Taille des dis<lb></lb> mile livres deuz au <rs ana="bk:to" ref="#P04" type="person">
+          <g type="initial">C</g>est le livre de la Taille des dis<lb></lb> mile livres deuz au <rs ref="#P04" type="person">
             <roleName ref="#P04" role="king" type="office">roy nostre<lb></lb> sires</roleName>
           </rs> pour la chevalerie
 						<persName ref="#L10">

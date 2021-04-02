@@ -19,6 +19,15 @@ let queryUrl = new gamsJs.url.GAMSUrl("http://glossa.uni-graz.at/archive/objects
 console.log(queryUrl );
 console.log(2);
 */
+///////////////////////////////////////////////
+// change arrow onclick up and vice versa
+$('a.arrow').click(function(){
+$(this).find("i").text(function(i,old){
+return old=='▼ ' ?  '▲ ' : '▼ ';
+});
+}); 
+
+
 
 function fetchSPARQL_Json(PID){
   console.log(PID);
