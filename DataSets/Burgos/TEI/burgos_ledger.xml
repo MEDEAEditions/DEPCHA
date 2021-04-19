@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>ブルゴス元帳マークアップ試案</title>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>ブルゴス県文書館</publisher>
+            <idno type="PID">o:depcha.burgos.1</idno>
+            <ref type="context" target="context:depcha.burgos">Burgos</ref>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <settlement>TBC</settlement>
+                  <repository>TBC</repository>
+                  <collection>TBC</collection>
+                  <idno>TBC</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItem>
+                     <author>TBC</author>
+                     <title>TBC</title>
+                     <note>
+                        <p><orgName ana="bk:from" ref="salamanca">サラマンカ商会</orgName>の帳簿</p>
+                     </note>
+                  </msItem>
+               </msContents>
+            </msDesc>
+            <listPerson>
+               <person xml:id="BRGSSLMNC0000">
+                  <persName>Benito Hernández</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0001">
+                  <persName>Gregorio López de Lozoya</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0002">
+                  <persName>Bartolomé Belázquez</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0003">
+                  <persName>Joan de Herrera</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0004">
+                  <persName>Antonio Cerezo</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0005">
+                  <persName>Pedro López</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0006">
+                  <persName>Antonio Martín</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0007">
+                  <persName>Joan Herreros y Alonso Pérez</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0008">
+                  <persName>Alonso Martín de Arriva</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0009">
+                  <persName>Fruto López y María López su madre</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0010">
+                  <persName>Antonio Pedro Corral</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0011">
+                  <persName>Martín de Sancho</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0012">
+                  <persName>Marcos de Hernández</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0013">
+                  <persName>García de Salamanca</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0014">
+                  <persName>Joan de Ezcaray</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0015">
+                  <persName>Pedro de Caballos</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0016">
+                  <persName>Joan Gamo y Pedro Braojos</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0017">
+                  <persName>Joan del Pozo</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0018">
+                  <persName>Alonso de Beguillas</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0020">
+                  <persName>Andrés Sainz de Villorojo</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0021">
+                  <persName>Joan Sainz</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0023">
+                  <persName>Martín de Carnezia</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0024">
+                  <persName>Joan de Ezcaray de Lozoya</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0025">
+                  <persName>Joan Martín de Lozoya</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0026">
+                  <persName>Andrés Martín</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0027">
+                  <persName>Joan Hernández</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0028">
+                  <persName>Francisco Martín de Luzía</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0029">
+                  <persName>Joan Pérez de Pradano</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0030">
+                  <persName>Joan González</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0031">
+                  <persName>Frutos Calvo</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0032">
+                  <persName>Miguel de Salamanca</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0033">
+                  <persName>Antonio González Guillen</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0034">
+                  <persName>Joan Sánchez de Peña</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0035">
+                  <persName>Francisco y Andrés Hernández</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0036">
+                  <persName>Gregorio de Santa María</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0037">
+                  <persName>Pero Blazquez</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0038">
+                  <persName>el Comendador y fráiles</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0039">
+                  <persName>Antonio de la Mata y compañía</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0040">
+                  <persName>Antonio y Pedro Corral</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0042">
+                  <persName>Miguel y Joan Sánchez</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0045">
+                  <persName>Lucas López de Penilla</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0046">
+                  <persName>Pasqual Sánchez</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0048">
+                  <persName>Joan y Pedro Hernández</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0049">
+                  <persName>Joan de Pero Sainz</persName>
+               </person>
+               <person xml:id="BRGSSLMNC0050">
+                  <persName>Joan Sainz el viejo</persName>
+               </person>
+            </listPerson>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+               <p>Analytical descriptors are considered to represent concepts from the DEPCHA bookkeeping
+                  ontology and can be extended to respective URIs.</p>
+            </prefixDef>
+            <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="http://www.wikidata.org/wiki/$1">
+               <p><ref target="https://www.wikidata.org/wiki/Help:Namespaces"/></p>
+            </prefixDef>
+         </listPrefixDef>
+         <!-- conversion currency -->
+         <unitDecl ana="bk:Taxonomy">
+            <unitDef type="currency" xml:id="maravedí" ana="bk:unit">
+               <label>maravedí</label>
+               <country>?</country>
+               <unit>?</unit>
+            </unitDef>
+         </unitDecl>
+      </encodingDesc>
+   </teiHeader>
+   <facsimile>
+      <surface>
+         <graphic url="元帳35ページ.JPG"/>
+         <zone xml:id="zone_ledg_35_debit_001" lry="580" lrx="1739" uly="278" ulx="285"/>
+         <zone xml:id="zone_ledg_35_credit_001" points="1774,237 1790,484 3280,335 3254,174 1876,180"/>
+         <zone xml:id="zone_ledg_35_debit_002" lry="1056" lrx="1741" uly="751" ulx="260"/>
+         <zone xml:id="zone_ledg_35_credit_002" points="1780,652 1796,1068 3396,982 3325,529"/>
+         <zone xml:id="zone_ledg_35_debit_003" lry="1717" lrx="1747" uly="1259" ulx="216"/>
+         <zone xml:id="zone_ledg_35_credit_003" points="1792,1192 1808,1568 3482,1468 3425,1129"/>
+         <zone xml:id="zone_ledg_35_debit_004" lry="2174" lrx="1747" uly="1777" ulx="179"/>
+         <zone xml:id="zone_ledg_35_credit_004" lry="1990" lrx="3515" uly="1717" ulx="1798"/>
+      </surface>
+   </facsimile>
+   <text>
+      <body>
+         <div xml:id="ledger_22">
+            <fw>22</fw>
+            <head>+<date when="1558">1558</date>+</head>
+            <div ana="entry" n="1">
+               <div>
+                  <table facs="#zone_jmr_kkm_bmb">
+                     <row n="1" ana="bk:entry bk:debit" corresp="#total.1">
+                        <cell ana="desc">+<persName ref="#BRGSSLMNC0018">Alonso de
+                              beguillas</persName>
+                           <span ana="bk:account">deue</span> En <date ana="bk:when"
+                              when="1558-01-01">pro de Henero</date> 170 U que so^ Por el rrsto
+                           de/otra su quenta del libro viejo de los negos De rroan de compa que son
+                           por 5 U rres que le dio <persName ref="#BRGSSLMNC0032">migl de
+                              sa</persName> para Lleuar a la sierra de Pedraza como pez en el dho
+                           libro a fo |_320</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="170000"
+                              unit="#maravedí">c lxx U -</measure>
+                        </cell>
+                     </row>
+                     <row n="2" ana="bk:entry bk:debit" corresp="#total.1">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           170 U que son por 5 U rres que por cedula de <persName
+                              ref="#BRGSSLMNC0013">garcia De Salamanca</persName> le <span
+                              ana="bk:account">dio</span>
+                           <persName ref="#BRGSSLMNC0036">Gregorio de santa maria</persName> pez
+                           |_29</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="170000"
+                              unit="#maravedí">c lxx U -</measure>
+                        </cell>
+                     </row>
+                     <row n="3" ana="bk:entry bk:debit" corresp="#total.1">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           170 U que son por 5 U rres los 4 U que sobro de <persName
+                              ref="#BRGSSLMNC0005">po Lopez</persName> canuio por ca de <persName
+                              ref="#BRGSSLMNC0032">miguel de sa</persName> e los 1 U rres que le
+                              <span ana="bk:account">dio</span> el dho miguel para lleuar a la dha
+                           sierra como pez |_17</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="170000"
+                              unit="#maravedí">c lxx U -</measure>
+                        </cell>
+                     </row>
+                     <row n="4" ana="bk:entry bk:debit" corresp="#total.1">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           646 U que son por 19 U rreales que <persName ref="#BRGSSLMNC0005"
+                              >le</persName>
+                           <span ana="bk:account">dio</span> el dho <persName ref="#BRGSSLMNC0032"
+                              >miguel de sa</persName> la segunda bez que fue a la dha sierra
+                           |_27</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="646000"
+                              unit="#maravedí">dc xl vj U -</measure>
+                        </cell>
+                     </row>
+                     <row n="5" ana="bk:entry bk:debit" corresp="#total.1">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           102 U que son por 3 U rreales que <persName ref="#BRGSSLMNC0005"
+                              >les</persName>
+                           <span ana="bk:account">dio</span> el dho <persName ref="#BRGSSLMNC0032"
+                              >miguel de salamanca</persName> la tercera bez q boluio a dha sa
+                           |_27</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="102000"
+                              unit="#maravedí">c ij U -</measure>
+                        </cell>
+                     </row>
+                     <row n="6" xml:id="total.1" ana="bk:total bk:debit">
+                        <cell/>
+                        <cell>
+                           <measure ana="bk:money" quantity="1258000"
+                              unit="#maravedí">i qo cc l viij U -</measure>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+               <div>
+                  <table>
+                     <row n="1" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <span ana="bk:account">A de auer</span> En <date
+                              ana="bk:when" when="1558-01-01">pro de Heno</date> 37 U 500 que son
+                           por tantos dio de contado a <persName ref="#BRGSSLMNC0009">frutos Lopez y
+                              mari Lopez su madre</persName> |_20</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="37500"
+                              unit="#maravedí">xxx vij U d-</measure>
+                        </cell>
+                     </row>
+                     <row n="2" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           74 U 800 que <span ana="bk:account">dio</span> de qo a <persName
+                              ref="#BRGSSLMNC0004">antonio cerezo</persName> |_34</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="74800"
+                              unit="#maravedí">lxx iiij U dccc</measure>
+                        </cell>
+                     </row>
+                     <row n="3" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           71 U 400 que <span ana="bk:account">dio</span> a <persName
+                              ref="#BRGSSLMNC0001">go lopez de Lozoya</persName> pze |_34</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="71400"
+                              unit="#maravedí">lxx j U cccc</measure>
+                        </cell>
+                     </row>
+                     <row n="4" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           17 U 408 que <span ana="bk:account">dio</span> a <persName
+                              ref="#BRGSSLMNC0049">Joan de pero sainz</persName> pze |_34</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="17408"
+                              unit="#maravedí">x vij U cccc viij</measure>
+                        </cell>
+                     </row>
+                     <row n="5" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           4 U 488 que <span ana="bk:account">dio</span> a <persName
+                              ref="#BRGSSLMNC0045">lucas lopez de penilla</persName> |_34</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="4488"
+                              unit="#maravedí">iiij U cccc lxxx viij</measure>
+                        </cell>
+                     </row>
+                     <row n="6" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           1 U 700 que <span ana="bk:account">dio</span> a <persName
+                              ref="#BRGSSLMNC0024">Joan dezcaray de Lozoya</persName> |_35</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="1700"
+                              unit="#maravedí">j U dcc</measure>
+                        </cell>
+                     </row>
+                     <row n="7" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           105 U 400 que <span ana="bk:account">dio</span> a <persName
+                              ref="#BRGSSLMNC0035">franco y andres hrres</persName> |_35</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="105400"
+                              unit="#maravedí">c v U cccc</measure>
+                        </cell>
+                     </row>
+                     <row n="8" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           115 U 600 que <span ana="bk:account">dio</span> a <persName
+                              ref="#BRGSSLMNC0027">Joan hernandez</persName> |_35</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="115600"
+                              unit="#maravedí">c x v U dc</measure>
+                        </cell>
+                     </row>
+                     <row n="9" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           17 U que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0010">antonio po corral</persName> pze |_35</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="17000"
+                              unit="#maravedí">x vij U -</measure>
+                        </cell>
+                     </row>
+                     <row n="10" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           10 U 200 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0002">bartolome belazquez</persName> pze |_36</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="10200"
+                              unit="#maravedí">x U cc</measure>
+                        </cell>
+                     </row>
+                     <row n="11" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           10 U 200 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0026">andres martin</persName> pze |_36</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="10200"
+                              unit="#maravedí">x U cc</measure>
+                        </cell>
+                     </row>
+                     <row n="12" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           2 U 040 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0023">min de carnezia</persName> |_36</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="2040"
+                              unit="#maravedí">ij U xl</measure>
+                        </cell>
+                     </row>
+                     <row n="13" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           8 U 500 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0007">Jno hrres y as perez</persName> pze |_36</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="8500"
+                              unit="#maravedí">v iij U d -</measure>
+                        </cell>
+                     </row>
+                     <row n="14" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           10 U 200 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0017">Joan del pozo</persName> pze |_37</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="10200"
+                              unit="#maravedí">x U cc -</measure>
+                        </cell>
+                     </row>
+                     <row n="15" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           5 U 100 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0025">Jhoan min de Lozoya</persName> |_37</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="5100"
+                              unit="#maravedí">v U c -</measure>
+                        </cell>
+                     </row>
+                     <row n="16" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           408 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0000">Benito hernandez</persName> pze |_37</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="408"
+                              unit="#maravedí">U cccc viij</measure>
+                        </cell>
+                     </row>
+                     <row n="17" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           81 U que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0046">pasqual sanchez</persName> pze |_37</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="81000"
+                              unit="#maravedí">lxxx j U -</measure>
+                        </cell>
+                     </row>
+                     <row n="18" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           22 U 100 que <span ana="bk:account">pago</span> a po <persName
+                              ref="#BRGSSLMNC0011">min de sancho</persName> po |_38</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="22100"
+                              unit="#maravedí">xx ijU c -</measure>
+                        </cell>
+                     </row>
+                     <row n="19" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           34 U que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0012">marcos hernandez</persName> |_38</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="34000"
+                              unit="#maravedí">xxx iiij U -</measure>
+                        </cell>
+                     </row>
+                     <row n="20" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           7 U que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0020">andres Sainz de Villorejo</persName> |_38</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="7000"
+                              unit="#maravedí">vij U -</measure>
+                        </cell>
+                     </row>
+                     <!-- CP: is this a subtotal ? -->
+                     <row n="21" ana="bk:subtotal bk:credit">
+                        <cell ana="desc"> // // //</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="636044"
+                              unit="#maravedí">dc xxx vj U- xl iiij</measure>
+                        </cell>
+                     </row>
+                     <row n="22" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           1 U 734 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0050">Joan Sainz el biejo</persName> |_38</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="1734"
+                              unit="#maravedí">j U dcc xxx iiij</measure>
+                        </cell>
+                     </row>
+                     <row n="23" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           2 U 992 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0016">Jno gamo y po braojos</persName> |_39</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="2992"
+                              unit="#maravedí">ij U dcccc xc ij</measure>
+                        </cell>
+                     </row>
+                     <row n="24" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           12 U 920 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0006">anton martin</persName> pze |_39</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="12920"
+                              unit="#maravedí">xij U dcccc xx</measure>
+                        </cell>
+                     </row>
+                     <row n="25" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           12 U 170 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0021">Joan Sainz</persName> scriuano |_39</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="12170"
+                              unit="#maravedí">xij U c lxx</measure>
+                        </cell>
+                     </row>
+                     <row n="26" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           45 U que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0042">migel y Joan sanchez</persName> |_39</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="45000"
+                              unit="#maravedí">xl v U -</measure>
+                        </cell>
+                     </row>
+                     <row n="27" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           40 U que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0026">andres martin</persName> paze |_40</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="40000"
+                              unit="#maravedí">xl U -</measure>
+                        </cell>
+                     </row>
+                     <row n="28" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           23 U 800 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0029">Joan perez de pradano</persName> |_40</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="23800"
+                              unit="#maravedí">xx iij U dccc-</measure>
+                        </cell>
+                     </row>
+                     <row n="29" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           17 U que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0034">Joan Sanchez de pena</persName> |_40</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="17000"
+                              unit="#maravedí">x vij U</measure>
+                        </cell>
+                     </row>
+                     <row n="30" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           6 U 800 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0031">frutos caluo</persName> pze |_40</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="6800"
+                              unit="#maravedí">vj U dccc</measure>
+                        </cell>
+                     </row>
+                     <row n="31" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           119 U que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0033">anton ges guillen</persName> paze |_41</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="119000"
+                              unit="#maravedí">cx ix U -</measure>
+                        </cell>
+                     </row>
+                     <row n="32" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           34 U que <span ana="bk:account">pago</span> a A <persName
+                              ref="#BRGSSLMNC0028">franco min de luzia</persName> |_41</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="34000"
+                              unit="#maravedí">xxx iiij U</measure>
+                        </cell>
+                     </row>
+                     <row n="33" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           20 U 400 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0030">Joan gonzalez</persName> paze |_41</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="20400"
+                              unit="#maravedí">xx U cccc</measure>
+                        </cell>
+                     </row>
+                     <row n="34" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           54 U 400 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0037">pero blazquez</persName> paze |_41</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="54400"
+                              unit="#maravedí">l iiij U cccc</measure>
+                        </cell>
+                     </row>
+                     <row n="35" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           10 U 200 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0008">alo min de arriua</persName> |_42</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="10200"
+                              unit="#maravedí">x U cc</measure>
+                        </cell>
+                     </row>
+                     <row n="36" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           85 U que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0012">marcos hernandez</persName> paze |_42</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="85000"
+                              unit="#maravedí">lxxx v U -</measure>
+                        </cell>
+                     </row>
+                     <row n="37" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           10 U 200 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0039">anton de la mata e conpa</persName> |_42</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="10200"
+                              unit="#maravedí">x U cc</measure>
+                        </cell>
+                     </row>
+                     <row n="38" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           10 U 200 que <span ana="bk:account">pago</span> a <persName
+                              ref="#BRGSSLMNC0003">Joan de herrera</persName> paze |_42</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="10200"
+                              unit="#maravedí">x U cc</measure>
+                        </cell>
+                     </row>
+                     <row n="39" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           68 U que <span ana="bk:account">pago</span> al <persName
+                              ref="#BRGSSLMNC0038">comendador y freires</persName> |_43</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="68000"
+                              unit="#maravedí">lx viij U</measure>
+                        </cell>
+                     </row>
+                     <row n="40" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           22 U 199 que <span ana="bk:account">dio</span> por qa aber echo de costas
+                           en la dha sierra en la conpra de la lana como paze |_44</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="22199"
+                              unit="#maravedí">xx ijU c xc ix</measure>
+                        </cell>
+                     </row>
+                     <row n="41" ana="bk:entry bk:credit" corresp="#total.3">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date>
+                           25 U 941 q^ <span ana="bk:account">dio</span> de qo a <persName
+                              ref="#BRGSSLMNC0032">migel de sa</persName> pa fin de su qa
+                           |_27</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="25941"
+                              unit="#maravedí">xx v U dcccc xl j</measure>
+                        </cell>
+                     </row>
+                     <row n="42" xml:id="total.3" ana="bk:total bk:credit">
+                        <cell/>
+                        <cell>
+                           <measure ana="bk:money" quantity="1258000"
+                              unit="#maravedí">j qo cc l viij U</measure>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <div xml:id="ledger_35">
+            <fw>35</fw>
+            <head>+<date when="1558">1558</date>+</head>
+            <div n="2">
+               <div facs="#zone_ledg_35_debit_001">
+                  <table>
+                     <row n="1" ana="bk:entry bk:debit" corresp="#total.4">
+                        <cell ana="desc">+ <persName ref="#BRGSSLMNC0014">Jhoan Dezcaray</persName>
+                           vzo de lozoya <span ana="bk:account">deue</span>
+                           <date ana="bk:when" when="1558-01-01">En pro de Heno</date> 1 U 700 que
+                           le dio <persName ref="#BRGSSLMNC0018">ao de beguillas</persName> para
+                           señal y pte de pago de 50 lanas q^ le compro a 68 cada lana a pagar el
+                           rrsto al rreciuo |_22</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="1700"
+                              unit="#maravedí">jUdcc</measure>
+                        </cell>
+                     </row>
+                     <row n="2" ana="bk:entry bk:debit" corresp="#total.4">
+                        <cell ana="desc">+ <date ana="bk:when" when="1558-06-09">en 9 de
+                              junio</date> 1700 q^ <persName ref="#BRGSSLMNC0014">le</persName>
+                           <span ana="bk:account">dio</span>
+                           <persName ref="#BRGSSLMNC0015">po de cauallos</persName> pa fin desta qa
+                           |_31</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="1700"
+                              unit="#maravedí">jUdcc</measure>
+                        </cell>
+                     </row>
+                     <row n="3" xml:id="total.4" ana="bk:total bk:debit">
+                        <cell/>
+                        <cell>
+                           <measure  ana="bk:money" quantity="3400"
+                              unit="#maravedí">iijUcccc</measure>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+               <div facs="#zone_ledg_35_credit_001">
+                  <table>
+                     <row n="1" xml:id="total.5" ana="bk:total bk:credit">
+                        <cell ana="desc">+ <span ana="bk:account">A de auer</span>
+                           <date ana="bk:when" when="1558-06-09">En 9 de junio</date> 3 U 400 que
+                           son por 50 las q^ Dio este rreciuo a 68 lana q es lo dicho pez
+                           |_33</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="3400"
+                              unit="#maravedí">iij U cccc</measure>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+            </div>
+            <div n="3">
+               <div facs="#zone_ledg_35_debit_002">
+                  <table>
+                     <row n="1" ana="bk:total bk:debit" xml:id="total.6">
+                        <cell ana="desc">+ <persName ref="#BRGSSLMNC0035">franco y andres
+                              Hrres</persName> Vzos de braojos <span ana="bk:account">deuen</span>
+                           <date ana="bk:when" when="1558-01-01">En pro de Heno</date> 105 U 400 que
+                           le dio <persName ref="#BRGSSLMNC0018">ao de beguillas</persName> para
+                           señal y parte de Pago de 1 U 500 lanas que le conpro las 1 U 400 estreme
+                           Nas a 83 y 100 lanas churras a 73 rrsto sobre saca |_22</cell>
+                        <cell>
+                           <measure  ana="bk:money" quantity="105400"
+                              unit="#maravedí">C – V U CCCC</measure>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+               <div facs="#zone_ledg_35_credit_002">
+                  <table>
+                     <row n="1" ana="bk:entry bk:credit" corresp="#total.7">
+                        <cell ana="desc">+ <span ana="bk:account">An de auer</span>
+                           <date ana="bk:when" when="1558-06-09">En 9 de junio</date> 100 U 386 que
+                           son por 1 U 118 les estremenas a 83 que son 92 U 794 y 104 lanas churras
+                           a 73 que son 7 U 592 que dio este rreciuo que es lo dho |_33</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="100386"
+                              unit="#maravedí">c U ccc lxxx vj</measure>
+                        </cell>
+                     </row>
+                     <row n="2" ana="bk:entry bk:credit" corresp="#total.7">
+                        <cell ana="desc">+ en <date ana="bk:when" when="1558-11-08">8 de
+                              nouie</date> 5 U 014 que <span ana="bk:account">dio</span> de contado
+                           a <persName ref="#BRGSSLMNC0015">po de cauallos</persName></cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="5014"
+                              unit="#maravedí">vU x iiij</measure>
+                        </cell>
+                     </row>
+                     <row n="3" ana="bk:total bk:credit" xml:id="total.7">
+                        <cell/>
+                        <cell>
+                           <measure ana="bk:money" quantity="105400"
+                              unit="#maravedí">c v U cccc</measure>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+            </div>
+            <div ana="entry" n="4">
+               <div facs="#zone_ledg_35_debit_003">
+                  <table>
+                     <row n="1" ana="bk:entry bk:debit" corresp="#total.8">
+                        <cell ana="desc">+ <persName ref="#BRGSSLMNC0048">Jhoan y po
+                              hrres</persName> Vzos de braojos <span ana="bk:account">deuen</span>
+                           en <date ana="bk:when" when="1558-01-01">pro de heno</date> 115 U 600 que
+                           les dio <persName ref="#BRGSSLMNC0018">ao de beguillas</persName> pa
+                           señal y pre de pago de 2 U 200 ls que les conpro las 1 U dellas 50 mas a
+                           mos de las caidas el ano pasdo y 1 U 100 de ogano a 80 mrs cada lana mos
+                           500 mrs En todo a pagar el rresto sobresaca como pez |_22</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="115600"
+                              unit="#maravedí">CX V U dc</measure>
+                        </cell>
+                     </row>
+                     <row n="2" ana="bk:entry bk:debit" corresp="#total.8">
+                        <cell ana="desc">+ en <date ana="bk:when" when="1558-06-09">9 de
+                              junio</date> 56 U 540 q^ le <span ana="bk:account">dio</span>
+                           <persName ref="#BRGSSLMNC0015">cauallos</persName> pa fin desta qa
+                           |_31</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="56540"
+                              unit="#maravedí">L vi U d xl</measure>
+                        </cell>
+                     </row>
+                     <row n="3" ana="bk:total bk:debit" xml:id="total.8" >
+                        <cell/>
+                        <cell>
+                           <measure ana="bk:money" quantity="172140"
+                              unit="#maravedí">c Lxx ij U c xL</measure>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+               <div facs="#zone_ledg_35_credit_003">
+                  <table>
+                     <row n="1" xml:id="total.9" ana="bk:total bk:credit">
+                        <cell ana="desc">+ <span ana="bk:account">An de auer</span> En <date
+                              ana="bk:when" when="1558-06-09">9 de junio</date> 172 U 140 que son
+                           por 2 U 158 lanas q^ dieron este rreciuo a 80 mrs cada lana con 500 mrs
+                           que se le rrebaten es lo dicho como paresce |_33</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="172140"
+                              unit="#maravedí">c lxx ij U c xL</measure>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+            </div>
+            <div ana="entry" n="5">
+               <div facs="#zone_ledg_35_debit_004">
+                  <table>
+                     <row n="1" ana="bk:entry bk:debit" corresp="#total.11">
+                        <cell ana="desc">+ <persName ref="#BRGSSLMNC0040" ana="bk:to">Antonio y po
+                              corral</persName> vzso de braojos <span ana="bk:account">deuen</span>
+                           En <date ana="bk:when" when="1558-01-01">pro de Heno</date> 17 U q les
+                           dio <persName ref="#BRGSSLMNC0018" ana="bk:from">ao de
+                              beguillas</persName> pa senal y pte de pago de 400 las De los conpro a
+                           78 1/2 la <measure ana="bk:commodity" commodity="lana"
+                              >lana</measure> a pagar el rrsto sobre saca |_22</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="17000"
+                              unit="#maravedí">x vij U –</measure>
+                        </cell>
+                     </row>
+                     <row n="2" ana="bk:entry bk:debit" corresp="#total.11">
+                        <cell ana="desc">+ en <date ana="bk:when" when="1558-06-09">9 de
+                              junio</date> 14 U 714 que le <span ana="bk:account">dio</span>
+                           <persName ref="#BRGSSLMNC0015" ana="bk:to">cauallos</persName> pa fin
+                           desta qa |_31</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="14714"
+                              unit="#maravedí">x iiij U dcc x iiij</measure>
+                        </cell>
+                     </row>
+                     <row n="3" xml:id="total.11" ana="bk:total bk:debit">
+                        <cell/>
+                        <cell>
+                           <measure ana="bk:money" quantity="31714"
+                              unit="#maravedí">xxx i U dcc x iiij</measure>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+               <div facs="#zone_ledg_35_credit_004">
+                  <table>
+                     <row n="1" ana="bk:total bk:credit" xml:id="total.12">
+                        <cell ana="desc">+ <span ana="bk:account">An de auer</span> En <date
+                              ana="bk:when" when="1558-06-09">9 de junio</date> 31 U 714 que son por
+                           404 <measure ana="bk:commodity">lanas</measure> q dieron este
+                           rreciuo a 78 1/2 cada lana que es lo dho |_33</cell>
+                        <cell>
+                           <measure ana="bk:money" quantity="31714"
+                              unit="#maravedí">xxx j U dcc x iiij</measure>
+                        </cell>
+                     </row>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>
