@@ -1,0 +1,47 @@
+{
+  "FILENAME":"GWFP_Ledger_C_1790_1799.csv",  
+  "CONTEXT":"context:depcha.gwfp",
+  "PID":"o:depcha.gwfp.3",
+  "BK_CURRENCY": {
+    "currency": [
+      {
+        "id": "0",
+        "unit": "pound"
+      },
+      {
+        "id": "1",
+        "unit": "shilling",
+        "conversion": 
+        {
+          "hasBaseUnit": "pound",
+          "formular": "$BaseUnit / 20"
+        }
+      },
+      {
+        "id": "2",
+        "unit": "pence",
+        "conversion": 
+        {
+          "hasBaseUnit": "pound",
+          "formular": "$BaseUnit / 240"
+        }
+      },
+      {
+        "id": "3",
+        "unit": "dollar"
+      },
+      {
+        "id": "4",
+        "unit": "cent",
+        "conversion": 
+        {
+          "hasBaseUnit": "dollar",
+          "formular": "$BaseUnit / 100"
+        }
+      }
+    ]
+  },
+  "BK_MAIN_BETWEEN_NAME":"George Washington",
+  "BK_MAIN_BETWEEN_ID":"GeorgeWashington",
+  "OUTPUT-FILE-NAME":"depcha-washington.3"
+}

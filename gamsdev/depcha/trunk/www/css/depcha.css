@@ -24,6 +24,22 @@ nav[data-toggle="toc"]
     }
 }
 
+
+
+
+
+
+/*
+###### nav Tab
+*/
+
+.nav-tabs {
+  border-bottom: 0px solid transparent;
+}
+.nav-tabs .nav-link {
+  border: 0px solid transparent;
+}
+
 /*
 ###### Typography
 */
@@ -48,8 +64,8 @@ html{
 
 body{
     font-family:"Open Sans", Arial, Helvetica, sans-serif;
-    background-color:#e8e8e8;
-    color:#474747;
+    background-color: #fff;
+    color:#343434;
 }
 /*farben im main bereich sollen fÃ¼r alle projekte gleichbleiben wg. kontrast und einheitlichkeit*/
 
@@ -58,25 +74,23 @@ h3,
 h4,
 h5,
 h6{
-    font-family:"Droid Serif", Georgia, "Times New Roman", Times, serif;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
 h1{
-    font-size:140%;
+    font-size:110%;
     margin-bottom:0;
 }
 
 h2{
-    font-size:110%;
-    font-family:"Open Sans", Arial, Helvetica, sans-serif;
-    font-style:italic;
+    font-size:105%;
     margin-bottom:0.8em;
     margin-top:0.4em;
 }
 
 h3{    
     color:#cf3a2a; /*projektfarbe!*/
-    font-size:125%;
+    font-size:100%;
     line-height:1.8em;
 }
 h3.objekt{
@@ -84,16 +98,13 @@ h3.objekt{
 }
 
 h4{
-    font-size:115%;
+    font-size:100%;
     color:#333333;
-    font-family:"Open Sans", Arial, Helvetica, sans-serif;
     font-style:italic;
 }
 
 h5{
-    font-family:"Open Sans", Arial, Helvetica, sans-serif;
     color:#333333;
-
 }
 
 h6{
@@ -462,3 +473,5 @@ margin:0;
 	font-size: 20px;
 }
 /** END ODD Sidebar **/
+
+

@@ -92,9 +92,11 @@ def get_Money(Measurable_Money, bk_quantity, bk_unit_index, Transfer):
 def getBKCoreElements(Class):
     # replace " with ' as the JSON output in DEPCHA has problems with it; replace "VT" in CSV with " "
     # in the csv are VT (vertical tabs; \u000B) String newString = oldString.replace('\u000B', ' ');
-    helpString = row["bk_entry"].replace('"',"'")
-    normalizedEntry = (helpString.replace('\u000B', ' ')).strip()
-    output_graph.add((Class, BK.entry, Literal(normalizedEntry) )) 
+    
+    if('bk_entry' in df.columns):
+        helpString = row["bk_entry"].replace('"',"'")
+        normalizedEntry = (helpString.replace('\u000B', ' ')).strip()
+        output_graph.add((Class, BK.entry, Literal(normalizedEntry) )) 
     output_graph.add((Class, GAMS.isMemberOfCollection, URIRef(BASE_URL + CONTEXT) )) 
 
 
@@ -113,30 +115,32 @@ def getCreditOrDebit(Transfer):
             #Debug_DebitCreditEmptyCell += 1
 
 ########################################################################################
+'''
 def createTransferOfMoney(Transaction_URI, Transaction):
     #<bk:Transfer> <bk:transfers> <bk:Money>
-    if(pd.notnull(row["bk_money"])):
-        # selects all coumns bk_money, bk_money1 ... it is assumed that the first bk_money is the main currency
-        monetaryValues = row.filter(like='bk_money')
-        # <bk:Transfer>
-        Transfer = URIRef(Transaction_URI + "TM")
-        output_graph.add((Transaction, BK.consistsOf,  Transfer))
-        output_graph.add((Transfer, RDF.type, BK.Transfer))
-        global count_transfers
-        count_transfers = count_transfers + 1
-        
-        ### for all cells with content in columns name bk_money
-        for count, bk_quantity in enumerate(monetaryValues):
-            global count_moneys
-            count_moneys = count_moneys + 1
-            get_Money(URIRef(Transaction_URI + "M" + str(count)), bk_quantity, str(count), Transfer)
+    if('bk_money' in df.columns):
+        if(pd.notnull(row["bk_money"])):
+            # selects all coumns bk_money, bk_money1 ... it is assumed that the first bk_money is the main currency
+            monetaryValues = row.filter(like='bk_money')
+            # <bk:Transfer>
+            Transfer = URIRef(Transaction_URI + "TM")
+            output_graph.add((Transaction, BK.consistsOf,  Transfer))
+            output_graph.add((Transfer, RDF.type, BK.Transfer))
+            global count_transfers
+            count_transfers = count_transfers + 1
+            
+            ### for all cells with content in columns name bk_money
+            for count, bk_quantity in enumerate(monetaryValues):
+                global count_moneys
+                count_moneys = count_moneys + 1
+                get_Money(URIRef(Transaction_URI + "M" + str(count)), bk_quantity, str(count), Transfer)
 
-        ### <bk:debit>, <bk:credit>
-        getCreditOrDebit(Transfer) 
-        ##################
-        ### bk:from, bk:to
-        getFromOrTo(Transfer)
-                
+            ### <bk:debit>, <bk:credit>
+            getCreditOrDebit(Transfer) 
+            ##################
+            ### bk:from, bk:to
+            getFromOrTo(Transfer)
+'''               
 ########################################################################################
 #
 # 
@@ -205,8 +209,54 @@ def add_Quantity_To_Sum(sum_, quantity, ConversionValue):
         print("Exception: Not a valid number in add_Quantity_To_Sum function")
 
 
+########################################################################################
+# This function checks which kind of measurable is going to be created.
+# case 1: there is a BK_WHAT and BK_QUANTITY
+# case 2: there is a BK_MONEY
+# case 3: there is a BK_COMMODITY|BK_SERVICE
+def createTransferOfMeasurable(Transaction_URI, Transaction):
+    # <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#T891TM">
+    Transfer = URIRef(Transaction_URI + "TM")
+    output_graph.add((Transaction, BK.consistsOf,  Transfer))
+    output_graph.add((Transfer, RDF.type, BK.Transfer))
+    
+    global count_transfers
+    count_transfers = count_transfers + 1    
+    
+    # case 1: there is a BK_WHAT and BK_QUANTITY
+    if('bk_what' in df.columns and 'bk_quantity' in df.columns):
+        # selects all columns bk_what
+        all_bk_what = row.filter(like='bk_what')
+        # create a bk:Measurable with a bk:quantity
+        for count, bk_what in enumerate(all_bk_what):
+            Measurable = URIRef(Transaction_URI + "M" + str(count))
+            output_graph.add((Measurable, RDF.type, BK.Measurable))
+            output_graph.add((Transfer, BK.transfers, Measurable))
+            output_graph.add((Measurable, BK.what, Literal(str(row["bk_what"]))))
+            if(pd.notnull(row["bk_quantity"])):
+                output_graph.add((Measurable, BK.quantity, Literal(row["bk_quantity"])))
+          
+    # case 2: there is a BK_MONE   
+    if('bk_money' in df.columns and pd.notnull(row["bk_money"])):
+        # selects all columns bk_money, bk_money1 ... it is assumed that the first bk_money is the main currency
+        monetaryValues = row.filter(like='bk_money')
+        # <bk:Transfer>
+        #Transfer = URIRef(Transaction_URI + "TM")
+        #output_graph.add((Transaction, BK.consistsOf,  Transfer))
+        #output_graph.add((Transfer, RDF.type, BK.Transfer))
 
+        ### for all cells with content in columns name bk_money
+        for count, bk_quantity in enumerate(monetaryValues):
+            global count_moneys
+            count_moneys = count_moneys + 1
+            get_Money(URIRef(Transaction_URI + "M" + str(count)), bk_quantity, str(count), Transfer)
 
+        ### <bk:debit>, <bk:credit>
+        getCreditOrDebit(Transfer) 
+        ##################
+        ### bk:from, bk:to
+        getFromOrTo(Transfer)  
+        
 
 
 ########################################################################################
@@ -228,14 +278,15 @@ Debug_CurrencyInformation = "BK_CURRENCY: check"
 # this file including the filename of the.csv
 # the .csv is loaded and for every row is mapped to a RDF-Serialization  a bk:Transaction is created 
 
-folder = "gwfp"
+folder = "mvdb"
 file_extension = ".json"
+config_json_filename = "mvdb_config"
 
 ###
 # get all JSON confic files in a folder
 # for a single file: 
-all_JSON_filenames = [i for i in glob.glob(f"{folder}/csvToRDF_config__Ledger_C{file_extension}")]
-#all_JSON_filenames = [i for i in glob.glob(f"{folder}/*{file_extension}")]
+#all_JSON_filenames = [i for i in glob.glob(f"{folder}/{config_json_filename}{file_extension}")]
+all_JSON_filenames = [i for i in glob.glob(f"{folder}/*{file_extension}")]
 ########################################################################################
 for json_file in all_JSON_filenames:
     # open confic file
@@ -347,6 +398,8 @@ for json_file in all_JSON_filenames:
     ########################################################################################
     ### BETWEEN 
     # if a BK_BETWEEN column exists create a distinct set of <bk:Between>
+    
+    '''
     for name in df.bk_between.unique():
         # normalize for URI
         if(type(name)==str):
@@ -356,6 +409,7 @@ for json_file in all_JSON_filenames:
             output_graph.add((Between, RDF.type,  BK.Between))
             output_graph.add((Between , BK.name,  Literal(normalizeStringforJSON(name)) ))
     print("Log: distinct BK_BETWEEN ... check") 
+    '''
     
     # bk:Between
     # multiple names in column, seperator from forename and surname is the same as seperator from names
@@ -394,66 +448,79 @@ for json_file in all_JSON_filenames:
     ### <bk:Transaction>
     ########################################################################################   
     # iterate over all rows; every row is a bk:Transaction or bk:Total 
-    # (itertuples does not support coulmns with same name like bk_money.1, bk_money.2 etc. ?)
     for index, row in df.iterrows():
-    
-        ###
+        
         ### TODO: row with "Carried to" or "[Total]" or "Amount brought over" must be exluded or explicitly defined
         # a bk_Transaction is not a "[Total]" and has a date
-        if ( pd.notnull(row["bk_entry"]) and not "[Total]" in str(row["bk_entry"]) and
-            (not "Carried to" in row["bk_entry"]) and (not "Amount brought over" in row["bk_entry"])):
+        if('bk_entry' in df.columns):
+            try:
+                if ( pd.notnull(row["bk_entry"]) and not "[Total]" in str(row["bk_entry"]) and
+                    (not "Carried to" in row["bk_entry"]) and (not "Amount brought over" in row["bk_entry"])):
+                    ### <bk:Transaction>
+                    Transaction_URI = BASE_URL + PID + "#T" + str(index)
+                    Transaction = URIRef(Transaction_URI)
+                    output_graph.add((Transaction, RDF.type,  BK.Transaction))
+                    # count
+                    count_transactions = count_transactions + 1
+                    ### <bk:entry>, <gams:isMemberOfCollection>
+                    getBKCoreElements(Transaction)
+                    ### <bk:Transfer> <bk:Money>
+                    createTransferOfMeasurable(Transaction_URI, Transaction)
+                    #ToDo
+                    ### bk:Transfer of Commodity
+                    #if(pd.notnull(row.get["bk_commodity"])):
+                    #    print("todo")
+                        
+                    ### bk:Transfer of Service
+                    #if(pd.notnull(row["bk_service"])):
+                    #    print("todo")
+                    
+                #########################################
+                # GWFP: [Total] in bk:entry marks bk:Total, Todo optional row.BK_TOTAL ?
+                elif ("[Total]" in str(row["bk_entry"])):  
+                    ### <bk:Total>
+                    Total_URI = BASE_URL + PID + "#To" + str(index)
+                    Total = URIRef(Total_URI)
+                    output_graph.add((Total, RDF.type,  BK.Total))
+                    # count
+                    count_totals = count_totals + 1
+                    
+                    ### <bk:entry>, <gams:isMemberOfCollection>
+                    getBKCoreElements(Total)
+                    ### <bk:Transfer> <bk:Money>
+                    createTransferOfMeasurable(Total_URI, Total)
+                    
+                #########################################
+                else:
+                    Debug_CountEmptyRow += 1         
+                print("Log: bk:Transactions|bk:Total ... check")
+            except:
+                print(f"Exception: No BK_ENTRY.")
+                    
+        #########################################   
+        # there is only a BK_ID and not BK_ENTRY to identify a transaction
+        # BK_ID is part of the URI
+        if('bk_id' in df.columns):
             ### <bk:Transaction>
-            Transaction_URI = BASE_URL + PID + "#T" + str(index)
+            Transaction_URI = BASE_URL + PID + "#T" + str(row["bk_id"])
             Transaction = URIRef(Transaction_URI)
             output_graph.add((Transaction, RDF.type,  BK.Transaction))
             # count
             count_transactions = count_transactions + 1
             ### <bk:entry>, <gams:isMemberOfCollection>
             getBKCoreElements(Transaction)
-            ### <bk:Transfer> <bk:Money>
-            
-            ###
-            createTransferOfMoney(Transaction_URI, Transaction)
-            
-            
-            ### <bk:when>
-            # try to parse string with dateutil and get YYYY-MM-DD
+            createTransferOfMeasurable(Transaction_URI, Transaction)
+    
+    
+        ### <bk:when>
+        # try to parse string with dateutil and get YYYY-MM-DD
+        if('bk_when' in df.columns):
             if(pd.notnull(row["bk_when"])):
                 try:
                     normalized_date = dateutil.parser.parse(row['bk_when'], ignoretz=True).strftime('%Y-%m-%d')
                     output_graph.add((Transaction, BK.when,  Literal(normalized_date) ))
                 except:
-                    print(f"Log: Found invalid date {row['bk_when']} in row {index}")           
-                    
-            #ToDo
-            ### bk:Transfer of Commodity
-            #if(pd.notnull(row.get["bk_commodity"])):
-            #    print("todo")
-                
-            ### bk:Transfer of Service
-            #if(pd.notnull(row["bk_service"])):
-            #    print("todo")
-            
-        #########################################
-        # GWFP: [Total] in bk:entry marks bk:Total, Todo optional row.BK_TOTAL ?
-        elif ("[Total]" in str(row["bk_entry"])):  
-            ### <bk:Total>
-            Total_URI = BASE_URL + PID + "#To" + str(index)
-            Total = URIRef(Total_URI)
-            output_graph.add((Total, RDF.type,  BK.Total))
-            # count
-            count_totals = count_totals + 1
-            
-            ### <bk:entry>, <gams:isMemberOfCollection>
-            getBKCoreElements(Total)
-            ### <bk:Transfer> <bk:Money>
-            createTransferOfMoney(Total_URI, Total)
-            
-        #########################################
-        else:
-            Debug_CountEmptyRow += 1         
-    print("Log: bk:Transactions|bk:Total ... check")       
-    
+                    print(f"Log: Found invalid date {row['bk_when']} in row {index}")     
     
     #print(income_db)   
     #print("########")

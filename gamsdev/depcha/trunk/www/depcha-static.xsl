@@ -97,7 +97,7 @@
 		<html lang="de">
 			<head>
 				<meta charset="utf-8"/>
-				<meta  content="IE=edge"/>
+				<meta content="IE=edge"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1"/>
 				<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
@@ -126,7 +126,7 @@
 				<link href="/lib/2.0/bootstrap-4.5.0-dist/css/bootstrap.min.css" rel="stylesheet"/>
 				
 				<!-- Custom styles for this template -->
-				<link href="{concat($gamsdev,'/css/depcha.css')}" rel="stylesheet" type="text/css"/>
+
 				<link href="{concat($gamsdev,'/css/navbar.css')}" rel="stylesheet" type="text/css"/>
 				<!-- sidebar -->
 				<link href="{concat($gamsdev,'/css/sidebar.css')}" rel="stylesheet" type="text/css" />
@@ -137,6 +137,7 @@
 				<link rel="stylesheet" type="text/css" href="{concat($gamsdev,'/css/datatable.css')}"/>
 				<!-- TODO: source code highlighter -->
 				<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css"/>
+				<link href="{concat($gamsdev,'/css/depcha.css')}" rel="stylesheet" type="text/css"/>
 					
 				<!--<link href="{concat($gamsdev,'/react-d3-dashboard/css/2.ea9b1cc9.chunk.css')}" rel="stylesheet"/>
 				<link href="{concat($gamsdev,'/react-d3-dashboard/css/main.450bfb41.chunk.css')}" rel="stylesheet"/>-->
@@ -166,21 +167,24 @@
 					gamsJs.build("https://gams.uni-graz.at",{"$1":"home", "$2":"something else"})
 				</script>
 				-->
+				
+				<!-- datatables.js -->
+				<script src="/lib/2.0/plugins/bootstrap-datatable/jquery.dataTables.min.js"><xsl:text> </xsl:text></script>
+				<!-- databasket -->
+				<!--<script  src="{concat($gamsdev,'/js/databasket.js')}"><xsl:text> </xsl:text></script>-->
+				<!-- dataview -->
+				<script src="{concat($gamsdev,'/js/data_view.js')}"><xsl:text> </xsl:text></script>
+				<!--  -->
+				<script src="{concat($gamsdev,'/js/depcha-InfoVis-Library.js')}"><xsl:text> </xsl:text></script>
+				<!--  -->
+				<script src="{concat($gamsdev,'/js/d3.v6.min.js')}"><xsl:text> </xsl:text></script>
+				
+				<!-- fancybox -->
+				<!--<script  src="/lib/1.0/plugins/fancybox_v2.1.5/source/jquery.fancybox.js?v=2.1.5"><xsl:text> </xsl:text></script>-->
+				
+				
 			</head>
 
-			<!-- datatables.js -->
-			<script src="/lib/2.0/plugins/bootstrap-datatable/jquery.dataTables.min.js"><xsl:text> </xsl:text></script>
-			<!-- databasket -->
-			<!--<script  src="{concat($gamsdev,'/js/databasket.js')}"><xsl:text> </xsl:text></script>-->
-			<!-- dataview -->
-			<!--<script src="{concat($gamsdev,'/js/dataView.js')}"><xsl:text> </xsl:text></script>-->
-			<!--  -->
-			<script src="{concat($gamsdev,'/js/depcha-InfoVis-Library.js')}"><xsl:text> </xsl:text></script>
-			<!--  -->
-			<script src="{concat($gamsdev,'/js/d3.v6.min.js')}"><xsl:text> </xsl:text></script>
-			
-			<!-- fancybox -->
-			<!--<script  src="/lib/1.0/plugins/fancybox_v2.1.5/source/jquery.fancybox.js?v=2.1.5"><xsl:text> </xsl:text></script>-->
 		
 
 			<body>
@@ -259,9 +263,9 @@
 			</nav>
 				<!-- /////////////////////////////////// -->
 				<main role="main">
-					<div class="container card">
+					
 							<xsl:call-template name="content"/>
-					</div>
+					
 				</main>
 
 				<footer class="footer">

@@ -67,7 +67,7 @@
 
                     <!-- ////////////////// -->
                     <!-- create bk:Sum -->
-                    <xsl:apply-templates select="//t:text//*[tokenize(@ana, ' ') = 'bk:sum']"/>
+                    <!--<xsl:apply-templates select="//t:text//*[tokenize(@ana, ' ') = 'bk:sum']"/>-->
 
                     <!-- ////////////////// -->
                     <!-- create bk:Total -->
@@ -105,86 +105,9 @@
                         </xsl:otherwise>
                     </xsl:choose>
 
-                    <!-- ////////////////// -->
-                    <!-- create bk:Between, bk:Account -->
-
-                    <!-- ////////////////// -->
-                    <!-- create bk:Between, bk:Account -->
-                    <!--<xsl:for-each-group select="//.[tokenize(@ana, ' ') = 'bk:to'][not(local-name() ='measure')] | //.[tokenize(@ana, ' ') = 'bk:from'][not(local-name() ='measure')]" group-by=".//@ref | .//@corresp">
-	            	    <xsl:variable name="Between-URI">
-	            	        <xsl:choose>
-	            	            <xsl:when test="contains(current-grouping-key(), '#')">
-	            	                <xsl:value-of select="concat($BASE-URL, $Currrent_TEI_PID, current-grouping-key())"/>
-	            	            </xsl:when>
-	            	            <xsl:otherwise>
-	            	                <xsl:value-of select="concat($BASE-URL, $Currrent_TEI_PID, '#', current-grouping-key())"/>
-	            	            </xsl:otherwise>
-	            	        </xsl:choose>
-	            	    </xsl:variable>
-                        <!-\- TODO -\->
-                        <!-\-<xsl:choose>
-                            <xsl:when test="$TEIHeader//t:listPerson[@ana='bk:Between']">
-                                <xsl:for-each select="t:person">
-                                    <xsl:variable name="Between-URI"/>
-                                    <bk:Between rdf:about="{$Between-URI}">
-                                </xsl:for-each>
-                            </xsl:when>
-                        </xsl:choose>-\->
-                        
-                      
-                        
-                        <!-\-
-                            <xsl:choose>
-                                <xsl:when test="//t:teiHeader//t:listPerson[@ana='bk:Between']">
-                                    <xsl:apply-templates select="//t:teiHeader//t:listPerson[@ana='bk:Between']/t:person[@xml:id = substring-after(current-grouping-key(), '#')]"/>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:text>Error: no persList exists - t:listPerson[@ana='bk:Between']</xsl:text>
-                                </xsl:otherwise>
-                            </xsl:choose>-\->
-                           
-                            
-                            
-                            <!-\-<xsl:choose>
-                                <!-\\- a person list in the tei-header exists -\\->
-                                <xsl:when test="$TEIHeader//t:listPerson[@ana='bk:Between']/t:person[@xml:id = substring-after(current-grouping-key(), '#')]">
-                                     
-                                    <xsl:apply-templates select="//t:teiHeader//t:listPerson[@ana='bk:Between']/t:person[@xml:id = substring-after(current-grouping-key(), '#')]"/>
-                                    <!-\\-<xsl:call-template name="maplistPersontoFOAF">
-                                            <xsl:with-param name="Person" select="//t:teiHeader//t:listPerson[@ana='bk:Between']/t:person[@xml:id = substring-after(current-grouping-key(), '#')]"/>
-                                        </xsl:call-template>-\\->
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:for-each-group select="current-group()" group-by="current-grouping-key()">
-                                        <bk:name>
-                                            <!-\\- here is the place for further normalizing of data -\\->
-                                            <xsl:choose>
-                                                <xsl:when test="@corresp">
-                                                    <xsl:value-of select="normalize-space($TEIHeader//t:taxonomy//*[@xml:id = substring-after(current-grouping-key(), '#')])"/>
-                                                </xsl:when>
-                                                <xsl:when test=".//@ref">
-                                                    <xsl:choose>
-                                                        <xsl:when test="$TEIHeader//t:taxonomy[@ana='bk:Between']//*[@xml:id = substring-after(current-grouping-key(), '#')]">
-                                                            <xsl:value-of select="normalize-space($TEIHeader//t:taxonomy//*[@xml:id = substring-after(current-grouping-key(), '#')])"/>
-                                                        </xsl:when>
-                                                        <xsl:otherwise>
-                                                            <xsl:value-of select="normalize-space(.)"/>
-                                                        </xsl:otherwise>
-                                                    </xsl:choose>
-                                                </xsl:when>
-                                                <xsl:otherwise>
-                                                    <xsl:value-of select="normalize-space(.)"/>
-                                                </xsl:otherwise>
-                                            </xsl:choose>				    				
-                                        </bk:name>
-                                    </xsl:for-each-group>
-                                </xsl:otherwise>
-                            </xsl:choose>-\->
-				    	<!-\-</bk:Between>-\->
-	            	</xsl:for-each-group>-->
-
                     <!-- ////////////////////////// -->
                     <!-- bk:Taxonomy to SKOS -->
+                    <!-- ////////////////////////// -->
                     <xsl:choose>
                         <xsl:when test="$TEIHeader//*[tokenize(@ana, ' ') = 'bk:Taxonomy']">
                             <xsl:apply-templates
@@ -198,12 +121,23 @@
                             <xsl:comment>No bk:Taxonomy defined</xsl:comment>
                         </xsl:otherwise>
                     </xsl:choose>
+                    
+                    <!-- ////////////////////////// -->
+                    <!-- bk:where - Index - Places -->
+                    
+                    <xsl:choose>
+                        <xsl:when test="//t:teiHeader//t:listPlace[@ana = 'bk:Index']/t:place">
+                            <xsl:apply-templates select="//t:teiHeader//t:listPlace[@ana = 'bk:Index']/t:place"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:comment>No t:listPlace with @ana="bk:where" defined</xsl:comment>
+                        </xsl:otherwise>
+                    </xsl:choose>
 
                     <!-- ////////////////////////// -->
                     <!-- mapping t:unitDef to http://www.ontology-of-units-of-measure.org/resource/om-2/Unit -->
+                    <!-- ////////////////////////// -->
                     <xsl:apply-templates select="//t:unitDef"/>
-
-
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:text>ERROR: No PID defined in idno/@type="PID"</xsl:text>
@@ -211,11 +145,90 @@
             </xsl:choose>
         </rdf:RDF>
     </xsl:template>
+    
+    <!--//////////////////////////////////////// -->
+    <!-- This called template creates a URI for an entity. it returns a valid URI with a '#' and a lower-case id.
+        * it also handles internal or external URI in @ref etc.
+        * id can come from a @xml:id, @ref or @corresp.
+        * if no id exists it is created by concating and normalizing the text node
+        return: https://gams.uni-graz.at/o:depcha.schlandersberger.1#commodity.4.7 -->
+    <xsl:template name="build_URI_for_rdf_about_resource">
+        <xsl:param name="BASE_URL"/>
+        <xsl:param name="PID"/>
+        <xsl:param name="ID"/>
+        <xsl:choose>
+            <!-- ID is a URI -->
+            <!-- todo: is there a better way to check of a URI; do i have to check for internal or external URIs? -->
+            <xsl:when test="starts-with($ID, 'https') or starts-with($ID, 'http')">
+                <xsl:value-of select="$ID"/>
+            </xsl:when>
+            <!-- case: @ref="#commodity.1" -->
+            <xsl:when test="contains($ID, '#')">
+                <xsl:value-of select="concat($BASE-URL, $PID, normalize-space(lower-case($ID)))"/>
+            </xsl:when>
+            <!-- case: @xml:id="commodity.1" -->
+            <xsl:when test="$ID">
+                <xsl:value-of select="concat($BASE-URL, $PID, '#', encode-for-uri(normalize-space(lower-case($ID))))"/>
+            </xsl:when>
+            <!-- case: no @* -->
+            <xsl:when test="text()">
+                <xsl:value-of select="concat($BASE-URL, $PID, '#', encode-for-uri(normalize-space(lower-case(.))))"/>
+            </xsl:when>
+            <!-- no URI created -->
+            <xsl:otherwise>
+                <xsl:value-of select="concat($BASE-URL, $PID, '#error')"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!-- ####################################### -->
+    <!-- transforming listPerson to schema:Place -->
+    <xsl:template match="t:listPlace[@ana = 'bk:Index']/t:place">
+        
+        <xsl:variable name="PLACE_URI">
+            <xsl:call-template name="build_URI_for_rdf_about_resource">
+                <xsl:with-param name="BASE_URL" select="$BASE-URL"/>
+                <xsl:with-param name="PID" select="$Currrent_TEI_PID"/>
+                <xsl:with-param name="ID" select="@xml:id"/>
+            </xsl:call-template>
+        </xsl:variable>
+        
+        <!--<xsl:variable name="PLACE_URI" select="concat($BASE-URL, $Currrent_TEI_PID, '#', @xml:id)"/>-->
+        <schema:Place rdf:about="{$PLACE_URI}">
+            <xsl:if test="t:placeName">
+                <schema:name>
+                    <xsl:value-of select="t:placeName"/>
+                </schema:name>
+            </xsl:if>
+            <xsl:if test="t:location/t:country">
+                <schema:containedInPlace>
+                    <xsl:value-of select="t:location/t:country"/>
+                </schema:containedInPlace>
+            </xsl:if>
+            <xsl:if test="t:location/t:settlement">
+                <schema:containedInPlace>
+                    <xsl:value-of select="t:location/t:settlement"/>
+                </schema:containedInPlace>
+            </xsl:if>
+            <!-- t:geo - longitude, latitude -->
+            <xsl:choose>
+                <xsl:when test="contains(t:location/t:geo, ',')">
+                    <schema:longitude><xsl:value-of select="normalize-space(substring-before(t:location/t:geo, ','))"/></schema:longitude>
+                    <schema:latitude><xsl:value-of select="normalize-space(substring-after(t:location/t:geo, ','))"/></schema:latitude>
+                </xsl:when>
+                <xsl:when test="contains(t:location/t:geo, ' ')">
+                    <schema:longitude><xsl:value-of select="normalize-space(substring-before(t:location/t:geo, ' '))"/></schema:longitude>
+                    <schema:latitude><xsl:value-of select="normalize-space(substring-after(t:location/t:geo, ' '))"/></schema:latitude>
+                </xsl:when>
+                <xsl:otherwise/>
+            </xsl:choose>
+          
+        </schema:Place>
+    </xsl:template>
 
-    <!-- ////////////////////////// -->
+    <!-- ####################################### -->
     <!-- mapping t:unitDef to http://www.ontology-of-units-of-measure.org/resource/om-2/Unit -->
     <xsl:template match="t:unitDef">
-
         <xsl:variable name="Unit_Elementname">
             <xsl:choose>
                 <xsl:when test="@type = 'weight'">
@@ -242,8 +255,7 @@
             </xsl:choose>
         </xsl:variable>
 
-        <!-- om:Unit -->
-        <!-- https://enterpriseintegrationlab.github.io/icity/OM/doc/index-en.html -->
+        <!-- om:Unit, https://enterpriseintegrationlab.github.io/icity/OM/doc/index-en.html -->
         <xsl:variable name="Unit_URI" select="concat($BASE-URL, $Currrent_TEI_PID, '#', @xml:id)"/>
         <xsl:element name="{$Unit_Elementname}">
             <xsl:attribute name="rdf:about">
@@ -291,14 +303,11 @@
                 <om:hasBaseUnit rdf:resource="{$Unit_URI}"/>
             </om:System_of_units>
         </xsl:if>
-
-
-
     </xsl:template>
 
 
-    <!-- ////////////////////////// -->
-    <!--  -->
+    <!-- ####################################### -->
+    <!-- mapping tei:taxonomy to skos  -->
     <xsl:template match="*[tokenize(@ana, ' ') = 'bk:Taxonomy']">
         <skos:ConceptScheme rdf:about="{concat($BASE-URL, $Currrent_Context, '#Taxonomy')}">
             <xsl:if test="t:gloss">
@@ -321,7 +330,7 @@
     </xsl:template>
 
     <!-- ////////////////////////// -->
-    <!--  -->
+    <!-- mapping tei:taxonomy/t:category to skos.Concept  -->
     <xsl:template match="t:category">
         <xsl:variable name="ConceptorBKAccount">
             <xsl:choose>
@@ -334,8 +343,13 @@
             </xsl:choose>
         </xsl:variable>
         <xsl:element name="{$ConceptorBKAccount}">
-            <xsl:attribute name="rdf:about"
-                select="concat($BASE-URL, $Currrent_TEI_PID, '#', @xml:id)"/>
+            <xsl:attribute name="rdf:about">
+                <xsl:call-template name="build_URI_for_rdf_about_resource">
+                    <xsl:with-param name="BASE_URL" select="$BASE-URL"/>
+                    <xsl:with-param name="PID" select="$Currrent_TEI_PID"/>
+                    <xsl:with-param name="ID" select="@xml:id"/>
+                </xsl:call-template>
+            </xsl:attribute>
             <skos:inScheme rdf:resource="{concat($BASE-URL, $Currrent_TEI_PID)}"/>
             <xsl:for-each select="t:category">
                 <skos:narrower rdf:resource="{concat($BASE-URL, $Currrent_TEI_PID, '#', @xml:id)}"/>
@@ -371,20 +385,12 @@
     </xsl:template>
 
 
-
-
-
-
     <!-- ////////////////////////// -->
-    <!-- bk_Entry -->
-    <!-- goes through all Entries in a given TEI. Entries must be defined with @ana='bk:entry'. -->
+    <!-- bk:entry -->
+    <!-- ////////////////////////// -->
+    <!-- goes through all bk:entry. these are defined with @ana='bk:entry'. bk:entry are the textual representation of a bk:Transaction -->
     <xsl:template match="t:text//*[tokenize(@ana, ' ') = 'bk:entry']">
-        <xsl:variable name="Position"
-            select="count(preceding::node()[tokenize(@ana, ' ') = 'bk:entry'])"/>
-
-        <!-- /////////// -->
-        <!-- bk_Where -->
-        <!-- todo -->
+        <xsl:variable name="Position" select="count(preceding::node()[tokenize(@ana, ' ') = 'bk:entry'])"/>
 
         <!-- /////////// -->
         <!--  BK:FROM -->
@@ -436,33 +442,59 @@
             </xsl:choose>
         </xsl:variable>
 
-        <!-- /////////// -->
+        <!-- /////////////////////////////////////// -->
         <!-- TRANSACTION -->
-        <xsl:variable name="Transaction-ID"
-            select="concat($BASE-URL, $Currrent_TEI_PID, '#T', $Position)"/>
-        <!-- | .//.[tokenize(@ana, ' ') = 'bk:price'] -->
-        <xsl:variable name="bk_Measurables"
-            select=".//.[tokenize(@ana, ' ') = 'bk:money'] | .//.[tokenize(@ana, ' ') = 'bk:service'] | .//.[tokenize(@ana, ' ') = 'bk:commodity']"/>
+        <!-- /////////////////////////////////////// -->
+        <xsl:variable name="Transaction-ID" select="concat($BASE-URL, $Currrent_TEI_PID, '#T', $Position)"/>
+        <xsl:variable name="bk_Measurables" select=".//.[tokenize(@ana, ' ') = 'bk:money'] | .//.[tokenize(@ana, ' ') = 'bk:service'] | .//.[tokenize(@ana, ' ') = 'bk:commodity']"/>
         <xsl:variable name="bk_Between_REF" select="$bk_To_ref | $bk_From_ref"/>
-
+        <!-- bk:Transaction -->
         <bk:Transaction rdf:about="{$Transaction-ID}">
-
+            
+            <!-- -->
             <xsl:call-template name="getBasicProperties"/>
-
-
+            
+            <!-- /// bk:consists of bk:Transfer -->
             <!-- for each bk_measurable grouped by @commodity: there is a transfer for all bk_measurable entities. $ + sh are in the same transfer -->
             <xsl:for-each-group select="$bk_Measurables" group-by="@ana">
                 <xsl:variable name="Transfer-ID" select="concat($Transaction-ID, 'T', position())"/>
                 <bk:consistsOf rdf:resource="{$Transfer-ID}"/>
             </xsl:for-each-group>
 
-            <!-- /////////// -->
-            <!-- transactionStatus pp. ; in full -->
+            <!-- /// bk:status -->
+            <!-- e.g.: transactionStatus pp. ; in full -->
             <xsl:for-each select=".//.[tokenize(@ana, ' ') = 'bk:status']">
                 <bk:status>
                     <xsl:value-of select="."/>
                 </bk:status>
             </xsl:for-each>
+            
+            
+            <xsl:call-template name="bookedOn_credit_debit"/>
+            
+            
+            <!-- /////////////////////////////////////// -->
+            <!-- bk:where -->
+            <xsl:for-each-group select=".//.[tokenize(@ana, ' ') = 'bk:where']" group-by="@ref">
+                <bk:where>
+                    <xsl:attribute name="rdf:resource">
+                        <xsl:call-template name="build_URI_for_rdf_about_resource">
+                            <xsl:with-param name="BASE_URL" select="$BASE-URL"/>
+                            <xsl:with-param name="PID" select="$Currrent_TEI_PID"/>
+                            <xsl:with-param name="ID" select="@xml:id"/>
+                        </xsl:call-template>
+                    </xsl:attribute>
+                </bk:where>
+            </xsl:for-each-group>
+            
+            
+          
+            
+            <!-- /// bk:addUp -->
+            <!-- connection of a bk:Transaction to a bk:Total  -->
+            <xsl:if test="following::*[tokenize(@ana, ' ') = 'bk:total'] and @corresp">
+                <bk:addUp rdf:resource="{concat($BASE-URL, $Currrent_TEI_PID, @corresp)}"/>
+            </xsl:if>
 
             <!-- ////////////////////////// -->
             <!-- FULLTEXT for fulltextsearch with whitespace cleaning and normalization -->
@@ -565,8 +597,7 @@
             <xsl:variable name="Measurable-ID"
                 select="concat($BASE-URL, $Currrent_TEI_PID, '#E', $Position, 'M', position())"/>
             <xsl:choose>
-                <xsl:when
-                    test="contains(@ana, 'bk:money') or contains(@ana, 'bk:service') or contains(@ana, 'bk:commodity')">
+                <xsl:when test="contains(@ana, 'bk:money') or contains(@ana, 'bk:service') or contains(@ana, 'bk:commodity')">
                     <xsl:variable name="firstChar"
                         select="upper-case(substring(substring-after(@ana, ':'), 1, 1))"/>
                     <xsl:variable name="SubClassofMeasurables">
@@ -584,65 +615,44 @@
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:variable>
-                    <!-- create bk:Money, bk:Commodity, bk_Service -->
+                    <!-- ///////////////////////////////////////// -->
+                    <!-- create bk:Money, bk:Commodity, bk:Service -->
                     <xsl:choose>
+                        <!-- /// -->
                         <!-- more than 1 measure, like 1 dollar 50 cents -->
                         <xsl:when test="count(current-group()) > 1">
                             <xsl:for-each select="current-group()">
                                 <xsl:element name="{concat('bk:', $SubClassofMeasurables)}">
-                                    <xsl:attribute name="rdf:about"
-                                        select="concat($Measurable-ID, position())"/>
-
+                                    <xsl:attribute name="rdf:about" select="concat($Measurable-ID, position())"/>
+                                    <!-- get bk:unit -->
                                     <xsl:call-template name="create_bk_unit"/>
-
-                                    <xsl:if test="@quantity">
-                                        <xsl:call-template name="getQuantity"/>
-                                    </xsl:if>
-                                    <xsl:if test="@commodity and not(@commodity = 'currency')">
-                                        <xsl:call-template name="getCommodity"/>
-                                    </xsl:if>
-                                    <!--<bk:text>
-                                        <xsl:value-of select="normalize-space(.)"/>
-                                    </bk:text>-->
-                                    <xsl:for-each-group
+                                    <!-- get bk:quantity -->
+                                    <xsl:call-template name="create_bk_quantity"/>
+                                    <!-- get bk:commodity -->
+                                    <xsl:call-template name="create_bk_commodity"/>
+                                    
+                                    <!-- bk:price -->
+                                    <!--<xsl:for-each-group
                                         select=".//.[tokenize(@ana, ' ') = 'bk:price']" group-by=".">
                                         <xsl:variable name="Price-ID"
                                             select="concat($BASE-URL, $Currrent_TEI_PID, '#E', $Position, 'P', position())"/>
                                         <bk:price rdf:resource="{$Price-ID}"/>
-                                    </xsl:for-each-group>
+                                    </xsl:for-each-group>-->
                                 </xsl:element>
                             </xsl:for-each>
                         </xsl:when>
+                        <!-- /// -->
                         <!-- 1 measure -->
                         <xsl:otherwise>
                             <xsl:element name="{concat('bk:', $SubClassofMeasurables)}">
                                 <xsl:attribute name="rdf:about" select="$Measurable-ID"/>
-
+                                
+                                <!-- get bk:unit -->
                                 <xsl:call-template name="create_bk_unit"/>
-
-                                <!-- /// -->
-                                <xsl:call-template name="getQuantity"/>
-                                <xsl:if test="@commodity and not(@commodity = 'currency')">
-                                    <!-- /// -->
-                                    <xsl:call-template name="create_bk_commodity">
-                                        <xsl:with-param name="commodity" select="@commodity"/>
-                                    </xsl:call-template>
-                                    <xsl:variable name="DBpediaTerm">
-                                        <xsl:choose>
-                                            <xsl:when test="contains(@commodity, ' ')">
-                                                <!-- Potatoe, pine wood = Pine -->
-                                                <xsl:value-of
-                                                  select="concat(upper-case(substring(substring-before(@commodity, ' '), 1, 1)), substring(substring-before(@commodity, ' '), 2))"
-                                                />
-                                            </xsl:when>
-                                            <xsl:otherwise>
-                                                <xsl:value-of
-                                                  select="concat(upper-case(substring(@commodity, 1, 1)), substring(@commodity, 2))"
-                                                />
-                                            </xsl:otherwise>
-                                        </xsl:choose>
-                                    </xsl:variable>
-                                </xsl:if>
+                                <!-- get bk:quantity -->
+                                <xsl:call-template name="create_bk_quantity"/>
+                                <!-- get bk:commodity -->
+                                <xsl:call-template name="create_bk_commodity"/>
                             </xsl:element>
                         </xsl:otherwise>
                     </xsl:choose>
@@ -795,7 +805,8 @@
             </xsl:choose>
         </bk:Between>
     </xsl:template>
-
+    
+    <!-- //////////////////////////////////// -->
     <xsl:template match="t:persName">
         <xsl:choose>
             <xsl:when test="*">
@@ -1145,44 +1156,47 @@
     </xsl:template>
 
     <!-- ////////////////////////// -->
-    <!-- returns: a bk:unit element with rdf:resource or literal -->
+    <!-- returns: bk:unit object property with build URI
+         error: if no @unit | @unitRef exists define a default "piece" unit -->
     <xsl:template name="create_bk_unit">
         <xsl:choose>
-            <xsl:when test="@unitRef">
-                <bk:unit rdf:resource="{concat($BASE-URL, $Currrent_Context, @unitRef)}"/>
-            </xsl:when>
-            <xsl:when test="@unit">
+            <xsl:when test="@unitRef | @unit">
                 <bk:unit>
-                    <xsl:value-of select="@unit"/>
+                    <xsl:attribute name="rdf:resource">
+                        <xsl:call-template name="build_URI_for_rdf_about_resource">
+                            <xsl:with-param name="PID" select="$Currrent_TEI_PID"/>
+                            <xsl:with-param name="BASE_URL" select="$BASE-URL"/>
+                            <xsl:with-param name="ID" select="if (@unitRef) then @unitRef else @unit"/>
+                        </xsl:call-template>
+                    </xsl:attribute>
                 </bk:unit>
             </xsl:when>
             <xsl:otherwise>
                 <bk:unit>piece</bk:unit>
-                <xsl:comment>Error: no @unitRef or @unit in bk:measurable -- added default "piece"</xsl:comment>
+                <xsl:comment>Error: no @unitRef or @unit in bk:Measurable -- added default "piece"</xsl:comment>
             </xsl:otherwise>
         </xsl:choose>
-
-
-        <!--<xsl:choose>
-            <!-\- @unit="#dollar" -\->
-            <xsl:when test="substring(@unit, 1, 1) = '#'">
-                <bk:unit rdf:resource="{concat($BASE-URL, $Currrent_Context, @unit)}"/>
-            </xsl:when>
-            <!-\- otherwise its a literal -\->
-            <xsl:when test="@unit">
-                <bk:unit>
-                    <xsl:value-of select="@unit"/>
-                </bk:unit>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:comment>no @unit</xsl:comment>
-            </xsl:otherwise>
-        </xsl:choose>-->
     </xsl:template>
 
     <!-- ////////////////////////// -->
+    <!-- get @commodity -->
+    <xsl:template name="create_bk_commodity">
+       <xsl:if test="@commodity and not(@commodity = 'currency')">
+           <bk:commodity>
+               <xsl:attribute name="rdf:resource">
+                   <xsl:call-template name="build_URI_for_rdf_about_resource">
+                       <xsl:with-param name="PID" select="$Currrent_TEI_PID"/>
+                       <xsl:with-param name="BASE_URL" select="$BASE-URL"/>
+                       <xsl:with-param name="ID" select="@commodity"/>
+                   </xsl:call-template>
+               </xsl:attribute>
+           </bk:commodity>
+       </xsl:if>
+    </xsl:template>
+   
+    <!-- ////////////////////////// -->
     <!-- get @quantity -->
-    <xsl:template name="getQuantity">
+    <xsl:template name="create_bk_quantity">
         <xsl:choose>
             <xsl:when test="@quantity">
                 <bk:quantity>
@@ -1194,52 +1208,6 @@
                     <xsl:value-of select="1"/>
                 </bk:quantity>
             </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-
-    <!-- ////////////////////////// -->
-    <!-- get @quantity -->
-    <xsl:template name="getCommodity">
-        <xsl:choose>
-            <xsl:when test="substring(@unit, 1, 1) = '#'">
-                <bk:commodity rdf:resource="{concat($BASE-URL, $Currrent_TEI_PID, @commodity)}"/>
-            </xsl:when>
-            <xsl:when test="@commodity">
-                <bk:commodity>
-                    <xsl:value-of select="@commodity"/>
-                </bk:commodity>
-            </xsl:when>
-            <xsl:otherwise>
-                <bk:quantity>
-                    <xsl:value-of select="1"/>
-                </bk:quantity>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-
-    <!-- this template ist just to try out something -->
-    <xsl:template name="fakeCategory">
-        <xsl:param name="Type"/>
-        <xsl:choose>
-            <xsl:when test="
-                    contains($Type, 'potatoes') or contains($Type, 'meat') or contains($Type, 'Meat') or $Type = 'corn' or $Type = 'milk' or $Type = 'rye' or
-                    $Type = 'flour' or $Type = 'apples' or $Type = 'pork' or contains($Type, 'meat') or contains($Type, 'butter')
-                    or $Type = 'cheese' or $Type = 'grain'
-                    or $Type = 'beans' or $Type = 'fish' or $Type = 'ham' or $Type = 'beef' or $Type = 'bacon' or $Type = 'grain'">
-                <bk:category>food</bk:category>
-            </xsl:when>
-            <xsl:when
-                test="$Type = 'glass' or $Type = 'iron' or $Type = 'wood' or $Type = 'lumber' or $Type = 'Plank'">
-                <bk:category>resource</bk:category>
-            </xsl:when>
-            <xsl:when
-                test="$Type = 'cow' or $Type = 'Alpaca' or $Type = 'turkey' or $Type = 'Horse'">
-                <bk:category>animal</bk:category>
-            </xsl:when>
-            <xsl:when test="$Type = 'shoes' or $Type = 'Alpaca' or $Type = 'turkey'">
-                <bk:category>clothing</bk:category>
-            </xsl:when>
-            <xsl:otherwise/>
         </xsl:choose>
     </xsl:template>
 
@@ -1319,7 +1287,7 @@
                         <bk:to rdf:resource="{concat($BASE-URL, $Currrent_TEI_PID, $bk_To_ref)}"/>
                         <bk:transfers>
                             <bk:Money rdf:about="{concat($Sum-ID, 'M', position())}">
-                                <xsl:call-template name="getQuantity"/>
+                                <xsl:call-template name="create_bk_quantity"/>
                                 <xsl:call-template name="create_bk_unit"/>
                             </bk:Money>
                         </bk:transfers>
@@ -1368,25 +1336,36 @@
 
         <xsl:variable name="Position"
             select="count(preceding::node()[tokenize(@ana, ' ') = 'bk:sum'])"/>
-        <xsl:variable name="Sum-ID" select="concat($BASE-URL, $Currrent_TEI_PID, '#S', $Position)"/>
+        <xsl:variable name="Sum-ID">
+            <xsl:choose>
+                <!-- if bk:Total has an xml:id -->
+                <xsl:when test="@xml:id">
+                    <xsl:value-of select="concat($BASE-URL, $Currrent_TEI_PID, '#', @xml:id)"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="concat($BASE-URL, $Currrent_TEI_PID, '#S', $Position)"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
         <bk:Total rdf:about="{$Sum-ID}">
             <xsl:call-template name="getWhen"/>
             <!--  <bk:from rdf:resource="{concat($Sum-ID, $Currrent_TEI_PID, .//*[@ana='bk:from']/@ref)}"/>
             <bk:to rdf:resource="{concat($Sum-ID, $Currrent_TEI_PID, .//*[@ana='bk:zo']/@ref)}"/>-->
-            <bk:from
+            <!-- kann man so nicht machen... -->
+            <!--<bk:from
                 rdf:resource="{concat($BASE-URL, $Currrent_TEI_PID, substring-after($bk_From_ref, '#'))}"/>
             <bk:to
-                rdf:resource="{concat($BASE-URL, $Currrent_TEI_PID, substring-after($bk_To_ref, '#'))}"/>
+                rdf:resource="{concat($BASE-URL, $Currrent_TEI_PID, substring-after($bk_To_ref, '#'))}"/>-->
 
             <xsl:for-each select=".//.[tokenize(@ana, ' ') = 'bk:money']">
-                <bk:consistsOf>
+                <bk:sum>
                     <bk:Money rdf:about="{concat($Sum-ID, 'M', position())}">
-                        <xsl:call-template name="getQuantity"/>
+                        <xsl:call-template name="create_bk_quantity"/>
                         <xsl:call-template name="create_bk_unit"/>
                     </bk:Money>
-                </bk:consistsOf>
+                </bk:sum>
             </xsl:for-each>
-
+          
             <xsl:call-template name="getBasicProperties"/>
         </bk:Total>
     </xsl:template>
@@ -1711,6 +1690,38 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    
+    
+    <!-- /////////////////////////////// -->
+    <!-- return: <bk:bookedOn> #Debit | #Credit  
+         ToDo: check for bk:debit|bk:credit inside bk:entry-->
+    <xsl:template name="bookedOn_credit_debit">
+        <xsl:choose>
+            <!-- bk:debit|bk:credit next to bk:entry|bk:total  -->
+            <xsl:when test="tokenize(@ana, ' ') = 'bk:debit' or tokenize(@ana, ' ') = 'bk:credit'">
+                <xsl:if test="tokenize(@ana, ' ') = 'bk:debit'">
+                    <bk:bookedOn rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Debit"/>
+                </xsl:if>
+                <xsl:if test="tokenize(@ana, ' ') = 'bk:credit'">
+                    <bk:bookedOn rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Credit"/>
+                </xsl:if>
+            </xsl:when>
+            <!-- bk:debit|bk:credit inside bk:entry|bk:total  -->
+            <xsl:when test=".//*[tokenize(@ana, ' ') = 'bk:debit'] | .//*[tokenize(@ana, ' ') = 'bk:credit']">
+                <xsl:if test=".//*[tokenize(@ana, ' ') = 'bk:debit']">
+                    <bk:bookedOn rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Debit"/>
+                </xsl:if>
+                <xsl:if test=".//*[tokenize(@ana, ' ') = 'bk:credit']">
+                    <bk:bookedOn rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Credit"/>
+                </xsl:if>
+            </xsl:when>
+            <xsl:otherwise>
+                
+            </xsl:otherwise>
+        </xsl:choose>
+        
+      
+    </xsl:template>
 
 
     <!-- /////////////////////////////// -->
@@ -1743,20 +1754,20 @@
          * reference to an xml:id   #c_hat
          * string                   hat
     -->
-    <xsl:template name="create_bk_commodity">
+    <!--<xsl:template name="create_bk_commodity">
         <xsl:param name="commodity"/>
         <bk:commodity>
             <xsl:choose>
-                <!-- is there a better way for chekc for a uri in xslt?  -->
+                <!-\- is there a better way for chekc for a uri in xslt?  -\->
                 <xsl:when test="starts-with($commodity, 'https') or starts-with($commodity, 'http')">
                     <xsl:choose>
-                        <!-- intern URI -->
+                        <!-\- intern URI -\->
                         <xsl:when test="contains($commodity, ':depcha')">
                             <xsl:attribute name="rdf:resource">
                                 <xsl:value-of select="@commodity"/>
                             </xsl:attribute>
                         </xsl:when>
-                        <!-- extern URI -->
+                        <!-\- extern URI -\->
                         <xsl:otherwise>
                             <xsl:attribute name="rdf:resource">
                                 <xsl:value-of select="@commodity"/>
@@ -1764,13 +1775,13 @@
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
-                <!-- xml:id -->
+                <!-\- xml:id -\->
                 <xsl:when test="starts-with($commodity, '#')">
                     <xsl:attribute name="rdf:resource">
                         <xsl:value-of select="concat($BASE-URL, $Currrent_TEI_PID, @commodity)"/>
                     </xsl:attribute>
                 </xsl:when>
-                <!-- string -->
+                <!-\- string -\->
                 <xsl:otherwise>
                     <xsl:value-of select="@commodity"/>
                 </xsl:otherwise>
@@ -1779,7 +1790,7 @@
 
 
 
-    </xsl:template>
+    </xsl:template>-->
 
 
 </xsl:stylesheet>

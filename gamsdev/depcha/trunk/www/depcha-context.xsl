@@ -216,7 +216,6 @@
                                         <a class="btn btn-light mt-1 btn-block" href="{concat('/archive/objects/', s:identifier, '/methods/sdef:Context/get?mode=dataview')}">Data</a>
                                             
                                         <a class="btn btn-light mt-1 btn-block" href="{concat('/', s:identifier)}">Sources</a>
-                                        <a class="btn btn-light mt-1 btn-block" href="#">Discover</a>
                                         <a class="btn btn-light mt-1 btn-block" href="#">About</a>
                                     </div>
                                 </div> 

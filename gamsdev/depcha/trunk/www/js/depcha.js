@@ -29,30 +29,7 @@ return old=='▼ ' ?  '▲ ' : '▼ ';
 
 
 
-function fetchSPARQL_Json(PID){
-  console.log(PID);
 
-  let context_uri = "<https://gams.uni-graz.at/"+PID+">";
-  let query_url = gamsJs.query.build("https://glossa.uni-graz.at/archive/objects/query:depcha.data-context/methods/sdef:Query/getJSON",{"$1":context_uri});
-
-  console.log(query_url);
-  //fetch JSON-SPARQL-Result
-  fetch(query_url, {method: 'get'})
-    .then(response => response.json())
-    .then(function(data)
-    {
-      const properties = Object.keys(data[0]);
-      let groupedTransactions = gamsJs.utils.groupBy(data, 't');
-      //console.log(groupedTransactions);
-      buildTable(groupedTransactions, properties);
-
-    })
-  .catch(function(error) 
-  {
-    console.log('Request failed', error);
-  });    
-
-}
 
 
 ////////////////////////////////////////////////

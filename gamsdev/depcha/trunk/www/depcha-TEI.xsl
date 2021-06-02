@@ -228,9 +228,9 @@
             </xsl:choose>
         </xsl:variable>
         <xsl:text> </xsl:text>
-        <abbr class="text-monospace" data-toggle="tooltip" data-html="true" title="{$QuantityUnit}">
+        <span class="text-monospace" data-toggle="tooltip" data-html="true" title="{$QuantityUnit}">
             <xsl:apply-templates/>
-        </abbr>
+        </span>
     </xsl:template>
     
     <xsl:template match="t:div[@ana='#bk_entry']">
@@ -601,7 +601,7 @@
     
     <!-- /////////////////////////////////////// -->
     <xsl:template match="t:persName">
-        <strong>
+        <span class="font-weight-bold">
             <xsl:choose>
                 <xsl:when test="t:name">
                     <xsl:apply-templates select="t:name"/>
@@ -609,21 +609,19 @@
                 <!-- SURNAME, FORENAME (ADDNAME) -->
                 <xsl:otherwise>
                     <xsl:apply-templates/>
+                    <xsl:text> </xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
-        </strong>
+        </span>
     </xsl:template>
     <!-- /////////////////////////////////////// -->
     <!-- persName -->
     <!-- /////////////////////////////////////// -->
     <xsl:template match="t:surename">
-        <xsl:text> </xsl:text>
         <xsl:apply-templates/>
-        <xsl:text> </xsl:text>
     </xsl:template>
     <!-- /////////////////////////////////////// -->
     <xsl:template match="t:forename">
-        <xsl:text> </xsl:text>
         <xsl:apply-templates/>
     </xsl:template>
     <!-- /////////////////////////////////////// -->
