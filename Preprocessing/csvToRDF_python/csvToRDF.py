@@ -194,7 +194,7 @@ def convert_Money_to_MainCurrency(quantity, unit):
             else:
                 return 0.0
         except:
-            print(f"Exception: invalid quantitiy '{converted_quantity}' in converting to main currency")
+            #print(f"Exception: invalid quantitiy '{converted_quantity}' in converting to main currency")
             return 0.0
     else:
         return 0.0
@@ -273,14 +273,15 @@ Debug_DebitCreditEmptyCell = 0
 Debug_FromToEmpty = 0
 Debug_missedTotal = 0
 Debug_CurrencyInformation = "BK_CURRENCY: check"
+Debug_Count_No_BK_ENTRY = 0;
 
 # this programm iterate over all .json (=confic files) in a folder. it gets the needed infomration from 
 # this file including the filename of the.csv
 # the .csv is loaded and for every row is mapped to a RDF-Serialization  a bk:Transaction is created 
 
-folder = "mvdb"
+folder = "gwfp"
 file_extension = ".json"
-config_json_filename = "mvdb_config"
+config_json_filename = "csvToRDF_config__Ledger_C"
 
 ###
 # get all JSON confic files in a folder
@@ -395,21 +396,35 @@ for json_file in all_JSON_filenames:
         print("Log: BK_CURRENCY ... failed")   
         
         
+        
+        
+        
+        
+        
+        
+        
     ########################################################################################
-    ### BETWEEN 
-    # if a BK_BETWEEN column exists create a distinct set of <bk:Between>
+    ### Distinct bk:Between
+    ########################################################################################
+    # * if a BK_BETWEEN column exists create a distinct set of <bk:Between>
+    # * therwise make a distinct list of all entries in the BK_FROM and BK:TO column   
     
-    '''
-    for name in df.bk_between.unique():
-        # normalize for URI
-        if(type(name)==str):
-            normalized_name = normalizeStringforURI(name)
-            Between_URI = BASE_URL + PID + "#B." + str(normalized_name)
-            Between = URIRef(Between_URI)
-            output_graph.add((Between, RDF.type,  BK.Between))
-            output_graph.add((Between , BK.name,  Literal(normalizeStringforJSON(name)) ))
-    print("Log: distinct BK_BETWEEN ... check") 
-    '''
+    if('bk_between' in df.columns):
+        print("in column")
+        for name in df.bk_between.unique():
+            # normalize for URI
+            if(type(name)==str):
+                normalized_name = normalizeStringforURI(name)
+                Between_URI = BASE_URL + PID + "#B." + str(normalized_name)
+                Between = URIRef(Between_URI)
+                output_graph.add((Between, RDF.type,  BK.Between))
+                output_graph.add((Between , RDFS.label,  Literal(normalizeStringforJSON(name)) ))
+        print("Log: distinct BK_BETWEEN ... check") 
+    elif('bk_to' in df.columns or 'bk_from' in df.columns):
+        print("yes")
+    else:
+        print("Log: was not able to create distinct bk.Between")    
+
     
     # bk:Between
     # multiple names in column, seperator from forename and surname is the same as seperator from names
@@ -493,9 +508,10 @@ for json_file in all_JSON_filenames:
                 #########################################
                 else:
                     Debug_CountEmptyRow += 1         
-                print("Log: bk:Transactions|bk:Total ... check")
+                    #print("Log: bk:Transactions|bk:Total ... check")
             except:
-                print(f"Exception: No BK_ENTRY.")
+                Debug_Count_No_BK_ENTRY += 1 
+                #print(f"Exception: No BK_ENTRY.")
                     
         #########################################   
         # there is only a BK_ID and not BK_ENTRY to identify a transaction
@@ -604,6 +620,9 @@ print(f"Log: {count_moneys} bk:Money created")
 print(f"Log: {count_commodities} bk:Commodity created")
 print(f"Log: {count_services} bk:Service created")
 print(f"Log: {count_betweens} bk:Between created")
+print(f"Log: {Debug_Count_No_BK_ENTRY} no valid bk:entry in row.")
+
+
 
 
 print(f"new file: {config_data['OUTPUT-FILE-NAME']}.xml")     
