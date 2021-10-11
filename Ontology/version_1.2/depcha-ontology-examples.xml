@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Bookkeeping Ontology Version 1.2 Examples</title>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+            <idno type="PID">o:depcha.example.1</idno>
+            <ref target="context:depcha.example" type="context">Bookkeeping Examples</ref>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+               <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                  bookkeeping ontology and can be extended to respective URIs. </p>
+            </prefixDef>
+            <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="http://www.wikidata.org/wiki/$1">
+               <p>
+                  <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+               </p>
+            </prefixDef>
+         </listPrefixDef>
+         <unitDecl>
+            <unitDef type="currency" xml:id="unit.1">
+               <label xml:lang="de">lb dn.</label>
+            </unitDef>
+         </unitDecl>
+      </encodingDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div>
+            <head>Example - Quellen zur Geschichte der Stadt Wien, Bd. II/2, Nr. 3285 As published
+               in HAUrk by Wiener Stadt- und Landesarchiv, Wien 1449</head>
+            <p>
+               <rs type="event" ref="ev__QGW_II_II_3285">
+                  <rs type="fn" role="issuer">
+                     <rs ana="bk:from bk:Individual" type="person"
+                        ref="pe__michael_stadl_SB_CD_00055">Michel Stadel, <roleName
+                           type="title_ref" corresp="org__wien">burger</roleName> zu Wienn</rs>,
+                  </rs> beurkundet seinen letzten Willen. Er schafft: 1. dass man ihn erberleich zu
+                  der erden bestatten und die echter von St. Stephan den ersten bis zum dreissigsten
+                  Tag des Nachts eine gesungene Vigilie und des Morgens ein Seelamt halten sollen;
+                  <span ana="bk:entry">2. in die Klöster: <rs type="fn" role="recipient">zu den
+                     <name ana="bk:to" ref="#k.1">Schotten</name>, gen <name ana="bk:to" ref="#k.2">sand
+                        Dorothe</name>, gen den <name ana="bk:to" ref="#k.3">Minnornbrudern</name>, zu den
+                     <name ana="bk:to" ref="#k.4">Augustinern</name>, gen den <name ana="bk:to" ref="#k.5">Predigern
+                        und den Weissenbrudern</name>, gen <name ana="bk:to" ref="#k.6">sand Clarn</name>,
+                        gen sand Niclas vor Stubentor, zu sand Maria Magdalen vor Schottentor, zu sand
+                           Larenzen hincz der Himelporten, zu sand Jacob
+                           und hincz sand Jeronimus</rs> <measure ana="bk:money bk:each" quantity="2" unitRef="#unit.1">je 
+                       2 lb dn.</measure></span>, wogegen diese nach
+                  seinem Ableben des Nachts eine gesungene Vigilie und des Morgens ein Seelamt
+                  begehen sollen; <span ana="bk:entry">3. dass <span ana="bk:to bk:group">jedem
+                        Armen</span> in dem Spital vom ersten bis zum dreissigsten Tag <measure
+                        ana="bk:money" quantity="1" unitRef="#unit.1">1 dn.</measure> gegeben
+                     werde</span>; 4. hincz sand Mertten, hincz sand Tibolt in den dritten Orden, in
+                  die zwai selheuser, in die dreu siechheuser vor der stat je 1 lb dn.; 5. hincz
+                  sand Stephan zu dem pau 10 lb dn. und hincz sand Michel 5 lb dn., wogegen in
+                  beiden Kirchen und im Bürgerspital eine gesungene Vigilie und ein Seelamt gehalten
+                  werden soll;</rs>
+            </p>
+         </div>
+      </body>
+   </text>
+</TEI>
