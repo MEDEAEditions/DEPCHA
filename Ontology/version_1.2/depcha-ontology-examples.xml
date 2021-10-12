@@ -67,6 +67,9 @@
          <div>
             <head>Example - Quellen zur Geschichte der Stadt Wien, Bd. II/2, Nr. 3285 As published
                in HAUrk by Wiener Stadt- und Landesarchiv, Wien 1449</head>
+            <p>In a testament, it is recorded who receives money. Thus, listed monasteries each
+               receive 2 lb d. In addition, money to a non-specific group (the poor) is
+               recorded.</p>
             <p>
                <rs type="event" ref="ev__QGW_II_II_3285">
                   <rs type="fn" role="issuer">
@@ -99,6 +102,7 @@
          </div>
          <div>
             <head>Example - Schlandersberger Rechungen, 1402</head>
+            <p>The "obgeschriben visser" gave 18 pounds of fish.</p>
             <p> Nota das ist die zetel<lb/> Raigister 1 des <name ref="#pers_SR001" type="person"
                   ana="bk:to"> hans <damage><supplied reason="missing"
                   >[kelner]</supplied></damage></name>
@@ -109,18 +113,13 @@
                   <name ref="#pers_SR051" ana="bk:from bk:group">obgeschriben visser</name>
                   <measure ana="bk:commodity" commodity="Fisch" quantity="18" unit="Pfund">18 lb
                      visch</measure> und<lb/> am mitwoch dar nach Rait <name ref="pers_SR052"
-                     type="person">herr Kaspar</name><lb/> gen phenïs</span>.<lb/>
-               <span ana="bk:entry">Item am <date ana="bk:when" when="1402-01-01">mitwochen nach
-                     philippi jacobi</date> []<lb/> das was am anffart abuetz pracht der<lb/>
-                  <!-- solz von den vischern = name? -->
-                  <name ref="pers_SRXXX" type="person" ana="bk:from">sloz von den vischern</name>
-                  <measure ana="bk:commodity" commodity="Fisch" quantity="10" unit="Pfund"> 10 lb
-                     visch </measure>und<lb/> was<name ref="pers_SR053" type="person"> herr
-                     hainreich</name> hie</span>
-            </p>
+                     type="person">herr Kaspar</name><lb/> gen phenïs</span>. </p>
          </div>
          <div>
-            <head>Example - <name ana="bk:from" ref="#pers_Wheaton">Laban Morey Wheaton</name>Laban Morey Wheaton Day Book</head>
+            <head>Example - <name ana="bk:to" ref="#pers_Wheaton">Laban Morey Wheaton</name>Laban
+               Morey Wheaton Day Book</head>
+            <p>Samuel Wrigley buys 0.5 bushel spring rye from Laban Morey Wheaton and pays 53
+               cents</p>
             <table>
                <head>
                   <date ana="bk:when" when="1828-09-15">Monday September-15th-1828</date>
@@ -128,7 +127,7 @@
                <row ana="bk:entry">
                   <cell ana="bk:status">settled</cell>
                   <cell>
-                     <name ana="bk:to" type="person" ref="#pers_Wrigley">Samuel Wrigley</name>
+                     <name ana="bk:from" type="person" ref="#pers_Wrigley">Samuel Wrigley</name>
                      <choice>
                         <abbr ana="bk:debit">Dr</abbr>
                         <expan>Debtor</expan>
@@ -141,6 +140,83 @@
                   </cell>
                   <cell/>
                   <cell/>
+               </row>
+            </table>
+         </div>
+         <div>
+            <head>Tax Rolls of Medieval Paris 1297 (<name ana="bk:to" ref="#P04">Philip the
+                  Fair</name>)</head>
+            <p>Phellippe le chandelier pays 8 sous. Remi des napes pays 24 sous.</p>
+            <list>
+               <head xml:id="head_kcj_d5h_3hb">
+                  <locus n="1" target="#bib_Mich1297"/>Cest le livre de la taille des cent mille
+                  livres tournois pour la q<ex>u</ex>inte annee assise <date ana="bk:when"
+                     when="1297">l&apos;an mcc iiii <seg rend="superscript">xx</seg> et dis et
+                     sept</date>
+               </head>
+               <item ana="bk:entry" xml:id="item_bdj_d5h_3hb">
+                  <seg type="entry">
+                     <persName ana="bk:from" cert="medium" ref="#PR01">
+                        <forename>Phellippe</forename>
+                        <nameLink>le</nameLink>
+                        <surname>
+                           <roleName ref="#PR01" role="chandelier" type="occupation"
+                              >chandelier</roleName>
+                        </surname>
+                     </persName>
+                  </seg>
+                  <seg type="payment">
+                     <measure ana="bk:money" quantity="8" unit="sous">viii s</measure>
+                  </seg>
+                  <seg type="status">p</seg>
+               </item>
+               <item ana="bk:entry" xml:id="item_cdj_d5h_3hb">
+                  <seg type="entry">
+                     <persName ana="bk:from" ref="#RN04">
+                        <forename>Remi</forename>
+                        <nameLink>des</nameLink>
+                        <surname>napes</surname>
+                     </persName>
+                  </seg>
+                  <seg type="payment">
+                     <measure ana="bk:money" quantity="24" unit="sous">xxiiii s</measure>
+                  </seg>
+               </item>
+            </list>
+         </div>
+         <div>
+            <head>Burgos Accounts <orgName ana="bk:from" ref="salamanca">サラマンカ商会</orgName>の帳簿</head>
+            <table facs="#zone_jmr_kkm_bmb">
+               <row n="1" ana="bk:entry bk:debit" corresp="#total.1">
+                  <cell ana="desc">+<persName ref="#BRGSSLMNC0018" ana="bk:to">Alonso de beguillas</persName>
+                     <span ana="bk:account">deue</span> En <date ana="bk:when" when="1558-01-01">pro
+                        de Henero</date> 170 U que so^ Por el rrsto de/otra su quenta del libro
+                     viejo de los negos De rroan de compa que son por 5 U rres que le dio <persName
+                        ref="#BRGSSLMNC0032">migl de sa</persName> para Lleuar a la sierra de
+                     Pedraza como pez en el dho libro a fo |_320</cell>
+                  <cell>
+                     <measure ana="bk:money" quantity="170000" unit="#maravedí">c lxx U -</measure>
+                  </cell>
+               </row>
+               <row n="2" ana="bk:entry bk:debit" corresp="#total.1">
+                  <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date> 170 U
+                     que son por 5 U rres que por cedula de <persName ref="#BRGSSLMNC0013" ana="bk:to">garcia De
+                        Salamanca</persName> le <span ana="bk:account">dio</span>
+                     <persName ref="#BRGSSLMNC0036">Gregorio de santa maria</persName> pez
+                     |_29</cell>
+                  <cell>
+                     <measure ana="bk:money" quantity="170000" unit="#maravedí">c lxx U -</measure>
+                  </cell>
+               </row>
+               <row>
+                  <cell>[here are some rows missing]</cell>
+               </row>
+               <row n="6" xml:id="total.1" ana="bk:total bk:debit">
+                  <cell/>
+                  <cell>
+                     <measure ana="bk:money" quantity="1258000"
+                        unit="#maravedí">i qo cc l viij U -</measure>
+                  </cell>
                </row>
             </table>
          </div>
