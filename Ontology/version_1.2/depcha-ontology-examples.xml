@@ -37,6 +37,30 @@
             </unitDef>
          </unitDecl>
       </encodingDesc>
+      <profileDesc>
+         <particDesc>
+            <listPerson>
+               <person xml:id="pers_SR051">
+                  <persName>
+                     <forename>anderlein</forename>
+                     <surname>N/A</surname>
+                     <addName>Fischer</addName>
+                  </persName>
+               </person>
+               <person xml:id="pers_Wrigley">
+                  <persName>
+                     <forename type="first">James</forename>
+                     <surname>Wrigley</surname>
+                  </persName>
+                  <birth when="1827">
+                     <region>Massachusetts</region>
+                  </birth>
+                  <sex value="1"/>
+                  <occupation>carpenter</occupation>
+               </person>
+            </listPerson>
+         </particDesc>
+      </profileDesc>
    </teiHeader>
    <text>
       <body>
@@ -52,25 +76,73 @@
                   </rs> beurkundet seinen letzten Willen. Er schafft: 1. dass man ihn erberleich zu
                   der erden bestatten und die echter von St. Stephan den ersten bis zum dreissigsten
                   Tag des Nachts eine gesungene Vigilie und des Morgens ein Seelamt halten sollen;
-                  <span ana="bk:entry">2. in die Klöster: <rs type="fn" role="recipient">zu den
-                     <name ana="bk:to" ref="#k.1">Schotten</name>, gen <name ana="bk:to" ref="#k.2">sand
-                        Dorothe</name>, gen den <name ana="bk:to" ref="#k.3">Minnornbrudern</name>, zu den
-                     <name ana="bk:to" ref="#k.4">Augustinern</name>, gen den <name ana="bk:to" ref="#k.5">Predigern
-                        und den Weissenbrudern</name>, gen <name ana="bk:to" ref="#k.6">sand Clarn</name>,
-                        gen sand Niclas vor Stubentor, zu sand Maria Magdalen vor Schottentor, zu sand
-                           Larenzen hincz der Himelporten, zu sand Jacob
-                           und hincz sand Jeronimus</rs> <measure ana="bk:money bk:each" quantity="2" unitRef="#unit.1">je 
-                       2 lb dn.</measure></span>, wogegen diese nach
-                  seinem Ableben des Nachts eine gesungene Vigilie und des Morgens ein Seelamt
-                  begehen sollen; <span ana="bk:entry">3. dass <span ana="bk:to bk:group">jedem
-                        Armen</span> in dem Spital vom ersten bis zum dreissigsten Tag <measure
-                        ana="bk:money" quantity="1" unitRef="#unit.1">1 dn.</measure> gegeben
-                     werde</span>; 4. hincz sand Mertten, hincz sand Tibolt in den dritten Orden, in
-                  die zwai selheuser, in die dreu siechheuser vor der stat je 1 lb dn.; 5. hincz
-                  sand Stephan zu dem pau 10 lb dn. und hincz sand Michel 5 lb dn., wogegen in
-                  beiden Kirchen und im Bürgerspital eine gesungene Vigilie und ein Seelamt gehalten
-                  werden soll;</rs>
+                     <span ana="bk:entry">2. in die Klöster: <rs type="fn" role="recipient">zu den
+                           <name ana="bk:to" ref="#k.1">Schotten</name>, gen <name ana="bk:to"
+                           ref="#k.2">sand Dorothe</name>, gen den <name ana="bk:to" ref="#k.3"
+                           >Minnornbrudern</name>, zu den <name ana="bk:to" ref="#k.4"
+                           >Augustinern</name>, gen den <name ana="bk:to" ref="#k.5">Predigern und
+                           den Weissenbrudern</name>, gen <name ana="bk:to" ref="#k.6">sand
+                           Clarn</name>, gen sand Niclas vor Stubentor, zu sand Maria Magdalen vor
+                        Schottentor, zu sand Larenzen hincz der Himelporten, zu sand Jacob und hincz
+                        sand Jeronimus</rs>
+                     <measure ana="bk:money bk:each" quantity="2" unitRef="#unit.1">je 2 lb
+                        dn.</measure></span>, wogegen diese nach seinem Ableben des Nachts eine
+                  gesungene Vigilie und des Morgens ein Seelamt begehen sollen; <span ana="bk:entry"
+                     >3. dass <rs ana="bk:to bk:group" ref="#group.1">jedem Armen</rs> in dem Spital
+                     vom ersten bis zum dreissigsten Tag <measure ana="bk:money" quantity="1"
+                        unitRef="#unit.1">1 dn.</measure> gegeben werde</span>; 4. hincz sand
+                  Mertten, hincz sand Tibolt in den dritten Orden, in die zwai selheuser, in die
+                  dreu siechheuser vor der stat je 1 lb dn.; 5. hincz sand Stephan zu dem pau 10 lb
+                  dn. und hincz sand Michel 5 lb dn., wogegen in beiden Kirchen und im Bürgerspital
+                  eine gesungene Vigilie und ein Seelamt gehalten werden soll;</rs>
             </p>
+         </div>
+         <div>
+            <head>Example - Schlandersberger Rechungen, 1402</head>
+            <p> Nota das ist die zetel<lb/> Raigister 1 des <name ref="#pers_SR001" type="person"
+                  ana="bk:to"> hans <damage><supplied reason="missing"
+                  >[kelner]</supplied></damage></name>
+            </p>
+            <p>
+               <span ana="bk:entry">Item am <date ana="bk:when" when="1402-01-01">s<supplied
+                        reason="missing">[o]</supplied>nntag nach Eibnitÿ []</date> prachten dÿ<lb/>
+                  <name ref="#pers_SR051" ana="bk:from bk:group">obgeschriben visser</name>
+                  <measure ana="bk:commodity" commodity="Fisch" quantity="18" unit="Pfund">18 lb
+                     visch</measure> und<lb/> am mitwoch dar nach Rait <name ref="pers_SR052"
+                     type="person">herr Kaspar</name><lb/> gen phenïs</span>.<lb/>
+               <span ana="bk:entry">Item am <date ana="bk:when" when="1402-01-01">mitwochen nach
+                     philippi jacobi</date> []<lb/> das was am anffart abuetz pracht der<lb/>
+                  <!-- solz von den vischern = name? -->
+                  <name ref="pers_SRXXX" type="person" ana="bk:from">sloz von den vischern</name>
+                  <measure ana="bk:commodity" commodity="Fisch" quantity="10" unit="Pfund"> 10 lb
+                     visch </measure>und<lb/> was<name ref="pers_SR053" type="person"> herr
+                     hainreich</name> hie</span>
+            </p>
+         </div>
+         <div>
+            <head>Example - <name ana="bk:from" ref="#pers_Wheaton">Laban Morey Wheaton</name>Laban Morey Wheaton Day Book</head>
+            <table>
+               <head>
+                  <date ana="bk:when" when="1828-09-15">Monday September-15th-1828</date>
+               </head>
+               <row ana="bk:entry">
+                  <cell ana="bk:status">settled</cell>
+                  <cell>
+                     <name ana="bk:to" type="person" ref="#pers_Wrigley">Samuel Wrigley</name>
+                     <choice>
+                        <abbr ana="bk:debit">Dr</abbr>
+                        <expan>Debtor</expan>
+                     </choice>
+                     <lb/>To <measure ana="bk:commodity" unit="bushels" quantity="0.5"
+                        commodity="#c_springrye">1/2 bushel spring Rye</measure> 6/6</cell>
+                  <cell/>
+                  <cell>
+                     <measure ana="bk:money" quantity="53" unit="cent">53</measure>
+                  </cell>
+                  <cell/>
+                  <cell/>
+               </row>
+            </table>
          </div>
       </body>
    </text>
