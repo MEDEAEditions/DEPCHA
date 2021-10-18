@@ -20,7 +20,7 @@ institution like universities
 editors of the digital resource (persons)
 
 ## dc:date 
-point or period of time associated with the lifecycle of the original resource
+point or period of time associated with the lifecycle of the original resource (year/s)
 
 ## dc:coverage 
 spatial identification of the original resource
