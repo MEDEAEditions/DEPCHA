@@ -3,7 +3,7 @@ The metadata in the context files (context_dc.xml) referring to single bookkeepi
 For the DEPCHA collections and datasets the DC metadata elements were completed according to the subsequent content clarifications:
 
 ## dc:title 
-name of the collection or the digital resource
+name of the collection/dataset or the digital resource
 
 ## dc:creator 
 name of the person or organisation responsible for creating the original resource - NOT the editor of the digital edition
