@@ -692,9 +692,9 @@
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#GovernmentTransfer -->
 
-    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#GovernmentTransfer">
+    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#TransferPayment">
         <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#MonetaryValue"/>
-        <rdfs:comment xml:lang="en">A government transfer is a redistribution of income and wealth
+        <rdfs:comment xml:lang="en">A transfer payment is a redistribution of income and wealth
             by means of the government making a payment, without goods or services being received in
             return.</rdfs:comment>
         <rdfs:label xml:lang="de">Transferleistung</rdfs:label>
@@ -823,13 +823,12 @@
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Total -->
 
-    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Total">
+    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#TotalTransaction">
         <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object"/>
-        <rdfs:comment xml:lang="de">ToDo</rdfs:comment>
-        <rdfs:comment xml:lang="en">ToDo</rdfs:comment>
-        <rdfs:label xml:lang="de">Total</rdfs:label>
-        <rdfs:label xml:lang="en">Total</rdfs:label>
-        <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q1166072"/>
+        <rdfs:comment xml:lang="de">Gesamttransaktionen bezeichnet die Gesamtheit der Transaktionen, die in einem bestimmten Zeitrahmen oder Kontext stattfinden.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Total Transactions means the total of transactions occurring in a time frame or context.</rdfs:comment>
+        <rdfs:label xml:lang="en">Total Transaction</rdfs:label>
+        <rdfs:label xml:lang="de">Gesamttransaktion</rdfs:label>
     </owl:Class>
 
 

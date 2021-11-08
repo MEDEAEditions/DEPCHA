@@ -36,6 +36,37 @@
                <label xml:lang="de">lb dn.</label>
             </unitDef>
          </unitDecl>
+         <classDecl>
+            <taxonomy ana="bk:Account" xml:id="leuven">
+               <category xml:id="ontfanck">
+                  <gloss>Income</gloss>
+                  <category xml:id="assize">
+                     <gloss>assize</gloss>
+                     <category xml:id="beerAssize">
+                        <gloss>beer assize</gloss>
+                     </category>
+                     <category xml:id="guildAssize">
+                        <gloss>guild assize</gloss>
+                     </category>
+                  </category>
+                  <category xml:id="jaerrrenten_income">
+                     <gloss>yearly rents</gloss>
+                  </category>
+               </category>
+               <category xml:id="uutghegeven">
+                  <gloss>Expenses</gloss>
+                  <category xml:id="lijftochten">
+                     <gloss>usufruct</gloss>
+                  </category>
+                  <category xml:id="erfrenten">
+                     <gloss>annuities</gloss>
+                  </category>
+                  <category xml:id="schinken">
+                     <gloss>drinking money</gloss>
+                  </category>
+               </category>
+            </taxonomy>
+         </classDecl>
       </encodingDesc>
       <profileDesc>
          <particDesc>
@@ -64,7 +95,7 @@
    </teiHeader>
    <text>
       <body>
-         <div>
+         <div type="example">
             <head>Example - Quellen zur Geschichte der Stadt Wien, Bd. II/2, Nr. 3285 as published
                in HAUrk by Wiener Stadt- und Landesarchiv, Wien 1449</head>
             <p>In a testament, it is recorded who receives money. Thus, listed monasteries each
@@ -100,7 +131,7 @@
                   eine gesungene Vigilie und ein Seelamt gehalten werden soll;</rs>
             </p>
          </div>
-         <div>
+         <div type="example">
             <head>Example - Schlandersberger Rechungen, 1402</head>
             <p>The "obgeschriben visser" gave 18 pounds of fish.</p>
             <p> Nota das ist die zetel<lb/> Raigister 1 des <name ref="#pers_SR001" type="person"
@@ -115,7 +146,7 @@
                      visch</measure> und<lb/> am mitwoch dar nach Rait <name ref="pers_SR052"
                      type="person">herr Kaspar</name><lb/> gen phenïs</span>. </p>
          </div>
-         <div>
+         <div type="example">
             <head>Example - <name ana="bk:to" ref="#pers_Wheaton">Laban Morey Wheaton</name>Laban
                Morey Wheaton Day Book</head>
             <p>Samuel Wrigley buys 0.5 bushel spring rye from Laban Morey Wheaton and pays 53
@@ -143,7 +174,7 @@
                </row>
             </table>
          </div>
-         <div>
+         <div type="example">
             <head>Tax Rolls of Medieval Paris 1297 (<name ana="bk:to" ref="#P04">Philip the
                   Fair</name>)</head>
             <p>Phellippe le chandelier pays 8 sous. Remi des napes pays 24 sous.</p>
@@ -184,11 +215,12 @@
                </item>
             </list>
          </div>
-         <div>
+         <div type="example">
             <head>Burgos Accounts <orgName ana="bk:from" ref="salamanca">サラマンカ商会</orgName>の帳簿</head>
             <table facs="#zone_jmr_kkm_bmb">
                <row n="1" ana="bk:entry bk:debit" corresp="#total.1">
-                  <cell ana="desc">+<persName ref="#BRGSSLMNC0018" ana="bk:to">Alonso de beguillas</persName>
+                  <cell ana="desc">+<persName ref="#BRGSSLMNC0018" ana="bk:to">Alonso de
+                        beguillas</persName>
                      <span ana="bk:account">deue</span> En <date ana="bk:when" when="1558-01-01">pro
                         de Henero</date> 170 U que so^ Por el rrsto de/otra su quenta del libro
                      viejo de los negos De rroan de compa que son por 5 U rres que le dio <persName
@@ -200,8 +232,9 @@
                </row>
                <row n="2" ana="bk:entry bk:debit" corresp="#total.1">
                   <cell ana="desc">+ <date ana="bk:when" when="1558-01-01">en este dia</date> 170 U
-                     que son por 5 U rres que por cedula de <persName ref="#BRGSSLMNC0013" ana="bk:to">garcia De
-                        Salamanca</persName> le <span ana="bk:account">dio</span>
+                     que son por 5 U rres que por cedula de <persName ref="#BRGSSLMNC0013"
+                        ana="bk:to">garcia De Salamanca</persName> le <span ana="bk:account"
+                        >dio</span>
                      <persName ref="#BRGSSLMNC0036">Gregorio de santa maria</persName> pez
                      |_29</cell>
                   <cell>
@@ -214,8 +247,75 @@
                <row n="6" xml:id="total.1" ana="bk:total bk:debit">
                   <cell/>
                   <cell>
-                     <measure ana="bk:money" quantity="1258000"
-                        unit="#maravedí">i qo cc l viij U -</measure>
+                     <measure ana="bk:money" quantity="1258000" unit="#maravedí">i qo cc l viij U
+                        -</measure>
+                  </cell>
+               </row>
+            </table>
+         </div>
+         <div type="example">
+            <head>Example - City Accounts of Leuven</head>
+            <p> sal 5066 (rekening <date ana="bk:when" when="1438-08-01">1 augustus 1438-31</date>
+               juli 1439)</p>
+            <table rend="rules">
+               <head>
+                  <term ana="bk:to" ref="#leuven">
+                     <hi rend="bold underline">ontfanck</hi>
+                  </term>
+               </head>
+               <span>...</span>
+               <row>
+                  <cell cols="6"> </cell>
+               </row>
+               <row ana="bk:total">
+                  <cell><term ana="bk:from bk:account" ref="#beerAssize">
+                     <hi rend="underline">so(m)ma so(m)marum </hi>van alden
+                     ontfanghe binne(n) desen yersten q(ua)rt(en) jaers compt te gad(er)
+                     op</term></cell>
+                  <cell><measure ana="bk:money" unit="guilders" quantity="2925">ii[m]ix[c]xxv gul(den)
+                     r(ijns)</measure> l pl(acken) <measure ana="bk:money" unit="schellingen" quantity="12"
+                        >xii s p</measure>
+                     <measure ana="bk:money" unit="placken" quantity="50"> stuc te liiii pl(acken)
+                        get(eld)</measure></cell>
+               </row>
+               <row ana="bk:total">
+                  <cell><term ana="bk:from bk:account" ref="#jaerrrenten_income">
+                     <hi rend="underline">so(mma)</hi> vand(en) erfchijse binne(n) den
+                     voirs(creven) andere(n) q(ua)rt(en) jaers </term></cell>
+                  <cell><measure ana="bk:money" unit="placken" quantity="3626">iii[m] vi[c] xxvi
+                     pl(acken)</measure></cell>
+               </row>
+            </table>
+            <table rend="rules">
+               <head>
+                  <term ana="bk:from" ref="#leuven">
+                     <hi rend="bold underline">uutghegeven</hi>
+                  </term>
+               </head>
+               <span>...</span>
+               <row ana="bk:total">
+                  <cell><term ana="bk:to bk:account" ref="#butenpoirters">
+                     <hi rend="underline">so(mma)</hi> vand(en) voirs(creven) buten
+                     port(er)gelde dat come(n) es binne(n) den voirs(creven) ander(en)
+                     q(ua)rt(en) jaers co(m)pt op </term></cell>
+                  <cell><measure ana="bk:money" unit="gulders" quantity="233">ii[c]xxxiii
+                     gul(den)</measure></cell>
+               </row>
+               <row ana="bk:total">
+                  <cell><term ana="bk:from bk:account" ref="#erfrenten">
+                     <hi rend="underline">so(mma)</hi> vand(en) erfchijse binne(n) den
+                     voirs(creven) andere(n) q(ua)rt(en) jaers </term></cell>
+                  <cell><measure ana="bk:money" unit="placken" quantity="3626">iii[m] vi[c] xxvi
+                     pl(acken)</measure></cell>
+               </row>
+               <row ana="bk:total">
+                  <cell><term ana="bk:from bk:account" ref="#lijftochten">
+                     <hi rend="underline">som(ma)</hi> vand(en) voirs(creven) alrehande
+                     div(er)sche uutgheve iiii[m] viii[c] lxxxviii pl(acken) </term></cell>
+                  <cell><measure ana="bk:money" unit="guilders" quantity="90">xc gul(den)</measure>
+                     <measure ana="bk:money" unit="placken" quantity="28">xxviii pl(acken)</measure>
+                     <measure ana="bk:money" unit="schellingen" quantity="20">xx s(chellingen)
+                        p(ayments)</measure>
                   </cell>
                </row>
             </table>
