@@ -1,0 +1,20 @@
+PREFIX bds: <http://www.bigdata.com/rdf/search#>
+PREFIX bk: <https://gams.uni-graz.at/o:depcha.bookkeeping#>
+PREFIX t: <http://www.tei-c.org/ns/1.0/>
+PREFIX gams: <https://gams.uni-graz.at/o:gams-ontology#>
+
+# author:Christopher pollin
+# param: URI of data set = Collection, referenced by gams:isMemberOfCollection
+# expenses ?ex; income in, ?ds bk:Dataset, ?w bk:when
+
+
+SELECT (COUNT(?t) As ?t_count) ?b
+where{
+  
+  ?t a bk:Transaction ;
+     gams:isMemberOfCollection $1;
+     bk:consistsOf ?tr.
+  ?tr bk:from|bk:to ?b.
+           
+}
+GROUP BY ?b
