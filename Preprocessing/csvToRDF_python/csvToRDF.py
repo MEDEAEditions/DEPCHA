@@ -25,7 +25,7 @@ count_transfers = 0
 count_moneys = 0
 count_commodities = 0
 count_services = 0
-count_betweens = 0
+count_EconomicUnits = 0
 
 ########################################################################################
 # FUNCTIONS
@@ -145,21 +145,21 @@ def createTransferOfMoney(Transaction_URI, Transaction):
 #
 # 
 def getFromOrTo(Transfer):
-    if(pd.notnull(row["bk_between"])):
-        #Between_URI = BASE_URL + PID + "#B." + str(normalized_name)
-        Between_URI = BASE_URL + PID + "#B." + normalizeStringforURI(row["bk_between"])
-        Between = URIRef(Between_URI)
+    if(pd.notnull(row["bk_economic_unit"])):
+        #EconomicUnit_URI = BASE_URL + PID + str(normalized_name)
+        EconomicUnit_URI = BASE_URL + PID + normalizeStringforURI(row["bk_economic_unit"])
+        EconomicUnit = URIRef(EconomicUnit_URI)
         # check the already graph pattern if the current transfer has bk:debit or bk:credit
         # if bk:debit than Washington is getting money
         # A debit entry in an account represents a transfer of value to that account
         if (Transfer, BK.debit, None) in output_graph:
-            output_graph.add((Transfer, BK.to, ACCOUNTHOLDER))
-            output_graph.add((Transfer, BK_from_property, Between)) 
+            output_graph.add((Transfer, BK.to, BK_MAIN_ECONOMIC_UNIT_URI))
+            output_graph.add((Transfer, BK_from_property, EconomicUnit)) 
         # if bk:credit than Washington is spending money
         # and a credit entry represents a transfer from the account.
         elif (Transfer, BK.credit, None) in output_graph:
-            output_graph.add((Transfer, BK.to,  Between))
-            output_graph.add((Transfer, BK_from_property, ACCOUNTHOLDER ))  
+            output_graph.add((Transfer, BK.to,  EconomicUnit))
+            output_graph.add((Transfer, BK_from_property, BK_MAIN_ECONOMIC_UNIT_URI ))  
         else:
             False
             #Debug_FromToEmpty += 1
@@ -281,13 +281,13 @@ Debug_Count_No_BK_ENTRY = 0;
 
 folder = "gwfp"
 file_extension = ".json"
-config_json_filename = "csvToRDF_config__Ledger_C"
+config_json_filename = "csvToRDF_config__Ledger_minimal"
 
 ###
 # get all JSON confic files in a folder
 # for a single file: 
-#all_JSON_filenames = [i for i in glob.glob(f"{folder}/{config_json_filename}{file_extension}")]
-all_JSON_filenames = [i for i in glob.glob(f"{folder}/*{file_extension}")]
+all_JSON_filenames = [i for i in glob.glob(f"{folder}/{config_json_filename}{file_extension}")]
+#all_JSON_filenames = [i for i in glob.glob(f"{folder}/*{file_extension}")]
 ########################################################################################
 for json_file in all_JSON_filenames:
     # open confic file
@@ -308,7 +308,10 @@ for json_file in all_JSON_filenames:
     VOID = Namespace("http://rdfs.org/ns/void#")
     FOAF = Namespace("http://xmlns.com/foaf/spec/")
     DCTERMS = Namespace("http://purl.org/dc/terms/")
+    DEPCHA = Namespace("https://gams.uni-graz.at/o:depcha.ontology#")
     BASE_URL = "https://gams.uni-graz.at/"
+    DC = Namespace("http://purl.org/dc/elements/1.1/")
+    
     # make a graph
     output_graph = Graph()
     # define namespace in output file
@@ -318,13 +321,15 @@ for json_file in all_JSON_filenames:
     output_graph.bind("void", VOID)
     output_graph.bind("foaf", FOAF)
     output_graph.bind("dcterms", DCTERMS)
+    output_graph.bind("dc", DC)
+    output_graph.bind("depcha", DEPCHA)
 
     #############################
     ### load data from confic file
     CONTEXT = config_data["CONTEXT"]
     PID = config_data["PID"]
-    ACCOUNTHOLDER_URI = BASE_URL + CONTEXT + "#B." + config_data["BK_MAIN_BETWEEN_ID"]
-    ACCOUNTHOLDER = URIRef(ACCOUNTHOLDER_URI)
+    BK_MAIN_ECONOMIC_UNIT_LABEL = config_data["BK_MAIN_ECONOMIC_UNIT_LABEL"]
+    BK_MAIN_ECONOMIC_UNIT_URI = URIRef(BASE_URL + CONTEXT + config_data["BK_MAIN_ECONOMIC_UNIT_ID"])
 
     # from is reserved term in python
     BK_from_property = URIRef("https://gams.uni-graz.at/o:depcha.bookkeeping#from")
@@ -336,7 +341,8 @@ for json_file in all_JSON_filenames:
     count_moneys = 0
     count_commodities = 0
     count_services = 0
-    count_betweens = 0
+    count_economic_units = 0
+    count_economic_assets = 0
 
     ########################################################################################
     ### https://www.w3.org/TR/void/
@@ -345,11 +351,6 @@ for json_file in all_JSON_filenames:
     output_graph.add((VOID_Dataset, RDF.type, VOID.Dataset ))
     # foaf
     output_graph.add((VOID_Dataset, FOAF.homepage, URIRef(BASE_URL + PID)))
-    # dcterms from confic_file
-    output_graph.add((VOID_Dataset, DCTERMS.title, Literal("Titel")))
-    output_graph.add((VOID_Dataset, DCTERMS.description, Literal("description")))
-    output_graph.add((VOID_Dataset, DCTERMS.source, Literal("source")))
-    output_graph.add((VOID_Dataset, DCTERMS.subject, Literal("subject")))
     # generated
     output_graph.add((VOID_Dataset, DCTERMS.modified, Literal(date.today())))
     # void 
@@ -361,11 +362,7 @@ for json_file in all_JSON_filenames:
     output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("http://purl.org/dc/terms/")))
     output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("http://www.ontology-of-units-of-measure.org/resource/om-2/")))
     output_graph.add((VOID_Dataset, VOID.triples, Literal(0)))
-   
-    # dcterms:title "DBPedia";
-    # dc:title
-    # date
-    #
+
     
     ########################################################################################
     ### Currency <om:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#pound">
@@ -404,29 +401,37 @@ for json_file in all_JSON_filenames:
         
         
     ########################################################################################
-    ### Distinct bk:Between
+    ### Distinct bk:EconomicUnit
     ########################################################################################
-    # * if a BK_BETWEEN column exists create a distinct set of <bk:Between>
+    # * if a bk_EconomicUnit column exists create a distinct set of <bk:EconomicUnit>
     # * therwise make a distinct list of all entries in the BK_FROM and BK:TO column   
     
-    if('bk_between' in df.columns):
+    # todo bk:Group, bk:Individual
+    if(BK_MAIN_ECONOMIC_UNIT_URI):
+        output_graph.add((BK_MAIN_ECONOMIC_UNIT_URI, RDF.type,  BK.EconomicUnit))
+        output_graph.add((BK_MAIN_ECONOMIC_UNIT_URI , RDFS.label,  Literal(normalizeStringforJSON(BK_MAIN_ECONOMIC_UNIT_LABEL)) ))
+        count_economic_units += 1
+    
+      
+    if('bk_economic_unit' in df.columns):
         print("in column")
-        for name in df.bk_between.unique():
+        for name in df.bk_economic_unit.unique():
             # normalize for URI
             if(type(name)==str):
                 normalized_name = normalizeStringforURI(name)
-                Between_URI = BASE_URL + PID + "#B." + str(normalized_name)
-                Between = URIRef(Between_URI)
-                output_graph.add((Between, RDF.type,  BK.Between))
-                output_graph.add((Between , RDFS.label,  Literal(normalizeStringforJSON(name)) ))
-        print("Log: distinct BK_BETWEEN ... check") 
+                EconomicUnit_URI = BASE_URL + PID + str(normalized_name)
+                EconomicUnit = URIRef(EconomicUnit_URI)
+                output_graph.add((EconomicUnit, RDF.type,  BK.EconomicUnit))
+                output_graph.add((EconomicUnit , RDFS.label,  Literal(normalizeStringforJSON(name)) ))
+                count_economic_units += 1
+        print("Log: distinct bk_EconomicUnit ... check") 
     elif('bk_to' in df.columns or 'bk_from' in df.columns):
         print("yes")
     else:
-        print("Log: was not able to create distinct bk.Between")    
+        print("Log: was not able to create distinct BK.EconomicUnit")    
 
     
-    # bk:Between
+    # bk:EconomicUnit
     # multiple names in column, seperator from forename and surname is the same as seperator from names
     # hack: if 1 or less , than its just on name or cash or orgName
          
@@ -533,10 +538,14 @@ for json_file in all_JSON_filenames:
         if('bk_when' in df.columns):
             if(pd.notnull(row["bk_when"])):
                 try:
-                    normalized_date = dateutil.parser.parse(row['bk_when'], ignoretz=True).strftime('%Y-%m-%d')
-                    output_graph.add((Transaction, BK.when,  Literal(normalized_date) ))
+                    # if more than two words try to parse the %Y-%m-%d - date
+                    if(len(row['bk_when'].split()) > 2):
+                        normalized_date = dateutil.parser.parse(row['bk_when'], ignoretz=True).strftime('%Y-%m-%d')
+                    else:
+                        normalized_date = dateutil.parser.parse(row['bk_when'], ignoretz=True).strftime('%Y-%m')
+                    output_graph.add((Transaction, BK.when, Literal(normalized_date) ))
                 except:
-                    print(f"Log: Found invalid date {row['bk_when']} in row {index}")     
+                    print(f"Error: Found invalid date {row['bk_when']} in row {index}")     
     
     #print(income_db)   
     #print("########")
@@ -546,6 +555,22 @@ for json_file in all_JSON_filenames:
     ########################################################################################
     ### <bk:Dataset>
     ########################################################################################
+    DEPCHA_Dataset_URI = BASE_URL + PID + "#Dataset"
+    DEPCHA_Dataset = URIRef(DEPCHA_Dataset_URI)
+    output_graph.add((DEPCHA_Dataset, RDF.type,  DEPCHA.Dataset))
+    output_graph.add((DEPCHA_Dataset, GAMS.isMemberOfCollection,  URIRef(BASE_URL + CONTEXT) ))
+    output_graph.add((DEPCHA_Dataset, DEPCHA.isMainEconomicUnit,  URIRef(BK_MAIN_ECONOMIC_UNIT_URI) ))
+    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfTransactions, Literal(count_transactions)))
+    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfEconomicUnits, Literal(count_economic_units)))
+    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfEconomicAssets, Literal(count_economic_assets)))
+    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfTotals, Literal(count_totals)))
+    # dcterms from confic_file
+    output_graph.add((DEPCHA_Dataset, DC.title, Literal("Titel")))
+    output_graph.add((DEPCHA_Dataset, DC.description, Literal("description")))
+    output_graph.add((DEPCHA_Dataset, DC.source, Literal("source")))
+    output_graph.add((DEPCHA_Dataset, DC.subject, Literal("subject")))
+
+    
     # create a bk:Dataset for every year
     # it contains info about the sum of all expense and income          
     for year in dates:
@@ -590,8 +615,7 @@ for json_file in all_JSON_filenames:
         
         
         
-    output_graph.add((VOID_Dataset, BK.numberOfTransaction, Literal(count_transactions)))
-    output_graph.add((VOID_Dataset, BK.numberOfTotal, Literal(count_totals)))     
+ 
     ########################################################################################
     ### OUTPUT file .xml
     ########################################################################################
@@ -601,8 +625,8 @@ for json_file in all_JSON_filenames:
 ### DEBUGGING
 print("################## DATASET:")
 #print(DataSets)
-print("################## Distinct bk:Between:")
-#print(DistinctBetween)
+print("################## Distinct bk:EconomicUnit:")
+#print(DistinctEconomicUnit)
 print("################## Columns:")
 #print(df.columns.values)
 print("################## Log:")
@@ -619,7 +643,7 @@ print(f"Log: {count_transfers} bk:Transfer created")
 print(f"Log: {count_moneys} bk:Money created")
 print(f"Log: {count_commodities} bk:Commodity created")
 print(f"Log: {count_services} bk:Service created")
-print(f"Log: {count_betweens} bk:Between created")
+print(f"Log: {count_EconomicUnits} bk:EconomicUnit created")
 print(f"Log: {Debug_Count_No_BK_ENTRY} no valid bk:entry in row.")
 
 
@@ -675,18 +699,18 @@ print(f"new file: {config_data['OUTPUT-FILE-NAME']}.xml")
             # debit = Money from X to Washington
             if(debitOrCredit == "Debit"):
                 #print("Money from Washington to X")
-                From = URIRef(BASE_URL + PID + "#B." + config_data["BK_MAIN_BETWEEN_ID"])
-                To = URIRef(BASE_URL + PID + "#B." + bk_Between)
+                From = URIRef(BASE_URL + PID " + config_data["BK_MAIN_ECONOMIC_UNIT_ID"])
+                To = URIRef(BASE_URL + PID  + bk_EconomicUnit)
             # credit = Money from Washington to X
             elif (debitOrCredit == "Credit"):
                 #print("Money from X to Washington")
-                To = URIRef(BASE_URL + PID + "#B." + config_data["BK_MAIN_BETWEEN_ID"] )
-                From = URIRef(BASE_URL + PID + "#B." + bk_Between)           
+                To = URIRef(BASE_URL + PID  + config_data["BK_MAIN_ECONOMIC_UNIT_ID"] )
+                From = URIRef(BASE_URL + PID" + bk_EconomicUnit)           
         # a column for BK_FROM and BK_TO         
         elif (checkKey(row, 'BK_FROM')):
-            From = URIRef(BASE_URL + PID + "#B." + str(row['BK_FROM']) )
+            From = URIRef(BASE_URL + PID  + str(row['BK_FROM']) )
         elif (checkKey(row, 'BK_TO')):
-            To = URIRef(BASE_URL + PID + "#B." + str(row['BK_TO']) )
+            To = URIRef(BASE_URL + PID + str(row['BK_TO']) )
         else:
             # anonym person uri
             #print("ERROR with bk:to or bk:from")
@@ -776,7 +800,7 @@ print(f"new file: {config_data['OUTPUT-FILE-NAME']}.xml")
             
 
         # TO only ID    
-        #output_graph.add((To, RDF.type,  BK.Between))
+        #output_graph.add((To, RDF.type,  BK.EconomicUnit))
 
     else:
         Debug_CountEmptyRow += 1 

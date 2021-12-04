@@ -81,11 +81,16 @@
                     <label>Fuder</label>
                 </unitDef>
             </unitDecl>
-            <!--<classDecl>
+            <classDecl>
                 <taxonomy ana="bk:Index">
                     <gloss>DEINE TAXONOMY</gloss>
+                    <category xml:id="streue">
+                        <catDesc>
+                            <gloss>Stroh</gloss>
+                        </catDesc>
+                    </category>
                 </taxonomy>
-            </classDecl>-->
+            </classDecl>
         </encodingDesc>
         <profileDesc>
             <particDesc>
@@ -116,7 +121,7 @@
                         <occupation>sel. gewester hochfürstlicher Weingartmeister</occupation>
                     </person>
                 </listPerson>
-                <listOrg>
+                <listOrg ana="bk:Index">
                     <org xml:id="org_1">
                         <!-- CP braucht ein orgName -->
                         <orgName>Rentamt des Fürstentums Liechtenstein</orgName>
@@ -134,7 +139,7 @@
             <note><date when="1718">1718</date>+<date when="1719">1719</date>+<date when="1720"
                     >1720</date></note>
             <div type="Vorwort">
-                <head>Empfang Gelt<lb/> Alter Rest</head>
+                <head><term ana="bk:to" ref="#org_1">Empfang Gelt</term><lb/> Alter Rest</head>
                 <head>Neuer Empfang<lb/> Admodiations Gelt</head>
                 <p> Die ertragnis des stypatirten Admodiationsquarti von <date from="1718-04-23"
                         to="1719-04-23"/>Georgi 1718 bis 1719 per
@@ -147,31 +152,30 @@
                     hochfürstlicher Weingartenmeister nachfolgender gestalt abgestattet. Und
                     zwar</p>
                 <div ana="bk:entry">
-                    <head ana="bk:to" xml:id="account_1">mit bahrem Gelt</head>
+                    <head>mit bahrem Gelt</head>
                     <p>zu Handen der fürstl. Verwaltung vom <date from="1718-09-01" to="1720-03-31"
                             >1. September 1718 bis Endt Marty 1720</date> zusammen hiedurch
-                        geliefert per<measure ana="bk:money" quantity="513" unitRef="#fl">513
+                        geliefert per <measure ana="bk:money" quantity="513" unitRef="#fl">513
                             fl</measure>
                     </p>
                 </div>
                 <div ana="bk:entry">
                     <!-- müsste ich hier auch account_1 als begünstigtes Konto angeben? -->
                     <!-- es muss wo einen index der konten geben.. -->
-                    <head ana="bk:to">mit geliferten wein</head>
+                    <head>mit geliferten wein</head>
                     <p> auf gnedigste <unclear reason="illegible">…bhaltung</unclear> und lauth
                         beygelegter attestation auf die <unclear>ausgerufene</unclear>
                         <!-- stroh ist ein wirtschaftliches gut, also bk:commodity -->
-                        <!-- wie soll ich Güter wie Streue (Stroh) ausweisen? -->streue das virtl a
-                        42 klafter haben 21 fuder ertragen per <measure ana="bk:money"
+                        <!-- wie soll ich Güter wie Streue (Stroh) ausweisen? -->
+                        <!-- Verkauf von Stroh:  -->
+                        <!-- <measure quantity="21" unitRef="#fd" commodity="#streue" ana="bk:commodity"> -->
+                        streue das virtl a 42 klafter haben 21 fuder ertragen per <measure ana="bk:money"
                             quantity="1176" unitRef="#fl">1176</measure>
                     </p>
                 </div>
                 <!-- wieso hier bk:container? was ist bei der Referenz auf account_1 falsch?-->
-                <div ana="bk:container">
-                    <!-- CP -->
-                    <!-- xml:id="account_1" -->
-                    <!-- das ana="bk:to" muss beim @ref dabei sein. -->
-                    <head ana="bk:to"> Von dem Haupt Zollner Liechtenstein <name ana="bk:from"
+                <div>
+                    <head> Von dem Haupt Zollner Liechtenstein <name ana="bk:from"
                             ref="#pers_1">Thomas Walser</name></head>
                     <p ana="bk:entry"> Von <date ana="bk:when" from="1718-10-22" to="1718-11-22"
                             >1. und respective 22. Octobris bis 22. Novembris 1718</date>
@@ -186,16 +190,30 @@
                     </p>
                 </div>
                 <!-- extend="#li_page" -->
+                <!-- seitensummen -->
                 <div ana="bk:total">
                     <p>
                         Latus <measure ana="bk:money" quantity="1689" unitRef="#fl">1689</measure>
                     </p>
                 </div>
-
-
                 <!-- wie soll ich die Seitensummen ontologiekonform ausweisen? -->
                 <!---->
             </div>
+            
+            <!-- /////////////////// -->
+            <!-- AUSGABEN Beispiel:  -->
+            <!--<div>
+                <head><term ana="bk:from" ref="#org_1">Bezahlt Gelt</term><lb/> Alter Rest</head>
+                <p ana="bk:entry">
+                    <term ana="bk:to" ref="#org_1"> Franz </term>
+                    von <date ana="bk:when" from="1718-11-22" to="1718-12-22"
+                    >22. Novembris bis 22 Decembris</date>
+                    <measure ana="bk:money" quantity="60" unitRef="#fl">60</measure>
+                    <measure ana="bk:money" quantity="15" unitRef="#kr">15</measure>
+                    <measure ana="bk:money" quantity="0.25" unitRef="#d">1/4</measure>
+                </p>
+            </div>-->
+            
         </body>
     </text>
 </TEI>
