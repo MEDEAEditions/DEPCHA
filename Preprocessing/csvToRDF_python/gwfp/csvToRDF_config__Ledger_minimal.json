@@ -13,8 +13,8 @@
         "unit": "shilling",
         "conversion": 
         {
-          "hasBaseUnit": "pound",
-          "formular": "$BaseUnit / 20"
+          "convertsTo": "pound",
+          "formula": "$BaseUnit / 20"
         }
       },
       {
@@ -22,8 +22,8 @@
         "unit": "pence",
         "conversion": 
         {
-          "hasBaseUnit": "pound",
-          "formular": "$BaseUnit / 240"
+          "convertsTo": "pound",
+          "formula": "$BaseUnit / 240"
         }
       },
       {
@@ -35,13 +35,33 @@
         "unit": "cent",
         "conversion": 
         {
-          "hasBaseUnit": "dollar",
-          "formular": "$BaseUnit / 100"
+          "convertsTo": "dollar",
+          "formula": "$BaseUnit / 100"
         }
       }
     ]
   },
   "BK_MAIN_ECONOMIC_UNIT_LABEL":"George Washington",
   "BK_MAIN_ECONOMIC_UNIT_ID":"GeorgeWashington",
-  "OUTPUT-FILE-NAME":"depcha-washington.3"
+  "OUTPUT-FILE-NAME":"depcha-washington.sample",
+  "DEPCHA_DATASET_DC_METADATA": 
+  {
+	"title": "GWFP Ledger C minimal sample",
+	"creator": "George Washington",
+	"subject": "Business Accounts",
+	"subject": "Household Accounts",
+	"description": "description",
+    "publisher": "publisher",
+    "contributor": "contributor",
+    "date": "date",
+    "coverage": "coverage",
+    "language": "language",
+	"source": "source",
+	"rights": "rights"
+  }
+  
+  
+  
+  
+  
 }

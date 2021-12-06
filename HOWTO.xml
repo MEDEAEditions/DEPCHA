@@ -3,10 +3,9 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title xml:lang="en">&quot;How to Semantic Bookkeep&quot;. A Tutorial for annotationg
-          digital editions of historical accounts based on the <hi style="italic">Bookkeeping
-            Ontology</hi>
-        </title>
+        <title xml:lang="en" type="main">&quot;How to Semantic Bookkeep&quot;</title>
+        <title type="sub">A Tutorial for annotationg digital editions of historical accounts based
+          on the <hi style="italic">Bookkeeping Ontology</hi></title>
         <author>Christopher Pollin</author>
         <author>Georg Vogeler</author>
       </titleStmt>
@@ -32,9 +31,7 @@
   </teiHeader>
   <text>
     <body>
-      <div type="main">
-        <head>A Tutorial for annotationg digital editions of historical accounts based on the <hi
-            style="italic">Bookkeeping Ontology</hi></head>
+      <div type="howto">
         <div xml:id="div1">
           <head xml:id="head1">TEI/XML</head>
           <div type="body">
@@ -95,7 +92,9 @@
               or is known by the domain expert of the source.<lb/> In this case a table seems to
               describe the text structure the best way and the following XML/TEI snippet can be an
               example for that: </p>
-<p style="XML" xml:space="preserve">
+
+            <p>
+              <code style="XML" xml:space="preserve">
 &lt;text&gt;
   &lt;body&gt;
      &lt;head&gt;Stagville August 1st 1808&lt;/head&gt;
@@ -122,10 +121,11 @@
 &lt;/table&gt;
   &lt;/body&gt;
 &lt;/text&gt;
-</p>
+  </code>
+            </p>
 
-            <p>You can use the full expressiveness XML/TEI Is offering to describe text. For the
-                <hi style="italic">Bookkeeping Ontology</hi> only some annotations using the TEI
+            <p>You can use the full expressiveness XML/TEI Is offering to describe text. For the <hi
+                style="italic">Bookkeeping Ontology</hi> only some annotations using the TEI
               attribute <code>ana</code> are relevant, next to some attributes for formalizing data.
               We will look at that in more detail now.</p>
             <p>The starting point is to define a container for a <hi style="code"
@@ -135,13 +135,15 @@
               TEI guidlines). Using <hi style="attribute">@ana</hi> with the value
               &quot;bk:entry&quot; a TEI structure is defined as an <hi style="code">bk:Entry</hi>
               according to the <hi style="italic">Bookkeeping Ontology</hi>.</p>
-<p style="XML" xml:space="preserve" rend="code">
+<p>
+  <code style="XML" xml:space="preserve">
 &lt;row ana=&quot;bk:entry&quot;&gt;
  &lt;cell&gt;1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6&lt;/cell&gt;
  &lt;cell/&gt;
  &lt;cell&gt;7&lt;/cell&gt;
  &lt;cell&gt;6&lt;/cell&gt;
 &lt;/row&gt;
+  </code>
 </p>
             <div>
               <head xml:id="head_1_2">Commodities, Services and Monetary Values</head>
