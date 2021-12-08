@@ -617,7 +617,7 @@ for json_file in all_JSON_filenames:
             output_graph.add((BK_Unit, RDF.type, BK.Unit ))
             output_graph.add((BK_Unit, RDFS.label, Literal(normalizeStringforJSON(currency["unit"])) ))
             # add to depcha:Dataset the unit
-            output_graph.add((DEPCHA_Dataset, DEPCHA.unit, BK_Unit ))
+            output_graph.add((DEPCHA_Dataset, DEPCHA.currency, BK_Unit ))
             if(currency.get("conversion", False)):
                 BK_Conversion = URIRef(BASE_URL + CONTEXT + "#" + currency["unit"] + "Conversion")
                 output_graph.add((BK_Conversion, RDF.type, BK.Conversion ))
