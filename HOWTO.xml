@@ -124,7 +124,7 @@
   </code>
             </p>
 
-            <p>You can use the full expressiveness XML/TEI Is offering to describe text. For the <hi
+            <p>You can use the full expressiveness XML/TEI is offering to describe text. For the <hi
                 style="italic">Bookkeeping Ontology</hi> only some annotations using the TEI
               attribute <code>ana</code> are relevant, next to some attributes for formalizing data.
               We will look at that in more detail now.</p>
@@ -148,14 +148,14 @@
             <div>
               <head xml:id="head_1_2">Commodities, Services and Monetary Values</head>
               <p> Now we can define inside the row element (<hi style="code">bk:Entry</hi>) further
-                concepts which describe a <hi style="code">bk:Transaction</hi> . A <hi style="code"
+                concepts which describe a <hi style="code">bk:Transaction</hi>. A <hi style="code"
                   >bk:Transaction</hi> consists of at least one <hi style="code">bk:Transfer</hi>. A
                   <hi style="code">bk:Transfer</hi> defines the transfer of a <hi style="code"
                   >bk:Commodity</hi>, <hi style="code">bk:Service</hi> or <hi style="code"
                   >bk:MonetaryValue</hi>
                 <hi style="code">bk:from</hi> one <hi style="code">bk:Between</hi> (abstract class
                 for groups, persons, organizations, accounts etc.) <hi style="code">bk:to</hi>
-                another. We first deal with the question: &quot;what is transferd?&quot;. In this
+                another. We first deal with the question: &quot;what is transfered?&quot;. In this
                 example three different <hi style="code">bk:Commodity</hi> are mentioned: <list>
                   <item>
                     <hi style="italic">1/4 lb Powder</hi>
@@ -182,10 +182,10 @@
                 belongs to the <hi style="code">bk:Commodity</hi> named before: <hi style="italic">¼
                   lb Powder for 2 shilling and 6 pence</hi>. By the way: 1 shilling (s) = 12 pence
                 (d) </p>
-              <p> The <hi style="element">measure</hi> element in TEI allows to annotated countable
+              <p> The <hi style="element">measure</hi> element in TEI allows to annotate countable
                 entities using the attributes <hi style="attribute">@unit</hi>, <hi
                   style="attribute">@commodity</hi> and <hi style="attribute">@quantity</hi>. So we
-                can annotated them and normalize the data using the attributes. To bring together
+                can annotate them and normalize the data using the attributes. To bring together
                   <hi style="code">bk:Commodity</hi> and <hi style="code">bk:Price</hi> we put them
                 together in one <hi style="element">measure</hi> and mark the <hi style="code"
                   >bk:Price</hi> explicitly in an additional measure element. </p>
@@ -218,7 +218,7 @@
               <p> Now we reference the <hi style="element">measure</hi> to the Bookkeeping Ontology
                 using <hi style="attribute">@ana</hi>. We want to say that <hi style="italic"
                   >powder, sugar and shot</hi> are commodities with the price each 2 shilling and 6
-                pence. Therefor we add <hi style="code">ana=&quot;bk:commodity&quot;</hi>, <hi
+                pence. Therefore, we add <hi style="code">ana=&quot;bk:commodity&quot;</hi>, <hi
                   style="code">ana=&quot;bk:money&quot;</hi> and <hi style="code"
                   >ana=&quot;bk:price&quot;</hi> to the elements. </p>
               <p style="XML" xml:space="preserve">
@@ -261,24 +261,24 @@
                   <item>
                     <hi style="italic">7 shilling, 6 pence from James Haley to Stagville</hi>
                   </item>
-                </list> Therefore we use <hi style="code">ana=&quot;bk:from&quot;</hi> and <hi
+                </list> Therefore, we use <hi style="code">ana=&quot;bk:from&quot;</hi> and <hi
                   style="code">ana=&quot;bk:to&quot;</hi>. We add this kind of annotation to any TEI
                 structure you are using for annotating agents in your document like <hi
                   style="element">name</hi>, <hi style="element">persName</hi> or <hi
                   style="element">orgName</hi>. This can also be an unknown group of people like
                   “<hi style="italic">4 farmers pay a 5 $ tax</hi>&quot;. For such cases you can use
                 an element like <hi style="element">span</hi> with an additional <hi style="code"
-                  >ana=&quot;bk:group&quot;</hi>. As for the RDF representation URI’s are needed, we
+                  >ana=&quot;bk:group&quot;</hi>. As for the RDF representation URIs are needed, we
                 have to assign a unique ID for every agent (even for a unknown group) using <hi
                   style="attribute">@ref</hi>. <lb/> Additionally to that we have to make the
                 direction of the transfer explicit by extending the <hi style="attribute">@ana</hi>
-                of the <hi style="element">measure</hi>. Putting <hi style="code">bk:commodity</hi>,
+                of <hi style="element">measure</hi>. Putting <hi style="code">bk:commodity</hi>,
                   <hi style="code">bk:service</hi> or <hi style="code">bk:money</hi> together with
                   <hi style="code">bk:from</hi> or <hi style="code">bk:to</hi> in the same <hi
                   style="attribute">@ana</hi>-attribute indicates the receiver of the respective
                 economic good as indicated in the close context of the annotation. Therefore, a
                 transaction recorded in an account of the Stagville company identifies one party in
-                the every transaction already in the heading:</p>
+                every transaction already in the heading:</p>
               <p style="XML" xml:space="preserve">
     &lt;head&gt;&lt;name ana=&quot;bk:to&quot; ref=&quot;#between.1&quot;&gt;Stagville&lt;/name&gt; August 1st 1808&lt;/head&gt;
               </p>
