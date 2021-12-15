@@ -566,43 +566,29 @@ for json_file in all_JSON_filenames:
     for year in dates:
         # <bk:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#1771">
         depcha_Aggregation_URI = BASE_URL + PID + "#" + year
-        depcha_Aggregation_income = URIRef(depcha_Aggregation_URI + 'I')
-        depcha_Aggregation_expense = URIRef(depcha_Aggregation_URI + 'E')
-        AggregationStmt = URIRef(depcha_Aggregation_URI)
-        output_graph.add((AggregationStmt , RDF.type,  DEPCHA.Aggregation))
-        output_graph.add((AggregationStmt , DEPCHA.aggregates,  URIRef(BASE_URL + PID + "#Dataset") ))
+        Aggregation = URIRef(depcha_Aggregation_URI)
+        output_graph.add((Aggregation, RDF.type,  DEPCHA.Aggregation))
+        output_graph.add((DEPCHA_Dataset, DEPCHA.aggregates, Aggregation))
         # <bk:date>1771</bk:date>
-        output_graph.add((AggregationStmt, DC.date, Literal(year) ))
-        
-        # income
-        #output_graph.add((AggregationStmt, depcha.income, depcha_Dataset_income ))
-        #output_graph.add((depcha_Dataset_income, RDF.type,  BK.IncomeStmt))
-        #output_graph.add((depcha_Dataset_income, BK.unit, URIRef(BASE_URL + CONTEXT + "#" + BK_MAIN_CURRENCY["unit"]) ))
-        #income_sum = 0
-        #for money in income_db[year]:
-            #unit = list(money)[0]
-            #quantity = money.get(unit)
-            # return converted money according to predefined main currency (confic file); add to income sum
-            #income_sum += convert_Money_to_MainCurrency(quantity, unit)
-            #if(str(year) == "1787"):
-            #    print(income_sum)  
-            
+        output_graph.add((Aggregation, BK.when, Literal(year) ))
+        output_graph.add((Aggregation, BK.unit, Literal(BK_MAIN_CURRENCY['unit']) ))
 
-          
-      #  output_graph.add((bk_Dataset_income, BK.sum, Literal(round(income_sum)) ))
-        
-        # expense
-        #output_graph.add((DataSet, BK.expense, bk_Dataset_expense ))
-        #output_graph.add((bk_Dataset_expense, RDF.type,  BK.ExpenseStmt))
-        #output_graph.add((bk_Dataset_income, BK.unit, URIRef(BASE_URL + CONTEXT + "#" + BK_MAIN_CURRENCY["unit"]) )) 
-        #expense_sum = 0
-        #for money in expense_db[year]:
-        #    unit = list(money)[0]
-         #   quantity = money.get(unit)
-            # 
-         #   expense_sum += convert_Money_to_MainCurrency(quantity, unit)      
-        #output_graph.add((bk_Dataset_expense, BK.sum, Literal(round(expense_sum)) ))
+        # income / debit
+        revenue_sum = 0
+        for money in income_db[year]:
+            unit = list(money)[0]
+            quantity = money.get(unit)
+            # return converted money according to predefined main currency (confic file)
+            revenue_sum += convert_Money_to_MainCurrency(quantity, unit) 
+        output_graph.add((Aggregation, BK.debit, Literal(float(revenue_sum)) ))
 
+        # expense / credit
+        expenditure_sum = 0
+        for money in expense_db[year]:
+            unit = list(money)[0]
+            quantity = money.get(unit)
+            expenditure_sum += convert_Money_to_MainCurrency(quantity, unit) 
+        output_graph.add((Aggregation, BK.credit, Literal(float(expenditure_sum)) ))
 
     ########################################################################################
     ### Currency <om:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#pound">

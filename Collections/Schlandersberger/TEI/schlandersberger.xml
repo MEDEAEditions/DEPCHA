@@ -203,6 +203,9 @@
             </unitDef>
             <unitDef ref="wd:Q165717" type="currency" xml:id="lb" ana="bk:mainCurrency">
                <label xml:lang="de">lb</label>
+               <!-- fake conversion: -->
+               <conversion fromUnit="#lb" toUnit="#Mark" formula="$fromUnit div 2"/>
+               <conversion fromUnit="#lb" toUnit="#Groschen" formula="$fromUnit div 4"/>
             </unitDef>
             <unitDef ref="wd:Q100995" type="weight" xml:id="Pfund">
                <label xml:lang="de">Pfund</label>
