@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title xml:lang="en" type="main">"How to Semantic Bookkeep"</title>
+        <title type="sub">A Tutorial for annotationg digital editions of historical accounts based
+          on the <hi rend="italic">Bookkeeping Ontology</hi></title>
+        <author>Christopher Pollin</author>
+        <author>Georg Vogeler</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher xml:lang="de">Universität Graz</publisher>
+        <publisher xml:lang="en">University of Graz</publisher>
+        <date when="2021-02-11">11.02.2021</date>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl/>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <projectDesc>
+        <p>DEPCHA - Digital Edition Publishing Cooperative for Historical Accounts</p>
+      </projectDesc>
+    </encodingDesc>
+    <profileDesc>
+      <langUsage>
+        <language ident="en">English</language>
+      </langUsage>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div xml:id="tutorial">
+        <div xml:id="introduction">
+          <head>Introduction</head>
+          <p>This tutorial described several ways how data of historical accounts can be prepared to
+            be ready to publish in DEPCHA.</p>
+        </div>
+        <div xml:id="chapter.1">
+          <head>XML/TEI</head>
+          <p>The following snippet of a historical accounting book (image and transcription) is used
+            as an example to illustrate a possible way of annotating a digital edition using XML/TEI
+            and its connection the <ref target="https://gams.uni-graz.at/o:depcha.bookkeeping"
+              >Bookkeeping Ontology</ref>. </p>
+          <ab>
+            <figure>
+              <graphic url="/archive/objects/context:depcha/datastreams/STAGVILLE/content"/>
+              <caption>The Stagville Accounts</caption>
+            </figure>
+          </ab>
+          <p>Here you see the transcription of the given example:</p>
+          <table>
+            <head>Stagville August 1st 1808 <lb/> 69 James Haley Self Dr.</head>
+            <row>
+              <cell/>
+              <cell>1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6</cell>
+              <cell/>
+              <cell>7</cell>
+              <cell>6</cell>
+            </row>
+            <row>
+              <cell/>
+              <cell>1 Shoe Knife 1/6</cell>
+              <cell/>
+              <cell>1</cell>
+              <cell>6</cell>
+            </row>
+            <row>
+              <cell/>
+              <cell/>
+              <cell/>
+              <cell>9</cell>
+              <cell>-</cell>
+            </row>
+          </table>
+          <p>This structure in the source describes two <code>bk:Transaction</code> with their
+            textual representation (<span type="tooltip"><code>bk:entry</code><note>bk:entry is
+                written small as it represents a data propery and not a class.</note></span>). If
+            something in this tutorial begins with the prefix <code>bk:</code> it means, that it is
+            a concept defined in the Bookkeeping Ontology. It can be expanded to
+              <code>http://gams.uni-graz.at/o:depcha.bookkeeping#</code>, for instance via a
+            TEI-prefix definition <code rend="element"><![CDATA[<tei:prefixDef>]]></code>.</p>
+          <list>
+            <item>
+              <hi rend="italic">1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6 | 7 | 6</hi>
+            </item>
+            <item>
+              <hi rend="italic">1 Shoe Knife 1/6 | 1 | 6</hi>
+            </item>
+          </list>
+          <p>Having a look at the first <code>bk:entry</code> we can summarize the interpretation of
+            it as the following: <lb/> The person <hi rend="italic">James Haley</hi> buys <hi
+              rend="italic">1/4 lb Powder</hi> for the price of <hi rend="italic">2/6</hi> and he
+            further buys <hi rend="italic">1 lb Shot</hi> for the price of <hi rend="italic"
+              >2/6</hi> and at last he buys <hi rend="italic">1 lb Sugar</hi> for the price of <hi
+              rend="italic">2/6</hi> from <hi rend="italic">Stagville</hi>. Stagville represents a
+            farm (plantage). James Haley transfers therefore the monetary value of 7 shilling and 6
+            pence to Stagville. Some information is not explicit inside a <code>bk:entry</code> and
+            can be found in the header or is known by the domain expert of the source.<lb/> In this
+            case a table seems to describe the text structure the best way and the following XML/TEI
+            snippet can be an example for that: </p>
+          <ab>
+            <code rend="block" lang="XML">
+              <![CDATA[<text>
+  <body>
+    <head>Stagville August 1st 1808</head>
+    <table>
+     <head>69 James Haley J Self Dr.</head>
+     <row>
+       <cell>1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6</cell>
+       <cell/>
+       <cell>7</cell>
+       <cell>6</cell>
+     </row>
+     <row>
+       <cell>Shoe Knife 1/6</cell>
+       <cell/>
+       <cell>1</cell>
+       <cell>6</cell>
+     </row>
+     <row>
+       <cell/>
+       <cell/>
+       <cell>9</cell>
+       <cell>-</cell>
+     </row>
+    </table>
+  </body>
+</text>
+]]>
+            </code>
+            <caption>Two entries in the Stagville Accounts encoded as table in XML/TEI.</caption>
+          </ab>
+
+          <p>You can use the full expressiveness XML/TEI is offering to describe text. For the <hi
+              rend="italic">Bookkeeping Ontology</hi> only some annotations using the TEI attribute
+              <code>ana</code> are relevant, next to some attributes for formalizing data. We will
+            look at that in more detail now.</p>
+          <p>The starting point is to define a container for a <code>bk:Transaction</code> by
+            annotating the textual representation of an <code>bk:entry</code> like <hi
+              rend="element">div</hi>, <hi rend="element">row</hi> or <hi rend="element">span</hi>
+            (or any other element that fits to your data and the TEI guidlines). Using <code
+              rend="attribute">@ana</code> with the value "bk:entry" a TEI structure is defined as
+            an <code>bk:entry</code> according to the <hi rend="italic">Bookkeeping
+            Ontology</hi>.</p>
+          <ab>
+            <code rend="block" lang="XML">
+              <![CDATA[<row ana="bk:entry">
+  <cell>1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6</cell>
+  <cell/>
+  <cell>7</cell>
+  <cell>6</cell>
+</row>
+]]>
+            </code>
+            <caption>Annotation a textual structure, in this case a row in a table, as a text entry
+              of a transaction. </caption>
+          </ab>
+          <div xml:id="chapter.1.1">
+            <head>Commodities and Monetary Values</head>
+            <p> Now we can define inside the row element (<code>bk:entry</code>) further concepts
+              which describe a <code>bk:Transaction</code>. A <code>bk:Transaction</code> consists
+              of at least one <code>bk:Transfer</code> and a <code>bk:Transfer</code> in turn
+              defines the flow of a <code>bk:EconomicAsset</code>. This further divide into
+                <code>bk:EconomicGood</code>, which can be a <code>bk:Commodity</code>,
+                <code>bk:Service</code> or <code>bk:Rigth</code>, and <code>bk:MonetaryValue</code>.
+              So the flow of a <code>bk:EconomicAsset</code> from one <code>bk:EconomicUnit</code>
+              to the other is expressed. To express the direction of the flow <code>bk:from</code>
+              and <code>bk:to</code> are needed. We first deal with the question: "what is
+              transfered?". In this example three different <code>bk:Commodity</code> are mentioned: <list>
+                <item>
+                  <hi rend="italic">1/4 lb Powder</hi>
+                </item>
+                <item>
+                  <hi rend="italic">1 lb Shot</hi>
+                </item>
+                <item>
+                  <hi rend="italic">1 lb Sugar </hi>
+                </item>
+              </list>
+            </p>
+            <p>As well as two <code>bk:MonetaryValue</code>: <list>
+                <item>
+                  <hi rend="italic">7 shilling</hi>
+                </item>
+                <item>
+                  <hi rend="italic">6 pence</hi>
+                </item>
+              </list>
+            </p>
+            <p> Whereas three further <code>bk:MonetaryValue</code> can be found, interpreted as
+                <code>bk:Price</code>. The <code>bk:Price</code> belongs to the
+                <code>bk:Commodity</code> named before: <hi rend="italic">¼ lb Powder for 2 shilling
+                  and 6 pence</hi>. But we will ignore that in this first step.
+            </p>
+            <p> The <hi rend="element">measure</hi> element in TEI allows to annotate countable
+              entities using these attributes <hi rend="attribute">@unit</hi>, <hi rend="attribute">@unitRef</hi>, <hi rend="attribute"
+                >@commodity</hi> and <hi rend="attribute">@quantity</hi>. So we can use them to normalize the data.</p>
+            <ab><code rend="block" lang="XML">
+<![CDATA[<row ana="bk:entry">
+  <cell>
+    <measure commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder</measure>
+    <measure commodity="shot" quantity="1" unit="lb">1 lb Shot</measure>
+    <measure commodity="sugar" quantity="1" unit="lb">1 lb Sugar</measure>
+  </cell>
+  <cell/>
+  <cell>
+    <measure quantity="7" unit="shilling">7</measure>
+  </cell>
+  <cell>
+    <measure quantity="6" unit="pence">6</measure>
+  </cell>
+</row>]]>
+              </code>
+            </ab>
+            <p> Now we reference the <hi rend="element">measure</hi> to the Bookkeeping Ontology
+              using <code rend="attribute">@ana</code>. We want to say that <hi rend="italic"
+                >powder, sugar and shot</hi> are commodities. Therefore, we add <code>ana="bk:commodity"</code> and <code>ana="bk:money"</code> to the elements. </p>
+            <ab><code rend="block" lang="XML">
+              <![CDATA[<row ana="bk:entry">
+  <cell>
+    <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder</measure>
+    <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb Shot</measure>
+    <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1 lb Sugar</measure>
+  </cell>
+  <cell/>
+  <cell>
+    <measure ana="bk:money" quantity="7" unit="shilling">7</measure>
+  </cell>
+  <cell>
+    <measure ana="bk:money" quantity="6" unit="pence">6</measure>
+  </cell>
+</row>]]>
+              </code></ab>
+            <p> This very <code>bk:Transaction</code> consists now of 2 <code>bk:Transfer</code>.
+              One transferring powder, sugar and shot, the other <code>bk:Transfer</code> transfers 7 shilling and 6 pence.</p>
+          </div>
+          <div>
+            <head>Flow of Measurable: from - to</head>
+            <p> In a next step we want to define the directions of the flow of moneys and goods
+              which can be summarized as the following: <list>
+                <item>
+                  <hi rend="italic">powder, sugar, shot from Stagville to James Haley</hi>
+                </item>
+                <item>
+                  <hi rend="italic">7 shilling, 6 pence from James Haley to Stagville</hi>
+                </item>
+              </list> Therefore, we use <code>ana="bk:from"</code> and <hi rend="code"
+                >ana="bk:to"</hi>. We add this kind of annotation to any TEI structure you are using
+              for annotating agents in your document like <hi rend="element">name</hi>, <hi
+                rend="element">persName</hi> or <hi rend="element">orgName</hi>. This can also be an
+              unknown group of people like “<hi rend="italic">4 farmers pay a 5 $ tax</hi>". For
+              such cases you can use an element like <hi rend="element">span</hi> with an additional
+                <code>ana="bk:group"</code>. As for the RDF representation URIs are needed, we have
+              to assign a unique ID for every agent (even for a unknown group) using <hi
+                rend="attribute">@ref</hi>. <lb/> Additionally to that we have to make the direction
+              of the transfer explicit by extending the <code rend="attribute">@ana</code> of <hi
+                rend="element">measure</hi>. Putting <code>bk:commodity</code>, <hi rend="code"
+                >bk:service</hi> or <code>bk:money</code> together with <hi rend="code">bk:from</hi>
+              or <code>bk:to</code> in the same <hi rend="attribute">@ana</hi>-attribute indicates
+              the receiver of the respective economic good as indicated in the close context of the
+              annotation. Therefore, a transaction recorded in an account of the Stagville company
+              identifies one party in every transaction already in the heading:</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<head><name ana="bk:to" ref="#between.1">Stagville</name> August 1st 1808</head>
+              </p>
+            <p>The other parties can occur in each single entry:</p>
+            <code rend="block" lang="XML">
+    <p ana="bk:entry">paid to <name ana="bk:from" ref="#between.2">James Haley</name> for
+       <measure ana="bk:service" commodity="labor" unit="day" quantity="3">3 days woodcutting</measure>
+       <measure ana="bk:money" quantity="6" unit="dollar">6 d.</measure></p>]]>
+              </code></ab>
+            <p>To make clear, which party is receiving the money, the encoding with @ana="bk:money"
+              has to carry the appropriate bk:from / bk:to:</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<p ana="bk:entry">paid to <name ana="bk:from" ref="#between.2">James Haley</name> for 
+      <measure ana="bk:service bk:to" commodity="labor" unit="day" quantity="3">3 days woodcutting</measure> 
+      <measure ana="bk:money bk:from" quantity="6" unit="dollar">6 d.</measure>
+    </p>]]>
+              </code></ab>
+            <p>The transfer of a monetary value is always encoded explicitely in the DEPCHA.</p>
+            <p>All of this can lead, for instance, to the following encoding, in which the parties
+              in the transaction are both encoded external to the single entry:</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<body>
+    <head><name ana="bk:to" ref="#between.1">Stagville</name> August 1st 1808</head>
+    <table>
+    	<head>69 <name ana="bk:from" ref="#between.2">James Haley</name> J Self Dr.</head>
+    	<row ana="bk:entry">
+    		<cell>
+    			<measure ana="bk:commodity bk:from" commodity="powder" quantity="0.25" unit="lb"> 1/4 lb Powder <measure ana="bk:price" quantity="2" unit="shilling">2</measure> / <measure
+    					ana="bk:price" quantity="6" unit="pence">6</measure>
+    			</measure>
+    			<measure ana="bk:commodity bk:from" commodity="shot" quantity="1" unit="lb"> 1 lb Shot <measure ana="bk:price" quantity="2" unit="shilling">2</measure> / <measure ana="bk:price"
+    					quantity="6" unit="pence">6</measure>
+    			</measure>
+    			<measure ana="bk:commodity bk:from" commodity="sugar" quantity="1" unit="lb"> 1 lb Sugar <measure ana="bk:price" quantity="2" unit="shilling">2</measure> / <measure ana="bk:price"
+    					quantity="6" unit="pence">6</measure>
+    			</measure>
+    		</cell>
+    		<cell/>
+    		<cell><measure ana="bk:money bk:to" quantity="7" unit="shilling">7</measure></cell>
+    		<cell><measure ana="bk:money bk:to" quantity="6" unit="pence">6</measure></cell>
+    	</row>
+    </table>
+    </body>]]>
+              </code></ab>
+          </div>
+          <div xml:id="price">
+            <head>Price</head>
+            <p>
+              To bring together
+              <code>bk:Commodity</code> and <code>bk:Price</code> we put them together in one <hi
+                rend="element">measure</hi> and mark the <code>bk:Price</code> explicitly in an
+              additional measure element. 
+            </p>
+          </div>
+
+
+          <!--<div>
+            <head>Date and Debit/Credit</head>
+            <p>Further information we may want to add to this <code>bk:Transaction</code> is the
+              date and the booking with debit or credit. Using the TEI <hi rend="element">date</hi>
+              element with <hi rend="attribute">@when</hi> like
+                <code>@ana="bk:when"</code> adds the date of transaction to the entry. To
+              add the information of booking on credit or debit you can use a TEI <hi
+                rend="element">span</hi> with a <code>@ana="bk:debit"</code> or <hi
+                rend="code">@ana="bk:credit"</hi>: </p>
+            <code rend="block" lang="XML">
+              <![CDATA[]]>
+    <body>
+    <head>
+    	<name ana="bk:to" ref="#between.1">Stagville</name> 
+    	<date ana="bk:when" when="1808-08-01">August 1st 1808</date>
+    </head>
+    <table>
+    <head>
+    	69 <name ana="bk:from" ref="#between.2">James Haley</name> J Self <span ana="bk:debit">Dr.</span>
+    </head>
+    		...</p>
+          </div>-->
+
+
+          <div>
+            <head>Transaction Status and Agent</head>
+            <p> Here is another example of a transcription of a <code>bk:entry</code> in the Wheaton
+              day book. <table type="example">
+                <head>Monday September 15th 1828</head>
+                <row>
+                  <cell>settled</cell>
+                  <cell>Derius Drake D <lb/>To ax dlvd By Puffer 9/1<lb/>By cutting two
+                    sticks</cell>
+                  <cell>1</cell>
+                  <cell>59</cell>
+                  <cell>6</cell>
+                </row>
+
+              </table> Two further entities may be relevant for editing an account: &apos;what is
+              the transaction status?&apos; and &apos;are other people involved in the
+              transaction?&apos; The <code>bk:entry</code> of the next example describes that a
+              person named Derius Drake worked for Wheaton (owner of the shop and main author of the
+              day book) and payed with this work his debt of 1 $ 50 cents <hi rend="italic">"by
+                cutting two sticks"</hi>. Darius got an axe to do the job. This axe comes from the
+                <code>bk:Agent</code>
+              <hi rend="italic">Puffer</hi>. </p>
+
+            <p> In this example the status of the transaction is "settled", which means it is paid.
+              The second entity is the involvement of a third person. In this example the text “By
+              Puffer" can be interpreted as somebody who is carrying out the transaction for
+              somebody else. Adding <code>@ana="bk:agent"</code> annotated a the person as a
+                <code>bk:Agent</code>. </p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<table>
+    <head>Monday <date ana="bk:when" when="1828-09-15">September-15th-1828</date></head>
+    <row>
+    	<cell><span ana="bk:status">settled</span></cell>
+    	<cell>
+    		<name ana="bk:to" ref="#pers_WCDH276">Derius Drake</name> 
+    		<span ana="bk:debit">D </span>To ax dlvd By 
+    		<name ana="bk:agent" ref="#pers_WCDH280">Puffer</name> 9/1
+    	</cell>
+    	<cell><measure ana="bk:money bk:to" commodity="currency" quantity="1" unit="dollars">1</measure></cell>
+    	<cell><measure ana="bk:money bk:to" commodity="currency" quantity="50" unit="cents">50</measure></cell>
+    	<cell/>
+    </row>
+    </table>]]>
+              </code></ab>
+          </div>
+          <div>
+            <head>Group, Taxes and Places</head>
+            <p> In the next example - a tax list - we find unknown groups that are taxable in a
+              certain village. The <code>bk:entry</code> represents that at the place <hi
+                rend="italic">Marczinkowo</hi> two craftsmen have to pay a tax in the amount of 3
+              floren and 14 grosz. <table type="example">
+                <head>[784r]Parochia Iunivladislaviensis 1565</head>
+                <row>
+                  <cell>Marczinkowo</cell>
+                  <cell>de quinque mansis possessis, et duobus artificibus solvit</cell>
+                  <cell/>
+                  <cell>3</cell>
+                  <cell>14</cell>
+                </row>
+              </table> The Bookkeeping Ontology allows to describe this entities by using <code
+                rend="code">@ana="bk:where"</code>, <code>@ana="bk:tax"</code> and
+                <code>@ana="bk:group"</code>. The addition bk:from i <code>ana="bk:money
+                bk:from"</code> defines that money goes away from the group and is booked on the
+              account of the main author of the tax list (e.g. the king). </p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<row ana="bk:entry">
+    <cell>
+    	<placeName ref="#village.3" xml:id="SID.4" ana="bk:where">Marczinkowo</placeName>,
+    	de <name ana="bk:from bk:tax" ref="#C000004">quinque mansis possessis</name>,
+    	et <span ana="bk:from bk:group">duobus artificibus</span>
+    	solvit
+    </cell>
+    <cell>
+    	<measure ana="bk:money bk:from" quantity="3" unit="floren">3</measure>
+    </cell>
+    <cell>
+    	<measure ana="bk:money bk:from" quantity="14" unit="grosz">14</measure>
+    </cell>
+    </row>]]>
+              </code></ab>
+          </div>
+          <div>
+            <head>XML-Schema</head>
+            <p> Here is a very restrictiv <ref
+                target="/archive/objects/context:depcha/datastreams/BKSCHEMA/content">Bookkeeping
+                Ontology XML-Schema</ref> based on all current ingested data. You can associat this
+              schema in your Oxygen Editor and the editor offers you elements and annotations
+              according to the Ontology. </p>
+          </div>
+
+        </div>
+        <div xml:id="chapter.2">
+          <head>Linked Open Data</head>
+          <p>DEPCHA tries to offer its data in the LOD cloud. Therefore you can add Wikidata
+            concepts directly into the attributes or you define your vocabulary in the TEI header in
+            form of a taxonomy. In the following TEI example and one figure are given to explain
+            that.</p>
+          <ab><code rend="block" lang="XML">
+              <![CDATA[<body>
+    <head><name ana="bk:to" ref="#between.1">Stagville</name> August 1st 1808</head>
+    <table>
+    	<head>69 <name ana="bk:from" ref="#between.2">James Haley</name> J Self Dr.</head>
+    	<row ana="bk:entry">
+    		<cell>
+    			<measure ana="bk:commodity bk:from" commodity="wiki:Q11002" quantity="1" unit="wiki:Q100995"> 1 lb Sugar <measure ana="bk:price" quantity="2" unit="wiki:Q213142">2</measure> / <measure ana="bk:price"
+    					quantity="6" unit="wiki:Q234129">6</measure>
+    			</measure>
+    		</cell>
+    		<cell/>
+    		<cell><measure ana="bk:money bk:to" quantity="7" unit="wiki:Q213142">7</measure></cell>
+    		<cell><measure ana="bk:money bk:to" quantity="6" unit="wiki:Q234129">6</measure></cell>
+    	</row>
+    </table>
+    </body>]]>
+            </code></ab>
+          <figure source="/archive/objects/context:depcha/datastreams/GRAPH_WIKIDATA/content"
+            type="web"/>
+          <p>In this example the editor as defined is own concepts in the TEI header and links them
+            to it.</p>
+
+          <div>
+            <head>TEI-Taxonomy for Commodities</head>
+            <p>The <hi rend="element">taxonomy</hi> in the <hi rend="element">teiHeader</hi>
+              defines, according to the TEI guidelines, <hi rend="italic">a typology either
+                implicitly or explicitly by a structured taxonomy</hi>. This can be used to specify
+              historical commodities for a document. If <code>@ana="bk:Taxonomy"</code> is added to
+              a <code>taxonomy</code>, the hierchy and categories are transformed into SKOS. </p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<classDecl>
+      <taxonomy ana="bk:Taxonomy">
+          <gloss>Commodities</gloss>
+          <category xml:id="commodity.1">
+              <gloss xml:lang="eng">vegetable<ref target="wd:Q11004"/></gloss>
+              <category xml:id="commodity.1.1">
+                  <gloss xml:lang="eng">potatoes<ref target="wd:Q16587531"/></gloss>
+                  <category xml:id="commodity.1.1.1">
+                      <gloss xml:lang="eng">black potatoes</gloss>
+                  </category>
+                  <category xml:id="commodity.1.1.2">
+                      <gloss xml:lang="eng">brown potatoes</gloss>
+                  </category>
+              </category>
+              <category xml:id="commodity.1.2">
+                  <gloss xml:lang="eng">corn<ref target="wd:Q11575"/></gloss>
+              </category>
+          </category>
+      </taxonomy>
+  </classDecl>]]></code></ab>
+            <p>SKOS result</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1">
+      <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1"/>
+      <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.2"/>
+      <skos:prefLabel>vegetable</skos:prefLabel>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1">
+      <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1.1"/>
+      <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1.2"/>
+      <skos:prefLabel>potatoe</skos:prefLabel>
+      <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1.1">
+      <skos:prefLabel>black potatoe</skos:prefLabel>
+      <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1.2">
+      <skos:prefLabel>brown potatoe</skos:prefLabel>    
+  <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.2">
+      <skos:prefLabel>corn</skos:prefLabel>
+      <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1"/>
+    </skos:Concept> ]]>
+              </code></ab>
+          </div>
+          <div>
+            <head>Units of Measurement</head>
+            <p>The <hi rend="element">unitDecl</hi> in the <hi rend="element">teiHeader</hi>
+              provides, according to the TEI guidelines, <hi rend="italic">information about units
+                of measurement that are not members of the International System of Units</hi>. This
+              can be used to specify historical units for a document. If
+                <code>@ana="bk:Taxonomy"</code> is added, the units are mapped as RDF during ingest
+              in DEPCHA. </p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<unitDecl ana="bk:Taxonomy">
+      <unitDef xml:id="unit.13" type="currency" ref="wd:Q4917">
+          <label xml:lang="eng">dollars</label>
+          <country>USA</country>
+          <unit>$</unit>
+      </unitDef>
+    <unitDecl>]]>
+              </code></ab>
+          </div>
+        </div>
+        <div xml:id="chapter.3">
+          <head>CSV/Excel</head>
+          <div type="body">
+
+            <p>Having data in CSV or Excel is a way to work with the data (and not the
+              transciption). In DEPCHA you have to transform your CSV into a simple XML/TEI for
+              standardisation purpose. You can use this <ref
+                target="/archive/objects/context:depcha/datastreams/CSVTOTEI/content">XSLT</ref> to
+              do so. <lb/> Your CSV has to look like this <ref
+                target="/archive/objects/context:depcha/datastreams/CSV_EXAMPLE/content"
+                >example</ref>. Check your EXCEL export for that and use a <ref
+                target="https://csvlint.io/">CSV validator</ref>.</p>
+            <p> The &apos;|&apos; is used to seperate multiple values inside a cell. </p>
+          </div>
+        </div>
+        <div xml:id="chapter.4">
+          <head>RDF</head>
+          <div>
+            <p>The last option is to directly create RDF compliant with the bookkeeping ontology.
+              You can use Protege to check the consistency of your RDF with the ontology.</p>
+          </div>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>
