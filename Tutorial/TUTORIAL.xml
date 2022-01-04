@@ -37,7 +37,7 @@
           <p>This tutorial described several ways how data of historical accounts can be prepared to
             be ready to publish in DEPCHA.</p>
         </div>
-        <div xml:id="chapter.1">
+        <div xml:id="xml_tei">
           <head>XML/TEI</head>
           <p>The following snippet of a historical accounting book (image and transcription) is used
             as an example to illustrate a possible way of annotating a digital edition using XML/TEI
@@ -138,12 +138,12 @@
               <code>ana</code> are relevant, next to some attributes for formalizing data. We will
             look at that in more detail now.</p>
           <p>The starting point is to define a container for a <code>bk:Transaction</code> by
-            annotating the textual representation of an <code>bk:entry</code> like <hi
-              rend="element">div</hi>, <hi rend="element">row</hi> or <hi rend="element">span</hi>
-            (or any other element that fits to your data and the TEI guidlines). Using <code
-              rend="attribute">@ana</code> with the value "bk:entry" a TEI structure is defined as
-            an <code>bk:entry</code> according to the <hi rend="italic">Bookkeeping
-            Ontology</hi>.</p>
+            annotating the textual representation of an <code>bk:entry</code> like <code
+              rend="element">div</code>, <code rend="element">row</code> or <code rend="element"
+              >span</code> (or any other element that fits to your data and the TEI guidlines).
+            Using <code rend="attribute">@ana</code> with the value "bk:entry" a TEI structure is
+            defined as an <code>bk:entry</code> according to the <hi rend="italic">Bookkeeping
+              Ontology</hi>.</p>
           <ab>
             <code rend="block" lang="XML">
               <![CDATA[<row ana="bk:entry">
@@ -157,8 +157,8 @@
             <caption>Annotation a textual structure, in this case a row in a table, as a text entry
               of a transaction. </caption>
           </ab>
-          <div xml:id="chapter.1.1">
-            <head>Commodities and Monetary Values</head>
+          <div xml:id="commodities">
+            <head>The Basics</head>
             <p> Now we can define inside the row element (<code>bk:entry</code>) further concepts
               which describe a <code>bk:Transaction</code>. A <code>bk:Transaction</code> consists
               of at least one <code>bk:Transfer</code> and a <code>bk:Transfer</code> in turn
@@ -192,13 +192,14 @@
             <p> Whereas three further <code>bk:MonetaryValue</code> can be found, interpreted as
                 <code>bk:Price</code>. The <code>bk:Price</code> belongs to the
                 <code>bk:Commodity</code> named before: <hi rend="italic">¼ lb Powder for 2 shilling
-                  and 6 pence</hi>. But we will ignore that in this first step.
-            </p>
-            <p> The <hi rend="element">measure</hi> element in TEI allows to annotate countable
-              entities using these attributes <hi rend="attribute">@unit</hi>, <hi rend="attribute">@unitRef</hi>, <hi rend="attribute"
-                >@commodity</hi> and <hi rend="attribute">@quantity</hi>. So we can use them to normalize the data.</p>
+                and 6 pence</hi>. But we will ignore that in this first step. </p>
+            <p> The <code rend="element"><![CDATA[<measure>]]></code> element in TEI allows to
+              annotate countable entities using these attributes <code rend="attribute"
+              >@unit</code>, <code rend="attribute">@unitRef</code>, <code rend="attribute"
+                >@commodity</code> and <code rend="attribute">@quantity</code>. So we can use them
+              to normalize the data.</p>
             <ab><code rend="block" lang="XML">
-<![CDATA[<row ana="bk:entry">
+                <![CDATA[<row ana="bk:entry">
   <cell>
     <measure commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder</measure>
     <measure commodity="shot" quantity="1" unit="lb">1 lb Shot</measure>
@@ -214,11 +215,12 @@
 </row>]]>
               </code>
             </ab>
-            <p> Now we reference the <hi rend="element">measure</hi> to the Bookkeeping Ontology
+            <p> Now we reference the <code rend="element">measure</code> to the Bookkeeping Ontology
               using <code rend="attribute">@ana</code>. We want to say that <hi rend="italic"
-                >powder, sugar and shot</hi> are commodities. Therefore, we add <code>ana="bk:commodity"</code> and <code>ana="bk:money"</code> to the elements. </p>
+                >powder, sugar and shot</hi> are commodities. Therefore, we add
+                <code>ana="bk:commodity"</code> and <code>ana="bk:money"</code> to the elements. </p>
             <ab><code rend="block" lang="XML">
-              <![CDATA[<row ana="bk:entry">
+                <![CDATA[<row ana="bk:entry">
   <cell>
     <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder</measure>
     <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb Shot</measure>
@@ -234,118 +236,624 @@
 </row>]]>
               </code></ab>
             <p> This very <code>bk:Transaction</code> consists now of 2 <code>bk:Transfer</code>.
-              One transferring powder, sugar and shot, the other <code>bk:Transfer</code> transfers 7 shilling and 6 pence.</p>
-          </div>
-          <div>
-            <head>Flow of Measurable: from - to</head>
-            <p> In a next step we want to define the directions of the flow of moneys and goods
-              which can be summarized as the following: <list>
+              One transferring powder, sugar and shot, the other <code>bk:Transfer</code> transfers
+              7 shilling and 6 pence.</p>
+            <p> In the following we define the directions of the flow of assetes, which can be
+              summarized as the following: <list>
                 <item>
                   <hi rend="italic">powder, sugar, shot from Stagville to James Haley</hi>
                 </item>
                 <item>
                   <hi rend="italic">7 shilling, 6 pence from James Haley to Stagville</hi>
                 </item>
-              </list> Therefore, we use <code>ana="bk:from"</code> and <hi rend="code"
-                >ana="bk:to"</hi>. We add this kind of annotation to any TEI structure you are using
-              for annotating agents in your document like <hi rend="element">name</hi>, <hi
-                rend="element">persName</hi> or <hi rend="element">orgName</hi>. This can also be an
-              unknown group of people like “<hi rend="italic">4 farmers pay a 5 $ tax</hi>". For
-              such cases you can use an element like <hi rend="element">span</hi> with an additional
-                <code>ana="bk:group"</code>. As for the RDF representation URIs are needed, we have
-              to assign a unique ID for every agent (even for a unknown group) using <hi
-                rend="attribute">@ref</hi>. <lb/> Additionally to that we have to make the direction
-              of the transfer explicit by extending the <code rend="attribute">@ana</code> of <hi
-                rend="element">measure</hi>. Putting <code>bk:commodity</code>, <hi rend="code"
-                >bk:service</hi> or <code>bk:money</code> together with <hi rend="code">bk:from</hi>
-              or <code>bk:to</code> in the same <hi rend="attribute">@ana</hi>-attribute indicates
-              the receiver of the respective economic good as indicated in the close context of the
-              annotation. Therefore, a transaction recorded in an account of the Stagville company
-              identifies one party in every transaction already in the heading:</p>
+              </list> Therefore, we use <code>ana="bk:from"</code> and <code>ana="bk:to"</code>. We
+              add this kind of annotation to any TEI structure you are using for annotating
+                <code>bk:EconomicUnit</code> in your document like <code rend="element"
+                ><![CDATA[<name>]]></code>, <code rend="element"><![CDATA[<persName>]]></code> or
+                <code rend="element"><![CDATA[<orgName>]]></code>. In chaptger <ref
+                target="#economic_units">XY</ref> you will learn more about different types of
+              exonomic units. As for the RDF representation URIs are needed, we have to assign a
+              unique ID for every <code>bk:EconomicUnit</code> (even though it may be an unknown
+              group of economic units) using <code rend="attribute">@ref</code>.</p>
+            <p> The following code snippet now shows how we express that the monetary value of 7
+              shilling and 6 pence flows <hi rend="bold">from</hi> James Haley - normalized by the
+              reference to the <code rend="attribute">@xml:id</code>
+              <hi rend="italic">economic_unit.2</hi> - <hi rend="bold">to</hi> Stagville. Notice
+              that by default the flow of money is always encoded explicitely in the DEPCHA! You
+              can, however, express the flow direction explicitly yourself. You can find information
+              about that under <ref target="#">XY</ref>.</p>
             <ab><code rend="block" lang="XML">
-                <![CDATA[<head><name ana="bk:to" ref="#between.1">Stagville</name> August 1st 1808</head>
-              </p>
-            <p>The other parties can occur in each single entry:</p>
-            <code rend="block" lang="XML">
-    <p ana="bk:entry">paid to <name ana="bk:from" ref="#between.2">James Haley</name> for
-       <measure ana="bk:service" commodity="labor" unit="day" quantity="3">3 days woodcutting</measure>
-       <measure ana="bk:money" quantity="6" unit="dollar">6 d.</measure></p>]]>
-              </code></ab>
-            <p>To make clear, which party is receiving the money, the encoding with @ana="bk:money"
-              has to carry the appropriate bk:from / bk:to:</p>
-            <ab><code rend="block" lang="XML">
-                <![CDATA[<p ana="bk:entry">paid to <name ana="bk:from" ref="#between.2">James Haley</name> for 
-      <measure ana="bk:service bk:to" commodity="labor" unit="day" quantity="3">3 days woodcutting</measure> 
-      <measure ana="bk:money bk:from" quantity="6" unit="dollar">6 d.</measure>
-    </p>]]>
-              </code></ab>
-            <p>The transfer of a monetary value is always encoded explicitely in the DEPCHA.</p>
-            <p>All of this can lead, for instance, to the following encoding, in which the parties
-              in the transaction are both encoded external to the single entry:</p>
-            <ab><code rend="block" lang="XML">
-                <![CDATA[<body>
-    <head><name ana="bk:to" ref="#between.1">Stagville</name> August 1st 1808</head>
-    <table>
-    	<head>69 <name ana="bk:from" ref="#between.2">James Haley</name> J Self Dr.</head>
-    	<row ana="bk:entry">
-    		<cell>
-    			<measure ana="bk:commodity bk:from" commodity="powder" quantity="0.25" unit="lb"> 1/4 lb Powder <measure ana="bk:price" quantity="2" unit="shilling">2</measure> / <measure
-    					ana="bk:price" quantity="6" unit="pence">6</measure>
-    			</measure>
-    			<measure ana="bk:commodity bk:from" commodity="shot" quantity="1" unit="lb"> 1 lb Shot <measure ana="bk:price" quantity="2" unit="shilling">2</measure> / <measure ana="bk:price"
-    					quantity="6" unit="pence">6</measure>
-    			</measure>
-    			<measure ana="bk:commodity bk:from" commodity="sugar" quantity="1" unit="lb"> 1 lb Sugar <measure ana="bk:price" quantity="2" unit="shilling">2</measure> / <measure ana="bk:price"
-    					quantity="6" unit="pence">6</measure>
-    			</measure>
-    		</cell>
-    		<cell/>
-    		<cell><measure ana="bk:money bk:to" quantity="7" unit="shilling">7</measure></cell>
-    		<cell><measure ana="bk:money bk:to" quantity="6" unit="pence">6</measure></cell>
-    	</row>
-    </table>
-    </body>]]>
-              </code></ab>
+                <![CDATA[<head><name ana="bk:to" ref="#economic_unit.1">Stagville</name> August 1st 1808</head>
+<table>
+  <head>69 <name ana="bk:from" ref="#economic_unit.2">James Haley</name> J Self Dr.</head>
+  <row ana="bk:entry">
+    <cell>
+      <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder</measure>
+      <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb Shot</measure>
+      <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1 lb Sugar</measure>
+    </cell>
+    <cell/>
+    <cell>
+      <measure ana="bk:money" quantity="7" unit="shilling">7</measure>
+    </cell>
+    <cell>
+      <measure ana="bk:money" quantity="6" unit="pence">6</measure>
+    </cell>
+  </row>
+</table>]]>
+              </code>
+              <caption>ana="bk:money" marks a <![CDATA[<measure>]]> as a bk:MonetaryValue and
+                ana="bk:commodity" as a bk:Commodity.</caption></ab>
+            <p>After performing these basic steps the following RDF will be extracted auomatically,
+              when the XML/TEI is ingestet into DEPCHA.</p>
+            <ab><code rend="block" lang="RDF">
+                <![CDATA[<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1">
+  <bk:entry>1/4 lb Powder 1 lb Shot 1 lb Sugar 7 6</bk:entry>
+  <bk:consistsOf>
+    <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T1">
+      <bk:transfers>
+        <bk:Commodity rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T1EA1">
+          <bk:unit rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#lb"/>
+          <bk:quantity>0.25</bk:quantity>
+        <bk:commodity rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#powder"/>
+        </bk:Commodity>
+      </bk:transfers>
+      <bk:transfers>
+        <bk:Commodity rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T1EA2">
+          <bk:unit rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#lb"/>
+          <bk:quantity>1</bk:quantity>
+          <bk:commodity rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#shot">
+        </bk:Commodity>
+      </bk:transfers>
+      <bk:transfers>
+      <bk:Commodity rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T1EA3">
+        <bk:unit rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#lb"/>
+        <bk:quantity>1</bk:quantity>
+        <bk:commodity rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#sugar"/>
+      </bk:Commodity>
+      </bk:transfers>
+      <bk:from rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#economic_unit.1"/>
+      <bk:to rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#economic_unit.2"/>
+    </bk:Transfer>
+  </bk:consistsOf>
+  <bk:consistsOf>
+    <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T2">
+      <bk:transfers>
+        <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T2EA1">
+          <bk:unit rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#shilling"/>
+          <bk:quantity>7</bk:quantity>
+        </bk:Money>
+      </bk:transfers>
+      <bk:transfers>
+        <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T9T2EA2">
+          <bk:unit rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#pence"/>
+          <bk:quantity>6</bk:quantity>
+        </bk:Money>
+      </bk:transfers>
+      <bk:from rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#economic_unit.2"/>
+      <bk:to rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#economic_unit.1"/>
+    </bk:Transfer>
+  </bk:consistsOf>
+</bk:Transaction>]]>
+              </code>
+              <caption>XML/RDF of a transaction: James Haley buys 1/4 lb Powder, 1 lb Shot and 1 lb
+                Sugar.</caption>
+            </ab>
           </div>
-          <div xml:id="price">
-            <head>Price</head>
-            <p>
-              To bring together
-              <code>bk:Commodity</code> and <code>bk:Price</code> we put them together in one <hi
-                rend="element">measure</hi> and mark the <code>bk:Price</code> explicitly in an
-              additional measure element. 
+          <div xml:id="when">
+            <head>Dates</head>
+            <p>Transactions can have a date. The date of a transaction (<code>bk:when</code>) can be
+              annotated by adding <code>ana="bk:when"</code> to a <code rend="element"
+                ><![CDATA[<date>]]></code>. Here we have to use the <code rend="attribute"
+                >@when</code> to normalize the date. You also can use <code rend="attribute"
+                >@from</code> and <code rend="attribute">@to</code> to set a time range. </p>
+
+
+            <ab>
+              <code rend="block" lang="XML">
+                <![CDATA[<p ana="bk:entry">
+  Item am <date ana="bk:when" when="1402-01-01">s<supplied reason="missing">[o]</supplied>nntag nach Eibnitÿ</date>
+  prachten dÿ<lb/><name ref="#pers_SR051" ana="bk:from">obgeschriben visser</name>
+  <measure ana="bk:commodity" commodity="Fisch" quantity="18" unit="Pfund">18 lb visch</measure> 
+  dem <name ref="#pers_SR052">herrn Kaspar</name>.
+</p>]]>
+              </code>
+            </ab>
+            <p> Not every date inside a <code>bk:entry</code> is the date of the transaction, as
+              well as the corresponding date can a also appear outside the bk:entry as the following
+              examples shows. Both <code>bk:entry</code> share the same date, as the tabular
+              structure clearly indicates. James Haley bought 1/4 lb Powder for 7 shilling on the
+              1st August 1808 and Elisabeth Example bought 1 lb Shot on the same day.</p>
+            <p> Für diese Situationen gibt es folgende Regeln: <list>
+                <item>Das <code>bk:when</code> innerhalb eines <code>bk:entry</code> hat die höchste
+                  Priorität.</item>
+                <item>Zweithöchste Priorität hat das Datum, das in einer übergeordneten Struktur und
+                  in der Sequent "dahinter" ist. Das ist der Fall im folgenden Code Snippet.</item>
+                <item>Oder aber Alle Transaktionen innerhalb eines XML/TEI haben das gleiceh datum,
+                  dann kann ein <code>bk:when</code> auch im <code ana="element"
+                    ><![CDATA[<teiHeader]]></code> definiert werden.</item>
+                <item>Eine "hacky" Variante wäre, vl wird es einmal gebraucht, ein leeres
+                    <code><![CDATA[<date ana="bk:when" when="1900-02-02"/>]]></code> innerhalb eines
+                  Datums anzulegen. Beispielsweise, weil man weiß, dass für eine enzelne Transaktion
+                  ein anderes datum gilt, als für alle anderen, und diese allgemein mi teiHeader
+                  definiet wurde. </item>
+              </list>
             </p>
+            <ab>
+              <code rend="block" lang="XML">
+                <![CDATA[<head>
+  <name ana="bk:to" ref="#economic_unit.1">Stagville</name> 
+  <date ana="bk:when" when="1808-08-01">August 1st 1808</date>
+</head>
+<table>
+  <row ana="bk:entry">
+    <cell>
+      <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">
+        <name ana="bk:from" ref="#economic_unit.2">James Haley</name>: 1/4 lb Powder
+      </measure>
+    </cell>
+    <cell>
+      <measure ana="bk:money" quantity="7" unit="shilling">7</measure>
+    </cell>
+  </row>
+  <row ana="bk:entry">
+    <cell>
+      <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">
+        <name ana="bk:from" ref="#economic_unit.3">Elisabeth Example</name>:1 lb Shot
+      </measure>
+    </cell>
+    <cell>
+      <measure ana="bk:money" quantity="5" unit="shilling">5</measure>
+    </cell>
+  </row>
+</table>]]></code>
+            </ab>
           </div>
-
-
-          <!--<div>
-            <head>Date and Debit/Credit</head>
-            <p>Further information we may want to add to this <code>bk:Transaction</code> is the
-              date and the booking with debit or credit. Using the TEI <hi rend="element">date</hi>
-              element with <hi rend="attribute">@when</hi> like
-                <code>@ana="bk:when"</code> adds the date of transaction to the entry. To
-              add the information of booking on credit or debit you can use a TEI <hi
-                rend="element">span</hi> with a <code>@ana="bk:debit"</code> or <hi
-                rend="code">@ana="bk:credit"</hi>: </p>
-            <code rend="block" lang="XML">
-              <![CDATA[]]>
-    <body>
-    <head>
-    	<name ana="bk:to" ref="#between.1">Stagville</name> 
-    	<date ana="bk:when" when="1808-08-01">August 1st 1808</date>
-    </head>
-    <table>
-    <head>
-    	69 <name ana="bk:from" ref="#between.2">James Haley</name> J Self <span ana="bk:debit">Dr.</span>
-    </head>
-    		...</p>
-          </div>-->
-
-
-          <div>
+          <div xml:id="economic_units">
+            <head>Economic Units</head>
+            <p>Economic units can be individuals, groups of people, organisations, a state, a city
+              or a king. By default every <code>bk:from</code> and <code>bk:to</code> creates a
+                <code>bk:EconomicUnit</code>. Man kann aber noch genauer definieren, welche Klasse
+              ein <code>bk:EconomicUnit</code> zuzordnen ist, in dem man ein <code>bk:group</code>
+              oder <code>bk:individual</code> zum <code rendition="attribute">@ana</code> ergänzt.
+              Im folgenden Beispiel wird ausgedrückt, dass eine Gruppe von Fischern eine Abgabe von
+              Fisch tätigt. Dazu wird einfach das @ana um ein <code>ana="bk:from bk:group"</code>
+              erweitert.</p>
+            <ab>
+              <code rend="block" lang="XML">
+                <![CDATA[<p ana="bk:entry">
+  Item am <date ana="bk:when" when="1402-01-01">s<supplied reason="missing">[o]</supplied>nntag nach Eibnitÿ</date>
+  prachten dÿ<lb/><name ref="#pers_SR051" ana="bk:from bk:group">obgeschriben visser</name>
+  <measure ana="bk:commodity" commodity="Fisch" quantity="18" unit="Pfund">18 lb visch</measure> 
+  dem <name ref="#pers_SR052">herrn Kaspar</name>.
+</p>]]>
+              </code>
+            </ab>
+          </div>
+          <div xml:id="economic_units_index">
+            <head>Index - Economic Units</head>
+            <p>Es wird sehr empfohlen alle <code>bk:EconomicUnit</code> in einem <code
+                rend="element"><![CDATA[<listPerson>]]></code> oder <code rend="element"
+                ><![CDATA[<listOrg>]]></code> zu verwalten. Dies kann an unterschiedlichen Stellen
+              im TEI Dokument stehen, muss aber mit <code>ana="bk:Index"</code> markiert sein. Dies
+              soll es erlauben, dass auch weitere Personen oder Organisationslisten, unabhängig von
+              DEPCHA genutzt werden können. Die einige zusätzliche Daten, die standardmäßig mit TEI
+              ausgedrückt werden, werden aus dieser Struktur in LOD statements überführt. Im
+              folgenden Beispiel bezahlt Eliza Wheaton 20.00 $ an Laban Morey Wheaton. Laban Morey
+              Wheaton wird nur mit der xml:id identifiziert, da wir wissen, dass es sein
+              Rechnugnsbuch war. Weiter prosopograohische Infomration kann nun innerhalb des
+              listPerson abgebildet werden. Jedes <code>bk:to</code> und <code>bk:from</code>
+              referenziert über die xml:id in @ref an eine listPerson.</p>
+            <ab>
+              <code rend="block" lang="XML">
+                <![CDATA[<teiHeader>
+      <fileDesc>
+         <!-- ... -->
+      </fileDesc>      
+      <profileDesc>
+         <particDesc>
+            <listPerson ana="bk:Index">
+               <person xml:id="pers_WCDH001">
+                  <persName>
+                     <forename type="first">Eliza</forename>
+                     <surname type="married">Wheaton</surname>
+                  </persName>
+                  <birth when="1809-09-27"/>
+                  <sex value="2"/>
+                  <death when="1905"/>
+               </person>
+               <person xml:id="pers_WCDH002">
+                  <persName>
+                     <forename type="first">Laban</forename>
+                     <forename type="middle">Morey</forename>
+                     <surname>Wheaton</surname>
+                  </persName>
+                  <birth when="1796-09-14"/>
+                  <sex value="1"/>
+                  <occupation>
+                     <roleName>Postmaster</roleName>
+                  </occupation>
+                  <affiliation>
+                     <roleName>Representative <orgName ref="#org_WCDH5">Massachusetts General
+                        Court</orgName>
+                     </roleName>
+                  </affiliation>
+                  <occupation>
+                     <roleName>Member <orgName ref="#org_WCDH6">Massachusetts Governor's Council</orgName>
+                     </roleName>
+                  </occupation>
+                  <affiliation>
+                     <roleName>Trustee</roleName>
+                     <orgName ref="#org_WCDH7">State Industrial School for Girls</orgName>
+                  </affiliation>
+                  <death when="1865"/>
+               </person>
+            </listPerson>
+         </particDesc>
+      </profileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <table>
+            <row ana="bk:entry">
+               <cell ana="bk:status" corresp="#522">522</cell>
+               <cell>
+                  <name ana="bk:from" full="yes" ref="#pers_WCDH001" type="person">Eliza Wheaton</name>
+                  <span ana="bk:debit">
+                     <choice>
+                        <abbr ana="bk:debit">D</abbr>
+                        <expan>debtor</expan>
+                     </choice>
+                  </span>
+                  <lb/> To <name ana="bk:to" full="yes" ref="#pers_WCDH002" type="account">cash $20.00 </name>
+               </cell>
+               <cell>
+                  <measure ana="bk:money" quantity="20" unit="dollar">20</measure>
+               </cell>
+               <cell> 00 </cell>
+               <cell/>
+               <cell/>
+            </row>
+         </table>
+      </body>
+   </text>]]>
+              </code>
+            </ab>
+            <p> Eingie, nicht alle, TEi statements werden in LOD Strukturen überführt. </p>
+            <ab>
+              <code rend="block" lang="RDF">
+                <![CDATA[<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1">
+ <bk:entry>522 Eliza Wheaton D debtor To cash $20.00 20 00</bk:entry>
+ <bk:consistsOf>
+  <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T1">
+    <bk:transfers>
+      <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T1EA">
+        <bk:unit rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#dollar"/>
+        <bk:quantity>20</bk:quantity>
+      </bk:Money>
+    </bk:transfers>
+    <bk:from rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#pers_WCDH001"/>
+    <bk:to rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#pers_WCDH002"/>
+  </bk:Transfer>
+ </bk:consistsOf>
+</bk:Transaction>
+<bk:EconomicUnit rdf:about="https://gams.uni-graz.at/o:depcha.example.1#pers_WCDH001">
+  <foaf:givenName>Eliza</foaf:givenName>
+  <foaf:familyName>Wheaton</foaf:familyName>
+  <rdfs:label>Eliza Wheaton</rdfs:label>
+  <schema:birthDate>1809-09-27</schema:birthDate>
+  <schema:gender rdf:resource="https://schema.org/Female"/>
+  <schema:deathDate>1905</schema:deathDate>
+</bk:EconomicUnit>
+<bk:EconomicUnit rdf:about="https://gams.uni-graz.at/o:depcha.example.1#pers_WCDH002">
+  <foaf:givenName>Laban</foaf:givenName>
+  <foaf:givenName>Morey</foaf:givenName>
+  <foaf:familyName>Wheaton</foaf:familyName>
+  <rdfs:label>Laban Morey Wheaton Husband Husb.</rdfs:label>
+  <schema:birthDate>1796-09-14</schema:birthDate>
+  <schema:gender rdf:resource="https://schema.org/Male"/>
+  <schema:hasOccupation>Postmaster</schema:hasOccupation>
+  <schema:affiliation>Representative Massachusetts General Court</schema:affiliation>
+  <schema:hasOccupation>Member Massachusetts Governor's Council</schema:hasOccupation>
+  <schema:affiliation>Trustee State Industrial School for Girls</schema:affiliation>
+  <schema:deathDate>1865</schema:deathDate>
+</bk:EconomicUnit>]]>
+              </code>
+            </ab>
+          </div>
+          <div xml:id="economic_goods">
+            <head>Economic Goods</head>
+            <p> In DEPCHA werden <code>bk:EconomicGood</code> mit einem
+                <code>ana="bk:commodity"</code>, <code>ana="bk:service"</code> oder
+                <code>ana="bk:rigth"</code> inneralb eines <code rend="element"
+                ><![CDATA[<measure>]]></code> ausgedrückt. Es bietet sich an, wie bei den
+                <code>EconomicUnit</code> einen Index anzulegen. The <code rend="element"
+                ><![CDATA[<taxonomy>]]></code> in the <code rend="element"
+                ><![CDATA[<teiHeader>]]></code> defines, according to the TEI guidelines, <hi
+                rend="italic">a typology either implicitly or explicitly by a structured
+                taxonomy</hi>. This can be used to specify historical commodities for a document. If
+                <code>@ana="bk:Index"</code> is added to a <code>taxonomy</code>, the hierachy and
+              categories are transformed into SKOS. Im Beispiel wird über die Verschachtelung von
+                <code><![CDATA[<category>]]></code> eine Hierachy erzeugt. Verrpflichtend ist eine
+                <code>xml:id</code> und ein <code><![CDATA[<catDesc> <term>]]></code>. Optional kann
+              über das <code>@ref</code> im <code>term</code> auf ein kontrolliertes Vokabular oder
+              Wikidata Konzept referenziert werden.</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<taxonomy ana="bk:Index">
+  <gloss>Commodities</gloss>
+  <category xml:id="Getreide">
+    <catDesc><term ref="wd:Q2995529" xml:lang="de">Getreide</term></catDesc>
+    <category xml:id="Roggen">
+       <catDesc><term ref="wd:Q12099" xml:lang="de">Roggen</term></catDesc>
+    </category>
+    <category xml:id="Weizen">
+       <catDesc><term ref="wd:Q15645384" xml:lang="de">Weizen</term></catDesc>
+    </category>
+    <category xml:id="Gerste">
+       <catDesc><term ref="wd:Q11577" xml:lang="de">Gerste</term></catDesc>
+    </category>
+    <category xml:id="Mehl">
+       <catDesc><term ref="wd:Q36465" xml:lang="de">Mehl</term></catDesc>
+       <category xml:id="Weizenmehl">
+          <catDesc><term ref="wd:Q2249305" xml:lang="de">Weizenmehl</term></catDesc>
+       </category>
+       <category xml:id="Roggenmehl">
+          <catDesc><term ref="wd:Q10658708" xml:lang="de">Roggenmehl</term></catDesc>
+       </category>
+    </category>
+  </category>
+  <category xml:id="Tier">
+    <catDesc><term ref="wd:Q729" xml:lang="de">Tier</term></catDesc>
+       <category xml:id="Gans">
+         <catDesc><term ref="wd:Q3736439" xml:lang="de">Gans</term></catDesc>
+       </category>
+       <category xml:id="Schaf">
+         <catDesc><term ref="wd:Q7368" xml:lang="de">Schaf</term></catDesc>
+       </category>
+       <category xml:id="Lamm">
+         <catDesc><term ref="wd:Q4575936" xml:lang="de">Lamm</term></catDesc>
+         <category xml:id="Osterlamm">
+            <catDesc><term ref="wd:Q201171" xml:lang="de">Osterlamm</term></catDesc>
+         </category>
+       </category>
+    </category>
+   <category xml:id="TierichesProdukt">
+      <catDesc><term ref="wd:Q629103" xml:lang="de">Tieriches Produkt</term></catDesc>
+      <category xml:id="Eier">
+         <catDesc><term ref="wd:Q93189" xml:lang="de">Eier</term></catDesc>
+      </category>
+      <category xml:id="Käse">
+         <catDesc><term ref="wd:Q10943" xml:lang="de">Käse</term></catDesc>
+      </category>
+   </category>
+</taxonomy>]]></code>
+              <caption>Ein <![CDATA[<taxonomy]]> zur Repräsentation der Kategorien "Getreide",
+                "Tier" und "tieriches Produkt" mit jeweils untergeordneten Kategorien.</caption>
+            </ab>
+            <p>Diese Struktur lässt sich nach SKOS überführen und das Beispiel von oben, sieht dann
+              innerhalb von DEPCHA so aus:</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<skos:ConceptScheme rdf:about="https://gams.uni-graz.at/context:depcha.schlandersberger#Taxonomy">
+  <dc:title>Commodities</dc:title>
+  <skos:hasTopConcept rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#getreide"/>
+  <skos:hasTopConcept rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#tier"/>
+  <skos:hasTopConcept rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#tierischesprodukt"/>
+</skos:ConceptScheme>
+  <skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.schlandersberger.1#getreide">
+  <skos:inScheme rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1"/>
+  <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#roggen"/>
+  <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#weizen"/>
+  <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#gerste"/>
+  <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#mehl"/>
+  <skos:prefLabel xml:lang="de">Getreide</skos:prefLabel>
+<skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q2995529"/>
+</skos:Concept>
+<skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.schlandersberger.1#roggen">
+  <skos:inScheme rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1"/>
+  <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#getreide"/>
+  <skos:prefLabel xml:lang="de">Roggen</skos:prefLabel>
+  <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q12099"/>
+</skos:Concept>
+<skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.schlandersberger.1#weizen">
+  <skos:inScheme rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1"/>
+  <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#getreide"/>
+  <skos:prefLabel xml:lang="de">Weizen</skos:prefLabel>
+  <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q15645384"/>
+</skos:Concept>
+<skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.schlandersberger.1#gerste">
+  <skos:inScheme rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1"/>
+  <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#getreide"/>
+  <skos:prefLabel xml:lang="de">Gerste</skos:prefLabel>
+  <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q11577"/>
+</skos:Concept>
+<skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.schlandersberger.1#mehl">
+  <skos:inScheme rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1"/>
+  <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#weizenmehl"/>
+  <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#roggenmehl"/>
+  <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#getreide"/>
+  <skos:prefLabel xml:lang="de">Mehl</skos:prefLabel>
+  <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q36465"/>
+</skos:Concept>
+<skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.schlandersberger.1#weizenmehl">
+  <skos:inScheme rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1"/>
+  <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#mehl"/>
+  <skos:prefLabel xml:lang="de">Weizenmehl</skos:prefLabel>
+  <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q2249305"/>
+</skos:Concept>
+<skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.schlandersberger.1#roggenmehl">
+  <skos:inScheme rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1"/>
+  <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#mehl"/>
+  <skos:prefLabel xml:lang="de">Roggenmehl</skos:prefLabel>
+  <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q10658708"/>
+</skos:Concept>
+<skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.schlandersberger.1#tier">
+<skos:inScheme rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1"/>
+  <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#gans"/>
+  <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#schaf"/>
+  <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#lamm"/>
+  <skos:prefLabel xml:lang="de">Tier</skos:prefLabel>
+  <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q729"/>
+</skos:Concept>
+<skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.schlandersberger.1#gans">
+  <skos:inScheme rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1"/>
+  <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#tier"/>
+  <skos:prefLabel xml:lang="de">Gans</skos:prefLabel>
+  <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q3736439"/>
+</skos:Concept>
+<skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.schlandersberger.1#schaf">
+  <skos:inScheme rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1"/>
+  <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#tier"/>
+  <skos:prefLabel xml:lang="de">Schaf</skos:prefLabel>
+ <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q7368"/>
+</skos:Concept>
+<skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.schlandersberger.1#lamm">
+  <skos:inScheme rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1"/>
+  <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#osterlamm"/>
+  <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#tier"/>
+  <skos:prefLabel xml:lang="de">Lamm</skos:prefLabel>
+  <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q4575936"/>
+</skos:Concept>
+  <skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.schlandersberger.1#osterlamm">
+  <skos:inScheme rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1"/>
+  <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#lamm"/>
+  <skos:prefLabel xml:lang="de">Osterlamm</skos:prefLabel>
+ <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q201171"/>
+</skos:Concept>
+<skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.schlandersberger.1#tierischesprodukt">
+  <skos:inScheme rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1"/>
+ <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#eier"/>
+  <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#k%C3%A4se"/>
+  <skos:prefLabel xml:lang="de">Tieriches Produkt</skos:prefLabel>
+  <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q629103"/>
+</skos:Concept>
+<skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.schlandersberger.1#eier">
+  <skos:inScheme rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1"/>
+  <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#tierischesprodukt"/>
+  <skos:prefLabel xml:lang="de">Eier</skos:prefLabel>
+  <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q93189"/>
+</skos:Concept>
+<skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.schlandersberger.1#k%C3%A4se">
+  <skos:inScheme rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1"/>
+  <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.schlandersberger.1#tierischesprodukt"/>
+  <skos:prefLabel xml:lang="de">Käse</skos:prefLabel>
+  <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q10943"/>
+</skos:Concept>]]>
+              </code></ab>
+            <p> Taxonomien können auch für Dienstleistungen oder andere immaterielle
+              Wirtschaftsgüter angelegt werden. </p>
+          </div>
+          <div xml:id="units">
+            <head>Units of Measurement</head>
+            <p>Maßeinheiten sind essentiell zur Beschreibung von <code>EconomicAsets</code>. Dies
+              umfasst Maßeinheiten für Volumina, Flächen oder Längen, wie auch Währungen. The <code
+                rend="element"><![CDATA[<unitDecl>]]></code> in the <code rend="element"
+                ><![CDATA[<teiHeader>]]></code> provides, according to the TEI guidelines, <hi
+                rend="italic">information about units of measurement that are not members of the
+                International System of Units</hi>. This can be used to specify historical units for
+              a document. Im angeführten Beispiel wird die Währung Euro definiert, die seit 2002 in
+              der Region Europa verwendet wird. Mit @type wird es exlizit als Währung
+              gekennzeichnet. Über das @ref kann eine Referenz zu einem kontolleirten Vokabular
+              erzeugt werden. Um auszudrücken, dass 100 Cent 1 Euro sind, kann das Element
+                <code><![CDATA[<conversion>]]></code> verwendet werden. Wichtig ist noch
+              auszudrücken, was die "Hauptwährung" ist, damit Aggregationen innerhalb von DEPCHA
+              immer ein eine Währung überführt werden können. In diesem Fall soll Euro die
+                <code>bk:mainCurrency</code> sein. </p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<unitDef ref="wd:Q4917" type="currency" xml:id="euro" ana="bk:mainCurrency" from="2002">
+ <label xml:lang="en">Euro</label>
+ <region>Europe</region>
+ <unit>€</unit>
+</unitDef>
+<unitDef ref="wd:Q2377701" type="currency" xml:id="cent" from="2002">
+  <label xml:lang="en">Cent</label>
+  <region>Europe</region>
+  <unit>c</unit>
+  <conversion fromUnit="#euro" toUnit="#cent" formula="$fromUnit div 100"/>
+</unitDef>]]>
+              </code></ab>
+            <p>In dem RDF, das aus dem Snippet oben generiert wird, sieht man, dass für Dollar und
+              cent jeweils ein <code>bk:MonetaryUnit</code> erzeugt wird, das Information über die
+              zeitliche und räumliche Dimension beinhaltet. Was auch zu sehen ist, ist das
+                <code>depcha:Dataset</code>, wo für jeden RDF Datensatz die jeweilige
+              "Hauptwährung", wie auch alle enthaltenen Währungen definiert werden.</p>
+            <ab><code rend="block" lang="RDF">
+                <![CDATA[<depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.units#Dataset">
+  <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#euro"/>
+  <depcha:isMainCurrency rdf:resource="https://gams.uni-graz.at/context:depcha.example#euro"/>
+  <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#cent"/>
+</depcha:Dataset>
+<bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/o:depcha.example.units#euro">
+  <rdfs:label>Euro</rdfs:label>
+  <time:hasTime>
+    <time:TemporalEntity rdf:about="https://gams.uni-graz.at/o:depcha.example.units#euroTE">
+      <time:hasBeginning>2002</time:hasBeginning>
+    </time:TemporalEntity>
+  </time:hasTime>
+  <dc:coverage>Europe</dc:coverage>
+</bk:MonetaryUnit>
+<bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/o:depcha.example.units#cent">
+  <rdfs:label>Cent</rdfs:label>
+  <time:hasTime>
+    <time:TemporalEntity rdf:about="https://gams.uni-graz.at/o:depcha.example.units#centTE">
+    <time:hasBeginning>2002</time:hasBeginning>
+    </time:TemporalEntity>
+  </time:hasTime>
+  <dc:coverage>Europe</dc:coverage>
+</bk:MonetaryUnit>
+<bk:Conversion rdf:about="https://gams.uni-graz.at/o:depcha.example.units#centConversion">
+  <bk:convertsFrom rdf:resource="https://gams.uni-graz.at/o:depcha.example.units#euro"/>
+  <bk:convertsTo rdf:resource="https://gams.uni-graz.at/o:depcha.example.units#cent"/>
+  <bk:formula>$fromUnit div 100</bk:formula>
+</bk:Conversion>]]></code>
+            </ab>
+            <p> Schauen wir uns auch ein Beispiel für andere Maßeinheiten an. Mit dem @type in
+              unitDef können wir steuern, welche Klasse von Maßeinheit es ist. Ist dies nicht
+              angegeben, dann wirde auf die Überklasse <code>bk:Unit</code> zurückgefriffen.
+              Folgende @type werden unterstützt: <code>type="weight"</code>,
+                <code>type="volume"</code>, <code>type="length"</code>,
+              <code>type="capacity"</code>, <code>type="time"</code>, <code>type="currency"</code>,
+                <code>type="surface"</code>
+            </p>
+            <ab><code rend="block" lang="XML"><![CDATA[<unitDecl>
+  <unitDef ref="wd:Q100995" type="weight" xml:id="Pfund">
+     <label xml:lang="de">Pfund</label>
+  </unitDef>
+  <unitDef ref="wd:Q137958" type="volume" xml:id="Mütt">
+     <label xml:lang="de">Mütt</label>
+  </unitDef>
+  <unitDef ref="wd:Q482798" type="length" xml:id="unit.7">
+     <label xml:lang="en">yard</label>
+     <label xml:lang="de">Yard</label>
+  </unitDef>
+  <unitDef ref="wd:Q351646" type="capacity" xml:id="unit.15">
+     <label xml:lang="en">peck</label>
+     <label xml:lang="de">Peck</label>
+  </unitDef>
+  <unitDef ref="wd:Q573" type="time" xml:id="unit.12">
+     <label xml:lang="en">days</label>
+     <label xml:lang="de">Tage</label>
+  </unitDef>
+</unitDecl>]]></code></ab>
+          </div>
+          <div xml:id="debit_credit">
+            <head>Debit and Credit</head>
+            <p>To add the information of booking on credit or debit you can add
+                <code>ana="bk:debit"</code> or <code>ana="bk:credit"</code> to a TEI element. A
+              suitable place is the textual information that let us infer one of them. It must be
+              inside a bk:entry. In the following code snippet the transaction is booked on
+              debit.</p>
+            <ab>
+              <code rend="block" lang="XML">
+                <![CDATA[<head>
+  69 <name ana="bk:from" ref="#between.2">James Haley</name> J Self <span ana="bk:debit">Dr.</span>
+</head>]]>
+              </code>
+            </ab>
+          </div>
+          <div xml:id="status_agent">
             <head>Transaction Status and Agent</head>
-            <p> Here is another example of a transcription of a <code>bk:entry</code> in the Wheaton
-              day book. <table type="example">
+            <p>Here is another example of a transcription of a <code>bk:entry</code>. The entry in
+              the Wheaton day book looks like: <table type="example">
                 <head>Monday September 15th 1828</head>
                 <row>
                   <cell>settled</cell>
@@ -355,7 +863,6 @@
                   <cell>59</cell>
                   <cell>6</cell>
                 </row>
-
               </table> Two further entities may be relevant for editing an account: &apos;what is
               the transaction status?&apos; and &apos;are other people involved in the
               transaction?&apos; The <code>bk:entry</code> of the next example describes that a
@@ -363,65 +870,131 @@
               day book) and payed with this work his debt of 1 $ 50 cents <hi rend="italic">"by
                 cutting two sticks"</hi>. Darius got an axe to do the job. This axe comes from the
                 <code>bk:Agent</code>
-              <hi rend="italic">Puffer</hi>. </p>
-
+              <hi rend="italic">Puffer</hi>.</p>
             <p> In this example the status of the transaction is "settled", which means it is paid.
               The second entity is the involvement of a third person. In this example the text “By
               Puffer" can be interpreted as somebody who is carrying out the transaction for
               somebody else. Adding <code>@ana="bk:agent"</code> annotated a the person as a
-                <code>bk:Agent</code>. </p>
+                <code>bk:Agent</code>.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<table>
-    <head>Monday <date ana="bk:when" when="1828-09-15">September-15th-1828</date></head>
-    <row>
-    	<cell><span ana="bk:status">settled</span></cell>
-    	<cell>
-    		<name ana="bk:to" ref="#pers_WCDH276">Derius Drake</name> 
-    		<span ana="bk:debit">D </span>To ax dlvd By 
-    		<name ana="bk:agent" ref="#pers_WCDH280">Puffer</name> 9/1
-    	</cell>
-    	<cell><measure ana="bk:money bk:to" commodity="currency" quantity="1" unit="dollars">1</measure></cell>
-    	<cell><measure ana="bk:money bk:to" commodity="currency" quantity="50" unit="cents">50</measure></cell>
-    	<cell/>
-    </row>
-    </table>]]>
+  <head>Monday <date ana="bk:when" when="1828-09-15">September-15th-1828</date></head>
+  <row>
+    <cell><span ana="bk:status">settled</span></cell>
+    <cell>
+      <name ana="bk:to" ref="#pers_WCDH276">Derius Drake</name> 
+    	<span ana="bk:debit">D </span>To ax dlvd By 
+    	<name ana="bk:agent" ref="#pers_WCDH280">Puffer</name> 9/1
+    </cell>
+    <cell><measure ana="bk:money" commodity="currency" quantity="1" unit="dollars">1</measure></cell>
+    <cell><measure ana="bk:money" commodity="currency" quantity="50" unit="cents">50</measure></cell>
+    <cell/>
+  </row>
+</table>]]>
               </code></ab>
           </div>
-          <div>
-            <head>Group, Taxes and Places</head>
-            <p> In the next example - a tax list - we find unknown groups that are taxable in a
-              certain village. The <code>bk:entry</code> represents that at the place <hi
-                rend="italic">Marczinkowo</hi> two craftsmen have to pay a tax in the amount of 3
-              floren and 14 grosz. <table type="example">
-                <head>[784r]Parochia Iunivladislaviensis 1565</head>
-                <row>
-                  <cell>Marczinkowo</cell>
-                  <cell>de quinque mansis possessis, et duobus artificibus solvit</cell>
-                  <cell/>
-                  <cell>3</cell>
-                  <cell>14</cell>
-                </row>
-              </table> The Bookkeeping Ontology allows to describe this entities by using <code
-                rend="code">@ana="bk:where"</code>, <code>@ana="bk:tax"</code> and
-                <code>@ana="bk:group"</code>. The addition bk:from i <code>ana="bk:money
-                bk:from"</code> defines that money goes away from the group and is booked on the
-              account of the main author of the tax list (e.g. the king). </p>
+          <div xml:id="places">
+            <head>Places</head>
+            <p>The annotation bk:where can be used to express locations that are associated with
+              transactions. However, it is important to note that this connection to a place is not
+              specified further. Just add <code>ana="bk:where"</code> to a <code rend="element"
+                ><![CDATA[<place>]]></code> and also consider to reference to a <code rend="element"
+                ><![CDATA[<listPerson>]]></code>.</p>
             <ab><code rend="block" lang="XML">
-                <![CDATA[<row ana="bk:entry">
-    <cell>
-    	<placeName ref="#village.3" xml:id="SID.4" ana="bk:where">Marczinkowo</placeName>,
-    	de <name ana="bk:from bk:tax" ref="#C000004">quinque mansis possessis</name>,
-    	et <span ana="bk:from bk:group">duobus artificibus</span>
-    	solvit
-    </cell>
-    <cell>
-    	<measure ana="bk:money bk:from" quantity="3" unit="floren">3</measure>
-    </cell>
-    <cell>
-    	<measure ana="bk:money bk:from" quantity="14" unit="grosz">14</measure>
-    </cell>
-    </row>]]>
+                <![CDATA[<listPlace ana="bk:Index">
+  <place xml:id="SchlossKasten">
+    <placeName>Kasten</placeName>
+    <location>
+      <country>Italien</country>
+      <settlement>Kastelbell</settlement>
+      <geo>46.63455486353947, 10.91606818862674</geo>
+     </location>
+   </place>
+</listPlace>
+<!-- ... -->
+<p>
+  <seg ana="bk:entry">Item so hatdo <name ref="pers_SR009" type="person" ana="bk:from">
+    michel under weg</name> geben <measure ana="bk:commodity" commodity="Roggen"
+      quantity="2" unit="Mütt">2 mütt<lb/> Roken</measure> die gab der 
+    <name ref="pers_SR071" type="person" ana="bk:to">parott</name> umb 1 mütt<lb/> arbaid
+    daz kam zw dem <placeName ana="bk:where" ref="#SchlossKasten">kasten</placeName> in
+    der <lb/> fasten</seg>
+</p>]]>
               </code></ab>
+            <p>RDF</p>
+            <ab><code rend="block" lang="RDF">
+                <![CDATA[<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.places#T1">
+  <!-- ... -->
+  <bk:where rdf:resource="https://gams.uni-graz.at/o:depcha.example.places#kasten"/>
+</bk:Transaction>
+<!-- ... -->
+<schema:Place rdf:about="https://gams.uni-graz.at/o:depcha.example.places#schlosskasten">
+  <schema:name>Kasten</schema:name>
+  <schema:containedInPlace>Italien</schema:containedInPlace>
+  <schema:containedInPlace>Kastelbell</schema:containedInPlace>
+  <schema:longitude>46.63455486353947</schema:longitude>
+  <schema:latitude>10.91606818862674</schema:latitude>
+</schema:Place>]]>
+              </code></ab>
+          </div>
+          <div xml:id="price">
+            <head>Price</head>
+            <p> To bring together <code>bk:Commodity</code> and <code>bk:Price</code> we put them
+              together in one <code rend="element">measure</code> and mark the <code>bk:Price</code>
+              explicitly in an additional measure element. </p>
+          </div>
+          <div xml:id="taxes">
+            <head>Taxes, ...</head>
+            <p>Lorem</p>
+          </div>
+          <div xml:id="prefixdef">
+            <head>tei:prefixDef</head>
+            <p>Da bk: innerhalb des @ana musst als Abkürzung genutzt wird, ist ein verpflichtend
+              <![CDATA[<prefixDef>]]> im teiHeader notwendig. Dies kann gleich so kopiert
+              werden. Sollten andere kontrollierte Vokabularien oder LOD Ressourcen verwendet werden, können die Prefix hier einfach definiert werden.</p>
+            <ab><code rend="block" lang="XML">
+              <![CDATA[<encodingDesc>
+  <listPrefixDef>
+    <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)" 
+      replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+      <p>Analytical descriptors are considered to represent concepts from the 
+         DEPCHA bookkeeping ontology and can be extended to respective URIs.</p>
+    </prefixDef>
+    <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)" 
+      replacementPattern="http://www.wikidata.org/wiki/$1">
+      <p>
+        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+      </p>
+    </prefixDef>
+  </listPrefixDef>
+</encodingDesc>]]>
+              </code></ab>
+          </div>
+          <div xml:id="msdesc">
+            <head>tei:msDesc - Metadata</head>
+            <p>For every TEI document you can use the msDesc to define some Metadata.</p>
+            <ab><code rend="block" lang="XML"><![CDATA[<msDesc>
+  <msIdentifier>
+    <country>USA</country>
+    <settlement>Wheaton</settlement>
+    <institution>Madeleine Clark Wallace Library, Wheaton College</institution>
+    <collection>Marion B. Gebbie Archives and Special Collections</collection>
+    <idno>ABC 1.2</idno>
+    <msName>Laban Morey Wheaton Day Book</msName>
+  </msIdentifier>
+  <msContents>
+    <msItem>
+      <title>Laban Morey Wheaton Day Book</title>
+      <docAuthor>Laban Morey Wheaton</docAuthor>
+      <docDate>1828-1859</docDate>
+      <textLang>
+        <lang>English</lang>
+      </textLang>
+    </msItem>
+  </msContents>
+</msDesc>]]>
+            </code>
+            </ab>
           </div>
           <div>
             <head>XML-Schema</head>
@@ -461,80 +1034,6 @@
             type="web"/>
           <p>In this example the editor as defined is own concepts in the TEI header and links them
             to it.</p>
-
-          <div>
-            <head>TEI-Taxonomy for Commodities</head>
-            <p>The <hi rend="element">taxonomy</hi> in the <hi rend="element">teiHeader</hi>
-              defines, according to the TEI guidelines, <hi rend="italic">a typology either
-                implicitly or explicitly by a structured taxonomy</hi>. This can be used to specify
-              historical commodities for a document. If <code>@ana="bk:Taxonomy"</code> is added to
-              a <code>taxonomy</code>, the hierchy and categories are transformed into SKOS. </p>
-            <ab><code rend="block" lang="XML">
-                <![CDATA[<classDecl>
-      <taxonomy ana="bk:Taxonomy">
-          <gloss>Commodities</gloss>
-          <category xml:id="commodity.1">
-              <gloss xml:lang="eng">vegetable<ref target="wd:Q11004"/></gloss>
-              <category xml:id="commodity.1.1">
-                  <gloss xml:lang="eng">potatoes<ref target="wd:Q16587531"/></gloss>
-                  <category xml:id="commodity.1.1.1">
-                      <gloss xml:lang="eng">black potatoes</gloss>
-                  </category>
-                  <category xml:id="commodity.1.1.2">
-                      <gloss xml:lang="eng">brown potatoes</gloss>
-                  </category>
-              </category>
-              <category xml:id="commodity.1.2">
-                  <gloss xml:lang="eng">corn<ref target="wd:Q11575"/></gloss>
-              </category>
-          </category>
-      </taxonomy>
-  </classDecl>]]></code></ab>
-            <p>SKOS result</p>
-            <ab><code rend="block" lang="XML">
-                <![CDATA[<skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1">
-      <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1"/>
-      <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.2"/>
-      <skos:prefLabel>vegetable</skos:prefLabel>
-    </skos:Concept>
-    <skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1">
-      <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1.1"/>
-      <skos:narrower rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1.2"/>
-      <skos:prefLabel>potatoe</skos:prefLabel>
-      <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1"/>
-    </skos:Concept>
-    <skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1.1">
-      <skos:prefLabel>black potatoe</skos:prefLabel>
-      <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1"/>
-    </skos:Concept>
-    <skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1.2">
-      <skos:prefLabel>brown potatoe</skos:prefLabel>    
-  <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.1"/>
-    </skos:Concept>
-    <skos:Concept rdf:about="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1.2">
-      <skos:prefLabel>corn</skos:prefLabel>
-      <skos:broader rdf:resource="https://gams.uni-graz.at/o:depcha.wheaton.1#commodity.1"/>
-    </skos:Concept> ]]>
-              </code></ab>
-          </div>
-          <div>
-            <head>Units of Measurement</head>
-            <p>The <hi rend="element">unitDecl</hi> in the <hi rend="element">teiHeader</hi>
-              provides, according to the TEI guidelines, <hi rend="italic">information about units
-                of measurement that are not members of the International System of Units</hi>. This
-              can be used to specify historical units for a document. If
-                <code>@ana="bk:Taxonomy"</code> is added, the units are mapped as RDF during ingest
-              in DEPCHA. </p>
-            <ab><code rend="block" lang="XML">
-                <![CDATA[<unitDecl ana="bk:Taxonomy">
-      <unitDef xml:id="unit.13" type="currency" ref="wd:Q4917">
-          <label xml:lang="eng">dollars</label>
-          <country>USA</country>
-          <unit>$</unit>
-      </unitDef>
-    <unitDecl>]]>
-              </code></ab>
-          </div>
         </div>
         <div xml:id="chapter.3">
           <head>CSV/Excel</head>
@@ -551,14 +1050,27 @@
             <p> The &apos;|&apos; is used to seperate multiple values inside a cell. </p>
           </div>
         </div>
-        <div xml:id="chapter.4">
+        <div xml:id="rdf">
           <head>RDF</head>
-          <div>
-            <p>The last option is to directly create RDF compliant with the bookkeeping ontology.
-              You can use Protege to check the consistency of your RDF with the ontology.</p>
+          <div xml:id="void_dataset">
+            <head>void:Dataset</head>
+            <p> a </p>
+          </div>
+          <div xml:id="depcha_dataset">
+            <head>depcha:Dataset</head>
+            <p> a </p>
           </div>
         </div>
       </div>
     </body>
   </text>
 </TEI>
+<!--Additionally
+              to that we have to make the direction of the transfer explicit by extending the <code
+                rend="attribute">@ana</code> of <hi rend="element">measure</hi>. Putting
+                <code>bk:commodity</code>, <hi rend="code">bk:service</hi> or <code>bk:money</code>
+              together with <hi rend="code">bk:from</hi> or <code>bk:to</code> in the same <hi
+                rend="attribute">@ana</hi>-attribute indicates the receiver of the respective
+              economic good as indicated in the close context of the annotation. Therefore, a
+              transaction recorded in an account of the Stagville company identifies one party in
+              every transaction already in the heading:-->

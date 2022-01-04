@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Schlandersberger Accounts</title>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+            <idno type="PID">o:depcha.example.places</idno>
+            <ref target="context:depcha.example" type="context">Examples</ref>
+         </publicationStmt>
+         <sourceDesc>
+            <listPlace ana="bk:Index">
+               <place xml:id="SchlossKasten">
+                  <placeName>Kasten</placeName>
+                  <location>
+                     <country>Italien</country>
+                     <settlement>Kastelbell</settlement>
+                     <geo>46.63455486353947, 10.91606818862674</geo>
+                  </location>
+               </place>
+               <place xml:id="Lantsch">
+                  <placeName>Läntsch/Lentsch</placeName>
+                  <location>
+                     <country>Italien</country>
+                     <settlement>Laatsch/ Laudes</settlement>
+                     <geo>46.6771283157355, 10.53109516682290</geo>
+                  </location>
+               </place>
+            </listPlace>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+               <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                  bookkeeping ontology and can be extended to respective URIs. </p>
+            </prefixDef>
+            <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="http://www.wikidata.org/wiki/$1">
+               <p>
+                  <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+               </p>
+            </prefixDef>
+         </listPrefixDef>
+      </encodingDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <p>
+            <seg ana="bk:entry">Item so hatdo <name ref="pers_SR009" type="person" ana="bk:from"
+                  >michel under weg</name> geben <measure ana="bk:commodity" commodity="Roggen"
+                  quantity="2" unit="Mütt">2 mütt<lb/> Roken</measure> die gab der <name
+                  ref="pers_SR071" type="person" ana="bk:to">parott</name> umb 1 mütt<lb/> arbaid
+               daz kam zw dem <placeName ana="bk:where" ref="#SchlossKasten">kasten</placeName> in
+               der <lb/> fasten</seg>
+         </p>
+      </body>
+   </text>
+</TEI>
