@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="en">DEPCHA - Digital Edition Publishing Cooperative for Historical
+                    Accounts</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher xml:lang="de">Karl-Franzens-Universität Graz</publisher>
+                <publisher xml:lang="en">University of Graz</publisher>
+                <date when="2018">2022</date>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl/>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <projectDesc>
+                <p/>
+            </projectDesc>
+        </encodingDesc>
+        <profileDesc>
+            <creation>
+                <date when="2018">2018</date>
+                <name type="place">Graz, Austria</name>
+            </creation>
+            <langUsage>
+                <language ident="en">English</language>
+            </langUsage>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div xml:id="project">
+                <p>Historical financial records provide rich and highly structured administrative
+                    sources, containing substantial amounts of individual information. This
+                    individual information is often not in the core of research interest. Instead,
+                    the records acquire their significance in aggregation of the single entries.
+                    Pure transcription does not cover the full range of dimensions of such a source:
+                    the linguistic/textual, the quantifiable and the semantic dimension. For
+                    research purpose, historical sources are subject to a transformation process
+                    towards (linked) information sources that can be used in various research
+                    scenarios.</p>
+                <p> The Project DEPCHA, an Andrew W. Mellon funded cooperation of five US partners
+                    and the <ref target="https://informationsmodellierung.uni-graz.at/en/">Centre
+                        for Information Modelling at Graz University</ref>, aims to link the
+                    knowledge domain of economic activities to historical accounting records. For
+                    this purpose the so-called <ref target="/o:depcha.bookkeeping"
+                        >Bookkeeping-Ontology</ref> is developed. DEPCHA creates a publication hub
+                    for digital editions on the web, converting multiple formats into RDF and
+                    publishing these alongside the transcriptions and allows the usage of various
+                    retrieval and visualization functionalities, as well as interoperability and
+                    reuse of information in the sense of Linked Open Data.</p>
+            </div>
+            <div xml:id="discovery">
+                <head type="sub">Discover the data that lies hidden in DEPCHA.</head>
+                <p>This is the experimental part of DEPCHA, which is still under development. In
+                    this section, customized resource discovery strategies will be implemented to
+                    explore the entire DEPCHA dataset in different ways.</p>
+            </div>
+            <div xml:id="ontology">
+                <head type="sub">Structure transactions in accounting records.</head>
+                <p>According to that historical data must be prepared and structured based on a
+                    formal set of rules. The <ref target="/o:depcha.bookkeeping"
+                        >Bookkeeping-Ontology</ref>, a conceptual data model based on <ref
+                        target="https://www.cidoc-crm.org/">CIDOC-CRM</ref>, is developed in an
+                    ontology engineering process, involving historians, software developers and
+                    digital humanists. In a nutshell:</p>
+                <p>The ontology formalizes the interpretation of a transaction as a combination of
+                    transfers of economic goods and money from one accounting object to another. In
+                    this way, semantic structures, representing transaction, can be defined from
+                    different sources and source types. Thus, workflows can be set up to normalize
+                    these semantics.</p>
+            </div>
+            <div xml:id="tutorial">
+                <head type="sub">Learn how to prepare your data for DEPCHA.</head>
+                <p>To make this possible, it is necessary that the data is structured and normalized
+                    in a consistent way. The detailed tutorials on this page illustrate a variety of
+                    examples and annotation possibilities to ensure that data is structured
+                    appropriately for DEPCHA. </p>
+            </div>
+        </body>
+        <back/>
+    </text>
+</TEI>
