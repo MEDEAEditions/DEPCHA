@@ -11,8 +11,7 @@
          <publicationStmt>
             <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
             <idno type="PID">o:depcha.schlandersberger.1</idno>
-            <ref target="context:depcha.schlandersberger" type="context">Schlandersberger
-               Rechungen</ref>
+            <ref target="context:depcha.schlandersberger" type="context">Schlandersberger Rechungen</ref>
          </publicationStmt>
          <sourceDesc>
             <msDesc>
@@ -177,26 +176,6 @@
             </prefixDef>
          </listPrefixDef>
          <unitDecl>
-            <!-- mit @type kann man die Einheiten weiter spezifizieren
-               <unitDef ref="wd:Q4917" type="currency" xml:id="dollar" ana="bk:unit" from="1690">
-                <label xml:lang="en">dollar</label>
-                <country>USA</country>
-                <unit>$</unit>
-              </unitDef>
-               <unitDef ref="wd:Q58093" type="currency" xml:id="cent">
-                  <label xml:lang="en">cent</label>
-                  <country>USA</country>
-                <unit>c</unit>
-               <conversion fromUnit="#dollar" toUnit="#cent" formula="$fromUnit div 100"/>
-             </unitDef>
-              
-              * ana="bk:unit" (sollte ich noch was besseres finden) wird die "hauptwährung" identifiziert
-              * type="weight" , type="length"  zB für längenmaß
-              * mit conversion kann man die umrechnung zur hauptwährung ausdrücken
-              * generelles modellierungsproblem ist, dass mit @unit keine URI/refernz auf zB xml:id="dollar" erzeugt werden darf. ich muss also nich ein @unitRef einführen
-            -->
-
-
             <unitDef ref="wd:Q159505" type="currency" xml:id="Groschen">
                <label xml:lang="de">Groschen</label>
             </unitDef>
