@@ -34,14 +34,14 @@
       <div xml:id="tutorial">
         <div xml:id="introduction">
           <head>Introduction</head>
-          <p>This tutorial described several ways how data of historical accounts can be prepared to
+          <p>This tutorial describes several ways how data of historical accounts can be prepared to
             be ready to publish in DEPCHA.</p>
         </div>
         <div xml:id="xml_tei">
           <head>XML/TEI</head>
           <p>The following snippet of a historical accounting book (image and transcription) is used
             as an example to illustrate a possible way of annotating a digital edition using XML/TEI
-            and its connection the <ref target="https://gams.uni-graz.at/o:depcha.bookkeeping"
+            and its connection, the <ref target="https://gams.uni-graz.at/o:depcha.bookkeeping"
               >Bookkeeping Ontology</ref>. </p>
           <ab>
             <figure>
@@ -77,9 +77,9 @@
           <p>This structure in the source describes two <code>bk:Transaction</code> with their
             textual representation (<span type="tooltip"><code>bk:entry</code><note>bk:entry is
                 written small as it represents a data propery and not a class.</note></span>). If
-            something in this tutorial begins with the prefix <code>bk:</code> it means, that it is
-            a concept defined in the Bookkeeping Ontology. It can be expanded to
-              <code>http://gams.uni-graz.at/o:depcha.bookkeeping#</code>, for instance via a
+            something in this tutorial begins with the prefix <code>bk:</code>, it means that it is
+            a concept defined in the <hi rend="italic">Bookkeeping Ontology</hi>. It can be expanded to
+              <code>http://gams.uni-graz.at/o:depcha.bookkeeping#</code>, for instance, via a
             TEI-prefix definition <code rend="element"><![CDATA[<tei:prefixDef>]]></code>.</p>
           <list>
             <item>
@@ -95,11 +95,11 @@
             further buys <hi rend="italic">1 lb Shot</hi> for the price of <hi rend="italic"
               >2/6</hi> and at last he buys <hi rend="italic">1 lb Sugar</hi> for the price of <hi
               rend="italic">2/6</hi> from <hi rend="italic">Stagville</hi>. Stagville represents a
-            farm (plantage). James Haley transfers therefore the monetary value of 7 shilling and 6
+            farm (plantage). James Haley therefore transfers the monetary value of 7 shillings and 6
             pence to Stagville. Some information is not explicit inside a <code>bk:entry</code> and
             can be found in the header or is known by the domain expert of the source.<lb/> In this
-            case a table seems to describe the text structure the best way and the following XML/TEI
-            snippet can be an example for that: </p>
+            case a table seems to be the best way to describe the text structure as shown in the following example of an XML/TEI
+            snippet: </p>
           <ab>
             <code rend="block" lang="XML">
               <![CDATA[<text>
@@ -138,11 +138,11 @@
               <code>ana</code> are relevant, next to some attributes for formalizing data. We will
             look at that in more detail now.</p>
           <p>The starting point is to define a container for a <code>bk:Transaction</code> by
-            annotating the textual representation of an <code>bk:entry</code> like <code
+            annotating the textual representation of a <code>bk:entry</code> like <code
               rend="element">div</code>, <code rend="element">row</code> or <code rend="element"
-              >span</code> (or any other element that fits to your data and the TEI guidlines).
-            Using <code rend="attribute">@ana</code> with the value "bk:entry" a TEI structure is
-            defined as an <code>bk:entry</code> according to the <hi rend="italic">Bookkeeping
+              >span</code> (or any other element that fits to your data and the TEI guidelines).
+            By using <code rend="attribute">@ana</code> with the value "bk:entry" a TEI structure is
+            defined as a <code>bk:entry</code> according to the <hi rend="italic">Bookkeeping
               Ontology</hi>.</p>
           <ab>
             <code rend="block" lang="XML">
@@ -154,20 +154,19 @@
 </row>
 ]]>
             </code>
-            <caption>Annotation a textual structure, in this case a row in a table, as a text entry
+            <caption>Annotation of a textual structure, in this case a row in a table, as a text entry
               of a transaction. </caption>
           </ab>
           <div xml:id="commodities">
             <head>The Basics</head>
-            <p> Now we can define inside the row element (<code>bk:entry</code>) further concepts
-              which describe a <code>bk:Transaction</code>. A <code>bk:Transaction</code> consists
-              of at least one <code>bk:Transfer</code> and a <code>bk:Transfer</code> in turn
-              defines the flow of a <code>bk:EconomicAsset</code>. This further divide into
-                <code>bk:EconomicGood</code>, which can be a <code>bk:Commodity</code>,
-                <code>bk:Service</code> or <code>bk:Rigth</code>, and <code>bk:MonetaryValue</code>.
-              So the flow of a <code>bk:EconomicAsset</code> from one <code>bk:EconomicUnit</code>
-              to the other is expressed. To express the direction of the flow <code>bk:from</code>
-              and <code>bk:to</code> are needed. We first deal with the question: "what is
+            <p> Now we can define further concepts which describe a <code>bk:Transaction</code> 
+              inside the row element (<code>bk:entry</code>). A <code>bk:Transaction</code> consists
+              of at least one <code>bk:Transfer</code> that defines the flow of a <code>bk:EconomicAsset</code>. This can be further specified as
+                <code>bk:EconomicGood</code> which can be a <code>bk:Commodity</code>,
+                <code>bk:Service</code>, <code>bk:Right</code>, or a <code>bk:MonetaryValue</code>.
+              So, the flow of a <code>bk:EconomicAsset</code> from one <code>bk:EconomicUnit</code>
+              to another is expressed. To express the direction of the flow <code>bk:from</code>
+              and <code>bk:to</code> are needed. We first deal with the question: "What is
               transfered?". In this example three different <code>bk:Commodity</code> are mentioned: <list>
                 <item>
                   <hi rend="italic">1/4 lb Powder</hi>
@@ -189,14 +188,14 @@
                 </item>
               </list>
             </p>
-            <p> Whereas three further <code>bk:MonetaryValue</code> can be found, interpreted as
+            <p> Also, three further <code>bk:MonetaryValue</code> can be found, interpreted as
                 <code>bk:Price</code>. The <code>bk:Price</code> belongs to the
-                <code>bk:Commodity</code> named before: <hi rend="italic">¼ lb Powder for 2 shilling
-                and 6 pence</hi>. But we will ignore that in this first step. </p>
+                <code>bk:Commodity</code> mentioned before: <hi rend="italic">¼ lb Powder for 2 shilling
+                and 6 pence</hi>. However, we will ignore that in this first step. </p>
             <p> The <code rend="element"><![CDATA[<measure>]]></code> element in TEI allows to
               annotate countable entities using these attributes <code rend="attribute"
               >@unit</code>, <code rend="attribute">@unitRef</code>, <code rend="attribute"
-                >@commodity</code> and <code rend="attribute">@quantity</code>. So we can use them
+                >@commodity</code> and <code rend="attribute">@quantity</code>. We can use those attributes
               to normalize the data.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<row ana="bk:entry">
@@ -214,11 +213,12 @@
   </cell>
 </row>]]>
               </code>
+              <caption>Adding the attributes @commodity, @quantity and @unit to the <![CDATA[<measure>]]> element to normalize the data.</caption>
             </ab>
-            <p> Now we reference the <code rend="element">measure</code> to the Bookkeeping Ontology
+            <p> Now we reference the <code rend="element">measure</code> to the <hi rend="italic">Bookkeeping Ontology</hi>
               using <code rend="attribute">@ana</code>. We want to say that <hi rend="italic"
                 >powder, sugar and shot</hi> are commodities. Therefore, we add
-                <code>ana="bk:commodity"</code> and <code>ana="bk:money"</code> to the elements. </p>
+                <code>ana="bk:commodity"</code> and <code>ana="bk:money"</code> to the corresponding elements. </p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<row ana="bk:entry">
   <cell>
@@ -234,33 +234,35 @@
     <measure ana="bk:money" quantity="6" unit="pence">6</measure>
   </cell>
 </row>]]>
-              </code></ab>
-            <p> This very <code>bk:Transaction</code> consists now of 2 <code>bk:Transfer</code>.
-              One transferring powder, sugar and shot, the other <code>bk:Transfer</code> transfers
+              </code>
+              <caption>ana="bk:money" marks a <![CDATA[<measure>]]> as a bk:MonetaryValue and
+                ana="bk:commodity" as a bk:Commodity.</caption></ab>
+            <p> This very <code>bk:Transaction</code> consists now of 2 <code>bk:Transfer</code> -
+              one transferring powder, sugar and shot, the other transferring
               7 shilling and 6 pence.</p>
-            <p> In the following we define the directions of the flow of assetes, which can be
-              summarized as the following: <list>
+            <p> In the following we define the directions of the flow of assets, which can be
+              summarized like shown below: <list>
                 <item>
                   <hi rend="italic">powder, sugar, shot from Stagville to James Haley</hi>
                 </item>
                 <item>
                   <hi rend="italic">7 shilling, 6 pence from James Haley to Stagville</hi>
                 </item>
-              </list> Therefore, we use <code>ana="bk:from"</code> and <code>ana="bk:to"</code>. We
-              add this kind of annotation to any TEI structure you are using for annotating
-                <code>bk:EconomicUnit</code> in your document like <code rend="element"
+              </list> To map this in our example we can use <code>ana="bk:from"</code> and <code>ana="bk:to"</code>. We
+              add this kind of annotation to any TEI structure we are using for annotating
+                <code>bk:EconomicUnit</code> in our document like <code rend="element"
                 ><![CDATA[<name>]]></code>, <code rend="element"><![CDATA[<persName>]]></code> or
-                <code rend="element"><![CDATA[<orgName>]]></code>. In chaptger <ref
-                target="#economic_units">XY</ref> you will learn more about different types of
-              exonomic units. As for the RDF representation URIs are needed, we have to assign a
+                <code rend="element"><![CDATA[<orgName>]]></code>. In the chapter about<ref
+                target="#economic_units">Economic Units</ref> you will learn more about different types of
+              economic units. As for the RDF representation URIs are needed, we have to assign a
               unique ID for every <code>bk:EconomicUnit</code> (even though it may be an unknown
               group of economic units) using <code rend="attribute">@ref</code>.</p>
             <p> The following code snippet now shows how we express that the monetary value of 7
               shilling and 6 pence flows <hi rend="bold">from</hi> James Haley - normalized by the
               reference to the <code rend="attribute">@xml:id</code>
-              <hi rend="italic">economic_unit.2</hi> - <hi rend="bold">to</hi> Stagville. Notice
+              <hi rend="italic">economic_unit.2</hi> - <hi rend="bold">to</hi> Stagville with the reference <hi rend="italic">economic_unit.1</hi>. Notice
               that by default the flow of money is always encoded explicitely in the DEPCHA! You
-              can, however, express the flow direction explicitly yourself. You can find information
+              can, however, express the flow direction explicitly yourself. You can find more information
               about that under <ref target="#">XY</ref>.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<head><name ana="bk:to" ref="#economic_unit.1">Stagville</name> August 1st 1808</head>
@@ -282,8 +284,7 @@
   </row>
 </table>]]>
               </code>
-              <caption>ana="bk:money" marks a <![CDATA[<measure>]]> as a bk:MonetaryValue and
-                ana="bk:commodity" as a bk:Commodity.</caption></ab>
+              <caption>Extension of <![CDATA[<name>]]> to express the directions "bk:from" and "bk:to" of the assets and also normalizing people or organisations with a reference.</caption></ab>
             <p>After performing these basic steps the following RDF will be extracted auomatically,
               when the XML/TEI is ingestet into DEPCHA.</p>
             <ab><code rend="block" lang="RDF">
