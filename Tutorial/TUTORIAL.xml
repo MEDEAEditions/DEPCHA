@@ -239,7 +239,7 @@
                 ana="bk:commodity" as a bk:Commodity.</caption></ab>
             <p> This very <code>bk:Transaction</code> consists now of 2 <code>bk:Transfer</code> -
               one transferring powder, sugar and shot, the other transferring
-              7 shilling and 6 pence.</p>
+              7 shillings and 6 pence.</p>
             <p> In the following we define the directions of the flow of assets, which can be
               summarized like shown below: <list>
                 <item>
@@ -258,7 +258,7 @@
               unique ID for every <code>bk:EconomicUnit</code> (even though it may be an unknown
               group of economic units) using <code rend="attribute">@ref</code>.</p>
             <p> The following code snippet now shows how we express that the monetary value of 7
-              shilling and 6 pence flows <hi rend="bold">from</hi> James Haley - normalized by the
+              shillings and 6 pence flows <hi rend="bold">from</hi> James Haley - normalized by the
               reference to the <code rend="attribute">@xml:id</code>
               <hi rend="italic">economic_unit.2</hi> - <hi rend="bold">to</hi> Stagville with the reference <hi rend="italic">economic_unit.1</hi>. Notice
               that by default the flow of money is always encoded explicitely in the DEPCHA! You
@@ -285,8 +285,8 @@
 </table>]]>
               </code>
               <caption>Extension of <![CDATA[<name>]]> to express the directions "bk:from" and "bk:to" of the assets and also normalizing people or organisations with a reference.</caption></ab>
-            <p>After performing these basic steps the following RDF will be extracted auomatically,
-              when the XML/TEI is ingestet into DEPCHA.</p>
+            <p>After performing these basic steps the following RDF will be extracted automatically,
+              when the XML/TEI is ingested into DEPCHA.</p>
             <ab><code rend="block" lang="RDF">
                 <![CDATA[<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1">
   <bk:entry>1/4 lb Powder 1 lb Shot 1 lb Sugar 7 6</bk:entry>
@@ -346,7 +346,7 @@
             <p>Transactions can have a date. The date of a transaction (<code>bk:when</code>) can be
               annotated by adding <code>ana="bk:when"</code> to a <code rend="element"
                 ><![CDATA[<date>]]></code>. Here we have to use the <code rend="attribute"
-                >@when</code> to normalize the date. You also can use <code rend="attribute"
+                >@when</code> to normalize the date. You can also use <code rend="attribute"
                 >@from</code> and <code rend="attribute">@to</code> to set a time range. </p>
 
 
@@ -359,25 +359,24 @@
   dem <name ref="#pers_SR052">herrn Kaspar</name>.
 </p>]]>
               </code>
+              <caption>The <code rend="element"><![CDATA[<date>]]></code> element is enriched by a <code rend="attribute"
+                >@when</code> to normalize the date.</caption>
             </ab>
-            <p> Not every date inside a <code>bk:entry</code> is the date of the transaction, as
-              well as the corresponding date can a also appear outside the bk:entry as the following
+            <p> Not every date inside a <code>bk:entry</code> is the date of the transaction. Also, 
+              the corresponding date can appear outside the bk:entry as the following
               examples shows. Both <code>bk:entry</code> share the same date, as the tabular
-              structure clearly indicates. James Haley bought 1/4 lb Powder for 7 shilling on the
+              structure clearly indicates. James Haley bought 1/4 lb Powder for 7 shillings on the
               1st August 1808 and Elisabeth Example bought 1 lb Shot on the same day.</p>
-            <p> Für diese Situationen gibt es folgende Regeln: <list>
-                <item>Das <code>bk:when</code> innerhalb eines <code>bk:entry</code> hat die höchste
-                  Priorität.</item>
-                <item>Zweithöchste Priorität hat das Datum, das in einer übergeordneten Struktur und
-                  in der Sequent "dahinter" ist. Das ist der Fall im folgenden Code Snippet.</item>
-                <item>Oder aber Alle Transaktionen innerhalb eines XML/TEI haben das gleiceh datum,
-                  dann kann ein <code>bk:when</code> auch im <code ana="element"
-                    ><![CDATA[<teiHeader]]></code> definiert werden.</item>
-                <item>Eine "hacky" Variante wäre, vl wird es einmal gebraucht, ein leeres
-                    <code><![CDATA[<date ana="bk:when" when="1900-02-02"/>]]></code> innerhalb eines
-                  Datums anzulegen. Beispielsweise, weil man weiß, dass für eine enzelne Transaktion
-                  ein anderes datum gilt, als für alle anderen, und diese allgemein mi teiHeader
-                  definiet wurde. </item>
+            <p> Rules for cases like: <list>
+                <item> A <code>bk:when</code> inside a <code>bk:entry</code> has a higher priority.</item>
+                <item> Second-level priority should be given to dates that can be found in a superior structure. 
+                  The following Code Snippet provides an example for this scenario.</item>
+                <item> If all transactions of one XML/TEI share the same date,
+                  you can define a <code>bk:when</code> in the <code ana="element"
+                    ><![CDATA[<teiHeader>]]></code>.</item>
+                <item>Another "hacky" option that you might possibly need would be to add an empty
+                    <code><![CDATA[<date ana="bk:when" when="1900-02-02"/>]]></code> to a transaction. For instance, because you just know from another source
+                  that for one particular transaction you have to apply another date than the one specified in the <code ana="element"><![CDATA[<teiHeader>]]></code> for all the other transactions . </item>
               </list>
             </p>
             <ab>
@@ -408,18 +407,19 @@
     </cell>
   </row>
 </table>]]></code>
+              <caption>Annotation of date - priority level 2: The date in <code ana="element"><![CDATA[<head>]]> will be applied for every single <code>bk:entry</code>
+                in the <code ana="element"><![CDATA[<table>]]></code>.</caption>
             </ab>
           </div>
           <div xml:id="economic_units">
             <head>Economic Units</head>
             <p>Economic units can be individuals, groups of people, organisations, a state, a city
               or a king. By default every <code>bk:from</code> and <code>bk:to</code> creates a
-                <code>bk:EconomicUnit</code>. Man kann aber noch genauer definieren, welche Klasse
-              ein <code>bk:EconomicUnit</code> zuzordnen ist, in dem man ein <code>bk:group</code>
-              oder <code>bk:individual</code> zum <code rendition="attribute">@ana</code> ergänzt.
-              Im folgenden Beispiel wird ausgedrückt, dass eine Gruppe von Fischern eine Abgabe von
-              Fisch tätigt. Dazu wird einfach das @ana um ein <code>ana="bk:from bk:group"</code>
-              erweitert.</p>
+                <code>bk:EconomicUnit</code>. You can also determine the category of 
+              a <code>bk:EconomicUnit</code> by adding <code>bk:group</code>
+              or <code>bk:individual</code> to the attribute <code rendition="attribute">@ana</code>.
+              The following example shows the annotation of a group of fishermen delivering fish.
+              In this case the <![CDATA[<name>]]> element is extended by <code>ana="bk:from bk:group"</code>.</p>
             <ab>
               <code rend="block" lang="XML">
                 <![CDATA[<p ana="bk:entry">
@@ -429,22 +429,22 @@
   dem <name ref="#pers_SR052">herrn Kaspar</name>.
 </p>]]>
               </code>
+              <caption>Identifying a <code>bk:EconomicUnit</code> by adding <code>bk:group</code>.</caption>
             </ab>
           </div>
           <div xml:id="economic_units_index">
             <head>Index - Economic Units</head>
-            <p>Es wird sehr empfohlen alle <code>bk:EconomicUnit</code> in einem <code
-                rend="element"><![CDATA[<listPerson>]]></code> oder <code rend="element"
-                ><![CDATA[<listOrg>]]></code> zu verwalten. Dies kann an unterschiedlichen Stellen
-              im TEI Dokument stehen, muss aber mit <code>ana="bk:Index"</code> markiert sein. Dies
-              soll es erlauben, dass auch weitere Personen oder Organisationslisten, unabhängig von
-              DEPCHA genutzt werden können. Die einige zusätzliche Daten, die standardmäßig mit TEI
-              ausgedrückt werden, werden aus dieser Struktur in LOD statements überführt. Im
-              folgenden Beispiel bezahlt Eliza Wheaton 20.00 $ an Laban Morey Wheaton. Laban Morey
-              Wheaton wird nur mit der xml:id identifiziert, da wir wissen, dass es sein
-              Rechnugnsbuch war. Weiter prosopograohische Infomration kann nun innerhalb des
-              listPerson abgebildet werden. Jedes <code>bk:to</code> und <code>bk:from</code>
-              referenziert über die xml:id in @ref an eine listPerson.</p>
+            <p>It is highly recommended to organize all <code>bk:EconomicUnit</code> in a <code
+                rend="element"><![CDATA[<listPerson>]]></code> or a <code rend="element"
+                ><![CDATA[<listOrg>]]></code> element. This list section can be located at different spots
+              of the TEI and does not necessarily have to be labeled with <code>ana="bk:Index"</code>. 
+              This should allow other people or organization lists to be used independently of DEPCHA.
+              In the following example Eliza Wheaton pays 20.00 $ to Laban Morey Wheaton. Laban Morey
+              Wheaton is identified by an <code ana="attribute">@xml:id</code>, because we know that it was
+              his accounting book. Further prosopographic information can be put into 
+              <code rend="element"><![CDATA[<listPerson>]]></code>. Every <code>bk:to</code> and <code>bk:from</code>
+              will use the xml:id from <code ana="attribute">@ref</code> to reference to a <code
+              rend="element"><![CDATA[<person>]]></code> in <code rend="element"><![CDATA[<listPerson>]]></code>.</p>
             <ab>
               <code rend="block" lang="XML">
                 <![CDATA[<teiHeader>
@@ -519,8 +519,9 @@
       </body>
    </text>]]>
               </code>
+              <caption>Referencing persons as <code>bk:EconomicUnit</code> to a <code rend="element"><![CDATA[<listPerson>]]></code> sections.</caption>
             </ab>
-            <p> Eingie, nicht alle, TEi statements werden in LOD Strukturen überführt. </p>
+            <p>Additional data expressed with TEI by default are transferred from this structure to LOD statements. </p>
             <ab>
               <code rend="block" lang="RDF">
                 <![CDATA[<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1">
@@ -560,6 +561,7 @@
   <schema:deathDate>1865</schema:deathDate>
 </bk:EconomicUnit>]]>
               </code>
+              <caption>Some, but not all TEI statements will be transferred into an LOD structure.</caption>
             </ab>
           </div>
           <div xml:id="economic_goods">
