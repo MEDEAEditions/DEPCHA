@@ -882,7 +882,7 @@
               someone else. Adding <code>@ana="bk:agent"</code> helps annotating the person as a
                 <code>bk:Agent</code>. As we can see a
               person named Derius Drake worked for Wheaton (owner of the shop and main author of the
-              day book). Derius Drake payed his debt of 1 dollar 50 cents with his work <hi rend="italic">by
+              day book). Derius Drake payed his debt of 1 pound 59 shillings and 6 pence with his work <hi rend="italic">by
                 cutting two sticks</hi>. To do the job he got an axe which was delivered by the
               <code>bk:Agent</code> <hi rend="italic">Puffer</hi>. </p>
             <ab><code rend="block" lang="XML">
@@ -895,8 +895,9 @@
     	<span ana="bk:debit">D </span>To ax dlvd By 
     	<name ana="bk:agent" ref="#pers_WCDH280">Puffer</name> 9/1
     </cell>
-    <cell><measure ana="bk:money" commodity="currency" quantity="1" unit="dollars">1</measure></cell>
-    <cell><measure ana="bk:money" commodity="currency" quantity="50" unit="cents">50</measure></cell>
+    <cell><measure ana="bk:money" commodity="currency" quantity="1" unit="pound">1</measure></cell>
+    <cell><measure ana="bk:money" commodity="currency" quantity="59" unit="shilling">59</measure></cell>
+    <cell><measure ana="bk:money" commodity="currency" quantity="6" unit="pence">6</measure></cell>
     <cell/>
   </row>
 </table>]]>
