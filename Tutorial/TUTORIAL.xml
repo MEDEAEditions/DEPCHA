@@ -10,6 +10,8 @@
         <author>Georg Vogeler</author>
       </titleStmt>
       <publicationStmt>
+        <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+        <idno type="PID">o:depcha.tutorial</idno>
         <publisher xml:lang="de">Universität Graz</publisher>
         <publisher xml:lang="en">University of Graz</publisher>
         <date when="2021-02-11">11.02.2021</date>
@@ -78,8 +80,8 @@
             textual representation (<span type="tooltip"><code>bk:entry</code><note>bk:entry is
                 written small as it represents a data propery and not a class.</note></span>). If
             something in this tutorial begins with the prefix <code>bk:</code>, it means that it is
-            a concept defined in the <hi rend="italic">Bookkeeping Ontology</hi>. It can be expanded to
-              <code>http://gams.uni-graz.at/o:depcha.bookkeeping#</code>, for instance, via a
+            a concept defined in the <hi rend="italic">Bookkeeping Ontology</hi>. It can be expanded
+            to <code>http://gams.uni-graz.at/o:depcha.bookkeeping#</code>, for instance, via a
             TEI-prefix definition <code rend="element"><![CDATA[<tei:prefixDef>]]></code>.</p>
           <list>
             <item>
@@ -98,8 +100,8 @@
             farm (plantage). James Haley therefore transfers the monetary value of 7 shillings and 6
             pence to Stagville. Some information is not explicit inside a <code>bk:entry</code> and
             can be found in the header or is known by the domain expert of the source.<lb/> In this
-            case a table seems to be the best way to describe the text structure as shown in the following example of an XML/TEI
-            snippet: </p>
+            case a table seems to be the best way to describe the text structure as shown in the
+            following example of an XML/TEI snippet: </p>
           <ab>
             <code rend="block" lang="XML">
               <![CDATA[<text>
@@ -140,8 +142,8 @@
           <p>The starting point is to define a container for a <code>bk:Transaction</code> by
             annotating the textual representation of a <code>bk:entry</code> like <code
               rend="element">div</code>, <code rend="element">row</code> or <code rend="element"
-              >span</code> (or any other element that fits to your data and the TEI guidelines).
-            By using <code rend="attribute">@ana</code> with the value "bk:entry" a TEI structure is
+              >span</code> (or any other element that fits to your data and the TEI guidelines). By
+            using <code rend="attribute">@ana</code> with the value "bk:entry" a TEI structure is
             defined as a <code>bk:entry</code> according to the <hi rend="italic">Bookkeeping
               Ontology</hi>.</p>
           <ab>
@@ -154,19 +156,20 @@
 </row>
 ]]>
             </code>
-            <caption>Annotation of a textual structure, in this case a row in a table, as a text entry
-              of a transaction. </caption>
+            <caption>Annotation of a textual structure, in this case a row in a table, as a text
+              entry of a transaction. </caption>
           </ab>
           <div xml:id="commodities">
             <head>The Basics</head>
-            <p> Now we can define further concepts which describe a <code>bk:Transaction</code> 
+            <p> Now we can define further concepts which describe a <code>bk:Transaction</code>
               inside the row element (<code>bk:entry</code>). A <code>bk:Transaction</code> consists
-              of at least one <code>bk:Transfer</code> that defines the flow of a <code>bk:EconomicAsset</code>. This can be further specified as
+              of at least one <code>bk:Transfer</code> that defines the flow of a
+                <code>bk:EconomicAsset</code>. This can be further specified as
                 <code>bk:EconomicGood</code> which can be a <code>bk:Commodity</code>,
                 <code>bk:Service</code>, <code>bk:Right</code>, or a <code>bk:MonetaryValue</code>.
               So, the flow of a <code>bk:EconomicAsset</code> from one <code>bk:EconomicUnit</code>
-              to another is expressed. To express the direction of the flow <code>bk:from</code>
-              and <code>bk:to</code> are needed. We first deal with the question: "What is
+              to another is expressed. To express the direction of the flow <code>bk:from</code> and
+                <code>bk:to</code> are needed. We first deal with the question: "What is
               transfered?". In this example three different <code>bk:Commodity</code> are mentioned: <list>
                 <item>
                   <hi rend="italic">1/4 lb Powder</hi>
@@ -190,13 +193,13 @@
             </p>
             <p> Also, three further <code>bk:MonetaryValue</code> can be found, interpreted as
                 <code>bk:Price</code>. The <code>bk:Price</code> belongs to the
-                <code>bk:Commodity</code> mentioned before: <hi rend="italic">¼ lb Powder for 2 shilling
-                and 6 pence</hi>. However, we will ignore that in this first step. </p>
+                <code>bk:Commodity</code> mentioned before: <hi rend="italic">¼ lb Powder for 2
+                shilling and 6 pence</hi>. However, we will ignore that in this first step. </p>
             <p> The <code rend="element"><![CDATA[<measure>]]></code> element in TEI allows to
               annotate countable entities using these attributes <code rend="attribute"
               >@unit</code>, <code rend="attribute">@unitRef</code>, <code rend="attribute"
-                >@commodity</code> and <code rend="attribute">@quantity</code>. We can use those attributes
-              to normalize the data.</p>
+                >@commodity</code> and <code rend="attribute">@quantity</code>. We can use those
+              attributes to normalize the data.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<row ana="bk:entry">
   <cell>
@@ -213,12 +216,14 @@
   </cell>
 </row>]]>
               </code>
-              <caption>Adding the attributes @commodity, @quantity and @unit to the <![CDATA[<measure>]]> element to normalize the data.</caption>
+              <caption>Adding the attributes @commodity, @quantity and @unit to the
+                <![CDATA[<measure>]]> element to normalize the data.</caption>
             </ab>
-            <p> Now we reference the <code rend="element">measure</code> to the <hi rend="italic">Bookkeeping Ontology</hi>
-              using <code rend="attribute">@ana</code>. We want to say that <hi rend="italic"
-                >powder, sugar and shot</hi> are commodities. Therefore, we add
-                <code>ana="bk:commodity"</code> and <code>ana="bk:money"</code> to the corresponding elements. </p>
+            <p> Now we reference the <code rend="element">measure</code> to the <hi rend="italic"
+                >Bookkeeping Ontology</hi> using <code rend="attribute">@ana</code>. We want to say
+              that <hi rend="italic">powder, sugar and shot</hi> are commodities. Therefore, we add
+                <code>ana="bk:commodity"</code> and <code>ana="bk:money"</code> to the corresponding
+              elements. </p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<row ana="bk:entry">
   <cell>
@@ -238,8 +243,8 @@
               <caption>ana="bk:money" marks a <![CDATA[<measure>]]> as a bk:MonetaryValue and
                 ana="bk:commodity" as a bk:Commodity.</caption></ab>
             <p> This very <code>bk:Transaction</code> consists now of 2 <code>bk:Transfer</code> -
-              one transferring powder, sugar and shot, the other transferring
-              7 shillings and 6 pence.</p>
+              one transferring powder, sugar and shot, the other transferring 7 shillings and 6
+              pence.</p>
             <p> In the following we define the directions of the flow of assets, which can be
               summarized like shown below: <list>
                 <item>
@@ -248,22 +253,24 @@
                 <item>
                   <hi rend="italic">7 shilling, 6 pence from James Haley to Stagville</hi>
                 </item>
-              </list> To map this in our example we can use <code>ana="bk:from"</code> and <code>ana="bk:to"</code>. We
-              add this kind of annotation to any TEI structure we are using for annotating
-                <code>bk:EconomicUnit</code> in our document like <code rend="element"
-                ><![CDATA[<name>]]></code>, <code rend="element"><![CDATA[<persName>]]></code> or
-                <code rend="element"><![CDATA[<orgName>]]></code>. In the chapter about<ref
-                target="#economic_units">Economic Units</ref> you will learn more about different types of
-              economic units. As for the RDF representation URIs are needed, we have to assign a
-              unique ID for every <code>bk:EconomicUnit</code> (even though it may be an unknown
-              group of economic units) using <code rend="attribute">@ref</code>.</p>
+              </list> To map this in our example we can use <code>ana="bk:from"</code> and
+                <code>ana="bk:to"</code>. We add this kind of annotation to any TEI structure we are
+              using for annotating <code>bk:EconomicUnit</code> in our document like <code
+                rend="element"><![CDATA[<name>]]></code>, <code rend="element"
+                ><![CDATA[<persName>]]></code> or <code rend="element"><![CDATA[<orgName>]]></code>.
+              In the chapter about<ref target="#economic_units">Economic Units</ref> you will learn
+              more about different types of economic units. As for the RDF representation URIs are
+              needed, we have to assign a unique ID for every <code>bk:EconomicUnit</code> (even
+              though it may be an unknown group of economic units) using <code rend="attribute"
+                >@ref</code>.</p>
             <p> The following code snippet now shows how we express that the monetary value of 7
               shillings and 6 pence flows <hi rend="bold">from</hi> James Haley - normalized by the
               reference to the <code rend="attribute">@xml:id</code>
-              <hi rend="italic">economic_unit.2</hi> - <hi rend="bold">to</hi> Stagville with the reference <hi rend="italic">economic_unit.1</hi>. Notice
-              that by default the flow of money is always encoded explicitely in the DEPCHA! You
-              can, however, express the flow direction explicitly yourself. You can find more information
-              about that under <ref target="#">XY</ref>.</p>
+              <hi rend="italic">economic_unit.2</hi> - <hi rend="bold">to</hi> Stagville with the
+              reference <hi rend="italic">economic_unit.1</hi>. Notice that by default the flow of
+              money is always encoded explicitely in the DEPCHA! You can, however, express the flow
+              direction explicitly yourself. You can find more information about that under <ref
+                target="#">XY</ref>.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<head><name ana="bk:to" ref="#economic_unit.1">Stagville</name> August 1st 1808</head>
 <table>
@@ -284,7 +291,9 @@
   </row>
 </table>]]>
               </code>
-              <caption>Extension of <![CDATA[<name>]]> to express the directions "bk:from" and "bk:to" of the assets and also normalizing people or organisations with a reference.</caption></ab>
+              <caption>Extension of <![CDATA[<name>]]> to express the directions "bk:from" and
+                "bk:to" of the assets and also normalizing people or organisations with a
+                reference.</caption></ab>
             <p>After performing these basic steps the following RDF will be extracted automatically,
               when the XML/TEI is ingested into DEPCHA.</p>
             <ab><code rend="block" lang="RDF">
@@ -359,24 +368,29 @@
   dem <name ref="#pers_SR052">herrn Kaspar</name>.
 </p>]]>
               </code>
-              <caption>The <code rend="element"><![CDATA[<date>]]></code> element is enriched by a <code rend="attribute"
-                >@when</code> to normalize the date.</caption>
+              <caption>The <code rend="element"><![CDATA[<date>]]></code> element is enriched by a
+                  <code rend="attribute">@when</code> to normalize the date.</caption>
             </ab>
-            <p> Not every date inside a <code>bk:entry</code> is the date of the transaction. Also, 
-              the corresponding date can appear outside the bk:entry as the following
-              examples shows. Both <code>bk:entry</code> share the same date, as the tabular
-              structure clearly indicates. James Haley bought 1/4 lb Powder for 7 shillings on the
-              1st August 1808 and Elisabeth Example bought 1 lb Shot on the same day.</p>
+            <p> Not every date inside a <code>bk:entry</code> is the date of the transaction. Also,
+              the corresponding date can appear outside the bk:entry as the following examples
+              shows. Both <code>bk:entry</code> share the same date, as the tabular structure
+              clearly indicates. James Haley bought 1/4 lb Powder for 7 shillings on the 1st August
+              1808 and Elisabeth Example bought 1 lb Shot on the same day.</p>
             <p> Rules for cases like: <list>
-                <item> A <code>bk:when</code> inside a <code>bk:entry</code> has a higher priority.</item>
-                <item> Second-level priority should be given to dates that can be found in a superior structure. 
-                  The following Code Snippet provides an example for this scenario.</item>
-                <item> If all transactions of one XML/TEI share the same date,
-                  you can define a <code>bk:when</code> in the <code rend="element"
-                    ><![CDATA[<teiHeader>]]></code>.</item>
+                <item> A <code>bk:when</code> inside a <code>bk:entry</code> has a higher
+                  priority.</item>
+                <item> Second-level priority should be given to dates that can be found in a
+                  superior structure. The following Code Snippet provides an example for this
+                  scenario.</item>
+                <item> If all transactions of one XML/TEI share the same date, you can define a
+                    <code>bk:when</code> in the <code rend="element"
+                  ><![CDATA[<teiHeader>]]></code>.</item>
                 <item>Another "hacky" option that you might possibly need would be to add an empty
-                    <code><![CDATA[<date ana="bk:when" when="1900-02-02"/>]]></code> to a transaction. For instance, because you just know from another source
-                  that for one particular transaction you have to apply another date than the one specified in the <code rend="element"><![CDATA[<teiHeader>]]></code> for all the other transactions . </item>
+                    <code><![CDATA[<date ana="bk:when" when="1900-02-02"/>]]></code> to a
+                  transaction. For instance, because you just know from another source that for one
+                  particular transaction you have to apply another date than the one specified in
+                  the <code rend="element"><![CDATA[<teiHeader>]]></code> for all the other
+                  transactions . </item>
               </list>
             </p>
             <ab>
@@ -407,7 +421,8 @@
     </cell>
   </row>
 </table>]]></code>
-              <caption>Annotation of date - priority level 2: The date in <code rend="element"><![CDATA[<head>]]> will be applied for every single <code>bk:entry</code>
+              <caption>Annotation of date - priority level 2: The date in <code rend="element"
+                  ><![CDATA[<head>]]></code> will be applied for every single <code>bk:entry</code>
                 in the <code rend="element"><![CDATA[<table>]]></code>.</caption>
             </ab>
           </div>
@@ -415,11 +430,12 @@
             <head>Economic Units</head>
             <p>Economic units can be individuals, groups of people, organisations, a state, a city
               or a king. By default every <code>bk:from</code> and <code>bk:to</code> creates a
-                <code>bk:EconomicUnit</code>. You can also determine the category of 
-              a <code>bk:EconomicUnit</code> by adding <code>bk:group</code>
-              or <code>bk:individual</code> to the attribute <code rendition="attribute">@ana</code>.
-              The following example shows the annotation of a group of fishermen delivering fish.
-              In this case the <![CDATA[<name>]]> element is extended by <code>ana="bk:from bk:group"</code>.</p>
+                <code>bk:EconomicUnit</code>. You can also determine the category of a
+                <code>bk:EconomicUnit</code> by adding <code>bk:group</code> or
+                <code>bk:individual</code> to the attribute <code rendition="attribute">@ana</code>.
+              The following example shows the annotation of a group of fishermen delivering fish. In
+              this case the <![CDATA[<name>]]> element is extended by <code>ana="bk:from
+                bk:group"</code>.</p>
             <ab>
               <code rend="block" lang="XML">
                 <![CDATA[<p ana="bk:entry">
@@ -429,22 +445,25 @@
   dem <name ref="#pers_SR052">herrn Kaspar</name>.
 </p>]]>
               </code>
-              <caption>Identifying a <code>bk:EconomicUnit</code> by adding <code>bk:group</code>.</caption>
+              <caption>Identifying a <code>bk:EconomicUnit</code> by adding
+                <code>bk:group</code>.</caption>
             </ab>
           </div>
           <div xml:id="economic_units_index">
             <head>Index - Economic Units</head>
             <p>It is highly recommended to organize all <code>bk:EconomicUnit</code> in a <code
                 rend="element"><![CDATA[<listPerson>]]></code> or a <code rend="element"
-                ><![CDATA[<listOrg>]]></code> element. This list section can be located at different spots
-              of the TEI and does not necessarily have to be labeled with <code>ana="bk:Index"</code>. 
-              This should allow other people or organization lists to be used independently of DEPCHA.
-              In the following example Eliza Wheaton pays 20.00 $ to Laban Morey Wheaton. Laban Morey
-              Wheaton is identified by an <code rend="attribute">@xml:id</code>, because we know that it was
-              his accounting book. Further prosopographic information can be put into 
-              <code rend="element"><![CDATA[<listPerson>]]></code>. Every <code>bk:to</code> and <code>bk:from</code>
+                ><![CDATA[<listOrg>]]></code> element. This list section can be located at different
+              spots of the TEI and does not necessarily have to be labeled with
+                <code>ana="bk:Index"</code>. This should allow other people or organization lists to
+              be used independently of DEPCHA. In the following example Eliza Wheaton pays 20.00 $
+              to Laban Morey Wheaton. Laban Morey Wheaton is identified by an <code rend="attribute"
+                >@xml:id</code>, because we know that it was his accounting book. Further
+              prosopographic information can be put into <code rend="element"
+                ><![CDATA[<listPerson>]]></code>. Every <code>bk:to</code> and <code>bk:from</code>
               will use the xml:id from <code rend="attribute">@ref</code> to reference to a <code
-              rend="element"><![CDATA[<person>]]></code> in <code rend="element"><![CDATA[<listPerson>]]></code>.</p>
+                rend="element"><![CDATA[<person>]]></code> in <code rend="element"
+                ><![CDATA[<listPerson>]]></code>.</p>
             <ab>
               <code rend="block" lang="XML">
                 <![CDATA[<teiHeader>
@@ -519,9 +538,11 @@
       </body>
    </text>]]>
               </code>
-              <caption>Referencing persons as <code>bk:EconomicUnit</code> to a <code rend="element"><![CDATA[<listPerson>]]></code> sections.</caption>
+              <caption>Referencing persons as <code>bk:EconomicUnit</code> to a <code rend="element"
+                  ><![CDATA[<listPerson>]]></code> sections.</caption>
             </ab>
-            <p>Additional data expressed with TEI by default are transferred from this structure to LOD statements. </p>
+            <p>Additional data expressed with TEI by default are transferred from this structure to
+              LOD statements. </p>
             <ab>
               <code rend="block" lang="RDF">
                 <![CDATA[<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1">
@@ -561,25 +582,26 @@
   <schema:deathDate>1865</schema:deathDate>
 </bk:EconomicUnit>]]>
               </code>
-              <caption>Some, but not all TEI statements will be transferred into an LOD structure.</caption>
+              <caption>Some, but not all TEI statements will be transferred into an LOD
+                structure.</caption>
             </ab>
           </div>
           <div xml:id="economic_goods">
             <head>Economic Goods</head>
-            <p> In DEPCHA a <code>bk:EconomicGood</code> is expressed by adding 
+            <p> In DEPCHA a <code>bk:EconomicGood</code> is expressed by adding
                 <code>ana="bk:commodity"</code>, <code>ana="bk:service"</code> oder
                 <code>ana="bk:rigth"</code> to the element <code rend="element"
-                ><![CDATA[<measure>]]></code>. It is helpful to create an <code>bk:Index</code>
-                as we did for <code>EconomicUnit</code>. According to the TEI guidelines a <code rend="element"
-                ><![CDATA[<taxonomy>]]></code> in the <code rend="element"
-                ><![CDATA[<teiHeader>]]></code> defines <hi
-                rend="italic">a typology either implicitly or explicitly by a structured
-                taxonomy</hi>. So, this can be used to specify historical commodities for a document. If
-                <code>@ana="bk:Index"</code> is added to a <code>taxonomy</code>, the hierarchy and
-              categories are transformed into SKOS. In the following example a hierarchy is created by
-                the nested structure of <code><![CDATA[<category>]]></code> elements. The use of an
-                <code>xml:id</code> and <code><![CDATA[<catDesc> <term>]]></code>elements is obligatory. Optionally,
-              you can reference to a controlled voacbulary or to Wikidata Concepts using <code>@ref</code> 
+                ><![CDATA[<measure>]]></code>. It is helpful to create an <code>bk:Index</code> as
+              we did for <code>EconomicUnit</code>. According to the TEI guidelines a <code
+                rend="element"><![CDATA[<taxonomy>]]></code> in the <code rend="element"
+                ><![CDATA[<teiHeader>]]></code> defines <hi rend="italic">a typology either
+                implicitly or explicitly by a structured taxonomy</hi>. So, this can be used to
+              specify historical commodities for a document. If <code>@ana="bk:Index"</code> is
+              added to a <code>taxonomy</code>, the hierarchy and categories are transformed into
+              SKOS. In the following example a hierarchy is created by the nested structure of
+                <code><![CDATA[<category>]]></code> elements. The use of an <code>xml:id</code> and
+                <code><![CDATA[<catDesc> <term>]]></code>elements is obligatory. Optionally, you can
+              reference to a controlled voacbulary or to Wikidata Concepts using <code>@ref</code>
               in <code>term</code>.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<taxonomy ana="bk:Index">
@@ -631,10 +653,11 @@
    </category>
 </taxonomy>]]></code>
               <caption>A <![CDATA[<taxonomy]]> for the representation of the categories "Getreide",
-                "Tier" and "tieriches Produkt" with their corresponding subordinated categories.</caption>
+                "Tier" and "tieriches Produkt" with their corresponding subordinated
+                categories.</caption>
             </ab>
-            <p>This structure can be transferred to SKOS. So, the example from above would look like this in 
-             DEPCHA:</p>
+            <p>This structure can be transferred to SKOS. So, the example from above would look like
+              this in DEPCHA:</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<skos:ConceptScheme rdf:about="https://gams.uni-graz.at/context:depcha.schlandersberger#Taxonomy">
   <dc:title>Commodities</dc:title>
@@ -742,24 +765,28 @@
   <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q10943"/>
 </skos:Concept>]]>
               </code>
-              <caption>Transfer of an XML <code><![CDATA[<taxonomy>]]></code> to a SKOS structure.</caption>
+              <caption>Transfer of an XML <code><![CDATA[<taxonomy>]]></code> to a SKOS
+                structure.</caption>
             </ab>
             <p>Taxonomies can also be created for services or other intangible commodities.</p>
           </div>
           <div xml:id="units">
             <head>Units of Measurement</head>
-            <p>Units of measurement are essential for the description of <code>bk:EconomicAsset</code>. This 
-             includes units for volume, area or length, as well as for currencies. According to the TEI guidelines the element <code
+            <p>Units of measurement are essential for the description of
+                <code>bk:EconomicAsset</code>. This includes units for volume, area or length, as
+              well as for currencies. According to the TEI guidelines the element <code
                 rend="element"><![CDATA[<unitDecl>]]></code> in the <code rend="element"
-                ><![CDATA[<teiHeader>]]></code> provides <hi
-                rend="italic">information about units of measurement that are not members of the
-                International System of Units</hi>. So, this seems to be very useful to specify historical units in
-              a document. In the example below the Euro is defined as a currency that is used in the region of Europe 
-              since 2002. With <code rend="attribute">@type</code> it is explicitly identified as a currency.
-              By using <code rend="attribute">@ref</code> we can create a reference to a controlled vocabulary.
-              Moreover, we can use the element <code><![CDATA[<conversion>]]></code> to express that 100 cents are equivalent to 1 euro. 
-              It is also important to identify the "main currency" to be able to transfer aggregations within DEPCHA
-              into one currency. In this case we would like to set the euro as <code>bk:mainCurrency</code> sein.</p>
+                ><![CDATA[<teiHeader>]]></code> provides <hi rend="italic">information about units
+                of measurement that are not members of the International System of Units</hi>. So,
+              this seems to be very useful to specify historical units in a document. In the example
+              below the Euro is defined as a currency that is used in the region of Europe since
+              2002. With <code rend="attribute">@type</code> it is explicitly identified as a
+              currency. By using <code rend="attribute">@ref</code> we can create a reference to a
+              controlled vocabulary. Moreover, we can use the element
+                <code><![CDATA[<conversion>]]></code> to express that 100 cents are equivalent to 1
+              euro. It is also important to identify the "main currency" to be able to transfer
+              aggregations within DEPCHA into one currency. In this case we would like to set the
+              euro as <code>bk:mainCurrency</code> sein.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<unitDecl>
 <unitDef ref="wd:Q4917" type="currency" xml:id="euro" ana="bk:mainCurrency" from="2002">
@@ -775,13 +802,15 @@
 </unitDef>
 </unitDecl>]]>
               </code>
-              <caption>Definition of currency using <code rend="element"><![CDATA[<unitDecl>]]></code> and declaring a <code>bk:mainCurrency</code></caption>
+              <caption>Definition of currency using <code rend="element"
+                  ><![CDATA[<unitDecl>]]></code> and declaring a
+                <code>bk:mainCurrency</code></caption>
             </ab>
-            <p>In the RDF below that was generated from the snippet above we can see that for dollar and
-              cent we can find a <code>bk:MonetaryUnit</code> which contains information about 
-              the temporal and spacial dimension. Additionally, we can see the 
-                <code>depcha:Dataset</code> defining the corresponding main currency for every RDF dataset
-              as well as all currencies in the document.</p>
+            <p>In the RDF below that was generated from the snippet above we can see that for dollar
+              and cent we can find a <code>bk:MonetaryUnit</code> which contains information about
+              the temporal and spacial dimension. Additionally, we can see the
+                <code>depcha:Dataset</code> defining the corresponding main currency for every RDF
+              dataset as well as all currencies in the document.</p>
             <ab><code rend="block" lang="RDF">
                 <![CDATA[<depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.units#Dataset">
   <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#euro"/>
@@ -813,10 +842,11 @@
 </bk:Conversion>]]></code>
               <caption>Transfer of currency information from XML to RDF.</caption>
             </ab>
-            <p> Let's look into an example for another unit. With <code rend="attribute">@type</code> in
-              <code rend="element">unitDef</code>we are able to define the category of the unit. If there are no
-              indications of the category, the information will be extracted from the superclass <code>bk:Unit</code>.
-              The following <code rend="attribute">@type</code> are supported: <code>type="weight"</code>,
+            <p> Let's look into an example for another unit. With <code rend="attribute"
+                >@type</code> in <code rend="element">unitDef</code>we are able to define the
+              category of the unit. If there are no indications of the category, the information
+              will be extracted from the superclass <code>bk:Unit</code>. The following <code
+                rend="attribute">@type</code> are supported: <code>type="weight"</code>,
                 <code>type="volume"</code>, <code>type="length"</code>,
               <code>type="capacity"</code>, <code>type="time"</code>, <code>type="currency"</code>,
                 <code>type="surface"</code>
@@ -841,50 +871,52 @@
      <label xml:lang="de">Tage</label>
   </unitDef>
 </unitDecl>]]></code>
-              <caption></caption></ab>
+              <caption/></ab>
           </div>
           <div xml:id="debit_credit">
             <head>Debit and Credit</head>
             <p>To add the information of booking on credit or debit you can add
                 <code>ana="bk:debit"</code> or <code>ana="bk:credit"</code> to a TEI element. A
               suitable place is the textual information that lets us infer one of them. It must be
-              inside a <code>bk:entry</code>. In the following code snippet the transaction is booked on
-              debit.</p>
+              inside a <code>bk:entry</code>. In the following code snippet the transaction is
+              booked on debit.</p>
             <ab>
               <code rend="block" lang="XML">
                 <![CDATA[<head>
   69 <name ana="bk:from" ref="#between.2">James Haley</name> J Self <span ana="bk:debit">Dr.</span>
 </head>]]>
               </code>
-              <caption>We can express booking information using <code>bk:debit</code> like here.</caption>
+              <caption>We can express booking information using <code>bk:debit</code> like
+                here.</caption>
             </ab>
           </div>
           <div xml:id="status_agent">
             <head>Transaction Status and Agent</head>
             <p>Here is another example of a transcription of a <code>bk:entry</code>. The entry in
-              the Wheaton day book looks like: <table type="example">
-                <head>Monday September 15th 1828</head>
-                <row>
-                  <cell>settled</cell>
-                  <cell>Derius Drake D <lb/>To ax dlvd By Puffer 9/1<lb/>By cutting two
-                    sticks</cell>
-                  <cell>1</cell>
-                  <cell>59</cell>
-                  <cell>6</cell>
-                </row>
-              </table>
-              <p>For editing accounts two further entities may be relevant, according to the questions: &apos;What is
-              the transaction status?&apos; and &apos;Are other people involved in the
-              transaction?&apos; In this example the status of the transaction is "settled" which means it is paid. This can be
-                expressed by <code>bk:status</code>. </p>
-              <p>The second entity is about the involvement of a third person. 
-              In this example the text “By Puffer" can be interpreted as an information about someone who is carrying out the transaction for
-              someone else. Adding <code>@ana="bk:agent"</code> helps annotating the person as a
-                <code>bk:Agent</code>. As we can see a
-              person named Derius Drake worked for Wheaton (owner of the shop and main author of the
-              day book). Derius Drake payed his debt of 1 pound 59 shillings and 6 pence with his work <hi rend="italic">by
-                cutting two sticks</hi>. To do the job he got an axe which was delivered by the
-              <code>bk:Agent</code> <hi rend="italic">Puffer</hi>. </p>
+              the Wheaton day book looks like:</p>
+            <table type="example">
+              <head>Monday September 15th 1828</head>
+              <row>
+                <cell>settled</cell>
+                <cell>Derius Drake D <lb/>To ax dlvd By Puffer 9/1<lb/>By cutting two sticks</cell>
+                <cell>1</cell>
+                <cell>59</cell>
+                <cell>6</cell>
+              </row>
+            </table>
+            <p>For editing accounts two further entities may be relevant, according to the
+              questions: &apos;What is the transaction status?&apos; and &apos;Are other people
+              involved in the transaction?&apos; In this example the status of the transaction is
+              "settled" which means it is paid. This can be expressed by <code>bk:status</code>. </p>
+            <p>The second entity is about the involvement of a third person. In this example the
+              text “By Puffer" can be interpreted as an information about someone who is carrying
+              out the transaction for someone else. Adding <code>@ana="bk:agent"</code> helps
+              annotating the person as a <code>bk:Agent</code>. As we can see a person named Derius
+              Drake worked for Wheaton (owner of the shop and main author of the day book). Derius
+              Drake payed his debt of 1 pound 59 shillings and 6 pence with his work <hi
+                rend="italic">by cutting two sticks</hi>. To do the job he got an axe which was
+              delivered by the <code>bk:Agent</code>
+              <hi rend="italic">Puffer</hi>. </p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<table>
   <head>Monday <date ana="bk:when" when="1828-09-15">September-15th-1828</date></head>
@@ -902,16 +934,17 @@
   </row>
 </table>]]>
               </code>
-              <caption>Declaring <code>bk:status</code> and <code>bk:agent</code> of a transaction.</caption> 
-              </ab>
+              <caption>Declaring <code>bk:status</code> and <code>bk:agent</code> of a
+                transaction.</caption>
+            </ab>
           </div>
           <div xml:id="places">
             <head>Places</head>
-            <p>The annotation <code>bk:where</code> can be used to express locations that are associated with
-              transactions. However, it is important to note that this connection to a place is not
-              specified any further. Just add <code>ana="bk:where"</code> to a <code rend="element"
-                ><![CDATA[<place>]]></code> and also consider to reference to a <code rend="element"
-                ><![CDATA[<listPlace>]]></code>.</p>
+            <p>The annotation <code>bk:where</code> can be used to express locations that are
+              associated with transactions. However, it is important to note that this connection to
+              a place is not specified any further. Just add <code>ana="bk:where"</code> to a <code
+                rend="element"><![CDATA[<place>]]></code> and also consider to reference to a <code
+                rend="element"><![CDATA[<listPlace>]]></code>.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<listPlace ana="bk:Index">
   <place xml:id="SchlossKasten">
@@ -949,12 +982,13 @@
   <schema:latitude>10.91606818862674</schema:latitude>
 </schema:Place>]]>
               </code>
-              <caption>Transfer of places annotated with <code>bk:where</code> to an RDF structure.</ab>
+              <caption>Transfer of places annotated with <code>bk:where</code> to an RDF
+                structure.</caption></ab>
           </div>
           <div xml:id="price">
             <head>Price</head>
-            <p> To connect <code>bk:Commodity</code> and <code>bk:Price</code> we put them
-              together in one <code rend="element">measure</code> element and mark the <code>bk:Price</code>
+            <p> To connect <code>bk:Commodity</code> and <code>bk:Price</code> we put them together
+              in one <code rend="element">measure</code> element and mark the <code>bk:Price</code>
               explicitly in an additional measure element. </p>
           </div>
           <div xml:id="taxes">
@@ -964,10 +998,11 @@
           <div xml:id="prefixdef">
             <head>tei:prefixDef</head>
             <p>Da bk: innerhalb des @ana musst als Abkürzung genutzt wird, ist ein verpflichtend
-              <![CDATA[<prefixDef>]]> im teiHeader notwendig. Dies kann gleich so kopiert
-              werden. Sollten andere kontrollierte Vokabularien oder LOD Ressourcen verwendet werden, können die Prefix hier einfach definiert werden.</p>
+              <![CDATA[<prefixDef>]]> im teiHeader notwendig. Dies kann gleich so kopiert werden.
+              Sollten andere kontrollierte Vokabularien oder LOD Ressourcen verwendet werden, können
+              die Prefix hier einfach definiert werden.</p>
             <ab><code rend="block" lang="XML">
-              <![CDATA[<encodingDesc>
+                <![CDATA[<encodingDesc>
   <listPrefixDef>
     <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)" 
       replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
@@ -1007,7 +1042,7 @@
     </msItem>
   </msContents>
 </msDesc>]]>
-            </code>
+              </code>
             </ab>
           </div>
           <div>
