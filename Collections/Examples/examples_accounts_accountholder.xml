@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Rentrechnung 1718 (LILA Signatur: AS 8/2)</title>
+            <editor>Anton Büchel</editor>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+            <idno type="PID">o:depcha.example.rentrechnung</idno>
+            <ref target="context:depcha.example" type="context">Rentrechnung 1718</ref>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <country>Fürstentum Liechtenstein</country>
+                  <settlement>Vaduz</settlement>
+                  <institution>Liechtensteinisches Landesarchiv</institution>
+                  <idno>AS 8/2</idno>
+               </msIdentifier>
+               <msContents>
+                  <msItem>
+                     <title>TITEL der Quelle</title>
+                     <docAuthor>autor der quelle</docAuthor>
+                     <docDate>1718</docDate>
+                     <textLang>
+                        <lang>German</lang>
+                     </textLang>
+                  </msItem>
+               </msContents>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+               <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                  bookkeeping ontology and can be extended to respective URIs. </p>
+            </prefixDef>
+            <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="http://www.wikidata.org/wiki/$1">
+               <p>
+                  <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+               </p>
+            </prefixDef>
+         </listPrefixDef>
+         <unitDecl>
+            <unitDef type="currency" xml:id="fl" ana="bk:mainCurrency">
+               <label>Gulden Reichswährung</label>
+               <conversion fromUnit="#kr" toUnit="#fl" formula="60"/>
+               <conversion fromUnit="#d" toUnit="#fl" formula="600"/>
+            </unitDef>
+            <unitDef type="currency" xml:id="kr">
+               <label>Kreuzer</label>
+               <label type="abbr">kr</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="d">
+               <label>Denari</label>
+               <label type="abbr">d</label>
+            </unitDef>
+            <unitDef type="volume" xml:id="kl">
+               <label>Klafter</label>
+            </unitDef>
+            <unitDef type="volume" xml:id="fd">
+               <label>Fuder</label>
+            </unitDef>
+         </unitDecl>
+         <classDecl>
+            <taxonomy ana="bk:Account">
+               <category ana="bk:to" xml:id="einnahmen">
+                  <catDesc><gloss>Einnahmen</gloss></catDesc>
+                  <category xml:id="admodiationsgelt">
+                     <gloss>Admodiations Gelt</gloss>
+                     <desc>Ich bin die Beschreibung dieses Kontos</desc>
+                  </category>
+                  <category xml:id="zollhauptzoller">
+                     <gloss>Zoll Hauptzoller</gloss>
+                  </category>
+               </category>
+               <category ana="bk:from" xml:id="ausgaben">
+                  <catDesc><gloss>Ausgaben</gloss></catDesc>
+                  <category xml:id="waldamtsnutzung">
+                     <catDesc><gloss>Waldamtsnutzung</gloss></catDesc>
+                     <category xml:id="gams">
+                        <catDesc><gloss>Gams</gloss></catDesc>
+                     </category>
+                     <category xml:id="haszen">
+                        <catDesc><gloss>Hasen</gloss></catDesc>
+                     </category>
+                  </category>
+               </category>
+            </taxonomy>
+            <taxonomy ana="bk:Index">
+               <gloss>DEINE TAXONOMY</gloss>
+               <category xml:id="gämsen">
+                  <catDesc>
+                     <gloss>Gämse</gloss>
+                  </catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+      </encodingDesc>
+      <profileDesc>
+         <particDesc>
+            <listPerson ana="bk:Index">
+               <person xml:id="pers_1">
+                  <name><forename>Peter</forename>
+                     <surname>Walser</surname></name>
+                  <occupation>Alter Landtammann</occupation>
+               </person>
+            </listPerson>
+            <listOrg ana="bk:Index">
+               <org xml:id="org_1" ana="bk:accountHolder">
+                  <orgName>Rentamt des Fürstentums Liechtenstein</orgName>
+               </org>
+            </listOrg>
+         </particDesc>
+      </profileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div ana="bk:account" corresp="#einnahmen">
+            <div ana="bk:account" corresp="#zollhauptzoller">
+               <note>No. 2</note>
+               <head> Von dem Haupt Zollner Liechtenstein <name ana="bk:from" ref="#pers_1">Thomas
+                     Walser</name></head>
+               <p ana="bk:entry"> Von <date ana="bk:when" from="1718-10-22" to="1718-11-22">1. und
+                     respective 22. Octobris bis 22. Novembris 1718</date>
+                  <measure ana="bk:money" quantity="48" unitRef="#fl">48</measure>
+                  <measure ana="bk:money" quantity="25" unitRef="#kr">25</measure>
+               </p>
+               <p ana="bk:entry">von <date ana="bk:when" from="1718-11-22" to="1718-12-22">22.
+                     Novembris bis 22 Decembris</date>
+                  <measure ana="bk:money" quantity="60" unitRef="#fl">60</measure>
+                  <measure ana="bk:money" quantity="15" unitRef="#kr">15</measure>
+                  <measure ana="bk:money" quantity="0.25" unitRef="#d">1/4</measure>
+               </p>
+
+               <fw ana="bk:subtotal"> Latus <measure ana="bk:money" quantity="1689" unitRef="#fl"
+                     >1689</measure>
+               </fw>
+            </div>
+         </div>
+         <div ana="bk:account" corresp="#ausgaben">
+            <div ana="bk:account" corresp="#waldamtsnutzung">
+               <head>Wald Ambts Nuzung</head>
+               <div ana="bk:account" corresp="#gams">
+                  <note>48</note>
+                  <head>Umb gambs</head>
+                  <div ana="bk:entry">
+                     <p>nach Specification bey laag ausz <measure type="quantity"><measure
+                              quantity="12">12</measure></measure><measure commodity="Gämsen"
+                           >gambs</measure>gewlöset worden</p>
+                     <fw><measure ana="bk:money" quantity="21" unitRef="#fl">21</measure><measure
+                           ana="bk:money" quantity="50" unitRef="#kr">50</measure><measure
+                           ana="bk:money" quantity="41" unitRef="#d"
+                        ><unclear>41</unclear></measure></fw>
+                  </div>
+               </div>
+               <div ana="bk:account" corresp="#hasen">
+                  <note>49</note>
+                  <head>Umb Haszen</head>
+                  <div ana="bk:entry">
+                     <p>Vor <measure quantity="40">Vierzig</measure></p>
+                     <fw><measure ana="bk:money" quantity="8" unitRef="#fl">8</measure></fw>
+                  </div>
+               </div>
+               <fw ana="bk:subtotal">Latus<measure ana="bk:money" quantity="29" unitRef="#fl"
+                     >29</measure><measure ana="bk:money" quantity="50" unitRef="#kr"
+                     >50</measure><measure ana="bk:money" quantity="11" unitRef="#d"
+                  >11</measure></fw>
+               <div >
+                  <p ana="bk:total"><measure ana="bk:money" quantity="29" unitRef="#fl"
+                     >29</measure><measure ana="bk:money" quantity="50" unitRef="#kr"
+                        >50</measure><measure ana="bk:money" quantity="11" unitRef="#d"
+                           >11</measure></p>
+                  
+               </div>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>

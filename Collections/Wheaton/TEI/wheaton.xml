@@ -4,7 +4,7 @@
     <fileDesc>
       <titleStmt>
         <title>Laban Morey Wheaton Day Book</title>
-        <author ana="bk:from" ref="#pers_WCDH002">L.M. Wheaton</author>
+        <author ana="bk:from bk:accountHolder" ref="#pers_WCDH002">L.M. Wheaton</author>
       </titleStmt>
       <publicationStmt>
         <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
@@ -64,12 +64,12 @@
           <label xml:lang="en">dollar</label>
           <country>USA</country>
           <unit>$</unit>
+          <conversion fromUnit="#dollar" toUnit="#cent" formula="$fromUnit div 100"/>
         </unitDef>
         <unitDef ref="wd:Q58093" type="currency" xml:id="cent">
           <label xml:lang="en">cent</label>
           <country>USA</country>
           <unit>c</unit>
-          <conversion fromUnit="#dollar" toUnit="#cent" formula="$fromUnit div 100"/>
         </unitDef>
         <unitDef ref="wd:Q216658" type="weight" xml:id="unit.1">
           <unit/>

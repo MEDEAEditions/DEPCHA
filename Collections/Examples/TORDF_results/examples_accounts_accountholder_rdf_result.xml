@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+                xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:functx="http://www.functx.com"
+                xmlns:gn="http://www.geonames.org/ontology#"
+                xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
+                xmlns:om="http://ontology.eil.utoronto.ca/icity/OM/"
+                xmlns:time="http://www.w3.org/2006/time#" xmlns:schema="https://schema.org/"
+                xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+                xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+                xmlns:t="http://www.tei-c.org/ns/1.0"
+                xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#"
+                xmlns:foaf="http://xmlns.com/foaf/spec/" xmlns:void="http://rdfs.org/ns/void#">
+                <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung">
+                                <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
+                                <dc:publisher>Institute Centre for Information Modelling, University
+                                                of Graz</dc:publisher>
+                </void:Dataset>
+                <depcha:Dataset
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#Dataset">
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.rentrechnung"/>
+                                <dc:creator>autor der quelle</dc:creator>
+                                <dc:date>1718</dc:date>
+                                <dc:language>German</dc:language>
+                                <dc:source>Fürstentum Liechtenstein, Vaduz, Liechtensteinisches
+                                                Landesarchiv, AS 8/2 </dc:source>
+                                <depcha:numberOfTransactions>4</depcha:numberOfTransactions>
+                                <depcha:numberOfEconomicUnits>1</depcha:numberOfEconomicUnits>
+                                <depcha:numberOfEconomicAssets>16</depcha:numberOfEconomicAssets>
+                                <depcha:numberOfSubTotals>2</depcha:numberOfSubTotals>
+                                <depcha:numberOfTotals>1</depcha:numberOfTotals>
+                                <depcha:accountHolder
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#org_1"/>
+                                <depcha:currency
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#fl"/>
+                                <depcha:isMainCurrency
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#fl"/>
+                                <depcha:currency
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#kr"/>
+                                <depcha:currency
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#d"
+                                />
+                </depcha:Dataset>
+                <bk:Transaction
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T1">
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.rentrechnung"/>
+                                <bk:entry>Von 1. und respective 22. Octobris bis 22. Novembris 1718
+                                                48 25</bk:entry>
+                                <bk:when>1718-10-22</bk:when>
+                                <bk:consistsOf>
+                                                <bk:Transfer
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T1T1">
+                                                  <bk:transfers>
+                                                  <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T1T1EA1">
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#fl"/>
+                                                  <bk:quantity>48</bk:quantity>
+                                                  </bk:Money>
+                                                  </bk:transfers>
+                                                  <bk:transfers>
+                                                  <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T1T1EA2">
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#kr"/>
+                                                  <bk:quantity>25</bk:quantity>
+                                                  </bk:Money>
+                                                  </bk:transfers>
+                                                  <bk:from
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_1"/>
+                                                  <bk:to
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#zollhauptzoller"
+                                                  />
+                                                </bk:Transfer>
+                                </bk:consistsOf>
+                </bk:Transaction>
+                <bk:Transaction
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T2">
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.rentrechnung"/>
+                                <bk:entry>von 22. Novembris bis 22 Decembris 60 15 1/4</bk:entry>
+                                <bk:when>1718-11-22</bk:when>
+                                <bk:consistsOf>
+                                                <bk:Transfer
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T2T1">
+                                                  <bk:transfers>
+                                                  <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T2T1EA1">
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#fl"/>
+                                                  <bk:quantity>60</bk:quantity>
+                                                  </bk:Money>
+                                                  </bk:transfers>
+                                                  <bk:transfers>
+                                                  <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T2T1EA2">
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#kr"/>
+                                                  <bk:quantity>15</bk:quantity>
+                                                  </bk:Money>
+                                                  </bk:transfers>
+                                                  <bk:transfers>
+                                                  <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T2T1EA3">
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#d"/>
+                                                  <bk:quantity>0.25</bk:quantity>
+                                                  </bk:Money>
+                                                  </bk:transfers>
+                                                  <bk:from
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_1"/>
+                                                  <bk:to
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#zollhauptzoller"
+                                                  />
+                                                </bk:Transfer>
+                                </bk:consistsOf>
+                </bk:Transaction>
+                <bk:Transaction
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T3">
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.rentrechnung"/>
+                                <bk:entry>nach Specification bey laag ausz 12 gambs gewlöset worden
+                                                21 50 41</bk:entry>
+                                <bk:consistsOf>
+                                                <bk:Transfer
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T3T1">
+                                                  <bk:transfers>
+                                                  <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T3T1EA1">
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#fl"/>
+                                                  <bk:quantity>21</bk:quantity>
+                                                  </bk:Money>
+                                                  </bk:transfers>
+                                                  <bk:transfers>
+                                                  <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T3T1EA2">
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#kr"/>
+                                                  <bk:quantity>50</bk:quantity>
+                                                  </bk:Money>
+                                                  </bk:transfers>
+                                                  <bk:transfers>
+                                                  <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T3T1EA3">
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#d"/>
+                                                  <bk:quantity>41</bk:quantity>
+                                                  </bk:Money>
+                                                  </bk:transfers>
+                                                  <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#gams"/>
+                                                  <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"
+                                                  />
+                                                </bk:Transfer>
+                                </bk:consistsOf>
+                </bk:Transaction>
+                <bk:Transaction
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T4">
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.rentrechnung"/>
+                                <bk:entry>Vor Vierzig 8</bk:entry>
+                                <bk:consistsOf>
+                                                <bk:Transfer
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T4T1">
+                                                  <bk:transfers>
+                                                  <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#T4T1EA">
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#fl"/>
+                                                  <bk:quantity>8</bk:quantity>
+                                                  </bk:Money>
+                                                  </bk:transfers>
+                                                  <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#hasen"/>
+                                                  <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"
+                                                  />
+                                                </bk:Transfer>
+                                </bk:consistsOf>
+                </bk:Transaction>
+                <bk:SubTotalTransaction
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#Total1">
+                                <bk:comprises>
+                                                <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#Total1M1">
+                                                  <bk:quantity>1689</bk:quantity>
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#fl"
+                                                  />
+                                                </bk:Money>
+                                </bk:comprises>
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.rentrechnung"/>
+                                <bk:entry>Latus 1689</bk:entry>
+                </bk:SubTotalTransaction>
+                <bk:SubTotalTransaction
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#Total2">
+                                <bk:comprises>
+                                                <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#Total2M1">
+                                                  <bk:quantity>29</bk:quantity>
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#fl"
+                                                  />
+                                                </bk:Money>
+                                </bk:comprises>
+                                <bk:comprises>
+                                                <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#Total2M2">
+                                                  <bk:quantity>50</bk:quantity>
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#kr"
+                                                  />
+                                                </bk:Money>
+                                </bk:comprises>
+                                <bk:comprises>
+                                                <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#Total2M3">
+                                                  <bk:quantity>11</bk:quantity>
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#d"
+                                                  />
+                                                </bk:Money>
+                                </bk:comprises>
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.rentrechnung"/>
+                                <bk:entry>Latus 29 50 11</bk:entry>
+                </bk:SubTotalTransaction>
+                <bk:EconomicUnit
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.rentrechnung#pers_1">
+                                <rdfs:label>PeterWalser</rdfs:label>
+                                <schema:hasOccupation>Alter Landtammann</schema:hasOccupation>
+                </bk:EconomicUnit>
+                <skos:ConceptScheme
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#Taxonomy">
+                                <dc:title>DEINE TAXONOMY</dc:title>
+                                <skos:hasTopConcept
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#g%C3%A4msen"
+                                />
+                </skos:ConceptScheme>
+                <skos:Concept
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#g%C3%A4msen">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <rdfs:label>Gämse</rdfs:label>
+                </skos:Concept>
+                <bk:Account rdf:about="https://gams.uni-graz.at/context:depcha.example#einnahmen">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#admodiationsgelt"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#zollhauptzoller"/>
+                                <rdfs:label>Einnahmen</rdfs:label>
+                                <bk:accountHolder
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#org_1"
+                                />
+                </bk:Account>
+                <bk:Account
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#admodiationsgelt">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#einnahmen"/>
+                                <bk:accountHolder
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#org_1"
+                                />
+                </bk:Account>
+                <bk:Account
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#zollhauptzoller">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#einnahmen"/>
+                                <bk:accountHolder
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#org_1"
+                                />
+                </bk:Account>
+                <bk:Account rdf:about="https://gams.uni-graz.at/context:depcha.example#ausgaben">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#waldamtsnutzung"/>
+                                <rdfs:label>Ausgaben</rdfs:label>
+                                <bk:accountHolder
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#org_1"
+                                />
+                </bk:Account>
+                <bk:Account
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#waldamtsnutzung">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#gams"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#haszen"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#ausgaben"/>
+                                <rdfs:label>Waldamtsnutzung</rdfs:label>
+                                <bk:accountHolder
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#org_1"
+                                />
+                </bk:Account>
+                <bk:Account rdf:about="https://gams.uni-graz.at/context:depcha.example#gams">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#waldamtsnutzung"/>
+                                <rdfs:label>Gams</rdfs:label>
+                                <bk:accountHolder
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#org_1"
+                                />
+                </bk:Account>
+                <bk:Account rdf:about="https://gams.uni-graz.at/context:depcha.example#haszen">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#waldamtsnutzung"/>
+                                <rdfs:label>Hasen</rdfs:label>
+                                <bk:accountHolder
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#org_1"
+                                />
+                </bk:Account>
+                <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#org_1">
+                                <schema:name>Rentamt des Fürstentums Liechtenstein</schema:name>
+                </bk:EconomicUnit>
+                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#fl">
+                                <rdfs:label>Gulden Reichswährung</rdfs:label>
+                </bk:MonetaryUnit>
+                <bk:Conversion
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#flConversion">
+                                <bk:convertsFrom
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#kr"/>
+                                <bk:convertsTo
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#fl"/>
+                                <bk:formula>60</bk:formula>
+                </bk:Conversion>
+                <bk:Conversion
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#flConversion">
+                                <bk:convertsFrom
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#d"/>
+                                <bk:convertsTo
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#fl"/>
+                                <bk:formula>600</bk:formula>
+                </bk:Conversion>
+                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#kr">
+                                <rdfs:label>Kreuzer</rdfs:label>
+                </bk:MonetaryUnit>
+                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#d">
+                                <rdfs:label>Denari</rdfs:label>
+                </bk:MonetaryUnit>
+                <bk:UnitOfVolume rdf:about="https://gams.uni-graz.at/context:depcha.example#kl">
+                                <rdfs:label>Klafter</rdfs:label>
+                </bk:UnitOfVolume>
+                <bk:UnitOfVolume rdf:about="https://gams.uni-graz.at/context:depcha.example#fd">
+                                <rdfs:label>Fuder</rdfs:label>
+                </bk:UnitOfVolume>
+</rdf:RDF>
