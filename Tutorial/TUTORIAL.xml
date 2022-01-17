@@ -590,7 +590,7 @@
             <head>Economic Goods</head>
             <p> In DEPCHA a <code>bk:EconomicGood</code> is expressed by adding
                 <code>ana="bk:commodity"</code>, <code>ana="bk:service"</code> oder
-                <code>ana="bk:rigth"</code> to the element <code rend="element"
+                <code>ana="bk:right"</code> to the element <code rend="element"
                 ><![CDATA[<measure>]]></code>. It is helpful to create an <code>bk:Index</code> as
               we did for <code>EconomicUnit</code>. According to the TEI guidelines a <code
                 rend="element"><![CDATA[<taxonomy>]]></code> in the <code rend="element"
@@ -653,7 +653,7 @@
    </category>
 </taxonomy>]]></code>
               <caption>A <![CDATA[<taxonomy]]> for the representation of the categories "Getreide",
-                "Tier" and "tieriches Produkt" with their corresponding subordinated
+                "Tier" and "tierisches Produkt" with their corresponding subordinated
                 categories.</caption>
             </ab>
             <p>This structure can be transferred to SKOS. So, the example from above would look like
@@ -986,7 +986,7 @@
                 structure.</caption></ab>
           </div>
           <div xml:id="price">
-            <head>Price</head>
+            <head>Prices</head>
             <p> To connect <code>bk:Commodity</code> and <code>bk:Price</code> we put them together
               in one <code rend="element">measure</code> element and mark the <code>bk:Price</code>
               explicitly in an additional measure element. </p>
@@ -996,11 +996,12 @@
             <p>Lorem</p>
           </div>
           <div xml:id="prefixdef">
-            <head>tei:prefixDef</head>
-            <p>Da bk: innerhalb des @ana musst als Abkürzung genutzt wird, ist ein verpflichtend
-              <![CDATA[<prefixDef>]]> im teiHeader notwendig. Dies kann gleich so kopiert werden.
-              Sollten andere kontrollierte Vokabularien oder LOD Ressourcen verwendet werden, können
-              die Prefix hier einfach definiert werden.</p>
+            <head>Definition of Prefixes</head>
+            <p>As the prefix <code>bk:</code> is used as abbreviation in <code rend="attribute">@ana</code>, 
+              we need to define it in a <![CDATA[<prefixDef>]]> element in the <![CDATA[<teiHeader>]]>. You may just copy it from this snippet.
+              If you are using also other controlled vocabularies or LOD ressources,
+              you can define their prefixes here as well. For instance, in the example below the abbreviation "wd" is defined 
+            as a prefix for Wikidata concepts and can now be used in <code rend="attribute">@ana</code>.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<encodingDesc>
   <listPrefixDef>
@@ -1017,11 +1018,12 @@
     </prefixDef>
   </listPrefixDef>
 </encodingDesc>]]>
-              </code></ab>
+              </code>
+              <caption>Using <![CDATA[<prefixDef>]]> to define prefixes and to be able to refer to ontologies or controlled vocabularies.</caption></ab>
           </div>
           <div xml:id="msdesc">
-            <head>tei:msDesc - Metadata</head>
-            <p>For every TEI document you can use the msDesc to define some Metadata.</p>
+            <head>Metadata</head>
+            <p>For every TEI document you can use the <![CDATA[<msDesc>]]> in the <![CDATA[<teiHeader>]]> to define some Metadata for your document.</p>
             <ab><code rend="block" lang="XML"><![CDATA[<msDesc>
   <msIdentifier>
     <country>USA</country>
@@ -1043,24 +1045,24 @@
   </msContents>
 </msDesc>]]>
               </code>
+              <caption>Adding Metadata with <![CDATA[<msDesc>]]>.</caption>
             </ab>
           </div>
-          <div>
-            <head>XML-Schema</head>
-            <p> Here is a very restrictiv <ref
+          <--!<div>
+            <head>XML Schema</head>
+            <p> Here you can find a very restrictive <ref
                 target="/archive/objects/context:depcha/datastreams/BKSCHEMA/content">Bookkeeping
-                Ontology XML-Schema</ref> based on all current ingested data. You can associat this
-              schema in your Oxygen Editor and the editor offers you elements and annotations
+                Ontology XML Schema</ref> based on all current ingested data. You can associate this
+              schema in your Oxygen Editor, so the editor offers you elements and annotation options
               according to the Ontology. </p>
-          </div>
+          </div>-->
 
         </div>
         <div xml:id="chapter.2">
           <head>Linked Open Data</head>
           <p>DEPCHA tries to offer its data in the LOD cloud. Therefore you can add Wikidata
-            concepts directly into the attributes or you define your vocabulary in the TEI header in
-            form of a taxonomy. In the following TEI example and one figure are given to explain
-            that.</p>
+            concepts directly into the attributes or you can define your vocabulary in the TEI header in
+            the form of a taxonomy. The following TEI snippet and the figure below should serve as examples.</p>
           <ab><code rend="block" lang="XML">
               <![CDATA[<body>
     <head><name ana="bk:to" ref="#between.1">Stagville</name> August 1st 1808</head>
@@ -1078,10 +1080,11 @@
     	</row>
     </table>
     </body>]]>
-            </code></ab>
+            </code>
+            <caption>Connecting DEPCHA data with the LOD cloud.</caption></ab>
           <figure source="/archive/objects/context:depcha/datastreams/GRAPH_WIKIDATA/content"
             type="web"/>
-          <p>In this example the editor as defined is own concepts in the TEI header and links them
+          <p>In this example the editor has defined his own concepts in the TEI header and links them
             to it.</p>
         </div>
         <div xml:id="chapter.3">
@@ -1089,12 +1092,12 @@
           <div type="body">
 
             <p>Having data in CSV or Excel is a way to work with the data (and not the
-              transciption). In DEPCHA you have to transform your CSV into a simple XML/TEI for
-              standardisation purpose. You can use this <ref
+              transcription). In DEPCHA you have to transform your CSV into a simple XML/TEI in order to
+              standardize your data. You can use this <ref
                 target="/archive/objects/context:depcha/datastreams/CSVTOTEI/content">XSLT</ref> to
               do so. <lb/> Your CSV has to look like this <ref
                 target="/archive/objects/context:depcha/datastreams/CSV_EXAMPLE/content"
-                >example</ref>. Check your EXCEL export for that and use a <ref
+                >example</ref>. Check your EXCEL export and use a <ref
                 target="https://csvlint.io/">CSV validator</ref>.</p>
             <p> The &apos;|&apos; is used to seperate multiple values inside a cell. </p>
           </div>
