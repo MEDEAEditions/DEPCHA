@@ -4,8 +4,8 @@
     <fileDesc>
       <titleStmt>
         <title xml:lang="en" type="main">"How to Semantic Bookkeep"</title>
-        <title type="sub">A Tutorial for annotationg digital editions of historical accounts based
-          on the <hi rend="italic">Bookkeeping Ontology</hi></title>
+        <title type="sub">A Tutorial for annotating digital editions of historical accounts based on
+          the <hi rend="italic">Bookkeeping Ontology</hi></title>
         <author>Christopher Pollin</author>
         <author>Georg Vogeler</author>
       </titleStmt>
@@ -38,6 +38,19 @@
           <head>Introduction</head>
           <p>This tutorial describes several ways how data of historical accounts can be prepared to
             be ready to publish in DEPCHA.</p>
+          <p>To avoid any confusion about the spelling (lower and upper case) please keep the
+            following in mind:</p>
+          <list>
+          <item>All the classes from the Bookkeeping Ontology start with capital letters:
+              <code>bk:EconomicUnit</code> or <code>bk:Commodity</code>.</item>
+          <item>The first letter of an object or data property is always written in lower case:
+              <code>bk:hasPrice</code><code>bk:entry</code>
+          </item>
+          <item>Whenever we are annotating anything in our XML files with the attribute <code
+              rend="attribute">@ana</code> the values we add start with lower case:
+              <code>bk:commodity</code> or <code>bk:unit</code>
+          </item>
+          </list>
         </div>
         <div xml:id="xml_tei">
           <head>XML/TEI</head>
@@ -78,11 +91,14 @@
           </table>
           <p>This structure in the source describes two <code>bk:Transaction</code> with their
             textual representation (<span type="tooltip"><code>bk:entry</code><note>bk:entry is
-                written small as it represents a data propery and not a class.</note></span>). If
+                written small as it represents a data property and not a class.</note></span>). If
             something in this tutorial begins with the prefix <code>bk:</code>, it means that it is
             a concept defined in the <hi rend="italic">Bookkeeping Ontology</hi>. It can be expanded
             to <code>http://gams.uni-graz.at/o:depcha.bookkeeping#</code>, for instance, via a
-            TEI-prefix definition <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-prefixDef.html"><code rend="element"><![CDATA[<tei:prefixDef>]]></code></ref> (see <ref target="#prefixDef">Definition of Prefixes</ref> .</p>
+            TEI-prefix definition <ref
+              target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-prefixDef.html"><code
+                rend="element"><![CDATA[<tei:prefixDef>]]></code></ref> (see <ref
+              target="#prefixDef">Definition of Prefixes</ref> .</p>
           <list>
             <item>
               <hi rend="italic">1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6 | 7 | 6</hi>
@@ -97,7 +113,7 @@
             further buys <hi rend="italic">1 lb Shot</hi> for the price of <hi rend="italic"
               >2/6</hi> and at last he buys <hi rend="italic">1 lb Sugar</hi> for the price of <hi
               rend="italic">2/6</hi> from <hi rend="italic">Stagville</hi>. Stagville represents a
-            farm (plantage). James Haley therefore transfers the monetary value of 7 shillings and 6
+            farm (plantation). James Haley therefore transfers the monetary value of 7 shillings and 6
             pence to Stagville. Some information is not explicit inside a <code>bk:entry</code> and
             can be found in the header or is known by the domain expert of the source.<lb/> In this
             case a table seems to be the best way to describe the text structure as shown in the
@@ -170,7 +186,7 @@
               So, the flow of a <code>bk:EconomicAsset</code> from one <code>bk:EconomicUnit</code>
               to another is expressed. To express the direction of the flow <code>bk:from</code> and
                 <code>bk:to</code> are needed. We first deal with the question: "What is
-              transfered?". In this example three different <code>bk:Commodity</code> are mentioned: <list>
+              transferred?". In this example three different <code>bk:Commodity</code> are mentioned: <list>
                 <item>
                   <hi rend="italic">1/4 lb Powder</hi>
                 </item>
@@ -194,7 +210,7 @@
             <p> Also, three further <code>bk:MonetaryValue</code> can be found, interpreted as
                 <code>bk:Price</code>. The <code>bk:Price</code> belongs to the
                 <code>bk:Commodity</code> mentioned before: <hi rend="italic">¼ lb Powder for 2
-                shilling and 6 pence</hi>. However, we will ignore that in this first step. </p>
+                shilling and 6 pence</hi>. However, we will ignore this in this first step. </p>
             <p> The <code rend="element"><![CDATA[<measure>]]></code> element in TEI allows to
               annotate countable entities using these attributes <code rend="attribute"
               >@unit</code>, <code rend="attribute">@unitRef</code>, <code rend="attribute"
@@ -268,7 +284,7 @@
               reference to the <code rend="attribute">@xml:id</code>
               <hi rend="italic">economic_unit.2</hi> - <hi rend="bold">to</hi> Stagville with the
               reference <hi rend="italic">economic_unit.1</hi>. Notice that by default the flow of
-              money is always encoded explicitely in the DEPCHA! You can, however, express the flow
+              money is always encoded explicitly in DEPCHA! You can, however, express the flow
               direction explicitly yourself. You can find more information about that under <ref
                 target="#">XY</ref>.</p>
             <ab><code rend="block" lang="XML">
@@ -292,7 +308,7 @@
 </table>]]>
               </code>
               <caption>Extension of <![CDATA[<name>]]> to express the directions "bk:from" and
-                "bk:to" of the assets and also normalizing people or organisations with a
+                "bk:to" of the assets and also normalizing people or organizations with a
                 reference.</caption></ab>
             <p>After performing these basic steps the following RDF will be extracted automatically,
               when the XML/TEI is ingested into DEPCHA.</p>
@@ -372,13 +388,17 @@
                   <code rend="attribute">@when</code> to normalize the date.</caption>
             </ab>
             <p> Not every date inside a <code>bk:entry</code> is the date of the transaction. Also,
-              the corresponding date can appear outside the bk:entry as the following examples
+              the corresponding date can appear outside the <code>bk:entry</code> as the following examples
               shows. Both <code>bk:entry</code> share the same date, as the tabular structure
               clearly indicates. James Haley bought 1/4 lb Powder for 7 shillings on the 1st August
               1808 and Elisabeth Example bought 1 lb Shot on the same day.</p>
-            <p> Rules for cases like: <list>
+            <p> Different cases - different rules: <list>
                 <item> A <code>bk:when</code> inside a <code>bk:entry</code> has a higher
                   priority.</item>
+              
+              
+              
+              
                 <item> Second-level priority should be given to dates that can be found in a
                   superior structure. The following Code Snippet provides an example for this
                   scenario.</item>
@@ -601,7 +621,7 @@
               SKOS. In the following example a hierarchy is created by the nested structure of
                 <code><![CDATA[<category>]]></code> elements. The use of an <code>xml:id</code> and
                 <code><![CDATA[<catDesc> <term>]]></code>elements is obligatory. Optionally, you can
-              reference to a controlled voacbulary or to Wikidata Concepts using <code>@ref</code>
+              reference to a controlled vocabulary or to Wikidata concepts using <code>@ref</code>
               in <code>term</code>.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<taxonomy ana="bk:Index">
@@ -845,11 +865,11 @@
             <p> Let's look into an example for another unit. With <code rend="attribute"
                 >@type</code> in <code rend="element">unitDef</code>we are able to define the
               category of the unit. If there are no indications of the category, the information
-              will be extracted from the superclass <code>bk:Unit</code>. The following <code
-                rend="attribute">@type</code> are supported: <code>type="weight"</code>,
-                <code>type="volume"</code>, <code>type="length"</code>,
-              <code>type="capacity"</code>, <code>type="time"</code>, <code>type="currency"</code>,
-                <code>type="surface"</code>
+              will be extracted from the superclass <code>bk:Unit</code>.<!-- SS: ÜBERPÜRFEN? -->
+              The following <code rend="attribute">@type</code> are supported:
+                <code>type="weight"</code>, <code>type="volume"</code>, <code>type="length"</code>,
+                <code>type="capacity"</code>, <code>type="time"</code>,
+              <code>type="currency"</code>, <code>type="surface"</code>
             </p>
             <ab><code rend="block" lang="XML"><![CDATA[<unitDecl>
   <unitDef ref="wd:Q100995" type="weight" xml:id="Pfund">
@@ -913,7 +933,7 @@
               out the transaction for someone else. Adding <code>@ana="bk:agent"</code> helps
               annotating the person as a <code>bk:Agent</code>. As we can see a person named Derius
               Drake worked for Wheaton (owner of the shop and main author of the day book). Derius
-              Drake payed his debt of 1 pound 59 shillings and 6 pence with his work <hi
+              Drake paid his debt of 1 pound 59 shillings and 6 pence with his work <hi
                 rend="italic">by cutting two sticks</hi>. To do the job he got an axe which was
               delivered by the <code>bk:Agent</code>
               <hi rend="italic">Puffer</hi>. </p>
@@ -997,11 +1017,12 @@
           </div>
           <div xml:id="prefixdef">
             <head>Definition of Prefixes</head>
-            <p>As the prefix <code>bk:</code> is used as abbreviation in <code rend="attribute">@ana</code>, 
-              we need to define it in a <![CDATA[<prefixDef>]]> element in the <![CDATA[<teiHeader>]]>. You may just copy it from this snippet.
-              If you are using also other controlled vocabularies or LOD ressources,
-              you can define their prefixes here as well. For instance, in the example below the abbreviation "wd" is defined 
-            as a prefix for Wikidata concepts and can now be used in <code rend="attribute">@ana</code>.</p>
+            <p>As the prefix <code>bk:</code> is used as abbreviation in <code rend="attribute"
+                >@ana</code>, we need to define it in a <![CDATA[<prefixDef>]]> element in the
+              <![CDATA[<teiHeader>]]>. You may just copy it from this snippet. If you are using also
+              other controlled vocabularies or LOD resources, you can define their prefixes here as
+              well. For instance, in the example below the abbreviation "wd" is defined as a prefix
+              for Wikidata concepts and can now be used in <code rend="attribute">@ana</code>.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<encodingDesc>
   <listPrefixDef>
@@ -1019,11 +1040,13 @@
   </listPrefixDef>
 </encodingDesc>]]>
               </code>
-              <caption>Using <![CDATA[<prefixDef>]]> to define prefixes and to be able to refer to ontologies or controlled vocabularies.</caption></ab>
+              <caption>Using <![CDATA[<prefixDef>]]> to define prefixes and to be able to refer to
+                ontologies or controlled vocabularies.</caption></ab>
           </div>
           <div xml:id="msdesc">
             <head>Metadata</head>
-            <p>For every TEI document you can use the <![CDATA[<msDesc>]]> in the <![CDATA[<teiHeader>]]> to define some Metadata for your document.</p>
+            <p>For every TEI document you can use the <![CDATA[<msDesc>]]> in the
+              <![CDATA[<teiHeader>]]> to define some Metadata for your document.</p>
             <ab><code rend="block" lang="XML"><![CDATA[<msDesc>
   <msIdentifier>
     <country>USA</country>
@@ -1048,7 +1071,7 @@
               <caption>Adding Metadata with <![CDATA[<msDesc>]]>.</caption>
             </ab>
           </div>
-          <--!<div>
+          <!--<div>
             <head>XML Schema</head>
             <p> Here you can find a very restrictive <ref
                 target="/archive/objects/context:depcha/datastreams/BKSCHEMA/content">Bookkeeping
@@ -1061,8 +1084,9 @@
         <div xml:id="chapter.2">
           <head>Linked Open Data</head>
           <p>DEPCHA tries to offer its data in the LOD cloud. Therefore you can add Wikidata
-            concepts directly into the attributes or you can define your vocabulary in the TEI header in
-            the form of a taxonomy. The following TEI snippet and the figure below should serve as examples.</p>
+            concepts directly into the attributes or you can define your vocabulary in the TEI
+            header in the form of a taxonomy. The following TEI snippet and the figure below should
+            serve as examples.</p>
           <ab><code rend="block" lang="XML">
               <![CDATA[<body>
     <head><name ana="bk:to" ref="#between.1">Stagville</name> August 1st 1808</head>
@@ -1084,22 +1108,22 @@
             <caption>Connecting DEPCHA data with the LOD cloud.</caption></ab>
           <figure source="/archive/objects/context:depcha/datastreams/GRAPH_WIKIDATA/content"
             type="web"/>
-          <p>In this example the editor has defined his own concepts in the TEI header and links them
-            to it.</p>
+          <p>In this example the editor has defined his own concepts in the TEI header and links
+            them to it.</p>
         </div>
         <div xml:id="chapter.3">
           <head>CSV/Excel</head>
           <div type="body">
 
             <p>Having data in CSV or Excel is a way to work with the data (and not the
-              transcription). In DEPCHA you have to transform your CSV into a simple XML/TEI in order to
-              standardize your data. You can use this <ref
+              transcription). In DEPCHA you have to transform your CSV into a simple XML/TEI in
+              order to standardize your data. You can use this <ref
                 target="/archive/objects/context:depcha/datastreams/CSVTOTEI/content">XSLT</ref> to
               do so. <lb/> Your CSV has to look like this <ref
                 target="/archive/objects/context:depcha/datastreams/CSV_EXAMPLE/content"
-                >example</ref>. Check your EXCEL export and use a <ref
-                target="https://csvlint.io/">CSV validator</ref>.</p>
-            <p> The &apos;|&apos; is used to seperate multiple values inside a cell. </p>
+                >example</ref>. Check your EXCEL export and use a <ref target="https://csvlint.io/"
+                >CSV validator</ref>.</p>
+            <p> The &apos;|&apos; is used to separate multiple values inside a cell. </p>
           </div>
         </div>
         <div xml:id="rdf">
