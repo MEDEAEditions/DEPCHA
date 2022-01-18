@@ -41,21 +41,21 @@
           <p>To avoid any confusion about the spelling (lower and upper case) please keep the
             following in mind:</p>
           <list>
-          <item>All the classes from the Bookkeeping Ontology start with capital letters:
+          <item>All the <hi rend="bold">classes</hi> from the <hi rend="italic">Bookkeeping Ontology</hi> start with capital letters:
               <code>bk:EconomicUnit</code> or <code>bk:Commodity</code>.</item>
-          <item>The first letter of an object or data property is always written in lower case:
-              <code>bk:hasPrice</code><code>bk:entry</code>
+            <item>The first letter of an <hi rend="bold">object property</hi> or <hi rend="bold">data property</hi> is always written in lower case:
+              <code>bk:hasPrice</code> or <code>bk:entry</code>.
           </item>
-          <item>Whenever we are annotating anything in our XML files with the attribute <code
-              rend="attribute">@ana</code> the values we add start with lower case:
+            <item>Whenever we are using the attribute <code
+              rend="attribute">@ana</code> for the <hi rend="bold">annotation</hi> in our XML files the values we add start with lower case:
               <code>bk:commodity</code> or <code>bk:unit</code>
           </item>
           </list>
         </div>
         <div xml:id="xml_tei">
           <head>XML/TEI</head>
-          <p>The following snippet of a historical accounting book (image and transcription) is used
-            as an example to illustrate a possible way of annotating a digital edition using XML/TEI
+          <p>The following snippet of a historical accounting book (image and transcription below) is used
+            to give a first overview of a possible way of annotating a digital edition using XML/TEI
             and its connection, the <ref target="https://gams.uni-graz.at/o:depcha.bookkeeping"
               >Bookkeeping Ontology</ref>. </p>
           <ab>
@@ -64,7 +64,7 @@
               <caption>The Stagville Accounts</caption>
             </figure>
           </ab>
-          <p>Here you see the transcription of the given example:</p>
+          <p>And here you can see the transcription of the given example:</p>
           <table>
             <head>Stagville August 1st 1808 <lb/> 69 James Haley Self Dr.</head>
             <row>
@@ -95,10 +95,9 @@
             something in this tutorial begins with the prefix <code>bk:</code>, it means that it is
             a concept defined in the <hi rend="italic">Bookkeeping Ontology</hi>. It can be expanded
             to <code>http://gams.uni-graz.at/o:depcha.bookkeeping#</code>, for instance, via a
-            TEI-prefix definition <ref
-              target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-prefixDef.html"><code
-                rend="element"><![CDATA[<tei:prefixDef>]]></code></ref> (see <ref
-              target="#prefixDef">Definition of Prefixes</ref> .</p>
+            TEI-prefix definition with <ref
+              target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-prefixDef.html"><code rend="element"><![CDATA[<tei:prefixDef>]]></code></ref> (see <ref
+              target="#prefixdef">Definition of Prefixes</ref>).</p>
           <list>
             <item>
               <hi rend="italic">1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6 | 7 | 6</hi>
@@ -156,9 +155,8 @@
               <code>ana</code> are relevant, next to some attributes for formalizing data. We will
             look at that in more detail now.</p>
           <p>The starting point is to define a container for a <code>bk:Transaction</code> by
-            annotating the textual representation of a <code>bk:entry</code> like <code
-              rend="element">div</code>, <code rend="element">row</code> or <code rend="element"
-              >span</code> (or any other element that fits to your data and the TEI guidelines). By
+            annotating the textual representation of a <code>bk:entry</code> like
+            <code rend="element"><![CDATA[<div>]]></code>, <code rend="element"><![CDATA[<row>]]></code> or <code rend="element"><![CDATA[<span>]]></code> (or any other element that fits to your data and the TEI guidelines). By
             using <code rend="attribute">@ana</code> with the value "bk:entry" a TEI structure is
             defined as a <code>bk:entry</code> according to the <hi rend="italic">Bookkeeping
               Ontology</hi>.</p>
@@ -211,7 +209,7 @@
                 <code>bk:Price</code>. The <code>bk:Price</code> belongs to the
                 <code>bk:Commodity</code> mentioned before: <hi rend="italic">¼ lb Powder for 2
                 shilling and 6 pence</hi>. However, we will ignore this in this first step. </p>
-            <p> The <code rend="element"><![CDATA[<measure>]]></code> element in TEI allows to
+            <p> The <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-measure.html"><code rend="element"><![CDATA[<measure>]]></code></ref> element in TEI allows to
               annotate countable entities using these attributes <code rend="attribute"
               >@unit</code>, <code rend="attribute">@unitRef</code>, <code rend="attribute"
                 >@commodity</code> and <code rend="attribute">@quantity</code>. We can use those
@@ -233,9 +231,9 @@
 </row>]]>
               </code>
               <caption>Adding the attributes @commodity, @quantity and @unit to the
-                <![CDATA[<measure>]]> element to normalize the data.</caption>
+                <code rend="element"><![CDATA[<measure>]]></code> element to normalize the data.</caption>
             </ab>
-            <p> Now we reference the <code rend="element">measure</code> to the <hi rend="italic"
+            <p> Now we reference the <code rend="element"><![CDATA[<measure>]]></code> to the <hi rend="italic"
                 >Bookkeeping Ontology</hi> using <code rend="attribute">@ana</code>. We want to say
               that <hi rend="italic">powder, sugar and shot</hi> are commodities. Therefore, we add
                 <code>ana="bk:commodity"</code> and <code>ana="bk:money"</code> to the corresponding
@@ -256,7 +254,7 @@
   </cell>
 </row>]]>
               </code>
-              <caption>ana="bk:money" marks a <![CDATA[<measure>]]> as a bk:MonetaryValue and
+              <caption>ana="bk:money" marks a <code rend="element"><![CDATA[<measure>]]></code> as a bk:MonetaryValue and
                 ana="bk:commodity" as a bk:Commodity.</caption></ab>
             <p> This very <code>bk:Transaction</code> consists now of 2 <code>bk:Transfer</code> -
               one transferring powder, sugar and shot, the other transferring 7 shillings and 6
@@ -271,9 +269,9 @@
                 </item>
               </list> To map this in our example we can use <code>ana="bk:from"</code> and
                 <code>ana="bk:to"</code>. We add this kind of annotation to any TEI structure we are
-              using for annotating <code>bk:EconomicUnit</code> in our document like <code
-                rend="element"><![CDATA[<name>]]></code>, <code rend="element"
-                ><![CDATA[<persName>]]></code> or <code rend="element"><![CDATA[<orgName>]]></code>.
+              using for annotating <code>bk:EconomicUnit</code> in our document like <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-name.html"><code
+                rend="element"><![CDATA[<name>]]></code></ref>, <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-persName.html"><code rend="element"
+                  ><![CDATA[<persName>]]></code></ref> or <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-orgName.html"><code rend="element"><![CDATA[<orgName>]]></code></ref>.
               In the chapter about<ref target="#economic_units">Economic Units</ref> you will learn
               more about different types of economic units. As for the RDF representation URIs are
               needed, we have to assign a unique ID for every <code>bk:EconomicUnit</code> (even
@@ -384,7 +382,7 @@
   dem <name ref="#pers_SR052">herrn Kaspar</name>.
 </p>]]>
               </code>
-              <caption>The <code rend="element"><![CDATA[<date>]]></code> element is enriched by a
+              <caption>The <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-date.html"><code rend="element"><![CDATA[<date>]]></code></ref> element is enriched by a
                   <code rend="attribute">@when</code> to normalize the date.</caption>
             </ab>
             <p> Not every date inside a <code>bk:entry</code> is the date of the transaction. Also,
@@ -403,10 +401,10 @@
                   superior structure. The following Code Snippet provides an example for this
                   scenario.</item>
                 <item> If all transactions of one XML/TEI share the same date, you can define a
-                    <code>bk:when</code> in the <code rend="element"
-                  ><![CDATA[<teiHeader>]]></code>.</item>
+                  <code>bk:when</code> in the <ref target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-teiHeader.html"><code rend="element"
+                  ><![CDATA[<teiHeader>]]></code></ref>.</item>
                 <item>Another "hacky" option that you might possibly need would be to add an empty
-                    <code><![CDATA[<date ana="bk:when" when="1900-02-02"/>]]></code> to a
+                    <code rend="element"><![CDATA[<date ana="bk:when" when="1900-02-02"/>]]></code> to a
                   transaction. For instance, because you just know from another source that for one
                   particular transaction you have to apply another date than the one specified in
                   the <code rend="element"><![CDATA[<teiHeader>]]></code> for all the other
@@ -441,9 +439,9 @@
     </cell>
   </row>
 </table>]]></code>
-              <caption>Annotation of date - priority level 2: The date in <code rend="element"
-                  ><![CDATA[<head>]]></code> will be applied for every single <code>bk:entry</code>
-                in the <code rend="element"><![CDATA[<table>]]></code>.</caption>
+              <caption>Annotation of date - priority level 2: The date in <ref target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-head.html"><code rend="element"
+                  ><![CDATA[<head>]]></code></ref> will be applied for every single <code>bk:entry</code>
+                in the <ref target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-table.html"><code rend="element"><![CDATA[<table>]]></code></ref>.</caption>
             </ab>
           </div>
           <div xml:id="economic_units">
@@ -471,9 +469,9 @@
           </div>
           <div xml:id="economic_units_index">
             <head>Index - Economic Units</head>
-            <p>It is highly recommended to organize all <code>bk:EconomicUnit</code> in a <code
-                rend="element"><![CDATA[<listPerson>]]></code> or a <code rend="element"
-                ><![CDATA[<listOrg>]]></code> element. This list section can be located at different
+            <p>It is highly recommended to organize all <code>bk:EconomicUnit</code> in a <ref target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-listPerson.html"><code
+              rend="element"><![CDATA[<listPerson>]]></code></ref> or a <ref target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-listOrg.html"><code rend="element"
+                ><![CDATA[<listOrg>]]></code></ref> element. This list section can be located at different
               spots of the TEI and does not necessarily have to be labeled with
                 <code>ana="bk:Index"</code>. This should allow other people or organization lists to
               be used independently of DEPCHA. In the following example Eliza Wheaton pays 20.00 $
@@ -481,8 +479,8 @@
                 >@xml:id</code>, because we know that it was his accounting book. Further
               prosopographic information can be put into <code rend="element"
                 ><![CDATA[<listPerson>]]></code>. Every <code>bk:to</code> and <code>bk:from</code>
-              will use the xml:id from <code rend="attribute">@ref</code> to reference to a <code
-                rend="element"><![CDATA[<person>]]></code> in <code rend="element"
+              will use the xml:id from <code rend="attribute">@ref</code> to reference to a <ref target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-person.html"><code
+                rend="element"><![CDATA[<person>]]></code></ref> in <code rend="element"
                 ><![CDATA[<listPerson>]]></code>.</p>
             <ab>
               <code rend="block" lang="XML">
@@ -612,17 +610,17 @@
                 <code>ana="bk:commodity"</code>, <code>ana="bk:service"</code> oder
                 <code>ana="bk:right"</code> to the element <code rend="element"
                 ><![CDATA[<measure>]]></code>. It is helpful to create an <code>bk:Index</code> as
-              we did for <code>EconomicUnit</code>. According to the TEI guidelines a <code
-                rend="element"><![CDATA[<taxonomy>]]></code> in the <code rend="element"
+              we did for <code>bk:EconomicUnit</code>. According to the TEI guidelines a <ref target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-taxonomy.html"><code
+                rend="element"><![CDATA[<taxonomy>]]></code></ref> in the <code rend="element"
                 ><![CDATA[<teiHeader>]]></code> defines <hi rend="italic">a typology either
                 implicitly or explicitly by a structured taxonomy</hi>. So, this can be used to
               specify historical commodities for a document. If <code>@ana="bk:Index"</code> is
-              added to a <code>taxonomy</code>, the hierarchy and categories are transformed into
+              added to a <code rend="element"><![CDATA[<taxonomy>]]></code>, the hierarchy and categories are transformed into
               SKOS. In the following example a hierarchy is created by the nested structure of
-                <code><![CDATA[<category>]]></code> elements. The use of an <code>xml:id</code> and
-                <code><![CDATA[<catDesc> <term>]]></code>elements is obligatory. Optionally, you can
-              reference to a controlled vocabulary or to Wikidata concepts using <code>@ref</code>
-              in <code>term</code>.</p>
+              <ref target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-category.html"><code rend="element"><![CDATA[<category>]]></code></ref> elements. The use of an <code rend="attribute">xml:id</code> and
+              <ref target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-catDesc.html"><code rend="element"><![CDATA[<catDesc>]]></code></ref>elements is obligatory. Optionally, you can
+              reference to a controlled vocabulary or to Wikidata concepts using <code rend="attribute">@ref</code>
+              in <ref target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-term.html"><code rend="element"><![CDATA[term]]></code></ref>.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<taxonomy ana="bk:Index">
   <gloss>Commodities</gloss>
@@ -785,7 +783,7 @@
   <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q10943"/>
 </skos:Concept>]]>
               </code>
-              <caption>Transfer of an XML <code><![CDATA[<taxonomy>]]></code> to a SKOS
+              <caption>Transfer of an XML <code rend="element"><![CDATA[<taxonomy>]]></code> to a SKOS
                 structure.</caption>
             </ab>
             <p>Taxonomies can also be created for services or other intangible commodities.</p>
@@ -794,8 +792,8 @@
             <head>Units of Measurement</head>
             <p>Units of measurement are essential for the description of
                 <code>bk:EconomicAsset</code>. This includes units for volume, area or length, as
-              well as for currencies. According to the TEI guidelines the element <code
-                rend="element"><![CDATA[<unitDecl>]]></code> in the <code rend="element"
+              well as for currencies. According to the TEI guidelines the element <ref target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-unitDecl.html"><code
+                rend="element"><![CDATA[<unitDecl>]]></code></ref> in the <code rend="element"
                 ><![CDATA[<teiHeader>]]></code> provides <hi rend="italic">information about units
                 of measurement that are not members of the International System of Units</hi>. So,
               this seems to be very useful to specify historical units in a document. In the example
@@ -803,7 +801,7 @@
               2002. With <code rend="attribute">@type</code> it is explicitly identified as a
               currency. By using <code rend="attribute">@ref</code> we can create a reference to a
               controlled vocabulary. Moreover, we can use the element
-                <code><![CDATA[<conversion>]]></code> to express that 100 cents are equivalent to 1
+              <ref target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-conversion.html"><code rend="element"><![CDATA[<conversion>]]></code></ref> to express that 100 cents are equivalent to 1
               euro. It is also important to identify the "main currency" to be able to transfer
               aggregations within DEPCHA into one currency. In this case we would like to set the
               euro as <code>bk:mainCurrency</code> sein.</p>
@@ -863,9 +861,9 @@
               <caption>Transfer of currency information from XML to RDF.</caption>
             </ab>
             <p> Let's look into an example for another unit. With <code rend="attribute"
-                >@type</code> in <code rend="element">unitDef</code>we are able to define the
+              >@type</code> in <ref target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-unitDef.html"><code rend="element">unitDef</code></ref> we are able to define the
               category of the unit. If there are no indications of the category, the information
-              will be extracted from the superclass <code>bk:Unit</code>.<!-- SS: ÜBERPÜRFEN? -->
+              will be extracted from the superclass <code>bk:Unit</code>.
               The following <code rend="attribute">@type</code> are supported:
                 <code>type="weight"</code>, <code>type="volume"</code>, <code>type="length"</code>,
                 <code>type="capacity"</code>, <code>type="time"</code>,
@@ -891,7 +889,7 @@
      <label xml:lang="de">Tage</label>
   </unitDef>
 </unitDecl>]]></code>
-              <caption/></ab>
+              <caption>Defining units of measurement and linking them to Wikidata concepts.</caption></ab>
           </div>
           <div xml:id="debit_credit">
             <head>Debit and Credit</head>
