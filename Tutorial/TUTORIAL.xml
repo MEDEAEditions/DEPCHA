@@ -850,7 +850,7 @@
                 ><![CDATA[<teiHeader>]]></code><hi rend="italic">contains one ore more <ref
                   target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-unitDef.html"><code
                     rend="element"><![CDATA[<unitDef>]]></code></ref> child elements that serve to
-                describe units of measure</hi> The <code rend="element"
+                describe units of measure</hi>. The <code rend="element"
                 ><![CDATA[<unitDecl>]]></code> element has to be added to the <ref
                 target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-encodingDesc.html"
                   ><code rend="element"><![CDATA[<encodingDesc>]]></code></ref> element in the <code
@@ -868,26 +868,26 @@
               to set the euro as <code>bk:mainCurrency</code>.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<encodingDesc>
-                <unitDecl>
-<unitDef ref="wd:Q1248202" type="currency" xml:id="maravedí" notBefore="1154" to="1854">
-  <label xml:lang="en">Spanish maravedí</label>
-  <region>Spain</region>
-  <unit>maravedí</unit>
-  <desc>Historic Iberian currency</desc>     
-</unitDef>
-<unitDef ref="wd:Q4917" type="currency" xml:id="euro" ana="bk:mainCurrency" from="2002">
- <label xml:lang="en">Euro</label>
- <region>Europe</region>
- <unit>€</unit>
-</unitDef>
-<unitDef ref="wd:Q2377701" type="currency" xml:id="cent" from="2002">
-  <label xml:lang="en">Cent</label>
-  <region>Europe</region>
-  <unit>c</unit>
-  <conversion fromUnit="#euro" toUnit="#cent" formula="$fromUnit div 100"/>
-</unitDef>
-</unitDecl>
-</encodingDesc]]>
+  <unitDecl>
+    <unitDef ref="wd:Q1248202" type="currency" xml:id="maravedí" notBefore="1154" to="1854">
+      <label xml:lang="en">Spanish maravedí</label>
+      <region>Spain</region>
+      <unit>maravedí</unit>
+      <desc>Historic Iberian currency</desc>     
+    </unitDef>
+    <unitDef ref="wd:Q4917" type="currency" xml:id="euro" ana="bk:mainCurrency" from="2002">
+      <label xml:lang="en">Euro</label>
+      <region>Europe</region>
+      <unit>€</unit>
+    </unitDef>
+    <unitDef ref="wd:Q2377701" type="currency" xml:id="cent" from="2002">
+      <label xml:lang="en">Cent</label>
+      <region>Europe</region>
+      <unit>c</unit>
+      <conversion fromUnit="#euro" toUnit="#cent" formula="$fromUnit div 100"/>
+    </unitDef>
+  </unitDecl>
+</encodingDesc>]]>
               </code>
               <caption>Definition of currency using <code rend="element"
                   ><![CDATA[<unitDecl>]]></code> and declaring a
