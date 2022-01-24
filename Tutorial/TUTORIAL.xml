@@ -377,40 +377,40 @@
             <head>Dates</head>
             <p>Transactions can have a date. The date of a transaction (<code>bk:when</code>) can be
               annotated by adding <code>ana="bk:when"</code> to a <ref
-                target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-date.html"><code rend="element"
-                  ><![CDATA[<date>]]></code></ref> element. The <code rend="attribute"
-                    >@when</code> attribute helps us to normalize the date. You can also use <code rend="attribute"
-                      >@from</code> and <code rend="attribute">@to</code> to set a time range.
-              However, not every date inside a <code>bk:entry</code> 
-              is the date of the transaction and the date might not always be mentioned inside the
-            transaction. It is also possible that some single transactions or all of the transactions share one specific date. 
-            And let's not forget that the date might not be mentioned in the document, but you know it from a reliable source.</p>
+                target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-date.html"><code
+                  rend="element"><![CDATA[<date>]]></code></ref> element. The <code rend="attribute"
+                >@when</code> attribute helps us to normalize the date. You can also use <code
+                rend="attribute">@from</code> and <code rend="attribute">@to</code> to set a time
+              range. However, not every date inside a <code>bk:entry</code> is the date of the
+              transaction and the date might not always be mentioned inside the transaction. It is
+              also possible that some single transactions or all of the transactions share one
+              specific date. And let's not forget that the date might not be mentioned in the
+              document, but you know it from a reliable source.</p>
             <p>For those different cases different priorities may arise:</p>
-              <list>
-                <item> The highest priority is given to dates inside a <code>bk:entry</code>.
-                   So, if there is a date inside a transaction, you should annotate this date like 
-                  in the following example. 
-            <ab>
-              <code rend="block" lang="XML">
-                <![CDATA[<p ana="bk:entry">
+            <list>
+              <item> The highest priority is given to dates inside a <code>bk:entry</code>. So, if
+                there is a date inside a transaction, you should annotate this date like in the
+                following example. <ab>
+                  <code rend="block" lang="XML">
+                    <![CDATA[<p ana="bk:entry">
   Item am <date ana="bk:when" when="1402-01-01">s<supplied reason="missing">[o]</supplied>nntag nach Eibnitÿ</date>
   prachten dÿ<lb/><name ref="#pers_SR051" ana="bk:from">obgeschriben visser</name>
   <measure ana="bk:commodity" commodity="Fisch" quantity="18" unit="Pfund">18 lb visch</measure> 
   dem <name ref="#pers_SR052">herrn Kaspar</name>.
 </p>]]>
-              </code>
-              <caption>The <code
-                    rend="element"><![CDATA[<date>]]></code> element is enriched by a <code
-                  rend="attribute">@when</code> to normalize the date inside the <code>bk:entry</code>.</caption>
-            </ab></item>
-                <item> Second-level priority should be given to dates that can be found in a
-                  superior structure. This means the corresponding date appears outside the <code>bk:entry</code> 
-                  like in the code snippet below. Both <code>bk:entry</code> share the same date, as the tabular
-                  structure clearly indicates. James Haley bought 1/4 lb Powder for 7 shillings on the
-                  1st August 1808 and Elisabeth Example bought 1 lb Shot on the same day.
-                  <ab>
-                    <code rend="block" lang="XML">
-                      <![CDATA[<head>
+                  </code>
+                  <caption>The <code rend="element"><![CDATA[<date>]]></code> element is enriched by
+                    a <code rend="attribute">@when</code> to normalize the date inside the
+                      <code>bk:entry</code>.</caption>
+                </ab></item>
+              <item> Second-level priority should be given to dates that can be found in a superior
+                structure. This means the corresponding date appears outside the
+                  <code>bk:entry</code> like in the code snippet below. Both <code>bk:entry</code>
+                share the same date, as the tabular structure clearly indicates. James Haley bought
+                1/4 lb Powder for 7 shillings on the 1st August 1808 and Elisabeth Example bought 1
+                lb Shot on the same day. <ab>
+                  <code rend="block" lang="XML">
+                    <![CDATA[<head>
   <name ana="bk:to" ref="#economic_unit.1">Stagville</name> 
   <date ana="bk:when" when="1808-08-01">August 1st 1808</date>
 </head>
@@ -436,16 +436,17 @@
     </cell>
   </row>
 </table>]]></code>
-                    <caption>The date in <code
-                        rend="element"><![CDATA[<head>]]></code> will be applied for every single
-                      <code>bk:entry</code> in the <code rend="element"><![CDATA[<table>]]></code>.</caption>
-                  </ab>
-                </item>
-                <item>If all transactions of one XML/TEI share the same date, you can define a
-                    <code>bk:when</code> in the <ref
-                    target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-teiHeader.html"
-                      ><code rend="element"><![CDATA[<teiHeader>]]></code></ref>.
-                  <![CDATA[<teiHeader>
+                  <caption>The date in <code rend="element"><![CDATA[<head>]]></code> will be
+                    applied for every single <code>bk:entry</code> in the <code rend="element"
+                      ><![CDATA[<table>]]></code>.</caption>
+                </ab>
+              </item>
+              <item>If all transactions of one XML/TEI share the same date, you can define a
+                  <code>bk:when</code> in the <ref
+                  target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-teiHeader.html"><code
+                    rend="element"><![CDATA[<teiHeader>]]></code></ref>. <ab>
+                  <code rend="block" lang="XML">
+                    <![CDATA[<teiHeader>
       <sourceDesc>
             <msDesc>
                <msIdentifier>
@@ -471,19 +472,19 @@
             </row>
          </table>
       </body>
-   </text>]]>
-                
-                </item>  
-                <item>Another "hacky" option that you might possibly need would be to add an empty
+   </text>]]></code><caption>The date in the <code rend="element"><![CDATA[<teiHeader>]]></code>
+                    will be used for every <code>bk:entry</code> in the TEI document.</caption></ab>
+              </item>
+              <!-- SSt: Beispiel momentan nicht notwendig.
+                  <item>Another "hacky" option that you might possibly need would be to add an empty
                     <code rend="element"><![CDATA[<date ana="bk:when" when="1900-02-02"/>]]></code>
                   to a transaction. For instance, because you just know from another source that for
                   one particular transaction you have to apply another date than the one specified
                   in the <code rend="element"><![CDATA[<teiHeader>]]></code> for all the other
                   transactions. 
-                
-                </item>
-              </list>
-            
+                </item>-->
+            </list>
+
           </div>
           <div xml:id="economic_units">
             <head>Economic Units</head>
@@ -846,20 +847,34 @@
               well as for currencies. According to the TEI guidelines the element <ref
                 target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-unitDecl.html"><code
                   rend="element"><![CDATA[<unitDecl>]]></code></ref> in the <code rend="element"
-                ><![CDATA[<teiHeader>]]></code> provides <hi rend="italic">information about units
-                of measurement that are not members of the International System of Units</hi>. So,
-              this seems to be very useful to specify historical units in a document. In the example
-              below the Euro is defined as a currency that is used in the region of Europe since
-              2002. With <code rend="attribute">@type</code> it is explicitly identified as a
-              currency. By using <code rend="attribute">@ref</code> we can create a reference to a
-              controlled vocabulary. Moreover, we can use the element <ref
+                ><![CDATA[<teiHeader>]]></code><hi rend="italic">contains one ore more <ref
+                  target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-unitDef.html"><code
+                    rend="element"><![CDATA[<unitDef>]]></code></ref> child elements that serve to
+                describe units of measure</hi> The <code rend="element"
+                ><![CDATA[<unitDecl>]]></code> element has to be added to the <ref
+                target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-encodingDesc.html"
+                  ><code rend="element"><![CDATA[<encodingDesc>]]></code></ref> element in the <code
+                rend="element"><![CDATA[<teiHeader>]]></code>. So, this seems to be very useful to
+              specify historical units in a document - like the Spanish maravedì in the example
+              below that is defined as a historic Iberian currency. With <code
+                rend="attribute">@type</code> it is explicitly identified as a currency. By using
+              <code rend="attribute">@ref</code> we can create a reference to a controlled
+              vocabulary. Moreover, in the provided snippet the Euro and also Cents
+              are defined as currencies used in the region of Europe since 2002. We can use the element <ref
                 target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-conversion.html"><code
                   rend="element"><![CDATA[<conversion>]]></code></ref> to express that 100 cents are
               equivalent to 1 euro. It is also important to identify the "main currency" to be able
               to transfer aggregations within DEPCHA into one currency. In this case we would like
-              to set the euro as <code>bk:mainCurrency</code> sein.</p>
+              to set the euro as <code>bk:mainCurrency</code>.</p>
             <ab><code rend="block" lang="XML">
-                <![CDATA[<unitDecl>
+                <![CDATA[<encodingDesc>
+                <unitDecl>
+<unitDef ref="wd:Q1248202" type="currency" xml:id="maravedí" notBefore="1154" to="1854">
+  <label xml:lang="en">Spanish maravedí</label>
+  <region>Spain</region>
+  <unit>maravedí</unit>
+  <desc>Historic Iberian currency</desc>     
+</unitDef>
 <unitDef ref="wd:Q4917" type="currency" xml:id="euro" ana="bk:mainCurrency" from="2002">
  <label xml:lang="en">Euro</label>
  <region>Europe</region>
@@ -871,7 +886,8 @@
   <unit>c</unit>
   <conversion fromUnit="#euro" toUnit="#cent" formula="$fromUnit div 100"/>
 </unitDef>
-</unitDecl>]]>
+</unitDecl>
+</encodingDesc]]>
               </code>
               <caption>Definition of currency using <code rend="element"
                   ><![CDATA[<unitDecl>]]></code> and declaring a
