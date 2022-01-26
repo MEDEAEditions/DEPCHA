@@ -52,13 +52,21 @@
               case: <code>bk:commodity</code> or <code>bk:unit</code>
             </item>
           </list>
+          <p>If something in this tutorial begins with the prefix <code>bk:</code>, it means that it
+            is a concept defined in the <hi rend="italic">Bookkeeping Ontology</hi>. The prefix
+              <code>bk:</code> stands for the URI
+              <code>http://gams.uni-graz.at/o:depcha.bookkeeping#</code>. (See more about TEI-prefix
+            definitions with <ref
+              target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-prefixDef.html"><code
+                rend="element"><![CDATA[<tei:prefixDef>]]></code></ref> in the chapter <ref
+              target="#prefixdef">Definition of Prefixes</ref>).</p>
         </div>
         <div xml:id="xml_tei">
           <head>XML/TEI</head>
-          <p>The following snippet of a historical accounting book (image and transcription below)
-            is used to give a first overview of a possible way of annotating a digital edition using
-            XML/TEI and its connection, the <ref
-              target="https://gams.uni-graz.at/o:depcha.bookkeeping">Bookkeeping Ontology</ref>. </p>
+          <p>Before we can start mapping our <ref
+              target="https://gams.uni-graz.at/o:depcha.bookkeeping">Bookkeeping Ontology</ref> onto
+            our historical accounting book, we need to produce a digital version of our document in
+            terms of a digital transcription - just like below.</p>
           <ab>
             <figure>
               <graphic url="/archive/objects/context:depcha/datastreams/STAGVILLE/content"/>
@@ -90,35 +98,31 @@
               <cell>-</cell>
             </row>
           </table>
-          <p>This structure in the source describes two <code>bk:Transaction</code> with their
-            textual representation (<span type="tooltip"><code>bk:entry</code><note>bk:entry is
-                written small as it represents a data property and not a class.</note></span>). If
-            something in this tutorial begins with the prefix <code>bk:</code>, it means that it is
-            a concept defined in the <hi rend="italic">Bookkeeping Ontology</hi>. It can be expanded
-            to <code>http://gams.uni-graz.at/o:depcha.bookkeeping#</code>, for instance, via a
-            TEI-prefix definition with <ref
-              target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-prefixDef.html"><code
-                rend="element"><![CDATA[<tei:prefixDef>]]></code></ref> (see <ref
-              target="#prefixdef">Definition of Prefixes</ref>).</p>
-          <list>
-            <item>
-              <hi rend="italic">1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6 | 7 | 6</hi>
-            </item>
-            <item>
-              <hi rend="italic">1 Shoe Knife 1/6 | 1 | 6</hi>
-            </item>
-          </list>
-          <p>Having a look at the first <code>bk:entry</code> we can summarize the interpretation of
-            it as the following: <lb/> The person <hi rend="italic">James Haley</hi> buys <hi
-              rend="italic">1/4 lb Powder</hi> for the price of <hi rend="italic">2/6</hi> and he
-            further buys <hi rend="italic">1 lb Shot</hi> for the price of <hi rend="italic"
-              >2/6</hi> and at last he buys <hi rend="italic">1 lb Sugar</hi> for the price of <hi
-              rend="italic">2/6</hi> from <hi rend="italic">Stagville</hi>. Stagville represents a
-            farm (plantation). James Haley therefore transfers the monetary value of 7 shillings and
-            6 pence to Stagville. Some information is not explicit inside a <code>bk:entry</code>
-            and can be found in the header or is known by the domain expert of the source.<lb/> In
-            this case a table seems to be the best way to describe the text structure as shown in
-            the following example of an XML/TEI snippet: </p>
+          <p>Let's take a closer look at our source that describes an economic transaction. Typical
+            entities in a booking account are two economic units (here: the Stagville farm and James
+            Haley), some economic goods (here: powder, shot, sugar and a shoe knife) and units of
+            measurements (Here: 1/4 lb or 1 lb). Also, we can identify a date (here: August 1st
+            1808), prices for the single goods (here: 1/6 or 2/6) and the sum of the prices as a
+            value(here: 9).</p>
+
+          <p>One possible way of annotating a digital edition - and that's the practice suggested in
+            this tutorial - is to create an XML/TEI. The structure in the source above describes two
+              <span type="tooltip"><code>bk:Transaction</code><note>Remember: bk:Transaction starts
+                with upper case, because it represents a class.</note></span> with their textual
+            representation in two rows. Having a look at the first row that represents a <span
+              type="tooltip"><code>bk:entry</code><note>Remember: bk:entry is written small as it
+                represents a data property and not a class.</note></span> we can summarize the
+            interpretation of it as the following: <lb/> The person <hi rend="italic">James
+              Haley</hi> buys <hi rend="italic">1/4 lb Powder</hi> for the price of <hi
+              rend="italic">2/6</hi> and he further buys <hi rend="italic">1 lb Shot</hi> for the
+            price of <hi rend="italic">2/6</hi> and at last he buys <hi rend="italic">1 lb
+              Sugar</hi> for the price of <hi rend="italic">2/6</hi> from <hi rend="italic"
+              >Stagville</hi> (representing a farm/plantation). James Haley therefore transfers the
+            monetary value of 7 shillings and 6 pence to Stagville (Note: 1 shilling = 12 pence).
+            Not all information is explicit inside the <code>bk:entry</code>, but it can be found in
+            the header - like the involved parties or the date in this example - or is known by the
+            domain expert of the source.<lb/> In this particular case a table seems to be
+            the best way to describe the text structure as shown in the following XML/TEI snippet: </p>
           <ab>
             <code rend="block" lang="XML">
               <![CDATA[<text>
@@ -149,20 +153,20 @@
 </text>
 ]]>
             </code>
-            <caption>Two entries in the Stagville Accounts encoded as table in XML/TEI.</caption>
+            <caption>Two entries from the Stagville Accounts encoded as table in XML/TEI.</caption>
           </ab>
 
-          <p>You can use the full expressiveness XML/TEI is offering to describe text. For the <hi
-              rend="italic">Bookkeeping Ontology</hi> only some annotations using the TEI attribute
-              <code>ana</code> are relevant, next to some attributes for formalizing data. We will
-            look at that in more detail now.</p>
+          <p>XML/TEI offers us full expressiveness to describe text. Next to some attributes for
+            formalizing data, we can enrich the text with annotations using the TEI attribute
+              <code>ana</code> for the connection with the <hi rend="italic">Bookkeeping
+              Ontology</hi>. Let's look at that in more detail now.</p>
           <p>The starting point is to define a container for a <code>bk:Transaction</code> by
             annotating the textual representation of a <code>bk:entry</code> like <code
               rend="element"><![CDATA[<div>]]></code>, <code rend="element"><![CDATA[<row>]]></code>
-            or <code rend="element"><![CDATA[<span>]]></code> (or any other element that fits to
-            your data and the TEI guidelines). By using <code rend="attribute">@ana</code> with the
-            value "bk:entry" a TEI structure is defined as a <code>bk:entry</code> according to the
-              <hi rend="italic">Bookkeeping Ontology</hi>.</p>
+            or <code rend="element"><![CDATA[<span>]]></code> elements (or any other element that
+            fits to your data and the TEI guidelines). By using <code rend="attribute">@ana</code>
+            with the value "bk:entry" a TEI structure is defined as a <code>bk:entry</code>
+            according to the <hi rend="italic">Bookkeeping Ontology</hi>.</p>
           <ab>
             <code rend="block" lang="XML">
               <![CDATA[<row ana="bk:entry">
@@ -173,7 +177,7 @@
 </row>
 ]]>
             </code>
-            <caption>Annotation of a textual structure, in this case a row in a table, as a text
+            <caption>Annotation of a textual structure - in this case a row in a table - as a text
               entry of a transaction. </caption>
           </ab>
           <div xml:id="commodities">
@@ -184,11 +188,11 @@
                 <code>bk:EconomicAsset</code>. This can be further specified as
                 <code>bk:EconomicGood</code> which can be a <code>bk:Commodity</code>,
                 <code>bk:Service</code>, <code>bk:Right</code>, or a <code>bk:MonetaryValue</code>.
-              So, the flow of a <code>bk:EconomicAsset</code> from one <code>bk:EconomicUnit</code>
-              to another is expressed. To express the direction of the flow <code>bk:from</code> and
-                <code>bk:to</code> are needed. We first deal with the question: "What is
-              transferred?". In this example three different <code>bk:Commodity</code> are
-              mentioned: <list>
+              We can not only express the flow of a <code>bk:EconomicAsset</code> from one
+                <code>bk:EconomicUnit</code> to another, but also the direction of the flow by using
+                <code>bk:from</code> and <code>bk:to</code>.</p>
+            <p>We first deal with the question: "What is transferred?".</p>
+            <p>In this example three different <code>bk:Commodity</code> are mentioned: <list>
                 <item>
                   <hi rend="italic">1/4 lb Powder</hi>
                 </item>
@@ -209,22 +213,23 @@
                 </item>
               </list>
             </p>
-            <p> Also, three further <code>bk:MonetaryValue</code> can be found, interpreted as
-                <code>bk:Price</code>. The <code>bk:Price</code> belongs to the
-                <code>bk:Commodity</code> mentioned before: <hi rend="italic">¼ lb Powder for 2
-                shilling and 6 pence</hi>. However, we will ignore this in this first step. </p>
+            <p> Also, right after every single <code>bk:Commodity</code> three further
+                <code>bk:MonetaryValue</code> can be found, interpreted as <code>bk:Price</code>
+              belonging to each <code>bk:Commodity</code>: <hi rend="italic">¼ lb Powder for 2
+                shilling and 6 pence</hi>. Let's ignore the <code>bk:Price</code> in this first
+              step. </p>
             <p> The <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-measure.html"
                   ><code rend="element"><![CDATA[<measure>]]></code></ref> element in TEI allows to
-              annotate countable entities using these attributes <code rend="attribute"
-              >@unit</code>, <code rend="attribute">@unitRef</code>, <code rend="attribute"
-                >@commodity</code> and <code rend="attribute">@quantity</code>. We can use those
-              attributes to normalize the data.</p>
+              annotate countable entities using the attributes <code rend="attribute">@unit</code>,
+                <code rend="attribute">@unitRef</code>, <code rend="attribute">@commodity</code> and
+                <code rend="attribute">@quantity</code>. So, we can use those attributes to
+              normalize our data within the cells.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<row ana="bk:entry">
   <cell>
-    <measure commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder</measure>
-    <measure commodity="shot" quantity="1" unit="lb">1 lb Shot</measure>
-    <measure commodity="sugar" quantity="1" unit="lb">1 lb Sugar</measure>
+    <measure commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder</measure><measure>2/6</measure>
+    <measure commodity="shot" quantity="1" unit="lb">1 lb Shot</measure><measure>2/6</measure>
+    <measure commodity="sugar" quantity="1" unit="lb">1 lb Sugar</measure><measure>2/6</measure>
   </cell>
   <cell/>
   <cell>
@@ -239,17 +244,19 @@
                   rend="element"><![CDATA[<measure>]]></code> element to normalize the
                 data.</caption>
             </ab>
-            <p> Now we reference the <code rend="element"><![CDATA[<measure>]]></code> to the <hi
-                rend="italic">Bookkeeping Ontology</hi> using <code rend="attribute">@ana</code>. We
-              want to say that <hi rend="italic">powder, sugar and shot</hi> are commodities.
+            <p>In the next step we reference the <code rend="element"><![CDATA[<measure>]]></code>
+              element to the <hi rend="italic">Bookkeeping Ontology</hi>by using <code
+                rend="attribute">@ana</code>. We want to say that <hi rend="italic">powder, sugar
+                and shot</hi> are members of the class <code>bk:Commodity</code> and the 7 shillings
+              and 6 pence belong to the class <code>bk:MonetaryValue</code> of our ontology.
               Therefore, we add <code>ana="bk:commodity"</code> and <code>ana="bk:money"</code> to
               the corresponding elements. </p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<row ana="bk:entry">
   <cell>
-    <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder</measure>
-    <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb Shot</measure>
-    <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1 lb Sugar</measure>
+    <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder</measure><measure>2/6</measure>
+    <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb Shot</measure><measure>2/6</measure>
+    <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1 lb Sugar</measure><measure>2/6</measure>
   </cell>
   <cell/>
   <cell>
@@ -262,11 +269,11 @@
               </code>
               <caption>ana="bk:money" marks a <code rend="element"><![CDATA[<measure>]]></code> as a
                 bk:MonetaryValue and ana="bk:commodity" as a bk:Commodity.</caption></ab>
-            <p> This very <code>bk:Transaction</code> consists now of 2 <code>bk:Transfer</code> -
+            <p> This very <code>bk:Transaction</code> consists of 2 <code>bk:Transfer</code> now -
               one transferring powder, sugar and shot, the other transferring 7 shillings and 6
               pence.</p>
-            <p> In the following we define the directions of the flow of assets, which can be
-              summarized like shown below: <list>
+            <p>Let's define the directions of the flow of assets which can be summarized like shown
+              below: <list>
                 <item>
                   <hi rend="italic">powder, sugar, shot from Stagville to James Haley</hi>
                 </item>
@@ -274,26 +281,28 @@
                   <hi rend="italic">7 shilling, 6 pence from James Haley to Stagville</hi>
                 </item>
               </list> To map this in our example we can use <code>ana="bk:from"</code> and
-                <code>ana="bk:to"</code>. We add this kind of annotation to any TEI structure we are
-              using for annotating <code>bk:EconomicUnit</code> in our document like <ref
+                <code>ana="bk:to"</code>. We can add this kind of annotation to any TEI structure we
+              are using for annotating members of the class <code>bk:EconomicUnit</code> in our
+              document. This will usually be elements like <ref
                 target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-name.html"><code
                   rend="element"><![CDATA[<name>]]></code></ref>, <ref
                 target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-persName.html"><code
                   rend="element"><![CDATA[<persName>]]></code></ref> or <ref
                 target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-orgName.html"><code
-                  rend="element"><![CDATA[<orgName>]]></code></ref>. In the chapter about<ref
-                target="#economic_units">Economic Units</ref> you will learn more about different
-              types of economic units. As for the RDF representation URIs are needed, we have to
-              assign a unique ID for every <code>bk:EconomicUnit</code> (even though it may be an
-              unknown group of economic units) using <code rend="attribute">@ref</code>.</p>
-            <p> The following code snippet now shows how we express that the monetary value of 7
-              shillings and 6 pence flows <hi rend="bold">from</hi> James Haley - normalized by the
-              reference to the <code rend="attribute">@xml:id</code>
-              <hi rend="italic">economic_unit.2</hi> - <hi rend="bold">to</hi> Stagville with the
-              reference <hi rend="italic">economic_unit.1</hi>. Notice that by default the flow of
-              money is always encoded explicitly in DEPCHA! You can, however, express the flow
+                  rend="element"><![CDATA[<orgName>]]></code></ref> (you will find more about the
+              different types in the chapter <ref target="#economic_units">Economic Units</ref>). As
+              for the RDF representation URIs are needed, we have to assign a unique ID for every
+                <code>bk:EconomicUnit</code> (even though it may be an unknown group of economic
+              units) using <code rend="attribute">@ref</code>.</p>
+            <p> The following code snippet now shows how we express that the
+                <code>bk:MonetaryValue</code> of 7 shillings and 6 pence flows <hi rend="bold"
+                  >from</hi> James Haley (normalized by an <code rend="attribute">@xml:id</code> reference as <hi rend="italic"
+                >economic_unit.2</hi>) <hi
+                rend="bold">to</hi> Stagville (with the reference <hi rend="italic"
+                >economic_unit.1</hi>). Notice that by default the flow of money is always encoded
+              explicitly in DEPCHA. <!--TO BE SOLVED! You can, however, express the flow
               direction explicitly yourself. You can find more information about that under <ref
-                target="#">XY</ref>.</p>
+                target="#">XY</ref>.--></p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<head><name ana="bk:to" ref="#economic_unit.1">Stagville</name> August 1st 1808</head>
 <table>
@@ -856,11 +865,11 @@
                   ><code rend="element"><![CDATA[<encodingDesc>]]></code></ref> element in the <code
                 rend="element"><![CDATA[<teiHeader>]]></code>. So, this seems to be very useful to
               specify historical units in a document - like the Spanish maravedì in the example
-              below that is defined as a historic Iberian currency. With <code
-                rend="attribute">@type</code> it is explicitly identified as a currency. By using
-              <code rend="attribute">@ref</code> we can create a reference to a controlled
-              vocabulary. Moreover, in the provided snippet the Euro and also Cents
-              are defined as currencies used in the region of Europe since 2002. We can use the element <ref
+              below that is defined as a historic Iberian currency. With <code rend="attribute"
+                >@type</code> it is explicitly identified as a currency. By using <code
+                rend="attribute">@ref</code> we can create a reference to a controlled vocabulary.
+              Moreover, in the provided snippet the Euro and also Cents are defined as currencies
+              used in the region of Europe since 2002. We can use the element <ref
                 target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-conversion.html"><code
                   rend="element"><![CDATA[<conversion>]]></code></ref> to express that 100 cents are
               equivalent to 1 euro. It is also important to identify the "main currency" to be able
