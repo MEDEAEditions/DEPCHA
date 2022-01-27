@@ -3,11 +3,11 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Example Commodity</title>
+                <title>Example </title><!--Titel anhängen-->
             </titleStmt>
             <publicationStmt>
                 <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
-                <idno type="PID">o:depcha.example.commodities</idno>
+                <idno type="PID">o:depcha.example.</idno><!-- Bezeichnung des Example anhängen-->
                 <ref target="context:depcha.example" type="context">Examples</ref>
             </publicationStmt>
             <sourceDesc>
@@ -32,26 +32,9 @@
     </teiHeader>
     <text>
         <body>
-<div type="example">
-    <head><name ana="bk:to" ref="#economic_unit.1">Stagville</name> August 1st 1808</head>
-    <table>
-        <head>69 <name ana="bk:from" ref="#economic_unit.2">James Haley</name> J Self Dr.</head>
-        <row ana="bk:entry">
-            <cell>
-                <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder</measure>
-                <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb Shot</measure>
-                <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1 lb Sugar</measure>
-            </cell>
-            <cell/>
-            <cell>
-                <measure ana="bk:money" quantity="7" unit="shilling">7</measure>
-            </cell>
-            <cell>
-                <measure ana="bk:money" quantity="6" unit="pence">6</measure>
-            </cell>
-        </row>
-    </table>
-</div>
-</body>
-</text>
+            <div type="example">
+               <!--Example einfügen--> 
+            </div>
+        </body>
+    </text>
 </TEI>

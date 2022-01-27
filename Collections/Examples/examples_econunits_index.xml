@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Example Economic Units Index</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+                <idno type="PID">o:depcha.example.econunitsindex</idno>
+                <ref target="context:depcha.example" type="context">Examples</ref>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Information about the source</p>
+            </sourceDesc>
+        </fileDesc>  
+        <encodingDesc>
+            <listPrefixDef>
+                <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+                    <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs. </p>
+                </prefixDef>
+                <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="http://www.wikidata.org/wiki/$1">
+                    <p>
+                        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+                    </p>
+                </prefixDef>
+            </listPrefixDef>
+        </encodingDesc>
+        <profileDesc>
+            <particDesc>
+                <listPerson ana="bk:index">
+                    <person xml:id="pers_WCDH001">
+                        <persName>
+                            <forename type="first">Eliza</forename>
+                            <surname type="married">Wheaton</surname>
+                        </persName>
+                        <birth when="1809-09-27"/>
+                        <sex value="2"/>
+                        <death when="1905"/>
+                    </person>
+                    <person xml:id="pers_WCDH002">
+                        <persName>
+                            <forename type="first">Laban</forename>
+                            <forename type="middle">Morey</forename>
+                            <surname>Wheaton</surname>
+                        </persName>
+                        <birth when="1796-09-14"/>
+                        <sex value="1"/>
+                        <occupation>
+                            <roleName>Postmaster</roleName>
+                        </occupation>
+                        <affiliation>
+                            <roleName>Representative <orgName ref="#org_WCDH5">Massachusetts General
+                                Court</orgName>
+                            </roleName>
+                        </affiliation>
+                        <occupation>
+                            <roleName>Member <orgName ref="#org_WCDH6">Massachusetts Governor's Council</orgName>
+                            </roleName>
+                        </occupation>
+                        <affiliation>
+                            <roleName>Trustee</roleName>
+                            <orgName ref="#org_WCDH7">State Industrial School for Girls</orgName>
+                        </affiliation>
+                        <death when="1865"/>
+                    </person>
+                </listPerson>
+            </particDesc>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="example">
+               <!--Example in teiHeader--> 
+            </div>
+        </body>
+    </text>
+</TEI>
