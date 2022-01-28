@@ -217,7 +217,8 @@
                 <code>bk:Commodity</code> three further <code>bk:MonetaryValue</code> can be found
               and interpreted as <code>bk:Price</code> belonging to each <code>bk:Commodity</code>:
                 <hi rend="italic">¼ lb Powder for 2 shilling and 6 pence</hi>. But let's ignore the
-                <code>bk:Price</code> in this first step. </p>
+                <code>bk:Price</code> in this first step. We will get to prices in the chapter <ref
+                  target="price">Prices</ref>.</p>
             <p> The <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-measure.html"
                   ><code rend="element"><![CDATA[<measure>]]></code></ref> element in TEI allows to
               annotate countable entities using the attributes <code rend="attribute">@unit</code>,
@@ -501,11 +502,11 @@
               or a king. By default every <code>bk:from</code> and <code>bk:to</code> creates a
                 <code>bk:EconomicUnit</code>. You can also determine the category of a
                 <code>bk:EconomicUnit</code> by adding <code>bk:group</code> or
-                <code>bk:individual</code> to the attribute <code rendition="attribute">@ana</code>.
-              The following example shows the annotation of a group of fishermen delivering fish. In
-              this case the <![CDATA[<name>]]> element is extended by <code>ana="bk:from
-                bk:group"</code> for the fishermen and <code>ana="bk:to bk:individual"</code> for
-              the person receiving the fish.</p>
+                <code>bk:individual</code> to the attribute <code rend="attribute">@ana</code>. The
+              following example shows the annotation of a group of fishermen delivering fish. In
+              this case the <code rend="element"><![CDATA[<name>]]></code> element is extended by
+                <code>ana="bk:from bk:group"</code> for the fishermen and <code>ana="bk:to
+                bk:individual"</code> for the person receiving the fish.</p>
             <ab>
               <code rend="block" lang="XML">
                 <![CDATA[<p ana="bk:entry">
@@ -533,7 +534,7 @@
                 rend="attribute">@xml:id</code>, because we know that it was his accounting book.
               Further prosopographic information can be put into <code rend="element"
                 ><![CDATA[<listPerson>]]></code>. Every <code>bk:to</code> and <code>bk:from</code>
-              will use the <code rend="attribute">xml:id</code> from <code rend="attribute"
+              will use the <code rend="attribute">@xml:id</code> from <code rend="attribute"
                 >@ref</code> to reference to a <ref
                 target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-person.html"><code
                   rend="element"><![CDATA[<person>]]></code></ref> in <code rend="element"
@@ -678,7 +679,7 @@
               by the nested structure of <ref
                 target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-category.html"><code
                   rend="element"><![CDATA[<category>]]></code></ref> elements. The use of an <code
-                rend="attribute">xml:id</code> and <ref
+                rend="attribute">@xml:id</code> and <ref
                 target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-catDesc.html"><code
                   rend="element"><![CDATA[<catDesc>]]></code></ref>elements is obligatory.
               Optionally, you can reference to a controlled vocabulary or to Wikidata concepts using
@@ -858,8 +859,8 @@
                 <code>bk:EconomicAsset</code>. This includes units for volume, area or length, as
               well as for currencies. According to the TEI guidelines the element <ref
                 target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-unitDecl.html"><code
-                  rend="element"><![CDATA[<unitDecl>]]></code></ref> in the <code rend="element"
-                ><![CDATA[<teiHeader>]]></code><hi rend="italic">contains one ore more <ref
+                  rend="element"><![CDATA[<unitDecl>]]></code></ref> (in the <code rend="element"
+                ><![CDATA[<teiHeader>]]></code>) <hi rend="italic">contains one ore more <ref
                   target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-unitDef.html"><code
                     rend="element"><![CDATA[<unitDef>]]></code></ref> child elements that serve to
                 describe units of measure</hi>. The <code rend="element"
@@ -905,7 +906,7 @@
                   ><![CDATA[<unitDecl>]]></code> and declaring a
                 <code>bk:mainCurrency</code></caption>
             </ab>
-            <p>In the RDF below that was generated from the snippet above we can see that for dollar
+            <p>In the RDF below that was generated from the snippet above we can see that for euro
               and cent we can find a <code>bk:MonetaryUnit</code> which contains information about
               the temporal and spacial dimension. Additionally, we can see the
                 <code>depcha:Dataset</code> defining the corresponding main currency for every RDF
@@ -944,18 +945,19 @@
             <p> Let's look into an example for another unit. With <code rend="attribute"
                 >@type</code> in <ref
                 target="https://tei-c.org/release/doc/tei-p5-doc/de/html/ref-unitDef.html"><code
-                  rend="element">unitDef</code></ref> we are able to define the category of the
-              unit. If there are no indications of the category, the information will be extracted
-              from the superclass <code>bk:Unit</code>. The following <code rend="attribute"
-                >@type</code> are supported: <code>type="weight"</code>, <code>type="volume"</code>,
-                <code>type="length"</code>, <code>type="capacity"</code>, <code>type="time"</code>,
-                <code>type="currency"</code>, <code>type="surface"</code>
+                  rend="element"><![CDATA[<unitDef>]]></code></ref> we are able to define the
+              category of the unit. If there are no indications of the category, the information
+              will be extracted from the superclass <code>bk:Unit</code>. The following <code
+                rend="attribute">@type</code> are supported: <code>type="weight"</code>,
+                <code>type="volume"</code>, <code>type="length"</code>,
+              <code>type="capacity"</code>, <code>type="time"</code>, <code>type="currency"</code>,
+                <code>type="surface"</code>
             </p>
             <ab><code rend="block" lang="XML"><![CDATA[<unitDecl>
-  <unitDef ref="wd:Q100995" type="weight" xml:id="Pfund">
+  <unitDef ref="wd:Q100995" type="weight" xml:id="pound">
      <label xml:lang="de">Pfund</label>
   </unitDef>
-  <unitDef ref="wd:Q137958" type="volume" xml:id="Mütt">
+  <unitDef ref="wd:Q137958" type="volume" xml:id="almud">
      <label xml:lang="de">Mütt</label>
   </unitDef>
   <unitDef ref="wd:Q482798" type="length" xml:id="unit.7">
@@ -994,7 +996,7 @@
           <div xml:id="status_agent">
             <head>Transaction Status and Agent</head>
             <p>Here is another example of a transcription of a <code>bk:entry</code>. The entry in
-              the Wheaton day book looks like:</p>
+              the Wheaton day book looks like this:</p>
             <table type="example">
               <head>Monday September 15th 1828</head>
               <row>
@@ -1016,8 +1018,8 @@
               Drake worked for Wheaton (owner of the shop and main author of the day book). Derius
               Drake paid his debt of 1 pound 59 shillings and 6 pence with his work <hi
                 rend="italic">by cutting two sticks</hi>. To do the job he got an axe which was
-              delivered by the <code>bk:Agent</code>
-              <hi rend="italic">Puffer</hi>. </p>
+              delivered by a person called <hi rend="italic">Puffer</hi> that represents another
+                <code>bk:Agent</code> . </p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<table>
   <head>Monday <date ana="bk:when" when="1828-09-15">September-15th-1828</date></head>
@@ -1045,9 +1047,10 @@
               associated with transactions. However, it is important to note that this connection to
               a place is not specified any further. Just add <code>ana="bk:where"</code> to a <code
                 rend="element"><![CDATA[<place>]]></code> and also consider to reference to a <code
-                rend="element"><![CDATA[<listPlace>]]></code>.</p>
+                rend="element"><![CDATA[<listPlace>]]></code> element in the <code rend="element"
+                ><![CDATA[<teiHeader>]]></code>.</p>
             <ab><code rend="block" lang="XML">
-                <![CDATA[<listPlace ana="bk:Index">
+                <![CDATA[<listPlace ana="bk:index">
   <place xml:id="SchlossKasten">
     <placeName>Kasten</placeName>
     <location>
@@ -1089,8 +1092,9 @@
           <div xml:id="price">
             <head>Prices</head>
             <p> To connect <code>bk:Commodity</code> and <code>bk:Price</code> we put them together
-              in one <code rend="element">measure</code> element and mark the <code>bk:Price</code>
-              explicitly in an additional measure element. </p>
+              in one <code rend="element"><![CDATA[<measure>]]></code> element and mark the
+              <code>bk:Price</code> explicitly in an additional <code rend="element"><![CDATA[<measure>]]></code> element.</p>
+
           </div>
           <div xml:id="taxes">
             <head>Taxes, ...</head>
