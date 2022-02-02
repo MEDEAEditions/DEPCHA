@@ -6,7 +6,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Schlandersberger Accounts</title>
+            <title>Example Units</title>
          </titleStmt>
          <publicationStmt>
             <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
@@ -32,11 +32,16 @@
             </prefixDef>
          </listPrefixDef>
          <unitDecl>
-            <unitDef ref="wd:Q1248202" type="currency" xml:id="maravedí" ana="bk:mainCurrency" notBefore="1154" to="1854">
+            <unitDef ref="wd:Q1248202" type="currency" xml:id="maravedi" notBefore="1154" to="1854">
                <label xml:lang="en">Spanish maravedí</label>
                <region>Spain</region>
                <unit>maravedí</unit>
                <desc>Historic Iberian currency</desc>     
+            </unitDef>
+            <unitDef ref="wd:Q4917" type="currency" xml:id="dollar">
+               <label xml:lang="en">American Dollar</label>
+               <region>United States of America</region>
+               <unit>$</unit>
             </unitDef>
             <unitDef ref="wd:Q4917" type="currency" xml:id="euro" ana="bk:mainCurrency" from="2002">
                <label xml:lang="en">Euro</label>
@@ -49,19 +54,19 @@
                <unit>c</unit>
                <conversion fromUnit="#euro" toUnit="#cent" formula="$fromUnit div 100"/>
             </unitDef>
-            <unitDef ref="wd:Q100995" type="weight" xml:id="Pfund">
+            <unitDef ref="wd:Q100995" type="weight" xml:id="pound">
                <label xml:lang="de">Pfund</label>
             </unitDef>
-            <unitDef ref="wd:Q137958" type="volume" xml:id="Mütt">
+            <unitDef ref="wd:Q137958" type="volume" xml:id="muett">
                <label xml:lang="de">Mütt</label>
             </unitDef>
-            <unitDef ref="wd:Q482798" type="length" xml:id="unit.7">
+            <unitDef ref="wd:Q482798" type="length" xml:id="yard">
                <label xml:lang="en">yards</label>
             </unitDef>
-            <unitDef ref="wd:Q351646" type="capacity" xml:id="unit.15">
+            <unitDef ref="wd:Q351646" type="capacity" xml:id="peck">
                <label xml:lang="en">peck</label>
             </unitDef>
-            <unitDef ref="wd:Q573" type="time" xml:id="unit.12">
+            <unitDef ref="wd:Q573" type="time" xml:id="day">
                <label xml:lang="en">days</label>
             </unitDef>
          </unitDecl>

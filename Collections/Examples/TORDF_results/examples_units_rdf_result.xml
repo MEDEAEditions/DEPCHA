@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+                xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:functx="http://www.functx.com"
+                xmlns:gn="http://www.geonames.org/ontology#"
+                xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
+                xmlns:om="http://ontology.eil.utoronto.ca/icity/OM/"
+                xmlns:time="http://www.w3.org/2006/time#" xmlns:schema="https://schema.org/"
+                xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+                xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+                xmlns:t="http://www.tei-c.org/ns/1.0"
+                xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#"
+                xmlns:foaf="http://xmlns.com/foaf/spec/" xmlns:void="http://rdfs.org/ns/void#">
+                <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.units">
+                                <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
+                                <dc:publisher>Institute Centre for Information Modelling, University
+                                                of Graz</dc:publisher>
+                </void:Dataset>
+                <depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.units#Dataset">
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.units"/>
+                                <depcha:numberOfTransactions>0</depcha:numberOfTransactions>
+                                <depcha:numberOfEconomicUnits>0</depcha:numberOfEconomicUnits>
+                                <depcha:numberOfEconomicAssets>0</depcha:numberOfEconomicAssets>
+                                <depcha:accountHolder
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#"/>
+                                <depcha:currency
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#maravedi"/>
+                                <depcha:currency
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#dollar"/>
+                                <depcha:currency
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#euro"/>
+                                <depcha:isMainCurrency
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#euro"/>
+                                <depcha:currency
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#cent"
+                                />
+                </depcha:Dataset>
+                <bk:MonetaryUnit
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#maravedi">
+                                <rdfs:label>Spanish maravedí</rdfs:label>
+                                <time:hasTime>
+                                                <time:TemporalEntity
+                                                  rdf:about="https://gams.uni-graz.at/context:depcha.example#maravediTE">
+                                                  <time:hasEnd>1854</time:hasEnd>
+                                                </time:TemporalEntity>
+                                </time:hasTime>
+                                <dc:coverage>Spain</dc:coverage>
+                </bk:MonetaryUnit>
+                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#dollar">
+                                <rdfs:label>American Dollar</rdfs:label>
+                                <dc:coverage>United States of America</dc:coverage>
+                </bk:MonetaryUnit>
+                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#euro">
+                                <rdfs:label>Euro</rdfs:label>
+                                <time:hasTime>
+                                                <time:TemporalEntity
+                                                  rdf:about="https://gams.uni-graz.at/context:depcha.example#euroTE">
+                                                  <time:hasBeginning>2002</time:hasBeginning>
+                                                </time:TemporalEntity>
+                                </time:hasTime>
+                                <dc:coverage>Europe</dc:coverage>
+                </bk:MonetaryUnit>
+                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#cent">
+                                <rdfs:label>Cent</rdfs:label>
+                                <time:hasTime>
+                                                <time:TemporalEntity
+                                                  rdf:about="https://gams.uni-graz.at/context:depcha.example#centTE">
+                                                  <time:hasBeginning>2002</time:hasBeginning>
+                                                </time:TemporalEntity>
+                                </time:hasTime>
+                                <dc:coverage>Europe</dc:coverage>
+                </bk:MonetaryUnit>
+                <bk:Conversion
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#centConversion">
+                                <bk:convertsFrom
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#euro"/>
+                                <bk:convertsTo
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#cent"/>
+                                <bk:formula>$fromUnit div 100</bk:formula>
+                                <bk:divider>100</bk:divider>
+                </bk:Conversion>
+                <bk:UnitOfMass rdf:about="https://gams.uni-graz.at/context:depcha.example#pound">
+                                <rdfs:label>Pfund</rdfs:label>
+                </bk:UnitOfMass>
+                <bk:UnitOfVolume rdf:about="https://gams.uni-graz.at/context:depcha.example#muett">
+                                <rdfs:label>Mütt</rdfs:label>
+                </bk:UnitOfVolume>
+                <bk:UnitOfLength rdf:about="https://gams.uni-graz.at/context:depcha.example#yard">
+                                <rdfs:label>yards</rdfs:label>
+                </bk:UnitOfLength>
+                <bk:UnitOfVolume rdf:about="https://gams.uni-graz.at/context:depcha.example#peck">
+                                <rdfs:label>peck</rdfs:label>
+                </bk:UnitOfVolume>
+                <bk:UnitOfTime rdf:about="https://gams.uni-graz.at/context:depcha.example#day">
+                                <rdfs:label>days</rdfs:label>
+                </bk:UnitOfTime>
+</rdf:RDF>
