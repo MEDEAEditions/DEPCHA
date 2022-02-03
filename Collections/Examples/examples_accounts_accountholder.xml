@@ -70,33 +70,33 @@
             </unitDef>
          </unitDecl>
          <classDecl>
-            <taxonomy ana="bk:Account">
-               <category ana="bk:to" xml:id="einnahmen">
+            <taxonomy ana="bk:account">
+               <category ana="bk:to" xml:id="income">
                   <catDesc><gloss>Einnahmen</gloss></catDesc>
-                  <category xml:id="admodiationsgelt">
+                  <category xml:id="lease">
                      <gloss>Admodiations Gelt</gloss>
                      <desc>Ich bin die Beschreibung dieses Kontos</desc>
                   </category>
-                  <category xml:id="zollhauptzoller">
+                  <category xml:id="customshauptzoller">
                      <gloss>Zoll Hauptzoller</gloss>
                   </category>
                </category>
-               <category ana="bk:from" xml:id="ausgaben">
+               <category ana="bk:from" xml:id="expenses">
                   <catDesc><gloss>Ausgaben</gloss></catDesc>
                   <category xml:id="waldamtsnutzung">
                      <catDesc><gloss>Waldamtsnutzung</gloss></catDesc>
                      <category xml:id="gams">
                         <catDesc><gloss>Gams</gloss></catDesc>
                      </category>
-                     <category xml:id="haszen">
+                     <category xml:id="rabbit">
                         <catDesc><gloss>Hasen</gloss></catDesc>
                      </category>
                   </category>
                </category>
             </taxonomy>
-            <taxonomy ana="bk:Index">
-               <gloss>DEINE TAXONOMY</gloss>
-               <category xml:id="gämsen">
+            <taxonomy ana="bk:index">
+               <gloss>Any specific taxonomy</gloss>
+               <category xml:id="chamois">
                   <catDesc>
                      <gloss>Gämse</gloss>
                   </catDesc>
@@ -106,14 +106,14 @@
       </encodingDesc>
       <profileDesc>
          <particDesc>
-            <listPerson ana="bk:Index">
+            <listPerson ana="bk:index">
                <person xml:id="pers_1">
                   <name><forename>Peter</forename>
                      <surname>Walser</surname></name>
                   <occupation>Alter Landtammann</occupation>
                </person>
             </listPerson>
-            <listOrg ana="bk:Index">
+            <listOrg ana="bk:index">
                <org xml:id="org_1" ana="bk:accountHolder">
                   <orgName>Rentamt des Fürstentums Liechtenstein</orgName>
                </org>
@@ -123,8 +123,8 @@
    </teiHeader>
    <text>
       <body>
-         <div ana="bk:account" corresp="#einnahmen">
-            <div ana="bk:account" corresp="#zollhauptzoller">
+         <div ana="bk:account" corresp="#income">
+            <div ana="bk:account" corresp="#customshauptzoller">
                <note>No. 2</note>
                <head> Von dem Haupt Zollner Liechtenstein <name ana="bk:from" ref="#pers_1">Thomas
                      Walser</name></head>
@@ -145,7 +145,7 @@
                </fw>
             </div>
          </div>
-         <div ana="bk:account" corresp="#ausgaben">
+         <div ana="bk:account" corresp="#expenses">
             <div ana="bk:account" corresp="#waldamtsnutzung">
                <head>Wald Ambts Nuzung</head>
                <div ana="bk:account" corresp="#gams">
@@ -153,7 +153,7 @@
                   <head>Umb gambs</head>
                   <div ana="bk:entry">
                      <p>nach Specification bey laag ausz <measure type="quantity"><measure
-                              quantity="12">12</measure></measure><measure commodity="Gämsen"
+                              quantity="12">12</measure></measure><measure commodity="chamois"
                            >gambs</measure>gewlöset worden</p>
                      <fw><measure ana="bk:money" quantity="21" unitRef="#fl">21</measure><measure
                            ana="bk:money" quantity="50" unitRef="#kr">50</measure><measure
@@ -161,7 +161,7 @@
                         ><unclear>41</unclear></measure></fw>
                   </div>
                </div>
-               <div ana="bk:account" corresp="#hasen">
+               <div ana="bk:account" corresp="#rabbit">
                   <note>49</note>
                   <head>Umb Haszen</head>
                   <div ana="bk:entry">

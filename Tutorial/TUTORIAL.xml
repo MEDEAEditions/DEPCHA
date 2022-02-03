@@ -496,33 +496,33 @@
                     rend="element"><![CDATA[<teiHeader>]]></code></ref>. <ab>
                   <code rend="block" lang="XML">
                     <![CDATA[<teiHeader>
-      <sourceDesc>
-            <msDesc>
-               <msIdentifier>
-                  <repository>Virgina Library</repository>
-               </msIdentifier>
-               <physDesc>
-                  <objectDesc><p>One page of a parchment paper of a memorandum from 1851. This page represents <date ana="bk:when" when="1851-11-02">November 2nd 1851</date>.</p> </objectDesc>
-               </physDesc>
-            </msDesc>
-         </sourceDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <p>Memorandum of a Day of work done by Michael Nilson &amp; his son Fred and by his cousin Richard Smith &amp; his son Robert.</p>
-         <table>
-            <row ana="bk:entry">
-               <cell><name ana="bk:from" ref="#between.1">self &amp; Fred</name> <measure ana="bk:service" commodity="work">1 day</measure></cell>
-               <cell><measure ana="bk:money" unit="dollar" quantity="1.50">$1.50</measure></cell>
-            </row>
-            <row ana="bk:entry">
-               <cell><name ana="bk:from" ref="#between.1">Richard &amp; Robert</name> <measure ana="bk:service" commodity="work">½ day</measure></cell>
-               <cell><measure ana="bk:money" unit="dollar" quantity="0.75">$0.75</measure></cell>
-            </row>
-         </table>
-      </body>
-   </text>]]></code><caption>The date in the <code rend="element"><![CDATA[<teiHeader>]]></code>
-                    will be used for every <code>bk:entry</code> in the TEI document.</caption></ab>
+  <sourceDesc>
+    <msDesc>
+      <msIdentifier>
+        <repository>Virgina Library</repository>
+      </msIdentifier>
+      <physDesc>
+        <objectDesc><p>One page of a parchment paper of a memorandum from 1851. This page represents <date ana="bk:when" when="1851-11-02">November 2nd 1851</date>.</p> </objectDesc>
+      </physDesc>
+    </msDesc>
+  </sourceDesc>
+</teiHeader>
+<text>
+  <body>
+    <p>Memorandum of a Day of work done by Michael Nilson &amp; his son Fred and by his cousin Richard Smith &amp; his son Robert.</p>
+    <table>
+      <row ana="bk:entry">
+        <cell><name ana="bk:from" ref="#between.1">self &amp; Fred</name> <measure ana="bk:service" commodity="work">1 day</measure></cell>
+        <cell><measure ana="bk:money" unit="dollar" quantity="1.50">$1.50</measure></cell>
+      </row>
+      <row ana="bk:entry">
+        <cell><name ana="bk:from" ref="#between.1">Richard &amp; Robert</name> <measure ana="bk:service" commodity="work">½ day</measure></cell>
+        <cell><measure ana="bk:money" unit="dollar" quantity="0.75">$0.75</measure></cell>
+      </row>
+    </table>
+  </body>
+</text>]]></code><caption>The date in the <code rend="element"><![CDATA[<teiHeader>]]></code> will
+                    be used for every <code>bk:entry</code> in the TEI document.</caption></ab>
               </item>
               <!-- SSt: Beispiel momentan nicht notwendig.
                   <item>Another "hacky" option that you might possibly need would be to add an empty
@@ -581,76 +581,76 @@
             <ab>
               <code rend="block" lang="XML">
                 <![CDATA[<teiHeader>
-      <fileDesc>
-         <!-- ... -->
-      </fileDesc>      
-      <profileDesc>
-         <particDesc>
-            <listPerson ana="bk:index">
-               <person xml:id="pers_WCDH001">
-                  <persName>
-                     <forename type="first">Eliza</forename>
-                     <surname type="married">Wheaton</surname>
-                  </persName>
-                  <birth when="1809-09-27"/>
-                  <sex value="2"/>
-                  <death when="1905"/>
-               </person>
-               <person xml:id="pers_WCDH002">
-                  <persName>
-                     <forename type="first">Laban</forename>
-                     <forename type="middle">Morey</forename>
-                     <surname>Wheaton</surname>
-                  </persName>
-                  <birth when="1796-09-14"/>
-                  <sex value="1"/>
-                  <occupation>
-                     <roleName>Postmaster</roleName>
-                  </occupation>
-                  <affiliation>
-                     <roleName>Representative <orgName ref="#org_WCDH5">Massachusetts General
-                        Court</orgName>
-                     </roleName>
-                  </affiliation>
-                  <occupation>
-                     <roleName>Member <orgName ref="#org_WCDH6">Massachusetts Governor's Council</orgName>
-                     </roleName>
-                  </occupation>
-                  <affiliation>
-                     <roleName>Trustee</roleName>
-                     <orgName ref="#org_WCDH7">State Industrial School for Girls</orgName>
-                  </affiliation>
-                  <death when="1865"/>
-               </person>
-            </listPerson>
-         </particDesc>
-      </profileDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <table>
-            <row ana="bk:entry">
-               <cell ana="bk:status" corresp="#522">522</cell>
-               <cell>
-                  <name ana="bk:from" full="yes" ref="#pers_WCDH001" type="person">Eliza Wheaton</name>
-                  <span ana="bk:debit">
-                     <choice>
-                        <abbr ana="bk:debit">D</abbr>
-                        <expan>debtor</expan>
-                     </choice>
-                  </span>
-                  <lb/> To <name ana="bk:to" full="yes" ref="#pers_WCDH002" type="account">cash $20.00 </name>
-               </cell>
-               <cell>
-                  <measure ana="bk:money" quantity="20" unit="dollar">20</measure>
-               </cell>
-               <cell> 00 </cell>
-               <cell/>
-               <cell/>
-            </row>
-         </table>
-      </body>
-   </text>]]>
+  <fileDesc>
+    <!-- ... -->
+   </fileDesc>      
+   <profileDesc>
+     <particDesc>
+       <listPerson ana="bk:index">
+         <person xml:id="pers_WCDH001">
+           <persName>
+             <forename type="first">Eliza</forename>
+             <surname type="married">Wheaton</surname>
+           </persName>
+           <birth when="1809-09-27"/>
+           <sex value="2"/>
+           <death when="1905"/>
+         </person>
+         <person xml:id="pers_WCDH002">
+           <persName>
+             <forename type="first">Laban</forename>
+             <forename type="middle">Morey</forename>
+             <surname>Wheaton</surname>
+           </persName>
+           <birth when="1796-09-14"/>
+           <sex value="1"/>
+           <occupation>
+             <roleName>Postmaster</roleName>
+           </occupation>
+           <affiliation>
+             <roleName>Representative <orgName ref="#org_WCDH5">Massachusetts General
+                      Court</orgName>
+             </roleName>
+           </affiliation>
+           <occupation>
+             <roleName>Member <orgName ref="#org_WCDH6">Massachusetts Governor's Council</orgName>
+             </roleName>
+           </occupation>
+           <affiliation>
+             <roleName>Trustee</roleName>
+             <orgName ref="#org_WCDH7">State Industrial School for Girls</orgName>
+           </affiliation>
+           <death when="1865"/>
+         </person>
+       </listPerson>
+    </particDesc>
+  </profileDesc>
+</teiHeader>
+<text>
+  <body>
+    <table>
+      <row ana="bk:entry">
+        <cell ana="bk:status" corresp="#522">522</cell>
+        <cell>
+          <name ana="bk:from" full="yes" ref="#pers_WCDH001" type="person">Eliza Wheaton</name>
+          <span ana="bk:debit">
+            <choice>
+              <abbr ana="bk:debit">D</abbr>
+              <expan>debtor</expan>
+            </choice>
+          </span>
+          <lb/> To <name ana="bk:to" full="yes" ref="#pers_WCDH002" type="account">cash $20.00 </name>
+        </cell>
+        <cell>
+          <measure ana="bk:money" quantity="20" unit="dollar">20</measure>
+        </cell>
+        <cell> 00 </cell>
+        <cell/>
+        <cell/>
+      </row>
+    </table>
+  </body>
+</text>]]>
               </code>
               <caption>Referencing persons as <code>bk:EconomicUnit</code> to a <code rend="element"
                   ><![CDATA[<listPerson>]]></code> sections.</caption>
@@ -660,18 +660,18 @@
             <ab>
               <code rend="block" lang="RDF">
                 <![CDATA[<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1">
- <bk:entry>522 Eliza Wheaton D debtor To cash $20.00 20 00</bk:entry>
- <bk:consistsOf>
-  <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T1">
-    <bk:transfers>
-      <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T1EA">
-        <bk:unit rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#dollar"/>
-        <bk:quantity>20</bk:quantity>
-      </bk:Money>
-    </bk:transfers>
-    <bk:from rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#pers_WCDH001"/>
-    <bk:to rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#pers_WCDH002"/>
-  </bk:Transfer>
+  <bk:entry>522 Eliza Wheaton D debtor To cash $20.00 20 00</bk:entry>
+  <bk:consistsOf>
+    <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T1">
+      <bk:transfers>
+        <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T1EA">
+          <bk:unit rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#dollar"/>
+          <bk:quantity>20</bk:quantity>
+        </bk:Money>
+      </bk:transfers>
+      <bk:from rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#pers_WCDH001"/>
+      <bk:to rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#pers_WCDH002"/>
+   </bk:Transfer>
  </bk:consistsOf>
 </bk:Transaction>
 <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/o:depcha.example.1#pers_WCDH001">
@@ -1067,6 +1067,7 @@
               the Wheaton day book looks like this:</p>
             <table type="example">
               <head>Monday September 15th 1828</head>
+              <!--SSt: verkleinern!-->
               <row>
                 <cell>settled</cell>
                 <cell>Derius Drake D <lb/>To ax dlvd By Puffer 9/1<lb/>By cutting two sticks</cell>
@@ -1111,11 +1112,12 @@
           </div>
           <div xml:id="places">
             <head>Places</head>
-            <p>The annotation <code>bk:where</code> can be used to express locations that are
-              associated with transactions. However, it is important to note that this connection to
-              a place is not specified any further. Just add <code>ana="bk:where"</code> to a <code
-                rend="element"><![CDATA[<place>]]></code> and also consider to reference to a <code
-                rend="element"><![CDATA[<listPlace>]]></code> element in the <code rend="element"
+            <p>The annotation <code>bk:where</code> can be used to express locations as
+                <code>bk:Place</code> that are associated with transactions. However, it is
+              important to note that this connection to a place is not specified any further. Just
+              add <code>ana="bk:where"</code> to a <code rend="element"><![CDATA[<place>]]></code>
+              and also consider to reference to a <code rend="element"
+                ><![CDATA[<listPlace>]]></code> element in the <code rend="element"
                 ><![CDATA[<teiHeader>]]></code>.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<listPlace ana="bk:index">
@@ -1162,7 +1164,7 @@
             <p> To connect <code>bk:Commodity</code> and <code>bk:Price</code> they have to be
               together inside a <code rend="element"><![CDATA[<measure>]]></code> element. We have
               to create an additional <code rend="element"><![CDATA[<measure>]]></code> element that
-              surrounds the numbers or the text indicating a price. Additionally we need to
+              surrounds the numbers or the specific text indicating a price. Additionally we need to
               explicitly an <code rend="attribute">@ana</code> with the value <code>bk:price</code>. </p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<head><name ana="bk:to" ref="#economic_unit.1">Stagville</name> August 1st 1808</head>
@@ -1193,14 +1195,36 @@
             <head>Taxes, ...</head>
             <p>Lorem</p>
           </div>
+          <div xml:id="accountholder">
+            <head> Accounts and Accountholder</head>
+            <p>To create a <code>bk:Account</code> we need a <code rend="element"
+                ><![CDATA[<taxonomy]]></code> element enriched by <code>ana="bk:account"</code> in
+              which we can express the hierarchy of the accounts (income vs. expenses etc.). You can
+              also use a <code rend="element"><![CDATA[<decs>]]></code> to describe the account. The
+              income is marked with <code>ana="bk:to"</code> and expenses with
+                <code>ana="bk:from"</code>. All the income and expenses are associated to the
+                <code>ana="accountHolder"</code> - so any <code rend="element"
+                ><![CDATA[<category]]></code> elements in the will "inherit" those characteristics.
+              In the snippet below the <code>bk:accountHolder</code> represents the revenue office
+              as an institution. So, we have to add <code>bk:accountholder</code> in the index entry
+              of the corresponding <code>bk:EconomicUnit</code>. </p>
+            <ab><code rend="block" lang="XML">
+              <![CDATA[<coming_soon>]]>
+            </code>
+              <caption></caption></ab>
+            
+            
+          </div>
           <div xml:id="prefixdef">
             <head>Definition of Prefixes</head>
             <p>As the prefix <code>bk:</code> is used as abbreviation in <code rend="attribute"
-                >@ana</code>, we need to define it in a <![CDATA[<prefixDef>]]> element in the
-              <![CDATA[<teiHeader>]]>. You may just copy it from this snippet. If you are using also
-              other controlled vocabularies or LOD resources, you can define their prefixes here as
-              well. For instance, in the example below the abbreviation "wd" is defined as a prefix
-              for Wikidata concepts and can now be used in <code rend="attribute">@ana</code>.</p>
+                >@ana</code>, we need to define it in a <code rend="element"
+                ><![CDATA[<prefixDef>]]></code> element in the <code rend="element"
+                ><![CDATA[<teiHeader>]]></code>. You may just copy it from this snippet. If you are
+              using also other controlled vocabularies or LOD resources, you can define their
+              prefixes here as well. For instance, in the example below the abbreviation "wd" is
+              defined as a prefix for Wikidata concepts and can now be used in <code
+                rend="attribute">@ana</code>.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<encodingDesc>
   <listPrefixDef>
@@ -1218,13 +1242,14 @@
   </listPrefixDef>
 </encodingDesc>]]>
               </code>
-              <caption>Using <![CDATA[<prefixDef>]]> to define prefixes and to be able to refer to
-                ontologies or controlled vocabularies.</caption></ab>
+              <caption>Using <code rend="element"><![CDATA[<prefixDef>]]></code> to define prefixes
+                and to be able to refer to ontologies or controlled vocabularies.</caption></ab>
           </div>
           <div xml:id="msdesc">
             <head>Metadata</head>
-            <p>For every TEI document you can use the <![CDATA[<msDesc>]]> in the
-              <![CDATA[<teiHeader>]]> to define some Metadata for your document.</p>
+            <p>For every TEI document you can use the <code rend="element"
+                ><![CDATA[<msDesc>]]></code> in the <code rend="element"
+                ><![CDATA[<teiHeader>]]></code> to define some Metadata for your document.</p>
             <ab><code rend="block" lang="XML"><![CDATA[<msDesc>
   <msIdentifier>
     <country>USA</country>
