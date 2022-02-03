@@ -174,7 +174,14 @@
   </cell>
   <cell>7</cell>
   <cell>6</cell>
-</row>]]>
+</row>
+<row ana="bk:entry">
+  <cell>Shoe Knife 1/6</cell>
+  <cell/>
+  <cell>1</cell>
+  <cell>6</cell>
+</row>
+]]>
             </code>
             <caption>Annotation of a textual structure - in this case a row in a table - as a text
               entry of a transaction. </caption>
@@ -191,7 +198,8 @@
                 <code>bk:EconomicUnit</code> to another, but also the direction of the flow by using
                 <code>bk:from</code> and <code>bk:to</code>.</p>
             <p>We first deal with the question: "What is transferred?".</p>
-            <p>In the first row of this example three different <code>bk:Commodity</code> are mentioned: <list>
+            <p>In the first row of this example three different <code>bk:Commodity</code> are
+              mentioned: <list>
                 <item>
                   <hi rend="italic">1/4 lb Powder</hi>
                 </item>
@@ -212,12 +220,15 @@
                 </item>
               </list>
             </p>
-            <p> As we can see in the snippet above right after every single
-                <code>bk:Commodity</code> three further <code>bk:MonetaryValue</code> can be found
-              and interpreted as <code>bk:Price</code> belonging to each <code>bk:Commodity</code>:
-                <hi rend="italic">¼ lb Powder for 2 shilling and 6 pence</hi>. But let's ignore the
-                <code>bk:Price</code> in this first step. We will get to prices in the chapter <ref
-                target="price">Prices</ref>.</p>
+            <p> In the second row we have the <code>bk:Commodity</code>
+              <hi rend="italic">Shoe knife</hi> and two <code>bk:MonetaryValue</code> with <hi
+                rend="italic">1 shilling</hi> and <hi rend="italic">6 pence</hi>. As we can see in
+              the snippet above right after every single <code>bk:Commodity</code> there are further
+                <code>bk:MonetaryValue</code> belonging to each <code>bk:Commodity</code> that can
+              be interpreted as <code>bk:Price</code> - like in the first row <hi rend="italic">¼ lb
+                Powder for 2 shilling and 6 pence</hi>. But let's ignore the <code>bk:Price</code>
+              in this first step. We will get to prices in the chapter <ref target="price"
+                >Prices</ref>.</p>
             <p> The <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-measure.html"
                   ><code rend="element"><![CDATA[<measure>]]></code></ref> element in TEI allows to
               annotate countable entities using the attributes <code rend="attribute">@unit</code>,
@@ -239,19 +250,35 @@
   <cell>
     <measure quantity="6" unit="pence">6</measure>
   </cell>
+</row>
+<row ana="bk:entry">
+  <cell>
+    <measure commodity="shoeknife" quantity="1">1 Shoe Knife 1/6</measure>
+  </cell>
+  <cell/>
+  <cell> 
+    <measure quantity="1" unit="shilling">1</measure>
+  </cell>
+  <cell>
+    <measure quantity="6" unit="pence">6</measure>
+ </cell>
 </row>]]>
               </code>
               <caption>Adding the attributes @commodity, @quantity and @unit to the <code
                   rend="element"><![CDATA[<measure>]]></code> element to normalize the
                 data.</caption>
             </ab>
+            <p>If we are not adding a <code rend="attribute">@unit</code> to our <code
+                rend="element"><![CDATA[<measure>]]></code> element, it will be considered being a
+              "piece" by default.</p>
             <p>In the next step we reference the <code rend="element"><![CDATA[<measure>]]></code>
               element to the <hi rend="italic">Bookkeeping Ontology</hi> by using <code
                 rend="attribute">@ana</code>. We want to say that <hi rend="italic">powder, sugar
-                and shot</hi> are members of the class <code>bk:Commodity</code> and the 7 shillings
-              and 6 pence belong to the class <code>bk:MonetaryValue</code> of our ontology.
-              Therefore, we add <code>ana="bk:commodity"</code> and <code>ana="bk:money"</code> to
-              the corresponding elements. </p>
+                and shot</hi> as well as the <hi rend="italic">shoe knife</hi> are members of the
+              class <code>bk:Commodity</code> and the 7 shillings and 6 pence as well as the 1
+              shilling and 6 pence belong to the class <code>bk:MonetaryValue</code> of our
+              ontology. Therefore, we add <code>ana="bk:commodity"</code> and
+                <code>ana="bk:money"</code> to the corresponding elements. </p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<row ana="bk:entry">
   <cell>
@@ -266,15 +293,27 @@
   <cell>
     <measure ana="bk:money" quantity="6" unit="pence">6</measure>
   </cell>
+</row>
+<row ana="bk:entry">
+  <cell>
+    <measure ana="bk:commodity" commodity="shoeknife" quantity="1">1 Shoe Knife 1/6</measure>
+  </cell>
+  <cell/>
+  <cell> 
+    <measure ana="bk:money" quantity="1" unit="shilling">1</measure>
+  </cell>
+  <cell>
+    <measure ana="bk:money" quantity="6" unit="pence">6</measure>
+  </cell>
 </row>]]>
               </code>
               <caption>ana="bk:money" marks a <code rend="element"><![CDATA[<measure>]]></code> as a
                 bk:MonetaryValue and ana="bk:commodity" as a bk:Commodity.</caption></ab>
-            <p> This very <code>bk:Transaction</code> consists of 2 <code>bk:Transfer</code> now -
-              one transferring powder, sugar and shot, the other transferring 7 shillings and 6
-              pence.</p>
-            <p>Let's define the directions of the flow of assets which can be summarized like shown
-              below: <list>
+            <p> The first <code>bk:Transaction</code> (first row) consists of 2
+                <code>bk:Transfer</code> now - one transferring powder, sugar and shot, the other
+              transferring 7 shillings and 6 pence.</p>
+            <p>Let's define the directions of the flow of assets for the first
+                <code>bk:Transaction</code>which can be summarized like shown below: <list>
                 <item>
                   <hi rend="italic">powder, sugar, shot from Stagville to James Haley</hi>
                 </item>
@@ -720,9 +759,6 @@
        </category>
        <category xml:id="lamb">
          <catDesc><term ref="wd:Q4575936" xml:lang="de">Lamm</term></catDesc>
-         <category xml:id="Osterlamm">
-            <catDesc><term ref="wd:Q201171" xml:lang="de">Osterlamm</term></catDesc>
-         </category>
        </category>
     </category>
    <category xml:id="animalproduct">
@@ -735,8 +771,8 @@
       </category>
    </category>
 </taxonomy>]]></code>
-              <caption>A <![CDATA[<taxonomy]]> for the representation of the categories "Getreide",
-                "Tier" and "tierisches Produkt" with their corresponding subordinated
+              <caption>A <![CDATA[<taxonomy>]]> for the representation of the categories "grain",
+                "animal" and "animal product" with their corresponding subordinated
                 categories.</caption>
             </ab>
             <p>This structure can be transferred to SKOS. So, the example from above would look like
@@ -928,49 +964,48 @@
               dataset as well as all currencies in the document.</p>
             <ab><code rend="block" lang="RDF">
                 <![CDATA[<depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.units#Dataset">
-                                <depcha:currency
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#dollar"/>
-                                <depcha:currency
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#euro"/>
-                                <depcha:isMainCurrency
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#euro"/>
-                                <depcha:currency
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#cent"
-                                />
-                </depcha:Dataset>
-                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#dollar">
-                                <rdfs:label>American Dollar</rdfs:label>
-                                <dc:coverage>United States of America</dc:coverage>
-                </bk:MonetaryUnit>
-                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#euro">
-                                <rdfs:label>Euro</rdfs:label>
-                                <time:hasTime>
-                                                <time:TemporalEntity
-                                                  rdf:about="https://gams.uni-graz.at/context:depcha.example#euroTE">
-                                                  <time:hasBeginning>2002</time:hasBeginning>
-                                                </time:TemporalEntity>
-                                </time:hasTime>
-                                <dc:coverage>Europe</dc:coverage>
-                </bk:MonetaryUnit>
-                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#cent">
-                                <rdfs:label>Cent</rdfs:label>
-                                <time:hasTime>
-                                                <time:TemporalEntity
-                                                  rdf:about="https://gams.uni-graz.at/context:depcha.example#centTE">
-                                                  <time:hasBeginning>2002</time:hasBeginning>
-                                                </time:TemporalEntity>
-                                </time:hasTime>
-                                <dc:coverage>Europe</dc:coverage>
-                </bk:MonetaryUnit>
-                <bk:Conversion
-                                rdf:about="https://gams.uni-graz.at/context:depcha.example#centConversion">
-                                <bk:convertsFrom
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#euro"/>
-                                <bk:convertsTo
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#cent"/>
-                                <bk:formula>$fromUnit div 100</bk:formula>
-                                <bk:divider>100</bk:divider>
-                </bk:Conversion>]]></code>
+  <depcha:currency
+           rdf:resource="https://gams.uni-graz.at/context:depcha.example#dollar"/>
+  <depcha:currency
+           rdf:resource="https://gams.uni-graz.at/context:depcha.example#euro"/>
+  <depcha:isMainCurrency
+           rdf:resource="https://gams.uni-graz.at/context:depcha.example#euro"/>
+  <depcha:currency
+           rdf:resource="https://gams.uni-graz.at/context:depcha.example#cent"/>
+</depcha:Dataset>
+   <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#dollar">
+          <rdfs:label>American Dollar</rdfs:label>
+          <dc:coverage>United States of America</dc:coverage>
+  </bk:MonetaryUnit>
+  <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#euro">
+         <rdfs:label>Euro</rdfs:label>
+                <time:hasTime>
+                    <time:TemporalEntity
+                          rdf:about="https://gams.uni-graz.at/context:depcha.example#euroTE">
+                          <time:hasBeginning>2002</time:hasBeginning>
+                    </time:TemporalEntity>
+                          </time:hasTime>
+                          <dc:coverage>Europe</dc:coverage>
+  </bk:MonetaryUnit>
+  <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#cent">
+                  <rdfs:label>Cent</rdfs:label>
+                  <time:hasTime>
+                     <time:TemporalEntity
+                        rdf:about="https://gams.uni-graz.at/context:depcha.example#centTE">
+                        <time:hasBeginning>2002</time:hasBeginning>
+                   </time:TemporalEntity>
+                 </time:hasTime>
+                 <dc:coverage>Europe</dc:coverage>
+   </bk:MonetaryUnit>
+   <bk:Conversion
+           rdf:about="https://gams.uni-graz.at/context:depcha.example#centConversion">
+           <bk:convertsFrom
+                    rdf:resource="https://gams.uni-graz.at/context:depcha.example#euro"/>
+           <bk:convertsTo
+                    rdf:resource="https://gams.uni-graz.at/context:depcha.example#cent"/>
+           <bk:formula>$fromUnit div 100</bk:formula>
+           <bk:divider>100</bk:divider>
+  </bk:Conversion>]]></code>
               <caption>Transfer of currency information from XML to RDF.</caption>
             </ab>
             <p> Let's look into an example for another unit. With <code rend="attribute"
@@ -1126,31 +1161,31 @@
             <head>Prices</head>
             <p> To connect <code>bk:Commodity</code> and <code>bk:Price</code> they have to be
               together inside a <code rend="element"><![CDATA[<measure>]]></code> element. We have
-              to create an additional <code rend="element"><![CDATA[<measure>]]></code> element that 
-              surrounds the numbers or the text indicating a price. Additionally we need to explicitly  an <code
-                rend="attribute">@ana</code> with the value <code>bk:price</code>. </p>
+              to create an additional <code rend="element"><![CDATA[<measure>]]></code> element that
+              surrounds the numbers or the text indicating a price. Additionally we need to
+              explicitly an <code rend="attribute">@ana</code> with the value <code>bk:price</code>. </p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<head><name ana="bk:to" ref="#economic_unit.1">Stagville</name> August 1st 1808</head>
-                <table>
-                    <head>69 <name ana="bk:from" ref="#economic_unit.2">James Haley</name> J Self Dr.</head>
-                    <row ana="bk:entry">
-                        <cell>
-                            <measure><measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder<measure ana="bk:price" >2/6</measure></measure>
-                            <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb Shot<measure ana="bk:price">2/6</measure></measure>
-                            <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1 lb Sugar<measure ana="bk:price">2/6</measure></measure>
-                        </cell>
-                        <cell>
-                            <measure ana="bk:commodity" commodity="shoe_knife" quantity="1" unit="piece">1 Shoe knife</measure><measure ana="bk:price">1/6</measure>
-                        </cell>
-                        <cell/>
-                        <cell>
-                            <measure ana="bk:money" quantity="7" unit="shilling">7</measure>
-                        </cell>
-                        <cell>
-                            <measure ana="bk:money" quantity="6" unit="pence">6</measure>
-                        </cell>
-                    </row>
-                </table>]]>
+<table>
+  <head>69 <name ana="bk:from" ref="#economic_unit.2">James Haley</name> J Self Dr.</head>
+  <row ana="bk:entry">
+    <cell>
+      <measure><measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder<measure ana="bk:price" >2/6</measure></measure>
+      <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb Shot<measure ana="bk:price">2/6</measure></measure>
+      <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1 lb Sugar<measure ana="bk:price">2/6</measure></measure>
+    </cell>
+    <cell>
+      <measure ana="bk:commodity" commodity="shoe_knife" quantity="1" unit="piece">1 Shoe knife</measure><measure ana="bk:price">1/6</measure>
+    </cell>
+    <cell/>
+    <cell>
+      <measure ana="bk:money" quantity="7" unit="shilling">7</measure>
+    </cell>
+    <cell>
+      <measure ana="bk:money" quantity="6" unit="pence">6</measure>
+    </cell>
+  </row>
+</table>]]>
               </code>
               <caption>Definition of prices using <code>bk:price</code>.</caption></ab>
           </div>

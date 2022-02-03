@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+                xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:functx="http://www.functx.com"
+                xmlns:gn="http://www.geonames.org/ontology#"
+                xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
+                xmlns:om="http://ontology.eil.utoronto.ca/icity/OM/"
+                xmlns:time="http://www.w3.org/2006/time#" xmlns:schema="https://schema.org/"
+                xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+                xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+                xmlns:t="http://www.tei-c.org/ns/1.0"
+                xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#"
+                xmlns:foaf="http://xmlns.com/foaf/spec/" xmlns:void="http://rdfs.org/ns/void#">
+                <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.taxonomy">
+                                <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
+                                <dc:publisher>Institute Centre for Information Modelling, University
+                                                of Graz</dc:publisher>
+                </void:Dataset>
+                <depcha:Dataset
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.taxonomy#Dataset">
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.taxonomy"/>
+                                <depcha:numberOfTransactions>0</depcha:numberOfTransactions>
+                                <depcha:numberOfEconomicUnits>0</depcha:numberOfEconomicUnits>
+                                <depcha:numberOfEconomicAssets>0</depcha:numberOfEconomicAssets>
+                                <depcha:accountHolder
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#"
+                                />
+                </depcha:Dataset>
+</rdf:RDF>
