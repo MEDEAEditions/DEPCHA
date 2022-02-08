@@ -29,4 +29,199 @@
                                                 rdf:resource="https://gams.uni-graz.at/context:depcha.example#"
                                 />
                 </depcha:Dataset>
+                <skos:ConceptScheme
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#Taxonomy">
+                                <dc:title>Commodities</dc:title>
+                                <skos:hasTopConcept
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#grain"/>
+                                <skos:hasTopConcept
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#animal"/>
+                                <skos:hasTopConcept
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#animalproduct"
+                                />
+                </skos:ConceptScheme>
+                <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#grain">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#rye"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#wheat"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#barley"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#flour"/>
+                                <skos:prefLabel xml:lang="de">Getreide</skos:prefLabel>
+                                <rdfs:label>Getreide</rdfs:label>
+                                <skos:relatedMatch
+                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q2995529"
+                                />
+                </skos:Concept>
+                <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#rye">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#grain"/>
+                                <skos:prefLabel xml:lang="de">Roggen</skos:prefLabel>
+                                <rdfs:label>Roggen</rdfs:label>
+                                <skos:relatedMatch
+                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q12099"
+                                />
+                </skos:Concept>
+                <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#wheat">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#grain"/>
+                                <skos:prefLabel xml:lang="de">Weizen</skos:prefLabel>
+                                <rdfs:label>Weizen</rdfs:label>
+                                <skos:relatedMatch
+                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q15645384"
+                                />
+                </skos:Concept>
+                <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#barley">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#grain"/>
+                                <skos:prefLabel xml:lang="de">Gerste</skos:prefLabel>
+                                <rdfs:label>Gerste</rdfs:label>
+                                <skos:relatedMatch
+                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q11577"
+                                />
+                </skos:Concept>
+                <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#flour">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#wheatflour"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#ryeflour"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#grain"/>
+                                <skos:prefLabel xml:lang="de">Mehl</skos:prefLabel>
+                                <rdfs:label>Mehl</rdfs:label>
+                                <skos:relatedMatch
+                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q36465"
+                                />
+                </skos:Concept>
+                <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#wheatflour">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#flour"/>
+                                <skos:prefLabel xml:lang="de">Weizenmehl</skos:prefLabel>
+                                <rdfs:label>Weizenmehl</rdfs:label>
+                                <skos:relatedMatch
+                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q2249305"
+                                />
+                </skos:Concept>
+                <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#ryeflour">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#flour"/>
+                                <skos:prefLabel xml:lang="de">Roggenmehl</skos:prefLabel>
+                                <rdfs:label>Roggenmehl</rdfs:label>
+                                <skos:relatedMatch
+                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q10658708"
+                                />
+                </skos:Concept>
+                <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#animal">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#goose"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#sheep"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#lamb"/>
+                                <skos:prefLabel xml:lang="de">Tier</skos:prefLabel>
+                                <rdfs:label>Tier</rdfs:label>
+                                <skos:relatedMatch
+                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q729"
+                                />
+                </skos:Concept>
+                <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#goose">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#animal"/>
+                                <skos:prefLabel xml:lang="de">Gans</skos:prefLabel>
+                                <rdfs:label>Gans</rdfs:label>
+                                <skos:relatedMatch
+                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q3736439"
+                                />
+                </skos:Concept>
+                <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#sheep">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#animal"/>
+                                <skos:prefLabel xml:lang="de">Schaf</skos:prefLabel>
+                                <rdfs:label>Schaf</rdfs:label>
+                                <skos:relatedMatch
+                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q7368"
+                                />
+                </skos:Concept>
+                <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#lamb">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#osterlamm"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#animal"/>
+                                <skos:prefLabel xml:lang="de">Lamm</skos:prefLabel>
+                                <rdfs:label>Lamm</rdfs:label>
+                                <skos:relatedMatch
+                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q4575936"
+                                />
+                </skos:Concept>
+                <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#osterlamm">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#lamb"/>
+                                <skos:prefLabel xml:lang="de">Osterlamm</skos:prefLabel>
+                                <rdfs:label>Osterlamm</rdfs:label>
+                                <skos:relatedMatch
+                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q201171"
+                                />
+                </skos:Concept>
+                <skos:Concept
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#animalproduct">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#egg"/>
+                                <skos:narrower
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#cheese"/>
+                                <skos:prefLabel xml:lang="de">Tierisches Produkt</skos:prefLabel>
+                                <rdfs:label>Tierisches Produkt</rdfs:label>
+                                <skos:relatedMatch
+                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q629103"
+                                />
+                </skos:Concept>
+                <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#egg">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#animalproduct"/>
+                                <skos:prefLabel xml:lang="de">Eier</skos:prefLabel>
+                                <rdfs:label>Eier</rdfs:label>
+                                <skos:relatedMatch
+                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q93189"
+                                />
+                </skos:Concept>
+                <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#cheese">
+                                <skos:inScheme
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <skos:broader
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#animalproduct"/>
+                                <skos:prefLabel xml:lang="de">Käse</skos:prefLabel>
+                                <rdfs:label>Käse</rdfs:label>
+                                <skos:relatedMatch
+                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q10943"
+                                />
+                </skos:Concept>
 </rdf:RDF>

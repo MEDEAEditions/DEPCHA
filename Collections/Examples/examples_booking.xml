@@ -3,11 +3,11 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Example Commodity</title>
+                <title>Example Booking</title>
             </titleStmt>
             <publicationStmt>
                 <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
-                <idno type="PID">o:depcha.example.commodities</idno>
+                <idno type="PID">o:depcha.example.booking</idno>
                 <ref target="context:depcha.example" type="context">Examples</ref>
             </publicationStmt>
             <sourceDesc>
@@ -37,35 +37,22 @@
                     1808</head>
                 <table>
                     <head>69 <name ana="bk:from" ref="#economic_unit.2">James Haley</name> J Self
-                        Dr.</head>
+                            <span ana="bk:debit"><choice>
+                                <abbr>Dr.</abbr>
+                                <expan>Debitor</expan>
+                            </choice></span></head>
                     <row ana="bk:entry">
                         <cell>
-                            <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb"
-                                >1/4 lb Powder</measure>
-                            <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb
-                                Shot</measure>
-                            <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1
-                                lb Sugar</measure>
+                            <measure>1/4 lb Powder</measure>
+                            <measure>1 lb Shot</measure>
+                            <measure>1 lb Sugar</measure>
                         </cell>
                         <cell/>
                         <cell>
-                            <measure ana="bk:money" quantity="7" unit="shilling">7</measure>
+                            <measure>7</measure>
                         </cell>
                         <cell>
-                            <measure ana="bk:money" quantity="6" unit="pence">6</measure>
-                        </cell>
-                    </row>
-                    <row ana="bk:entry">
-                        <cell>
-                            <measure ana="bk:commodity" commodity="shoeknife" quantity="1">1 Shoe
-                                Knife 1/6</measure>
-                        </cell>
-                        <cell/>
-                        <cell>
-                            <measure ana="bk:money" quantity="1" unit="shilling">1</measure>
-                        </cell>
-                        <cell>
-                            <measure ana="bk:money" quantity="6" unit="pence">6</measure>
+                            <measure>6</measure>
                         </cell>
                     </row>
                 </table>
