@@ -56,7 +56,29 @@
                         </cell>
                     </row>
                 </table>
+                <table>  
+                    <row ana="bk:entry">   
+                        <cell ana="bk:status" corresp="#522">522</cell>    
+                        <cell>      
+                            <name ana="bk:from" full="yes" ref="#pers_WCDH001" type="person">Eliza Wheaton</name>    
+                            <span ana="bk:debit"> 
+                                <choice>          
+                                    <abbr ana="bk:debit">D</abbr>       
+                                    <expan>debtor</expan>         
+                                </choice>    
+                            </span>
+                            <lb/> To <name ana="bk:to" full="yes" ref="#pers_WCDH002" type="account">cash $20.00 </name>     
+                        </cell>     
+                        <cell>     
+                            <measure ana="bk:money" quantity="20" unit="dollar">20</measure>    
+                        </cell>  
+                        <cell> 00 </cell>  
+                        <cell/>    
+                        <cell/>   
+                    </row> 
+                </table>
             </div>
+            
         </body>
     </text>
 </TEI>

@@ -236,22 +236,29 @@
               normalize our data within the cells.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<row ana="bk:entry">
-  <cell>  <measure commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder</measure>  <measure commodity="shot" quantity="1" unit="lb">1 lb Shot</measure>  <measure commodity="sugar" quantity="1" unit="lb">1 lb Sugar</measure>
+  <cell>  
+    <measure commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder</measure> 
+    <measure commodity="shot" quantity="1" unit="lb">1 lb Shot</measure>  
+    <measure commodity="sugar" quantity="1" unit="lb">1 lb Sugar</measure>
   </cell>
-  <cell>
+  <cell/>
+  <cell> 
+    <measure quantity="7" unit="shilling">7</measure>
   </cell>
-  <cell>  <measure quantity="7" unit="shilling">7</measure>
-  </cell>
-  <cell>  <measure quantity="6" unit="pence">6</measure>
+  <cell> 
+    <measure quantity="6" unit="pence">6</measure>
   </cell>
 </row>
 <row ana="bk:entry">
-  <cell>  <measure commodity="shoeknife" quantity="1">1 Shoe Knife 1/6</measure>
+  <cell>  
+    <measure commodity="shoeknife" quantity="1">1 Shoe Knife 1/6</measure>
   </cell>
   <cell/>
-  <cell>   <measure quantity="1" unit="shilling">1</measure>
+  <cell>   
+    <measure quantity="1" unit="shilling">1</measure>
   </cell>
-  <cell>  <measure quantity="6" unit="pence">6</measure>
+  <cell>  
+    <measure quantity="6" unit="pence">6</measure>
  </cell>
 </row>]]>
               </code>
@@ -272,21 +279,27 @@
                 <code>ana="bk:money"</code> to the corresponding elements. </p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<row ana="bk:entry">
-  <cell>  <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder</measure>  <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb Shot</measure>  <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1 lb Sugar</measure>
+  <cell>  
+    <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder</measure>  <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb Shot</measure>  <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1 lb Sugar</measure>
   </cell>
   <cell/>
-  <cell>  <measure ana="bk:money" quantity="7" unit="shilling">7</measure>
+  <cell>  
+    <measure ana="bk:money" quantity="7" unit="shilling">7</measure>
   </cell>
-  <cell>  <measure ana="bk:money" quantity="6" unit="pence">6</measure>
+  <cell> 
+    <measure ana="bk:money" quantity="6" unit="pence">6</measure>
   </cell>
 </row>
 <row ana="bk:entry">
-  <cell>  <measure ana="bk:commodity" commodity="shoeknife" quantity="1">1 Shoe Knife 1/6</measure>
+  <cell>  
+    <measure ana="bk:commodity" commodity="shoeknife" quantity="1">1 Shoe Knife 1/6</measure>
   </cell>
   <cell/>
-  <cell>   <measure ana="bk:money" quantity="1" unit="shilling">1</measure>
+  <cell>  
+    <measure ana="bk:money" quantity="1" unit="shilling">1</measure>
   </cell>
-  <cell>  <measure ana="bk:money" quantity="6" unit="pence">6</measure>
+  <cell>
+    <measure ana="bk:money" quantity="6" unit="pence">6</measure>
   </cell>
 </row>]]>
               </code>
@@ -448,9 +461,7 @@
 <table>
   <row ana="bk:entry"> 
     <cell>  
-      <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">   
-      <name ana="bk:from" ref="#economic_unit.2">James Haley</name>: 1/4 lb Powder  
-      </measure>  
+      <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb"><name ana="bk:from" ref="#economic_unit.2">James Haley</name>: 1/4 lb Powder</measure>  
     </cell> 
     <cell>
       <measure ana="bk:money" quantity="7" unit="shilling">7</measure> 
@@ -458,9 +469,7 @@
   </row>
   <row ana="bk:entry"> 
     <cell>
-      <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">     
-      <name ana="bk:from" ref="#economic_unit.3">Elisabeth Example</name>:1 lb Shot   
-      </measure> 
+      <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb"><name ana="bk:from" ref="#economic_unit.3">Elisabeth Example</name>:1 lb Shot</measure> 
     </cell>
     <cell>
       <measure ana="bk:money" quantity="5" unit="shilling">5</measure>  
@@ -1029,12 +1038,24 @@
             <head>Booking (Debit &amp; Credit)</head>
             <p>To enrich your transcription with the information of a <code>bk:Booking</code> on
               credit or debit you can add <code>ana="bk:debit"</code> or
-                <code>ana="bk:credit"</code> to a TEI element. A suitable place is the textual
-              information that lets us infer one of them. It has to be inside a
-                <code>bk:entry</code>. In the following code snippet from our very first example the
-              transaction is booked on debit. In the original the <code>bk:EconomicUnit</code>
-              <hi rend="italic">James Haley</hi> was indicated as debitor by the <hi rend="italic">Dr.</hi> after
-              his name. We can use this textual indication to add a <code>bk:debit</code>.</p>
+                <code>ana="bk:credit"</code> to a TEI element. Let's go back to our first
+              transcription example for this:</p>
+            <ab type="transcription">
+              <table>
+                <head>Stagville August 1st 1808 <lb/> 69 James Haley Self Dr.</head>
+                <row>
+                  <cell/>
+                  <cell>1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6</cell>
+                  <cell/>
+                  <cell>7</cell>
+                  <cell>6</cell>
+                </row>
+              </table></ab>
+            <p>In the original the <code>bk:EconomicUnit</code>
+              <hi rend="italic">James Haley</hi> was indicated as debitor by the <hi rend="italic"
+                >Dr.</hi> after his name. We can use this textual indication to add a
+                <code>bk:debit</code>. A suitable place for it is the textual information. The booking annotation always has to
+              be inside a <code>bk:entry</code>.</p>
             <ab>
               <code rend="block" lang="XML">
                 <![CDATA[<head><name ana="bk:to" ref="#economic_unit.1">Stagville</name> August 1st 1808</head>
@@ -1044,7 +1065,9 @@
       <choice>
         <abbr>Dr.</abbr>
         <expan>Debitor</expan>
-       </choice></span></head>
+       </choice>
+     </span>
+  </head>
   <row ana="bk:entry">
     <cell>
       <measure>1/4 lb Powder</measure>
@@ -1066,20 +1089,22 @@
             </ab>
           </div>
           <div xml:id="status_agent">
-            <head>Transaction Status and Agent</head>
+            <head>Status and Agent</head>
             <p>Here is another example of a transcription of a <code>bk:entry</code>. The entry in
               the Wheaton day book looks like this:</p>
-            <table type="example">
-              <head>Monday September 15th 1828</head>
-              <!--SSt: verkleinern!-->
-              <row>
-                <cell>settled</cell>
-                <cell>Derius Drake D <lb/>To ax dlvd By Puffer 9/1<lb/>By cutting two sticks</cell>
-                <cell>1</cell>
-                <cell>59</cell>
-                <cell>6</cell>
-              </row>
-            </table>
+
+            <ab type="transcription"><table type="example">
+                <head>Monday September 15th 1828</head>
+                <!--SSt: verkleinern!-->
+                <row>
+                  <cell>settled</cell>
+                  <cell>Derius Drake D <lb/>To ax dlvd By Puffer 9/1<lb/>By cutting two
+                    sticks</cell>
+                  <cell>1</cell>
+                  <cell>59</cell>
+                  <cell>6</cell>
+                </row>
+              </table></ab>
             <p>For editing accounts two further entities may be relevant, according to the
               questions: &apos;What is the transaction status?&apos; and &apos;Are other people
               involved in the transaction?&apos; In this example the status of the transaction is
