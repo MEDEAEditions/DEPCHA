@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+                xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:functx="http://www.functx.com"
+                xmlns:gn="http://www.geonames.org/ontology#"
+                xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
+                xmlns:om="http://ontology.eil.utoronto.ca/icity/OM/"
+                xmlns:time="http://www.w3.org/2006/time#" xmlns:schema="https://schema.org/"
+                xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+                xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+                xmlns:t="http://www.tei-c.org/ns/1.0"
+                xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#"
+                xmlns:foaf="http://xmlns.com/foaf/spec/" xmlns:void="http://rdfs.org/ns/void#">
+                <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.booking2">
+                                <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
+                                <dc:publisher>Institute Centre for Information Modelling, University
+                                                of Graz</dc:publisher>
+                </void:Dataset>
+                <depcha:Dataset
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.booking2#Dataset">
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.booking2"/>
+                                <depcha:numberOfTransactions>1</depcha:numberOfTransactions>
+                                <depcha:numberOfEconomicUnits>2</depcha:numberOfEconomicUnits>
+                                <depcha:numberOfMonetaryValues>0</depcha:numberOfMonetaryValues>
+                                <depcha:numberOfEconmicGoods>0</depcha:numberOfEconmicGoods>
+                                <depcha:accountHolder
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#"
+                                />
+                </depcha:Dataset>
+                <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.booking2#T1">
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.booking2"/>
+                                <bk:entry>1/4 lb Powder 1 lb Shot 1 lb Sugar 7 6</bk:entry>
+                                <bk:debit
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Booking"
+                                />
+                </bk:Transaction>
+                <bk:EconomicUnit
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#economic_unit.1">
+                                <rdfs:label>Stagville</rdfs:label>
+                </bk:EconomicUnit>
+                <bk:EconomicUnit
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#economic_unit.2">
+                                <rdfs:label>James Haley</rdfs:label>
+                </bk:EconomicUnit>
+</rdf:RDF>

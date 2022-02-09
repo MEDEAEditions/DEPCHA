@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Example UnitRef</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+                <idno type="PID">o:depcha.example.unitref</idno>
+                <ref target="context:depcha.example" type="context">Examples</ref>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Information about the source</p>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <listPrefixDef>
+                <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+                    <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs. </p>
+                </prefixDef>
+                <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="http://www.wikidata.org/wiki/$1">
+                    <p>
+                        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+                    </p>
+                </prefixDef>
+            </listPrefixDef>
+            <unitDecl>
+                <unitDef type="currency" xml:id="fl">
+                    <label>Gulden Reichswährung</label>
+                </unitDef>
+                <unitDef type="currency" xml:id="kr">
+                    <label>Kreuzer</label>
+                    <label type="abbr">kr</label>
+                </unitDef>
+                <unitDef type="currency" xml:id="d">
+                    <label>Denari</label>
+                    <label type="abbr">d</label>
+                </unitDef>
+            </unitDecl>
+        </encodingDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="example">
+                <head> Von dem Haupt Zollner Liechtenstein Thomas Walser</head>
+                <p ana="bk:entry">von 22. Novembris bis 22 Decembris 
+                    <measure ana="bk:money" quantity="60" unitRef="#fl">60</measure>
+                    <measure ana="bk:money" quantity="15" unitRef="#kr">15</measure>
+                    <measure ana="bk:money" quantity="0.25" unitRef="#d">1/4</measure>
+                </p>
+
+                <fw ana="bk:subtotal"> Latus <measure ana="bk:money" quantity="1689" unitRef="#fl"
+                        >1689</measure>
+                </fw>
+            </div>
+        </body>
+    </text>
+</TEI>

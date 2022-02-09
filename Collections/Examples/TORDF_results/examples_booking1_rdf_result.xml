@@ -11,36 +11,37 @@
                 xmlns:t="http://www.tei-c.org/ns/1.0"
                 xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#"
                 xmlns:foaf="http://xmlns.com/foaf/spec/" xmlns:void="http://rdfs.org/ns/void#">
-                <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.booking">
+                <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.booking1">
                                 <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
                                 <dc:publisher>Institute Centre for Information Modelling, University
                                                 of Graz</dc:publisher>
                 </void:Dataset>
                 <depcha:Dataset
-                                rdf:about="https://gams.uni-graz.at/o:depcha.example.booking#Dataset">
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.booking1#Dataset">
                                 <gams:isMemberOfCollection
                                                 rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
                                 <gams:isPartOf
-                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.booking"/>
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.booking1"/>
                                 <depcha:numberOfTransactions>1</depcha:numberOfTransactions>
                                 <depcha:numberOfEconomicUnits>2</depcha:numberOfEconomicUnits>
-                                <depcha:numberOfEconomicAssets>1</depcha:numberOfEconomicAssets>
+                                <depcha:numberOfMonetaryValues>1</depcha:numberOfMonetaryValues>
+                                <depcha:numberOfEconmicGoods>0</depcha:numberOfEconmicGoods>
                                 <depcha:accountHolder
                                                 rdf:resource="https://gams.uni-graz.at/context:depcha.example#"
                                 />
                 </depcha:Dataset>
-                <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.booking#T1">
+                <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.booking1#T1">
                                 <gams:isMemberOfCollection
                                                 rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
                                 <gams:isPartOf
-                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.booking"/>
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.booking1"/>
                                 <bk:entry>522 Eliza Wheaton D debtor To cash $20.00 20 00</bk:entry>
                                 <bk:consistsOf>
                                                 <bk:Transfer
-                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.booking#T1T1">
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.booking1#T1T1">
                                                   <bk:transfers>
                                                   <bk:Money
-                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.booking#T1T1EA">
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.booking1#T1T1EA">
                                                   <bk:unit
                                                   rdf:resource="https://gams.uni-graz.at/context:depcha.example#dollar"/>
                                                   <bk:quantity>20</bk:quantity>
@@ -53,7 +54,6 @@
                                                   />
                                                 </bk:Transfer>
                                 </bk:consistsOf>
-                                <bk:status>522</bk:status>
                                 <bk:debit
                                                 rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Booking"
                                 />

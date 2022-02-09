@@ -14,24 +14,7 @@
             <ref target="context:depcha.example" type="context">Examples</ref>
          </publicationStmt>
          <sourceDesc>
-            <msDesc>
-               <msIdentifier>
-                  <country>Fürstentum Liechtenstein</country>
-                  <settlement>Vaduz</settlement>
-                  <institution>Liechtensteinisches Landesarchiv</institution>
-                  <idno>AS 8/2</idno>
-               </msIdentifier>
-               <msContents>
-                  <msItem>
-                     <title>TITEL der Quelle</title>
-                     <docAuthor>autor der quelle</docAuthor>
-                     <docDate>1718</docDate>
-                     <textLang>
-                        <lang>German</lang>
-                     </textLang>
-                  </msItem>
-               </msContents>
-            </msDesc>
+            <p>Information about the source</p>
          </sourceDesc>
       </fileDesc>
       <encodingDesc>
@@ -83,23 +66,15 @@
                </category>
                <category ana="bk:from" xml:id="expenses">
                   <catDesc><gloss>Ausgaben</gloss></catDesc>
-                  <category xml:id="waldamtsnutzung">
+                  <category xml:id="useofwoodland">
                      <catDesc><gloss>Waldamtsnutzung</gloss></catDesc>
-                     <category xml:id="gams">
+                     <category xml:id="chamois">
                         <catDesc><gloss>Gams</gloss></catDesc>
                      </category>
                      <category xml:id="rabbit">
                         <catDesc><gloss>Hasen</gloss></catDesc>
                      </category>
                   </category>
-               </category>
-            </taxonomy>
-            <taxonomy ana="bk:index">
-               <gloss>Any specific taxonomy</gloss>
-               <category xml:id="chamois">
-                  <catDesc>
-                     <gloss>Gämse</gloss>
-                  </catDesc>
                </category>
             </taxonomy>
          </classDecl>
@@ -123,62 +98,64 @@
    </teiHeader>
    <text>
       <body>
-         <div ana="bk:account" corresp="#income">
-            <div ana="bk:account" corresp="#customshauptzoller">
-               <note>No. 2</note>
-               <head> Von dem Haupt Zollner Liechtenstein <name ana="bk:from" ref="#pers_1">Thomas
-                     Walser</name></head>
-               <p ana="bk:entry"> Von <date ana="bk:when" from="1718-10-22" to="1718-11-22">1. und
-                     respective 22. Octobris bis 22. Novembris 1718</date>
-                  <measure ana="bk:money" quantity="48" unitRef="#fl">48</measure>
-                  <measure ana="bk:money" quantity="25" unitRef="#kr">25</measure>
-               </p>
-               <p ana="bk:entry">von <date ana="bk:when" from="1718-11-22" to="1718-12-22">22.
-                     Novembris bis 22 Decembris</date>
-                  <measure ana="bk:money" quantity="60" unitRef="#fl">60</measure>
-                  <measure ana="bk:money" quantity="15" unitRef="#kr">15</measure>
-                  <measure ana="bk:money" quantity="0.25" unitRef="#d">1/4</measure>
-               </p>
+         <div type="example">
+            <div ana="bk:account" corresp="#income">
+               <div ana="bk:account" corresp="#customshauptzoller">
+                  <note>No. 2</note>
+                  <head> Von dem Haupt Zollner Liechtenstein <name ana="bk:from" ref="#pers_1"
+                        >Thomas Walser</name></head>
+                  <p ana="bk:entry"> Von <date ana="bk:when" from="1718-10-22" to="1718-11-22">1.
+                        und respective 22. Octobris bis 22. Novembris 1718</date>
+                     <measure ana="bk:money" quantity="48" unitRef="#fl">48</measure>
+                     <measure ana="bk:money" quantity="25" unitRef="#kr">25</measure>
+                  </p>
+                  <p ana="bk:entry">von <date ana="bk:when" from="1718-11-22" to="1718-12-22">22.
+                        Novembris bis 22 Decembris</date>
+                     <measure ana="bk:money" quantity="60" unitRef="#fl">60</measure>
+                     <measure ana="bk:money" quantity="15" unitRef="#kr">15</measure>
+                     <measure ana="bk:money" quantity="0.25" unitRef="#d">1/4</measure>
+                  </p>
 
-               <fw ana="bk:subtotal"> Latus <measure ana="bk:money" quantity="1689" unitRef="#fl"
-                     >1689</measure>
-               </fw>
+                  <fw ana="bk:subtotal"> Latus <measure ana="bk:money" quantity="1689" unitRef="#fl"
+                        >1689</measure>
+                  </fw>
+               </div>
             </div>
-         </div>
-         <div ana="bk:account" corresp="#expenses">
-            <div ana="bk:account" corresp="#waldamtsnutzung">
-               <head>Wald Ambts Nuzung</head>
-               <div ana="bk:account" corresp="#gams">
-                  <note>48</note>
-                  <head>Umb gambs</head>
-                  <div ana="bk:entry">
-                     <p>nach Specification bey laag ausz <measure type="quantity"><measure
-                              quantity="12">12</measure></measure><measure commodity="chamois"
-                           >gambs</measure>gewlöset worden</p>
-                     <fw><measure ana="bk:money" quantity="21" unitRef="#fl">21</measure><measure
-                           ana="bk:money" quantity="50" unitRef="#kr">50</measure><measure
-                           ana="bk:money" quantity="41" unitRef="#d"
-                        ><unclear>41</unclear></measure></fw>
+            <div ana="bk:account" corresp="#expenses">
+               <div ana="bk:account" corresp="#useofwoodland">
+                  <head>Wald Ambts Nuzung</head>
+                  <div ana="bk:account" corresp="#chamois">
+                     <note>48</note>
+                     <head>Umb gambs</head>
+                     <div ana="bk:entry">
+                        <p>nach Specification bey laag ausz <measure type="quantity"><measure
+                                 quantity="12">12</measure></measure><measure commodity="chamois"
+                              >gambs</measure>gewlöset worden</p>
+                        <fw><measure ana="bk:money" quantity="21" unitRef="#fl">21</measure><measure
+                              ana="bk:money" quantity="50" unitRef="#kr">50</measure><measure
+                              ana="bk:money" quantity="41" unitRef="#d"
+                              ><unclear>41</unclear></measure></fw>
+                     </div>
                   </div>
-               </div>
-               <div ana="bk:account" corresp="#rabbit">
-                  <note>49</note>
-                  <head>Umb Haszen</head>
-                  <div ana="bk:entry">
-                     <p>Vor <measure quantity="40">Vierzig</measure></p>
-                     <fw><measure ana="bk:money" quantity="8" unitRef="#fl">8</measure></fw>
+                  <div ana="bk:account" corresp="#rabbit">
+                     <note>49</note>
+                     <head>Umb Haszen</head>
+                     <div ana="bk:entry">
+                        <p>Vor <measure quantity="40">Vierzig</measure></p>
+                        <fw><measure ana="bk:money" quantity="8" unitRef="#fl">8</measure></fw>
+                     </div>
                   </div>
-               </div>
-               <fw ana="bk:subtotal">Latus<measure ana="bk:money" quantity="29" unitRef="#fl"
-                     >29</measure><measure ana="bk:money" quantity="50" unitRef="#kr"
-                     >50</measure><measure ana="bk:money" quantity="11" unitRef="#d"
-                  >11</measure></fw>
-               <div>
-                  <p ana="bk:total"><measure ana="bk:money" quantity="29" unitRef="#fl"
-                     >29</measure><measure ana="bk:money" quantity="50" unitRef="#kr"
+                  <fw ana="bk:subtotal">Latus<measure ana="bk:money" quantity="29" unitRef="#fl"
+                        >29</measure><measure ana="bk:money" quantity="50" unitRef="#kr"
                         >50</measure><measure ana="bk:money" quantity="11" unitRef="#d"
+                     >11</measure></fw>
+                  <div>
+                     <p ana="bk:total"><measure ana="bk:money" quantity="29" unitRef="#fl"
+                           >29</measure><measure ana="bk:money" quantity="50" unitRef="#kr"
+                           >50</measure><measure ana="bk:money" quantity="11" unitRef="#d"
                            >11</measure></p>
-                  
+
+                  </div>
                </div>
             </div>
          </div>

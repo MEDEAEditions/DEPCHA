@@ -269,6 +269,50 @@
             <p>If we are not adding a <code rend="attribute">@unit</code> to our <code
                 rend="element"><![CDATA[<measure>]]></code> element, it will be considered being a
               "piece" by default.</p>
+            <p>Let's also look at another example showing the application of the attribute <code
+                rend="attribute">@unitRef</code> that references to the<code rend="element"
+                ><![CDATA[<unitDecl>]]></code> section in the <code rend="element"
+                ><![CDATA[<teiHeader>]]></code>. You should always prioritize the use of <code
+                rend="attribute">@unitRef</code> over <code rend="attribute">@unit</code> for a
+              better structure of your TEI. The snippet below shows us how currency units could be
+              referenced:</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<teiHeader>
+   <fileDesc/>
+   <encodingDesc>
+     <unitDecl>
+       <unitDef type="currency" xml:id="fl">
+         <label>Gulden Reichswährung</label>
+       </unitDef>
+       <unitDef type="currency" xml:id="kr">
+         <label>Kreuzer</label>
+         <label type="abbr">kr</label>
+       </unitDef>
+       <unitDef type="currency" xml:id="d">
+         <label>Denari</label>
+         <label type="abbr">d</label>
+       </unitDef>
+     </unitDecl>
+   </encodingDesc>
+ </teiHeader>
+ <text>
+   <body>
+     <div type="example">
+       <head> Von dem Haupt Zollner Liechtenstein Thomas Walser</head>
+       <p ana="bk:entry">von 22. Novembris bis 22 Decembris 
+         <measure ana="bk:money" quantity="60" unitRef="#fl">60</measure>
+         <measure ana="bk:money" quantity="15" unitRef="#kr">15</measure>
+         <measure ana="bk:money" quantity="0.25" unitRef="#d">1/4</measure>
+       </p>
+       <fw ana="bk:subtotal"> Latus <measure ana="bk:money" quantity="1689" unitRef="#fl"
+           >1689</measure>
+       </fw>
+    </div>
+  </body>
+</text>]]>
+              </code>
+              <caption>Using @unitRef to normalize the data.</caption>
+            </ab>
             <p>In the next step we reference the <code rend="element"><![CDATA[<measure>]]></code>
               element to the <hi rend="italic">Bookkeeping Ontology</hi> by using <code
                 rend="attribute">@ana</code>. We want to say that <hi rend="italic">powder, sugar
@@ -439,7 +483,7 @@
                     <![CDATA[<p ana="bk:entry">
   Item am <date ana="bk:when" when="1402-01-01">s<supplied reason="missing">[o]</supplied>nntag nach Eibnitÿ</date>
   prachten dÿ<lb/><name ref="#pers_SR051" ana="bk:from">obgeschriben visser</name>
-  <measure ana="bk:commodity" commodity="Fisch" quantity="18" unit="Pfund">18 lb visch</measure> 
+  <measure ana="bk:commodity" commodity="fish" quantity="18" unit="pound">18 lb visch</measure> 
   dem <name ref="#pers_SR052">herrn Kaspar</name>.
 </p>]]>
                   </code>
@@ -682,7 +726,7 @@
           </div>
           <div xml:id="economic_goods">
             <head>Index - Economic Goods</head>
-            <p> As decribed in the chapter <ref target="#commodities">Basics</ref> in DEPCHA a
+            <p> As described in the chapter <ref target="#commodities">Basics</ref> in DEPCHA a
                 <code>bk:EconomicGood</code> is expressed by adding <code>ana="bk:commodity"</code>,
                 <code>ana="bk:service"</code> or <code>ana="bk:right"</code> to the <code
                 rend="element"><![CDATA[<measure>]]></code> element. It is helpful to create an
@@ -736,12 +780,6 @@
                   </category>
                   <category xml:id="sheep">
                      <catDesc><term ref="wd:Q7368" xml:lang="de">Schaf</term></catDesc>
-                  </category>
-                  <category xml:id="lamb">
-                     <catDesc><term ref="wd:Q4575936" xml:lang="de">Lamm</term></catDesc>
-                     <category xml:id="Osterlamm">
-                        <catDesc><term ref="wd:Q201171" xml:lang="de">Osterlamm</term></catDesc>
-                     </category>
                   </category>
                </category>
                <category xml:id="animalproduct">
@@ -843,21 +881,6 @@
   <skos:prefLabel xml:lang="de">Schaf</skos:prefLabel>
   <rdfs:label>Schaf</rdfs:label>
   <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q7368"/>
-</skos:Concept>
-<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#lamb">
-  <skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
-  <skos:narrower   rdf:resource="https://gams.uni-graz.at/context:depcha.example#osterlamm"/>
-  <skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.example#animal"/>
-  <skos:prefLabel xml:lang="de">Lamm</skos:prefLabel>
-  <rdfs:label>Lamm</rdfs:label>
-  <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q4575936"/>
-</skos:Concept>
-<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#osterlamm">
-  <skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
-  <skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.example#lamb"/>
-  <skos:prefLabel xml:lang="de">Osterlamm</skos:prefLabel>
-  <rdfs:label>Osterlamm</rdfs:label>
-  <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q201171"/>
 </skos:Concept>
 <skos:Concept
   rdf:about="https://gams.uni-graz.at/context:depcha.example#animalproduct">
@@ -1036,10 +1059,39 @@
           </div>
           <div xml:id="debit_credit">
             <head>Booking (Debit &amp; Credit)</head>
-            <p>To enrich your transcription with the information of a <code>bk:Booking</code> on
-              credit or debit you can add <code>ana="bk:debit"</code> or
-                <code>ana="bk:credit"</code> to a TEI element. Let's go back to our first
-              transcription example for this:</p>
+            <p>To enrich your booking account with the information of a <code>bk:Booking</code>
+              about being a credit or debit you can add <code>ana="bk:debit"</code> or
+                <code>ana="bk:credit"</code> to a TEI element. A suitable place for this annotation
+              is the textual information that indicates the debtor or creditor. In the example below
+              the debtor is marked with a <hi rend="italic">D</hi> - in this case we can find it
+              behind Eliza Wheaton's surname.</p>
+            <ab><code rend="block" lang="XML"><![CDATA[<table>  
+  <row ana="bk:entry">   
+    <cell>522</cell>    
+    <cell>      
+      <name ana="bk:from" ref="#pers_WCDH001" type="person">Eliza Wheaton</name>    
+      <span> 
+        <choice>          
+          <abbr ana="bk:debit">D</abbr>       
+          <expan>debtor</expan>         
+        </choice>    
+      </span>
+      <lb/> To <name ana="bk:to" ref="#pers_WCDH002" type="account">cash $20.00 </name>     
+    </cell>     
+    <cell>     
+      <measure ana="bk:money" quantity="20" unit="dollar">20</measure>    
+    </cell>  
+    <cell> 00 </cell>  
+    <cell/>    
+    <cell/>   
+  </row> 
+<table>]]></code>
+              <caption>Expressing the debit side with bk:debit inside the bk:entry.</caption></ab>
+
+
+
+            <p>But what if the debit or credit side is not expressed inside a <code>bk:entry</code>
+              like in our transcription example from the beginning:</p>
             <ab type="transcription">
               <table>
                 <head>Stagville August 1st 1808 <lb/> 69 James Haley Self Dr.</head>
@@ -1051,24 +1103,18 @@
                   <cell>6</cell>
                 </row>
               </table></ab>
-            <p>In the original the <code>bk:EconomicUnit</code>
-              <hi rend="italic">James Haley</hi> was indicated as debitor by the <hi rend="italic"
-                >Dr.</hi> after his name. We can use this textual indication to add a
-                <code>bk:debit</code>. A suitable place for it is the textual information. The booking annotation always has to
-              be inside a <code>bk:entry</code>.</p>
+            <p><hi rend="italic">James Haley</hi> is indicated as debtor by the <hi rend="italic"
+                >Dr.</hi> after his name. The booking information always has to be inside a
+                <code>bk:entry</code>. So, in this case we can add the <code>bk:debit</code> right
+              next to <code>bk:entry</code> in the <code rend="element"><![CDATA[<row>]]></code>
+              element, even though the textual information about the debtor can be found in the
+                <code rend="element"><![CDATA[<head>]]></code> element.</p>
             <ab>
               <code rend="block" lang="XML">
                 <![CDATA[<head><name ana="bk:to" ref="#economic_unit.1">Stagville</name> August 1st 1808</head>
 <table>
-  <head>69 <name ana="bk:from" ref="#economic_unit.2">James Haley</name> J Self
-    <span ana="bk:debit">
-      <choice>
-        <abbr>Dr.</abbr>
-        <expan>Debitor</expan>
-       </choice>
-     </span>
-  </head>
-  <row ana="bk:entry">
+  <head>69 <name ana="bk:from" ref="#economic_unit.2">James Haley</name> J Self Dr.</head>
+  <row ana="bk:entry bk:debit">
     <cell>
       <measure>1/4 lb Powder</measure>
       <measure>1 lb Shot</measure>
@@ -1084,8 +1130,8 @@
   </row>
 </table>]]>
               </code>
-              <caption>We can express booking information using <code>bk:debit</code> like for the
-                debitor in this example.</caption>
+              <caption>Booking information like <code>bk:debit</code> or <code>bk:credit</code>
+                always have to be inside a <code>bk:entry</code>.</caption>
             </ab>
           </div>
           <div xml:id="status_agent">
@@ -1095,7 +1141,6 @@
 
             <ab type="transcription"><table type="example">
                 <head>Monday September 15th 1828</head>
-                <!--SSt: verkleinern!-->
                 <row>
                   <cell>settled</cell>
                   <cell>Derius Drake D <lb/>To ax dlvd By Puffer 9/1<lb/>By cutting two
@@ -1150,7 +1195,7 @@
                 ><![CDATA[<teiHeader>]]></code>.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<listPlace ana="bk:index">
-  <place xml:id="SchlossKasten">  
+  <place xml:id="manorKasten">  
     <placeName>Kasten</placeName>  
     <location> 
       <country>Italien</country>   
@@ -1162,10 +1207,10 @@
 <!-- ... -->
 <p>
   <seg ana="bk:entry">Item so hatdo <name ref="pers_SR009" type="person" ana="bk:from"> 
-  michel under weg</name> geben <measure ana="bk:commodity" commodity="Roggen"    
-  quantity="2" unit="Mütt">2 mütt<lb/> Roken</measure> die gab der   
+  michel under weg</name> geben <measure ana="bk:commodity" commodity="rye"    
+  quantity="2" unit="muett">2 mütt<lb/> Roken</measure> die gab der   
   <name ref="pers_SR071" type="person" ana="bk:to">parott</name> umb 1 mütt<lb/> arbaid  
-  daz kam zw dem <placeName ana="bk:where" ref="#SchlossKasten">kasten</placeName> in 
+  daz kam zw dem <placeName ana="bk:where" ref="#manorKasten">kasten</placeName> in 
   der <lb/> fasten</seg>
 </p>]]>
               </code>
@@ -1177,7 +1222,7 @@
   <bk:where rdf:resource="https://gams.uni-graz.at/o:depcha.example.places#kasten"/>
 </bk:Transaction>
 <!-- ... -->
-<schema:Place rdf:about="https://gams.uni-graz.at/o:depcha.example.places#schlosskasten">
+<schema:Place rdf:about="https://gams.uni-graz.at/o:depcha.example.places#manorKasten">
   <schema:name>Kasten</schema:name>
   <schema:containedInPlace>Italien</schema:containedInPlace>
   <schema:containedInPlace>Kastelbell</schema:containedInPlace>
@@ -1270,11 +1315,11 @@
           <catDesc>  
             <gloss>Ausgaben</gloss>
           </catDesc>        
-          <category xml:id="waldamtsnutzung">         
+          <category xml:id="useofwoodland">         
             <catDesc>
               <gloss>Waldamtsnutzung</gloss>
             </catDesc>          
-            <category xml:id="gams"> 
+            <category xml:id="chamois"> 
               <catDesc>
                 <gloss>Gams</gloss>
               </catDesc>         
@@ -1286,14 +1331,6 @@
             </category>        
           </category>     
         </category>    
-      </taxonomy>
-      <taxonomy ana="bk:index">      
-        <gloss>Any specific taxonomy</gloss>      
-        <category xml:id="chamois">        
-          <catDesc>          
-            <gloss>Gämse</gloss>    
-          </catDesc>
-        </category>  
       </taxonomy>
     </classDecl>
   </encodingDesc>
@@ -1338,9 +1375,9 @@
       </div>
    </div>
    <div ana="bk:account" corresp="#expenses">
-     <div ana="bk:account" corresp="#waldamtsnutzung">
+     <div ana="bk:account" corresp="#useofwoodland">
        <head>Wald Ambts Nuzung</head>
-         <div ana="bk:account" corresp="#gams">
+         <div ana="bk:account" corresp="#chamois">
            <note>48</note>
            <head>Umb gambs</head>
            <div ana="bk:entry">
