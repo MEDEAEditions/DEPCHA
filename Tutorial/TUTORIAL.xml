@@ -1265,18 +1265,18 @@
               </code>
               <caption>Definition of prices using <code>bk:price</code>.</caption></ab>
           </div>
-
           <div xml:id="totals">
             <head>Subtotals &amp; Totals</head>
-            <p>The Bookkeeping Ontology also enables us to show that a monetary value embodies a
+            <p>The Bookkeeping Ontology also enables us to express if a monetary value represents a
                 <code>bk:TotalTransaction</code> or a <code>bk:SubtotalTransaction</code>. We only
               need to add an <code>@ana="bk:total</code> or an <code>@ana="bk:subtotal</code> to an
               element that surrounds all the <code>bk:money</code> that correspond to the total or
-              subtotal. In the following example the best place for the <code>bk:subtotal</code> and
+              subtotal. In the following example the best spot for the <code>bk:subtotal</code> and
               the <code>bk:total</code> is in the <code rend="element"><![CDATA[<row>]]></code>
-              element right next to <code>bk:entry</code>.</p>
-            <ab><code rend="block" lang="XML">
-                <![CDATA[<head><name ana="bk:to" ref="#economic_unit.1">Stagville</name> August 1st 1808</head>
+              element right next to <code>bk:entry</code>, because so all the single <code
+                rend="element"><![CDATA[<cell>]]></code> elements that contain the monetary details
+              (shilling and pence) are taken account of.</p>
+            <ab><code rend="block" lang="XML"><![CDATA[<head><name ana="bk:to" ref="#economic_unit.1">Stagville</name> August 1st 1808</head>
 <table>
   <head>69 <name ana="bk:from" ref="#economic_unit.2">James Haley</name> J Self Dr.</head>
   <row ana="bk:entry bk:subtotal">  
@@ -1296,11 +1296,31 @@
      <measure ana="bk:money" quantity="6" unit="pence">6</measure> 
     </cell>
    </row>
+   <row ana="bk:entry bk:subtotal">
+     <cell>
+       <measure ana="bk:commodity" commodity="shoeknife" quantity="1">1 Shoe Knife 1/6</measure>
+     </cell>
+     <cell/>
+     <cell>
+       <measure ana="bk:money" quantity="1" unit="shilling">1</measure>
+     </cell>
+     <cell>
+       <measure ana="bk:money" quantity="6" unit="pence">6</measure>
+     </cell>
+   </row>
+   <row ana="bk:total">
+     <cell/>
+     <cell/>
+     <cell/>
+     <cell><measure ana="bk:money" quantity="9" unit="shilling">9</measure></cell>
+     <cell>-</cell>
+   </row>
 </table>]]>
               </code>
-              <caption>Definition of prices using <code>bk:price</code>.</caption></ab>
+              <caption>Annotation of <code>bk:subtotal</code> and <code>bk:total</code> to be
+                processed as <code>bk:SubtotalTransaction</code> and
+                  <code>bk:TotalTransaction</code>.</caption></ab>
           </div>
-
           <div xml:id="taxes">
             <head>Taxes</head>
             <p>If we want to categorize a money transfer as a <code>bk:Tax</code> from our ontology,
