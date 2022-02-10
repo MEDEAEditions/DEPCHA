@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Example Taxes</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+                <idno type="PID">o:depcha.example.taxes</idno>
+                <ref target="context:depcha.example" type="context">Examples</ref>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Information about the source</p>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <listPrefixDef>
+                <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+                    <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs. </p>
+                </prefixDef>
+                <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="http://www.wikidata.org/wiki/$1">
+                    <p>
+                        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+                    </p>
+                </prefixDef>
+            </listPrefixDef>
+        </encodingDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="example">
+                <list type="payers">
+                     <item ana="bk:entry" xml:id="item_mc5_2zg_ghb">
+                        <seg type="entry">
+                            <persName ana="bk:from" ref="#RF01">
+                                <forename>Robert</forename>
+                                <nameLink>de</nameLink>
+                                <surname>
+                                    <placeName ref="#geo_Fresviau">fresviau</placeName>
+                                </surname>
+                            </persName>
+                            <roleName ref="#RF01" role="regratier" type="occupation"> regratier
+                            </roleName>
+                        </seg>
+                        <seg type="payment">
+                            <measure ana="bk:tax" quantity="18" unit="deniers">xviii.d</measure>
+                        </seg>
+                        <seg type="status"> p</seg>
+                    </item>
+                </list>
+            </div>
+        </body>
+    </text>
+</TEI>

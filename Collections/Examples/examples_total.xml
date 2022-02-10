@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Example Total</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+                <idno type="PID">o:depcha.example.total</idno>
+                <ref target="context:depcha.example" type="context">Examples</ref>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Information about the source</p>
+            </sourceDesc>
+        </fileDesc>  
+        <encodingDesc>
+            <listPrefixDef>
+                <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+                    <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs. </p>
+                </prefixDef>
+                <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="http://www.wikidata.org/wiki/$1">
+                    <p>
+                        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+                    </p>
+                </prefixDef>
+            </listPrefixDef>
+        </encodingDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="example">
+                <head><name ana="bk:to" ref="#economic_unit.1">Stagville</name> August 1st
+                    1808</head>
+                <table>
+                    <head>69 <name ana="bk:from" ref="#economic_unit.2">James Haley</name> J Self
+                        Dr.</head>
+                    <row ana="bk:entry bk:subtotal">
+                        <cell>
+                            <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb"
+                                >1/4 lb Powder</measure>
+                            <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb
+                                Shot</measure>
+                            <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1
+                                lb Sugar</measure>
+                        </cell>
+                        <cell/>
+                        <cell>
+                            <measure ana="bk:money" quantity="7" unit="shilling">7</measure>
+                        </cell>
+                        <cell>
+                            <measure ana="bk:money" quantity="6" unit="pence">6</measure>
+                        </cell>
+                    </row>
+                    <row ana="bk:entry bk:subtotal">
+                        <cell>
+                            <measure ana="bk:commodity" commodity="shoeknife" quantity="1">1 Shoe
+                                Knife 1/6</measure>
+                        </cell>
+                        <cell/>
+                        <cell>
+                            <measure ana="bk:money" quantity="1" unit="shilling">1</measure>
+                        </cell>
+                        <cell>
+                            <measure ana="bk:money" quantity="6" unit="pence">6</measure>
+                        </cell>
+                    </row>
+                    <row ana="bk:total">
+                        <cell/>
+                        <cell/>
+                        <cell/>
+                        <cell><measure ana="bk:money" quantity="9" unit="shilling">9</measure></cell>
+                        <cell>-</cell>
+                    </row>
+                </table>
+            </div>
+        </body>
+    </text>
+</TEI>
