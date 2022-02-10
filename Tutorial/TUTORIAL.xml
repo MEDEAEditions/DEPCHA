@@ -1135,7 +1135,7 @@
             </ab>
           </div>
           <div xml:id="status_agent">
-            <head>Status and Agent</head>
+            <head>Status &amp; Agent</head>
             <p>Here is another example of a transcription of a <code>bk:entry</code>. The entry in
               the Wheaton day book looks like this:</p>
 
@@ -1265,12 +1265,73 @@
               </code>
               <caption>Definition of prices using <code>bk:price</code>.</caption></ab>
           </div>
+
+          <div xml:id="totals">
+            <head>Subtotals &amp; Totals</head>
+            <p>The Bookkeeping Ontology also enables us to show that a monetary value embodies a
+                <code>bk:TotalTransaction</code> or a <code>bk:SubtotalTransaction</code>. We only
+              need to add an <code>@ana="bk:total</code> or an <code>@ana="bk:subtotal</code> to an
+              element that surrounds all the <code>bk:money</code> that correspond to the total or
+              subtotal. In the following example the best place for the <code>bk:subtotal</code> and
+              the <code>bk:total</code> is in the <code rend="element"><![CDATA[<row>]]></code>
+              element right next to <code>bk:entry</code>.</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<head><name ana="bk:to" ref="#economic_unit.1">Stagville</name> August 1st 1808</head>
+<table>
+  <head>69 <name ana="bk:from" ref="#economic_unit.2">James Haley</name> J Self Dr.</head>
+  <row ana="bk:entry bk:subtotal">  
+    <cell>    
+      <measure><measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder<measure ana="bk:price" >2/6</measure></measure>    
+      <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb Shot<measure ana="bk:price">2/6</measure></measure>    
+      <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1 lb Sugar<measure ana="bk:price">2/6</measure></measure> 
+    </cell>  
+    <cell>   
+      <measure ana="bk:commodity" commodity="shoe_knife" quantity="1" unit="piece">1 Shoe knife</measure><measure ana="bk:price">1/6</measure>  
+    </cell> 
+    <cell/> 
+    <cell>  
+      <measure ana="bk:money" quantity="7" unit="shilling">7</measure>  
+    </cell> 
+    <cell>   
+     <measure ana="bk:money" quantity="6" unit="pence">6</measure> 
+    </cell>
+   </row>
+</table>]]>
+              </code>
+              <caption>Definition of prices using <code>bk:price</code>.</caption></ab>
+          </div>
+
           <div xml:id="taxes">
-            <head>Taxes, ...</head>
-            <p>Lorem</p>
+            <head>Taxes</head>
+            <p>If we want to categorize a money transfer as a <code>bk:Tax</code> from our ontology,
+              we can add <code>@ana="bk:tax"</code> to the element that expresses a monetary value.
+              In the example <code>bk:tax</code> was used instead of <code>bk:money</code>. The
+              annotation of <code>bk:tax</code> has to be added inside a <code>bk:entry</code>. </p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<list type="payers">
+  <item ana="bk:entry" xml:id="item_mc5_2zg_ghb">
+    <seg type="entry">
+      <persName ana="bk:from" ref="#RF01">
+        <forename>Robert</forename>
+        <nameLink>de</nameLink>
+        <surname>
+          <placeName ref="#geo_Fresviau">fresviau</placeName>
+        </surname>
+      </persName>
+      <roleName ref="#RF01" role="regratier" type="occupation"> regratier
+      </roleName>
+    </seg>
+    <seg type="payment">
+      <measure ana="bk:tax" quantity="18" unit="deniers">xviii.d</measure>
+    </seg>
+    <seg type="status"> p</seg>
+  </item>
+</list>]]>
+              </code>
+              <caption>Annotation of a tax payment using <code>bk:tax</code>.</caption></ab>
           </div>
           <div xml:id="accountholder">
-            <head> Accounts and Accountholder</head>
+            <head> Accounts &amp; Accountholder</head>
             <p>To create a <code>bk:Account</code> we need a <code rend="element"
                 ><![CDATA[<taxonomy>]]></code> element enriched by <code>ana="bk:account"</code> in
               which we can express the hierarchy of the accounts (income vs. expenses etc). You can

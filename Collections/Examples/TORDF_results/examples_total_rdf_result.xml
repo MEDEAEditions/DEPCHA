@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+                xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:functx="http://www.functx.com"
+                xmlns:gn="http://www.geonames.org/ontology#"
+                xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
+                xmlns:om="http://ontology.eil.utoronto.ca/icity/OM/"
+                xmlns:time="http://www.w3.org/2006/time#" xmlns:schema="https://schema.org/"
+                xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+                xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+                xmlns:t="http://www.tei-c.org/ns/1.0"
+                xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#"
+                xmlns:foaf="http://xmlns.com/foaf/spec/" xmlns:void="http://rdfs.org/ns/void#">
+                <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.total">
+                                <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
+                                <dc:publisher>Institute Centre for Information Modelling, University
+                                                of Graz</dc:publisher>
+                </void:Dataset>
+                <depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.total#Dataset">
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.total"/>
+                                <depcha:numberOfTransactions>2</depcha:numberOfTransactions>
+                                <depcha:numberOfEconomicUnits>2</depcha:numberOfEconomicUnits>
+                                <depcha:numberOfMonetaryValues>5</depcha:numberOfMonetaryValues>
+                                <depcha:numberOfEconmicGoods>4</depcha:numberOfEconmicGoods>
+                                <depcha:numberOfSubTotals>2</depcha:numberOfSubTotals>
+                                <depcha:numberOfTotals>1</depcha:numberOfTotals>
+                                <depcha:accountHolder
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#"
+                                />
+                </depcha:Dataset>
+                <bk:SubTotalTransaction
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.total#Subtotal1">
+                                <bk:comprises>
+                                                <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.total#Subtotal1M1">
+                                                  <bk:quantity>7</bk:quantity>
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#shilling"
+                                                  />
+                                                </bk:Money>
+                                </bk:comprises>
+                                <bk:comprises>
+                                                <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.total#Subtotal1M2">
+                                                  <bk:quantity>6</bk:quantity>
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#pence"
+                                                  />
+                                                </bk:Money>
+                                </bk:comprises>
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.total"/>
+                                <bk:entry>1/4 lb Powder 1 lb Shot 1 lb Sugar 7 6</bk:entry>
+                </bk:SubTotalTransaction>
+                <bk:SubTotalTransaction
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.total#Subtotal2">
+                                <bk:comprises>
+                                                <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.total#Subtotal2M1">
+                                                  <bk:quantity>1</bk:quantity>
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#shilling"
+                                                  />
+                                                </bk:Money>
+                                </bk:comprises>
+                                <bk:comprises>
+                                                <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.total#Subtotal2M2">
+                                                  <bk:quantity>6</bk:quantity>
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#pence"
+                                                  />
+                                                </bk:Money>
+                                </bk:comprises>
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.total"/>
+                                <bk:entry>1 Shoe Knife 1/6 1 6</bk:entry>
+                </bk:SubTotalTransaction>
+                <bk:TotalTransaction
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.total#Total1">
+                                <bk:comprises>
+                                                <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.total#Total1M1">
+                                                  <bk:quantity>9</bk:quantity>
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#shilling"
+                                                  />
+                                                </bk:Money>
+                                </bk:comprises>
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.total"/>
+                                <bk:entry>9 -</bk:entry>
+                </bk:TotalTransaction>
+                <bk:SubTotalTransaction
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.total#Subtotal1">
+                                <bk:comprises>
+                                                <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.total#Subtotal1M1">
+                                                  <bk:quantity>7</bk:quantity>
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#shilling"
+                                                  />
+                                                </bk:Money>
+                                </bk:comprises>
+                                <bk:comprises>
+                                                <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.total#Subtotal1M2">
+                                                  <bk:quantity>6</bk:quantity>
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#pence"
+                                                  />
+                                                </bk:Money>
+                                </bk:comprises>
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.total"/>
+                                <bk:entry>1/4 lb Powder 1 lb Shot 1 lb Sugar 7 6</bk:entry>
+                </bk:SubTotalTransaction>
+                <bk:SubTotalTransaction
+                                rdf:about="https://gams.uni-graz.at/o:depcha.example.total#Subtotal2">
+                                <bk:comprises>
+                                                <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.total#Subtotal2M1">
+                                                  <bk:quantity>1</bk:quantity>
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#shilling"
+                                                  />
+                                                </bk:Money>
+                                </bk:comprises>
+                                <bk:comprises>
+                                                <bk:Money
+                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.total#Subtotal2M2">
+                                                  <bk:quantity>6</bk:quantity>
+                                                  <bk:unit
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#pence"
+                                                  />
+                                                </bk:Money>
+                                </bk:comprises>
+                                <gams:isMemberOfCollection
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                                <gams:isPartOf
+                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.total"/>
+                                <bk:entry>1 Shoe Knife 1/6 1 6</bk:entry>
+                </bk:SubTotalTransaction>
+                <bk:EconomicUnit
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#economic_unit.1">
+                                <rdfs:label>Stagville</rdfs:label>
+                </bk:EconomicUnit>
+                <bk:EconomicUnit
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#economic_unit.2">
+                                <rdfs:label>James Haley</rdfs:label>
+                </bk:EconomicUnit>
+</rdf:RDF>
