@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Example Schlandersberger</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+                <idno type="PID">o:depcha.example.schlandersberger</idno>
+                <ref target="context:depcha.example" type="context">Examples</ref>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Information about the source</p>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <listPrefixDef>
+                <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+                    <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs. </p>
+                </prefixDef>
+                <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="http://www.wikidata.org/wiki/$1">
+                    <p>
+                        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+                    </p>
+                </prefixDef>
+            </listPrefixDef>
+        </encodingDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="example">
+                <head>Example - Schlandersberger Rechnungen, 1402</head>
+                <p>The "obgeschriben visser" gave 18 pounds of fish.</p>
+                <p> Nota das ist die zetel<lb/> Raigister 1 des <name ref="#pers_SR001"
+                        type="person" ana="bk:to"> hans <damage><supplied reason="missing"
+                                >[kelner]</supplied></damage></name>
+                </p>
+                <p ana="bk:entry"> Item am <date ana="bk:when" when="1402-01-01">s<supplied
+                            reason="missing">[o]</supplied>nntag nach Eibnitÿ []</date> prachten dÿ<lb/>
+                    <name ref="#pers_SR051" ana="bk:from bk:group">obgeschriben visser</name>
+                    <measure ana="bk:commodity" commodity="fish" quantity="18" unit="pound">18 lb
+                        visch</measure> und<lb/> am mitwoch dar nach Rait <name ref="pers_SR052"
+                        type="person">herr Kaspar</name><lb/> gen phenïs. </p>
+            </div>
+        </body>
+    </text>
+</TEI>

@@ -232,8 +232,16 @@
                   ><code rend="element"><![CDATA[<measure>]]></code></ref> element in TEI allows to
               annotate countable entities using the attributes <code rend="attribute">@unit</code>,
                 <code rend="attribute">@unitRef</code>, <code rend="attribute">@commodity</code> and
-                <code rend="attribute">@quantity</code>. So, we can use those attributes to
-              normalize our data within the cells.</p>
+                <code rend="attribute">@quantity</code>. More information about these attributes can
+              be found <ref
+                target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.measurement.html"
+                >here</ref>. Just remember that the <code rend="attribute">@quantity</code> only
+              works with numbers.</p>
+            <p>So, to have all this information mapped to an RDF (like in this <ref
+                target="#rdf_preview">preview</ref>) that uses the terms and labels of our ontology
+              we can simply use this TEI element and do not have add a <code>bk:</code> to the
+              attributes. Those attributes will help us to normalize our data within the cells like
+              in the following snippet.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<row ana="bk:entry">
   <cell>  
@@ -380,8 +388,8 @@
               reference as <hi rend="italic">economic_unit.2</hi>) <hi rend="bold">to</hi> Stagville
               (with the reference <hi rend="italic">economic_unit.1</hi>). Notice that by default
               the flow of money is always encoded explicitly in DEPCHA.
-              <!--TO BE SOLVED! You can, however, express the flow            direction explicitly yourself. You can find more information about that under <ref
- target="#">XY</ref>.--></p>
+              <!--TO BE SOLVED! You can, however, express the flow direction explicitly yourself. 
+                You can find more information about that under <ref target="#">XY</ref>.--></p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<head><name ana="bk:to" ref="#economic_unit.1">Stagville</name> August 1st 1808</head>
 <table>
@@ -405,8 +413,9 @@
               <caption>Extension of <![CDATA[<name>]]> to express the directions "bk:from" and
                 "bk:to" of the assets and also normalizing people or organizations with a
                 reference.</caption></ab>
-            <p>Little preview: After performing these basic steps the following RDF could be
-              extracted automatically, when the XML/TEI is ingested into DEPCHA.</p>
+            <p xml:id="rdf_preview">First RDF preview: After performing these basic steps the
+              following RDF could be extracted automatically, when the XML/TEI is ingested into
+              DEPCHA.</p>
             <ab><code rend="block" lang="RDF">
                 <![CDATA[<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1">
   <bk:entry>1/4 lb Powder 1 lb Shot 1 lb Sugar 7 6</bk:entry>
@@ -461,6 +470,78 @@
                 Sugar.</caption>
             </ab>
           </div>
+          <div xml:id="economic_goods">
+            <head>Economic Goods</head>
+            <p>Before we look into specific classes and their annotation let's go back to the
+              different <code>bk:EconomicAsset</code> that we have already seen and that can either
+              be <code>bk:Money</code> or different kinds of <code>bk:EconomicGood</code>. As
+              mentioned in the chapter about the basics the latter can be divided into three
+              classes:</p>
+            <p rend="bold">1. Commodity</p>
+            <p>We have already become acquainted with <code>bk:commodity</code> in the example
+              before: commodities are fungible items - mostly physical objects - that were produced
+              to satisfy wants or needs. The <code>bk:commodity</code> in the following example is a
+              loaf of bread.</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<row ana="bk:entry">
+  <cell>522</cell>
+  <cell>
+    name ana="bk:to" ref="#pers_WCDH156" type="person">Stephen Bailey</name>
+    <lb/> " <measure ana="bk:commodity" unit="loaf" quantity="1" commodity="#c_bread"> 1
+      loaf Bread </measure>9d </cell>
+  <cell/>
+  <cell/>
+  <cell/>
+  <cell/>
+</row>]]>
+              </code>
+              <caption>Annotation of one particular category of <code>bk:EconomicGood</code>: the
+                  <code>bk:Commodity</code></caption></ab>
+            <p rend="bold">2. Service</p>
+            <p>Any activity or transaction of non-tangible goods can be annotated as
+                <code>bk:service</code>. The snippet below shows the trade of an insurance that can
+              be assigned to the class <code>bk:Service</code>.</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<row ana="bk:entry">
+  <cell>
+    <date ana="bk:when" when="1937-02-02"/>
+  </cell>
+  <cell>
+    <name ana="bk:to" ref="#LeslieGodwinLd">Leslie &amp; Godwin Ld</name>
+    <measure ana="bk:service" commodity="Insurance">Insurance under Collision
+      Clause</measure>
+  </cell>
+  <cell>
+    <measure ana="bk:money" quantity="12" unit="shilling">12</measure>
+  </cell>
+  <cell>
+    <measure ana="bk:money" quantity="10" unit="pence">10</measure>
+  </cell>
+</row>]]></code><caption>A <code>bk:Service</code> is another possible <code>bk:EconomicGood</code>
+                that can be part of a <code>bk:Transaction</code>.</caption></ab>
+            <p rend="bold">3. Rights</p>
+            <p>However, there is another category of intangible goods that we can annotate as
+                <code>bk:right</code>. In the example below <hi rend="italic">John Coleman</hi>
+              acquired the right for his cows to graze on the range of another farmer.</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<row ana="bk:entry">
+      <cell>
+          <date ana="bk:when" when="1897-04-26">&quot;</date>
+      </cell>
+      <cell>
+          <measure ana="bk:right" commodity="grazingrights">right of pasture - 1/2 year</measure>
+          <span ana="bk:status">in full</span> - <name ana="bk:from" ref="org.3">John Coleman</name>
+      </cell>
+      <cell>
+          <measure ana="bk:money" commodity="currency" quantity="10" unit="dollars">10</measure>
+      </cell>
+      <cell>
+          <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
+      </cell>
+  </row>]]></code><caption>The bookkeeping ontology enables us to also annotate entities of
+                  <code>bk:Right</code>.</caption></ab>
+          </div>
+
           <div xml:id="when">
             <head>Dates</head>
             <p>The date of a transaction would be a data property in our ontology
@@ -695,7 +776,17 @@
               <code rend="block" lang="RDF">
                 <![CDATA[<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1">
   <bk:entry>522 Eliza Wheaton D debtor To cash $20.00 20 00</bk:entry>
-  <bk:consistsOf>  <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T1">    <bk:transfers>      <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T1EA">        <bk:unit rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#dollar"/>        <bk:quantity>20</bk:quantity>      </bk:Money>    </bk:transfers>    <bk:from rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#pers_WCDH001"/>    <bk:to rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#pers_WCDH002"/> </bk:Transfer>
+  <bk:consistsOf>  
+    <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T1">    
+      <bk:transfers>      
+        <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T1EA">        
+          <bk:unit rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#dollar"/>        
+          <bk:quantity>20</bk:quantity>      
+        </bk:Money>    
+      </bk:transfers>    
+      <bk:from rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#pers_WCDH001"/>    
+      <bk:to rdf:resource="https://gams.uni-graz.at/o:depcha.example.1#pers_WCDH002"/> 
+    </bk:Transfer>
  </bk:consistsOf>
 </bk:Transaction>
 <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/o:depcha.example.1#pers_WCDH001">
@@ -724,7 +815,7 @@
                 structure.</caption>
             </ab>
           </div>
-          <div xml:id="economic_goods">
+          <div xml:id="index_economic_goods">
             <head>Index - Economic Goods</head>
             <p> As described in the chapter <ref target="#commodities">Basics</ref> in DEPCHA a
                 <code>bk:EconomicGood</code> is expressed by adding <code>ana="bk:commodity"</code>,
@@ -751,47 +842,47 @@
                   rend="element"><![CDATA[<term>]]></code></ref>.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<taxonomy ana="bk:index">
-               <gloss>Commodities</gloss>
-               <category xml:id="grain">
-                  <catDesc><term ref="wd:Q2995529" xml:lang="de">Getreide</term></catDesc>
-                  <category xml:id="rye">
-                     <catDesc><term ref="wd:Q12099" xml:lang="de">Roggen</term></catDesc>
-                  </category>
-                  <category xml:id="wheat">
-                     <catDesc><term ref="wd:Q15645384" xml:lang="de">Weizen</term></catDesc>
-                  </category>
-                  <category xml:id="barley">
-                     <catDesc><term ref="wd:Q11577" xml:lang="de">Gerste</term></catDesc>
-                  </category>
-                  <category xml:id="flour">
-                     <catDesc><term ref="wd:Q36465" xml:lang="de">Mehl</term></catDesc>
-                     <category xml:id="wheatflour">
-                        <catDesc><term ref="wd:Q2249305" xml:lang="de">Weizenmehl</term></catDesc>
-                     </category>
-                     <category xml:id="ryeflour">
-                        <catDesc><term ref="wd:Q10658708" xml:lang="de">Roggenmehl</term></catDesc>
-                     </category>
-                  </category>
-               </category>
-               <category xml:id="animal">
-                  <catDesc><term ref="wd:Q729" xml:lang="de">Tier</term></catDesc>
-                  <category xml:id="goose">
-                     <catDesc><term ref="wd:Q3736439" xml:lang="de">Gans</term></catDesc>
-                  </category>
-                  <category xml:id="sheep">
-                     <catDesc><term ref="wd:Q7368" xml:lang="de">Schaf</term></catDesc>
-                  </category>
-               </category>
-               <category xml:id="animalproduct">
-                  <catDesc><term ref="wd:Q629103" xml:lang="de">Tierisches Produkt</term></catDesc>
-                  <category xml:id="egg">
-                     <catDesc><term ref="wd:Q93189" xml:lang="de">Eier</term></catDesc>
-                  </category>
-                  <category xml:id="cheese">
-                     <catDesc><term ref="wd:Q10943" xml:lang="de">Käse</term></catDesc>
-                  </category>
-               </category>
-            </taxonomy>]]></code>
+<gloss>Commodities</gloss>
+<category xml:id="grain">
+  <catDesc><term ref="wd:Q2995529" xml:lang="de">Getreide</term></catDesc>
+  <category xml:id="rye">
+     <catDesc><term ref="wd:Q12099" xml:lang="de">Roggen</term></catDesc>
+  </category>
+  <category xml:id="wheat">
+     <catDesc><term ref="wd:Q15645384" xml:lang="de">Weizen</term></catDesc>
+  </category>
+  <category xml:id="barley">
+     <catDesc><term ref="wd:Q11577" xml:lang="de">Gerste</term></catDesc>
+  </category>
+  <category xml:id="flour">
+     <catDesc><term ref="wd:Q36465" xml:lang="de">Mehl</term></catDesc>
+     <category xml:id="wheatflour">
+        <catDesc><term ref="wd:Q2249305" xml:lang="de">Weizenmehl</term></catDesc>
+     </category>
+     <category xml:id="ryeflour">
+        <catDesc><term ref="wd:Q10658708" xml:lang="de">Roggenmehl</term></catDesc>
+     </category>
+  </category>
+</category>
+<category xml:id="animal">
+  <catDesc><term ref="wd:Q729" xml:lang="de">Tier</term></catDesc>
+  <category xml:id="goose">
+     <catDesc><term ref="wd:Q3736439" xml:lang="de">Gans</term></catDesc>
+  </category>
+  <category xml:id="sheep">
+     <catDesc><term ref="wd:Q7368" xml:lang="de">Schaf</term></catDesc>
+  </category>
+</category>
+<category xml:id="animalproduct">
+  <catDesc><term ref="wd:Q629103" xml:lang="de">Tierisches Produkt</term></catDesc>
+  <category xml:id="egg">
+     <catDesc><term ref="wd:Q93189" xml:lang="de">Eier</term></catDesc>
+  </category>
+  <category xml:id="cheese">
+     <catDesc><term ref="wd:Q10943" xml:lang="de">Käse</term></catDesc>
+  </category>
+</category>
+</taxonomy>]]></code>
               <caption> A <code rend="element"><![CDATA[<taxonomy>]]></code> for the representation
                 of the categories "grain", "animal" and "animal product" with their corresponding
                 subordinated categories.</caption>
@@ -911,6 +1002,7 @@
             </ab>
             <p>Taxonomies can also be created for services or other intangible commodities.</p>
           </div>
+
           <div xml:id="units">
             <head>Units of Measurement</head>
             <p>Units of measurement are essential for the description of
@@ -983,6 +1075,18 @@
               the temporal and spacial dimension. Additionally, we can see the
                 <code>depcha:Dataset</code> defining the corresponding main currency for every RDF
               dataset as well as all currencies in the document.</p>
+            <p>You might have noticed also the attribute <code rend="attribute">@formula</code> in
+              the <code rend="element"><![CDATA[<conversion>]]></code> element. This attribute helps
+              us to set conversion rules for a certain unit of measurement. It is not bound to
+              currencies and this particular information will be a part of the class
+                <code>bk:Conversion</code>. To get it properly transferred to the RDF the <code
+                rend="attribute">@formula</code> must look like in the snippet above. It needs the
+              attributes <code rend="attribute">@fromUnit</code> and <code rend="attribute"
+                >@toUnit</code> which here contain the <code rend="attribute">@xml:id</code> from
+              the <code rend="element"><![CDATA[<unitDef>]]></code>. The formula itself always has
+              to be a division. For historic currencies like shilling and pence from our very first
+              example the formula would look like this: <code>fromUnit="#shilling" toUnit="#penny"
+                formula="$fromUnit div 12"</code>, because 12 pence are 1 shilling.</p>
             <ab><code rend="block" lang="RDF">
                 <![CDATA[<depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.units#Dataset">
   <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#dollar"/>
@@ -1057,6 +1161,7 @@
               <caption>Defining units of measurement and linking them to Wikidata
                 concepts.</caption></ab>
           </div>
+
           <div xml:id="debit_credit">
             <head>Booking (Debit &amp; Credit)</head>
             <p>To enrich your booking account with the information of a <code>bk:Booking</code>
@@ -1087,9 +1192,6 @@
   </row> 
 <table>]]></code>
               <caption>Expressing the debit side with bk:debit inside the bk:entry.</caption></ab>
-
-
-
             <p>But what if the debit or credit side is not expressed inside a <code>bk:entry</code>
               like in our transcription example from the beginning:</p>
             <ab type="transcription">
@@ -1267,12 +1369,13 @@
           </div>
           <div xml:id="totals">
             <head>Subtotals &amp; Totals</head>
-            <p>The Bookkeeping Ontology also enables us to express if a monetary value represents a
-                <code>bk:TotalTransaction</code> or a <code>bk:SubtotalTransaction</code>. We only
-              need to add an <code>@ana="bk:total</code> or an <code>@ana="bk:subtotal</code> to an
-              element that surrounds all the <code>bk:money</code> that correspond to the total or
-              subtotal. In the following example the best spot for the <code>bk:subtotal</code> and
-              the <code>bk:total</code> is in the <code rend="element"><![CDATA[<row>]]></code>
+            <p>Furthermore, the <hi rend="italic">Bookkeeping Ontology</hi> enables us to express if
+              a monetary value represents a <code>bk:TotalTransaction</code> or a
+                <code>bk:SubtotalTransaction</code>. We only need to add an
+                <code>@ana="bk:total</code> or an <code>@ana="bk:subtotal</code> to an element that
+              surrounds all the <code>bk:money</code> that correspond to the total or subtotal. In
+              the following example the best spot for the <code>bk:subtotal</code> and the
+                <code>bk:total</code> is in the <code rend="element"><![CDATA[<row>]]></code>
               element right next to <code>bk:entry</code>, because so all the single <code
                 rend="element"><![CDATA[<cell>]]></code> elements that contain the monetary details
               (shilling and pence) are taken account of.</p>
@@ -1351,7 +1454,7 @@
               <caption>Annotation of a tax payment using <code>bk:tax</code>.</caption></ab>
           </div>
           <div xml:id="accountholder">
-            <head> Accounts &amp; Accountholder</head>
+            <head>Accounts &amp; Accountholder</head>
             <p>To create a <code>bk:Account</code> we need a <code rend="element"
                 ><![CDATA[<taxonomy>]]></code> element enriched by <code>ana="bk:account"</code> in
               which we can express the hierarchy of the accounts (income vs. expenses etc). You can
@@ -1497,7 +1600,6 @@
 </text>]]>
               </code>
               <caption/></ab>
-
           </div>
           <div xml:id="prefixdef">
             <head>Definition of Prefixes</head>
@@ -1555,6 +1657,137 @@
              Ontology XML Schema</ref> based on all current ingested data. You can associate this    
              schema in your Oxygen Editor, so the editor offers you elements and annotation options    
              according to the Ontology. </p></div>-->
+          <div xml:id="examples">
+            <head>Examples</head>
+            <p>This section will be about some annotation examples from different historic
+              accounting books. It should help to get a better picture of how documents that differ
+              a lot in their structure can be mapped onto the <hi rend="italic">Bookkeeping
+                Ontology</hi>.</p>
+            <p rend="bold">1. Schlandersberger Rechnungen, 1402</p>
+            <p>Let's start with a snippet from the Schlandersberger Accounts from the beginning of
+              the 15th century.</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<p>The "obgeschriben visser" gave 18 pounds of fish.</p>
+<p> Nota das ist die zetel<lb/> Raigister 1 des <name ref="#pers_SR001" type="person"
+      ana="bk:to"> hans <damage><supplied reason="missing"
+      >[kelner]</supplied></damage></name>
+</p>
+<p ana="bk:entry">
+   Item am <date ana="bk:when" when="1402-01-01">s<supplied
+            reason="missing">[o]</supplied>nntag nach Eibnitÿ []</date> prachten dÿ<lb/>
+      <name ref="#pers_SR051" ana="bk:from bk:group">obgeschriben visser</name>
+      <measure ana="bk:commodity" commodity="fish" quantity="18" unit="pound">18 lb
+         visch</measure> und<lb/> am mitwoch dar nach Rait <name ref="pers_SR052"
+         type="person">herr Kaspar</name><lb/> gen phenïs. </p>]]>
+              </code>
+              <caption>Mapping the Schlandersberger Accounts to the bookkeeping ontology.</caption>
+            </ab>
+            <p>In this example the person <hi rend="italic">hans</hi> was annotated with the TEI
+              element <code rend="element"><![CDATA[<name>]]></code> that describes <hi
+                rend="italic">hans [kelner]</hi> as a person. To add more information about him in a
+                <code rend="element"><![CDATA[<listPerson>]]></code> or to be able to show that this
+                <hi rend="italic">hans</hi> is the same like the differently spelled "Hanse" in
+              another <code>bk:entry</code> a reference was added. The <code>ana="bk:to"</code>
+              tells us that something is transferred to him. The following paragraph is attributed
+              as <code>bk:entry</code>. We can find a <code>bk:when</code> there that suggests that
+              the <hi rend="italic">s[o]nntag nach Eibnitÿ</hi> is the 1st of January, 1402. For the
+              annotation of the <hi rend="italic">obgeschriben visser</hi> the TEI element <code
+                rend="element"><![CDATA[<name>]]></code> was used carrying another reference and
+              describing the <hi rend="italic">visser</hi> as a group of people that is giving
+              something away. The <code rend="element"><![CDATA[<measure>]]></code> element gives us
+              more information about the economic goods that are traded. In this case we can use TEI
+              attributes that help us clarifying that the commodity is fish that weights 18 pounds -
+              textually represented by <hi rend="italic">18 lb visch</hi>. At the end of the
+              paragraph another person is mentioned, but as this <hi rend="italic">herr Kaspar</hi>
+              does not have any <code>bk:</code> annotations he does not have a function in this
+                <code>bk:entry</code>.</p>
+            <p>The RDF that we can generate from our example would look like this:</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<depcha:Dataset
+                rdf:about="https://gams.uni-graz.at/o:depcha.example.schlandersberger#Dataset">
+                <gams:isMemberOfCollection
+                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                <gams:isPartOf
+                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.schlandersberger"/>
+                <depcha:numberOfTransactions>1</depcha:numberOfTransactions>
+                <depcha:numberOfEconomicUnits>2</depcha:numberOfEconomicUnits>
+                <depcha:numberOfMonetaryValues>0</depcha:numberOfMonetaryValues>
+                <depcha:numberOfEconmicGoods>1</depcha:numberOfEconmicGoods>
+                <depcha:accountHolder
+                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#"/>
+                <depcha:aggregates>
+                                <depcha:Aggregation
+                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.schlandersbergerAggregation#1402">
+                                  <bk:when>1402</bk:when>
+                                  <bk:unit
+                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#"/>
+                                  <bk:debit>0</bk:debit>
+                                  <bk:credit>0</bk:credit>
+                                </depcha:Aggregation>
+                </depcha:aggregates>
+</depcha:Dataset>
+<bk:Transaction
+                rdf:about="https://gams.uni-graz.at/o:depcha.example.schlandersberger#T1">
+                <gams:isMemberOfCollection
+                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+                <gams:isPartOf
+                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.schlandersberger"/>
+                <bk:entry>Item am s [o] nntag nach Eibnitÿ [] prachten dÿ
+                                obgeschriben visser 18 lb visch und am mitwoch dar
+                                nach Rait herr Kaspar gen phenïs.</bk:entry>
+                <bk:when>1402-01-01</bk:when>
+                <bk:consistsOf>
+                                <bk:Transfer
+                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.schlandersberger#T1T1">
+                                  <bk:transfers>
+                                  <bk:Commodity
+                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.schlandersberger#T1T1EA">
+                                  <bk:unit
+                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#pound"/>
+                                  <bk:quantity>18</bk:quantity>
+                                  <bk:classified
+                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#fish"
+                                  />
+                                  </bk:Commodity>
+                                  </bk:transfers>
+                                  <bk:from
+                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_SR001"/>
+                                  <bk:to
+                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_SR051"
+                                  />
+                                </bk:Transfer>
+                </bk:consistsOf>
+</bk:Transaction>
+<bk:EconomicUnit
+                rdf:about="https://gams.uni-graz.at/context:depcha.example#pers_SR001">
+                <rdfs:label>hans [kelner]</rdfs:label>
+</bk:EconomicUnit>
+<bk:EconomicUnit
+                rdf:about="https://gams.uni-graz.at/context:depcha.example#pers_SR051">
+                <rdfs:label>obgeschriben visser</rdfs:label>
+</bk:EconomicUnit>]]>
+              </code>
+              <caption>RDF transformation of the Schlandersberger Accounts.</caption></ab>
+            <p>The RDF first contains some information about the dataset and gives an overview of
+              the number of transactions, economic units and economic goods etc. Moreover, it
+              contains all the annotated information about the <code>bk:Transaction</code> as well
+              as about the <code>bk:EconmicUnit</code>. First of all in the
+                <code>bk:Transaction</code> we can find information about the collection our dataset
+              belongs to in <code>bk:isMemberOf</code> and also to which project it belongs in
+                <code>bk:isPartOf</code>. The next element shows us the exact wording of the
+                <code>bk:entry</code> paragraph. After this we can see the normalized date of the
+              transaction in <code>bk:when</code> and in the <code>bk:ConsistsOf</code> all the
+                <code>bk:Transfer</code> of this transaction are listed - in this example it is only
+              one that gets the identifier <hi rend="italic">T1T1</hi> (Transaction N°1, Transfer
+              N°1). Hereunder we can find all the important details of the transfer: the commodity
+              with the identifier <hi rend="italic">T1T1EA</hi> (Transaction N°1, Transfer N°1,
+              EconomicAsset - numeration will be added automatically when there is more than one
+              commodity), the unit of measurement that is pounds, the quantity as a number and the
+              classification as fish. Also, the direction of the flow of goods is extracted from the
+              TEI and displayed in the RDF. In the last part we can find details about the
+                <code>bk:EconomicUnit</code>: their references are used as identifiers and we do
+              also get the textual representation of their appellation from the TEI.</p>
+          </div>
         </div>
         <div xml:id="chapter.2">
           <head>Linked Open Data</head>
@@ -1562,6 +1795,7 @@
             concepts directly into the attributes or you can define your vocabulary in the TEI
             header in the form of a taxonomy. The following TEI snippet and the figure below should
             serve as examples.</p>
+
           <ab><code rend="block" lang="XML">
               <![CDATA[<body> 
    <head><name ana="bk:to" ref="#between.1">Stagville</name> August 1st 1808</head>  
