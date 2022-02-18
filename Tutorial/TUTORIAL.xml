@@ -1787,7 +1787,88 @@
               TEI and displayed in the RDF. In the last part we can find details about the
                 <code>bk:EconomicUnit</code>: their references are used as identifiers and we do
               also get the textual representation of their appellation from the TEI.</p>
+            <p rend="bold">2. Tax Rolls of Medieval Paris (Philip the Fair), 1297</p>
+            <p>Our second example shows the annotation of tax accounts. For the specification of a
+              money transfer we can use <code>bk:tax</code> instead of <code>bk:money</code> in the
+              section that describes our <code>bk:Transaction</code>. Let's analyze the following
+              snippet: </p>
+
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<head>Tax Rolls of Medieval Paris 1297 (<name ana="bk:to" ref="#P04">Philip the
+  Fair</name>)</head>
+<list>
+  <head xml:id="head_kcj_d5h_3hb">
+    <locus n="1" target="#bib_Mich1297"/>Cest le livre de la taille des cent mille
+    livres tournois pour la q<ex>u</ex>inte annee assise <date ana="bk:when"
+      when="1297">l&apos;an mcc iiii <seg rend="superscript">xx</seg> et dis et
+      sept</date>
+  </head>
+  <item ana="bk:entry" xml:id="item_bdj_d5h_3hb">
+    <seg type="entry">
+      <persName ana="bk:from" cert="medium" ref="#PR01">
+        <forename>Phellippe</forename>
+        <nameLink>le</nameLink>
+        <surname>
+          <roleName ref="#PR01" role="chandelier" type="occupation"
+            >chandelier</roleName>
+        </surname>
+      </persName>
+    </seg>
+    <seg type="payment">
+      <measure ana="bk:tax" quantity="8" unit="sou">viii s</measure>
+    </seg>
+    <seg type="status">p</seg>
+  </item>
+  <item ana="bk:entry" xml:id="item_cdj_d5h_3hb">
+    <seg type="entry">
+      <persName ana="bk:from" ref="#RN04">
+        <forename>Remi</forename>
+        <nameLink>des</nameLink>
+        <surname>napes</surname>
+      </persName>
+    </seg>
+    <seg type="payment">
+      <measure ana="bk:tax" quantity="24" unit="sou">xxiiii s</measure>
+    </seg>
+  </item>
+</list>]]></code>
+              <caption>Annotation of the Tax Rolls in the context of the bookkeeping
+                ontology.</caption></ab>
+            <p>In the <code rend="element"><![CDATA[<head>]]></code> we can find a <code
+                rend="element"><![CDATA[<name>]]></code> element that is attributed with
+                <code>ana="bk:to"</code> and therefore provides the information that <hi
+                rend="italic">Philip the Fair</hi> is an <code>bk:EconomicUnit</code> receiving a
+                <code>bk:MonetaryValue</code>(???). Inside the two <code rend="element"
+                ><![CDATA[<item>]]></code> elements which each express a <code>bk:entry</code> we
+              have two different <code>bk:EconomicUnit</code>: <hi rend="italic">Phellippe le
+                chandelier</hi> and <hi rend="italic">Remi des napes</hi>. Both of them are defined
+              as <code>bk:from</code> - so, their accounts decrease as they transfer money to <hi
+                rend="italic">Philip the Fair</hi>. All three persons have a reference that supports
+              the annotation of further information to this persons in a <code rend="element"
+                ><![CDATA[<listPers>]]></code> section. Now, another essential information in any
+                <code>bk:Transaction</code> is about which <code>bk:EconomicAssets</code> are
+              involved. In this case we can see that the <code rend="element"
+                ><![CDATA[<measure>]]></code> elements in the two <code>bk:entry</code> each contain
+              a <code>bk:MonetaryValue</code>: <hi rend="italic">8 sou</hi> in the first and <hi
+                rend="italic">24 sou</hi> in the second transaction. To normalize each
+                <code>bk:MonetaryValue</code> the TEI attributes <code rend="attribute"
+                >@quantity</code> and <code rend="attribute">@unit</code> were used. There is no
+                <code>bk:EconomicAsset</code>
+              <hi rend="italic">Phellippe</hi> and <hi rend="italic">Remi</hi> receive in return - a
+              typical characteristic of taxes. The <hi rend="italic">p</hi> right under the monetary
+              segment of the first <code>bk:entry</code> is annotated with the attribute
+                <code>type="status"</code> and tells us that <hi rend="italic">Phellippe</hi>
+              already paid his taxes. For <hi rend="italic">Remi</hi> we do not have any information
+              about his payment status. And last but not least this snippet also contains temporal
+              details - in the second <code rend="element"><![CDATA[<head>]]></code> we can find a
+                <code rend="element"><![CDATA[<date>]]></code> element that contains a
+                <code>ana="bk:when"</code> that identifies the textual segment <hi rend="italic"
+                >l&apos;an mcc iiii xx et dis et sept</hi> as the year 1297. </p>
+            <p>After a transformation to an RDF the annotated TEI document from above would look like this:</p>
+            <p>Coming soon :)</p>
           </div>
+
+
         </div>
         <div xml:id="chapter.2">
           <head>Linked Open Data</head>
