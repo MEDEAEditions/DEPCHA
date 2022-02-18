@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Example Tax Rolls</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+                <idno type="PID">o:depcha.example.taxrolls</idno>
+                <ref target="context:depcha.example" type="context">Examples</ref>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Information about the source</p>
+            </sourceDesc>
+        </fileDesc>  
+        <encodingDesc>
+            <listPrefixDef>
+                <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+                    <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs. </p>
+                </prefixDef>
+                <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="http://www.wikidata.org/wiki/$1">
+                    <p>
+                        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+                    </p>
+                </prefixDef>
+            </listPrefixDef>
+        </encodingDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="example">
+                <head>Tax Rolls of Medieval <placeName ana="bk:where" ref="#paris">Paris</placeName> 1297 (<name ana="bk:to" ref="#P04">Philip the
+                    Fair</name>)</head>
+                <p>Phellippe le chandelier pays 8 sous. Remi des napes pays 24 sous.</p>
+                <list>
+                    <head xml:id="head_kcj_d5h_3hb">
+                        <locus n="1" target="#bib_Mich1297"/>Cest le livre de la taille des cent mille
+                        livres tournois pour la q<ex>u</ex>inte annee assise <date ana="bk:when"
+                            when="1297">l&apos;an mcc iiii <seg rend="superscript">xx</seg> et dis et
+                            sept</date>
+                    </head>
+                    <item ana="bk:entry" xml:id="item_bdj_d5h_3hb">
+                        <seg type="entry">
+                            <persName ana="bk:from" cert="medium" ref="#PR01">
+                                <forename>Phellippe</forename>
+                                <nameLink>le</nameLink>
+                                <surname>
+                                    <roleName ref="#PR01" role="chandelier" type="occupation"
+                                        >chandelier</roleName>
+                                </surname>
+                            </persName>
+                        </seg>
+                        <seg type="payment">
+                            <measure ana="bk:money" quantity="8" unit="sou">viii s</measure>
+                        </seg>
+                        <seg type="status">p</seg>
+                    </item>
+                    <item ana="bk:entry" xml:id="item_cdj_d5h_3hb">
+                        <seg type="entry">
+                            <persName ana="bk:from" ref="#RN04">
+                                <forename>Remi</forename>
+                                <nameLink>des</nameLink>
+                                <surname>napes</surname>
+                            </persName>
+                        </seg>
+                        <seg type="payment">
+                            <measure ana="bk:money" quantity="24" unit="sou">xxiiii s</measure>
+                        </seg>
+                    </item>
+                </list>
+            </div>
+        </body>
+    </text>
+</TEI>

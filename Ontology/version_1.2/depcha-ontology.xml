@@ -109,7 +109,7 @@
     <!-- http://www.cidoc-crm.org/cidoc-crm/P42_assigned -->
 
     <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P42_assigned"/>
-    
+
 
 
 
@@ -137,9 +137,9 @@
 
     <owl:ObjectProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P91_has_unit"/>
 
-    
+
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#assigned -->
-    
+
     <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#assigned">
         <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transaction"/>
         <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Context"/>
@@ -167,7 +167,7 @@
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#by -->
-    
+
     <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#by">
         <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transfer"/>
         <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Agent"/>
@@ -363,11 +363,11 @@
         <rdfs:label xml:lang="de">hat Maßeinheit</rdfs:label>
         <rdfs:label xml:lang="en">unit</rdfs:label>
     </owl:ObjectProperty>
-    
-    
-    
+
+
+
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#when -->
-    
+
     <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#when">
         <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transaction"/>
         <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Date"/>
@@ -512,9 +512,9 @@
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E21_Person -->
-    
+
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
-    
+
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object -->
@@ -544,11 +544,11 @@
     <!-- http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit -->
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit"/>
-    
-    
-    
+
+
+
     <!-- http://www.cidoc-crm.org/cidoc-crm/E61_Time_Primitive -->
-    
+
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E61_Time_Primitive"/>
 
 
@@ -584,7 +584,7 @@
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Account -->
-    
+
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Account">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:comment xml:lang="de">Gegenüberstellung und Abrechnung von Ein- und
@@ -595,7 +595,7 @@
         <rdfs:label xml:lang="de">Konto</rdfs:label>
     </owl:Class>
 
- 
+
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Date -->
 
@@ -607,9 +607,9 @@
         <rdfs:label xml:lang="en">Date</rdfs:label>
         <rdfs:label xml:lang="de">Datum</rdfs:label>
     </owl:Class>
-    
-    
-    
+
+
+
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Agent -->
 
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Agent">
@@ -632,7 +632,7 @@
         <rdfs:label xml:lang="de">Buchung</rdfs:label>
     </owl:Class>
 
-  
+
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Commodity -->
 
@@ -791,15 +791,16 @@
         <rdfs:label xml:lang="en">Monetary Value</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q1499548"/>
     </owl:Class>
-    
-    
-    
+
+
+
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Organisation -->
-    
+
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Organisation">
         <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicUnit"/>
         <rdfs:comment xml:lang="en">An organisation acting in a transaction.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Eine Organisation, die eine Transaktion druchführt.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine Organisation, die eine Transaktion
+            druchführt.</rdfs:comment>
         <rdfs:label xml:lang="en">Organisation</rdfs:label>
         <rdfs:label xml:lang="de">Organisation</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q43229"/>
@@ -865,7 +866,7 @@
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#SubtotalTransaction -->
 
-   
+
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#SubtotalTransaction">
         <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object"/>
         <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transaction"/>
@@ -951,7 +952,7 @@
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#UnitOfMeasurement -->
-    
+
     <!-- SST: Ist sehr wahrscheinlich unnötig! 
         <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#UnitOfMeasurement">
         <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Unit"/>
