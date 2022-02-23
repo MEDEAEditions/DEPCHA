@@ -11,7 +11,27 @@
                 <ref target="context:depcha.example" type="context">Examples</ref>
             </publicationStmt>
             <sourceDesc>
-                <listPlace ana="bk:index">
+                <msDesc>
+                    <msIdentifier>
+                        <idno>S.124.3</idno>
+                    </msIdentifier>
+                    <msContents>
+                        <msItem>
+                            <docAuthor>Thos. W. Ward</docAuthor>
+                            <docDate>June 1934</docDate>
+                            <title>Ledger No. 2</title>
+                            <note>
+                                <p>Accounts of <orgName ana="bk:from" ref="ThosWardLtd">Thos W. Ward
+                                        Ltd</orgName> from <date ana="bk:when" when="1934-06-01"
+                                        >June 1934</date>. </p>
+                            </note>
+                            <textLang>
+                                <lang>English</lang>
+                            </textLang>
+                        </msItem>
+                    </msContents>
+                </msDesc>
+                <listPlace>
                     <place xml:id="barrow">
                         <placeName>Barrow</placeName>
                         <location>
@@ -32,8 +52,14 @@
                     </place>
                     <!-- ... -->
                 </listPlace>
-            </sourceDesc>        
-        </fileDesc>  
+                <listOrg>
+                    <org xml:id="LeslieGodwinLd">
+                        <orgName> Leslie &amp; Godwin Ld </orgName>
+                        <desc>Insurance broker</desc>
+                    </org>
+                </listOrg>
+            </sourceDesc>
+        </fileDesc>
         <encodingDesc>
             <listPrefixDef>
                 <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
@@ -54,7 +80,7 @@
         <body>
             <div type="example">
                 <table>
-                    <head>Comus<placeName>Barrow</placeName>
+                    <head>Comus<placeName ana="bk:where" ref="#barrow">Barrow</placeName>
                     </head>
                     <row ana="bk:entry">
                         <cell>
@@ -84,8 +110,8 @@
                         </cell>
                         <cell>
                             <name ana="bk:to" ref="#LeslieGodwinLd">Leslie &amp; Godwin Ld</name>
-                            <measure ana="bk:service" commodity="Insurance">Insurance to Devonport to Barrow for
-                                3 months L13000</measure>
+                            <measure ana="bk:service" commodity="Insurance">Insurance to Devonport
+                                to Barrow for 3 months L13000</measure>
                         </cell>
                         <cell>
                             <rs/>
@@ -101,7 +127,7 @@
                         </cell>
                     </row>
                     <!-- ... -->
-                    </table>
+                </table>
             </div>
         </body>
     </text>

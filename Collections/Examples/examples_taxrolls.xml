@@ -13,7 +13,7 @@
             <sourceDesc>
                 <p>Information about the source</p>
             </sourceDesc>
-        </fileDesc>  
+        </fileDesc>
         <encodingDesc>
             <listPrefixDef>
                 <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
@@ -28,20 +28,121 @@
                     </p>
                 </prefixDef>
             </listPrefixDef>
+            <unitDecl>
+                <unitDef type="currency" xml:id="livres" ana="bk:mainCurrency">
+                    <label xml:lang="en">livres</label>
+                    <country>France</country>
+                    <conversion fromUnit="#livres" toUnit="#sous" formula="$fromUnit div 20"/>
+                    <conversion fromUnit="#livres" toUnit="#deniers" formula="$fromUnit div 240"/>
+                </unitDef>
+                <unitDef type="currency" xml:id="sous">
+                    <label xml:lang="en">sous</label>
+                    <country>France</country>
+                </unitDef>
+                <unitDef type="currency" xml:id="deniers">
+                    <label xml:lang="en">deniers</label>
+                    <country>France</country>
+                </unitDef>
+            </unitDecl>
+
         </encodingDesc>
+        <profileDesc>
+            <langUsage>
+                <language ident="fr">French</language>
+            </langUsage>
+            <particDesc>
+                <listPerson ana="bk:index">
+
+                    <person xml:id="P04" ana="bk:to">
+                        <persName key="Philippe IV &apos;le Bel&apos;, roi de France" type="reg">
+                            <forename>Philippe</forename>
+                            <genName>IV</genName>
+                            <addName>le Bel</addName>
+                            <nameLink>de</nameLink>
+                            <placeName>France</placeName>
+                        </persName>
+                        <persName key="Philippe IV" type="short"/>
+                        <persName source="#head_gd4_qbh_ghb" when="1313">
+                            <roleName>roy nostre sires</roleName>
+                        </persName>
+                        <persName source="#item_m25_2zg_ghb" when="1313">
+                            <roleName>le Roy</roleName>
+                        </persName>
+                        <idno type="viaf">https://viaf.org/viaf/89086248</idno>
+                        <idno type="wikidata">https://www.wikidata.org/wiki/Q130969</idno>
+                        <sex value="male"/>
+                        <birth from="1268-04" to="1268-06"/>
+                        <death when="1314-11-29"/>
+                        <state from="1285-10-05" to="1314-11-29" type="office">
+                            <label type="style">Roi de <placeName ref="#geo_France"
+                                    >France</placeName>
+                            </label>
+                        </state>
+                        <state from="1284-08-16" to="1305-04-04" type="office">
+                            <label type="style">Roi de <placeName ref="#Navarre">Navarre</placeName>
+                            </label>
+                        </state>
+                    </person>
+                    <person xml:id="PR01">
+                        <persName source="#item_yc5_2zg_ghb" when="1313">
+                            <forename>Phelippe</forename>
+                            <nameLink>de</nameLink>
+                            <surname>
+                                <placeName ref="#geo_Reims">Reins</placeName>
+                            </surname>
+                        </persName>
+                        <persName cert="medium" source="#item_bdj_d5h_3hb" when="1297">
+                            <forename>Phellippe</forename>
+                            <nameLink>le</nameLink>
+                            <surname>
+                                <roleName>chandelier</roleName>
+                            </surname>
+                        </persName>
+                        <persName source="#item_cqc_qgn_3hb" when="1296">
+                            <forename>Phelippe</forename>
+                            <nameLink>le</nameLink>
+                            <surname>
+                                <roleName>chandelier</roleName>
+                            </surname>
+                        </persName>
+                        <sex value="male"/>
+                        <occupation role="chandelier" source="#item_yc5_2zg_ghb" when="1313">
+                            <desc type="source">chandelier</desc>
+                        </occupation>
+                        <occupation role="chandelier" source="#item_bdj_d5h_3hb" when="1297">
+                            <desc type="source">chandelier</desc>
+                        </occupation>
+                        <occupation role="chandelier" source="#item_cqc_qgn_3hb" when="1296">
+                            <desc type="source">chandelier</desc>
+                        </occupation>
+                    </person>
+                    <person xml:id="RN04">
+                        <persName source="#item_cdj_d5h_3hb" when="1297">
+                            <forename>Remi</forename>
+                            <nameLink>des</nameLink>
+                            <surname>napes</surname>
+                        </persName>
+                        <persName source="#item_zpc_qgn_3hb" when="1296">
+                            <forename>Remi</forename>
+                            <nameLink>des</nameLink>
+                            <surname>napes</surname>
+                        </persName>
+                    </person>
+                </listPerson>
+            </particDesc>
+        </profileDesc>
     </teiHeader>
     <text>
         <body>
             <div type="example">
-                <head>Tax Rolls of Medieval <placeName>Paris</placeName> 1297 (<name ana="bk:to" ref="#P04">Philip the
-                    Fair</name>)</head>
-                <p>Phellippe le chandelier pays 8 sous. Remi des napes pays 24 sous.</p>
+                <head>Tax Rolls of Medieval <placeName>Paris</placeName> 1297 (<name ana="bk:to"
+                        ref="#P04">Philip the Fair</name>)</head>
                 <list>
                     <head xml:id="head_kcj_d5h_3hb">
-                        <locus n="1" target="#bib_Mich1297"/>Cest le livre de la taille des cent mille
-                        livres tournois pour la q<ex>u</ex>inte annee assise <date ana="bk:when"
-                            when="1297">l&apos;an mcc iiii <seg rend="superscript">xx</seg> et dis et
-                            sept</date>
+                        <locus n="1" target="#bib_Mich1297"/>Cest le livre de la taille des cent
+                        mille livres tournois pour la q<ex>u</ex>inte annee assise <date
+                            ana="bk:when" when="1297">l&apos;an mcc iiii <seg rend="superscript"
+                                >xx</seg> et dis et sept</date>
                     </head>
                     <item ana="bk:entry" xml:id="item_bdj_d5h_3hb">
                         <seg type="entry">
@@ -55,7 +156,7 @@
                             </persName>
                         </seg>
                         <seg type="payment">
-                            <measure ana="bk:money" quantity="8" unit="sou">viii s</measure>
+                            <measure ana="bk:tax" quantity="8" unit="sou">viii s</measure>
                         </seg>
                         <seg type="status">p</seg>
                     </item>
@@ -68,7 +169,7 @@
                             </persName>
                         </seg>
                         <seg type="payment">
-                            <measure ana="bk:money" quantity="24" unit="sou">xxiiii s</measure>
+                            <measure ana="bk:tax" quantity="24" unit="sou">xxiiii s</measure>
                         </seg>
                     </item>
                 </list>

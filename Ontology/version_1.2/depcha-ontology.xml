@@ -302,9 +302,8 @@
     <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#from">
         <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transfer"/>
         <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicUnit"/>
-        <rdfs:comment xml:lang="de">Etwas geht von einem Akteur / Konto weg.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Something goes away from somebody. An account
-            decreases.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine wirtschaftliche Einheit, die etwas in Form eines Wirtschaftsgutes leistet bzw. an eine andere wirtschaftliche Einheit abgibt.</rdfs:comment>
+        <rdfs:comment xml:lang="en">An economic unit that provides/gives an economic asset to another economic unit.</rdfs:comment>
         <rdfs:label xml:lang="en">from</rdfs:label>
         <rdfs:label xml:lang="de">von</rdfs:label>
         <rdfs:seeAlso xml:lang="en">REA Business Ontology: from</rdfs:seeAlso>
@@ -317,8 +316,8 @@
     <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#to">
         <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transfer"/>
         <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicUnit"/>
-        <rdfs:comment xml:lang="de">Etwas wird an jemanden anders übermittelt.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Something is transferred to someone else.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine wirtschaftliche Einheit, die ein Wirtschaftsgut erhält.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The economic unit receiving an economic asset</rdfs:comment>
         <rdfs:label xml:lang="de">nach</rdfs:label>
         <rdfs:label xml:lang="en">to</rdfs:label>
         <rdfs:seeAlso xml:lang="en">REA Business Ontology: to</rdfs:seeAlso>
@@ -333,7 +332,7 @@
         <rdfs:comment xml:lang="en">An account is assigned to a economic unit.</rdfs:comment>
         <rdfs:comment xml:lang="de">Ein Konto ist einer wirtschaftlichen Einheit
             zugeordnet.</rdfs:comment>
-        <rdfs:label xml:lang="en">is held by</rdfs:label>
+        <rdfs:label xml:lang="en">has accountHolder</rdfs:label>
         <rdfs:label xml:lang="de">wird gehalten von</rdfs:label>
     </owl:ObjectProperty>
 
@@ -680,6 +679,7 @@
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#MonetaryUnit -->
 
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#MonetaryUnit">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E98_Currency"/>
         <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Unit"/>
         <rdfs:comment xml:lang="de">Die Geldeinheit in diesem Kontext hat den Charakter einer
             Maßeinheit.</rdfs:comment>
@@ -951,18 +951,7 @@
     </owl:Class>
 
 
-    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#UnitOfMeasurement -->
-
-    <!-- SST: Ist sehr wahrscheinlich unnötig! 
-        <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#UnitOfMeasurement">
-        <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Unit"/>
-        <rdfs:comment xml:lang="de">Überbegriff für diverse Maßeinheiten, die keine Geldeinheiten darstellen.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Umbrella term for units of measurement that are not </rdfs:comment>
-        <rdfs:label xml:lang="de">Maßeinheit</rdfs:label>
-        <rdfs:label xml:lang="en">Unit of measurment</rdfs:label>
-    </owl:Class>-->
-
-
+   
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#UnitOfArea -->
 
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#UnitOfArea">

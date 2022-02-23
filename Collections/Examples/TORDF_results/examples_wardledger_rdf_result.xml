@@ -22,10 +22,15 @@
                                                 rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
                                 <gams:isPartOf
                                                 rdf:resource="https://gams.uni-graz.at/o:depcha.example.wardledger"/>
+                                <dc:creator>Thos. W. Ward</dc:creator>
+                                <dc:date>June 1934</dc:date>
+                                <dc:language>English</dc:language>
+                                <dc:source>S.124.3 </dc:source>
                                 <depcha:numberOfTransactions>2</depcha:numberOfTransactions>
                                 <depcha:numberOfEconomicUnits>2</depcha:numberOfEconomicUnits>
                                 <depcha:numberOfMonetaryValues>6</depcha:numberOfMonetaryValues>
                                 <depcha:numberOfEconmicGoods>2</depcha:numberOfEconmicGoods>
+                                <depcha:numberOfPlaces>1</depcha:numberOfPlaces>
                                 <depcha:accountHolder
                                                 rdf:resource="https://gams.uni-graz.at/context:depcha.example#"/>
                                 <depcha:aggregates>
@@ -63,7 +68,7 @@
                                                   <bk:from
                                                   rdf:resource="https://gams.uni-graz.at/context:depcha.example#LeslieGodwinLd"/>
                                                   <bk:to
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#ThosWardLtd"
                                                   />
                                                 </bk:Transfer>
                                 </bk:consistsOf>
@@ -95,7 +100,7 @@
                                                   </bk:Money>
                                                   </bk:transfers>
                                                   <bk:from
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"/>
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#ThosWardLtd"/>
                                                   <bk:to
                                                   rdf:resource="https://gams.uni-graz.at/context:depcha.example#LeslieGodwinLd"
                                                   />
@@ -126,7 +131,7 @@
                                                   <bk:from
                                                   rdf:resource="https://gams.uni-graz.at/context:depcha.example#LeslieGodwinLd"/>
                                                   <bk:to
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#ThosWardLtd"
                                                   />
                                                 </bk:Transfer>
                                 </bk:consistsOf>
@@ -158,7 +163,7 @@
                                                   </bk:Money>
                                                   </bk:transfers>
                                                   <bk:from
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"/>
+                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#ThosWardLtd"/>
                                                   <bk:to
                                                   rdf:resource="https://gams.uni-graz.at/context:depcha.example#LeslieGodwinLd"
                                                   />
@@ -166,23 +171,11 @@
                                 </bk:consistsOf>
                 </bk:Transaction>
                 <bk:EconomicUnit
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#ThosWardLtd">
+                                <rdfs:label>Thos W. Ward Ltd</rdfs:label>
+                </bk:EconomicUnit>
+                <bk:EconomicUnit
                                 rdf:about="https://gams.uni-graz.at/context:depcha.example#LeslieGodwinLd">
                                 <rdfs:label>Leslie &amp; Godwin Ld</rdfs:label>
                 </bk:EconomicUnit>
-                <schema:Place rdf:about="https://gams.uni-graz.at/context:depcha.example#barrow">
-                                <schema:name>Barrow</schema:name>
-                                <schema:longitude>54.108967</schema:longitude>
-                                <schema:latitude>-3.218894</schema:latitude>
-                </schema:Place>
-                <schema:Place
-                                rdf:about="https://gams.uni-graz.at/context:depcha.example#briton_ferry">
-                                <schema:name>Briton Ferry</schema:name>
-                                <schema:longitude>51.632119</schema:longitude>
-                                <schema:latitude>-3.824315</schema:latitude>
-                </schema:Place>
-                <schema:Place rdf:about="https://gams.uni-graz.at/context:depcha.example#grays">
-                                <schema:name>Grays</schema:name>
-                                <schema:longitude>51.478404</schema:longitude>
-                                <schema:latitude>0.323015</schema:latitude>
-                </schema:Place>
 </rdf:RDF>
