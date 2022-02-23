@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Example Wheaton</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+                <idno type="PID">o:depcha.example.wheaton</idno>
+                <ref target="context:depcha.example" type="context">Examples</ref>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Information about the source</p>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <listPrefixDef>
+                <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+                    <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs. </p>
+                </prefixDef>
+                <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="http://www.wikidata.org/wiki/$1">
+                    <p>
+                        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+                    </p>
+                </prefixDef>
+            </listPrefixDef>
+            <classDecl>
+                <taxonomy ana="bk:index">
+                    <category xml:id="c_rye">
+                        <catDesc>
+                            <term ref="wd:Q12099" xml:lang="en">rye</term>
+                        </catDesc>
+                        <category xml:id="c_springrye">
+                            <catDesc>
+                                <term xml:lang="en">spring rye</term>
+                            </catDesc>
+                        </category>
+                    </category>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+        <profileDesc>
+            <particDesc>
+                <listPerson>
+                    <person xml:id="pers_WCDH001">
+                        <persName>
+                            <forename type="first">Eliza</forename>
+                            <forename type="middle">Baylies</forename>
+                            <surname type="birth">Chapin</surname>
+                            <surname type="married">Wheaton</surname>
+                            <addName>Wife</addName>
+                        </persName>
+                        <birth when="1809-09-27">
+                            <placeName>
+                                <geogName>Northbridge Hill</geogName>
+                                <settlement>Northbridge</settlement>
+                                <region>Massachusetts</region>
+                            </placeName>
+                        </birth>
+                        <sex value="2"/>
+                        <residence notBefore="1817">
+                            <placeName>
+                                <settlement>Sutton</settlement>
+                                <region>Massachusetts</region>
+                            </placeName>
+                        </residence>
+                        <residence notBefore="1823">
+                            <placeName>
+                                <geogName>Baylies Hill</geogName>
+                                <settlement>Uxbridge</settlement>
+                                <region>Massachusetts</region>
+                            </placeName>
+                        </residence>
+                        <education>
+                            <orgName ref="#org_WCDH2">Uxbridge Academy</orgName>
+                            <orgName ref="#org_WCDH3">Boston Young Ladies' Academy</orgName>
+                        </education>
+                        <faith>Congregational</faith>
+                        <state notBefore="1829-06-25" type="married" notAfter="1865"/>
+                        <residence notBefore="1829-06-25">
+                            <settlement>Norton</settlement>
+                            <region>Massachusetts</region>
+                        </residence>
+                        <death when="1905"/>
+                    </person>
+                    <person xml:id="pers_WCDH002" ana="bk:from bk:accountHolder">
+                        <persName>
+                            <forename type="first">Laban</forename>
+                            <forename type="middle">Morey</forename>
+                            <surname>Wheaton</surname>
+                            <addName>Husband</addName>
+                            <addName>Husb.</addName>
+                        </persName>
+                        <birth when="1796-09-14">
+                            <placeName>
+                                <settlement>Norton</settlement>
+                                <region>Massachusetts</region>
+                            </placeName>
+                        </birth>
+                        <sex value="1"/>
+                        <education>
+                            <orgName notAfter="1817" ref="#org_WCDH4">Brown University</orgName>
+                        </education>
+                        <education>read law</education>
+                        <faith>Congregational</faith>
+                        <state notBefore="1829-06-25" type="married"/>
+                        <occupation>
+                            <roleName>Postmaster</roleName>
+                        </occupation>
+                        <affiliation>
+                            <roleName>Representative <orgName ref="#org_WCDH5">Massachusetts General
+                                    Court</orgName>
+                            </roleName>
+                        </affiliation>
+                        <occupation>
+                            <roleName>Member <orgName ref="#org_WCDH6">Massachusetts Governor's
+                                    Council</orgName>
+                            </roleName>
+                        </occupation>
+                        <affiliation>
+                            <roleName>Trustee</roleName>
+                            <orgName ref="#org_WCDH7">State Industrial School for Girls</orgName>
+                        </affiliation>
+                        <death when="1865">
+                            <placeName>
+                                <settlement>Norton</settlement>
+                            </placeName>
+                        </death>
+                    </person>
+                    <!-- ... -->
+                    <person xml:id="pers_WCDH699">
+                        <persName>
+                            <forename>Samuel</forename>
+                            <surname>Wrigley</surname>
+                        </persName>
+                        <sex value="1"/>
+                    </person>
+                    <person xml:id="pers_WCDH700">
+                        <persName>
+                            <forename>Samuel</forename>
+                            <surname>Wrigley</surname>
+                            <genName>Junior</genName>
+                        </persName>
+                        <sex value="1"/>
+                    </person>
+                    <person xml:id="pers_WCDH701">
+                        <persName>
+                            <roleName>Mrs.</roleName>
+                            <surname>Wrigley</surname>
+                        </persName>
+                        <sex value="2"/>
+                    </person>
+
+                </listPerson>
+            </particDesc>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="example">
+                 <table>
+                    <head>
+                        <date ana="bk:when" when="1828-09-15">Monday September-15th-1828</date>
+                    </head>
+
+                    <!--Im Original anders & besser passend zu Angaben im teiHeader-->
+                    <row ana="bk:entry">
+                        <cell>settled </cell>
+                        <cell>
+                            <name ana="bk:to" type="person">Samuel Wrigley</name><!-- reference hinzufügen? -->
+                            <choice>
+                                <abbr ana="bk:debit">Dr</abbr>
+                                <expan>Debtor</expan>
+                            </choice>
+                            <lb/>To <measure ana="bk:commodity" unit="bushels" quantity="0.5"
+                                commodity="#c_springrye">1/2 bushel spring Rye</measure>6/6</cell>
+                        <cell/>
+                        <cell>
+                            <measure ana="bk:money" quantity="53" unit="cent">53</measure>
+                        </cell>
+                        <cell/>
+                        <cell/>
+                    </row>
+                </table>
+            </div>
+        </body>
+    </text>
+</TEI>

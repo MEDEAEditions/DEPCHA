@@ -477,7 +477,7 @@
               be <code>bk:Money</code> or different kinds of <code>bk:EconomicGood</code>. As
               mentioned in the chapter about the basics the latter can be divided into three
               classes:</p>
-            <p rend="bold">1. Commodity</p>
+            <p><hi rend="bold">1. Commodity</hi></p>
             <p>We have already become acquainted with <code>bk:commodity</code> in the example
               before: commodities are fungible items - mostly physical objects - that were produced
               to satisfy wants or needs. The <code>bk:commodity</code> in the following example is a
@@ -497,7 +497,7 @@
               </code>
               <caption>Annotation of one particular category of <code>bk:EconomicGood</code>: the
                   <code>bk:Commodity</code></caption></ab>
-            <p rend="bold">2. Service</p>
+            <p><hi rend="bold">2. Service</hi></p>
             <p>Any activity or transaction of non-tangible goods can be annotated as
                 <code>bk:service</code>. The snippet below shows the trade of an insurance that can
               be assigned to the class <code>bk:Service</code>.</p>
@@ -519,7 +519,7 @@
   </cell>
 </row>]]></code><caption>A <code>bk:Service</code> is another possible <code>bk:EconomicGood</code>
                 that can be part of a <code>bk:Transaction</code>.</caption></ab>
-            <p rend="bold">3. Rights</p>
+            <p><hi rend="bold">3. Rights</hi></p>
             <p>However, there is another category of intangible goods that we can annotate as
                 <code>bk:right</code>. In the example below <hi rend="italic">John Coleman</hi>
               acquired the right for his cows to graze on the range of another farmer.</p>
@@ -1663,7 +1663,7 @@
               accounting books. It should help to get a better picture of how documents that differ
               a lot in their structure can be mapped onto the <hi rend="italic">Bookkeeping
                 Ontology</hi>.</p>
-            <p rend="bold">1. Schlandersberger Rechnungen, 1402</p>
+            <p><hi rend="bold">1. Schlandersberger Rechnungen, 1402</hi></p>
             <p>Let's start with a snippet from the Schlandersberger Accounts from the beginning of
               the 15th century.</p>
             <ab><code rend="block" lang="XML">
@@ -1787,11 +1787,12 @@
               TEI and displayed in the RDF. In the last part we can find details about the
                 <code>bk:EconomicUnit</code>: their references are used as identifiers and we do
               also get the textual representation of their appellation from the TEI.</p>
-            <p rend="bold">2. Tax Rolls of Medieval Paris (Philip the Fair), 1297</p>
+            <p><hi rend="bold">2. Tax Rolls of Medieval Paris (Philip the Fair), 1297</hi></p>
             <p>Our second example shows the annotation of tax accounts. For the specification of a
               money transfer we can use <code>bk:tax</code> instead of <code>bk:money</code> in the
               section that describes our <code>bk:Transaction</code>. Let's analyze the following
               snippet: </p>
+            <!--SST: Ersetzen mit Bsp aus taxrolls_tax?!-->
 
             <ab><code rend="block" lang="XML">
                 <![CDATA[<head>Tax Rolls of Medieval Paris 1297 (<name ana="bk:to" ref="#P04">Philip the
@@ -1864,10 +1865,578 @@
                 <code rend="element"><![CDATA[<date>]]></code> element that contains a
                 <code>ana="bk:when"</code> that identifies the textual segment <hi rend="italic"
                 >l&apos;an mcc iiii xx et dis et sept</hi> as the year 1297. </p>
-            <p>After a transformation to an RDF the annotated TEI document from above would look like this:</p>
-            <p>Coming soon :)</p>
-          </div>
+            <p>After a transformation to an RDF the annotated TEI document from above would look
+              like this:</p>
+            <!--SST: Ersetzen mit Bsp aus taxrolls_tax?!-->
+            <ab><code><![CDATA[[<depcha:Dataset
+  rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#Dataset">
+  <gams:isMemberOfCollection
+    rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+  <gams:isPartOf
+    rdf:resource="https://gams.uni-graz.at/o:depcha.example.taxrolls"/>
+  <depcha:numberOfTransactions>2</depcha:numberOfTransactions>
+  <depcha:numberOfEconomicUnits>3</depcha:numberOfEconomicUnits>
+  <depcha:numberOfMonetaryValues>2</depcha:numberOfMonetaryValues>
+  <depcha:numberOfEconmicGoods>0</depcha:numberOfEconmicGoods>
+  <depcha:numberOfPlaces>1</depcha:numberOfPlaces>
+  <depcha:accountHolder
+    rdf:resource="https://gams.uni-graz.at/context:depcha.example#"/>
+  <depcha:aggregates>
+    <depcha:Aggregation
+      rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrollsAggregation#1297">
+      <bk:when>1297</bk:when>
+      <bk:unit
+        rdf:resource="https://gams.uni-graz.at/context:depcha.example#"/>
+      <bk:debit>0</bk:debit>
+      <bk:credit>0</bk:credit>
+    </depcha:Aggregation>
+  </depcha:aggregates>
+</depcha:Dataset>
+<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T1">
+  <gams:isMemberOfCollection
+    rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+  <gams:isPartOf
+    rdf:resource="https://gams.uni-graz.at/o:depcha.example.taxrolls"/>
+  <bk:entry>Phellippe le chandelier viii s p</bk:entry>
+  <bk:consistsOf>
+    <bk:Transfer
+      rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T1T1">
+      <bk:transfers>
+        <bk:Money
+          rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T1T1EA">
+          <bk:unit
+            rdf:resource="https://gams.uni-graz.at/context:depcha.example#sou"/>
+          <bk:quantity>8</bk:quantity>
+        </bk:Money>
+      </bk:transfers>
+      <bk:from
+        rdf:resource="https://gams.uni-graz.at/context:depcha.example#PR01"/>
+      <bk:to
+        rdf:resource="https://gams.uni-graz.at/context:depcha.example#P04"
+      />
+    </bk:Transfer>
+  </bk:consistsOf>
+</bk:Transaction>
+<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T2">
+  <gams:isMemberOfCollection
+    rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+  <gams:isPartOf
+    rdf:resource="https://gams.uni-graz.at/o:depcha.example.taxrolls"/>
+  <bk:entry>Remi des napes xxiiii s</bk:entry>
+  <bk:consistsOf>
+    <bk:Transfer
+      rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T2T1">
+      <bk:transfers>
+        <bk:Money
+          rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T2T1EA">
+          <bk:unit
+            rdf:resource="https://gams.uni-graz.at/context:depcha.example#sou"/>
+          <bk:quantity>24</bk:quantity>
+        </bk:Money>
+      </bk:transfers>
+      <bk:from
+        rdf:resource="https://gams.uni-graz.at/context:depcha.example#RN04"/>
+      <bk:to
+        rdf:resource="https://gams.uni-graz.at/context:depcha.example#P04"
+      />
+    </bk:Transfer>
+  </bk:consistsOf>
+</bk:Transaction>
+<bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#P04">
+  <rdfs:label>Philip the Fair</rdfs:label>
+</bk:EconomicUnit>
+<bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#PR01">
+  <rdfs:label>Phellippelechandelier</rdfs:label>
+</bk:EconomicUnit>
+<bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#RN04">
+  <rdfs:label>Remidesnapes</rdfs:label>
+</bk:EconomicUnit>]]></code>
+              <caption>Result of the RDF transformation of the Tax Roll Example</caption></ab>
+            <p>In the first section about the <code rend="element"
+                ><![CDATA[<depcha:Dataset>]]></code> we are able to find some general information of
+              the collection and about the results of some counting processes concerning the number
+              of <code>bk:Transaction</code>, <code>bk:EconomicUnit</code>, <code>bk:Place</code>
+              and so on. Nested in the <code rend="element"><![CDATA[<depcha:Dataset>]]></code> we
+              can also see a <code rend="element"><![CDATA[<depcha:Aggregation>]]></code> that in
+              this case contains information to the <code>bk:when</code>. The next bigger section is
+              about the <code>bk:Transaction</code> itself. We have two transactions in this example
+              as we had two <code>bk:entry</code>. The first one provides further details about the
+                <code>bk:Transfer</code> from <hi rend="italic">Phellippe</hi> to <hi rend="italic"
+                >Philip the Fair</hi>. Both are just referenced using the <code rend="attribute"
+                >@ref</code> attributes from the TEI in the <code>bk:from</code> and
+                <code>bk:to</code> elements in the RDF. The textual represenation can be found at
+              the end of the RDF where every <code>bk:EconomicUnit</code> has its label. Another
+              information that was retrieved from every single <code>bk:entry</code> in the TEI is
+              about the
+              <code>bk:Money</code><!--SST: sollte bk:Tax sein! Usually we would see a <code>bk:)-->:
+              the <code>bk:unit</code> which is <hi rend="italic">sou</hi> and the
+                <code>bk:quanitity</code> are extracted from the TEI. In this example we had one
+              money transfer of <hi rend="italic">8</hi> and anoother of <hi rend="italic">24
+                sou</hi>.</p>
+            <p><hi rend="bold">3. Rentrechnung</hi></p>
+            <p>.</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[]]>
+              </code>
+              <caption/>
+            </ab>
+            <p>.</p>
+            <p>:</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<>]]>
+              </code>
+              <caption/></ab>
+            <p>.</p>
 
+            <p><hi rend="bold">4. Regensburg Cameralia</hi></p>
+            <p>Another interesting example of historical accountancy are the records of Regensburg,
+              a self-governing free town in the Middle Ages. We can see that the structure is
+              different than in the examples we had before, but it also contains all the annotations
+              that are necessary for a normalization of the data:</p>
+
+            <ab><code rend="block" lang="XML"><![CDATA[<teiHeader>
+  <encodingDesc>
+    <unitDecl>
+      <unitDef type="currency" xml:id="lb" ana="bk:mainCurrency">
+        <label>lb</label>
+      </unitDef>
+      <unitDef type="currency" xml:id="ß">
+        <label>ß</label>
+      </unitDef>
+      <unitDef type="currency" xml:id="d">
+        <label>d</label>
+      </unitDef>
+    </unitDecl>
+  </encodingDesc>
+  <profileDesc>
+    <particDesc>
+      <listOrg ana="bk:index">
+        <org ana="bk:accountHolder" xml:id="org.1">
+          <orgName>Regensburg Cameralia</orgName>
+        </org>
+      </listOrg>
+    </particDesc>
+    <textClass>
+      <classCode scheme="http://gams.uni-graz.at/rem/bookkeeping" xml:id="bk">
+        <interpGrp type="accounting">
+          <interp xml:id="bk_entry">one transaction</interp>
+          <interp xml:id="bk_i">income</interp>
+          <interp xml:id="bk_d">outgo</interp>
+        </interpGrp>
+      </classCode>
+    </textClass>
+  </profileDesc>
+<...>
+<div type="Rubrik">
+  <list xml:id="e_1">
+     <pb n="C03_vd" facs="#C03_vd"/>
+     <head>Das püch alles aws ge<ex>bens</ex>
+        <note>
+           <foreign n="nhd">Ecke des Vorderdeckels ist umgeknickt. Ist am Original noch zu
+              überprüfen.</foreign>
+        </note> yn dem LXXXXIIII jar.<note>
+           <foreign n="nhd">Darunter von späterer Hand mit Bleistift vermerkt
+           </foreign>Cam. 3.</note>
+     </head>
+     <pb n="C03_001r" facs="C03_001r.jpg"/>
+     <item xml:id="e_12" ana="bk:entry">Item wir haben geben hern Hannsen dem Wollär an
+        dem kamerampt syden rechnung I C lb.<note>
+           <foreign n="nhd">Davor gestrichen </foreign>gulden.</note> vnd XXIII lb vnd
+        XXVI d.<seg ana="bk:money">
+           <seg ana="bk:d">
+              <measure quantity="123" unit="lb" type="currency"/>
+              <measure quantity="26" unit="d" type="currency"/>
+           </seg>
+        </seg>
+        <persName ana="bk:to">
+           <title>her</title>
+           <forename>Hanns</forename>
+           <surname>der Wollär</surname>
+        </persName>
+     </item>
+     <item xml:id="e_14" ana="bk:entry">Item wir haben geben hern Vlr<ex>ich</ex> dem
+        probst avf sein chammer ampt IIII lb. Amb. dez freytags in den vyrtagen in den Vassten<note>
+           <foreign n="nhd">6.3.1394[!].</foreign>
+        </note>.<seg ana="bk:money">
+           <seg ana="bk:d">
+              <measure quantity="4" unit="lb_amb" type="currency"/>
+           </seg>
+        </seg>
+        <persName ana="bk:to">
+           <title>her</title>
+           <forename>Vlrich</forename>
+           <surname>der probst</surname>
+        </persName>
+     </item>
+     <item xml:id="e_15" ana="bk:entry">Item dar nach wart er vnz schuldig ffür vngelt VII
+        lb. vnd XVIII d. Daz ist gerechent dez pfintztags nach Sunbentten<note>
+           <foreign n="nhd">25.6.1394[!].</foreign>
+        </note>.<seg ana="bk:money">
+           <seg ana="bk:i">
+              <measure quantity="7" unit="lb" type="currency"/>
+              <measure quantity="18" unit="d" type="currency"/>
+           </seg>
+        </seg>
+        <persName ana="bk:to">
+           <title>her!</title>
+           <forename>Vlrich!</forename>
+           <surname>der probst!</surname>
+        </persName>
+     </item>
+  </list>
+</div>]]>
+              </code>
+              <caption>An extract of the annotated TEI bookeeping account from the city archive of
+                Regensburg.</caption>
+            </ab>
+            <p>After looking at this snippet you might have noticed that we have three
+                <code>bk:entry</code> in it. In the first <code>bk:entry</code> we can find a
+                <code>bk:MonetaryValue</code> annotated as <code>bk:money</code> and also as
+                <code>bk:d</code> which tells us <!--SST: that this is a bk:debit?-->... As you can
+              see in this example the annotator decided not to wrap the <code rend="element"
+                ><![CDATA[<measure>]]></code> elements around the textual representations, but to
+              insert them into an extra <code rend="element"><![CDATA[<seg>]]></code>. However, the
+                <code rend="element"><![CDATA[<measure>]]></code> element contains normalized
+              information about the currency and the amount of money that was transferred - in the
+              first <code>bk:entry</code> we are talking about <hi rend="italic">123 lb</hi> and <hi
+                rend="italic">26 d</hi><!--SST: what?-->. Another detail we are provided with is the
+              beneficiary of the <code>bk:Transaction</code> which is <hi rend="italic">her Hanns
+                der Wollär</hi> who is annotated with <code>ana="bk:to"</code>. The second entry is
+              similar to the first, also containing a <code>bk:EconomicUnit</code> that receives a
+                <code>bk:EconomicAsset</code> speicified as <code>bk:MonetaryValue</code>. The last
+                <code>bk:entry</code>, however, is different. The <code rend="element"
+                ><![CDATA[<seg>]]></code> element was annotated with <code>ana="bk:i"</code> that
+              indicates <!--SST: a credit/income?-->... </p>
+            <p>Transforming this extract would lead to the following result:</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<<depcha:Dataset
+  rdf:about="https://gams.uni-graz.at/o:depcha.example.regensburg#Dataset">
+  <gams:isMemberOfCollection
+    rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+  <gams:isPartOf
+    rdf:resource="https://gams.uni-graz.at/o:depcha.example.regensburg"/>
+  <depcha:numberOfTransactions>3</depcha:numberOfTransactions>
+  <depcha:numberOfEconomicUnits>3</depcha:numberOfEconomicUnits>
+  <depcha:numberOfMonetaryValues>3</depcha:numberOfMonetaryValues>
+  <depcha:numberOfEconmicGoods>0</depcha:numberOfEconmicGoods>
+  <depcha:accountHolder
+    rdf:resource="https://gams.uni-graz.at/context:depcha.example#org.1"/>
+  <depcha:currency
+    rdf:resource="https://gams.uni-graz.at/context:depcha.example#lb"/>
+  <depcha:isMainCurrency
+    rdf:resource="https://gams.uni-graz.at/context:depcha.example#lb"/>
+  <depcha:currency
+    rdf:resource="https://gams.uni-graz.at/context:depcha.example#ß"/>
+  <depcha:currency
+    rdf:resource="https://gams.uni-graz.at/context:depcha.example#d"
+  />
+</depcha:Dataset>
+<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.regensburg#T1">
+  <gams:isMemberOfCollection
+    rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+  <gams:isPartOf
+    rdf:resource="https://gams.uni-graz.at/o:depcha.example.regensburg"/>
+  <bk:entry>Item wir haben geben hern Hannsen dem Wollär an dem
+    kamerampt syden rechnung I C lb. Davor gestrichen
+    gulden. vnd XXIII lb vnd XXVI d. her Hanns der
+    Wollär</bk:entry>
+  <bk:consistsOf>
+    <bk:Transfer
+      rdf:about="https://gams.uni-graz.at/o:depcha.example.regensburg#T1T1">
+      <bk:transfers>
+        <bk:Money
+          rdf:about="https://gams.uni-graz.at/o:depcha.example.regensburg#T1T1EA">
+          <bk:unit
+            rdf:resource="https://gams.uni-graz.at/context:depcha.example#lb"/>
+          <bk:quantity>123</bk:quantity>
+        </bk:Money>
+      </bk:transfers>
+      <bk:transfers>
+        <bk:Money
+          rdf:about="https://gams.uni-graz.at/o:depcha.example.regensburg#T1T1EA">
+          <bk:unit
+            rdf:resource="https://gams.uni-graz.at/context:depcha.example#d"/>
+          <bk:quantity>26</bk:quantity>
+        </bk:Money>
+      </bk:transfers>
+      <bk:from
+        rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"/>
+      <bk:to
+        rdf:resource="https://gams.uni-graz.at/context:depcha.example#herHannsderWoll%C3%A4r"
+      />
+    </bk:Transfer>
+  </bk:consistsOf>
+</bk:Transaction>
+<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.regensburg#T2">
+  <gams:isMemberOfCollection
+    rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+  <gams:isPartOf
+    rdf:resource="https://gams.uni-graz.at/o:depcha.example.regensburg"/>
+  <bk:entry>Item wir haben geben hern Vlr ich dem probst avf sein
+    chammer ampt IIII lb. Amb. dez freytags in den
+    vyrtagen in den Vassten 6.3.1394[!]. . her Vlrich
+    der probst</bk:entry>
+  <bk:consistsOf>
+    <bk:Transfer
+      rdf:about="https://gams.uni-graz.at/o:depcha.example.regensburg#T2T1">
+      <bk:transfers>
+        <bk:Money
+          rdf:about="https://gams.uni-graz.at/o:depcha.example.regensburg#T2T1EA">
+          <bk:unit
+            rdf:resource="https://gams.uni-graz.at/context:depcha.example#lb_amb"/>
+          <bk:quantity>4</bk:quantity>
+        </bk:Money>
+      </bk:transfers>
+      <bk:from
+        rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"/>
+      <bk:to
+        rdf:resource="https://gams.uni-graz.at/context:depcha.example#herVlrichderprobst"
+      />
+    </bk:Transfer>
+  </bk:consistsOf>
+</bk:Transaction>
+<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.regensburg#T3">
+  <gams:isMemberOfCollection
+    rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+  <gams:isPartOf
+    rdf:resource="https://gams.uni-graz.at/o:depcha.example.regensburg"/>
+  <bk:entry>Item dar nach wart er vnz schuldig ffür vngelt VII lb. vnd
+    XVIII d. Daz ist gerechent dez pfintztags nach
+    Sunbentten 25.6.1394[!]. . her! Vlrich! der
+    probst!</bk:entry>
+  <bk:consistsOf>
+    <bk:Transfer
+      rdf:about="https://gams.uni-graz.at/o:depcha.example.regensburg#T3T1">
+      <bk:transfers>
+        <bk:Money
+          rdf:about="https://gams.uni-graz.at/o:depcha.example.regensburg#T3T1EA">
+          <bk:unit
+            rdf:resource="https://gams.uni-graz.at/context:depcha.example#lb"/>
+          <bk:quantity>7</bk:quantity>
+        </bk:Money>
+      </bk:transfers>
+      <bk:transfers>
+        <bk:Money
+          rdf:about="https://gams.uni-graz.at/o:depcha.example.regensburg#T3T1EA">
+          <bk:unit
+            rdf:resource="https://gams.uni-graz.at/context:depcha.example#d"/>
+          <bk:quantity>18</bk:quantity>
+        </bk:Money>
+      </bk:transfers>
+      <bk:from
+        rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"/>
+      <bk:to
+        rdf:resource="https://gams.uni-graz.at/context:depcha.example#her%21Vlrich%21derprobst%21"
+      />
+    </bk:Transfer>
+  </bk:consistsOf>
+</bk:Transaction>
+<bk:EconomicUnit
+  rdf:about="https://gams.uni-graz.at/context:depcha.example#herHannsderWoll%C3%A4r">
+  <rdfs:label>herHannsder Wollär</rdfs:label>
+</bk:EconomicUnit>
+<bk:EconomicUnit
+  rdf:about="https://gams.uni-graz.at/context:depcha.example#herVlrichderprobst">
+  <rdfs:label>herVlrichder probst</rdfs:label>
+</bk:EconomicUnit>
+<bk:EconomicUnit
+  rdf:about="https://gams.uni-graz.at/context:depcha.example#her%21Vlrich%21derprobst%21">
+  <rdfs:label>her!Vlrich!der probst!</rdfs:label>
+</bk:EconomicUnit>
+<bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#org.1">
+  <schema:name>Regensburg Cameralia</schema:name>
+  <rdfs:label>Regensburg Cameralia</rdfs:label>
+</bk:EconomicUnit>
+<bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#lb">
+  <rdfs:label>lb</rdfs:label>
+</bk:MonetaryUnit>
+<bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#ß">
+  <rdfs:label>ß</rdfs:label>
+</bk:MonetaryUnit>
+<bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#d">
+  <rdfs:label>d</rdfs:label>
+</bk:MonetaryUnit>]]>
+              </code>
+              <caption>RDF transformation of the Regensburg Example.</caption></ab>
+            <p>The first section about general information on the dataset provides the information
+              that in the TEI we have 3 <code>bk:Transaction</code>, 3 <code>bk:EconomicUnit</code>
+              and 3 <code>bk:MonetaryValue</code> in total. As there was a
+                <code>bk:Accountholder</code> mentioned in the <code rend="element"
+                ><![CDATA[<teiHeader>]]></code> of our transformation source we can find a <code
+                rend="element"><![CDATA[<depcha:accountHolder>]]></code>
+              <hi rend="italic">org.1</hi> in the RDF as well. Looking at the end of RDF we can find
+              the <code rend="element"><![CDATA[<rdfs:label>]]></code> of the
+                <code>bk:EconomicUnit</code> that is holding the account. The TEI does not provide
+              any information about the <code>bk:EconomicUnit</code> that is tranferring the money.
+              So, the <code>bk:from</code> by default uses the identifier <hi rend="italic"
+                >anonymous</hi>.</p>
+
+            <p><hi rend="bold">5. Wheaton</hi></p>
+            <p/>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[]]>
+              </code>
+              <caption/>
+            </ab>
+            <p>.</p>
+            <p>:</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<>]]>
+              </code>
+              <caption/></ab>
+            <p>.</p>
+
+            <p><hi rend="bold">6. George Washington Financial Papers</hi></p>
+            <p>.</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[]]>
+              </code>
+              <caption/>
+            </ab>
+            <p>.</p>
+            <p>:</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<>]]>
+              </code>
+              <caption/></ab>
+            <p>.</p>
+
+            <p><hi rend="bold">7. WardLedger</hi></p>
+            <p>Let's get into another example of an annotated bookkeeping account. It is an example
+              that uses <code>bk:index</code> for <code>bk:Place</code> elements and where the
+                <code>bk:EconomicAsset</code> is a <code>bk:Service</code>.</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<sourceDesc>
+  <listPlace ana="bk:index">
+    <place xml:id="barrow">
+      <placeName>Barrow</placeName>
+      <location>
+        <geo decls="#WGS">54.108967 -3.218894</geo>
+      </location>
+    </place>
+    <place xml:id="briton_ferry">
+      <placeName>Briton Ferry</placeName>
+      <location>
+        <geo decls="#WGS">51.632119 -3.824315</geo>
+      </location>
+    </place>
+    <place xml:id="grays">
+      <placeName>Grays</placeName>
+      <location>
+        <geo decls="#WGS">51.478404 0.323015</geo>
+      </location>
+    </place>
+  <!-- ... -->
+  </listPlace>
+</sourceDesc>        
+<!-- ... -->
+<table>
+  <head>Comus<placeName>Barrow</placeName>
+  </head>
+  <row ana="bk:entry">
+    <cell>
+      <date ana="bk:when" when="1934-08-01"/>
+    </cell>
+    <cell>
+      <name ana="bk:to" ref="#LeslieGodwinLd">Leslie &amp; Godwin Ld</name>
+      <measure ana="bk:service" commodity="Insurance">Insurance for 1 month
+        L12500</measure>
+    </cell>
+    <cell>
+      <rs/>
+    </cell>
+    <cell>
+      <measure ana="bk:money" quantity="4" unit="pound">4</measure>
+    </cell>
+    <cell>
+      <measure ana="bk:money" quantity="14" unit="shilling">14</measure>
+    </cell>
+    <cell>
+      <measure ana="bk:money" quantity="5" unit="pence">5</measure>
+    </cell>
+  </row>
+  <row ana="bk:entry">
+    <cell>
+      <date ana="bk:when" when="1934-08-30"/>
+    </cell>
+    <cell>
+      <name ana="bk:to" ref="#LeslieGodwinLd">Leslie &amp; Godwin Ld</name>
+      <measure ana="bk:service" commodity="Insurance">Insurance to Devonport to Barrow for
+        3 months L13000</measure>
+    </cell>
+    <cell>
+      <rs/>
+    </cell>
+    <cell>
+      <measure ana="bk:money" quantity="149" unit="pound">149</measure>
+    </cell>
+    <cell>
+      <measure ana="bk:money" quantity="15" unit="shilling">15</measure>
+    </cell>
+    <cell>
+      <measure ana="bk:money" quantity="3" unit="pence">3</measure>
+    </cell>
+  </row>
+  <!-- ... -->
+</table>]]>
+              </code>
+              <caption>Extract from the accounting books of the company from Thos. W.
+                Ward.</caption>
+            </ab>
+            <p>First of all let's look onto the expression of the <code>bk:Date</code>. It seems
+              that there are no textual representations of the date, but still the annotators took
+              the first <code rend="element"><![CDATA[<cell>]]></code> of each <code>bk:entry</code>
+              to insert a <code>bk:when</code> with a normalized date. The next <code rend="element"
+                ><![CDATA[<cell>]]></code> in both <code>bk:entry</code> shows the name <hi
+                rend="italic">Leslie &amp; Godwin Ld</hi>. The annotator chose the TEI element <code
+                rend="element"><![CDATA[<name>]]></code> to enrich it with <code>bk:to</code> to
+              define the recipient in this <code>bk:Transaction</code> and with a reference that
+              leads us to ...<!-- SST: nowhere unfortunately-->. In the same <code rend="element"
+                ><![CDATA[<cell>]]></code> we can also find the <code>bk:EconomicAsset</code> that
+              is traded. It is a <hi rend="italic">Insurance for 1 month L12500</hi> in the first
+                <code>bk:entry</code> and a <hi rend="italic">Insurance to Devonport to Barrow for 3
+                months L13000</hi> in the second <code>bk:entry</code>. Both insurances are defined
+              as <code>bk:Service</code> and the exact nature of it is specified in the attribute
+                <code>commodity="Insurance"</code>. Moreover, we can find a
+                <code>bk:MonetaryValue</code> in each <code>bk:Transaction</code>. They are
+              compositions of different <code>bk:quantity</code> from different <code>bk:unit</code>
+              - in this case: <hi rend="italic">pound</hi>, <hi rend="italic">shilling</hi> and <hi
+                rend="italic">pence</hi>. We do have one more information that can be mapped onto
+              the Bookkeeping Ontology: the <code>bk:Place</code>. In the <code rend="element"
+                ><![CDATA[<head>]]></code> of the <code rend="element"><![CDATA[<table>]]></code> we
+              can find a <code rend="element"><![CDATA[<placeName>]]></code> element ...
+              <!--SST: that should have a reference attribute to establish a connection to 
+                the <code rend="element"><![CDATA[<listPlace>]]></code> located in 
+                the <code rend="element"><![CDATA[<teiHeader>]]></code>. -->
+            </p>
+            <p>After creating an RDF from this TEI snippet we would get the following result:</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<>]]>
+              </code>
+              <caption>Result of the RDF transformation created from an extract of the booking
+                accounts of Thos. W. Ward.</caption></ab>
+            <p>Once again we start with a quick analysis of the contents of the <code rend="element"
+                ><![CDATA[<depcha:Dataset>]]></code> element. We do have a total of 2
+                <code>bk:Transaction</code>, 2 <code>bk:EconomicUnit</code>, 6
+                <code>bk:MonetaryValue</code> and 2 <code>bk:EconomicGood</code>. The <code
+                rend="element"><![CDATA[<depcha:Aggregation>]]></code> element tells us that all
+                <code>bk:Transaction</code> operations took place in <hi rend="italic">1934</hi>. A
+              more specific declaration of the date of each <code>bk:entry</code> can be found in
+              each <code>bk:Transaction</code>. The attribution of the two
+                <code>bk:EconomicGood</code> in the TEI is reproduced accordingly in the RDF where
+              the insurances are not only defined as <code>bk:Service</code>, but also obtain a
+                <code>bk:classified</code> that helps us understand that the <code>bk:Service</code>
+              traded in this booking account is an <hi rend="italic">insurance</hi>. Please also
+              note that as there was no clarification on the <code>bk:unit</code> in the annotation
+              of the <code>bk:Service</code> the unit <hi rend="italic">piece</hi> was added by
+              default and the <code>bk:quantity</code> was set to <hi rend="italic">1</hi> by
+              default as well. Another special characteristic of this RDF transformation is the
+              convertion of the <code>bk:index</code> that was added to the <code rend="element"
+                ><![CDATA[<listPlace>]]></code>. It resulted in the creation of <code rend="element"
+                ><![CDATA[<schema:Place>]]></code> elements in the RDF that contain all the details
+              provided in the <code rend="element"><![CDATA[<listPlace>]]></code> of the TEI
+              document. </p>
+          </div>
 
         </div>
         <div xml:id="chapter.2">

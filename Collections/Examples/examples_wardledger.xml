@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Example WardLedger</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+                <idno type="PID">o:depcha.example.wardledger</idno>
+                <ref target="context:depcha.example" type="context">Examples</ref>
+            </publicationStmt>
+            <sourceDesc>
+                <listPlace ana="bk:index">
+                    <place xml:id="barrow">
+                        <placeName>Barrow</placeName>
+                        <location>
+                            <geo decls="#WGS">54.108967 -3.218894</geo>
+                        </location>
+                    </place>
+                    <place xml:id="briton_ferry">
+                        <placeName>Briton Ferry</placeName>
+                        <location>
+                            <geo decls="#WGS">51.632119 -3.824315</geo>
+                        </location>
+                    </place>
+                    <place xml:id="grays">
+                        <placeName>Grays</placeName>
+                        <location>
+                            <geo decls="#WGS">51.478404 0.323015</geo>
+                        </location>
+                    </place>
+                    <!-- ... -->
+                </listPlace>
+            </sourceDesc>        
+        </fileDesc>  
+        <encodingDesc>
+            <listPrefixDef>
+                <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+                    <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs. </p>
+                </prefixDef>
+                <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="http://www.wikidata.org/wiki/$1">
+                    <p>
+                        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+                    </p>
+                </prefixDef>
+            </listPrefixDef>
+        </encodingDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="example">
+                <table>
+                    <head>Comus<placeName>Barrow</placeName>
+                    </head>
+                    <row ana="bk:entry">
+                        <cell>
+                            <date ana="bk:when" when="1934-08-01"/>
+                        </cell>
+                        <cell>
+                            <name ana="bk:to" ref="#LeslieGodwinLd">Leslie &amp; Godwin Ld</name>
+                            <measure ana="bk:service" commodity="Insurance">Insurance for 1 month
+                                L12500</measure>
+                        </cell>
+                        <cell>
+                            <rs/>
+                        </cell>
+                        <cell>
+                            <measure ana="bk:money" quantity="4" unit="pound">4</measure>
+                        </cell>
+                        <cell>
+                            <measure ana="bk:money" quantity="14" unit="shilling">14</measure>
+                        </cell>
+                        <cell>
+                            <measure ana="bk:money" quantity="5" unit="pence">5</measure>
+                        </cell>
+                    </row>
+                    <row ana="bk:entry">
+                        <cell>
+                            <date ana="bk:when" when="1934-08-30"/>
+                        </cell>
+                        <cell>
+                            <name ana="bk:to" ref="#LeslieGodwinLd">Leslie &amp; Godwin Ld</name>
+                            <measure ana="bk:service" commodity="Insurance">Insurance to Devonport to Barrow for
+                                3 months L13000</measure>
+                        </cell>
+                        <cell>
+                            <rs/>
+                        </cell>
+                        <cell>
+                            <measure ana="bk:money" quantity="149" unit="pound">149</measure>
+                        </cell>
+                        <cell>
+                            <measure ana="bk:money" quantity="15" unit="shilling">15</measure>
+                        </cell>
+                        <cell>
+                            <measure ana="bk:money" quantity="3" unit="pence">3</measure>
+                        </cell>
+                    </row>
+                    <!-- ... -->
+                    </table>
+            </div>
+        </body>
+    </text>
+</TEI>

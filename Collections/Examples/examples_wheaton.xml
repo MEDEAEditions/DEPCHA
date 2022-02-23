@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Example Wheaton</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+                <idno type="PID">o:depcha.example.wheaton</idno>
+                <ref target="context:depcha.example" type="context">Examples</ref>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Information about the source</p>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <listPrefixDef>
+                <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+                    <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs. </p>
+                </prefixDef>
+                <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="http://www.wikidata.org/wiki/$1">
+                    <p>
+                        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+                    </p>
+                </prefixDef>
+            </listPrefixDef>
+            <classDecl>
+                <taxonomy ana="bk:index">
+                    <category xml:id="c_rye">
+                        <catDesc>
+                            <term ref="wd:Q12099" xml:lang="en">rye</term>
+                        </catDesc>
+                        <category xml:id="c_springrye">
+                            <catDesc>
+                                <term xml:lang="en">spring rye</term>
+                            </catDesc>
+                        </category>
+                    </category>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="example">
+                <!-- Beispiel aus ontolgy_example -->
+                <head>Example - <name ana="bk:to" ref="#pers_WCDH002">Laban Morey
+                    Wheaton</name>Laban Morey Wheaton Day Book</head><!--bk:accountholder hinzufügen? -->
+                <p>Samuel Wrigley buys 0.5 bushel spring rye from Laban Morey Wheaton and pays 53
+                    cents</p>
+                <table>
+                    <head>
+                        <date ana="bk:when" when="1828-09-15">Monday September-15th-1828</date>
+                    </head>
+                    <row ana="bk:entry">
+                        <cell ana="bk:status">settled</cell>
+                        <cell>
+                            <name ana="bk:from" type="person" ref="#pers_WCDH699">Samuel
+                                Wrigley</name>
+                            <choice>
+                                <abbr ana="bk:debit">Dr</abbr>
+                                <expan>Debtor</expan>
+                            </choice>
+                            <lb/>To <measure ana="bk:commodity" unit="bushel" quantity="0.5"
+                                commodity="#c_springrye">1/2 bushel spring Rye</measure> 6/6</cell>
+                        <cell/>
+                        <cell>
+                            <measure ana="bk:money" quantity="53" unit="cent">53</measure>
+                        </cell>
+                        <cell/>
+                        <cell/>
+                    </row>
+                </table>
+            </div>
+        </body>
+    </text>
+</TEI>

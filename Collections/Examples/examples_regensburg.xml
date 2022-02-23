@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Example Cameralia Regensburg</title>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+                <idno type="PID">o:depcha.example.regensburg</idno>
+                <ref target="context:depcha.example" type="context">Examples</ref>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Data originally published in the <ref target="http://www.fcr-online.de">Fontes
+                        Civitatis Ratisponensis</ref></p>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <listPrefixDef>
+                <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+                    <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs. </p>
+                </prefixDef>
+                <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="http://www.wikidata.org/wiki/$1">
+                    <p>
+                        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+                    </p>
+                </prefixDef>
+            </listPrefixDef>
+            <unitDecl>
+                <unitDef type="currency" xml:id="lb" ana="bk:mainCurrency">
+                    <label>lb</label>
+                </unitDef>
+                <unitDef type="currency" xml:id="ß">
+                    <label>ß</label>
+                </unitDef>
+                <unitDef type="currency" xml:id="d">
+                    <label>d</label>
+                </unitDef>
+            </unitDecl>
+        </encodingDesc>
+        <profileDesc>
+            <particDesc>
+                <listOrg ana="bk:index">
+                    <org ana="bk:accountHolder" xml:id="org.1">
+                        <orgName>Regensburg Cameralia</orgName>
+                    </org>
+                </listOrg>
+            </particDesc>
+            <textClass>
+                <classCode scheme="http://gams.uni-graz.at/rem/bookkeeping" xml:id="bk">
+                    <interpGrp type="accounting">
+                        <interp xml:id="bk_entry">one transaction</interp>
+                        <interp xml:id="bk_i">income</interp>
+                        <interp xml:id="bk_d">outgo</interp>
+                    </interpGrp>
+                </classCode>
+            </textClass>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="example">
+                <div type="Rubrik">
+                    <list xml:id="e_1">
+                        <pb n="C03_vd" facs="#C03_vd"/>
+                        <head>Das püch alles aws ge<ex>bens</ex>
+                            <note>
+                                <foreign n="nhd">Ecke des Vorderdeckels ist umgeknickt. Ist am
+                                    Original noch zu überprüfen.</foreign>
+                            </note> yn dem LXXXXIIII jar.<note>
+                                <foreign n="nhd">Darunter von späterer Hand mit Bleistift vermerkt
+                                </foreign>Cam. 3.</note>
+                        </head>
+                        <pb n="C03_001r" facs="C03_001r.jpg"/>
+                        <item xml:id="e_12" ana="bk:entry">Item wir haben geben hern Hannsen dem
+                            Wollär an dem kamerampt syden rechnung I C lb.<note>
+                                <foreign n="nhd">Davor gestrichen </foreign>gulden.</note> vnd XXIII
+                            lb vnd XXVI d.<seg ana="bk:money">
+                                <seg ana="bk:d">
+                                    <measure quantity="123" unit="lb" type="currency"/>
+                                    <measure quantity="26" unit="d" type="currency"/>
+                                </seg>
+                            </seg>
+                            <persName ana="bk:to">
+                                <title>her</title>
+                                <forename>Hanns</forename>
+                                <surname>der Wollär</surname>
+                            </persName>
+                        </item>
+                        <item xml:id="e_14" ana="bk:entry">Item wir haben geben hern Vlr<ex>ich</ex>
+                            dem probst avf sein chammer ampt IIII lb. Amb. dez freytags in den
+                            vyrtagen in den Vassten<note>
+                                <foreign n="nhd">6.3.1394[!].</foreign>
+                            </note>.<seg ana="bk:money">
+                                <seg ana="bk:d">
+                                    <measure quantity="4" unit="lb_amb" type="currency"/>
+                                </seg>
+                            </seg>
+                            <persName ana="bk:to">
+                                <title>her</title>
+                                <forename>Vlrich</forename>
+                                <surname>der probst</surname>
+                            </persName>
+                        </item>
+                        <item xml:id="e_15" ana="bk:entry">Item dar nach wart er vnz schuldig ffür
+                            vngelt VII lb. vnd XVIII d. Daz ist gerechent dez pfintztags nach Sunbentten<note>
+                                <foreign n="nhd">25.6.1394[!].</foreign>
+                            </note>.<seg ana="bk:money">
+                                <seg ana="bk:i">
+                                    <measure quantity="7" unit="lb" type="currency"/>
+                                    <measure quantity="18" unit="d" type="currency"/>
+                                </seg>
+                            </seg>
+                            <persName ana="bk:to">
+                                <title>her!</title>
+                                <forename>Vlrich!</forename>
+                                <surname>der probst!</surname>
+                            </persName>
+                        </item>
+                    </list>
+                </div>
+            </div>
+        </body>
+    </text>
+</TEI>
