@@ -43,15 +43,129 @@
                 </taxonomy>
             </classDecl>
         </encodingDesc>
+        <profileDesc>
+            <particDesc>
+                <listPerson>
+                    <person xml:id="pers_WCDH001">
+                        <persName>
+                            <forename type="first">Eliza</forename>
+                            <forename type="middle">Baylies</forename>
+                            <surname type="birth">Chapin</surname>
+                            <surname type="married">Wheaton</surname>
+                            <addName>Wife</addName>
+                        </persName>
+                        <birth when="1809-09-27">
+                            <placeName>
+                                <geogName>Northbridge Hill</geogName>
+                                <settlement>Northbridge</settlement>
+                                <region>Massachusetts</region>
+                            </placeName>
+                        </birth>
+                        <sex value="2"/>
+                        <residence notBefore="1817">
+                            <placeName>
+                                <settlement>Sutton</settlement>
+                                <region>Massachusetts</region>
+                            </placeName>
+                        </residence>
+                        <residence notBefore="1823">
+                            <placeName>
+                                <geogName>Baylies Hill</geogName>
+                                <settlement>Uxbridge</settlement>
+                                <region>Massachusetts</region>
+                            </placeName>
+                        </residence>
+                        <education>
+                            <orgName ref="#org_WCDH2">Uxbridge Academy</orgName>
+                            <orgName ref="#org_WCDH3">Boston Young Ladies' Academy</orgName>
+                        </education>
+                        <faith>Congregational</faith>
+                        <state notBefore="1829-06-25" type="married" notAfter="1865"/>
+                        <residence notBefore="1829-06-25">
+                            <settlement>Norton</settlement>
+                            <region>Massachusetts</region>
+                        </residence>
+                        <death when="1905"/>
+                    </person>
+                    <person xml:id="pers_WCDH002" ana="bk:to bk:accountHolder">
+                        <persName>
+                            <forename type="first">Laban</forename>
+                            <forename type="middle">Morey</forename>
+                            <surname>Wheaton</surname>
+                            <addName>Husband</addName>
+                            <addName>Husb.</addName>
+                        </persName>
+                        <birth when="1796-09-14">
+                            <placeName>
+                                <settlement>Norton</settlement>
+                                <region>Massachusetts</region>
+                            </placeName>
+                        </birth>
+                        <sex value="1"/>
+                        <education>
+                            <orgName notAfter="1817" ref="#org_WCDH4">Brown University</orgName>
+                        </education>
+                        <education>read law</education>
+                        <faith>Congregational</faith>
+                        <state notBefore="1829-06-25" type="married"/>
+                        <occupation>
+                            <roleName>Postmaster</roleName>
+                        </occupation>
+                        <affiliation>
+                            <roleName>Representative <orgName ref="#org_WCDH5">Massachusetts General
+                                Court</orgName>
+                            </roleName>
+                        </affiliation>
+                        <occupation>
+                            <roleName>Member <orgName ref="#org_WCDH6">Massachusetts Governor's
+                                Council</orgName>
+                            </roleName>
+                        </occupation>
+                        <affiliation>
+                            <roleName>Trustee</roleName>
+                            <orgName ref="#org_WCDH7">State Industrial School for Girls</orgName>
+                        </affiliation>
+                        <death when="1865">
+                            <placeName>
+                                <settlement>Norton</settlement>
+                            </placeName>
+                        </death>
+                    </person>
+                    <!-- ... -->
+                    <person xml:id="pers_WCDH699">
+                        <persName>
+                            <forename>Samuel</forename>
+                            <surname>Wrigley</surname>
+                        </persName>
+                        <sex value="1"/>
+                    </person>
+                    <person xml:id="pers_WCDH700">
+                        <persName>
+                            <forename>Samuel</forename>
+                            <surname>Wrigley</surname>
+                            <genName>Junior</genName>
+                        </persName>
+                        <sex value="1"/>
+                    </person>
+                    <person xml:id="pers_WCDH701">
+                        <persName>
+                            <roleName>Mrs.</roleName>
+                            <surname>Wrigley</surname>
+                        </persName>
+                        <sex value="2"/>
+                    </person>
+                    
+                </listPerson>
+            </particDesc>
+        </profileDesc>
     </teiHeader>
     <text>
         <body>
             <div type="example">
-                <!-- Beispiel aus ontolgy_example -->
-                <head>Example - <name ana="bk:to" ref="#pers_WCDH002">Laban Morey
-                    Wheaton</name>Laban Morey Wheaton Day Book</head><!--bk:accountholder hinzufügen? -->
-                <p>Samuel Wrigley buys 0.5 bushel spring rye from Laban Morey Wheaton and pays 53
-                    cents</p>
+              
+                <head><name ana="bk:to" ref="#pers_WCDH002">Laban Morey
+                    Wheaton</name>Laban Morey Wheaton Day Book</head><!--aus listPerson bk:to wird ignoriert bzw. nicht verarbeitet-->
+                
                 <table>
                     <head>
                         <date ana="bk:when" when="1828-09-15">Monday September-15th-1828</date>
@@ -62,7 +176,7 @@
                             <name ana="bk:from" type="person" ref="#pers_WCDH699">Samuel
                                 Wrigley</name>
                             <choice>
-                                <abbr ana="bk:debit">Dr</abbr>
+                                <abbr ana="bk:debit">Dr</abbr><!--SST: funktioniert nicht - auskommentieren in TORDF?-->
                                 <expan>Debtor</expan>
                             </choice>
                             <lb/>To <measure ana="bk:commodity" unit="bushel" quantity="0.5"

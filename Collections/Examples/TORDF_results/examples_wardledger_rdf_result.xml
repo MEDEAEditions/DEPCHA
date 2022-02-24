@@ -33,24 +33,15 @@
                                 <depcha:numberOfPlaces>1</depcha:numberOfPlaces>
                                 <depcha:accountHolder
                                                 rdf:resource="https://gams.uni-graz.at/context:depcha.example#"/>
-                                <depcha:aggregates>
-                                                <depcha:Aggregation
-                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.wardledgerAggregation#1934">
-                                                  <bk:when>1934</bk:when>
-                                                  <bk:unit
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#"/>
-                                                  <bk:debit>0</bk:debit>
-                                                  <bk:credit>0</bk:credit>
-                                                </depcha:Aggregation>
-                                </depcha:aggregates>
+                                <!--193400-->
                 </depcha:Dataset>
                 <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.wardledger#T1">
                                 <gams:isMemberOfCollection
                                                 rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
                                 <gams:isPartOf
                                                 rdf:resource="https://gams.uni-graz.at/o:depcha.example.wardledger"/>
-                                <bk:entry>Leslie &amp; Godwin Ld Insurance for 1 month L12500 4 14
-                                                5</bk:entry>
+                                <bk:entry>Leslie &amp; Godwin Limited Insurance for 1 month L12500 4
+                                                14 5</bk:entry>
                                 <bk:when>1934-08-01</bk:when>
                                 <bk:consistsOf>
                                                 <bk:Transfer
@@ -176,6 +167,6 @@
                 </bk:EconomicUnit>
                 <bk:EconomicUnit
                                 rdf:about="https://gams.uni-graz.at/context:depcha.example#LeslieGodwinLd">
-                                <rdfs:label>Leslie &amp; Godwin Ld</rdfs:label>
+                                <rdfs:label>Leslie &amp; Godwin Limited</rdfs:label>
                 </bk:EconomicUnit>
 </rdf:RDF>

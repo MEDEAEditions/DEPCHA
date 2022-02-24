@@ -3,7 +3,8 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Example Schlandersberger</title>
+                <title>Example Schlandersberger Rechnungen</title>
+                <editor>Sabrina Strutz</editor>
             </titleStmt>
             <publicationStmt>
                 <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
@@ -11,7 +12,7 @@
                 <ref target="context:depcha.example" type="context">Examples</ref>
             </publicationStmt>
             <sourceDesc>
-                <p>Information about the source</p>
+                <p>This is an exemplary extract of the above-named dataset of the DEPCHA collection.</p>
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
@@ -29,12 +30,40 @@
                 </prefixDef>
             </listPrefixDef>
         </encodingDesc>
+        <profileDesc>
+            <particDesc>
+                <listPerson ana="bk:index">
+                    <head> Prosopographie </head>
+                    <desc> Personen, die in den Schlandersberger Rechungen namentlicht erwähnt werden. </desc>
+                    <person xml:id="pers_SR001">
+                        <persName>
+                            <forename>Hans </forename>
+                            <surname>Kelner </surname>
+                            <addName>Buchhalter/Verwalter</addName>
+                        </persName>
+                    </person>
+                    <!-- ... -->
+                    <person xml:id="pers_SR051">
+                        <persName>
+                            <forename>Anderlein </forename>
+                            <addName>Fischer </addName>
+                        </persName>
+                    </person>
+                    <person xml:id="pers_SR052">
+                        <persName>
+                            <forename>Herr </forename>
+                            <surname>Kaspar </surname>
+                            <addName>Herr von Hans Kelner </addName>
+                        </persName>
+                    </person>
+                    <!-- ... -->
+                </listPerson>
+            </particDesc>
+        </profileDesc>
     </teiHeader>
     <text>
         <body>
             <div type="example">
-                <head>Example - Schlandersberger Rechnungen, 1402</head>
-                <p>The "obgeschriben visser" gave 18 pounds of fish.</p>
                 <p> Nota das ist die zetel<lb/> Raigister 1 des <name ref="#pers_SR001"
                         type="person" ana="bk:to"> hans <damage><supplied reason="missing"
                                 >[kelner]</supplied></damage></name>
