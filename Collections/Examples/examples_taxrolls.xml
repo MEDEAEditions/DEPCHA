@@ -12,7 +12,10 @@
                 <ref target="context:depcha.example" type="context">Examples</ref>
             </publicationStmt>
             <sourceDesc>
-                <p>This is an examplary extract of the above-named dataset of the DEPCHA collection.</p>
+                <p>This is an exemplary extract of the above-named dataset of the DEPCHA collection.
+                    It might differ from the original dataset due to eventual adaptions that should
+                    help to understand the possibilities of mapping different contents to the
+                    Bookkeeping Ontology.</p>
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
@@ -30,18 +33,18 @@
                 </prefixDef>
             </listPrefixDef>
             <unitDecl>
-                <unitDef type="currency" xml:id="livres" ana="bk:mainCurrency">
-                    <label xml:lang="en">livres</label>
+                <unitDef type="currency" xml:id="livre" ana="bk:mainCurrency">
+                    <label xml:lang="en">livre</label>
                     <country>France</country>
-                    <conversion fromUnit="#livres" toUnit="#sous" formula="$fromUnit div 20"/>
-                    <conversion fromUnit="#livres" toUnit="#deniers" formula="$fromUnit div 240"/>
+                    <conversion fromUnit="#livre" toUnit="#sou" formula="$fromUnit div 20"/>
+                    <conversion fromUnit="#livre" toUnit="#denier" formula="$fromUnit div 240"/>
                 </unitDef>
-                <unitDef type="currency" xml:id="sous">
-                    <label xml:lang="en">sous</label>
+                <unitDef type="currency" xml:id="sou">
+                    <label xml:lang="en">sou</label>
                     <country>France</country>
                 </unitDef>
-                <unitDef type="currency" xml:id="deniers">
-                    <label xml:lang="en">deniers</label>
+                <unitDef type="currency" xml:id="denier">
+                    <label xml:lang="en">denier</label>
                     <country>France</country>
                 </unitDef>
             </unitDecl>
@@ -52,7 +55,6 @@
             </langUsage>
             <particDesc>
                 <listPerson ana="bk:index">
-
                     <person xml:id="P04" ana="bk:to">
                         <persName key="Philippe IV &apos;le Bel&apos;, roi de France" type="reg">
                             <forename>Philippe</forename>
@@ -83,6 +85,7 @@
                             </label>
                         </state>
                     </person>
+                    <!-- ... -->
                     <person xml:id="PR01">
                         <persName source="#item_yc5_2zg_ghb" when="1313">
                             <forename>Phelippe</forename>
@@ -116,6 +119,7 @@
                             <desc type="source">chandelier</desc>
                         </occupation>
                     </person>
+                    <!-- ... -->
                     <person xml:id="RN04">
                         <persName source="#item_cdj_d5h_3hb" when="1297">
                             <forename>Remi</forename>

@@ -12,7 +12,10 @@
                 <ref target="context:depcha.example" type="context">Examples</ref>
             </publicationStmt>
             <sourceDesc>
-                <bibl>This is an exemplary extract of the above-named dataset of the DEPCHA collection.</bibl>
+                <bibl>This is an exemplary extract of the above-named dataset of the DEPCHA collection.
+                    It might differ from the original dataset due to eventual adaptions that should
+                    help to understand the possibilities of mapping different contents to the
+                    Bookkeeping Ontology.</bibl>
                 <msDesc>
                     <msIdentifier>
                         <idno>S.124.3</idno>
@@ -33,7 +36,7 @@
                         </msItem>
                     </msContents>
                 </msDesc>
-                <listPlace>
+                <listPlace ana="bk:index">
                     <place xml:id="barrow">
                         <placeName>Barrow</placeName>
                         <location>
@@ -56,7 +59,7 @@
                 </listPlace>
                 <listOrg>
                     <org xml:id="LeslieGodwinLd">
-                        <orgName> Leslie &amp; Godwin Ld </orgName>
+                        <orgName>Leslie &amp; Godwin Limited</orgName>
                         <desc>Insurance broker</desc>
                     </org>
                 </listOrg>
@@ -89,7 +92,7 @@
                             <date ana="bk:when" when="1934-08-01"/>
                         </cell>
                         <cell>
-                            <name ana="bk:to" ref="#LeslieGodwinLd">Leslie &amp; Godwin Limited</name>
+                            <name ana="bk:to" ref="#LeslieGodwinLd">Leslie &amp; Godwin Ld</name>
                             <measure ana="bk:service" commodity="Insurance">Insurance for 1 month
                                 L12500</measure>
                         </cell>
