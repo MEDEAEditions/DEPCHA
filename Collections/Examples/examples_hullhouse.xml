@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Example Hull House</title>
+                <editor>Sabrina Strutz</editor>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+                <idno type="PID">o:depcha.example.hullhouse</idno>
+                <ref target="context:depcha.example" type="context">Examples</ref>
+            </publicationStmt>
+            <sourceDesc>
+                <p>This is an exemplary extract of the above-named dataset of the DEPCHA collection.
+                    It might differ from the original dataset due to eventual adaptions that should
+                    help to understand the possibilities of mapping different contents to the
+                    Bookkeeping Ontology.</p>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <listPrefixDef>
+                <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+                    <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs. </p>
+                </prefixDef>
+                <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="http://www.wikidata.org/wiki/$1">
+                    <p>
+                        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+                    </p>
+                </prefixDef>
+            </listPrefixDef>
+        </encodingDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="example">
+                <span><date ana="bk:when" when="1895-01-01">Jan'y 1&lt;span style="text-decoration:
+                        underline;"&gt;st&lt;/span&gt; 1895</date>&lt;br /&gt;&lt;br /&gt;We the
+                    undersigned hereby agree to give the sums set opposite our respective names for
+                    the current expenses of <name ana="bk:to" ref="hullhouse">Hull House</name>.&lt;br /&gt;&lt;br
+                        /&gt;<span ana="bk:entry"><date ana="bk:when" when="1895-01-01">Jan 1</date>
+                        <name ana="bk:from">William Colvin</name>
+                        <measure ana="bk:money" quantity="500" unit="dollar">500</measure>
+                        <span ana="bk:status">pd.</span></span>&lt;br /&gt;
+                    <span ana="bk:entry"><date ana="bk:when" when="1895-06-02">June 2"</date>
+                        <name ana="bk:from">Mrs Barbara Armour</name>
+                        <measure ana="bk:money" quantity="300" unit="dollar">300</measure>
+                        <span ana="bk:status">pd.</span></span>&lt;br /&gt;<span ana="bk:entry"
+                            ><date ana="bk:when" when="1895-06-06">June 6"</date>
+                        <name ana="bk:from">Seymour Coman</name>
+                        <measure ana="bk:money" quantity="200" unit="dollar">200</measure>
+                        <span ana="bk:status">pd.</span></span>&lt;br /&gt;<span ana="bk:entry"
+                            ><date ana="bk:when" when="1895-06-18">June 18"</date>
+                        <name ana="bk:from">John R. Walsh</name>
+                        <measure ana="bk:money" quantity="200" unit="dollar">$200</measure>
+                        <span ana="bk:status">pd.</span></span>&lt;br /&gt;
+                    <span ana="bk:entry"><date ana="bk:when" when="1895-10-14">Oct
+                        14</date>"&amp;nbsp; <name ana="bk:from">L. J. Gage</name>
+                        <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span
+                            ana="bk:status">pd.</span></span>&lt;br /&gt;<span ana="bk:entry"><date
+                            ana="bk:when" when="1895-06-17">June 17"</date>
+                        <name ana="bk:from">Mrs George E. Adams</name>
+                        <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span
+                            ana="bk:status">Pd.</span></span>&lt;br /&gt;<span ana="bk:entry"><date
+                            ana="bk:when" when="1895-06-18">June 18"</date>
+                        <name ana="bk:from">Mrs Cyrus H. McCormick</name>
+                        <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span
+                            ana="bk:status">Pd.</span></span>&lt;br /&gt;<span ana="bk:entry"><date
+                            ana="bk:when" when="1895-01-23">Jan 23rd</date>
+                        <name ana="bk:from">Sprauge Warner &amp;amp; Co</name>
+                        <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span
+                            ana="bk:status">Pd.</span></span>&lt;br /&gt;<span ana="bk:entry"><date
+                            ana="bk:when" when="1895-01-28">Jan 28"</date>
+                        <name ana="bk:from">Franklin McVeagh &amp;amp; Co</name>
+                        <measure ana="bk:money" quantity="100" unit="dollar">100</measure>
+                        <span ana="bk:status">Pd.</span></span>&lt;br /&gt;<span ana="bk:entry"
+                            ><date ana="bk:when" when="1895-10-28">Oct 28"</date>
+                        <name ana="bk:from">C. L. Hutchinson</name>
+                        <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span
+                            ana="bk:status">Pd.</span></span>&lt;br /&gt;<span ana="bk:entry"><date
+                            ana="bk:when" when="1895-08-06">Aug 6"</date>
+                        <name ana="bk:from">W. A. McConnell</name>
+                        <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span
+                            ana="bk:status">Pd.</span></span>&lt;br /&gt;<span ana="bk:entry"><date
+                            ana="bk:when" when="1895-09-12">Sept 12"</date>
+                        <name ana="bk:from">Walter C. Hately</name>
+                        <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span
+                            ana="bk:status">Pd.</span></span>&lt;br /&gt;<span ana="bk:entry"><date
+                            ana="bk:when" when="1895-11-06">Nov 6"</date>
+                        <name ana="bk:from">Mrs Joseph Bowen</name>
+                        <measure ana="bk:money" quantity="750" unit="dollar">750</measure>
+                        <span ana="bk:status">Pd.</span></span>&lt;br /&gt;<span ana="bk:entry"
+                            ><date ana="bk:when" when="1895-06-06">June 6</date>
+                        <name ana="bk:from">Enos McBarton</name>
+                        <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span
+                            ana="bk:status">Pd.</span></span>&lt;br /&gt;<span ana="bk:entry"><date
+                            ana="bk:when" when="1895-07-06">July 6"</date>
+                        <name ana="bk:from">Mary R. Smith</name>
+                        <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span
+                            ana="bk:status">Pd.</span></span>&lt;br /&gt;<span ana="bk:entry"><date
+                            ana="bk:when" when="1895-01-09">Jan 9"</date>
+                        <name ana="bk:from">Edward B. Butler</name>
+                        <measure ana="bk:money" quantity="50" unit="dollar">50</measure>
+                        <span ana="bk:status">Pd</span> </span>&lt;br /&gt;
+                    &lt;pre&gt;&lt;code&gt;&amp;nbsp;&lt;/code&gt;&lt;/pre&gt;</span>
+            </div>
+        </body>
+    </text>
+</TEI>

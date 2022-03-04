@@ -112,7 +112,7 @@
           <p>One possible way of annotating a digital edition - and that's the practice suggested in
             this tutorial - is to create an XML/TEI. The structure in the source above describes two
               <span type="tooltip"><code>bk:Transaction</code><note>Remember: bk:Transaction starts
-                with upper case, because it represents a class.</note></span> with their textual
+                with upper case, because it represents a class.</note></span> entities with their textual
             representation in two rows. Having a look at the first row that represents a <span
               type="tooltip"><code>bk:entry</code><note>Remember: bk:entry is written small as it
                 represents a data property and not a class.</note></span> we can summarize the
@@ -365,7 +365,7 @@
                 <code>bk:Transfer</code> now - one transferring powder, sugar and shot, the other
               transferring 7 shillings and 6 pence.</p>
             <p>Let's define the directions of the flow of assets for the first
-                <code>bk:Transaction</code>which can be summarized like shown below: <list>
+                <code>bk:Transaction</code> which can be summarized like shown below: <list>
                 <item>
                   <hi rend="italic">powder, sugar, shot from Stagville to James Haley</hi>
                 </item>
@@ -477,8 +477,8 @@
           <div xml:id="economic_goods">
             <head>Economic Goods</head>
             <p>Before we look into specific classes and their annotation let's go back to the
-              different <code>bk:EconomicAsset</code> that we have already seen and that can either
-              be <code>bk:Money</code> or different kinds of <code>bk:EconomicGood</code>. As
+              different <code>bk:EconomicAsset</code> entities that we have already seen and that can either
+              be <code>bk:Money</code> or different kinds of <code>bk:EconomicGood</code> entries. As
               mentioned in the chapter about the basics the latter can be divided into three
               classes:</p>
             <p><hi rend="bold">1. Commodity</hi></p>
@@ -2026,7 +2026,7 @@
                 ><![CDATA[<listPers>]]></code> section that can be annotated with a
                 <code>bk:index</code> if you wish to extract the person details to the RDF. Now,
               another essential information in any <code>bk:Transaction</code> is about which
-                <code>bk:EconomicAssets</code> are involved. In this case we can see that the <code
+                <code>bk:EconomicAsset</code> entities are involved. In this case we can see that the <code
                 rend="element"><![CDATA[<measure>]]></code> elements in the two
                 <code>bk:entry</code> each contain a <code>bk:MonetaryValue</code>: <hi
                 rend="italic">8 sou</hi> in the first and <hi rend="italic">24 sou</hi> in the
@@ -2063,10 +2063,10 @@
             <p>In the first section about the <code rend="element"
                 ><![CDATA[<depcha:Dataset>]]></code> we are able to find some general information of
               the collection and about the results of some counting processes concerning the number
-              of <code>bk:Transaction</code>, <code>bk:EconomicUnit</code>,
-                <code>bk:EconomicGood</code> and so on. For the tax rolls example we can count 2
-                <code>bk:Transaction</code>, 3 <code>bk:EconomicUnit</code> and there are 2
-                <code>bk:MonetaryValue</code> to be counted each in form of a <code>bk:Tax</code>.
+              of <code>bk:Transaction</code> entities, <code>bk:EconomicUnit</code> entities,
+                <code>bk:EconomicGood</code> entities and so on. For the tax rolls example we can count 2
+              <code>bk:Transaction</code>, 3 <code>bk:EconomicUnit</code> and there are 2
+              <code>bk:MonetaryValue</code> to be counted each in form of a <code>bk:Tax</code>.
               Nested in the <code rend="element">
                 <![CDATA[<depcha:Dataset>]]></code> we can also see a <code rend="element">
                 <![CDATA[<depcha:isMainCurrency>]]></code> and 3 <code rend="element">
@@ -2089,10 +2089,11 @@
                 sou</hi>.
               <!-- SST: Funktioniert noch nicht: At the end of the RDF we can find details on all the 
                   <code>bk:EconomicUnit</code> that is retrieved from the <code rend="element"
-                ><![CDATA[<listPers>]]></code, because in the TEI we added a <code>bk:index</code> to it. 
-                Moreover, all the <code>bk:MonetaryUnit</code> are represented in the RDF plus details referring to the 
-                <code>bk:Conversion</code> of the currency that was annotated as <code>bk:mainCurrency</code> in the TEI. -->
-            </p>
+                ><![CDATA[<listPers>]]></code, because in the TEI we added a <code>bk:index</code> to it. -->
+              Moreover, all the <code>bk:MonetaryUnit</code> are represented in the RDF plus details
+              referring to the <code>bk:Conversion</code> of the currency that was annotated as
+                <code>bk:mainCurrency</code> in the TEI which in this case was the <hi rend="italic"
+                >livre</hi>. </p>
 
 
             <p><hi rend="bold">3. WardLedger</hi></p>
@@ -2425,8 +2426,8 @@
               the language and the source are extracted and fill up metadata elements from the <ref
                 target="https://www.dublincore.org/specifications/dublin-core/dces/">Dublin
                 Core</ref>. After this section we see the results of the arithmetic operations: we
-              do have a total of 2 <code>bk:Transaction</code>, 2 <code>bk:EconomicUnit</code>, 6 <!-- SST: sollte nur 2 anzeigen!-->
-              <code>bk:MonetaryValue</code> and 2 <code>bk:EconomicGood</code>. As we annotated one
+              do have a total of 2 <code>bk:Transaction</code> entities, 2 <code>bk:EconomicUnit</code> entities, 6 <!-- SST: sollte nur 2 anzeigen!-->
+              <code>bk:MonetaryValue</code> entities and 2 <code>bk:EconomicGood</code> entities. As we annotated one
               place with <code>bk:where</code> inside the <code rend="element"
                 ><![CDATA[<body>]]></code> of the TEI we can also find a <hi rend="italic">1</hi> in
               the <code rend="element"><![CDATA[<depcha:numberOfPlaces>]]></code> element.
@@ -2434,7 +2435,7 @@
                 element tells us that all <code>bk:Transaction</code> operations took place in <hi rend="italic">1934</hi>.-->
               A more specific declaration of the date of each <code>bk:entry</code> can be found in
               the <code rend="element"><![CDATA[<bk:when>]]></code> of each
-                <code>bk:Transaction</code>. The attribution of the two <code>bk:EconomicGood</code>
+                <code>bk:Transaction</code>. The attribution of the two <code>bk:EconomicGood</code> entities
               in the TEI is reproduced accordingly in the RDF where the insurances are not only
               defined as <code>bk:Service</code>, but also obtain a <code>bk:classified</code> that
               helps us understand that the <code>bk:Service</code> traded in this booking account is
@@ -2504,14 +2505,14 @@
                 <code>bk:when</code> to be fit for a transformation.</p>
             <p>The result of a transformation to an RDF format would then look like this:</p>
             <ab><code rend="block" lang="XML">
-                <![CDATA[<>]]>
+                <![CDATA[<Comingsoon>]]>
               </code>
               <caption>The example of the Wheaton Day Book put into an RDF outfit</caption></ab>
             <p>To begin with let us look into the information available in the <code rend="element"
                 ><![CDATA[<depcha:Dataset>]]></code>: the arithemetic processes provide us with the
               result of <hi rend="italic">1</hi>
               <code>bk:Transaction</code>, <hi rend="italic">2</hi>
-              <code>bk:EconomicUnit</code>, <hi rend="italic">1</hi>
+              <code>bk:EconomicUnit</code> entities, <hi rend="italic">1</hi>
               <code>bk:MonetaryValue</code> and <hi rend="italic">1</hi>
               <code>bk:EconomicGood</code>. As we can see, also the <code>bk:accountHolder</code>
               was extracted correctly. Now, looking at the section about the
@@ -2525,8 +2526,8 @@
               information about the direction of this <code>bk:Transfer</code>: the
                 <code>bk:Commodity</code> was transferred from <hi rend="italic">#pers_WCDC002</hi>
               to <hi rend="italic">#pers_WCDH699</hi>. A resolution of those two identifiers can be
-              found in the section after all the <code>bk:Transaction</code> in the <code
-                rend="element"><![CDATA[<bk:EconomicUnit>]]></code> elements where the <code
+              found in the section after all the <code>bk:Transaction</code> entitites in the <code
+                rend="element"><![CDATA[<bk:EconomicUnit>]]></code> entities where the <code
                 rend="element"><![CDATA[<rdfs:label>]]></code> contains the literal expression. The
               second <code rend="element"><![CDATA[<bk:Transfer>]]></code> consists of details about
               the <code>bk:MonetaryValue</code> comprising all the data that was annotated in the

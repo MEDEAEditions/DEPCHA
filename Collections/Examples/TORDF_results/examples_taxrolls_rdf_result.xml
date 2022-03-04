@@ -24,18 +24,18 @@
                                                 rdf:resource="https://gams.uni-graz.at/o:depcha.example.taxrolls"/>
                                 <depcha:numberOfTransactions>2</depcha:numberOfTransactions>
                                 <depcha:numberOfEconomicUnits>3</depcha:numberOfEconomicUnits>
-                                <depcha:numberOfMonetaryValues>0</depcha:numberOfMonetaryValues>
+                                <depcha:numberOfMonetaryValues>2</depcha:numberOfMonetaryValues>
                                 <depcha:numberOfEconmicGoods>0</depcha:numberOfEconmicGoods>
                                 <depcha:accountHolder
                                                 rdf:resource="https://gams.uni-graz.at/context:depcha.example#"/>
                                 <depcha:currency
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#livres"/>
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#livre"/>
                                 <depcha:isMainCurrency
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#livres"/>
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#livre"/>
                                 <depcha:currency
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#sous"/>
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#sou"/>
                                 <depcha:currency
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#deniers"/>
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#denier"/>
                                 <!--129700-->
                 </depcha:Dataset>
                 <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T1">
@@ -91,36 +91,36 @@
                 <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#P04"/>
                 <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#PR01"/>
                 <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#RN04"/>
-                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#livres">
-                                <rdfs:label>livres</rdfs:label>
+                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#livre">
+                                <rdfs:label>livre</rdfs:label>
                                 <dc:coverage>France</dc:coverage>
                                 <dc:coverage>France</dc:coverage>
                 </bk:MonetaryUnit>
                 <bk:Conversion
-                                rdf:about="https://gams.uni-graz.at/context:depcha.example#livresConversion">
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#livreConversion">
                                 <bk:convertsFrom
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#livres"/>
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#livre"/>
                                 <bk:convertsTo
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#sous"/>
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#sou"/>
                                 <bk:formula>$fromUnit div 20</bk:formula>
                                 <bk:divider>20</bk:divider>
                 </bk:Conversion>
                 <bk:Conversion
-                                rdf:about="https://gams.uni-graz.at/context:depcha.example#livresConversion">
+                                rdf:about="https://gams.uni-graz.at/context:depcha.example#livreConversion">
                                 <bk:convertsFrom
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#livres"/>
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#livre"/>
                                 <bk:convertsTo
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#deniers"/>
+                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#denier"/>
                                 <bk:formula>$fromUnit div 240</bk:formula>
                                 <bk:divider>240</bk:divider>
                 </bk:Conversion>
-                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#sous">
-                                <rdfs:label>sous</rdfs:label>
+                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#sou">
+                                <rdfs:label>sou</rdfs:label>
                                 <dc:coverage>France</dc:coverage>
                                 <dc:coverage>France</dc:coverage>
                 </bk:MonetaryUnit>
-                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#deniers">
-                                <rdfs:label>deniers</rdfs:label>
+                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#denier">
+                                <rdfs:label>denier</rdfs:label>
                                 <dc:coverage>France</dc:coverage>
                                 <dc:coverage>France</dc:coverage>
                 </bk:MonetaryUnit>
