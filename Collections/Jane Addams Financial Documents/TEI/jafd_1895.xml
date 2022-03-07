@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Jane Addams Financial Documents</title>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+            <idno type="PID">o:depcha.schlandersberger.1</idno>
+            <ref target="context:depcha.schlandersberger" type="context">Jane Addams Financial
+               Documents</ref>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier xml:lang="de">
+                  <!-- SST: Anpassen! -->
+                  <country>Italien</country>
+                  <settlement>Bozen</settlement>
+                  <institution>Südtiroler Landesarchiv</institution>
+                  <idno>Archiv Kasten, Codex 3,2</idno>
+                  <msName>Schlandersberger Rechnungen</msName>
+               </msIdentifier>
+               <msContents>
+                  <msItem>
+                     <title>Schlandersberger Rechnungen, , Codex 3,</title>
+                     <docAuthor>XY</docAuthor>
+                     <docDate>1402</docDate>
+                     <textLang>
+                        <lang>German</lang>
+                     </textLang>
+                  </msItem>
+               </msContents>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+               <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                  bookkeeping ontology and can be extended to respective URIs. </p>
+            </prefixDef>
+            <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="http://www.wikidata.org/wiki/$1">
+               <p>
+                  <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+               </p>
+            </prefixDef>
+         </listPrefixDef>
+         <unitDecl>
+            <unitDef ref="wd:Q159505" type="currency" xml:id="Groschen">
+               <label xml:lang="de">Groschen</label>
+            </unitDef>
+            <unitDef ref="wd:Q4281830" type="currency" xml:id="Mark">
+               <label xml:lang="de">Mark</label>
+            </unitDef>
+            <unitDef ref="wd:Q165717" type="currency" xml:id="lb" ana="bk:mainCurrency">
+               <label xml:lang="de">lb</label>
+               <!-- fake conversion: -->
+               <conversion fromUnit="#lb" toUnit="#Mark" formula="$fromUnit div 2"/>
+               <conversion fromUnit="#lb" toUnit="#Groschen" formula="$fromUnit div 4"/>
+            </unitDef>
+            <unitDef ref="wd:Q100995" type="weight" xml:id="Pfund">
+               <label xml:lang="de">Pfund</label>
+            </unitDef>
+            <unitDef ref="wd:Q137958" type="volume" xml:id="Mütt">
+               <label xml:lang="de">Mütt</label>
+            </unitDef>
+            <unitDef ref="wd:XXX" type="volume" xml:id="Wagen">
+               <label xml:lang="de">Wagen</label>
+            </unitDef>
+            <unitDef ref="wd:XXX" type="weight" xml:id="Ammer">
+               <label xml:lang="de">Ammer</label>
+            </unitDef>
+            <unitDef ref="wd:XXX" type="weight" xml:id="Schöt">
+               <label xml:lang="de">Schöt</label>
+            </unitDef>
+            <unitDef ref="wd:XXX" type="volume" xml:id="Lägl">
+               <label xml:lang="de">Lägl</label>
+            </unitDef>
+            <unitDef ref="wd:XXX" type="volume" xml:id="Urne">
+               <label xml:lang="de">Urne</label>
+            </unitDef>
+            <unitDef ref="wd:XXX" type="volume" xml:id="Puntze">
+               <label xml:lang="de">Puntze</label>
+            </unitDef>
+         </unitDecl>
+      </encodingDesc>
+      <profileDesc> </profileDesc>
+   </teiHeader>
+   <text><div><date ana="bk:when" when="1895-01-01">Jan'y 1&lt;span style="text-decoration:
+            underline;"&gt;st&lt;/span&gt; 1895</date><lb/><lb/>We the undersigned hereby agree to
+         give the sums set opposite our respective names for the current expenses of <name
+            ana="bk:to">Hull House</name>.<lb/><lb/><seg ana="bk:entry"><date ana="bk:when"
+               when="1895-01-01">Jan 1</date>
+            <name ana="bk:from">William Colvin</name>
+            <measure ana="bk:money" quantity="500" unit="dollar">500</measure>
+            <span ana="bk:status">pd.</span></seg><lb/>
+         <span ana="bk:entry"><date ana="bk:when" when="1895-06-02">June 2"</date>
+            <name ana="bk:from">Mrs Barbara Armour</name>
+            <measure ana="bk:money" quantity="300" unit="dollar">300</measure>
+            <span ana="bk:status">pd.</span></span><lb/><span ana="bk:entry"><date ana="bk:when"
+               when="1895-06-06">June 6"</date>
+            <name ana="bk:from">Seymour Coman</name>
+            <measure ana="bk:money" quantity="200" unit="dollar">200</measure>
+            <span ana="bk:status">pd.</span></span><lb/><span ana="bk:entry"><date ana="bk:when"
+               when="1895-06-18">June 18"</date>
+            <name ana="bk:from">John R. Walsh</name>
+            <measure ana="bk:money" quantity="200" unit="dollar">$200</measure>
+            <span ana="bk:status">pd.</span></span><lb/>
+         <span ana="bk:entry"><date ana="bk:when" when="1895-10-14">Oct 14</date>"&amp;nbsp; <name
+               ana="bk:from">L. J. Gage</name>
+            <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span ana="bk:status"
+               >pd.</span></span><lb/><span ana="bk:entry"><date ana="bk:when" when="1895-06-17"
+               >June 17"</date>
+            <name ana="bk:from">Mrs George E. Adams</name>
+            <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span ana="bk:status"
+               >Pd.</span></span><lb/><span ana="bk:entry"><date ana="bk:when" when="1895-06-18"
+               >June 18"</date>
+            <name ana="bk:from">Mrs Cyrus H. McCormick</name>
+            <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span ana="bk:status"
+               >Pd.</span></span><lb/><span ana="bk:entry"><date ana="bk:when" when="1895-01-23">Jan
+               23rd</date>
+            <name ana="bk:from">Sprauge Warner &amp;amp; Co</name>
+            <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span ana="bk:status"
+               >Pd.</span></span><lb/><span ana="bk:entry"><date ana="bk:when" when="1895-01-28">Jan
+               28"</date>
+            <name ana="bk:from">Franklin McVeagh &amp;amp; Co</name>
+            <measure ana="bk:money" quantity="100" unit="dollar">100</measure>
+            <span ana="bk:status">Pd.</span></span><lb/><span ana="bk:entry"><date ana="bk:when"
+               when="1895-10-28">Oct 28"</date>
+            <name ana="bk:from">C. L. Hutchinson</name>
+            <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span ana="bk:status"
+               >Pd.</span></span><lb/><span ana="bk:entry"><date ana="bk:when" when="1895-08-06">Aug
+               6"</date>
+            <name ana="bk:from">W. A. McConnell</name>
+            <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span ana="bk:status"
+               >Pd.</span></span><lb/><span ana="bk:entry"><date ana="bk:when" when="1895-09-12"
+               >Sept 12"</date>
+            <name ana="bk:from">Walter C. Hately</name>
+            <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span ana="bk:status"
+               >Pd.</span></span><lb/><span ana="bk:entry"><date ana="bk:when" when="1895-11-06">Nov
+               6"</date>
+            <name ana="bk:from">Mrs Joseph Bowen</name>
+            <measure ana="bk:money" quantity="750" unit="dollar">750</measure>
+            <span ana="bk:status">Pd.</span></span><lb/><span ana="bk:entry"><date ana="bk:when"
+               when="1895-06-06">June 6</date>
+            <name ana="bk:from">Enos McBarton</name>
+            <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span ana="bk:status"
+               >Pd.</span></span><lb/><span ana="bk:entry"><date ana="bk:when" when="1895-07-06"
+               >July 6"</date>
+            <name ana="bk:from">Mary R. Smith</name>
+            <measure ana="bk:money" quantity="100" unit="dollar">100</measure><span ana="bk:status"
+               >Pd.</span></span><lb/><span ana="bk:entry"><date ana="bk:when" when="1895-01-09">Jan
+               9"</date>
+            <name ana="bk:from">Edward B. Butler</name>
+            <measure ana="bk:money" quantity="50" unit="dollar">50</measure>
+            <span ana="bk:status">Pd</span>
+         </span><lb/></div></text>
+</TEI>
