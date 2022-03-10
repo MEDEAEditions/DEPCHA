@@ -1,127 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-                xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:functx="http://www.functx.com"
-                xmlns:gn="http://www.geonames.org/ontology#"
-                xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
-                xmlns:om="http://ontology.eil.utoronto.ca/icity/OM/"
-                xmlns:time="http://www.w3.org/2006/time#" xmlns:schema="https://schema.org/"
-                xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
-                xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-                xmlns:t="http://www.tei-c.org/ns/1.0"
-                xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#"
-                xmlns:foaf="http://xmlns.com/foaf/spec/" xmlns:void="http://rdfs.org/ns/void#">
-                <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls">
-                                <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
-                                <dc:publisher>Institute Centre for Information Modelling, University
-                                                of Graz</dc:publisher>
-                </void:Dataset>
-                <depcha:Dataset
-                                rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#Dataset">
-                                <gams:isMemberOfCollection
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
-                                <gams:isPartOf
-                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.taxrolls"/>
-                                <depcha:numberOfTransactions>2</depcha:numberOfTransactions>
-                                <depcha:numberOfEconomicUnits>3</depcha:numberOfEconomicUnits>
-                                <depcha:numberOfMonetaryValues>2</depcha:numberOfMonetaryValues>
-                                <depcha:numberOfEconmicGoods>0</depcha:numberOfEconmicGoods>
-                                <depcha:accountHolder
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#"/>
-                                <depcha:currency
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#livre"/>
-                                <depcha:isMainCurrency
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#livre"/>
-                                <depcha:currency
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#sou"/>
-                                <depcha:currency
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#denier"/>
-                                <!--129700-->
-                </depcha:Dataset>
-                <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T1">
-                                <gams:isMemberOfCollection
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
-                                <gams:isPartOf
-                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.taxrolls"/>
-                                <bk:entry>Phellippe le chandelier viii s p</bk:entry>
-                                <bk:consistsOf>
-                                                <bk:Transfer
-                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T1T1">
-                                                  <bk:transfers>
-                                                  <bk:Tax
-                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T1T1EA">
-                                                  <bk:unit
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#sou"/>
-                                                  <bk:quantity>8</bk:quantity>
-                                                  </bk:Tax>
-                                                  </bk:transfers>
-                                                  <bk:from
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#P04"/>
-                                                  <bk:to
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#PR01"
-                                                  />
-                                                </bk:Transfer>
-                                </bk:consistsOf>
-                </bk:Transaction>
-                <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T2">
-                                <gams:isMemberOfCollection
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
-                                <gams:isPartOf
-                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.taxrolls"/>
-                                <bk:entry>Remi des napes xxiiii s</bk:entry>
-                                <bk:consistsOf>
-                                                <bk:Transfer
-                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T2T1">
-                                                  <bk:transfers>
-                                                  <bk:Tax
-                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T2T1EA">
-                                                  <bk:unit
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#sou"/>
-                                                  <bk:quantity>24</bk:quantity>
-                                                  </bk:Tax>
-                                                  </bk:transfers>
-                                                  <bk:from
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#P04"/>
-                                                  <bk:to
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#RN04"
-                                                  />
-                                                </bk:Transfer>
-                                </bk:consistsOf>
-                </bk:Transaction>
-                <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#P04"/>
-                <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#PR01"/>
-                <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#RN04"/>
-                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#livre">
-                                <rdfs:label>livre</rdfs:label>
-                                <dc:coverage>France</dc:coverage>
-                                <dc:coverage>France</dc:coverage>
-                </bk:MonetaryUnit>
-                <bk:Conversion
-                                rdf:about="https://gams.uni-graz.at/context:depcha.example#livreConversion">
-                                <bk:convertsFrom
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#livre"/>
-                                <bk:convertsTo
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#sou"/>
-                                <bk:formula>$fromUnit div 20</bk:formula>
-                                <bk:divider>20</bk:divider>
-                </bk:Conversion>
-                <bk:Conversion
-                                rdf:about="https://gams.uni-graz.at/context:depcha.example#livreConversion">
-                                <bk:convertsFrom
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#livre"/>
-                                <bk:convertsTo
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#denier"/>
-                                <bk:formula>$fromUnit div 240</bk:formula>
-                                <bk:divider>240</bk:divider>
-                </bk:Conversion>
-                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#sou">
-                                <rdfs:label>sou</rdfs:label>
-                                <dc:coverage>France</dc:coverage>
-                                <dc:coverage>France</dc:coverage>
-                </bk:MonetaryUnit>
-                <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#denier">
-                                <rdfs:label>denier</rdfs:label>
-                                <dc:coverage>France</dc:coverage>
-                                <dc:coverage>France</dc:coverage>
-                </bk:MonetaryUnit>
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:functx="http://www.functx.com" xmlns:gn="http://www.geonames.org/ontology#"
+    xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
+    xmlns:om="http://ontology.eil.utoronto.ca/icity/OM/" xmlns:time="http://www.w3.org/2006/time#"
+    xmlns:schema="https://schema.org/" xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:t="http://www.tei-c.org/ns/1.0"
+    xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#"
+    xmlns:foaf="http://xmlns.com/foaf/spec/" xmlns:void="http://rdfs.org/ns/void#">
+    <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls">
+        <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
+        <dc:publisher>Institute Centre for Information Modelling, University of Graz</dc:publisher>
+    </void:Dataset>
+    <depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#Dataset">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.taxrolls"/>
+        <depcha:numberOfTransactions>2</depcha:numberOfTransactions>
+        <depcha:numberOfEconomicUnits>3</depcha:numberOfEconomicUnits>
+        <depcha:numberOfMonetaryValues>2</depcha:numberOfMonetaryValues>
+        <depcha:numberOfEconmicGoods>0</depcha:numberOfEconmicGoods>
+        <depcha:accountHolder rdf:resource="https://gams.uni-graz.at/context:depcha.example#"/>
+        <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#livre"/>
+        <depcha:isMainCurrency rdf:resource="https://gams.uni-graz.at/context:depcha.example#livre"/>
+        <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#sou"/>
+        <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#denier"/>
+    </depcha:Dataset>
+    <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T1">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.taxrolls"/>
+        <bk:entry>Phellippe le chandelier viii s p</bk:entry>
+        <bk:when>1297</bk:when>
+        <bk:consistsOf>
+            <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T1T1">
+                <bk:transfers>
+                    <bk:Tax rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T1T1EA">
+                        <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.example#sou"/>
+                        <bk:quantity>8</bk:quantity>
+                    </bk:Tax>
+                </bk:transfers>
+                <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#P04"/>
+                <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#PR01"/>
+            </bk:Transfer>
+        </bk:consistsOf>
+    </bk:Transaction>
+    <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T2">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.taxrolls"/>
+        <bk:entry>Remi des napes xxiiii s</bk:entry>
+        <bk:when>1297</bk:when>
+        <bk:consistsOf>
+            <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T2T1">
+                <bk:transfers>
+                    <bk:Tax rdf:about="https://gams.uni-graz.at/o:depcha.example.taxrolls#T2T1EA">
+                        <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.example#sou"/>
+                        <bk:quantity>24</bk:quantity>
+                    </bk:Tax>
+                </bk:transfers>
+                <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#P04"/>
+                <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#RN04"/>
+            </bk:Transfer>
+        </bk:consistsOf>
+    </bk:Transaction>
+    <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#P04">
+        <foaf:givenName>Philippe</foaf:givenName>
+        <t:genName>IV</t:genName>
+        <schema:additionalName>le Bel</schema:additionalName>
+        <t:nameLink>de</t:nameLink>
+        <t:placeName>France</t:placeName>
+        <rdfs:label>Philippe IV le Bel de France</rdfs:label>
+        <schema:gender rdf:resource="https://schema.org/Male"/>
+        <schema:birthDate/>
+        <schema:deathDate>1314-11-29</schema:deathDate>
+    </bk:EconomicUnit>
+    <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#PR01">
+        <foaf:givenName>Phelippe</foaf:givenName>
+        <t:nameLink>de</t:nameLink>
+        <foaf:familyName>Reins</foaf:familyName>
+        <rdfs:label>Phelippe de Reins</rdfs:label>
+        <schema:gender rdf:resource="https://schema.org/Male"/>
+        <schema:hasOccupation>chandelier</schema:hasOccupation>
+        <schema:hasOccupation>chandelier</schema:hasOccupation>
+        <schema:hasOccupation>chandelier</schema:hasOccupation>
+    </bk:EconomicUnit>
+    <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#RN04">
+        <foaf:givenName>Remi</foaf:givenName>
+        <t:nameLink>des</t:nameLink>
+        <foaf:familyName>napes</foaf:familyName>
+        <rdfs:label>Remi des napes</rdfs:label>
+    </bk:EconomicUnit>
+    <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#livre">
+        <rdfs:label>livre</rdfs:label>
+        <dc:coverage>France</dc:coverage>
+        <dc:coverage>France</dc:coverage>
+    </bk:MonetaryUnit>
+    <bk:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.example#livreConversion">
+        <bk:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.example#livre"/>
+        <bk:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.example#sou"/>
+        <bk:formula>$fromUnit div 20</bk:formula>
+        <bk:divider>20</bk:divider>
+    </bk:Conversion>
+    <bk:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.example#livreConversion">
+        <bk:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.example#livre"/>
+        <bk:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.example#denier"/>
+        <bk:formula>$fromUnit div 240</bk:formula>
+        <bk:divider>240</bk:divider>
+    </bk:Conversion>
+    <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#sou">
+        <rdfs:label>sou</rdfs:label>
+        <dc:coverage>France</dc:coverage>
+        <dc:coverage>France</dc:coverage>
+    </bk:MonetaryUnit>
+    <bk:MonetaryUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#denier">
+        <rdfs:label>denier</rdfs:label>
+        <dc:coverage>France</dc:coverage>
+        <dc:coverage>France</dc:coverage>
+    </bk:MonetaryUnit>
 </rdf:RDF>

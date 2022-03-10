@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Jane Addams Financial Documents</title>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+            <idno type="PID">o:depcha.jafd.1896</idno>
+            <ref target="context:depcha.jafd" type="context">Jane Addams Financial Documents</ref>
+         </publicationStmt>
+         <sourceDesc>
+            <msDesc>
+               <msIdentifier>
+                  <country>USA</country>
+                  <settlement>Chicago</settlement>
+                  <msName>Hull-House Donation Book, 1896</msName>
+               </msIdentifier>
+               <msContents>
+                  <msItem>
+                     <title>Hull-House Donation Book, 1896</title>
+                     <docAuthor>Hull-House Association</docAuthor>
+                     <docDate>1896</docDate>
+                     <textLang>English</textLang>
+                  </msItem>
+               </msContents>
+            </msDesc>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+               <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                  bookkeeping ontology and can be extended to respective URIs. </p>
+            </prefixDef>
+            <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="http://www.wikidata.org/wiki/$1">
+               <p>
+                  <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+               </p>
+            </prefixDef>
+         </listPrefixDef>
+         <unitDecl>
+            <unitDef ref="wd:Q4917" type="currency" xml:id="dollar">
+               <label xml:lang="de">US dollar</label>
+            </unitDef>
+         </unitDecl>
+      </encodingDesc>
+      <profileDesc> 
+      <particDesc>
+         <listPerson ana="bk:index">
+            <person ana="bk:to bk:accountholder" xml:id="accountholder.1">
+               <persName>
+                  <forename>Jane</forename>
+                  <surname>Addams</surname>
+               </persName>
+            </person>
+         </listPerson>
+      </particDesc>
+      </profileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div>
+            <table>
+               <head>
+                  <date when="1896">1896</date>
+               </head>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-01-01">Jan 1st</date></cell>
+                  <cell><name ana="bk:from">William H. Colvin</name></cell>
+                  <cell><measure ana="bk:money" quantity="300" unit="dollar">300</measure></cell>
+                  <cell ana="bk:status">pd.</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-01-01">"</date></cell>
+                  <cell><name ana="bk:from">Walter C. Hately</name></cell>
+                  <cell><measure ana="bk:money" quantity="250" unit="dollar">250.00</measure></cell>
+                  <cell ana="bk:status">pd.</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell>
+                     <date ana="bk:when" when="1896-01-01">"</date>
+                  </cell>
+                  <cell><name ana="bk:from">Seymour Coman</name></cell>
+                  <cell><measure ana="bk:money" quantity="300" unit="dollar">300.00</measure></cell>
+                  <cell ana="bk:status">pd.</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-03-01">March 1st;</date></cell>
+                  <cell><name ana="bk:from">Elizabeth Stickney</name></cell>
+                  <cell><measure ana="bk:money" quantity="200" unit="dollar">200.</measure></cell>
+                  <cell ana="bk:status">Pd.</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-05-01">May 1st</date></cell>
+                  <cell><name ana="bk:from">Mary Rozet Smith</name></cell>
+                  <cell><measure ana="bk:money" quantity="1000" unit="dollar">1000.</measure></cell>
+                  <cell ana="bk:status">Pd.</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-12-12">Dec 12/96</date></cell>
+                  <cell><name ana="bk:from">John R. Walsh</name></cell>
+                  <cell><measure ana="bk:money" quantity="200" unit="dollar">$200</measure></cell>
+                  <cell ana="bk:status">Pd.</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-12-12">"</date></cell>
+                  <cell><name ana="bk:from">E. M. Barton</name></cell>
+                  <cell><measure ana="bk:money" quantity="200" unit="dollar">200</measure></cell>
+                  <cell>Pd.</cell>
+               </row>
+               <row ana="bk:subtotal" xml:id="subtotal.1">
+                  <cell>Dec 31</cell>
+                  <cell>To forward</cell>
+                  <cell><measure ana="bk:money" quantity="2450" unit="dollar">$2450.00</measure></cell>
+                  <cell></cell>
+               </row>
+            </table>
+            <pb></pb>
+            <table>
+               <head>[page 2]</head>
+               <row>
+                  <cell><date ana="bk:when" when="1896-12-31">Dec 31</date></cell>
+                  <cell> </cell>
+                  <cell><measure corresp="#subtotal.1" quantity="2450" unit="dollar">2450.</measure></cell>
+                  <cell></cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-07-01">July 1st</date></cell>
+                   <cell><name ana="bk:from">Miss H. M. Wilmarth</name></cell>
+                  <cell><measure ana="bk:money" quantity="200" unit="dollar">200.00</measure></cell>
+                  <cell/>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-03-01">March 1st</date></cell>
+                   <cell><name ana="bk:from">Butler Brothers</name></cell>
+                  <cell><measure ana="bk:money" quantity="100" unit="dollar">$100.00</measure></cell> 
+                  <cell ana="bk:status">Pd.</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-10">Oct.</date></cell>
+                  <cell><name ana="bk:from">Mrs. John C. Coonley</name></cell>
+                  <cell><measure ana="bk:money" quantity="100" unit="dollar">$100.00</measure></cell>
+                  <cell ana="bk:status">Pd</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-11">Nov.</date></cell>
+                   <cell><name ana="bk:from">Mrs Coonley's Circle</name></cell>
+                  <cell><measure ana="bk:money" quantity="100" unit="dollar">$100.00</measure></cell> 
+                  <cell ana="bk:status">pd</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-01">Jany</date></cell>
+                   <cell><name ana="bk:from">Sprague Warner &amp; Co.</name></cell>
+                  <cell><measure ana="bk:money" quantity="100" unit="dollar">$100.00</measure></cell> 
+                  <cell ana="bk:status">pd</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-01">"</date></cell>
+                   <cell><name ana="bk:from">Franklin McVeagh Co</name></cell>
+                  <cell><measure ana="bk:money" quantity="100" unit="dollar">$100.00</measure></cell> 
+                  <cell ana="bk:status">Pd</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-01">Jany</date></cell>
+                   <cell><name ana="bk:from">Edgar A Hill</name></cell>
+                  <cell><measure ana="bk:money" quantity="100" unit="dollar">$100.00</measure></cell>
+                  <cell ana="bk:status">Pd</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-01">"</date></cell>
+                   <cell><name ana="bk:from">Cash</name></cell>
+                  <cell><measure ana="bk:money" quantity="50" unit="dollar">$50.00</measure></cell> 
+                  <cell ana="bk:status">Pd.</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-01">"</date></cell>
+                   <cell><name ana="bk:from">"</name></cell>
+                  <cell><measure ana="bk:money" quantity="100" unit="dollar">$100.00</measure></cell>
+                  <cell ana="bk:status">Pd.</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-01">"</date></cell>
+                   <cell><name ana="bk:from">A. A. McCormick circle</name></cell>
+                  <cell><measure ana="bk:money" quantity="100" unit="dollar">$100.00</measure></cell>
+                  <cell ana="bk:status">Pd</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-04-15">April 15"</date></cell>
+                   <cell><name ana="bk:from">Mrs M. D. Ogden</name></cell>
+                  <cell><measure ana="bk:money" quantity="100" unit="dollar">$100.00</measure></cell> 
+                  <cell ana="bk:status">pd</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-04-22">" 22</date></cell>
+                   <cell><name ana="bk:from">Marshall Field</name></cell>
+                  <cell><measure ana="bk:money" quantity="100" unit="dollar">$100.00</measure></cell> 
+                  <cell ana="bk:status">pd</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-04-22">"</date></cell>
+                  <cell><name ana="bk:from">[illegible]</name>Paid</cell> 
+                  <cell><measure ana="bk:money" quantity="100" unit="dollar">$100.00</measure></cell> 
+                  <cell ana="bk:status">pd</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-11-20">Nov. 20"</date></cell>
+                   <cell><name ana="bk:from">Mrs Joseph T Bowen</name></cell>
+                  <cell><measure ana="bk:money" quantity="100" unit="dollar">100.00</measure></cell>
+                  <cell ana="bk:status">Pd</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-12-05">Dec 5th</date></cell>
+                   <cell><name ana="bk:from">Miss Helen Culver</name></cell>
+                  <cell><measure ana="bk:money" quantity="100" unit="dollar">100.00</measure></cell>
+                  <cell ana="bk:status">Pd</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-12-12">" 12</date></cell>
+                   <cell><name ana="bk:from">Mr J. M. Jackson</name></cell>
+                  <cell><measure ana="bk:money" quantity="25" unit="dollar">25.00</measure></cell> 
+                  <cell ana="bk:status">pd</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-12-25">" 25</date></cell>
+                   <cell><name ana="bk:from">Mr Frank Wells</name></cell>
+                  <cell><measure ana="bk:money" quantity="25" unit="dollar">25.00</measure></cell> 
+                  <cell ana="bk:status">pd</cell>
+               </row>
+               <row ana="bk:entry">
+                  <cell><date ana="bk:when" when="1896-12-30">" 30</date></cell>
+                   <cell><name ana="bk:from">Mr C. L. Hutchinson</name></cell>
+                  <cell><measure ana="bk:money" quantity="25" unit="dollar">25.00</measure></cell> 
+                  <cell ana="bk:status">pd</cell>
+               </row>
+               <row ana="bk:total">
+                  <cell><date ana="bk:when" when="1896-12-31">" 31</date></cell>
+                  <cell> -- Total (1896)</cell>
+                  <cell><measure ana="bk:money" quantity="4110" unit="dollar">$4110.00</measure></cell>
+                  <cell></cell>
+               </row>
+            </table>
+         </div>
+      </body>
+   </text>
+</TEI>

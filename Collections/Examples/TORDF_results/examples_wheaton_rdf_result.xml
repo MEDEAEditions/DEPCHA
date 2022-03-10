@@ -1,119 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-                xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:functx="http://www.functx.com"
-                xmlns:gn="http://www.geonames.org/ontology#"
-                xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
-                xmlns:om="http://ontology.eil.utoronto.ca/icity/OM/"
-                xmlns:time="http://www.w3.org/2006/time#" xmlns:schema="https://schema.org/"
-                xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
-                xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-                xmlns:t="http://www.tei-c.org/ns/1.0"
-                xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#"
-                xmlns:foaf="http://xmlns.com/foaf/spec/" xmlns:void="http://rdfs.org/ns/void#">
-                <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.wheaton">
-                                <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
-                                <dc:publisher>Institute Centre for Information Modelling, University
-                                                of Graz</dc:publisher>
-                </void:Dataset>
-                <depcha:Dataset
-                                rdf:about="https://gams.uni-graz.at/o:depcha.example.wheaton#Dataset">
-                                <gams:isMemberOfCollection
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
-                                <gams:isPartOf
-                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.wheaton"/>
-                                <depcha:numberOfTransactions>1</depcha:numberOfTransactions>
-                                <depcha:numberOfEconomicUnits>2</depcha:numberOfEconomicUnits>
-                                <depcha:numberOfMonetaryValues>1</depcha:numberOfMonetaryValues>
-                                <depcha:numberOfEconmicGoods>1</depcha:numberOfEconmicGoods>
-                                <depcha:accountHolder
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_WCDH002"/>
-                                <!--182800-->
-                </depcha:Dataset>
-                <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.wheaton#T1">
-                                <gams:isMemberOfCollection
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
-                                <gams:isPartOf
-                                                rdf:resource="https://gams.uni-graz.at/o:depcha.example.wheaton"/>
-                                <bk:entry>settled Samuel Wrigley Dr Debtor To 1/2 bushel spring Rye
-                                                6/6 53</bk:entry>
-                                <bk:when>1828-09-15</bk:when>
-                                <bk:consistsOf>
-                                                <bk:Transfer
-                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.wheaton#T1T1">
-                                                  <bk:transfers>
-                                                  <bk:Commodity
-                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.wheaton#T1T1EA">
-                                                  <bk:unit
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#bushel"/>
-                                                  <bk:quantity>0.5</bk:quantity>
-                                                  <bk:classified
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#c_springrye"
-                                                  />
-                                                  </bk:Commodity>
-                                                  </bk:transfers>
-                                                  <bk:from
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_WCDH002"/>
-                                                  <bk:to
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_WCDH699"
-                                                  />
-                                                </bk:Transfer>
-                                </bk:consistsOf>
-                                <bk:consistsOf>
-                                                <bk:Transfer
-                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.wheaton#T1T2">
-                                                  <bk:transfers>
-                                                  <bk:Money
-                                                  rdf:about="https://gams.uni-graz.at/o:depcha.example.wheaton#T1T2EA">
-                                                  <bk:unit
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#cent"/>
-                                                  <bk:quantity>53</bk:quantity>
-                                                  </bk:Money>
-                                                  </bk:transfers>
-                                                  <bk:from
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_WCDH699"/>
-                                                  <bk:to
-                                                  rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_WCDH002"
-                                                  />
-                                                </bk:Transfer>
-                                </bk:consistsOf>
-                                <bk:status>settled</bk:status>
-                                <bk:debit
-                                                rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Booking"
-                                />
-                </bk:Transaction>
-                <bk:EconomicUnit
-                                rdf:about="https://gams.uni-graz.at/context:depcha.example#pers_WCDH002">
-                                <rdfs:label>Laban Morey Wheaton</rdfs:label>
-                </bk:EconomicUnit>
-                <bk:EconomicUnit
-                                rdf:about="https://gams.uni-graz.at/context:depcha.example#pers_WCDH699">
-                                <rdfs:label>Samuel Wrigley</rdfs:label>
-                </bk:EconomicUnit>
-                <skos:ConceptScheme
-                                rdf:about="https://gams.uni-graz.at/context:depcha.example#Taxonomy">
-                                <skos:hasTopConcept
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#c_rye"
-                                />
-                </skos:ConceptScheme>
-                <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#c_rye">
-                                <skos:inScheme
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
-                                <skos:narrower
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#c_springrye"/>
-                                <skos:prefLabel xml:lang="en">rye</skos:prefLabel>
-                                <rdfs:label>rye</rdfs:label>
-                                <skos:relatedMatch
-                                                rdf:resource="https://www.wikidata.org/wiki/wd:Q12099"
-                                />
-                </skos:Concept>
-                <skos:Concept
-                                rdf:about="https://gams.uni-graz.at/context:depcha.example#c_springrye">
-                                <skos:inScheme
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
-                                <skos:broader
-                                                rdf:resource="https://gams.uni-graz.at/context:depcha.example#c_rye"/>
-                                <skos:prefLabel xml:lang="en">spring rye</skos:prefLabel>
-                                <rdfs:label>spring rye</rdfs:label>
-                </skos:Concept>
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:functx="http://www.functx.com" xmlns:gn="http://www.geonames.org/ontology#"
+    xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
+    xmlns:om="http://ontology.eil.utoronto.ca/icity/OM/" xmlns:time="http://www.w3.org/2006/time#"
+    xmlns:schema="https://schema.org/" xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:t="http://www.tei-c.org/ns/1.0"
+    xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#"
+    xmlns:foaf="http://xmlns.com/foaf/spec/" xmlns:void="http://rdfs.org/ns/void#">
+    <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.wheaton">
+        <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
+        <dc:publisher>Institute Centre for Information Modelling, University of Graz</dc:publisher>
+    </void:Dataset>
+    <depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.wheaton#Dataset">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.wheaton"/>
+        <depcha:numberOfTransactions>1</depcha:numberOfTransactions>
+        <depcha:numberOfEconomicUnits>2</depcha:numberOfEconomicUnits>
+        <depcha:numberOfMonetaryValues>1</depcha:numberOfMonetaryValues>
+        <depcha:numberOfEconmicGoods>1</depcha:numberOfEconmicGoods>
+        <depcha:accountHolder
+            rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_WCDH002"/>
+    </depcha:Dataset>
+    <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.wheaton#T1">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.wheaton"/>
+        <bk:entry>settled Samuel Wrigley Dr Debtor To 1/2 bushel spring Rye 6/6 53</bk:entry>
+        <bk:when>1828-09-15</bk:when>
+        <bk:consistsOf>
+            <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.wheaton#T1T1">
+                <bk:transfers>
+                    <bk:Commodity
+                        rdf:about="https://gams.uni-graz.at/o:depcha.example.wheaton#T1T1EA">
+                        <bk:unit
+                            rdf:resource="https://gams.uni-graz.at/context:depcha.example#bushel"/>
+                        <bk:quantity>0.5</bk:quantity>
+                        <bk:classified
+                            rdf:resource="https://gams.uni-graz.at/context:depcha.example#c_springrye"
+                        />
+                    </bk:Commodity>
+                </bk:transfers>
+                <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_WCDH002"/>
+                <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_WCDH699"/>
+            </bk:Transfer>
+        </bk:consistsOf>
+        <bk:consistsOf>
+            <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.wheaton#T1T2">
+                <bk:transfers>
+                    <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.wheaton#T1T2EA">
+                        <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.example#cent"/>
+                        <bk:quantity>53</bk:quantity>
+                    </bk:Money>
+                </bk:transfers>
+                <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_WCDH699"/>
+                <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_WCDH002"/>
+            </bk:Transfer>
+        </bk:consistsOf>
+        <bk:status>settled</bk:status>
+        <bk:debit rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Booking"/>
+    </bk:Transaction>
+    <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#pers_WCDH002">
+        <rdfs:label>Laban Morey Wheaton</rdfs:label>
+    </bk:EconomicUnit>
+    <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#pers_WCDH699">
+        <rdfs:label>Samuel Wrigley</rdfs:label>
+    </bk:EconomicUnit>
+    <skos:ConceptScheme rdf:about="https://gams.uni-graz.at/context:depcha.example#Taxonomy">
+        <skos:hasTopConcept rdf:resource="https://gams.uni-graz.at/context:depcha.example#c_rye"/>
+    </skos:ConceptScheme>
+    <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#c_rye">
+        <skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <skos:narrower rdf:resource="https://gams.uni-graz.at/context:depcha.example#c_springrye"/>
+        <skos:prefLabel xml:lang="en">rye</skos:prefLabel>
+        <rdfs:label>rye</rdfs:label>
+        <skos:relatedMatch rdf:resource="https://www.wikidata.org/wiki/wd:Q12099"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.example#c_springrye">
+        <skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.example#c_rye"/>
+        <skos:prefLabel xml:lang="en">spring rye</skos:prefLabel>
+        <rdfs:label>spring rye</rdfs:label>
+    </skos:Concept>
 </rdf:RDF>
