@@ -1559,11 +1559,12 @@
 							contains the attributes <code>ana="bk:account"</code> and
 								<code>corresp="#customshauptzoller"</code> referring to the <code
 								rend="attribute">@xml:id</code> in the <code rend="element"
-								><![CDATA[<taxonomy ana="bk:Account">]]></code>.</p>
+								><![CDATA[<taxonomy ana="bk:account">]]></code>.</p>
 						<ab><code rend="block" lang="XML"><![CDATA[<teiHeader>
+	<!-- ... -->
   <encodingDesc>  
     <classDecl>    
-      <taxonomy ana="bk:Account">      
+      <taxonomy ana="bk:account">      
         <category ana="bk:to" xml:id="income">        
           <catDesc>
             <gloss>Einnahmen</gloss>
@@ -1615,7 +1616,7 @@
       </listOrg>
     </particDesc>
   </profileDesc>
-<teiHeader>
+</teiHeader>
 <text>
   <body>
     <div ana="bk:account" corresp="#income">
@@ -1680,7 +1681,7 @@
   </body>
 </text>]]>
 							</code>
-							<caption/></ab>
+							<caption>Creating one or more <code>bk:Account</code>.</caption></ab>
 					</div>
 					<div xml:id="prefixdef">
 						<head>Definition of Prefixes</head>
