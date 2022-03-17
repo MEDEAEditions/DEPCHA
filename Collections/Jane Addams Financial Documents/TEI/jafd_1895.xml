@@ -3,417 +3,425 @@
 <?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
-   <teiHeader>
-      <fileDesc>
-         <titleStmt>
-            <title>Jane Addams Financial Documents</title>
-         </titleStmt>
-         <publicationStmt>
-            <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
-            <idno type="PID">o:depcha.jafd.1895</idno>
-            <ref target="context:depcha.jafd" type="context">Jane Addams Financial Documents</ref>
-         </publicationStmt>
-         <sourceDesc>
-            <msDesc>
-               <msIdentifier>
-                  <country>USA</country>
-                  <settlement>Chicago</settlement>
-                  <msName>Hull-House Donation Book, 1895</msName>
-               </msIdentifier>
-               <msContents>
-                  <msItem>
-                     <title>Hull-House Donation Book, 1895</title>
-                     <docAuthor>Hull-House Association</docAuthor>
-                     <docDate>1895</docDate>
-                     <textLang>English</textLang>
-                  </msItem>
-               </msContents>
-            </msDesc>
-         </sourceDesc>
-      </fileDesc>
-      <encodingDesc>
-         <listPrefixDef>
-            <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
-               replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
-               <p> Analytical descriptors are considered to represent concepts from the DEPCHA
-                  bookkeeping ontology and can be extended to respective URIs. </p>
-            </prefixDef>
-            <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
-               replacementPattern="http://www.wikidata.org/wiki/$1">
-               <p>
-                  <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
-               </p>
-            </prefixDef>
-         </listPrefixDef>
-         <unitDecl>
-            <unitDef ref="wd:Q4917" type="currency" xml:id="dollar">
-               <label xml:lang="de">US dollar</label>
-            </unitDef>
-         </unitDecl>
-         <classDecl>
-            <taxonomy ana="bk:account">
-               <category xml:id="account.1">
-                  <gloss>Cash</gloss>
-               </category>
-            </taxonomy>
-         </classDecl>
-      </encodingDesc>
-      <profileDesc>
-         <particDesc>
-            <listPerson ana="bk:index">
-               <person ana="bk:to bk:accountholder" xml:id="accountholder.1">
-                  <persName>
-                     <forename>Jane</forename>
-                     <surname>Addams</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.1">
-                  <persName>
-                     <forename type="first">William</forename>
-                     <forename type="middle">H.</forename>
-                     <surname>Colvin</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.2">
-                  <persName>
-                     <roleName>Mrs</roleName>
-                     <forename>Barbara</forename>
-                     <surname>Armour</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.3">
-                  <persName>
-                     <forename>Seymour</forename>
-                     <surname>Coman</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.4">
-                  <persName>
-                     <forename type="first">John</forename>
-                     <forename type="middle">R.</forename>
-                     <surname>Walsh</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.5">
-                  <persName>
-                     <forename type="first">L.</forename>
-                     <forename type="middle">J.</forename>
-                     <surname>Gage</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.6">
-                  <persName>
-                     <roleName>Mrs.</roleName>
-                     <forename type="first">George</forename>
-                     <forename type="middle">E.</forename>
-                     <surname>Adams</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.7">
-                  <persName>
-                     <roleName>Mrs</roleName>
-                     <forename type="first">Cyrus</forename>
-                     <forename type="middle">H.</forename>
-                     <surname>McCormick</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.8">
-                  <persName>
-                     <forename>Sprauge </forename>
-                     <surname>Warner </surname>
-                     <addName>&amp; Co</addName>
-                  </persName>
-               </person>
-               <person xml:id="person.9">
-                  <persName>
-                     <forename>Franklin </forename>
-                     <surname>McVeagh</surname>
-                     <addName>&amp; Co</addName>
-                  </persName>
-               </person><person xml:id="person.10">
-                  <persName>
-                     <roleName>Mr</roleName>
-                     <forename type="first">C.</forename>
-                     <forename type="middle">L.</forename>
-                     <surname>Hutchinson</surname>
-                  </persName>
-               </person><person xml:id="person.11">
-                  <persName>
-                     <forename type="first">W.</forename>
-                     <forename type="middle">A.</forename>
-                     <surname>McConnell</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.12">
-                  <persName>
-                     <forename type="first">Walter</forename>
-                     <forename type="middle">C.</forename>
-                     <surname>Hately</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.13">
-                  <persName>
-                     <roleName>Mrs</roleName>
-                     <forename type="first">Joseph</forename>
-                     <forename type="middle">T</forename>
-                     <surname>Bowen</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.14">
-                  <persName>
-                     <forename>Enos</forename>
-                     <surname>McBarton</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.15">
-                  <persName>
-                     <forename type="first">Mary</forename>
-                     <forename type="middle">Rozet</forename>
-                     <surname>Smith</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.16">
-                  <persName>
-                     <forename type="first">Edward</forename>
-                     <forename type="middle">B.</forename>
-                     <surname>Butler</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.17">
-                  <persName>
-                     <forename>Elizabeth</forename>              
-                     <surname>Stickney</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.18">
-                  <persName>
-                     <roleName>Miss</roleName>
-                     <forename type="first">H.</forename>
-                     <forename type="middle">M.</forename>
-                     <surname>Wilmarth</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.19">
-                  <persName>
-                     Butler Brothers
-                  </persName>
-               </person>
-               <person xml:id="person.20">
-                  <persName>
-                     <roleName>Mrs.</roleName>
-                     <forename type="first">John</forename>
-                     <forename type="middle">C.</forename>
-                     <surname>Coonley</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.21">
-                  <persName>
-                     Mrs Coonley's circle
-                  </persName>
-               </person>
-               <person xml:id="person.22">
-                  <persName>
-                     <forename type="first">Edgar</forename>
-                     <forename type="middle">A</forename>
-                     <surname>Hill</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.23">
-                  <persName>
-                     A. A. McCormick circle
-                  </persName>
-               </person>
-               <person xml:id="person.24">
-                  <persName>
-                     <roleName>Mrs</roleName>
-                     <forename type="first">M.</forename>
-                     <forename type="middle">D.</forename>
-                     <surname>Ogden</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.25">
-                  <persName>
-                     <forename>Marshall</forename>
-                     <surname>Field</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.26">
-                  <persName>
-                     ToDo
-                  </persName>
-               </person>
-               <person xml:id="person.27">
-                  <persName>
-                     <roleName>Miss</roleName>
-                     <forename>Helen</forename>
-                     <surname>Culver</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.28">
-                  <persName>
-                     <roleName>Mr</roleName>
-                     <forename type="first">J.</forename>
-                     <forename type="middle">M.</forename>
-                     <surname>Jackson</surname>
-                  </persName>
-               </person>
-               <person xml:id="person.29">
-                  <persName>
-                     <roleName>Mr</roleName>
-                     <forename>Frank</forename>
-                     <surname>Wells</surname>
-                  </persName>
-               </person>
-            </listPerson>
-            <listOrg ana="bk:index">
-               <org xml:id="HH">
-                  <orgName>Hull House</orgName>
-               </org>
-            </listOrg>
-         </particDesc>
-      </profileDesc>
-   </teiHeader>
-   <text>
-      <body>
-         <div>
-            <table>
-               <head>
-                  <date ana="bk:when" when="1895-01-01">Jan'y 1st 1895</date>We the undersigned
-                  hereby agree to give the sums set opposite our respective names for the current
-                  expenses of <name ref="#HH">Hull House</name>.</head>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-01-01">Jan 1</date></cell>
-                  <cell><name ana="bk:from" ref="#person.1">William Colvin</name></cell>
-                  <cell><measure ana="bk:money" quantity="500" unit="dollar">500</measure></cell>
-                  <cell ana="bk:status">pd.</cell>
-               </row>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-06-02">June 2 "</date>
-                  </cell>
-                  <cell><name ana="bk:from" ref="person.2">Mrs Barbara Armour</name></cell>
-                  <cell>
-                     <measure ana="bk:money" quantity="300" unit="dollar">300</measure>
-                  </cell>
-                  <cell ana="bk:status">pd.</cell>
-               </row>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-06-06">June 6 "</date>
-                  </cell>
-                  <cell><name ana="bk:from" ref="#person.3">Seymour Coman</name></cell>
-                  <cell>
-                     <measure ana="bk:money" quantity="200" unit="dollar">200</measure>
-                  </cell>
-                  <cell ana="bk:status">pd.</cell>
-               </row>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-06-18">June 18 "</date>
-                  </cell>
-                  <cell><name ana="bk:from" ref="#person.4">John R. Walsh</name></cell>
-                  <cell>
-                     <measure ana="bk:money" quantity="200" unit="dollar">$200</measure>
-                  </cell>
-                  <cell ana="bk:status">pd.</cell>
-               </row>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-10-14">Oct 14 "</date></cell>
-                  <cell><name ana="bk:from" ref="#person.5">L. J. Gage</name></cell>
-                  <cell>
-                     <measure ana="bk:money" quantity="100" unit="dollar">100</measure></cell>
-                  <cell ana="bk:status">pd.</cell>
-               </row>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-06-17">June 17 "</date>
-                  </cell>
-                  <cell><name ana="bk:from" ref="#person.6">Mrs George E. Adams</name></cell>
-                  <cell>
-                     <measure ana="bk:money" quantity="100" unit="dollar">100</measure></cell>
-                  <cell ana="bk:status">Pd.</cell>
-               </row>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-06-18">June 18 "</date>
-                  </cell>
-                  <cell><name ana="bk:from" ref="#person.7">Mrs Cyrus H. McCormick</name></cell>
-                  <cell>
-                     <measure ana="bk:money" quantity="100" unit="dollar">100</measure></cell>
-                  <cell ana="bk:status">Pd.</cell>
-               </row>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-01-23">Jan 23rd</date>
-                  </cell>
-                  <cell><name ana="bk:from" ref="#person.8">Sprauge Warner &amp; Co</name></cell>
-                  <cell>
-                     <measure ana="bk:money" quantity="100" unit="dollar">100</measure></cell>
-                  <cell ana="bk:status">Pd.</cell>
-               </row>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-01-28">Jan 28 "</date>
-                  </cell>
-                  <cell><name ana="bk:from" ref="#person.9">Franklin McVeagh &amp; Co</name></cell>
-                  <cell>
-                     <measure ana="bk:money" quantity="100" unit="dollar">100</measure>
-                  </cell>
-                  <cell ana="bk:status">Pd.</cell>
-               </row>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-10-28">Oct 28 "</date>
-                  </cell>
-                  <cell><name ana="bk:from" ref="#person.10">C. L. Hutchinson</name></cell>
-                  <cell>
-                     <measure ana="bk:money" quantity="100" unit="dollar">100</measure></cell>
-                  <cell ana="bk:status">Pd.</cell>
-               </row>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-08-06">Aug 6 "</date>
-                  </cell>
-                  <cell><name ana="bk:from" ref="#person.11">W. A. McConnell</name></cell>
-                  <cell>
-                     <measure ana="bk:money" quantity="100" unit="dollar">100</measure></cell>
-                  <cell ana="bk:status">Pd.</cell>
-               </row>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-09-12">Sept 12 "</date>
-                  </cell>
-                  <cell><name ana="bk:from" ref="#person.12">Walter C. Hately</name></cell>
-                  <cell>
-                     <measure ana="bk:money" quantity="100" unit="dollar">100</measure></cell>
-                  <cell ana="bk:status">Pd.</cell>
-               </row>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-11-06">Nov 6 "</date>
-                  </cell>
-                  <cell><name ana="bk:from" ref="#person.13">Mrs Joseph Bowen</name></cell>
-                  <cell>
-                     <measure ana="bk:money" quantity="750" unit="dollar">750</measure>
-                  </cell>
-                  <cell ana="bk:status">Pd.</cell>
-               </row>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-06-06">June 6 "</date>
-                  </cell>
-                  <cell><name ana="bk:from" ref="#person.14">Enos McBarton</name></cell>
-                  <cell>
-                     <measure ana="bk:money" quantity="100" unit="dollar">100</measure></cell>
-                  <cell ana="bk:status">Pd.</cell>
-               </row>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-07-06">July 6 "</date>
-                  </cell>
-                  <cell><name ana="bk:from" ref="#person.15">Mary R. Smith</name></cell>
-                  <cell>
-                     <measure ana="bk:money" quantity="100" unit="dollar">100</measure></cell>
-                  <cell ana="bk:status">Pd.</cell>
-               </row>
-               <row ana="bk:entry">
-                  <cell><date ana="bk:when" when="1895-01-09">Jan 9 "</date>
-                  </cell>
-                  <cell><name ana="bk:from" ref="#person.16">Edward B. Butler</name></cell>
-                  <cell>
-                     <measure ana="bk:money" quantity="50" unit="dollar">50</measure>
-                  </cell>
-                  <cell ana="bk:status">Pd</cell>
-               </row>
-            </table>
-         </div>
-      </body>
-   </text>
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>Jane Addams Financial Documents</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+				<idno type="PID">o:depcha.jafd.1895</idno>
+				<ref target="context:depcha.jafd" type="context">Jane Addams Financial
+					Documents</ref>
+			</publicationStmt>
+			<sourceDesc>
+				<msDesc>
+					<msIdentifier>
+						<country>USA</country>
+						<settlement>Chicago</settlement>
+						<msName>Hull-House Donation Book, 1895</msName>
+					</msIdentifier>
+					<msContents>
+						<msItem>
+							<title>Hull-House Donation Book, 1895</title>
+							<docAuthor>Hull-House Association</docAuthor>
+							<docDate>1895</docDate>
+							<textLang>English</textLang>
+						</msItem>
+					</msContents>
+				</msDesc>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<listPrefixDef>
+				<prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+					replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+					<p> Analytical descriptors are considered to represent concepts from the DEPCHA
+						bookkeeping ontology and can be extended to respective URIs. </p>
+				</prefixDef>
+				<prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+					replacementPattern="http://www.wikidata.org/wiki/$1">
+					<p>
+						<ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+					</p>
+				</prefixDef>
+			</listPrefixDef>
+			<unitDecl>
+				<unitDef ref="wd:Q4917" type="currency" xml:id="dollar">
+					<label xml:lang="de">US dollar</label>
+				</unitDef>
+			</unitDecl>
+			<classDecl>
+				<taxonomy ana="bk:account">
+					<category xml:id="account.1">
+						<gloss>Cash</gloss>
+					</category>
+				</taxonomy>
+			</classDecl>
+		</encodingDesc>
+		<profileDesc>
+			<particDesc>
+				<listPerson ana="bk:index">
+					<person ana="bk:to bk:accountholder" xml:id="accountholder.1">
+						<persName>
+							<forename>Jane</forename>
+							<surname>Addams</surname>
+						</persName>
+					</person>
+					<person xml:id="person.1">
+						<persName>
+							<forename type="first">William</forename>
+							<forename type="middle">H.</forename>
+							<surname>Colvin</surname>
+						</persName>
+					</person>
+					<person xml:id="person.2">
+						<persName>
+							<roleName>Mrs</roleName>
+							<forename>Barbara</forename>
+							<surname>Armour</surname>
+						</persName>
+					</person>
+					<person xml:id="person.3">
+						<persName>
+							<forename>Seymour</forename>
+							<surname>Coman</surname>
+						</persName>
+					</person>
+					<person xml:id="person.4">
+						<persName>
+							<forename type="first">John</forename>
+							<forename type="middle">R.</forename>
+							<surname>Walsh</surname>
+						</persName>
+					</person>
+					<person xml:id="person.5">
+						<persName>
+							<forename type="first">L.</forename>
+							<forename type="middle">J.</forename>
+							<surname>Gage</surname>
+						</persName>
+					</person>
+					<person xml:id="person.6">
+						<persName>
+							<roleName>Mrs.</roleName>
+							<forename type="first">George</forename>
+							<forename type="middle">E.</forename>
+							<surname>Adams</surname>
+						</persName>
+					</person>
+					<person xml:id="person.7">
+						<persName>
+							<roleName>Mrs</roleName>
+							<forename type="first">Cyrus</forename>
+							<forename type="middle">H.</forename>
+							<surname>McCormick</surname>
+						</persName>
+					</person>
+					<person xml:id="person.8">
+						<persName>
+							<forename>Sprauge </forename>
+							<surname>Warner </surname>
+							<addName>&amp; Co</addName>
+						</persName>
+					</person>
+					<person xml:id="person.9">
+						<persName>
+							<forename>Franklin </forename>
+							<surname>McVeagh</surname>
+							<addName>&amp; Co</addName>
+						</persName>
+					</person>
+					<person xml:id="person.10">
+						<persName>
+							<roleName>Mr</roleName>
+							<forename type="first">C.</forename>
+							<forename type="middle">L.</forename>
+							<surname>Hutchinson</surname>
+						</persName>
+					</person>
+					<person xml:id="person.11">
+						<persName>
+							<forename type="first">W.</forename>
+							<forename type="middle">A.</forename>
+							<surname>McConnell</surname>
+						</persName>
+					</person>
+					<person xml:id="person.12">
+						<persName>
+							<forename type="first">Walter</forename>
+							<forename type="middle">C.</forename>
+							<surname>Hately</surname>
+						</persName>
+					</person>
+					<person xml:id="person.13">
+						<persName>
+							<roleName>Mrs</roleName>
+							<forename type="first">Joseph</forename>
+							<forename type="middle">T</forename>
+							<surname>Bowen</surname>
+						</persName>
+					</person>
+					<person xml:id="person.14">
+						<persName>
+							<forename>Enos</forename>
+							<surname>McBarton</surname>
+						</persName>
+					</person>
+					<person xml:id="person.15">
+						<persName>
+							<forename type="first">Mary</forename>
+							<forename type="middle">Rozet</forename>
+							<surname>Smith</surname>
+						</persName>
+					</person>
+					<person xml:id="person.16">
+						<persName>
+							<forename type="first">Edward</forename>
+							<forename type="middle">B.</forename>
+							<surname>Butler</surname>
+						</persName>
+					</person>
+					<person xml:id="person.17">
+						<persName>
+							<forename>Elizabeth</forename>
+							<surname>Stickney</surname>
+						</persName>
+					</person>
+					<person xml:id="person.18">
+						<persName>
+							<roleName>Miss</roleName>
+							<forename type="first">H.</forename>
+							<forename type="middle">M.</forename>
+							<surname>Wilmarth</surname>
+						</persName>
+					</person>
+					<person xml:id="person.19">
+						<persName> Butler Brothers </persName>
+					</person>
+					<person xml:id="person.20">
+						<persName>
+							<roleName>Mrs.</roleName>
+							<forename type="first">John</forename>
+							<forename type="middle">C.</forename>
+							<surname>Coonley</surname>
+						</persName>
+					</person>
+					<person xml:id="person.21">
+						<persName> Mrs Coonley's circle </persName>
+					</person>
+					<person xml:id="person.22">
+						<persName>
+							<forename type="first">Edgar</forename>
+							<forename type="middle">A</forename>
+							<surname>Hill</surname>
+						</persName>
+					</person>
+					<person xml:id="person.23">
+						<persName> A. A. McCormick circle </persName>
+					</person>
+					<person xml:id="person.24">
+						<persName>
+							<roleName>Mrs</roleName>
+							<forename type="first">M.</forename>
+							<forename type="middle">D.</forename>
+							<surname>Ogden</surname>
+						</persName>
+					</person>
+					<person xml:id="person.25">
+						<persName>
+							<forename>Marshall</forename>
+							<surname>Field</surname>
+						</persName>
+					</person>
+					<person xml:id="person.26">
+						<persName> ToDo </persName>
+					</person>
+					<person xml:id="person.27">
+						<persName>
+							<roleName>Miss</roleName>
+							<forename>Helen</forename>
+							<surname>Culver</surname>
+						</persName>
+					</person>
+					<person xml:id="person.28">
+						<persName>
+							<roleName>Mr</roleName>
+							<forename type="first">J.</forename>
+							<forename type="middle">M.</forename>
+							<surname>Jackson</surname>
+						</persName>
+					</person>
+					<person xml:id="person.29">
+						<persName>
+							<roleName>Mr</roleName>
+							<forename>Frank</forename>
+							<surname>Wells</surname>
+						</persName>
+					</person>
+				</listPerson>
+				<listOrg ana="bk:index">
+					<org xml:id="HH">
+						<orgName>Hull House</orgName>
+					</org>
+				</listOrg>
+			</particDesc>
+		</profileDesc>
+	</teiHeader>
+	<text>
+		<body>
+			<div>
+				<table>
+					<head>
+						<date ana="bk:when" when="1895-01-01">Jan'y 1st 1895</date>We the
+						undersigned hereby agree to give the sums set opposite our respective names
+						for the current expenses of <name ref="#HH">Hull House</name>.</head>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-01-01">Jan 1</date></cell>
+						<cell><name ana="bk:from" ref="#person.1">William Colvin</name></cell>
+						<cell><measure ana="bk:money" quantity="500" unit="dollar"
+							>500</measure></cell>
+						<cell ana="bk:status">pd.</cell>
+					</row>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-06-02">June 2 "</date>
+						</cell>
+						<cell><name ana="bk:from" ref="person.2">Mrs Barbara Armour</name></cell>
+						<cell>
+							<measure ana="bk:money" quantity="300" unit="dollar">300</measure>
+						</cell>
+						<cell ana="bk:status">pd.</cell>
+					</row>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-06-06">June 6 "</date>
+						</cell>
+						<cell><name ana="bk:from" ref="#person.3">Seymour Coman</name></cell>
+						<cell>
+							<measure ana="bk:money" quantity="200" unit="dollar">200</measure>
+						</cell>
+						<cell ana="bk:status">pd.</cell>
+					</row>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-06-18">June 18 "</date>
+						</cell>
+						<cell><name ana="bk:from" ref="#person.4">John R. Walsh</name></cell>
+						<cell>
+							<measure ana="bk:money" quantity="200" unit="dollar">$200</measure>
+						</cell>
+						<cell ana="bk:status">pd.</cell>
+					</row>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-10-14">Oct 14 "</date></cell>
+						<cell><name ana="bk:from" ref="#person.5">L. J. Gage</name></cell>
+						<cell>
+							<measure ana="bk:money" quantity="100" unit="dollar"
+							>100</measure></cell>
+						<cell ana="bk:status">pd.</cell>
+					</row>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-06-17">June 17 "</date>
+						</cell>
+						<cell><name ana="bk:from" ref="#person.6">Mrs George E. Adams</name></cell>
+						<cell>
+							<measure ana="bk:money" quantity="100" unit="dollar"
+							>100</measure></cell>
+						<cell ana="bk:status">Pd.</cell>
+					</row>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-06-18">June 18 "</date>
+						</cell>
+						<cell><name ana="bk:from" ref="#person.7">Mrs Cyrus H.
+							McCormick</name></cell>
+						<cell>
+							<measure ana="bk:money" quantity="100" unit="dollar"
+							>100</measure></cell>
+						<cell ana="bk:status">Pd.</cell>
+					</row>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-01-23">Jan 23rd</date>
+						</cell>
+						<cell><name ana="bk:from" ref="#person.8">Sprauge Warner &amp;
+							Co</name></cell>
+						<cell>
+							<measure ana="bk:money" quantity="100" unit="dollar"
+							>100</measure></cell>
+						<cell ana="bk:status">Pd.</cell>
+					</row>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-01-28">Jan 28 "</date>
+						</cell>
+						<cell><name ana="bk:from" ref="#person.9">Franklin McVeagh &amp;
+							Co</name></cell>
+						<cell>
+							<measure ana="bk:money" quantity="100" unit="dollar">100</measure>
+						</cell>
+						<cell ana="bk:status">Pd.</cell>
+					</row>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-10-28">Oct 28 "</date>
+						</cell>
+						<cell><name ana="bk:from" ref="#person.10">C. L. Hutchinson</name></cell>
+						<cell>
+							<measure ana="bk:money" quantity="100" unit="dollar"
+							>100</measure></cell>
+						<cell ana="bk:status">Pd.</cell>
+					</row>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-08-06">Aug 6 "</date>
+						</cell>
+						<cell><name ana="bk:from" ref="#person.11">W. A. McConnell</name></cell>
+						<cell>
+							<measure ana="bk:money" quantity="100" unit="dollar"
+							>100</measure></cell>
+						<cell ana="bk:status">Pd.</cell>
+					</row>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-09-12">Sept 12 "</date>
+						</cell>
+						<cell><name ana="bk:from" ref="#person.12">Walter C. Hately</name></cell>
+						<cell>
+							<measure ana="bk:money" quantity="100" unit="dollar"
+							>100</measure></cell>
+						<cell ana="bk:status">Pd.</cell>
+					</row>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-11-06">Nov 6 "</date>
+						</cell>
+						<cell><name ana="bk:from" ref="#person.13">Mrs Joseph Bowen</name></cell>
+						<cell>
+							<measure ana="bk:money" quantity="750" unit="dollar">750</measure>
+						</cell>
+						<cell ana="bk:status">Pd.</cell>
+					</row>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-06-06">June 6 "</date>
+						</cell>
+						<cell><name ana="bk:from" ref="#person.14">Enos McBarton</name></cell>
+						<cell>
+							<measure ana="bk:money" quantity="100" unit="dollar"
+							>100</measure></cell>
+						<cell ana="bk:status">Pd.</cell>
+					</row>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-07-06">July 6 "</date>
+						</cell>
+						<cell><name ana="bk:from" ref="#person.15">Mary R. Smith</name></cell>
+						<cell>
+							<measure ana="bk:money" quantity="100" unit="dollar"
+							>100</measure></cell>
+						<cell ana="bk:status">Pd.</cell>
+					</row>
+					<row ana="bk:entry">
+						<cell><date ana="bk:when" when="1895-01-09">Jan 9 "</date>
+						</cell>
+						<cell><name ana="bk:from" ref="#person.16">Edward B. Butler</name></cell>
+						<cell>
+							<measure ana="bk:money" quantity="50" unit="dollar">50</measure>
+						</cell>
+						<cell ana="bk:status">Pd</cell>
+					</row>
+				</table>
+			</div>
+		</body>
+	</text>
 </TEI>
