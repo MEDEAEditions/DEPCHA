@@ -26,6 +26,7 @@ count_transfers = 0
 count_moneys = 0
 count_commodities = 0
 count_services = 0
+count_rights = 0
 count_EconomicUnits = 0
 
 ########################################################################################
@@ -357,7 +358,6 @@ for json_file in all_JSON_filenames:
     count_commodities = 0
     count_services = 0
     count_economic_units = 0
-    count_economic_assets = 0
 
     ########################################################################################
     ### https://www.w3.org/TR/void/
@@ -377,9 +377,21 @@ for json_file in all_JSON_filenames:
     output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("http://purl.org/dc/terms/")))
     output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("http://www.ontology-of-units-of-measure.org/resource/om-2/")))
     output_graph.add((VOID_Dataset, VOID.triples, Literal(0)))
-
-    
-      
+    if(config_data["DEPCHA_DATASET_DC_METADATA"]):
+        output_graph.add((VOID_Dataset, DC.title, Literal( config_data["DEPCHA_DATASET_DC_METADATA"]["title"] )))
+        output_graph.add((VOID_Dataset, DC.creator, Literal( config_data["DEPCHA_DATASET_DC_METADATA"]["creator"] ) ))
+        output_graph.add((VOID_Dataset, DC.date, Literal( config_data["DEPCHA_DATASET_DC_METADATA"]["date"] ) ))
+        output_graph.add((VOID_Dataset, DC.contributor, Literal( config_data["DEPCHA_DATASET_DC_METADATA"]["contributor"] ) ))
+        output_graph.add((VOID_Dataset, DC.language, Literal( config_data["DEPCHA_DATASET_DC_METADATA"]["language"] ) ))
+        output_graph.add((VOID_Dataset, DC.source, Literal( config_data["DEPCHA_DATASET_DC_METADATA"]["source"] ) ))
+        output_graph.add((VOID_Dataset, DC.subject, Literal( config_data["DEPCHA_DATASET_DC_METADATA"]["subject"] ) ))
+        # static metadata
+        output_graph.add((VOID_Dataset, DC.relation, Literal( "Digital Edition Publishing Cooperative for Historical Accounts" ) ))
+        output_graph.add((VOID_Dataset, DC.relation, Literal( "http://gams.uni-graz.at/depcha" ) ))
+        output_graph.add((VOID_Dataset, DC.publisher, Literal( "Institute Centre for Information Modelling, University of Graz" ) ))
+        output_graph.add((VOID_Dataset, DC.rights, Literal( "Creative Commons BY 4.0" ) ))
+        output_graph.add((VOID_Dataset, DC.rights, Literal( "https://creativecommons.org/licenses/by/4.0" ) ))
+        #output_graph.add((VOID_Dataset, DC.format, Literal( "rdf+xml" ) ))
 
         
     ########################################################################################
@@ -546,21 +558,19 @@ for json_file in all_JSON_filenames:
     output_graph.add((DEPCHA_Dataset, DEPCHA.isMainEconomicUnit,  URIRef(BK_MAIN_ECONOMIC_UNIT_URI) ))
     output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfTransactions, Literal(count_transactions)))
     output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfEconomicUnits, Literal(count_economic_units)))
-    count_economic_assets = count_moneys + count_commodities
-    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfEconomicAssets, Literal(count_economic_assets)))
+    count_economic_goods = count_commodities + count_services + count_rights
+    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfEconomicGoods, Literal(count_economic_goods)))
+    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfServices, Literal(count_services)))
+    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfCommodities, Literal(count_commodities)))
+    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfRights, Literal(count_rights)))
     output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfTotals, Literal(count_totals)))
 
     # units and currencies
     output_graph.add((DEPCHA_Dataset, DEPCHA.isMainCurrency, URIRef(BASE_URL + CONTEXT + "#" + BK_MAIN_CURRENCY["unit"]) ))
+    for currency in config_data["BK_CURRENCY"]["currency"]:
+        output_graph.add((DEPCHA_Dataset, DEPCHA.currency, URIRef(BASE_URL + CONTEXT + "#" + BK_MAIN_CURRENCY["unit"]) ))
 
 
-
-    # iterate over DEPCHA_DATASET_DC_METADATA in json confic file
-    if(config_data["DEPCHA_DATASET_DC_METADATA"]):
-        for dc_datafield in config_data["DEPCHA_DATASET_DC_METADATA"]:
-            output_graph.add((DEPCHA_Dataset, DC[dc_datafield], Literal(normalizeStringforJSON(config_data["DEPCHA_DATASET_DC_METADATA"][dc_datafield]))))
-
-    
     # create a bk:Dataset for every year
     # it contains info about the sum of all expense and income          
     for year in dates:
@@ -650,6 +660,7 @@ for json_file in all_JSON_filenames:
     print(f"Log: {count_moneys} bk:Money created")
     print(f"Log: {count_commodities} bk:Commodity created")
     print(f"Log: {count_services} bk:Service created")
+    print(f"Log: {count_rights} bk:Right created")
     print(f"Log: {count_EconomicUnits} bk:EconomicUnit created")
     print(f"Log: {Debug_Count_No_BK_ENTRY} no valid bk:entry in row.")    
         
@@ -658,216 +669,5 @@ for json_file in all_JSON_filenames:
     ########################################################################################
     output_graph.serialize(destination = config_data["OUTPUT-FILE-NAME"] + '.xml', format="pretty-xml")
 
-
-
-
-
-
-
-
-
+### 
 print(f"new file: {config_data['OUTPUT-FILE-NAME']}.xml")     
-
-""" 
-
-
-            
-            sum_incomeInYear = 0
-            sum_expenseInYear = 0
-            # select
-            
-            # ToDo: get conversion information from input confic file
-            # Pound
-            if(row["BK_MONEY1"].isdigit()):
-                BK_Money1_Sum = atof(row["BK_MONEY1"])
-            # 1 Pound = 20 Shilling
-            if(row["BK_MONEY2"].isdigit()):
-                BK_Money2_Sum = atof(row["BK_MONEY2"])/20
-            # 1 Pound = 240 Pence
-            if(row["BK_MONEY3"].isdigit()):
-                BK_Money3_Sum = atof(row["BK_MONEY3"])/240
-            # for every found bk:Transaction with a year in bk:when
-            yearRegex = re.compile('([1-3][0-9]{3})') 
-            Years = yearRegex.search(row["BK_WHEN"])
-            if(Years != None):
-                # sums all bk:Money for every year and stores them in a dict {"year":"sum"}
-                row_sum = BK_Money1_Sum + BK_Money2_Sum + BK_Money3_Sum
-                if(row_sum>0):
-                    # shows the calculation for every row
-                    #print( debitOrCredit + ": " + str(Years.group()) + ": " + str(BK_Money1_Sum) + "+" + str(BK_Money2_Sum) + "+" + str(BK_Money3_Sum) + " = " +str(BK_Money1_Sum + BK_Money2_Sum + BK_Money3_Sum) )
-                    # add current value with existing value in dict;
-                    if(debitOrCredit == "Debit"):
-                        DataSets[Years.group()]['income'] = float(DataSets[Years.group()]['income']) + row_sum
-                    elif(debitOrCredit == "Credit"):
-                        DataSets[Years.group()]['expense'] = float(DataSets[Years.group()]['expense']) + row_sum  
-                    else:
-                        Debug_DebitCreditEmptyRow += 1
-        else:
-            # Transaction is a bk:Total
-            bk_Total = URIRef(BASE_URL + PID + "#To" + str(count))
-            Transfer1 = URIRef(BASE_URL + PID + "#To" + str(count) + "T1")
-            #Transfer2 = URIRef(BASE_URL + PID + "#S" + str(count) + "T2")
-            Measurable_Money1 = URIRef(BASE_URL + PID + "#S" + str(count) + "M1")
-            Measurable_Money2 = URIRef(BASE_URL + PID + "#S" + str(count) + "M2")
-            Measurable_Money3 = URIRef(BASE_URL + PID + "#S" + str(count) + "M3")
-        
-        #if a single column exists containing information about debit or credit
-        if(debitOrCredit): 
-            # debit = Money from X to Washington
-            if(debitOrCredit == "Debit"):
-                #print("Money from Washington to X")
-                From = URIRef(BASE_URL + PID " + config_data["BK_MAIN_ECONOMIC_UNIT_ID"])
-                To = URIRef(BASE_URL + PID  + bk_EconomicUnit)
-            # credit = Money from Washington to X
-            elif (debitOrCredit == "Credit"):
-                #print("Money from X to Washington")
-                To = URIRef(BASE_URL + PID  + config_data["BK_MAIN_ECONOMIC_UNIT_ID"] )
-                From = URIRef(BASE_URL + PID" + bk_EconomicUnit)           
-        # a column for BK_FROM and BK_TO         
-        elif (checkKey(row, 'BK_FROM')):
-            From = URIRef(BASE_URL + PID  + str(row['BK_FROM']) )
-        elif (checkKey(row, 'BK_TO')):
-            To = URIRef(BASE_URL + PID + str(row['BK_TO']) )
-        else:
-            # anonym person uri
-            #print("ERROR with bk:to or bk:from")
-            From = URIRef(BASE_URL + PID + "#.anonym")
-            To = URIRef(BASE_URL + PID + "#B.anonym")
-        
-        #TRANSACTION
-        if('[Total]' not in row['BK_ENTRY']):
-            # bk:Transaction
-            output_graph.add((Transaction, RDF.type,  BK.Transaction))
-            # bk:source
-            output_graph.add((BK.Transaction, BK.source,  Literal(row['BK_SOURCE'])))
-            # only bk:Entry have bk:when
-            if(checkKey(row, 'BK_WHEN') and row['BK_WHEN'] != ""):
-                output_graph.add((Transaction, BK.when,  Literal(row['BK_WHEN']) ))
-        # bk:Total  
-        elif (row['BK_ENTRY'] == '[Total]'):
-            output_graph.add((Transaction, RDF.type,  BK.Total))
-        # RegEx to match what is after "[Total] " and use this information for the unit? : "[Total] Virginia Currency"
-        elif ('[Total] ' in row['BK_ENTRY']):
-            #bk:Total
-            output_graph.add((Transaction, RDF.type,  BK.Total))
-        else:
-            Debug_missedTotal += 1
-        
-        #BK.entry
-        #normalie whitesapce and " and ,
-        output_graph.add((Transaction, BK.entry,  Literal(normalizedEntry) ))
-        
-        output_graph.add((Transaction, BK.consistsOf,  Transfer1))
-        if(checkKey(row, 'BK_COMMODITY')):
-            output_graph.add((Transaction, BK.consistsOf,  Transfer2))
-        if(checkKey(row, 'OBJECT_')):
-            output_graph.add((Transaction, BK.type,  Literal(row['OBJECT_'])))
-        if(checkKey(row, 'BK_SOURCE')):
-            output_graph.add((Transaction, BK.source,  Literal(row['BK_SOURCE'])))
-        output_graph.add((Transaction, GAMS.isMemberOfCollection,  URIRef(BASE_URL + CONTEXT) ))
-        
-        # isPartofRDF needed?
-        #output_graph.add((Transaction, GAMS.isPartofTEI,  URIRef(BASE_URL + PID) ))
-        
-        #GAMS.textualContent
-        #output_graph.add((Transaction, GAMS.textualContent,  Literal(normalizedEntry) ))
-        
-        # Money - TRANSFER 1
-        output_graph.add((Transfer1, RDF.type,  BK.Transfer))
-        if(row['BK_MONEY1'] != ""):
-            output_graph.add((Transfer1, BK.transfers,  Measurable_Money1))
-        if(row['BK_MONEY2'] != ""):
-            output_graph.add((Transfer1, BK.transfers, Measurable_Money2))
-        if(row['BK_MONEY3'] != ""):
-            output_graph.add((Transfer1, BK.transfers, Measurable_Money3))
-        # if a column exists containt debit or credit
-        if(debitOrCredit):
-            output_graph.add((Transfer1, bk_from, From))
-            output_graph.add((Transfer1, BK.to,  To ))
-        #  if(debitOrCredit == "Debit"):
-        #      output_graph.add((Transfer1, bk_from, From))
-        #  elif(debitOrCredit == "Credit"):
-        #      output_graph.add((Transfer1, BK.to,  To ))  
-        else:
-            output_graph.add((Transfer1, bk_from, From))  
-            output_graph.add((Transfer1, BK.to,  To))
-            
-        #Commodity - TRANSFER 2
-        if(checkKey(row, 'BK_COMMODITY')):
-            output_graph.add((Transfer2, RDF.type,  BK.Transfer))
-            output_graph.add((Transfer2, BK.transfers, Commodity))
-            output_graph.add((Transfer2, BK.to, To))
-            output_graph.add((Transfer2, bk_from, From))
-        
-        #MONEY: Money1 (like Livre or Dollar)
-        getMoney(Measurable_Money1, "BK_MONEY1", "BK_UNIT1_config")
-        
-        #MONEY: Money2, (like Sous or Shilling)
-        getMoney(Measurable_Money2, "BK_MONEY2", "BK_UNIT2_config")
-        
-        #MONEY: Money2, (like Deniers or Pence)
-        getMoney(Measurable_Money3, "BK_MONEY3", "BK_UNIT3_config")
-        
-        #COMMODIY
-        if(checkKey(row, 'BK_COMMODITY')):
-            output_graph.add((Commodity, RDF.type,  BK.Commodity))
-            output_graph.add((Commodity, BK.commodity,  Literal(row['BK_COMMODITY']) ))
-            output_graph.add((Commodity, BK.unit, Literal('error: missing Unit') ))
-            output_graph.add((Commodity, BK.quantity, Literal(row['QUANTITE1']) ))
-            
-
-        # TO only ID    
-        #output_graph.add((To, RDF.type,  BK.EconomicUnit))
-
-    else:
-        Debug_CountEmptyRow += 1 
-
-# create om:Unit
-
-
-# create a bk:Dataset for every year
-for year in DataSets:
-    #   <bk:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#1771">
-    bk_Dataset_URI = BASE_URL + PID + "#" + year
-    DataSet = URIRef(bk_Dataset_URI)
-    output_graph.add((DataSet, RDF.type,  BK.Dataset))
-    
-    # <bk:date>1771</bk:date>
-    output_graph.add((DataSet, BK.date, Literal(year) ))
-    
-    # <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
-    output_graph.add((DataSet, GAMS.isMemberOfCollection,  URIRef(BASE_URL + CONTEXT) ))
-    
-    # <bk:Income rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#1789I"/>
-    bk_Income = URIRef(bk_Dataset_URI + "I")
-    # <bk:debit>
-    output_graph.add((DataSet, BK.debit, bk_Income))
-    output_graph.add((bk_Income, RDF.type,  BK.Income))
-        # bk:sum
-    output_graph.add((bk_Income, BK.sum, Literal(round(float(DataSets[year]['income']))) ))
-        # bk:unit
-    output_graph.add((bk_Income, BK.unit, Literal(config_data["BK_UNIT1_config"]) ))
-        # bk:aggregates
-
-    #########
-    # <bk:Expense rdf:about="https://gams.uni-graz.at/o:depcha.wheaton.1#1828E">
-    bk_Expense = URIRef(bk_Dataset_URI + "E")
-    # <bk:credit>
-    output_graph.add((DataSet, BK.credit, bk_Expense))
-    output_graph.add((bk_Expense, RDF.type,  BK.Expense))
-        # bk:sum
-    output_graph.add((bk_Expense, BK.sum, Literal(round(float(DataSets[year]['expense']))) ))
-        # bk:unit (defined in _config)
-    output_graph.add((bk_Expense, BK.unit, Literal(config_data["BK_UNIT1_config"]) ))
-    
-
-    # 
-    
-    #output_graph.add((DataSet, BK.sum,  Literal(round(DataSets[year])) ))
-    #print(DataSets[year])
-          
-####
-# format="xml" creates plain rdf/XML (rdf:type bk:Entry)
-# format="pretty-xml" ,  abbreviated RDF/XML syntax like bk:Entry
-# format="turtle"
-"""
