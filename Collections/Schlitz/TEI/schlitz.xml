@@ -33,13 +33,13 @@
             <unitDecl>
                 <unitDef ref="wd:Q4917" type="currency" xml:id="dollar" ana="bk:mainCurrency" from="1690">
                     <label xml:lang="en">dollar</label>
+                    <label type="abbreviation">$</label>
                     <country>USA</country>
-                    <unit>$</unit>
                 </unitDef>
                 <unitDef ref="wd:Q58093" type="currency" xml:id="cent">
                     <label xml:lang="en">cent</label>
+                    <label type="abbreviation">c</label>
                     <country>USA</country>
-                    <unit>c</unit>
                     <conversion fromUnit="#dollar" toUnit="#cent" formula="$fromUnit div 100"/>
                 </unitDef>
             </unitDecl>

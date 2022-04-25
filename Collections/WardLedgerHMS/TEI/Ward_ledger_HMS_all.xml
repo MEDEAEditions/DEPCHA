@@ -120,20 +120,20 @@
       <unitDecl>
         <unitDef type="currency" xml:id="pound" ana="bk:unit">
           <label xml:lang="eng">pound</label>
+          <label type="abbreviation">£</label>
           <country>UK</country>
-          <unit>£</unit>
           <conversion fromUnit="#shilling" toUnit="#pound" formula="$fromUnit div 20"/>
           <conversion fromUnit="#pence" toUnit="#pound" formula="$fromUnit div 240"/>
         </unitDef>
         <unitDef type="currency" xml:id="shilling">
           <label xml:lang="eng">shilling</label>
-          <country>UK</country>
-          <unit>sh</unit>
+          <label type="abbreviation">sh</label>
+          <country>UK</country>    
         </unitDef>
         <unitDef type="currency" xml:id="pence">
           <label xml:lang="eng">pence</label>
+          <label type="abbreviation">p</label>
           <country>UK</country>
-          <unit>p</unit>
         </unitDef>
       </unitDecl>
       <classDecl>
