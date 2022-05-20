@@ -37,25 +37,32 @@
         <body>
             <div type="example">
                 <head><name ana="bk:to" ref="#economic_unit.1">Stagville</name> August 1st 1808</head>
-                <table>
-                    <head>69 <name ana="bk:from" ref="#economic_unit.2">James Haley</name> J Self Dr.</head>
-                    <row ana="bk:entry">
-                        <cell>
-                            <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder<measure ana="bk:price" >2/6</measure></measure>
-                            <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb Shot<measure>2/6</measure></measure>
-                            <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1 lb Sugar<measure>2/6</measure></measure>
-                        </cell>
-                        <cell>
-                            <measure ana="bk:commodity" commodity="shoe_knife" quantity="1" unit="piece">1 Shoe knife<measure>1/6</measure></measure>
-                        </cell>
-                        <cell/>
-                        <cell>
-                            <measure ana="bk:money" quantity="7" unit="shilling">7</measure>
-                        </cell>
-                        <cell>
-                            <measure ana="bk:money" quantity="6" unit="pence">6</measure>
-                        </cell>
-                    </row>
+                      <table>
+                        <head>69 <name ana="bk:from" ref="#economic_unit.2">James Haley</name> J Self Dr.</head>
+                        <row ana="bk:entry">  
+                            <cell>    
+                                    <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder<measure ana="bk:price"> 2/6</measure></measure>    
+                                    <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb Shot<measure ana="bk:price"> 2/6</measure></measure>    
+                                    <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1 lb Sugar<measure ana="bk:price"> 2/6</measure></measure> 
+                            </cell> 
+                            <cell>  
+                                <measure ana="bk:money" quantity="7" unit="shilling">7</measure> 
+                            </cell>
+                            <cell>   
+                                <measure ana="bk:money" quantity="6" unit="pence">6</measure> 
+                            </cell>
+                       </row>  
+                          <row ana="bk:entry">
+                                <cell>   
+                                    <measure ana="bk:commodity" commodity="shoe_knife" quantity="1" unit="piece">1 Shoe knife<measure ana="bk:price"> 1/6</measure></measure> 
+                                </cell>  
+                            <cell>  
+                                <measure ana="bk:money" quantity="7" unit="shilling">1</measure> 
+                            </cell>
+                            <cell>   
+                                <measure ana="bk:money" quantity="6" unit="pence">6</measure> 
+                            </cell>
+                        </row>
                 </table>
             </div>
         </body>
