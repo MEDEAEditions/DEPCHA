@@ -580,7 +580,7 @@ for json_file in all_JSON_filenames:
         output_graph.add((Aggregation, RDF.type,  DEPCHA.Aggregation))
         output_graph.add((DEPCHA_Dataset, DEPCHA.aggregates, Aggregation))
         # <bk:date>1771</bk:date>
-        output_graph.add((Aggregation, BK.when, Literal(year) ))
+        output_graph.add((Aggregation, DEPCHA.date, Literal(year) ))
         output_graph.add((Aggregation, BK.unit, Literal(BK_MAIN_CURRENCY['unit']) ))
 
         # income / debit
@@ -590,7 +590,7 @@ for json_file in all_JSON_filenames:
             quantity = money.get(unit)
             # return converted money according to predefined main currency (confic file)
             revenue_sum += convert_Money_to_MainCurrency(quantity, unit) 
-        output_graph.add((Aggregation, BK.debit, Literal(float(revenue_sum)) ))
+        output_graph.add((Aggregation, DEPCHA.revenue, Literal(float(revenue_sum)) ))
 
         # expense / credit
         expenditure_sum = 0
@@ -598,7 +598,7 @@ for json_file in all_JSON_filenames:
             unit = list(money)[0]
             quantity = money.get(unit)
             expenditure_sum += convert_Money_to_MainCurrency(quantity, unit) 
-        output_graph.add((Aggregation, BK.credit, Literal(float(expenditure_sum)) ))
+        output_graph.add((Aggregation, DEPCHA.expenses, Literal(float(expenditure_sum)) ))
 
     ########################################################################################
     ### Currency <om:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#pound">
