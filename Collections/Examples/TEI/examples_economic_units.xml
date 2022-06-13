@@ -12,11 +12,12 @@
                 <ref target="context:depcha.example" type="context">Examples</ref>
             </publicationStmt>
             <sourceDesc>
-                <p>This is an exemplary extract of one dataset of the DEPCHA collection. It might differ
-                    from the original dataset due to eventual adaptions that should help to understand the possibilities of
-                    mapping different contents to the Bookkeeping Ontology.</p>
+                <p>This is an exemplary extract of one dataset of the DEPCHA collection. It might
+                    differ from the original dataset due to eventual adaptions that should help to
+                    understand the possibilities of mapping different contents to the Bookkeeping
+                    Ontology.</p>
             </sourceDesc>
-        </fileDesc>  
+        </fileDesc>
         <encodingDesc>
             <listPrefixDef>
                 <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
@@ -32,16 +33,39 @@
                 </prefixDef>
             </listPrefixDef>
         </encodingDesc>
+        <profileDesc>
+            <particDesc>
+                <listPerson ana="bk:index">
+                    <head> Prosopographie </head>
+                    <desc> Personen, die in den Schlandersberger Rechungen namentlicht erwähnt
+                        werden. </desc>
+                    <person xml:id="pers_SR051">
+                        <persName>
+                            <forename>Anderlein </forename>
+                            <addName>Fischer </addName>
+                        </persName>
+                    </person>
+                    <person xml:id="pers_SR052">
+                        <persName>
+                            <forename>Herr </forename>
+                            <surname>Kaspar </surname>
+                            <addName>Herr von Hans Kelner </addName>
+                        </persName>
+                    </person>
+                </listPerson>
+            </particDesc>
+        </profileDesc>
     </teiHeader>
     <text>
         <body>
             <div type="example">
-                <p ana="bk:entry">
-                    Item am <date ana="bk:when" when="1402-01-01">s<supplied reason="missing">[o]</supplied>nntag nach Eibnitÿ</date>
-                    prachten dÿ<lb/><name ref="#pers_SR051" ana="bk:from bk:group">obgeschriben visser</name>
-                    <measure ana="bk:commodity" commodity="fish" quantity="18" unit="pound">18 lb visch</measure> 
-                    dem <name ref="#pers_SR052" ana="bk:to bk:individual">herrn Kaspar</name>.
-                </p>
+                <p ana="bk:entry"> Item am <date ana="bk:when" when="1402-01-01">s<supplied
+                            reason="missing">[o]</supplied>nntag nach Eibnitÿ</date> prachten
+                        dÿ<lb/><name ref="#pers_SR051" ana="bk:from bk:group">obgeschriben
+                        visser</name>
+                    <measure ana="bk:commodity" commodity="fish" quantity="18" unit="pound">18 lb
+                        visch</measure> dem <name ref="#pers_SR052" ana="bk:to bk:individual">herrn
+                        Kaspar</name>. </p>
             </div>
         </body>
     </text>
