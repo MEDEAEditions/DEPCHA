@@ -1,0 +1,1607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+     
+     <fileDesc>
+        
+        <titleStmt>
+           <title>Amtsbücher des Deutschen Ordens um 1450. Pflegeamt zu Seehesten und Vogtei zu Leipe, OF 186a</title>
+           <editor>Cordula A. Franzke, Jürgen Sarnowsky</editor>
+           <funder>Deutsche Forschungsgemeinschaft e. V.
+              <address>
+                 <addrLine>Kennedyallee 40</addrLine>
+                 <addrLine>D-53175 Bonn</addrLine>
+              </address>
+           </funder>
+           <funder>Universität Hamburg
+              <address>
+                 <addrLine>Mittelweg 177</addrLine>
+                 <addrLine>D-20148 Hamburg</addrLine>
+              </address>
+           </funder>
+        </titleStmt>
+        <!-- Angaben zur Druckfassung und Lizenz -->
+        <publicationStmt>
+           <publisher>V und R unipress GmbH</publisher>
+           <address>
+              <addrLine>Robert-Bosch-Breite 6</addrLine>
+              <addrLine>D-37079 Göttingen</addrLine>
+              <addrLine>http://www.v-r.de/</addrLine>
+           </address>
+           <pubPlace>Göttingen</pubPlace>
+           <date>2015</date>
+           <idno type="ISBN">978-3-8471-0358-5</idno>
+           <idno type="DOI">10.14220/9783737003582</idno>
+           <availability>
+              <p>Dieses Werk ist als Open-Access-Publikation im Sinne der Creative-Commons-Lizenz BY-NC-SA International 4.0 (»Namensnennung – Nicht kommerziell – Weitergabe unter gleichen
+                 Bedingungen«) unter dem DOI 10.14220/9783737003582 abzurufen. Jede Verwertung in anderen als den durch diese Lizenz zugelassenen Fällen bedarf der vorherigen schriftlichen Einwilligung des Verlages.</p>
+              <licence target="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</licence>
+           </availability>
+        </publicationStmt>
+        
+        <sourceDesc>
+           <msDesc>
+              <msIdentifier>
+                 <institution>Geheimes Staatsarchiv Preußischer Kulturbesitz, Berlin</institution>
+                 <collection>XX. Hauptabteilung, Ordensfolianten</collection>
+                 <idno>GStA PK, XX. HA StA Königsberg, OF 186a</idno>
+                 <msName>Vogtei zu Leipe, Komturei Schönsee, Kulmerland</msName>
+              </msIdentifier>
+           </msDesc>
+        </sourceDesc>
+     </fileDesc>
+     <!-- Projektbeschreibung -->
+     <encodingDesc>
+        <projectDesc>
+           <p> Zur wirtschaftlichen Tätigkeit des Deutschen Ordens in Preußen
+              im späten Mittelalter sind umfangreiche Amtsbücher wie Schuldbücher,
+              Handfesten oder auch Rechnungen überliefert, welche Einblicke
+              in die Wirtschaftsgeschichte des Ordens gewähren. Die mit
+              dieser Edition erschlossenen Amtsbücher der Vogtei zu Leipe und
+              des Pflegeamts Seehesten ermöglichen Aufschluss über die Tätigkeiten
+              der unteren Amtsträger des Deutschen Ordens um 1450.
+              Vögte und Pfleger verwalteten Naturaleinnahmen wie Getreide oder
+              Hühner und hielten entsprechende Informationen in Amtsbüchern
+              fest. Weiter notierten die Schreiber auch Gebietsbeschreibungen
+              oder Hinweise zu Nutzungsrechten an Feldern, Seen und Flüssen.
+              Damit bieten die als Ordensfoliant 186 und 186a erfassten Amtsbücher
+              eine gute Grundlage zur Beantwortung von wirtschafts-,
+              sozial-, rechts- und verwaltungsgeschichtlichen Fragestellungen.
+           </p>
+        </projectDesc>
+     </encodingDesc>
+     <!-- Für Einleitung, Beschreibung des Folianten und Editionsgrundsätze, ferner Abkürzungsverzeichnis, Verzeichnis zu Textmarkierungen und das Quellen-/Literaturverzeichnis sei auf die Druckfassung verwiesen. -->  
+     
+     <!-- Edition -->
+     <profileDesc>
+        <particDesc>
+           <!-- Personenlistung -->
+           <listPerson>
+              <person xml:id="GEgloffstein">
+                 <persName>Georg von Egloffstein</persName>
+                 <note>Vogt von der Neumark (1441 Juni–1448 November), Komtur von Schönsee (1448 November 11–1453 Oktober 19), zgl. Vogt von Leipe (1448 November 11–1454 Februar)</note>
+              </person>
+              
+              <person xml:id="HSeckendorf">
+                 <persName>Heinrich von Seckendorf</persName>
+                 <note>Pfleger von Tapiau (1477 November 20–1480 Mai 10)</note>
+              </person>
+              
+              <person xml:id="AAhlimb">
+                 <persName>Albrecht von Ahlimb</persName>
+                 <note>auch Olym, Hauskomtur von Rehden (1446)</note>
+              </person>
+              
+              <person xml:id="LErlichshausen">
+                 <persName>Ludwig von Erlichshausen</persName>
+                 <note>Vogt von Leske (1440), Vogt von Grebin (1441 Ok-tober 14), Komtur von Schönsee und zgl. Vogt von Leipe (1442 November 13–1447), Komtur von Mewe (1446 Oktober 28/November 4–1450), Hochmeister (1450 März 21–†1467 April 4)</note>
+              </person>
+           </listPerson>
+           
+        </particDesc>
+        
+     </profileDesc>
+  </teiHeader>
+   
+   <text>
+      <body>
+         <!-- Editionstext -->
+         <pb n="1r"/>
+<div>
+<head>Item dit na gescreven ys de notdorfft de men den dyneren to Schonse plecht to geven.</head>
+<p>Item ychlikem dynere 8 ellen schon gewant gekrumpen<note>gekrumpen über der Zeile ergänzt.</note> edder 4 m. dar vor un<supplied cert="high">de</supplied> 1 ½ m. schu gelt.</p>
+<p>Item vor de winternotdorft 8 ellen grawe gewant gekrumpen <del rend="gestrichen">5</del> edder 5 f. dar vor eyme ichliken un<supplied cert="high">de</supplied> ok 1 ½ m. schu gelt.</p>
+<p>Item dem rydekoke un<supplied cert="high">de</supplied> dem kokemester den gifft ok eyme ichlikeme alze eyme dyner.</p>
+<p>Item 1 gude m. gifft men thu offer gelde in de gemeyne den dyneren.</p>
+<p>Item dem rydesmede gelike eyme dyner syn lan.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Item dyt ys dat gesingelon<note>Sic.</note> to Schonse<del rend="gestrichen">alle</del> ichgelike Quatertempe<supplied cert="high">r</supplied>.</head>
+<p>Item 1 m. dem cappellan.</p>
+<p>Item 15 sc. dem schulre.</p>
+<p>Item 1 m. 4 sol. dem kelre knechte.</p>
+<p>Item 1 m. 4 sol. dem huskoke.</p>
+<p>Item 1 m. 4 sol. dem becker.</p>
+<p>Item 15 sc. des beckers kumpan.</p>
+<p>Item 15 sc. dem bruwer.</p>
+<p>Item 5 f. den beyden dorwerdern.</p>
+<p>Item 7 ½ f. den dren karffis knechten ichlikem 15 sc. den de dat holt up dat huß furen.</p>
+<p>Item 3 f. dem garmester.</p>
+<p>Item<note>Vor dem Wort Tintenfleck.</note> 15 sc. syme kumppan.</p>
+<p>Item 1 m. dem bodeker to Torun.</p>
+<p>Item 15 sc. des kellermeysters un<supplied cert="high">de</supplied> ku<supplied cert="high">m</supplied>ppe<supplied cert="high">n</supplied>s stal knecht.</p>
+<p>Item 1 m. der muter im hoffe.</p>
+<p>Item 5 f. twen meygeden.</p>
+<pb n="1v"/>
+<p>Item 15 sc. deme veymeyster.</p>
+<p>Item 1 m. deme swynherden.</p>
+<p>Item 5 f. deme kuherden.</p>
+<p>Item 1 m. deme karffen hern.</p>
+<p>Item 3 f. der muter im karffen.</p>
+<p>Item 5 f. deme kobelherden.</p>
+<p>Item 1 gude m. dem scheper.</p>
+<p>Item 1 m. deme hoffemester to Czychow.</p>
+<p>Item 3 f. der muter to<note>Über der Zeile ergänzt.</note> Czychow.</p>
+<p>Item 15 sc. dem herden to Czychow yde<supplied cert="high">m</supplied> 1 m. von den pferden.</p>
+<p><supplied cert="high">Summa</supplied> dess<supplied cert="high">er</supplied> oven gescreven rekenunge 24 m. 3 f. minus 3 <del rend="gestrichen">d.</del> sol.<note>Summa ... 3 sol.: Dieser Eintrag ist mit eckigen Klammern am Zeilenanfang und am Zeilenende markiert. Summa korrigiert, evtl. aus Supra.</note></p>
+<p><del rend="overstriken">Item Loreke de vischmester ys gemydet eyn iar vor 8 m.</del></p>
+<p>Item de smede knecht ys gemydet eyn iar vor 4 m. un<supplied cert="high">de</supplied> 1 par schu doruff hot her entphangen 2 ½ m. und 1 par schw.</p>
+<p>Item des hern wagenknecht 1 m. de Quaterte<supplied cert="high">m</supplied>per.</p>
+<p>Item deme oversten stalknechte 8 m. eyn iar.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+<pb n="2r"/>
+<p>Item so sich de hern berichten den dach gifft men en ere fleyschkanne id gevalle up den Fridach ader Sonavent.</p>
+<p>Item so schencket men in den heren tyden Ostern Pindest<supplied cert="high">e</supplied>n <abbr>etc.</abbr> Des abundes colla<supplied cert="high">cio</supplied> 2 druncke collacien bir 2 druncke olt bir ader mede un<supplied cert="high">de</supplied> thom<supplied cert="high">e</supplied> lesten den 6ten tring koffent.</p>
+<p>Item ades morgens over dische 2 druncke collacien bir un<supplied cert="high">de</supplied> 2 druncke ald bir.</p>
+<p>Item ade fleysch kanne is van 6 steuffen wenne wen der <persName ref="#GEgloffstein">her</persName> tho heymen im huße ist so gifft men den dyneren 6 steuffe collacien bir wenne her ewer nicht thu heyme ist so gifft men en 3 steuffe un<supplied cert="high">de</supplied> 3 broth un<supplied cert="high">de</supplied> eyne schutczele mit fleysche.</p>
+<p>Item wenne sich de hern berichten so wil der kokemester un<supplied cert="high">de</supplied> der ridekok hebben.</p>
+<p>Item ade dor werder der solen helpen bruwen water treden dat huß reyne maken bir faten holt howen th<supplied cert="high">om</supplied> bruwen so id not deyth.</p>
+<p>Sunder de nederste dorwerder sal de bade stofe heyten wenne man des bederff.</p>
+<p>Item de overste dorwerder sal den winter das reybenther heysen wenne men des behuffet.</p>
+<p>Item thu winter holdet men 3 karff<supplied cert="high">is</supplied> knechte de wile men heytet und<supplied cert="high">e</supplied> sy furen alle dage 2 fuder holt ichliker uthgenomen wenner sye nicht meel un<supplied cert="high">de</supplied> molt furen un<supplied cert="high">de</supplied> im somer in furen holt des dages.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+<pb n="2v leer"/>
+<pb n="3r"/>
+<p>Item dat gesingelon thu Bothe.</p>
+<p>Item 1 m. der muter.</p>
+<p>Item 7 ½ f. dren meygeden.</p>
+<p>Item 1 m. deme hoffeknechte.</p>
+<p>Item 1 m. deme svinherden un<supplied cert="high">de</supplied> kuherden.</p>
+<p>Item 5 f. deme kobelherden.</p>
+<p>Item 1 m. deme vischer.</p>
+<p>Item 2 m. deme scheper vor 400 schape.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Sump<supplied cert="high">a</supplied><note>Im Text als Supra.</note> 9 m. 3 sc.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Item gesingelon thur Lyppe.</p>
+<p>Item 1 m. der muter.</p>
+<p>Item 5 f. twen meygeden.</p>
+<p>Item 5 f. deme kobelherden.</p>
+<p>Item 3 f. deme follenknechte.</p>
+<p>Item 1 m. deme hoffeknechte.</p>
+<p>Item <del rend="gestrichen">1</del> 5 f. deme kuherden.</p>
+<p>Item 1 m. deme vischer.</p>
+<p>Item.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Summa 7 ½ m.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+<pb n="3v–6v leer"/>
+<pb n="7r"/>
+</div>
+<div>
+<head>Dis nochgeschrebene getreyde unde gelt habe ich Matt<supplied cert="high">is</supplied> Gasse entpfangen alze ich am aller irst hovemeister wart zcur Leyppe.</head>
+</div>
+<div>
+<head>Lißow.</head>
+<p>Malcher d<supplied cert="high">edi</supplied>t ½ last korn ken der Leyppe an den czins.</p>
+<p>Michel d<supplied cert="high">edi</supplied>t 12 s<supplied cert="high">cheffe</supplied>l habir an den czins.</p>
+<p>Herman 8 s<supplied cert="high">cheffe</supplied>l habir an den czins. </p>
+<p>Tlutschemast d<supplied cert="high">edi</supplied>t 10 s<supplied cert="high">cheffe</supplied>l gerste an den czins.<note>Folgt Streichung Stentczel d<supplied cert="high">edi</supplied>t 15 sc. vor hoy. Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Drenow.</head>
+<p>Steske d<supplied cert="high">edi</supplied>t 13 ½ s<supplied cert="high">cheffe</supplied>l korn an den czins.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 3 seyten fleisch.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Iserlo.</head>
+<p>Doring d<supplied cert="high">edi</supplied>t ½ last un<supplied cert="high">de</supplied> 4 s<supplied cert="high">cho</supplied>k habir an den czins.</p>
+<p>Der alde kretczmer d<supplied cert="high">edi</supplied>t 18 s<supplied cert="high">cheffe</supplied>l gerste an den czins.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Malkow.</head>
+<p>Der scholtcze d<supplied cert="high">edi</supplied>t 27 s<supplied cert="high">cheffe</supplied>l haber.</p>
+<p>Idem d<supplied cert="high">edi</supplied>t 1 m. an den czins.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+<pb n="7v"/>
+</div>
+<div>
+<head>Pampersee.</head>
+<p>Der kretczmer d<supplied cert="high">edi</supplied>t 5 f. vor hoy am czinse.</p>
+<p>Der scholtcze d<supplied cert="high">edi</supplied>t 1 m. 9 sc. v<supplied cert="high">or</supplied> hoy.</p>
+<p>Idem d<supplied cert="high">edi</supplied>t 16 s<supplied cert="high">cheffe</supplied>l habir of den czins.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Krossin.</head>
+<p>Der kretczmer d<supplied cert="high">edi</supplied>t 1 m.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 1 m. of dy Ostern.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Vom <persName ref="#GEgloffstein">hern</persName><note type="uncertainty"/> entpfangen 1 rh. gld. un<supplied cert="high">de</supplied> 3 alde f.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Ich habe vorkoft vor 4 ½ f. vische.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Ich habe eynen kessil vorkoft mit des kompans wissen vor 9 sol.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Ich habe mit der mutter ken Thorn gesant ½ to. potter.</p>
+<p>Item vor 1 ½ m. kese hot dy mutter vorkoft un<supplied cert="high">de</supplied> daz gelt entpfing Iohan un<supplied cert="high">de</supplied> dy potter dor czu.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Summa der entpfounge 6 m. 7 sc. minus ½ sol.</p>
+ 
+<pb n="8r"/>
+</div>
+<div>
+<head>Dis noch geschrebene getreyde und<supplied cert="high">e</supplied> gelt habe ich widder owsgeg<supplied cert="high">eben</supplied>.</head>
+<p>Item ken Thorn 2 leste un<supplied cert="high">de</supplied> 15 s<supplied cert="high">cheffe</supplied>l korn geantwert.</p>
+<p>Item 4 leste und<supplied cert="high">e</supplied> 7 s<supplied cert="high">cheffe</supplied>l korn ken Thorn geantwerth.</p>
+<p>Item kem Botin ½ last korn.</p>
+<p>Item dem hovemanne gelegin 50 s<supplied cert="high">cheffe</supplied>l korn.</p>
+<p>Item dem hovemanne zcu Fiddelhusin ½ last und<supplied cert="high">e</supplied> 1 s<supplied cert="high">cheffe</supplied>l korn.</p>
+<p>Item 12 leste korn minus 17 s<supplied cert="high">cheffe</supplied>l kem Kolmen geantwert.</p>
+<p>Item 1 last erwissin kem Kolmen geantwert.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Den vischern 5 s<supplied cert="high">cheffe</supplied>l korn g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> of ir lon.</p>
+<p>Item dem smede 4 s<supplied cert="high">cheffe</supplied>l korn.</p>
+<p>Dem schicker 4 s<supplied cert="high">cheffe</supplied>l korn.</p>
+<p>Dem kobilhirten 15 s<supplied cert="high">cheffe</supplied>l korn.</p>
+<p>Dem kwhirten 7 s<supplied cert="high">cheffe</supplied>l korn.</p>
+<p>Item.<note>Unterhalb des Eintrags folgt Freiraum.</note></p> 
+<pb n="8v"/>
+</div>
+<div>
+<head>Dis nochgeschrebene gelt hab ich widder ows g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied>.</head> 
+<p>Item den dreschirn 1 m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> mit des kompans wissen.</p>
+<p>Item eyner mait ½ f. of ir lon.</p>
+<p>Item 2 meydin 5 f. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied>.</p>
+<p>Item 1 m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> vor hoy.</p>
+<p>Item den meydin g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> 13 sol.</p>
+<p>Item dem howsk<supplied cert="high">umpthur</supplied> <del rend="gestrichen">1</del> 6 sol.</p>
+<p>Item 5 f. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> vor hoy Symonynne vom Berge.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Dem heckir 10 sc.</p>
+<p>Item dem heckir 9 sol.</p>
+<p>Item dem kwhirten 6 sol.</p>
+<p>Dem kobilhirten 4 sc.</p>
+<p>Item 19 sc. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> vor garn zcur kleppe.</p>
+<p>Item 3 f. vor exßen.</p>
+<p>Item 1 f. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> vor 1 ax zcu stelin.</p>
+<p>Item vor 10 sc. lichte gekoft.</p>
+<p>Item ½ m. vor strenge zcum garn.</p>
+<p>Item 12 sol. vor somen zcu seen.</p>
+<p>Item 7 sol. vor 1 schok strenge.</p>
+<p>Item 9 sol. vor 1 kessil zcu flicken.</p>
+<p>Item 15 sc. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> vor hoy Stentczel zcu Lißow.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Su<supplied cert="high">mma</supplied> der ows gobe 9 ½ m. 1 sc. 2 sol.</p>
+ 
+<pb n="9r leer"/>
+<pb n="9v"/>
+</div>
+<div>
+<head>Dis nochgeschrebene gelt habe ich entpfangen sint dem neuwin im LIIIten.</head>
+<p>Item 2 ½ m. in die <date when="1453-06-24">Io<supplied cert="high">han</supplied>nis Bap<supplied cert="high">tis</supplied>te.</date></p>
+<p>Item 3 m. am <date when="1453-07-12">Obinde Margarethe. </date></p>
+<p>Item 1 f. <date when="1453-08-02">die Steffani.</date></p>
+<p>Item ½ m. entpfangen vo<supplied cert="high">m</supplied> schreiber.</p>
+<p>Item 4 sc.</p>
+<p>Item 7 sol.</p>
+<p>Item 20 sc.</p>
+<p>Item 1 m. von Groschin.</p>
+<p>Item 1 m. von der mutter mir von Thorn gesanth.</p>
+<p>Item 3 m. zcur Leyppe entpfangen.</p>
+<p>Item von Iohan 3 m.</p>
+<p>Item 5 m. vor kese.</p>
+<p>Item ½ m. von Malchir zcu Lißow.</p>
+<p>Item 2 m. entpfangen vom meyme <persName ref="#GEgloffstein"> hern voyte</persName>.</p>
+<p>Item entpfangin 4 ½ m. vom kompan of drescher minus ½ f.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Su<supplied cert="high">mma</supplied> 27 m. 5 sc. 2 sol. von der <del rend="overstriken">owsgobe</del> entpfangen.</p>
+ 
+<pb n="10r"/>
+</div>
+<div>
+<head>Gerechint daz fy zcur Leypen of dy Qua<supplied cert="high">ter</supplied>temper Mich<supplied cert="high">ae</supplied>lis am <date when="1452-10-06">Freytage noch Francisci im LII</date> alze Matt<supplied cert="high">is</supplied> Gasse hovemeister wart.</head> 
+<p>Item 1 schok un<supplied cert="high">de</supplied> 4 cziendir pferde.</p>
+<p>Item 3 mandiln minus 2 folin.</p>
+<p>Item ½ schok melker kw.</p>
+<p>Item 9 czegin.</p>
+<p>Item 12 un<supplied cert="high">de</supplied> ½ schok gelderku.</p>
+<p>Item 5 plucku hot der hoveman.</p>
+<p>Item 4 schok 21 sweyn.</p>
+<p>Item 450 un<supplied cert="high">de</supplied> 17 schoffe.</p>
+<p>Item 13 gense.</p>
+<p>Item 4 kessil der 5<supplied cert="high">te ist</supplied> bose.</p>
+<p>Item 1 gropin 1 brotspis.</p>
+<p>Item 1 dreybeyn 1 rost.</p>
+<p>Item 3 beslagene emer un<supplied cert="high">de</supplied> 4 unbeslagene emer.</p>
+<p>Item 4 milch muldin 3 czobir.</p>
+<p>Item 4 holtcz exsen.</p>
+<p>Item 5 slosse un<supplied cert="high">de</supplied> 1 vesser slos 1 kessel kethe.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Viddelhusin eodem die.</head>
+<p>Item 12 czinder pferde.</p>
+<p>Item 15 czinder ochsin.</p>
+<p>Item 2 pflucku un<supplied cert="high">de</supplied> 1 zcu mitte.<note>Unterhalb des Eintrags folgt Freiraum.</note></p> 
+<pb n="10v leer"/>
+<pb n="10ar"/>
+<p>Deme hovemeister 2½ m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> of den weith <date when="--06-24">die Io<supplied cert="high">ha</supplied>nis Bap<supplied cert="high">tis</supplied>te.</date></p>
+<p>Item 3 m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> am <date when="--07-12">Obinde Margarethe. </date></p>
+<p>Item 1 f. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> am Freytage Steffani.</p>
+<p>Item 4 sc. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> in <date when="--08-14">Vigilia Assump<supplied cert="high">ti</supplied>onis.</date></p>
+<p>Item 7 sol. eod<supplied cert="high">em</supplied> die.</p>
+<p>Item ½ m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> of drescher.</p>
+<p>Item 20 sc. of dreschers.</p>
+<p>Item 1 m. gesant mit Groschin.</p>
+<p>Item 4 ½ m. minus ½ f. of drescher g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> <date when="--09-01">die Egidij.</date></p>
+<p>Item 1 m. gesant mit der mutter.</p>
+<p>Item 3 m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> zcur Leyppe D<supplied cert="high">omi</supplied>nica p<supplied cert="high">ost</supplied> Remigij of dreschir.</p>
+<p>Su<supplied cert="high">mm</supplied>a 16 ½ m. 8 sc. 2 <supplied cert="high">sol.</supplied>.<note>Summa ... 2 sol. durch andere Hand ergänzt. Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="10av leer"/>
+<pb n="11r"/>
+<p>Item außge<supplied cert="high">ge</supplied>ben den hauern czuͤ Schoͤnse 16 f.<note>Folgt Streichung Item. Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Item den snytte<supplied cert="high">re</supplied> czuͤ Cheiczaw 1 m. ydem 3 f.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Item 21 sol. 7 frawen 1 ½ tag dy den mahen auß czogen.</p>
+<p>Item ½ m. gegeben einen botten von Deuchczen Landen.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Item ½ m. verczert Hans czu Thoran.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Item 3 m. 4 sol.<note>4 sol. über der Zeile ergänzt.</note> gekauft fur 8 schoͤck kes 3 sch<supplied cert="high">ock</supplied> czu 9 sc. und 4 sol. dy andren zcu 9 sc.</p>
+<p>Item kes verkauft 20 sc<supplied cert="high">hock</supplied> kes czur Leyppe.<note>20 schock ... Leyppe über der Zeile ergänzt, darunter gestrichen weys <supplied cert="high">warthes</supplied>wol dor von gegebin 14 sol. fur leynwat.</note></p>
+ 
+<pb n="11v"/>
+<p>Item 2 ½ m. 12 sol. geben 9 kerel czu decken dy schuren czur Leyppe VI tag den tag 3 alt sol.<note>Oberhalb des Eintrags besteht Freiraum.</note></p>
+<p>Item ½ m. 3 sol. in kerel gegeben dy dy schewrn reumtten.</p>
+<p>Item 3 ½ thunnen 1 f<supplied cert="high">irtel</supplied> butter vom <supplied cert="high">B</supplied>otten.</p>
+<p>Item 47 ½ schock kes geantwort biß auff Egidij.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p><del rend="overstriken">Item 1 m. 22 ½ sol. fur den weyt czuͤ stoͤssen czur Leypp das ander mol das erst ist nicht gerechent. <del rend="gestrichen">Item 6 m. 2 sc. 1 sol. kost der weyt an den czum <supplied cert="high">B</supplied>otten.</del></del></p>
+<p>Item 9<note>Über der Zeile ergänzt, darunter Streichung 8.</note> m. 1 f. <del rend="gestrichen">3 sol.</del> kost der weyt mit allen czewey mol abczuͤ stossen mit allen und 9 sol.</p>
+ 
+<pb n="12r"/>
+<p>Item dem smyd 10 sc. czur Leypp gegeben.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Item 8 sc. den czwein gegeben dy gesnytten haben czur Leypp yde<supplied cert="high">m</supplied> ½ m.</p>
+<p>Item <del rend="gestrichen">10</del> 6 schock korns ist gefallen czu Cowicz das man dressen sal. <del rend="gestrichen">Item 14 schock k<supplied cert="high">ornis</supplied> gefallen czur Drenaw von dem.</del></p>
+<p>Item 23 ½ schock k<supplied cert="high">ornis</supplied> czu vuybit das man dressen sal.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Item dem dresser czu Schonse 8 sc. gegeben der schicker.</p>
+ 
+<pb n="12v"/>
+<p>Item der schicker hat entpfangen 26 m. <del rend="gestrichen">m. d<supplied cert="high">edi</supplied>t dar an 1 gutte m. d<supplied cert="high">edi</supplied>t 2½ m. d<supplied cert="high">edi</supplied>t 3½ m.</del> Item d<supplied cert="high">edi</supplied>t 9<note>Über der Zeile ergänzt, darunter Streichung 8.</note> m. d<supplied cert="high">edi</supplied>t 7 m. d<supplied cert="high">edi</supplied>t 1 m. Item ½ m. d<supplied cert="high">edi</supplied>t ½ m.</p>
+<p>Item czum <supplied cert="high">B</supplied>otten gegeben czuͤ sneyden 28 ½ m. 1 f. alt gelt fur 115 m. den morgen czuͤ s<supplied cert="high">neyden</supplied>.</p>
+<p>Item 24 m. 1 f. fuͤr 100 morgen minus 3 morgen czu Fydelhusen.</p>
+<p>Item 56 m. 3 sc. fuͤr 244 ½ morgen czuͤr Leyppe und Stoͤrczwal.</p>
+<p>Item 88 ½ morgen czum Schoͤnse gesnitten das macht an geld 22 m. 9 sc. Item 28 morgen gehawen czu 11 sol. dem morgen das macht 5 m. 3 sc.</p>
+<p>Item der schicker hot dem <persName ref="#GEgloffstein">hern</persName><note type="uncertainty"/> hern gelehen 8 m. Item t<supplied cert="high">enetu</supplied>r der her bleibt schuldig dem hern 24 morgen.</p>
+ 
+<pb n="13r"/>
+<p>Item der her hot gekouft vom lantrichter 18 lest 22 ½ <supplied cert="high">scheffel</supplied> k<supplied cert="high">ornis</supplied> dy last czu 6 m. dar auff hat ym der her gegeb<supplied cert="high">e</supplied>n 30 m. so bleibt ym der her noch schuldig 77 m. 1 f.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p> 
+<pb n="13v"/>
+<p>Item 4 ½ last habern czum <supplied cert="high">B</supplied>otten des hat er ½ last czu sehen ydem 1 ½ last gersten.</p>
+<p>Item 5 last czu Schoͤnse. Item 1 ½ last gersten des ist 2 ½ last czu Schoͤnse.</p>
+<p>Item 3 ½ last hab<supplied cert="high">e</supplied>rn czu<note>Folgt Streichung, wahrscheinlich sol.</note> <supplied cert="high">Scheiczen</supplied>.</p>
+<p>Item 20 schoͤffel gersten da czu sehen.</p>
+<p>Item 5 ½ lest <del rend="gestrichen">gersten</del> habern 2 lest gersten czuͤr Leyppe.</p>
+<p>Item 40 schoffel gersten 3 lest habern.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Item 1 f. geb<supplied cert="high">e</supplied>n der wescherin.</p>
+<p>Item 1 f. dem gertner fur auͤffseck am Oster Awent.</p>
+<p>Item 8 alt sol. fur czwey cziglin.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="14r"/>
+</div>
+<div>
+<head>Dis noch geschrebene korn habe ich entpfangen.</head>
+<p>Der scholtcz von Malkow hot mir geantwert 1 ½ last korn vom wustin.<note>Unterhalb des Eintrags folgt Freiraum.</note></p> 
+<pb n="14v"/>
+</div>
+<div>
+<head>Dis nochgeschrebene gelt habe ich widder ows geg<supplied cert="high">eben</supplied> sint dem neuwin primo.</head>
+<p>Item 2 ½ m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> of den weith.</p>
+<p>Item 4 m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> of den weith.</p>
+<p>Item 4 m. minus 1 f. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> of den weith.</p>
+<p>Item 5 f. dem hecker.</p>
+<p>Item der mutter 9 sc. </p>
+<p>Item 1 f. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> vor muldin und<supplied cert="high">e</supplied> vor 1 schok strenge.</p>
+<p>Item dem knechte 3 f. </p>
+<p>Item 4 sc. dem kuhirtin. </p>
+<p>Item 7 sol. dem kobilhirtin. </p>
+<p>Item dem heckir 8 sc. </p>
+<p>Item 4 sc. dem clebir der dy tennewant clebethe.</p>
+<p>Item 2 sc. dem hovemanne do her dy sneter holte. </p>
+<p>Item 2 sc. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> dem schef<supplied cert="high">i</supplied>r das hows zcu clebin. </p>
+<p>Item 6 sol. vor leynen zcum garn. </p>
+<p>Item ich habe dreschin lossin 20 leste korn zcu 16 sc. un<supplied cert="high">de</supplied> daz hab<note>Korrektur durch Rasur hot.</note> ich beczalt<note>ich beczalt über der Zeile ergänzt, darunter Streichung der herre kumpan. Folgt Ergänzung beczalt.</note> vor 13 m. un<supplied cert="high">de</supplied> 8 sc. dy s<supplied cert="high">umma</supplied>.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Su<supplied cert="high">mma</supplied> der ows gobe 27 m. 5 sc. 3 sol. </p> 
+<pb n="15r"/>
+</div>
+<div>
+<head>Dis noch geschrebene korn habe ich von mir geantwerth.</head> 
+<p>Primo habe ich loßen seen 15 leste korn zcur Leyppe. </p>
+<p>Item 8 leste und<supplied cert="high">e</supplied> 17 s<supplied cert="high">cheffe</supplied>l gewert ken Kolmen. </p>
+<p>Item ken Grudentcz 4 leste minus 3 s<supplied cert="high">cheffe</supplied>l korn. </p>
+<p>Item dem lantrichter 7 s<supplied cert="high">cheffe</supplied>l geguldin. </p>
+<p>Item offim soller leyt 6 leste korn un<supplied cert="high">de</supplied> 16 s<supplied cert="high">cheffe</supplied>l.</p>
+<p>Item den sweynen ½ last korn g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied>. </p>
+<p>Item dem smede 6 s<supplied cert="high">cheffe</supplied>l korn. </p>
+<p>Item ½ last un<supplied cert="high">de</supplied> 6 s<supplied cert="high">cheffe</supplied>l korn ken Schonsee. </p>
+<p>Item 50<note>Über der Zeile ergänzt, darunter Streichung 40.</note> s<supplied cert="high">cheffe</supplied>l erwissen kem Kolmen geantwert bose un<supplied cert="high">de</supplied> guth. </p>
+</div>
+<div>
+<head>Gerste geantwert ken Schonsee.</head>
+<p>Primo 5 ½ last un<supplied cert="high">de</supplied> 11 s<supplied cert="high">cheffe</supplied>l gerste.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Item 1 last un<supplied cert="high">de</supplied> 1 s<supplied cert="high">cheffe</supplied>l haber ken Schonsee geantwert.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Dem hovemanne von Fiddelhousin 1 seyte fleisch gethon. </p>
+<p>Item 1 schok kese. </p>
+<p>Dem schicker 2 schok kese. </p>
+<p>Item 2 seytin fleisch. </p>
+<p>Item 1 ½ s<supplied cert="high">cheffe</supplied>l mel. </p>
+<p>Den dreschern 12 brot un<supplied cert="high">de</supplied> 2 s<supplied cert="high">cheffe</supplied>l mel.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="15v"/>
+</div>
+<div>
+<head>Kese vorkoft.</head>
+<p>Item 12 schok kese vorkoft vor 5 m. </p>
+<p>Item 10 schok kese Groschin geantwert kem Botin zcu furn. </p>
+<p>Item ofs hows geantwert 4 ½ schok kese. </p>
+<p>Item 4 grosse kese ofs hows. </p>
+<p>Item 1 tonne potter ofs haws un<supplied cert="high">de</supplied> 3 ½ schok kese. </p>
+<p>Item 40 schok kese ken Thorn geantwert. </p>
+<p>Su<supplied cert="high">mma</supplied> 62 schok kese. </p>
+<p>Item 5 tonnen potter ken Thorn geantwert.<note>Unterhalb des Eintrags folgt Freiraum.</note></p> 
+<pb n="16r leer"/>
+<pb n="16v"/>
+</div>
+<div>
+<head>Diß ist dy czu sprach czu dem alten hoffmeister von der Leypp.</head>
+<p>Item er hot lassen sehen czwu lest 20<note>Möglicherweise auch nur 10, da römisch X auch gestrichen sein könnte.</note> sc<supplied cert="high">heffel</supplied> k<supplied cert="high">ornis</supplied> das korn ist auß gewassen gewest dy hoffma<supplied cert="high">nne</supplied> habens ym gewert er hat sy da umb geschulden und sy haben semlich k<supplied cert="high">ornis</supplied> muͤssen seen.</p>
+<p>Item es ist bey seiner czeit in <del rend="gestrichen">½</del> anderhalben jar 38 pferde weck komen do er kein rechenschaft von thut dan sy sein gestorben.</p>
+<p>Item er hot gereche<supplied cert="high">n</supplied>t 1 ½ last k<supplied cert="high">ornis</supplied> hab er entpfangen von Malkaw von dem bousten des k<supplied cert="high">ornis</supplied> ist gewest 2 lest minus 10 s<supplied cert="high">cheffe</supplied>l so rechen<supplied cert="high">t</supplied> er keinen hab<supplied cert="high">i</supplied>rn do ist gefal<supplied cert="high">len</supplied> 18 s<supplied cert="high">cheffe</supplied>l.</p>
+<p>Item er hat auch ein m. d. von Malkaw von walt czins er haben hot er auch nicht verreche<supplied cert="high">n</supplied>t.</p>
+<p>Item es sind czwen bawren von Lassaw entrunen dy hewser hat er vermittet das ein umb 8 sc. das ander umb 16 sc. des hat er auch nicht verreche<supplied cert="high">n</supplied>t.</p>
+<p>Item er hat fisch lassen furen gen den Colm Colmse und Thorun dy weyl er hoffmeister gewest ist dy verkauft sind do rechent er 5 alt f. fur.</p>
+<p>Item er hat vermidet dy wiß flecken auff dem wusten und sust des der her muß entpern.</p>
+<p>Item er hat den amrmen leutten ir dinst botten beschaczet das sy ser clagen. </p>
+ 
+<pb n="17r"/>
+</div>
+<div>
+<head>Dy czins czeddil im LIIIten von dissem ior.<note>Unterhalb des Eintrags folgt Freiraum mit moderner Notiz: 1453 / Zinsen des Orden-Voigts zu Schoensee.</note></head>
+ 
+<pb n="17v leer"/>
+<pb n="18r"/>
+</div>
+<div>
+<head>Im iore Christo MCCCC im LIIIten hab ich bruder <persName ref="#HSeckendorf">Hintcze Seckendorf</persName><note type="uncertainty"/> dy czinsere of gehabin von des <persName ref="#GEgloffstein">voyt<supplied cert="high">is</supplied></persName> wegin als an guttim gelde.</head>
+</div>
+<div>
+<head>Schonsee.</head>
+<p>Der Hillige Geist d<supplied cert="high">edi</supplied>t 2 m. minus 5 sc. gut gelt un<supplied cert="high">de</supplied> minus 8 d. unde dor an ist ab geslagin an der firmanie 5 gutte sc. minus 8 d. </p>
+<p>Steske 1 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Polnsche Steske 1 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Peter Scampe 1 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Swiddirgal 1 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Kusche 1 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Michel Czhichow 1 sc.</p>
+<p>Heynrich smit 2 sc.</p>
+<p>Bernhardus hoveman 2 sc.</p>
+<p>Niclos Drzeske 2 sc.</p>
+<p>Jekil 2 sc. non d<supplied cert="high">edi</supplied>t.</p>
+<p>Meister Matt<supplied cert="high">is</supplied> 2 sc.</p>
+<p>Michil Hevel 2 sc.</p>
+<p>Grune Iope ½ f.</p>
+<p>Hensil 1 lot adir eyn alt halp f.</p>
+<p>Dromel 1 lot.</p>
+<p>Niclos Karos 2 sc.</p>
+<p>Niclos sneyder 1 sc.</p>
+<p>Bernhardus Czegenhals 1 sc.</p>
+<p>Jocob Leyne 3 ½ sc.</p>
+<p>Bartusch Breuwer 1 sc.</p>
+<p>Steffenynne 1 sc.</p>
+<p>Krol 1 sc. non d<supplied cert="high">edi</supplied>t.</p>
+<p>Lucas 1 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Megerlin 1 sc. non d<supplied cert="high">edi</supplied>t.</p>
+<p>Hensil 1 sc.</p>
+<p>Bartusch breuwer 1 ½ sc.</p>
+<p>Kirssebom 1 sc. non d<supplied cert="high">edi</supplied>t.</p>
+<p>Su<supplied cert="high">mma</supplied> 3 m. 1 sol. 2 d. qui dederunt sed <supplied cert="high">quod</supplied> non dederunt non est c<supplied cert="high">om</supplied>p<supplied cert="high">rehensu</supplied>m.</p>
+<pb n="18v"/>
+<p>Czigeber 1 sc.</p>
+<p>Wulfynne 1 sc.</p>
+<p>Jekil 1 sc. un<supplied cert="high">de</supplied> 8 d. non d<supplied cert="high">edi</supplied>t.</p>
+<p>Koulhopt 3 sol.</p>
+<p>Sachse 1 sc.</p>
+<p>Nickelman ½ sc. non d<supplied cert="high">edi</supplied>t.</p>
+<p>Stentczil ½ sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Kirssebom 2 sc.</p>
+<p>Lucas 2 sc.</p>
+<p>Glucke ½ sc.</p>
+<p>Meister Matt<supplied cert="high">is</supplied> ½ sc.</p>
+<p>Dy stad ½ f. d<supplied cert="high">edi</supplied>t.</p>
+<p>Grune Iope 1 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Jekil Wayner 2 sc. non d<supplied cert="high">edi</supplied>t.</p>
+<p>Niclos newborger 2 sc.</p>
+<p>Dy stad d<supplied cert="high">edi</supplied>t 1 sc.</p>
+<p>Alde Bernt 1 sc.</p>
+<p>Dy stad 1 sc.</p>
+<p>Mertin budener 1 sc.</p>
+<p>Czigeler 1 sc.</p>
+<p>Neuborger 2 sc.</p>
+<p>Dy stad vor Routenberg d<supplied cert="high">edi</supplied>t 1 sc.</p>
+<p>Dy stad vor den cleynsmit ½ sc.</p>
+<p>Dy stad vor Hans smit ½ sc.</p>
+<p>Dy stad vor Matt<supplied cert="high">is</supplied> Koler ½ sc.</p>
+<p>Dy stad vor <supplied cert="high">Slademowl</supplied> ½ sc.</p>
+<p>Niclos Karis 1 sc. </p>
+<p>Rewmetasche 1 sc.</p>
+<p>Steske beckir 1 sc.</p>
+<p>Hans von Botin 2 sc.</p>
+<p>Dy stad vor Rougepauwil 1 sc.</p>
+<p>Jarant 1 sc.</p>
+<p>Prettcze 1 sc.</p>
+<p>Dy stad vor Eyserion 1 sc.</p>
+<p>Neuborger 1 sc.</p>
+<p>Jarant 1 scot.</p>
+<p>Hovesneyderynne 1 sc.</p>
+<p>Su<supplied cert="high">mma</supplied> 1 ½ m. 4 sol. 3 d.</p>
+<p>Gut gelt.<note>gut gelt in der linken unteren Ecke ergänzt.</note></p>
+ 
+<pb n="19r"/>
+<p>Drzeske 1 f.</p>
+<p>Dy stad vor Nesewantcz 1 lot.</p>
+<p>Jocob Plobitcz 1 lot.</p>
+<p>Niclos botticher ½ f.</p>
+<p>Dy stad vor Sparbrot 1 sc.</p>
+<p>Hans von Botin 4 sc.</p>
+<p>Leukener 1 sc.</p>
+<p>Jocob Plobitcz ½ f.</p>
+<p>Martin budener 2 sc.</p>
+<p>Megerlin 2 sc.</p>
+<p>Megerlin 2 sc.</p>
+<p>Rewmetasche 2 sc.</p>
+<p>Krodin 2 sc.</p>
+<p>Glucke ½ f.</p>
+</div>
+<div>
+<head>Gartenczins.</head>
+<p>Plobitcz 2 sc. minus 2 d.</p>
+<p>Hans von Botin ½ m. 2 sol.</p>
+<p>Lucas 1 ½ m. minus 40 d. <del rend="gestrichen">non</del> d<supplied cert="high">edi</supplied>t.</p>
+<p>Hans von Botin 15 sc.</p>
+<p>Hans von Botin ist ab geslag<supplied cert="high">e</supplied>n 1 ½ m. ger<supplied cert="high">ingis</supplied> un<supplied cert="high">de</supplied> 12 sol. ger<supplied cert="high">ingis</supplied>.</p>
+<p>Item 14 sol. von Rennebergis ger<supplied cert="high">ingis</supplied> geldis.</p>
+<p>Lucas 1 lot.</p>
+<p>Niclus Karis.</p>
+<p>Mertin budener 4 sc.<note>Die Einträge Niclus Karis und Mertin budener werden mit zwei Linien mit dem Eintrag 4 sc. verbunden.</note></p>
+<p>Drzeske 1 lot.</p>
+<p>Grune Iope 2 sc. minus 1 d.</p>
+<p>Alde Bernt 3 ½ sol.</p>
+<p>Rewmetasche.</p>
+<p>Jekil 1 lot. Iekil no<supplied cert="high">n</supplied> d<supplied cert="high">edi</supplied>t 1 alt sc.<note>Iekil non ... alt sc. ist neben 1 lot ergänzt.</note></p>
+<p>Meister Matt<supplied cert="high">is</supplied>.<note>Die Einträge Rewmetasche, Jekil und meister Matt<supplied cert="high">is</supplied> werden mit zwei Linien mit dem Eintrag 1 lot verbunden.</note></p>
+<p>Glucke 2 sc.</p>
+<p>Niclos sneyder 7 ½ sc.</p>
+<p>Hans von Botin 2 sc.</p>
+<p>Meister Heynrich 1 sc.</p>
+<p>Andris Wolf ½ f.</p>
+<p>Rulandynne ½ f. no<supplied cert="high">n</supplied> d<supplied cert="high">edi</supplied>t.</p>
+<p>Hans von Botin 20 d.</p>
+<p>Su<supplied cert="high">mma</supplied> 4<note>In arabisch, darüber 4 in römisch ergänzt.</note> m. 5 sc. 4 sol. 4 d.</p>
+ 
+<pb n="19v"/>
+<p>Lucas 10 d. <del rend="gestrichen">non</del> d<supplied cert="high">edi</supplied>t.</p>
+<p>Matt<supplied cert="high">is</supplied> leyneweber 10 d.</p>
+<p>Leukener 20 d.</p>
+<p>Bernhardus hoveman ½ f.</p>
+<p>Meister Heynrich 2 sc.</p>
+<p>Jocob Plobitcz ½ m. 2 sol.</p>
+<p>Grune Iope ½ m.</p>
+<p>Grune Iope 5 sc.</p>
+<p>Jacob Plobitcz 15 sc. zo ist im abgeslagin ½ m. un<supplied cert="high">de</supplied> 4 sc. gut vor 10 s<supplied cert="high">cheffe</supplied>l maltcz of den meister Grune Iope ½ m. minus 1 sol.</p>
+<p>Rewmetasche 7 sc.</p>
+<p>Rewmetasche 3 ½ sc.</p>
+<p>Rewmetasche 1 f.</p>
+<p>Grune Iope 10 ½ sc.</p>
+<p>Grune Iope 15 sc. zo ist im ab geslagin 1 ½ m. un<supplied cert="high">de</supplied> 2 sol. gut vor 23 s<supplied cert="high">cheffe</supplied>l maltcz.</p>
+<p>Neuborger 15 d.</p>
+<p>Neuborger 16 ½ sc.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Schubenke.</head>
+<p>Steske ½ f.</p>
+<p>Leukener ½ f.</p>
+<p>Kirssebom ½ f. te<supplied cert="high">netu</supplied>r noch 6 ½ sol. ger<supplied cert="high">ingis</supplied>.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Dy leymgrube d<supplied cert="high">edi</supplied>t 9 sc. gut.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Su<supplied cert="high">mma</supplied> 3 ½ m. 4 sol. 1 d. gut gelt<note>gut gelt in der linken unteren Ecke ergänzt.</note></p>
+ 
+<pb n="20r"/>
+</div>
+<div>
+<head>Belitczk.</head>
+<p>Daz dorf d<supplied cert="high">edi</supplied>t 9 m. <date when="--11-11">die Marti<supplied cert="high">ni</supplied>.</date></p>
+<p>Item d<supplied cert="high">edi</supplied>t 8 m. un<supplied cert="high">de</supplied> 15 sc. in <date when="--11-18">Virgilia Elisab<supplied cert="high">eth</supplied>.</date></p>
+<p>Item d<supplied cert="high">edi</supplied>t 6 ½ m. <date when="1453-12-02">Dominica vor Barbare.</date><note type="uncertainty"/></p>
+<p>Item zo ist in abgeslagin 7 m. 11 sc. 3 sol. gut gelt alzo 3 ½ m. 2 sc. vor den molner ½ m. 3 sc. 6 d. vor den kretczmer daz her geczymmert hot 1 m. 15 d. vor 35 s<supplied cert="high">cheffe</supplied>l haber 4 sc. vor eyer.</p>
+<p>Item 3 ½ sc<supplied cert="high">hok</supplied> rutten holtcz 2 m. minus 1 sc. hauwegelt.</p>
+<p>Item ten<supplied cert="high">etur</supplied> noch 3 f. gut minus 2 gutte sol.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Seywertczdorf.</head>
+<p>Nicolai d<supplied cert="high">edi</supplied>t 3 m. 3 f. gut.</p>
+<p>Jorge d<supplied cert="high">edi</supplied>t 2 m. un<supplied cert="high">de</supplied> ½ f.</p>
+<p>Steske d<supplied cert="high">edi</supplied>t 1 ½ m. ½ f.</p>
+<p>Mertin d<supplied cert="high">edi</supplied>t 1 m. Idem d<supplied cert="high">edi</supplied>t 2 sc.</p>
+<p>Peter d<supplied cert="high">edi</supplied>t 10 sc.</p>
+<p>Idem d<supplied cert="high">edi</supplied>t 16 sc.</p>
+<p>Scholtcz d<supplied cert="high">edi</supplied>t 2 m. un<supplied cert="high">de</supplied> 3 sol.</p>
+<p>Matt<supplied cert="high">is</supplied> d<supplied cert="high">edi</supplied>t 2 m. minus 1 f.</p>
+<p>Idem d<supplied cert="high">edi</supplied>t ½ m. minus 1 sol. gut.</p>
+<p>Swantke d<supplied cert="high">edi</supplied>t 1 m. un<supplied cert="high">de</supplied> 2 sc.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 15 sc. gut un<supplied cert="high">de</supplied> daz gelt hot der herre selbist entpfangen.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Su<supplied cert="high">mma</supplied> 39 m. 3 sc. 2 sol. gut gelt<note>gut gelt in der linken unteren Ecke ergänzt.</note></p>
+ 
+<pb n="20v"/>
+</div>
+<div>
+<head>Plobitcz.</head>
+<p>Item d<supplied cert="high">edi</supplied>t 23 gutte m.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 3 m. un<supplied cert="high">de</supplied> 8 sc.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 2 ½ m. 10 sol. minus 5 d. am <date when="1453-12-02">Suntage vor Barba<supplied cert="high">r</supplied>e. </date><note type="uncertainty"/></p>
+<p>Item d<supplied cert="high">edi</supplied>t 14 sol. un<supplied cert="high">de</supplied> 3 d. die <date when="--12-08">C<supplied cert="high">on</supplied>cep<supplied cert="high">ti</supplied>o<supplied cert="high">nis</supplied></date><note type="uncertainty"/> zo ist in abgeslagin 4 m. 10 sc. 8 d. gut alze vor 61 morgin vor 50 s<supplied cert="high">cheffe</supplied>l haber 5 ½ schok eyer un<supplied cert="high">de</supplied> 1 ½ rutte holtcz.</p>
+<p>Andris Heyne d<supplied cert="high">edi</supplied>t te<supplied cert="high">netu</supplied>r 1 m. 4 sc. gut t<supplied cert="high">erm</supplied>inus <date when="--12-25">Weynachtin. </date></p>
+<p>Smit te<supplied cert="high">netu</supplied>r 14 sc.</p>
+<p>Nickel 4 sc.</p>
+<p>Bemke 4 ½ sc.</p>
+<p>Kretczmer 5 ½ sc. 3 d.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Lanke.</head>
+<p>Item d<supplied cert="high">edi</supplied>t 25 ½ m. minus ½ f.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 3 ½ m. 16 ½ sc.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 1 m. 15 sc. 5 d. die C<supplied cert="high">on</supplied>cep<supplied cert="high">ti</supplied>o<supplied cert="high">nis</supplied>.</p>
+<p>Zo ist in abgeslagin 3 ½ m. 3 ½ sc. un<supplied cert="high">de</supplied> 3 ½ sol. alze von 42 s<supplied cert="high">cheffe</supplied>l habern zcu 3 ½ sol. ger<supplied cert="high">ingis</supplied> 53 morgin zcu 3 ½ sol. ger<supplied cert="high">ingis</supplied> 53 morgin 1 rutte holtcz 3 schok eyer.</p>
+<p>Marcus te<supplied cert="high">netu</supplied>r noch 1 ½ m. 2 sc. gut un<supplied cert="high">de</supplied> 20 d.<note>Unterhalb des Eintrags folgt Freiraum.</note></p> 
+<pb n="21r"/>
+</div>
+<div>
+<head>Pnywit.<note>Oberhalb des Eintrags besteht Freiraum.</note></head>
+<p>Lorke d<supplied cert="high">edi</supplied>t 3 gutte m.</p>
+<p>Item zo ist im von dem selbigen gelde widdergekort 2 gutte sc. <del rend="gestrichen">minus.</del> unde 3 d. Su<supplied cert="high">mma</supplied> 3 gutte m. minus 2 sc. un<supplied cert="high">de</supplied> minus 3 d. vor 3 s<supplied cert="high">cheffe</supplied>l haber zcu 3 ½ aldin sol.</p>
+<p>Der scholtcz d<supplied cert="high">edi</supplied>t 2 m. minus 4 sc. gut.</p>
+<p>Item daz dorf d<supplied cert="high">edi</supplied>t 1 ½ m. un<supplied cert="high">de</supplied> 4 sc.</p>
+<p>Item Lichow d<supplied cert="high">edi</supplied>t 2 ½ m. 1 f. 2 ½ sc. 6 d. am <date when="1453-12-02">Suntage vor Barbare.</date><note type="uncertainty"/></p>
+<p>Item Schisko d<supplied cert="high">edi</supplied>t 11 sc. minus 6 d.</p>
+<p>Item Tomke d<supplied cert="high">edi</supplied>t 3 f.</p>
+<p>Item Jani d<supplied cert="high">edi</supplied>t 10 sc.</p>
+<p>Kretczmer d<supplied cert="high">edi</supplied>t 18 d. <supplied cert="high">et totum</supplied> zo ist im ab geslagin 3 ½ sol. v<supplied cert="high">or</supplied> hauwegelt.</p>
+<p>Item daz dorf d<supplied cert="high">edi</supplied>t ½ m. specfleisch pro eis.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="21v"/>
+</div>
+<div>
+<head>Malkow.</head>
+<p>Daz dorf d<supplied cert="high">edi</supplied>t 4 m. minus 1 f. un<supplied cert="high">de</supplied> minus 6 d.</p>
+<p>Item der scholtcz d<supplied cert="high">edi</supplied>t 2 m. un<supplied cert="high">de</supplied> 2 sc.</p>
+<p>Item der kretczmer d<supplied cert="high">edi</supplied>t 7 sc.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Kottenow.</head>
+<p>Mattis d<supplied cert="high">edi</supplied>t 2 gutte m.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 1 gutte m. minus 18 d. <supplied cert="high">totum</supplied>. <del rend="gestrichen">Idem te<supplied cert="high">netu</supplied>r noch ½ gutten f. von dissem czinse un<supplied cert="high">de</supplied> im ist abgeslagin <supplied cert="high">v</supplied>.</del></p>
+<p>Item zo ist im abgeslagin 3 ½ sc. v<supplied cert="high">or</supplied> haber.</p>
+<p>Idem te<supplied cert="high">netu</supplied>r noch 4 sc. von dissem iore un<supplied cert="high">de</supplied> 4 sc. noch von zcu iore.<note>Folgt Streichung zo sal man im noch apslon. Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="22r"/>
+</div>
+<div>
+<head>Crossin.</head>
+<p>Daz dorf d<supplied cert="high">edi</supplied>t <del rend="gestrichen">20</del> 12 ½ m. gut.</p>
+<p>Adam d<supplied cert="high">edi</supplied>t 1 m. gut.</p>
+<p>Der kretczmer d<supplied cert="high">edi</supplied>t 1 gutte m.</p>
+<p>Floming d<supplied cert="high">edi</supplied>t 4 ½ m. minus 1 ½ sc. gut.</p>
+<p>Item zo ist im abgeslagin 1 ½ m. un<supplied cert="high">de</supplied> 1 ½ sc. gut vor 25 s<supplied cert="high">cheffe</supplied>l gerste.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Clintczkow.</head>
+<p>Dedit 13 ½ gutte m.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="22v"/>
+</div>
+<div>
+<head>Lißow.</head>
+<p>Junge Owslenger d<supplied cert="high">edi</supplied>t 1 gutte m.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 18 m. un<supplied cert="high">de</supplied> 11 sc. gutt<supplied cert="high">is</supplied> geldis.</p>
+<p>Item deme dorfe ist ab geslagin 7 gutte m. un<supplied cert="high">de</supplied> 1 f. gut an hauwegelde un<supplied cert="high">de</supplied> vor haber.</p>
+<p><del rend="overstriken">Item d<supplied cert="high">edi</supplied>t ½ m. 17 ½ sc. am <date when="1453-12-02">Suntage vor Barbare.</date><note type="uncertainty"/> </del></p>
+<p>Item d<supplied cert="high">edi</supplied>t 2 m. un<supplied cert="high">de</supplied> 10 sc. minus 6 d. am <date when="1453-12-04">Tage Barbare. </date><note type="uncertainty"/></p>
+<p>Item Lange Jocob d<supplied cert="high">edi</supplied>t ½ m. an haber.</p>
+<p>Item Lange Iocob d<supplied cert="high">edi</supplied>t 1 m. gut minus ½ gutten f.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Eyserlo.</head>
+<p>Daz dorf d<supplied cert="high">edi</supplied>t 14 m. minus 1 f. gutt<supplied cert="high">is</supplied> geldis.</p>
+<p>Item zo ist in abgeslagin an habir und<supplied cert="high">e</supplied> an hauwegelde 2 m. 4 sc. 18 d. gut gelt.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 3 ½ sol. gut gelt.<del rend="gestrichen">Daz dorf hot 20.</del></p>
+<p>Daz dorf hot 22 ½ hubin czinshaftig von itczlicher hubin 3 gutte f.</p>
+<p>Item so sint sy noch schuldig 1 gutte m.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 1 gutten f.</p>
+<p>Item Bartisch d<supplied cert="high">edi</supplied>t 3 gutte f. <date when="1453-11-27">tercia <supplied cert="high">feria</supplied> post Kathe<supplied cert="high">rin</supplied>e. </date><note type="uncertainty"/><note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="23r"/>
+</div>
+<div>
+<head>Pamperse.</head>
+<p>Daz dorf d<supplied cert="high">edi</supplied>t 4 m. der scholtus.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 1 f. vom aldinczinse.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 14 sol. gut gelt und<supplied cert="high">e</supplied> 4 d. vom aldin hauwegelde und<supplied cert="high">e</supplied> sint nicht mer schuldig vom hauwe gelde.</p>
+<p>Item der scholtcz d<supplied cert="high">edi</supplied>t 1 m. am <date when="1453-12-02">Suntage vor Barbare.</date></p>
+<p>Item d<supplied cert="high">edi</supplied>t 10 ½ m. 2 sc. eodem die.</p>
+<p>Item d<supplied cert="high">edi</supplied>t ½ m. hinderstellig.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 2 m. minus 2 gutte sol. <del rend="gestrichen">Item d<supplied cert="high">edi</supplied>t 5 sc. und<supplied cert="high">e</supplied> 6 d. und<supplied cert="high">e</supplied> daz hot der herre selbist entpfangen von de<supplied cert="high">m</supplied> scholtczen von Dreno.</del></p>
+<p>Item d<supplied cert="high">edi</supplied>t 2 m. un<supplied cert="high">de</supplied> 1 f. gut gelt <date when="1453-12-16">D<supplied cert="high">o</supplied>m<supplied cert="high">ini</supplied>ca O Sapiencia.</date><note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Kolewitcz.</head>
+<p>Matt<supplied cert="high">is</supplied> d<supplied cert="high">edi</supplied>t 21 gutte sc.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 10 gutte sc. am <del rend="Folgt Streichung, unleserlich"/> Suntage vor Barbare.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="23v"/>
+</div>
+<div>
+<head>Dreno.</head>
+<p>Matt<supplied cert="high">is</supplied> Reynischdorf d<supplied cert="high">edi</supplied>t 2 gutte m. </p>
+<p>Kretczmer d<supplied cert="high">edi</supplied>t ½ gutte m.</p>
+<p>Jorge 1 f. gut d<supplied cert="high">edi</supplied>t.</p>
+<p>Item Matt<supplied cert="high">is</supplied> Reynischdorf d<supplied cert="high">edi</supplied>t 1 ½ m.</p>
+<p>Item scholtcz 1 ½ m. 4 sc.</p>
+<p>Item <del rend="Folgt Streichung, unleserlich"/> der scholtcz d<supplied cert="high">edi</supplied>t 7 sc. 10 d. kleyn czins.</p>
+<p>Item Kinstot d<supplied cert="high">edi</supplied>t ½ m. minus 6 d.</p>
+<p>Hans d<supplied cert="high">edi</supplied>t 2 m. un<supplied cert="high">de</supplied> 1 f.</p>
+<p>Jorge ½ m. minus 1 d.</p>
+<p>Kretczmer 1 f.</p>
+<p>Item der scholtcz d<supplied cert="high">edi</supplied>t 5 sc. 1 sol. von Reynischdorf<supplied cert="high">is</supplied> wegin.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Schirokopes.</head>
+<p>Der kretczhmer d<supplied cert="high">edi</supplied>t 1 m. <date when="1453-12-16">D<supplied cert="high">o</supplied>m<supplied cert="high">ini</supplied>ca O Sapiencia. </date><note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="24r"/>
+</div>
+<div>
+<head>Entpfangen gelt ger<supplied cert="high">ingis</supplied>.</head>
+<p>Item 2 m. minus 4 sc. ger<supplied cert="high">ingis</supplied> von vischin am <date when="--11-29">Obinde Andree. </date><note>Unterhalb des Eintrags folgt Freiraum.</note> 
+</p>
+<pb n="24v leer"/>
+<pb n="25r"/>
+</div>
+<div>
+<head>Dis noch geschreb<supplied cert="high">e</supplied>n habe ich widder ows g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> vom czinse.</head>
+<p>P<supplied cert="high">ri</supplied>mo deme hern geantwert 128 m. <del rend="gestrichen">an</del> ger<supplied cert="high">ingis</supplied> an neuwem gelde.</p>
+<p>Item 97 m. ger<supplied cert="high">ingis</supplied> an geringem gelde.</p>
+<p>Item dem <persName ref="#AAhlimb">howskompthor zcum Redin </persName> 21 m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> <date when="1453-11-18">D<supplied cert="high">o</supplied>m<supplied cert="high">ini</supplied>ca noch Martini. </date><note type="uncertainty"/></p>
+<p>Item 8 m. minus 1 f. Iohan g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> <date when="--11-19">die Elisab<supplied cert="high">eth</supplied></date>.</p>
+<p>Item dem lantrichter 45 ½ m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> an der <date when="1453-11-28">Mittewochin vor Andree</date><note type="uncertainty"/>.</p>
+<p>Item dem hern 9 m. geantwert <date when="--11-30">die Andree</date>.</p>
+<p>Item Phalsponter 2 m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> eo<supplied cert="high">dem</supplied> die.</p>
+<p>Item zo hot der schreiber dem <persName ref="#GEgloffstein">voyte </persName> geantwert vom czinse 37 gutte mark 1 d. minus 2 sc. <date when="--11-25">die Kathe<supplied cert="high">ri</supplied>ne</date> daz der herre selbist gerechint hot.</p>
+<p>Item dor noch 2 gutte m. un<supplied cert="high">de</supplied> 10 sc. minus 6 d. daz dy von Lißow gobin.</p>
+<p>Item her Gricke g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> 25 m. ger<supplied cert="high">ingis</supplied> <date when="--12-04">die Barbare</date>.</p>
+<p>Item dem hern voyte geantwerth 19 m. 1 f. 4 sol. ger<supplied cert="high">ingis</supplied> am <date when="--12-12">Obinde Lucie</date>.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="25v"/>
+</div>
+<div>
+<head>Ows g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> vom zcinse in gemeyne.</head>
+<p>Item 8 sol. vor messegelt <date when="--11-25">die Kathe<supplied cert="high">ri</supplied>ne</date> zcu Eyserlo <abbr>etc.</abbr></p>
+<p>Item 1 f. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> dem czym<supplied cert="high">m</supplied>erman<supplied cert="high">n</supplied>e der dy weitmole boute die Kathe<supplied cert="high">rin</supplied>e.</p>
+<p>Item ½ m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> den dreschirn zcur Leyppe vor ir teyl gerste die Ka<supplied cert="high">theri</supplied>ne vor den s<supplied cert="high">cheffe</supplied>l 6 ½ sol.</p>
+<p>Item 10 ½ sol. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> vor 25 s<supplied cert="high">cheffe</supplied>l haber zcu dreschin czur Leyppe eo<supplied cert="high">dem</supplied> die.</p>
+<p>Item 10 sc. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> eyme snitter vor 2 morgen zcu Eyslo die Ka<supplied cert="high">theri</supplied>ne.</p>
+<p>Item 9 sol. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> vor 14 s<supplied cert="high">cheffe</supplied>l korn zcu dreschin eynem czur Leyppe eo<supplied cert="high">dem</supplied> die.</p>
+<p>Item 2 m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> Thomis dem diner hoppen zcu Thorn zcu koffende <date when="--11-30">die A<supplied cert="high">n</supplied>dree</date>.</p>
+<p>Item 5 m. minus 19 sol. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> vor 20 s<supplied cert="high">cheffe</supplied>l hoppen die Andree zcu 14 sol. zcu Schonsee <del rend="gestrichen">die and.</del> gekoft.</p>
+<p><del rend="overstriken">Item 1 f. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> eyne<supplied cert="high">m</supplied> heckir vorm house <date when="1453-11-27">tercia feria p<supplied cert="high">ost</supplied> Kathe<supplied cert="high">ri</supplied>ne</date><note type="uncertainty"/>. </del></p>
+<p>Item Thomis dem diner 3 m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> dem hern zcu koffende kreude weyn <abbr>etc.</abbr> Die Andree.</p>
+<p>Item 3 sol. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> vor hanf zcu brechin zcur Leyppe.</p>
+<p>Item Matt<supplied cert="high">is</supplied> Preusin dem aldin hovemeister 5 f. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> vor daz winter gewant die Andree.</p>
+<p>Item eo<supplied cert="high">dem</supplied> 2 ½ m. schugelt eo<supplied cert="high">dem</supplied> die.</p>
+<p>Item geg<supplied cert="high">eben</supplied> 9 sc. ger<supplied cert="high">ingis</supplied> vor 1 ax zcu Schonsee <date when="--12-06">die Nicolai</date>.</p>
+<p>Item 1 sol. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> dem kobilhirten zcu Czhicho czum Got<supplied cert="high">is</supplied> pfennige.</p>
+<p>Item dem kellermeister 1 m. 6 sol. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> dy her hatte ows geg<supplied cert="high">eben</supplied> vor daz hows im weyngartin die Nicolai.</p>
+<p>Item dem kellermeister 21 sol. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> dy her hatte ows g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> im herwste vor lemmer zcu schern.</p>
+ 
+<pb n="26r"/>
+</div>
+<div>
+<head>Ows g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied>.</head>
+<p>Item 6 sol. vorczert zcur Leyppe <supplied cert="high">und</supplied> czum Botin an bire un<supplied cert="high">de</supplied> lichten als ich den czins manen solde.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Owsgobe zcu Schonsee <date when="--12-25">Weynachtin</date>.</head>
+<p>Dem meister smede 1 m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> die Quatuortemporum.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Nachtegal 7 sol.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Thomas dem wechter<note>Aus torwechter korrigiert.</note> 4 sc. of Weynachtin.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Tomis der daz weynhus clebete ½ m. zcu <del rend="Folgt Streichung, unleserlich"/> in der <date when="1453-12-19">Quatuortemper of Weynachtin</date><note type="uncertainty"/>.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="26v"/>
+</div>
+<div>
+<head>Schonsee.</head>
+<p>Pyech ½ m.<note>Über der Zeile ergänzt, darunter gestrichen f.</note> g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> tercia feria p<supplied cert="high">ost</supplied> <date when="1453-11-27">Ka<supplied cert="high">thari</supplied>ne</date>.</p>
+<p>Jacobe seyme kompan ½ m.<note>Über der Zeile ergänzt, darunter gestrichen f.</note> eo<supplied cert="high">dem</supplied> die.</p>
+<p>Kaplan 1 m. of <date when="1453-09-29">Mich<supplied cert="high">ae</supplied>lis</date>.</p>
+<p>Groschin dem czym<supplied cert="high">m</supplied>erman<supplied cert="high">n</supplied>e ½ m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> <date when="1453-11-30">die Andree</date>.</p>
+<p>Dem schefir vorm house 3 f. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> of Mich<supplied cert="high">ae</supplied>lis.</p>
+<p>Dem ku hirten 20 sc. 2 sol. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> of Mich<supplied cert="high">ae</supplied>is.</p>
+<p>Sweynehirten 1 m. of Mich<supplied cert="high">ae</supplied>lis.</p>
+<p>Der vimutter 1 f. of Mich<supplied cert="high">ae</supplied>l<supplied cert="high">is</supplied>.</p>
+<p>Dem beckir 1 m. 4 sol. of Mich<supplied cert="high">ae</supplied>l<supplied cert="high">is</supplied>.</p>
+<p>Seyme kompan 15 sc.</p>
+<p>Dem schuler 7 sc. of <date when="1453-12-25">Weynachtin</date>.</p>
+<p>Jacobo dem heckir 10 sc. <date when="1453-12-16">D<supplied cert="high">o</supplied>m<supplied cert="high">ini</supplied>ca O Sapiencia</date>.</p>
+<p>Dem rademacher 3 f. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> in <date when="1453-01-13">Vigilia Felicis</date>.</p>
+<p>Jeven dem czymmermanne 1 m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> eo<supplied cert="high">dem</supplied> die.</p>
+<p>Worczken ½ m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> eo<supplied cert="high">dem</supplied> die.</p>
+<p>Dem neuwen czym<supplied cert="high">m</supplied>erma<supplied cert="high">n</supplied>ne 1 sc. eo<supplied cert="high">dem</supplied> die.</p>
+<p>Dem gertener 10 sc. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> of hackin.</p>
+<p> <supplied cert="high">Computatum</supplied> mit dem botticher <date when="1453-12-13">die Lucie im LIII</date> un<supplied cert="high">de</supplied> alle ding mit im slecht gemacht zo bleybet man im schuldig 4 m. 4 sc. ger<supplied cert="high">ingis</supplied> of <date when="--12-25">Weynachtin</date>.</p>
+<p>Item dor of hot im der <persName ref="#GEgloffstein">voyt</persName> 1 m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> die Lucie.</p>
+ 
+<pb n="27r"/>
+</div>
+<div>
+<head>Leyppe.</head>
+<p>Dem smede 1 m. <date when="--11-25">die Kathe<supplied cert="high">ri</supplied>ne</date>.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Dem schefir ½ m. die Ka<supplied cert="high">theri</supplied>ne.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note> </p>
+<p>Kachnen der vimait 9 sc. of Mich<supplied cert="high">ae</supplied>lis die Kathe<supplied cert="high">ri</supplied>ne.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Margritten 4 sc. of <date when="--12-25">Weynachtin</date>.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Dem neuwen kobilhirten 1 f. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> die Ka<supplied cert="high">thari</supplied>ne.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Dem aldin kuhirten zcur Leyppe ½ m. vor daz daz her dy pferde dy nacht hutte die Ka<supplied cert="high">thari</supplied>ne.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Stenkin dem drescher ½ m. of dreschelon die Ka<supplied cert="high">thari</supplied>ne.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Dem howsk<supplied cert="high">necht</supplied> eynen f. eo<supplied cert="high">dem</supplied> die.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Mertin dem vischer 6 sol. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> <date when="1453-11-26">secunda feria p<supplied cert="high">ost</supplied> Ka<supplied cert="high">thari</supplied>ne</date><note type="uncertainty"/>.</p>
+<p>Dem andern vischer 4 sc. eo<supplied cert="high">dem</supplied> die.<note>Unterhalb des Eintrags folgt Freiraum.</note></p> 
+<pb n="27v"/>
+</div>
+<div>
+<head>Botin.<note>Oberhalb des Eintrags besteht Freiraum.</note></head>
+<p>Schefir 1 ½ m. g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> in <date when="--01-13">Vigilia Felicis</date>.<note>Unterhalb des Eintrags folgt Freiraum.</note></p> 
+<pb n="28r–28v leer"/>
+<pb n="29r"/>
+</div>
+<div>
+<head>Also seint die czinser dirhaben im LII iore zcu Schonenshe.</head>
+</div>
+<div>
+<head>Schonshe die stadt.</head>
+<p>P<supplied cert="high">rimo</supplied> hath de compan<supplied cert="high">e</supplied> empfangen in der stadt <del rend="gestrichen"><supplied cert="high">6 ½</supplied> m.</del> 7 m. 7 ½ sc.</p>
+<p>Item der schr<supplied cert="high">eiber</supplied> sust<supplied cert="high">in</supplied>et 6 m. 9 sc. 3 sol. auß der stadt.</p>
+<p>Su<supplied cert="high">mma</supplied> 14<note>Korrigiert aus 13½ zu 14.</note> m. 14 sol. 3 d.</p>
+</div>
+<div>
+<head>Von dorferen Seiferdsdorff sal czinsen 20 ½ m. cum taberna.</head>
+<p>Item Seyferdesdorff d<supplied cert="high">edi</supplied>t dem schreibere 12 m. minus 1 sc.</p>
+<p>Item so haben sie geg<supplied cert="high">ebe</supplied>n dem compan 3 ½ m. 13 sc.</p>
+<p>Item so haben sie gehauen 51 morg<supplied cert="high">en</supplied> machet 2 m. ½ f.</p>
+<p>Item 3 ½ sc. vor 1 ruthe holcz.</p>
+<p>Item 2 sc. vor 2 schok eyer.</p>
+<p>Item 2 sc. vor 2 schok schobes.</p>
+<p>Su<supplied cert="high">mma</supplied> 18 m. 13 ½ sc.</p>
+<p>Restat 2 m. minus 1 ½ sc.</p>
+<p>Belitschke sal czinsen 32 m. <del rend="gestrichen">7</del> 8 sc. 1 sol.</p>
+<p>Item d<supplied cert="high">edi</supplied>t dem compan 29 m. 6 ½ sc.</p>
+<p>Item 2 m. 8 sc. vor hawgelt vor 61 morg<supplied cert="high">en</supplied><note>Über der Zeile ergänzt.</note>.</p>
+<p>Item 1 f. vor eyer.</p>
+<p>Item 3 ½ sc. vor rutenholcz.</p>
+<p>Item 2 schok schobers 2 sc.</p>
+<p>Item Johan hath empfangen 4 m.</p>
+<p>Su<supplied cert="high">mm</supplied>a 31 m. 3 f. </p>
+<p>Restat <del rend="gestrichen">14 sc. 1 sol.</del> 16 sol.</p>
+ 
+<pb n="29v"/>
+</div>
+<div>
+<head>Lankaw sal czinsen 37 m. 40 d.</head>
+<p>Item d<supplied cert="high">edi</supplied>t dem compan<supplied cert="high">e</supplied> 24 ½ m. an gelde.</p>
+<p>Item gehawen 61 morgen machet an gelde 3 m. minus 1 sc.</p>
+<p>Item ½ f. vor 3 schok eyer.</p>
+<p>Item ½ f. vor 3 schok schobes.</p>
+<p>Item 3 ½ sc. vor 1 ruthe holcz.</p>
+<p>Item 8 m. 1 f. ist en<supplied cert="high">en</supplied> abegeslag<supplied cert="high">en</supplied> van Andr<supplied cert="high">is</supplied> des wirtes weg<supplied cert="high">en</supplied> der kompan empfangen.</p>
+<p>Su<supplied cert="high">mm</supplied>a 36 m. 2 ½ sc.</p>
+<p>Restat 1 m. minus 35 d.</p>
+</div>
+<div>
+<head>Plobischaw sal czinsen 38 m. 2 sc.</head>
+<p>D<supplied cert="high">edi</supplied>t dem schr<supplied cert="high">eiber</supplied> 12 m.</p>
+<p>Item 18 m. 10 sc. 6 d. dem<supplied cert="high">e</supplied> compan<supplied cert="high">e</supplied> und probeste.</p>
+<p>Item 3 m. vor 72 morgen.</p>
+<p>Item 10 sc. 8 d. vor <del rend="gestrichen">1½ ruteholcz und.</del> holcz eyer schobe.</p>
+<p>Item 13 sc. hath einer haber und gerste gebrocht.</p>
+<p>Item so hath der compan uff gelucken gesten van eines gebawren wegen 1 ½ m. 7 ½ sc.</p>
+<p>Item 1 m. 5 sc. do erbeitet ein gebawer <supplied cert="high">an</supplied> und ouch getreide geg<supplied cert="high">ebe</supplied>n.</p>
+<p>Su<supplied cert="high">mma</supplied> 27 m. 9 sc. 23 d. </p>
+<p>Restat 16 sc.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="30r"/>
+</div>
+<div>
+<head>Pamperse sal czinsen <del rend="gestrichen">27 m.</del>.</head>
+<p>Item d<supplied cert="high">edi</supplied>t dem compan 23 m. 20 sc.</p>
+<p>Item sie haben gehawen 78 morg<supplied cert="high">en</supplied> und seint noch pflichtig 42 morg<supplied cert="high">en</supplied> van des scharwerk<supplied cert="high">es</supplied> weg<supplied cert="high">en</supplied>.</p>
+<p>Und das ungehauen sollen sie vorbessern vor 2 ½ m. ½ f.</p>
+</div>
+<div>
+<head>Drenaw sal czinsen 33 m. 7 sc. 10 d.</head>
+<p>D<supplied cert="high">edi</supplied>t dem compan 11 m. ½ f. 5 d.</p>
+<p>Item der kretschmer d<supplied cert="high">edi</supplied>t ½ m. dem schr<supplied cert="high">eiber</supplied> <date when="1452-02-09">die Appolonie</date> vor das ander borgete der schultiß.</p>
+<p>Item 3 m. 15 d. vor haugelt 77 ½ morg<supplied cert="high">en</supplied>.</p>
+</div>
+<div>
+<head>Leysaw czinset 44 m. 1 sc.</head>
+<p>D<supplied cert="high">edi</supplied>t dem compan 32 ½ m. 3 d.</p>
+<p>Item 6 m. 20 ½ sc. vor 150 und 15 ½ morg<supplied cert="high">en</supplied> abeczuslon.</p>
+</div>
+<div>
+<head>Pnywit sal geben 21 m. 21 sc.</head>
+<p>D<supplied cert="high">edi</supplied>t dem compan <del rend="gestrichen">6 m.</del> 7 m. ½ f.</p>
+<p>Item d<supplied cert="high">edi</supplied>t ½ m. dem compan czu Schon<supplied cert="high">se</supplied>.</p>
+<p>Item 1 m. 10 sc. vor 34 morg<supplied cert="high">en</supplied>.</p>
+</div>
+<div>
+<head>Schurkopes sal czinßen 13 m. 2 sc.</head>
+<p>D<supplied cert="high">edi</supplied>t dem compan der kretschmer 1 ½ m. 6 ½ sol.</p>
+<p>Item 3 f. vor 18 morg<supplied cert="high">en</supplied>.</p>
+<p>Item 8 sc. abeczuslon vor honig.</p>
+<p>Item 4 sc. messegelt vor 100 und 24 morg<supplied cert="high">en</supplied>.</p>
+</div>
+<div>
+<head>Malkaw sal geben 9 m. 15 sc.</head>
+<p>D<supplied cert="high">edi</supplied>t dem compan 5 m. ½ f.</p>
+<p>Item abegeslagen 3 f. haugelt.</p>
+</div>
+<div>
+<head>Kottenaw sal geben 5 m. 17 sc. 9 d. mit dem kretschmer.</head>
+<p>D<supplied cert="high">edi</supplied>t dem compan 9 f.</p>
+</div>
+<div>
+<head>Kolwitcz d<supplied cert="high">edi</supplied>t.</head>
+<p>D<supplied cert="high">edi</supplied>t <del rend="gestrichen">1</del> ½ m.</p>
+ 
+<pb n="30v"/>
+</div>
+<div>
+<head>Yserlo sal czinsen 21 ½ m. ½ f.</head>
+<p>Item d<supplied cert="high">edi</supplied>t 14 ½ m. 3 ½ sol.</p>
+<p>Item 2 ½ m. abezuslon an<supplied cert="high">e</supplied> 60 morgen.</p>
+<p>Do ist ein gebawer der heiset Mattes der sal czinsen 1 ½ m. dem slug der <persName ref="#GEgloffstein"> voit</persName> abe ½ m. an fischerey und an<supplied cert="high">e</supplied> seine anteile des haugeld<supplied cert="high">is</supplied>.</p>
+<p>Item einer heiset Michel der ist auch schuldig 1 ½ m. dem slug der voith abe 19 ½ sc. t<supplied cert="high">enetu</supplied>r noch 16 ½ sc.</p>
+<p>Des compans empfoung<supplied cert="high">e</supplied> <supplied cert="high">112</supplied><note>Der Schreiber hat sich an dieser Stelle verschrieben, sodass geschrieben steht 100 112.</note> und 20 sc.</p>
+<p>Des schreibers empfoung<supplied cert="high">e</supplied> ist 31 m. <del rend="Folgt Streichung, unleserlich"/> 9 sc.</p>
+<p>Item Johannis empfoung<supplied cert="high">e</supplied> 4 m.</p>
+<p>Item 29 m. minus 1 sc. vor hawgelt im haber awste.</p>
+<p>Item 5 m. 4 sc. 8 d. abeczuslon vor getreide schob eyer honig erbeit lon fischerey messegelt.</p>
+<p>Su<supplied cert="high">mm</supplied>a in al 262 m. minus 22 d.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="31r"/>
+</div>
+<div>
+<head>Diß nochgeschreb<supplied cert="high">e</supplied>n vihe ist czu Schonße geczalt im <date when="1450-12-20">Lten jore am Obende Thome Ap<supplied cert="high">osto</supplied>li</date>.</head>
+<p>Czum ersten 400 und 29<note>Nicht eindeutig, da durch Überschreibung Korrektur, daher auch 29 oder 24 möglich.</note> schouffe.</p>
+</div>
+<div>
+<head>Sweine.</head>
+<p>Item 2 schock unde 19 sweyne.</p>
+<p>Item 19 ferkel.</p>
+</div>
+<div>
+<head>Kuwe.</head>
+<p>Item 36 kuwe mit den dreyn kuwen die der hofeman hot.</p>
+<p>Item 2 bollen.</p>
+<p>Item 2 ierige ochsechen.</p>
+<p>Item noch 10 große ochsen.<note>Rasur auf Wasserfleck, lesbar nur: Item noch [...].</note></p>
+</div>
+<div>
+<head>Pherde.</head>
+<p>Item 5 pherde und ½ schock.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Czu <del rend="gestrichen">C</del> Tscheichaw.</head>
+<p>Czum ersten 20 <del rend="gestrichen">1</del> czog pherde.</p>
+<p>Item 48 follen.</p>
+</div>
+<div>
+<head>Kelber.</head>
+<p>Item 6 und 1 schock kelber.</p>
+</div>
+<div>
+<head>Swein.</head>
+<p>Item 46 sweine.</p>
+</div>
+<div>
+<head>Kuwe.</head>
+<p>Item 2 mittekuwe und 2 phluckkuwe hot der hofeman.</p>
+<p>Item die mutter hot 1 kuwe.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="31v"/>
+</div>
+<div>
+<head>Diß hot der here <persName ref="#GEgloffstein">voith czur Leipe</persName> gelossen an vihe in seinem awßtzoge im LIten jore.</head>
+<p>Czum ersten 2 schock rintvihes mit czogochsen und mit all minus 4 stucke.</p>
+<p>Item 1 ½ schock und 4 czihende pherde.</p>
+<p>Item ½ schock und 4 junger pherde von 2 und 3 joren.</p>
+<p>Item 10 czegen.</p>
+<p>Item 400 und 11 schouffe.</p>
+<p>Item 2 ½ schock und 6 swein clein und groes.</p>
+<p>Item 16 mastswein.</p>
+<p>Item 5 gancz alt smer.</p>
+<p>Item 9 alde seyten speck.</p>
+</div>
+<div>
+<head>Czum Bothn.</head>
+<p>Gelossen 1 ½ schock 3 stuck rintvihe.</p>
+<p>Item 1 ½ schock swein.</p>
+<p>Item 10 mastswein.</p>
+<p>Item 500 und 20 schouffe.</p>
+<p>Item 22 kobelen.</p>
+<p>Item 9 monchpherde.</p>
+<p>Item 13 seiten altspeck.</p>
+<p>Item 1 sweick.<note>Unterhalb des Eintrags folgt Freiraum.</note></p> 
+<pb n="32r"/>
+</div>
+<div>
+<head>Kochegerethe zcu Schonenshe das der <persName ref="#GEgloffstein">voith</persName> gefunden hath.</head>
+<p>Item 4 kessel.</p>
+<p>Item 2 gropen.</p>
+<p>Item 1 fleischbeil.</p>
+<p>Item 2 hackenmesser.</p>
+<p>Item 1 schabe.</p>
+<p>Item 2 kellen die sein nicht gut.</p>
+<p>Item noch 1 alden kessel.</p>
+<p>Item 1 koppersib.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Des newen gerethes ader reisegerethe.</head>
+<p>Item 3 gropen.</p>
+<p>Item 4 kessel.</p>
+<p>Item 2 kellen.</p>
+<p>Item 1 tegel.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Item 41 ½ par flicken fleisch von dysem iore.</p>
+<p>Item 26 par flicken yerig fleisch.</p>
+<p>Item 1 par wilder flicken.</p>
+<p>Item 1 ½ schock brotworste.</p>
+<p>Item 1 tonne salcz klein und groß.</p>
+<p>Item 1 <del rend="Folgt Streichung, unleserlich"/> tonne dorsch.</p>
+<p>Item 5 smere.</p>
+<p>Item <del rend="gestrichen">4</del> 6 steine unslit.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="32v, 32ar leer"/>
+<pb n="32av"/>
+</div>
+<div>
+<head>Dis nochgeschrebenen gelt habe ich <persName ref="#HSeckendorf">Hintcze Seckendorff</persName> von den czinßern uff <date when="1451-11-11">Martini an guttim gelde entpfangen im LIten jare</date>.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></head>
+</div>
+<div>
+<head>Seyffersdorff.</head>
+<p>Hot<note>Möglicherweise führt ein Strich von Hot gegeben ... compan zum Eintrag auf der nächsten Seite Summa 72.</note> gegeb<supplied cert="high">e</supplied>n 3 ½ m. am <date when="1451-11-28">Sontage vor Andree</date>.</p>
+<p>Item 16 sc. dem compan<supplied cert="high">e</supplied>.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="33r"/>
+</div>
+<div>
+<head>Belitzke das dorff.<note>Darüber doppelt wegen Verwischung der Tinte, darüber Freiraum.</note></head>
+<p>Hot gegeben 21 ½ m. am <date when="1451-11-21">Tag Presentacionis <supplied cert="high">Marie</supplied></date><note type="uncertainty"/>.</p>
+<p>Item noch geb<supplied cert="high">e</supplied>n 15 d. ead<supplied cert="high">em</supplied> die.</p>
+<p>Item noch geb<supplied cert="high">e</supplied>n 3 m. minus 5 ½ sol. am <date when="1451-11-28">Sontag<supplied cert="high">e</supplied> vor Andree</date>.<note>Item ... Andree durch andere Hand ergänzt.</note></p>
+<p>Item 1 gutte m. unde 5 ½ sol. an <date when="1451-12-21">die Thome</date> g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied>.<note>Item ... gegeben durch andere Hand ergänzt.</note></p>
+<p>Item d<supplied cert="high">edi</supplied>t noch 3 ½ m. und<supplied cert="high">e</supplied> 1 f. am <date when="1451-01-06">Tage <supplied cert="high">Trium Regum</supplied></date>.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Lanckaw das dorff.</head>
+<p>Hot gegeben 17 ½ m. am Tag Presentacionis <supplied cert="high">Marie</supplied>.</p>
+<p>Item noch gegeb<supplied cert="high">e</supplied>n 4 m. am Sontag<supplied cert="high">e</supplied> vor Andree.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Plobißchaw.</head>
+<p>Hot gegeb<supplied cert="high">e</supplied>n 12 m. und<supplied cert="high">e</supplied> 3 f. am <date when="1451-11-11">Tag<supplied cert="high">e</supplied> Martini</date>.</p>
+<p>Item noch g<supplied cert="high">egeben</supplied> 2 m. und<supplied cert="high">e</supplied> 4 ½ sol. am Sontag<supplied cert="high">e</supplied> vor Andree.</p>
+<p>Item noch g<supplied cert="high">egeben</supplied> 1 m. und<supplied cert="high">e</supplied> 9 sc. und<supplied cert="high">e</supplied> 9 d.</p>
+<p>Item noch gegeb<supplied cert="high">e</supplied>n 1 m. und<supplied cert="high">e</supplied>11 sc. und<supplied cert="high">e</supplied> 3 d.</p>
+<p>Summa<note>Möglicherweise führt ein Strich von Summa 72 zum Eintrag auf der vorherigen Seite Hot gegeben ... compan.</note> 72 ½ m. 10 sc. 21 d. </p>
+<p>Item d<supplied cert="high">edi</supplied>t noch 3 f. dem compan.</p>
+ 
+<pb n="33v"/>
+</div>
+<div>
+<head>Der stad Schonsehe czinser sequuntur.</head>
+<p>Steßke eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Peter Perßke eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Polnißche Steßke eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Peter Schamppe eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Hans Wayner eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Michel Scheycher <del rend="gestrichen"><supplied cert="high">yn</supplied></del> 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Hynrich smyd 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Bernhardus hoefema<supplied cert="high">n</supplied> 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Steßke 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Jeckel 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Meister<note>Am Anfang der Zeile Streichung alde d.</note> Mathis 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Michel Heynel 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Grune Joepe ½ f. d<supplied cert="high">edi</supplied>t.</p>
+<p>Hensil<note>Am Anfang der Zeile Streichung hey</note> eyn loth d<supplied cert="high">edi</supplied>t.</p>
+<p>Dromel eyn loth d<supplied cert="high">edi</supplied>t.</p>
+<p>Nicklis Kariß 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Nicklis sneyder eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Barnhardius Czegenhals eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Jackop Leyne 3 ½ sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Bortißch bruwer eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Stefphannyne eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Jennißchynne eyn sc. d<supplied cert="high">edi</supplied>t. <del rend="gestrichen">Brostelynne eyn sc. d<supplied cert="high">edi</supplied>t.</del></p>
+<p>Lucaß eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Meyerglyn eyn d<supplied cert="high">edi</supplied>t.</p>
+<p>Heynel eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Bartußch 1 ½ sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Jegerdorff eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Czygeler eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Wulffyn<supplied cert="high">n</supplied>e eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Jockel eyn sc. und 9 d. d<supplied cert="high">edi</supplied>t.</p>
+<p>Jeckel 3 sol.<note>Zwischen sol. und dedit ein Strich.</note> d<supplied cert="high">edi</supplied>t.</p>
+<p>Sachße eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Nickelman ½ sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Su<supplied cert="high">mm</supplied>a 1 ½ m. <del rend="Folgt Streichung, unleserlich"/> 9 sc. 4 sol. 3 d.</p>
+ 
+<pb n="34r"/>
+<p>Item Yohan dy von der lanck sullen entwortten 1 ½ last 6 schoffel gib von den 6 scheffel meister Heinrich 4 scheffel.</p>
+<p>Item Bostel<del rend="gestrichen">mit</del> czur kleppen garn ein stuck nach dem engstten moß.</p>
+<p>Item dar nach des engsten auch ein stuͤck.</p>
+<p>Item des weytsten auͤch ein stuͤck.</p>
+<p>Item 8 schock seyl<del rend="gestrichen">3 drettig <supplied cert="high">posten</supplied>.</del> dy drey dettig sint.</p>
+<p>Und umb dem weiß bestol und sust umb alle ding.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="34v leer"/>
+<pb n="35r"/>
+<p>Merten buwdener ½ sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Kyrßborm eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Kyrßbom<note>Am Anfang der Zeile Streichung Lucas.</note> 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Lucas 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Gelucke ½ sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Meyster Mathis ½ sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Item d<supplied cert="high">ie</supplied> stad sal geb<supplied cert="high">e</supplied>n ½ f.</p>
+<p>Hans buwdener eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Jackel Wayner 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Cristoffel 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Item die stad sal geb<supplied cert="high">e</supplied>n eyn sc.</p>
+<p>Alde Bernhard eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Zeygen eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Mertyn budener eyn sc. d<supplied cert="high">edi</supplied>t 1 sc.</p>
+<p>Jeene non d<supplied cert="high">edi</supplied>t.</p>
+<p>Cristoffer<note>Zwischen Cristoffer und 2 ein Strich.</note> 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Item der stadt te<supplied cert="high">netu</supplied>r vor Royte<supplied cert="high">n</supplied>berger eyn sc.</p>
+<p>Item Cleynsmyt te<supplied cert="high">netu</supplied>r der stad ½ f.</p>
+<p>Item Hanß smyd te<supplied cert="high">netu</supplied>r die stad ½ sc.<note>Aus eyn korrigiert.</note></p>
+<p>Mathis Kaeler die stad te<supplied cert="high">netu</supplied>r ½ sc.<note>Aus eyn korrigiert.</note></p>
+<p>Fladenmoel te<supplied cert="high">netu</supplied>r die stad ½ sc.<note>Aus eyn korrigiert.</note></p>
+<p>Nicklis Korriß eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Roymetaßche eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Roymetaßche eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Hans von Boeth<supplied cert="high">e</supplied>n 2 sc.</p>
+<p>Item te<supplied cert="high">netu</supplied>r die stad von niwe Pauwel eyn sc.<note>Roymetaßche eyn sc. dedit. Roymetaßche ... eyn sc.: Zu den Geldeinträgen verläuft jeweils eine Linie zu ten<supplied cert="high">etu</supplied>r.</note></p>
+<p>Ten<supplied cert="high">etu</supplied>r.<note>Neben den Geldeinträgen einmalig ergänzt.</note></p>
+<p>Jaranth eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Peterße eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Eyser Joen die stad te<supplied cert="high">netu</supplied>r eyn sc.</p>
+<p>Criststoffer eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Jaranth eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Hoefesnyderynne eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Drzeßke eynen f. d<supplied cert="high">edi</supplied>t.</p>
+<p>Nezemantcz te<supplied cert="high">netu</supplied>r die stad eyn loth.</p>
+<p>Jackop Plobißch eyn loth d<supplied cert="high">edi</supplied>t.</p>
+<p>Hanß smyt ½ f. d<supplied cert="high">edi</supplied>t.</p>
+<p>Sparbrot te<supplied cert="high">netu</supplied>r die stad eyn sc.</p>
+<p>Hans von Boet<supplied cert="high">i</supplied>n te<supplied cert="high">netu</supplied>r 4 sc.</p>
+<p>Leuckener 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Jaokop Plobißch 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Su<supplied cert="high">mm</supplied>a 1 ½ m. ½ f.</p>
+ 
+<pb n="35v"/>
+<p>Merten bud<supplied cert="high">e</supplied>rner 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Megerlyn 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Roymetaßche 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Kroyden 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Glocke ½ f. d<supplied cert="high">edi</supplied>t.</p>
+</div>
+<div>
+<head>Gartenczinsers sequuntur.</head>
+<p>Jacob Plobißch 2 sc. minus 2 d. d<supplied cert="high">edi</supplied>t.</p>
+<p>Hans von Boet<supplied cert="high">e</supplied>n te<supplied cert="high">netu</supplied>r ½ m. und<supplied cert="high">e</supplied> 2 sol.</p>
+<p>Lucas 1 ½ m. <del rend="gestrichen">m.</del> minus 40 d. d<supplied cert="high">edi</supplied>t.</p>
+<p>Hans von Boethen <del rend="gestrichen">1</del> 15 sc. te<supplied cert="high">netu</supplied>r.</p>
+<p>Lucas eyn loeth d<supplied cert="high">edi</supplied>t.</p>
+<p>Nicklis Kariß 4 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>D<supplied cert="high">edi</supplied>t<note>Neben der Zeile ergänzt.</note> Drzeßke eyn loth te<supplied cert="high">netu</supplied>r.</p>
+<p>Grune Joepe 2 sc. minus 1 d. d<supplied cert="high">edi</supplied>t.</p>
+<p>Alde Bernd 3 ½ sol. d<supplied cert="high">edi</supplied>t.</p>
+<p>Wulffyn<supplied cert="high">n</supplied>e. Jeckel. Meister Mathis.<note>Wulffyn ... Mathis: Zu den Namenseinträgen verläuft jeweils eine Linie zu 1 loth d<supplied cert="high">ede</supplied>runt.</note> 1 loth d<supplied cert="high">ede</supplied>runt.</p>
+<p>Glucke 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Nicklis sneyder 7 ½ sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Hanß von Boet<supplied cert="high">e</supplied>n 2 sc. te<supplied cert="high">netu</supplied>r.</p>
+<p>Meyster Hy<supplied cert="high">n</supplied>rich eyn sc. d<supplied cert="high">edi</supplied>t.</p>
+<p>Jaeranth ½ f. d<supplied cert="high">edi</supplied>t et te<supplied cert="high">netu</supplied>r adhuc 19 d.</p>
+<p>Mathis Menczel ½ f. te<supplied cert="high">netu</supplied>r.</p>
+<p>Hanß von Boet<supplied cert="high">i</supplied>n 20 d. te<supplied cert="high">netu</supplied>r.</p>
+<p>Lucas 10 d. d<supplied cert="high">edi</supplied>t.</p>
+<p>Matticz leyne<supplied cert="high">n</supplied>weber 10 d. d<supplied cert="high">edi</supplied>t.</p>
+<p>Leuckener 20 d. d<supplied cert="high">edi</supplied>t.</p>
+<p>Hanß smyd ½ f. d<supplied cert="high">edi</supplied>t.<del rend="gestrichen">Roymeta<supplied cert="high">sche</supplied>.</del></p>
+<p>Meister Hinrich 2 sc. d<supplied cert="high">edi</supplied>t.</p>
+</div>
+<div>
+<head>Schuebencke.</head>
+<p>Scheycher ½ f. Leuckener ½ f. Steßke ½ f. Kyrßbom ½ f.<note>Scheycher ... ½ f.: Zu den Währungsangaben verläuft jeweils eine Linie zu de<supplied cert="high">de</supplied>runt.</note> De<supplied cert="high">de</supplied>runt.</p>
+<p>Item te<supplied cert="high">netu</supplied>r die stad vor die brotbencke 3 f. <del rend="Rasur">d<supplied cert="high">edi</supplied>t.</del></p>
+<p>Item von der badstoebe ten<supplied cert="high">etu</supplied>r 3 f. D<supplied cert="high">edi</supplied>t. Item von der leymg<supplied cert="high">ru</supplied>be 9 sc. Die stad te<supplied cert="high">ne</supplied>ntun.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Su<supplied cert="high">mma</supplied> 3 ½ m. 5 sc. 2 sol.</p>
+ 
+<pb n="36r"/>
+<p>Su<supplied cert="high">mma</supplied> von der stad entpfang<supplied cert="high">e</supplied>n 7 m. 7 ½ sc.<note>Summa ... 7 ½ sc. durch andere Hand ergänzt.</note></p>
+<p> <supplied cert="high">Computatum</supplied> mit den borgern zo bleybe wir in schuldig 1 m. un<supplied cert="high">de</supplied> 7 ½ ger<supplied cert="high">inge</supplied> sc. vor haber an der <date when="1451-11-10">Mittewochin vor Martini im LI ior</date> un<supplied cert="high">de</supplied> alle ding slecht.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Item Hans vom Botin abegerechint 2 ½ m. ger<supplied cert="high">ingis</supplied> dy dy Merkener Langerbeyn un<supplied cert="high">de</supplied> ander geste me vorczert habin.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Item der stad abegerechnt vor 1 last haber 7 m. ger<supplied cert="high">ingis</supplied>.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="36v"/>
+</div>
+<div>
+<head>Klyntczkow das dorff.</head>
+<p>Item d<supplied cert="high">edi</supplied>t 11 ½ m. feria sexta p<supplied cert="high">ost</supplied> <date when="1451-11-26">Kathe<supplied cert="high">r</supplied>ine</date>.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Pamperssee.</head>
+<p>Hot gegeb<supplied cert="high">e</supplied>n 10 ½ m. feria sexta p<supplied cert="high">ost</supplied> Katherine.</p>
+<p>Item gegeben 6 m.</p>
+<p>Item noch gegeben <del rend="gestrichen">4</del> 4 m. und<supplied cert="high">e</supplied> 3 sc.</p>
+<p>Item 1 m. und<supplied cert="high">e</supplied> ½ f. <del rend="gestrichen">Item dedit 2 m. 2 sc. am Montag<supplied cert="high">e</supplied> nach Do<supplied cert="high">ro</supplied>thee dem compan und schr<supplied cert="high">eiber</supplied>.</del></p>
+</div>
+<div>
+<head>Rottenaw.<note>Oberhalb dieser Überschrift eine unleserliche Streichung.</note></head>
+<p>Hot gegeb<supplied cert="high">e</supplied>n 2 m. und<supplied cert="high">e</supplied> 1 f. feria sexta p<supplied cert="high">ost</supplied> Kathe<supplied cert="high">r</supplied>ine.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Su<supplied cert="high">mm</supplied>a 35 ½ m.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="37r"/>
+</div>
+<div>
+<head>Krossyn.</head>
+<p>Hot gegeben 13 m. <date when="1451-11-27">Sabbato p<supplied cert="high">ost</supplied> Kathe<supplied cert="high">r</supplied>ine</date>.</p>
+<p>Item hot gegeben 6 m.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Yserlo.</head>
+<p>Hot gegeben 4 ½ m. Sab<supplied cert="high">ba</supplied>to p<supplied cert="high">ost</supplied> Kathe<supplied cert="high">r</supplied>ine.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 3 m. 1 f. und 3 ½ sol. ead<supplied cert="high">em</supplied> die.</p>
+<p>Item noch gegeben 6 m.</p>
+<p>Item ½ m.<note>Unterhalb der Streichung ergänzt, last gestrichen.</note> und 5 sc.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Malkaw.</head>
+<p>Hot gegeben 9 f. Sabb<supplied cert="high">a</supplied>to p<supplied cert="high">ost</supplied> Kathe<supplied cert="high">r</supplied>ine. <del rend="gestrichen">Item noch geg<supplied cert="high">eben</supplied> 3 m. 1 f. und 3½ sol. eod<supplied cert="high">em</supplied> die.</del></p>
+<p>Item noch gegeb<supplied cert="high">e</supplied>n 1 ½ m. und<supplied cert="high">e</supplied> 9 sc. und 6 d.</p>
+<p>Item noch gegeb<supplied cert="high">en</supplied> ½ m.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Summa 38 m. 9 sol.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="37v"/>
+</div>
+<div>
+<head>Leyssaw das dorff.</head>
+<p>Hot gegeben 17 ½ m. <date when="1451-11-27">Sabbato p<supplied cert="high">ost</supplied> Katherine</date>.</p>
+<p>Item hot gegeben 10 ½ m. <del rend="gestrichen">und<supplied cert="high">e</supplied> 4 sc.</del></p>
+<p>Item hot gegeben 1 m. und<supplied cert="high">e</supplied> 9 sol.</p>
+<p>Item noch gegeben kleynen czinß 1 ½ m.</p>
+<p>Item 8 sc.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Pnyebit.</head>
+<p>Hot geben 4 ½ m.</p>
+<p>Item noch gegeben 1 ½ m.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Drenaw.</head>
+<p>Hot gegeben 2 ½ m. und<supplied cert="high">e</supplied> 4 sc.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 6 m. und<supplied cert="high">e</supplied> 10 sc.</p>
+<p>Item der schultcze von siener oebermoße hot gegeben 7 sc. und<supplied cert="high">e</supplied> 5 d. <del rend="Rasur">[…] Summa 11 m. ½ f. 5 d. Summa 46 m. ½ f. 4 sol. 5 d. Item sie haben gehawen 78 morgen haber hay und gerste vor […] m. und sollen noch wol […] morgen hawen das haben […] dorff thun. Restat […] m. <supplied cert="high">minus</supplied> […] sol.</del></p>
+<p>Summa 46 m. ½ f. 4 sol. 5 d.<note>Summa ... 5 d. geschrieben von anderer Hand.</note></p>
+ 
+<pb n="38r"/>
+</div>
+<div>
+<head>Schyrokopes.</head>
+<p>Hot gegeben 1 ½ m. und<supplied cert="high">e</supplied> 6 ½ sol.<note>Am Rand nachgetragen: nota sol. vel sc., folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Kowitcz.</head>
+<p>Item d<supplied cert="high">edi</supplied>t ½ m.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Summa 2 m. 6 ½ sol.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+<p>Summa summarum aller entphounnge von czinße 200 m. und<supplied cert="high">e</supplied> 2 m. 5 sc. und<supplied cert="high">e</supplied> 5 d. an guttem gelde.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="38v"/>
+</div>
+<div>
+<head>Plobißchaw.<note>Oberhalb des Eintrags besteht Freiraum.</note></head>
+<p>Item hot noch gegeben boben das do vor gegebin ist 3 f. von dem kretczem <date when="1451-02-03">Tage Blasii</date>.<note>Unterhalb des Eintrags folgt Freiraum.</note></p> 
+<pb n="39r leer"/>
+<pb n="39v"/>
+</div>
+<div>
+<head>Pampershe.</head>
+<p>D<supplied cert="high">edi</supplied>t 2 m. und 2 sc. am Montag<supplied cert="high">e</supplied> nach <date when="1451-02-08">D<supplied cert="high">orothee</supplied></date><note type="uncertainty"/> dem compan und schr<supplied cert="high">eiber</supplied>.</p>
+<p>Villa d<supplied cert="high">edi</supplied>t hewer 23 m. 20 sc.</p>
+<p>Item t<supplied cert="high">enetu</supplied>r noch 9 m.</p>
+<p>Item sie haben gehawen 78 morg<supplied cert="high">en</supplied> und seint noch pflichtig 42 morg<supplied cert="high">en</supplied> von scharwerkes weg<supplied cert="high">en</supplied> und das ungehauwen sullen sie vorbessern das machet 2 ½ m. ½ f.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Drenaw.</head>
+<p>Item villa d<supplied cert="high">edi</supplied>t 7 f. eod<supplied cert="high">em</supplied> die dem compan und schr<supplied cert="high">eiber</supplied>.</p>
+<p>Summa in al 10 ½ m. ½ f. 5 d.</p>
+<p>Item 72 ½ morgen geslagen machet 3 m. 15 d.</p>
+<p>Restat 17 m. 2 sc. 21 d.</p>
+<p>Item der kretschmer d<supplied cert="high">edi</supplied>t ½ m. am <date when="1451-02-10">Mitwoch die Appolonie</date><note type="uncertainty"/> und vor das ander ist der schultiß burge geworden die empfing der schr<supplied cert="high">eiber</supplied>.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Leysaw.</head>
+<p>Item d<supplied cert="high">edi</supplied>t 1 ½ m. ½ sc. am Montag<supplied cert="high">e</supplied> doselbist.</p>
+<p>Su<supplied cert="high">mm</supplied>a 32 ½ m. 3 d. an gelde geg<supplied cert="high">eben</supplied>.</p>
+<p>Item 6 m. 21 ½ sc. vor 150 und 15 ½ morgen abeczuslan.</p>
+<p>Der czins ist gefellig<note>Doppelt.</note> gar <del rend="gestrichen">45 m. 13 sc.</del> 54 m. 1 sc.</p>
+<p>Restat 4 ½ m. ½ f.</p>
+</div>
+<div>
+<head>Kowitcz.</head>
+<p>Item d<supplied cert="high">edi</supplied>t ½ m. t<supplied cert="high">enetu</supplied>r 20 sc. minus 1 sol.</p>
+</div>
+<div>
+<head>Kottenaw.</head>
+<p>Sal geben 5 m. 17 sc. 9 d. mit dem kretschem.</p>
+<p>D<supplied cert="high">edi</supplied>t 9 f.</p>
+<p>Restat 4 m. 11 sc.</p>
+ 
+<pb n="40r"/>
+</div>
+<div>
+<head>Pnywit.</head>
+<p>Villa d<supplied cert="high">edi</supplied>t 6 m. und sie sullen geben 22 m. 21 sc.</p>
+<p>Item dovon ist abeczuslon an hawgelde 1 m. 10 sc. vor 34 morg<supplied cert="high">en</supplied>.</p>
+<p>Item d<supplied cert="high">edi</supplied>t 1 m. ½ f. dem kompan und schr<supplied cert="high">eiber</supplied>. <del rend="gestrichen">Restat 14 m. 11 sc.</del></p>
+<p>Item d<supplied cert="high">edi</supplied>t ½ m. czu Schon<supplied cert="high">se</supplied> dem schr<supplied cert="high">eiber</supplied>.</p>
+<p>Restat 12 ½ m. 8 sc.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Schirokopes.</head>
+<p>Item 9 hub<supplied cert="high">en</supplied> czinsen czu marken.</p>
+<p>Item 4 hub<supplied cert="high">en</supplied> zcu 20 sc. <del rend="gestrichen">S<supplied cert="high">umma</supplied> 12 m. 8 sc.</del></p>
+<p>Item der kretschmer czinset <del rend="gestrichen">[...] m.</del> 3 f.</p>
+<p>Su<supplied cert="high">mm</supplied>a 13 m. 2 sc.</p>
+<p>Item d<supplied cert="high">edi</supplied>t der kretschmer 1 ½ m. 6 ½ sol.</p>
+<p>Item abeczuslon 3 f. vor 18 m.</p>
+<p>Item <del rend="gestrichen">16 sc.</del> 8 sc. abeczuslon vor honig.</p>
+<p>Item 4 sc. messegelt vor 100 und 24 morg<supplied cert="high">en</supplied>.</p>
+<p>Restat 10 m. 13 ½ sol.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Malkaw.</head>
+<p>Hath 11 ½<note>Über der Zeile ergänzt, darunter Streichung 12.</note> besatczte hub<supplied cert="high">en</supplied> die sullen geben 8 ½ m. 3 sc.</p>
+<p>Item 1 m. der kretschmer.</p>
+<p>D<supplied cert="high">edi</supplied>t dem kompan und mir ½ m.</p>
+<p>Su<supplied cert="high">mm</supplied>a des geg<supplied cert="high">eben</supplied> 5 m. ½ f. 6 d.</p>
+<p>Item 3 f. hawgelt. <del rend="gestrichen">Restat 4½ m.</del></p>
+<p>Restat 3 m. 3 f.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="40v"/>
+</div>
+<div>
+<head>Yserloe.</head>
+<p>Haben 27 ½ hub<supplied cert="high">en</supplied> die sullen zcinsen 21 ½ m. ½ f.</p>
+<p>Doruff haben sie geg<supplied cert="high">eben</supplied> 14 ½ m. und 3 ½ sol.</p>
+<p>Item 2 ½ m. abeczuslon an<supplied cert="high">e</supplied> 60 morg<supplied cert="high">en</supplied>. <del rend="gestrichen">Restat 4½ m. 3 sol.</del></p>
+<p>Item Mattes sulle czinsen <del rend="gestrichen">3 sol.</del> 3 m. ger<supplied cert="high">ingis</supplied><note>Weiter vorn über der Zeile ergänzt.</note> dovon ist em abegeslagen vor fischerey und vor haugelt 1 m. ger<supplied cert="high">ingis</supplied> t<supplied cert="high">enetu</supplied>r 2 m.</p>
+<p>Item Michal ist abegeslagen von 3 ger<supplied cert="high">ingen</supplied> m. seinen zcins 8 sc. vor haugelt. Item 7 sc. vor erbeitlon 5 f. der fischerey mit dem grosen garne. Item 1 m. vor fischerey<del rend="gestrichen">mit</del> vom Awste biß <date when="--11-11">Martini</date>. Idem t<supplied cert="high">enetu</supplied>r 1 m. 9 sc. ger<supplied cert="high">ingis</supplied> gelt.</p>
+<p>Item Matte.</p>
+<p>Restat 2 m. 21 sc. 6 d. gut gelt.</p>
+</div>
+<div>
+<head>Belitschke.</head>
+<p>Item sie sullen czinsen 32 m. 8 sc. 1 sol.</p>
+<p>D<supplied cert="high">ederun</supplied>t 29 m. 6 ½ sc.</p>
+<p>Item gehawen 56 morgen vor den morgen 1 sc. das machet 2 m. 8 sc.</p>
+<p>Item 1 f. vor eyer 6 schok.</p>
+<p>Item 3 ½ sc. vor rutenholcz.</p>
+<p>Item 2 sc. vor 2 schok schob.</p>
+<p>Restat 16 sol.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="41r"/>
+</div>
+<div>
+<head>Lankow.</head>
+<p>Sal czinsen 37 m. 40 d.</p>
+<p>D<supplied cert="high">edi</supplied>t 24 ½ m. an gelde.</p>
+<p>Item gehawen 71 morg<supplied cert="high">en</supplied> machet an gelde 3 m. minus 1 sc.</p>
+<p>Item ½ f. vor 3 schok eyer.</p>
+<p>Item ½ f. vor 3 schok schob.</p>
+<p>Itm 3 ½ sc. vor eine ruthe holcz.</p>
+<p>Item 8 m. 1 f. ist en abegeslagen von Andrean des winters wegen.</p>
+<p>Restat 1 m. minus 35 d.<note>Unterhalb des Eintrags folgt Freiraum bis zum nächsten Eintrag.</note></p>
+</div>
+<div>
+<head>Seiferdsdorff.</head>
+<p>Das sal czinsen 20 ½ m. mit dem kretschem.</p>
+<p>D<supplied cert="high">edi</supplied>t 16 m. 4 sc.</p>
+<p>Item so haben sie gehawen 51 morgen 2 m. ½ f.</p>
+<p>Item 3 ½ sc. vor 1 rutte holcz.</p>
+<p>Item 2 sc. vor 2 schok eyern.</p>
+<p>Item 2 schok schob 2 sc.</p>
+<p>Restat 2 m. minus 2 ½ sc.<note>Unterhalb des Eintrags folgt Freiraum.</note></p> 
+<pb n="41v"/>
+</div>
+<div>
+<head>Plobitschaw.</head>
+<p>Sal czinsen 38 m. 2 sc.</p>
+<p>So han sie geg<supplied cert="high">eben</supplied> 12 m. dem schr<supplied cert="high">eiber</supplied>.</p>
+<p>Item 18 m. 10 sc. 6 d. dem compan und probeste.</p>
+<p>Su<supplied cert="high">mm</supplied>a 30 m. 10 sc. 6 d.</p>
+<p>Item 3 m. vor 72 morg<supplied cert="high">en</supplied>.</p>
+<p>Item 10 sc. 8 d. vor 1 ½ rute holcz 2 schok schobe 3 schok eyer.</p>
+<p>Item <del rend="gestrichen">1 m. 5 sc. de<supplied cert="high">m</supplied> <supplied cert="high">hacker</supplied>.</del> einer hoth<del rend="gestrichen">und hath</del> haber 8 s<supplied cert="high">cheffel</supplied> gebrocht den s<supplied cert="high">cheffel</supplied> zcu 1 sol. und 12 s<supplied cert="high">che</supplied>ff<supplied cert="high">el</supplied> gerste zcu 21 d. den s<supplied cert="high">che</supplied>ffe<supplied cert="high">l</supplied>. Su<supplied cert="high">mm</supplied>a 13 sc. </p>
+<p>Item 1 ½ m. und 7 ½ sc. hath der compan gesten von eines gebaweres wegen uff gelucke czu Schonense. Item 1 m. 5 sc. ist em gebawer do hath der compan getreide und erbei<supplied cert="high">s</supplied> hacken an genomen.</p>
+<p>Restat 16 sc.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="42r"/>
+</div>
+<div>
+<head>Act<supplied cert="high">a</supplied> sunt hec <date when="1451-02-09">die Appolonie</date><note type="uncertainty"/>.</head>
+<p><del rend="overstriken">Item der scholtiß von Drenaw hath auwßgeborget einen alden man von Drenaw der sal geben innen XIIII tag<supplied cert="high">en</supplied> uff <date when="--02-24">Mathie</date> ½ gut<supplied cert="high">te</supplied> m. und en<supplied cert="high">en</supplied> weder czu gestellen.<note>Folgt Item.</note> </del></p>
+<p><del rend="overstriken">Item so sullen 5 gebawer von Drenaw erbeiten <del rend="gestrichen">und</del> dreschen <abbr>etc.</abbr> Vor die hath her geloubet. </del></p>
+<p><del rend="overstriken">Item so hath her vor en<supplied cert="high">e</supplied> <del rend="Folgt Streichung, unleserlich"/> geg<supplied cert="high">eben</supplied> ½ m. und hath vor en<supplied cert="high">n</supplied> vordan geloubet in XIIII tag<supplied cert="high">en</supplied> zcu stellen. </del></p>
+<p><del rend="overstriken">Item noch den kretschmer und Gregor sal her gestellen innen XIIII <del rend="gestrichen">1</del> tag<supplied cert="high">en</supplied>.</del></p>
+<p><del rend="overstriken">Item der scholtiß von Drenaw ist aber burge geworden und ouch <del rend="gestrichen">zwene</del> ein gebawern und ouch der kretschmer von Drenaw vor den schultissen von Pnywith und ouch vor einen gebauwern innen XIIII tag<supplied cert="high">en</supplied> zcu gestellen.<note>Unterhalb des Eintrags folgt Freiraum.</note> </del></p>
+ 
+<pb n="42v, 42ar leer"/>
+<pb n="42av"/>
+</div>
+<div>
+<head>Ußgobe an aldem gelde im LIten jore.</head>
+<p>Item g<supplied cert="high">egeben</supplied> meister Hinriche dem smede zcu Schonsee uff siene erbeid 4 m.</p>
+<p>Item her Joh<supplied cert="high">a</supplied>nnes dem pristerhern gegeben 7 m. minus 1 sc. am <date when="1451-11-28">Sontage vor Andree</date>.</p>
+<p>Item dem smede czur Orlow g<supplied cert="high">ebeben</supplied> 4 m.</p>
+<p>Item dem schefer zcum Boethen 1 m.</p>
+<p>Item deme smede zcu Leyssaw 10 m. minus ½ f. vor syn erbeyt.</p>
+<p>Item deme smede zcur Leybe 3 f.</p>
+<p>Item vor eyne thonne byr uff die urkunde 14 sc. und<supplied cert="high">e</supplied> 1 sol.</p>
+<p>Item dem kwhirthen czum Boethen 4 sc.</p>
+<p>Item dem messer zcur Leyppe 17 sc. und<supplied cert="high">e</supplied> 3 d.</p>
+<p>Item Czander von Reychenaw 15 m.</p>
+<p>Item vor ½ last Dantczker byer 7 m.</p>
+<p>Item vor 2 thonnen dorßch 3 m.</p>
+<p>Item vor 1 steyn wachs 3 m. und<supplied cert="high">e</supplied> ½ f.</p>
+<p>Item vor ½ thonne heryng 9 f.</p>
+<p>Item vor 2 sloesse 12 sol.</p>
+<p>Item eynen thorwechter und<supplied cert="high">e</supplied> 1 thonne zcu bynden zcu Thorun 2 sc.</p>
+<p>Item 7 sol. vor 1 eele gewant</p>
+<p>Item vor 1 stoff weyn 4 sol.</p>
+<p>Item vor 4 walt axe 2 m. und<supplied cert="high">e</supplied> 8 sc.</p>
+<p>Item vor 1 hantbeyl 1 f.</p>
+<p>Item vor garn 1 ½ m.</p>
+<p>Item vor bornleyne 1 m.</p>
+<p>Item vor strenge zcu eyner kleppe 4 sol.</p>
+<p>Item den tregern 6 sol.</p>
+<p>Item vor flacfißch ½ m.</p>
+<p>Item vor floß 20 sc.</p>
+<p>Item dem wirthe zcu Thorun vor kaste und<supplied cert="high">e</supplied> vor delen 1 m.</p>
+<p>Item 4 frauwen als Gritten Kethen Barbaren und<supplied cert="high">e</supplied> Hedwig hinderstellig snethelon 4 ½ f.</p>
+<p>Item dem swynhirtten zcu Schonsee snetegelt eynen f.</p>
+<p>Item meister Hynriche deme smede zcu Schonsee 6 ½ f. und<supplied cert="high">e</supplied> 9 d.</p>
+<p>Item zcu Thorun Nicolaen 4 m. vor gewant uff eyne rechenschafft.</p>
+<p>Summa 73 m. 11 sc. 1 sol.</p>
+<pb n="43r"/>
+<p>Item dem raedemecher zcu Fredecke von rade 12 sol.<note>Doppelt.</note></p>
+<p>Item Cordula der frauwen von Kobelaw von befelunge des <persName ref="#LErlichshausen">homeisters</persName> vor die gekoyften 3 huben zcu Kowitcz 18 m. am <date when="1451-11-25">Tage Katherine</date> und<supplied cert="high">e</supplied> ist die letczte beczalunge.</p>
+<p>Item Hans zcum Boethen beczalt 1 ½ m.</p>
+<p>Item beczalt vor den hoefeman zcum Boethen 5 m. und<supplied cert="high">e</supplied> 4 sc.</p>
+<p>Item dem kwhirthen und<supplied cert="high">e</supplied> kobelhirtten zcum Boethen 1 m.</p>
+<p>Item g<supplied cert="high">egeben</supplied> dem hoefemanne zcum Boethen uff gerste zcu entwertten 2 m.</p>
+<p>Item<note>Am Rand daneben Nota.</note> dem alden hoefeknechte do selbigist 22 sc.</p>
+<p>Item dem kwhirthen do selbigest ½ m.</p>
+<p>Item dem koebilhirthen do selbigest ½ m.</p>
+<p>Item dem smede zcu Leyßaw uff erbeid 1 m.</p>
+<p>Item her Otten von Plenchow von des smedes wegen von Leyssaw 1 ½ m.</p>
+<p>Item dem smede zcur Leyppe uff anrichtunge zcu siener erbeid 2 m.</p>
+<p>Item Orthyen eyner mayth zcur Lieppe ½ m. ir loen.</p>
+<p>Item dem hoefemeister zcur Lieppe g<supplied cert="high">egeben</supplied> 3 m. minus 4 sol. die her uß hotte gegeben als den czwen hoefelewthen 2 m. und<supplied cert="high">e</supplied> vor 1 thonne byr 13 sc. und<supplied cert="high">e</supplied> 1 sol. und<supplied cert="high">e</supplied> 8 sc. schergelt.</p>
+<p>Item der vyhemuther zcur Leyppe uff ir loen geg<supplied cert="high">eben</supplied> 1 f.</p>
+<p>Item Michel dem koͤchenjungen 1 f. </p>
+<p>Item 5 f. die der schrieber schuldig waß bleben uff den awst.</p>
+<p>Item vor 5 s<supplied cert="high">cheffe</supplied>l hanffzoem dor von eele zcu machen ½ m.</p>
+<p>Item vor der<note>Korrektur des Wortes durch Überschreibung aus dor zu der.</note> wyn czu decken 5 f. 2 sol.</p>
+<p>Item vor 46 s<supplied cert="high">cheffe</supplied>l hoppen 4 m. 1 f.</p>
+<p>Item der Bomgertennerinne vor hoppe 4 sc.</p>
+<p>Item dem brower 4 sol.</p>
+<p>Item den hanffbrecherinne 1 m.</p>
+<p>Item dem schefer zcu Schonsee 5 f.</p>
+<p>Item vor 2 waltaxe 5 f.</p>
+<p>Item dem meyster gesant 35 m.</p>
+<p>Summa 84 m. 4 sc. 4 sol.</p>
+ 
+<pb n="43v"/>
+<p>Item habe ich vorczert zcu Thorun ½ m.<note>Oberhalb des Eintrags besteht Freiraum.</note></p>
+<p>Item vor 1 redebuwtel 13 sol.</p>
+<p>Item vor pappyr 4 sol.</p>
+<p>Item dem hecker zcu Scheychaw ½ f.</p>
+<p>Item dem gesynde g<supplied cert="high">egeben</supplied> oppergelt 1 f.</p>
+<p>Item dem hoefemanne zcum Boethen vor gerste 1 m.</p>
+<p>Item den fißcherknechten zcu Schonsehe 3 f.</p>
+<p>Item dem koebilhirthen zcu Scheichow 1 f.</p>
+<p>Item dem muntczemeister 100 m.</p>
+<p>Item Peter dem hecker zcu Schonsee 11 sc.</p>
+<p>Item 3 pfunt pheffer 1 m.</p>
+<p>Item 3 pfunt rozynen 8 sc.</p>
+<p>Item 2 pfunt mandeln 14 sol.</p>
+<p>Item 1 pfunt reyß 6 ½ sol.</p>
+<p>Item von 1 sack leynen 2 sol.</p>
+<p>Item von 2 hackemesser 16 sc.</p>
+<p>Item vor 2 wyndereyffen zcu den garn 1 ½ m.</p>
+<p>Item dem schicker g<supplied cert="high">egeben</supplied> 1 m. minus 2 sc.</p>
+<p>Item vor 2 thonnen Dantczkerbyr 2 ½ m.</p>
+<p>Item vor 2 axe ½ m.</p>
+<p>Item vorczert 15 sc.</p>
+<p>Item vor 2 thonnen methe 2 ½ m.</p>
+<p>Item vor 2 thonnen Dantczker byr 2 ½ m.</p>
+<p>Item vor 3 schock kastanigen ½ f.</p>
+<p>Item vor 3 thonnen grobsaltcz 4 m.</p>
+<p>Item vor 1 thonne kleynsaltcz 8 ½ f.</p>
+<p>Item vor 12 stoeffe weyn 1 m.</p>
+<p>Item den heckern zcu Scheychow 8 sc.</p>
+<p>Summa 127<note>I hundert wurde nochmals als Erklärung über der Angabe IC (Bestandteil der Zahl IC XXVII) notiert und mit einem Strich mit der Angabe IC verbunden.</note> m. 7 sol.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="44r"/>
+</div>
+<div>
+<head>Dis geld ist aws g<supplied cert="high">e</supplied>g<supplied cert="high">eben</supplied> dem gesinde uff dy Quatuortemper.</head>
+<p>Item zcu <date when="--12-25">Weynnachten</date> czu Schonsee 20 m. minus 1 f.</p>
+<p>Item der<note>Korrigiert durch überschriebenes r.</note> muter von Scheichaw 1 m.</p>
+<p>Item dem becker 7 f. minus 3 d.</p>
+<p>Item dem kwe hirten 5 f. unde 2 sol.</p>
+<p>Item dem kowelhirten 5 f.</p>
+<p>Item Porlencke 15 sc.</p>
+<p>Item dem garnmeister 3 f.</p>
+<p>Item der muter 1 m.</p>
+<p>Item 2 vie meiden 5 f.</p>
+<p>Item 3 karwisknechten ochzenknechten<note>Über der Zeile ergänzt.</note> 1 gutte m. minus ½ f.</p>
+<p>Item 2 thorwechter 5 f.</p>
+<p>Item dem kowelhirten von Scheichaw 6 ½ f.</p>
+<p>Item dem scheffer 1 gutte m. uff eyn rechenschaft.</p>
+<p>Item dem koche 17 sc.</p>
+<p>Item dem kellerknechte 1 m. unde 4 sol.</p>
+<p>Item dem brauwer 15 sc. unde 1 m. uff rechenschaft</p>
+<p>Item dem cappellan 1 m.</p>
+<p>Item dem sweynhirten 1 m.</p>
+<p>Item dem sneyder 1 f. Nicklis.</p>
+<p>Item Mat<supplied cert="high">this</supplied> dem dyner 1 ½ m. uff seyn notdorft.<note>Folgt verwischte Tinte Summa <supplied cert="high">…</supplied>.</note></p>
+<p>Summa 22 ½ m. 7 sc. 3 d.</p>
+<p>Summa summarum des oeben geschreben an aldem gelde ußgegebenen geldis 300 m. 5 ½ m. und<supplied cert="high">e</supplied> 7 ½ sol.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+ 
+<pb n="44v"/>
+<p>Item boben das vorgeschrebenen noch uß gegeben vom czinße an aldem gelde.</p>
+<p>Item beczalt Andreen dem wyrthe zcu Thorun 78 m.</p>
+<p>Item noch Andreen gegeben 2 m. vor hoppe den der schrieber geborget hatte.</p>
+<p>Item vor das groe gewant das die diener kregen zcu ermeln 1 ½ m.</p>
+<p>Item meyster Hynriche dem smede zcu Schonsee 3 ½ m.</p>
+<p>Item noch den fißchern zcu Schonsehe 3 f.</p>
+<p>Item den heckern noch zcu Scheychaw 7 sc.</p>
+<p>Item vor byr do der muntczemeister was czur Leyppe 9 sol.</p>
+<p>Item vor lampen oele 1 f.</p>
+<p>Item vor huffebeslag zcu Thorun 1 f.</p>
+<p>Item Michelen dem diner 6<note>Korrigiert durch Rasur von 8 auf 6.</note> sc. 6 sol. seine notdorft.</p>
+<p>Item 4 sc. vor strenge.</p>
+<p>Item 2 sc. vor seyfe.</p>
+<p>Item 14 m. dem hern gegeben.</p>
+<p>Item dem hern gegebn 5 m.</p>
+<p>Item dem hern gegeben 1 ½ m.<note>Unterhalb des Eintrags folgt Freiraum.</note></p>
+<pb n="45r–47v leer"/>
+
+</div> 
+
+         
+      </body>
+   </text>
+   
+   
+   
+</TEI>
