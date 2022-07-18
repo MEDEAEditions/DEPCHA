@@ -19,7 +19,7 @@
             which historians, software developers and digital humanists were involved. It formalizes
             the interpretation of a transaction (bk:Transaction) as combination of transfers
             (bk:Transfer) of measurable objects (bk:Measurable) from one accounting object
-            (bk:EconomicUnit) to another. bk:EconomicUnit defines an abstract class which unites
+            (bk:EconomicAgent) to another. bk:EconomicAgent defines an abstract class which unites
             bookkeeping categories (bk:Account, e.g. a cash account) and actors (individual
             bk:Party, e.g. Washington or an unknown group of individuals bk:Group, e.g. four
             farmers). Its physical representation in a historical source is an entry in a written
@@ -301,9 +301,9 @@
 
     <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#from">
         <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transfer"/>
-        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicUnit"/>
+        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicAgent"/>
         <rdfs:comment xml:lang="de">Eine wirtschaftliche Einheit, die etwas in Form eines Wirtschaftsgutes leistet bzw. an eine andere wirtschaftliche Einheit abgibt.</rdfs:comment>
-        <rdfs:comment xml:lang="en">An economic unit that provides/gives an economic asset to another economic unit.</rdfs:comment>
+        <rdfs:comment xml:lang="en">An economic agent that provides/gives an economic asset to another economic agent.</rdfs:comment>
         <rdfs:label xml:lang="en">from</rdfs:label>
         <rdfs:label xml:lang="de">von</rdfs:label>
         <rdfs:seeAlso xml:lang="en">REA Business Ontology: from</rdfs:seeAlso>
@@ -315,9 +315,9 @@
 
     <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#to">
         <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transfer"/>
-        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicUnit"/>
+        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicAgent"/>
         <rdfs:comment xml:lang="de">Eine wirtschaftliche Einheit, die ein Wirtschaftsgut erhält.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The economic unit receiving an economic asset</rdfs:comment>
+        <rdfs:comment xml:lang="en">The economic agent receiving an economic asset.</rdfs:comment>
         <rdfs:label xml:lang="de">nach</rdfs:label>
         <rdfs:label xml:lang="en">to</rdfs:label>
         <rdfs:seeAlso xml:lang="en">REA Business Ontology: to</rdfs:seeAlso>
@@ -328,8 +328,8 @@
 
     <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#accountHolder">
         <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Account"/>
-        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicUnit"/>
-        <rdfs:comment xml:lang="en">An account is assigned to a economic unit.</rdfs:comment>
+        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicAgent"/>
+        <rdfs:comment xml:lang="en">An account is assigned to a economic agent.</rdfs:comment>
         <rdfs:comment xml:lang="de">Ein Konto ist einer wirtschaftlichen Einheit
             zugeordnet.</rdfs:comment>
         <rdfs:label xml:lang="en">has accountHolder</rdfs:label>
@@ -691,9 +691,9 @@
 
 
 
-    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicUnit -->
+    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicAgent -->
 
-    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicUnit">
+    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicAgent">
         <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
         <rdfs:comment xml:lang="en">An economic agent is an economically independent decision-maker.
             This can be, for example, a private household, a company, a city or an individual
@@ -701,7 +701,7 @@
         <rdfs:comment xml:lang="de">Ein Wirtschaftssubjekt ist ein wirtschaftlich selbständiger
             Entscheidungsträger. Dies kann beispielsweise ein Privathaushalt, ein Unternehmen, eine
             Stadt oder eine einzelne Person sein.</rdfs:comment>
-        <rdfs:label xml:lang="en">Economic Unit</rdfs:label>
+        <rdfs:label xml:lang="en">Economic Agent</rdfs:label>
         <rdfs:label xml:lang="de">Wirtschaftssubjekt</rdfs:label>
         <rdfs:seeAlso xml:lang="en">REA Business Ontology: Economic Agent</rdfs:seeAlso>
     </owl:Class>
@@ -752,7 +752,7 @@
 
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Group">
         <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
-        <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicUnit"/>
+        <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicAgent"/>
         <rdfs:comment xml:lang="en">A group of agents involved together in a
             transaction.</rdfs:comment>
         <rdfs:comment xml:lang="de">Eine Gruppe von Akteuren, die gemeinsam an einer Transaktion
@@ -767,7 +767,7 @@
 
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Individual">
         <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
-        <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicUnit"/>
+        <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicAgent"/>
         <rdfs:comment xml:lang="en">An individual actor in a transaction.</rdfs:comment>
         <rdfs:comment xml:lang="de">Ein individueller Akteur in einer Transaktion.</rdfs:comment>
         <rdfs:label xml:lang="en">Individual</rdfs:label>
@@ -797,7 +797,7 @@
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Organisation -->
 
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Organisation">
-        <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicUnit"/>
+        <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicAgent"/>
         <rdfs:comment xml:lang="en">An organisation acting in a transaction.</rdfs:comment>
         <rdfs:comment xml:lang="de">Eine Organisation, die eine Transaktion
             druchführt.</rdfs:comment>
@@ -913,7 +913,7 @@
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Transaction">
         <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
         <rdfs:comment xml:lang="en">A transaction is an agreement, carried out between economic
-            units to exchange an asset.</rdfs:comment>
+            agents to exchange an asset.</rdfs:comment>
         <rdfs:comment xml:lang="de">Eine Transaktion ist eine Vereinbarung, die zwischen zwei
             Wirtschaftssubjekten durchgeführt wird, um einen Vermögenswert oder ein Wirtschaftsgut
             auszutauschen.</rdfs:comment>
