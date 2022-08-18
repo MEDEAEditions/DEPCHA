@@ -90,6 +90,24 @@
     
 
 
+    <!-- https://gams.uni-graz.at/o:depcha.huc-ontology#convertsFrom -->
+
+    <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.huc-ontology#convertsFrom">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.huc-ontology#Conversion"/>
+        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.huc-ontology#Unit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.huc-ontology#convertsTo -->
+
+    <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.huc-ontology#convertsTo">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.huc-ontology#Conversion"/>
+        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.huc-ontology#Unit"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://gams.uni-graz.at/o:depcha.huc-ontology#definedBy -->
 
     <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.huc-ontology#definedBy">
@@ -105,6 +123,26 @@
         <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.huc-ontology#HistoricalUnit"/>
         <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.huc-ontology#NormalizedUnit"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.huc-ontology#formula -->
+
+    <owl:DatatypeProperty rdf:about="https://gams.uni-graz.at/o:depcha.huc-ontology#formula">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.huc-ontology#Conversion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -133,13 +171,23 @@
 
     <!-- https://gams.uni-graz.at/o:depcha.huc-ontology#HistoricalUnit -->
 
-    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.huc-ontology#HistoricalUnit"/>
+    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.huc-ontology#HistoricalUnit">
+        <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.huc-ontology#Unit"/>
+    </owl:Class>
     
 
 
     <!-- https://gams.uni-graz.at/o:depcha.huc-ontology#NormalizedUnit -->
 
-    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.huc-ontology#NormalizedUnit"/>
+    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.huc-ontology#NormalizedUnit">
+        <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.huc-ontology#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.huc-ontology#Unit -->
+
+    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.huc-ontology#Unit"/>
 </rdf:RDF>
 
 
