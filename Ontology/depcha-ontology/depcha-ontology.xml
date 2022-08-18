@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://gams.uni-graz.at/o:depcha.ontology#"
+     xml:base="https://gams.uni-graz.at/o:depcha.ontology"
+     xmlns:t="http://www.tei-c.org/ns/1.0"
+     xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:gams="https://gams.uni-graz.at/o:gams-ontology/#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="https://gams.uni-graz.at/o:depcha.ontology">
+        <dc:creator xml:lang="en">Pollin, Christopher</dc:creator>
+        <dc:date xml:lang="en">2022</dc:date>
+        <dc:description xml:lang="en">todo</dc:description>
+        <dc:identifier xml:lang="en">https://gams.uni-graz.at/o:depcha.ontology</dc:identifier>
+        <dc:publisher xml:lang="en">Centre for Information Modelling, University of Graz</dc:publisher>
+        <dc:rights xml:lang="en">https://creativecommons.org/licenses/by/4.0</dc:rights>
+        <dc:title xml:lang="en">DEPCHA Ontology</dc:title>
+        <rdfs:comment xml:lang="en">Project specific ontology</rdfs:comment>
+        <rdfs:label xml:lang="en">DEPCHA Ontology</rdfs:label>
+        <owl:versionInfo xml:lang="en">Version 0.1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/identifier -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/identifier"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.ontology#accountHolder -->
+
+    <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.ontology#accountHolder">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.ontology#Dataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.ontology#aggregates -->
+
+    <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.ontology#aggregates">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.ontology#Dataset"/>
+        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.ontology#Aggregation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.ontology#currency -->
+
+    <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.ontology#currency">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.ontology#Dataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.ontology#isMainCurrency -->
+
+    <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.ontology#isMainCurrency"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.ontology#numberOfEconomicGoods -->
+
+    <owl:DatatypeProperty rdf:about="https://gams.uni-graz.at/o:depcha.ontology#numberOfEconomicGoods">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.ontology#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.ontology#numberOfEconomicUnits -->
+
+    <owl:DatatypeProperty rdf:about="https://gams.uni-graz.at/o:depcha.ontology#numberOfEconomicUnits">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.ontology#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.ontology#numberOfMonetaryValues -->
+
+    <owl:DatatypeProperty rdf:about="https://gams.uni-graz.at/o:depcha.ontology#numberOfMonetaryValues">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.ontology#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.ontology#numberOfSubTotals -->
+
+    <owl:DatatypeProperty rdf:about="https://gams.uni-graz.at/o:depcha.ontology#numberOfSubTotals">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.ontology#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.ontology#numberOfTotals -->
+
+    <owl:DatatypeProperty rdf:about="https://gams.uni-graz.at/o:depcha.ontology#numberOfTotals">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.ontology#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.ontology#numberOfTransactions -->
+
+    <owl:DatatypeProperty rdf:about="https://gams.uni-graz.at/o:depcha.ontology#numberOfTransactions">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.ontology#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.ontology#Aggregation -->
+
+    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.ontology#Aggregation"/>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.ontology#Dataset -->
+
+    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.ontology#Dataset"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

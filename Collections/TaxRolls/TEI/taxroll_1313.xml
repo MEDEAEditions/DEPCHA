@@ -45,17 +45,22 @@
           levied on the city of <placeName>Paris</placeName> by <name ana="bk:to" ref="#P04">Philip the Fair</name> between <date from="1292" to="1313">1292 and 1313</date>. 
           These documents provide a wealth of information about the individual people, demographics, and history of the city.</ab>
       </projectDesc>
-      <listPrefixDef>
-        <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)" replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
-          <p>Analytical descriptors are considered to represent concepts from the DEPCHA
-						bookkeeping ontology and can be extended to respective URIs.</p>
-        </prefixDef>
-        <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)" replacementPattern="http://www.wikidata.org/wiki/$1">
-          <p>
-            <ref target="https://www.wikidata.org/wiki/Help:Namespaces"></ref>
-          </p>
-        </prefixDef>
-      </listPrefixDef>
+    	<listPrefixDef>
+    		<prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+    			replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+    			<p>Analytical descriptors are considered to represent concepts from the DEPCHA
+    				bookkeeping ontology and can be extended to respective URIs.</p>
+    		</prefixDef>
+    		<prefixDef ident="depcha" matchPattern="([(a-z)|(A-Z)]+)"
+    			replacementPattern="https://gams.uni-graz.at/o:depcha.ontology#$1">
+    			<p>Analytical descriptors are considered to represent concepts from the
+    				project-specific DEPCHA ontology and can be extended to respective URIs.</p>
+    		</prefixDef>
+    		<prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+    			replacementPattern="http://www.wikidata.org/entity/$1">
+    			<p><ref target="https://www.wikidata.org/wiki/Help:Namespaces"/></p>
+    		</prefixDef>
+    	</listPrefixDef>
       <unitDecl>
         <unitDef type="currency" xml:id="livres" ana="bk:mainCurrency">
           <label xml:lang="en">livres</label>
