@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
-  xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#"
   xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:void="http://rdfs.org/ns/void#"
-  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:huc="https://gams.uni-graz.at/o:depcha.huc-ontology#"
+  xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+  xmlns:foaf="http://xmlns.com/foaf/spec/"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:void="http://rdfs.org/ns/void#"
   xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
   xmlns:dcterms="http://purl.org/dc/terms/"
-  xmlns:foaf="http://xmlns.com/foaf/spec/"
 >
-  <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T0">
-    <bk:entry>To Sundry Items from Ledger B.</bk:entry>
+  <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T6">
+    <bk:entry>TEST 1 pound 2 shilling 2 cent</bk:entry>
     <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
     <gams:isPartOf>
       <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4">
         <foaf:homepage rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4"/>
-        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-06</dcterms:modified>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-08-21</dcterms:modified>
         <void:feature rdf:resource="http://www.w3.org/ns/formats/RDF_XML"/>
         <void:dataDump rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4/ONTOLOGY"/>
         <void:vocabulary rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#"/>
         <void:vocabulary rdf:resource="https://gams.uni-graz.at/o:gams-ontology#"/>
-        <void:vocabulary rdf:resource="http://xmlns.com/foaf/spec/"/>
         <void:vocabulary rdf:resource="http://purl.org/dc/terms/"/>
         <void:vocabulary rdf:resource="http://www.ontology-of-units-of-measure.org/resource/om-2/"/>
         <void:triples rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</void:triples>
@@ -40,33 +40,6 @@
       </void:Dataset>
     </gams:isPartOf>
     <bk:consistsOf>
-      <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T0TM">
-        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T0M0"/>
-        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T0M1"/>
-        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T0M2"/>
-      </bk:Transfer>
-    </bk:consistsOf>
-    <bk:when>1790-09</bk:when>
-  </bk:Transaction>
-  <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T10">
-    <bk:entry>1 penceAAA</bk:entry>
-    <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
-    <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4"/>
-    <bk:consistsOf>
-      <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T10TM">
-        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T10M2"/>
-        <bk:credit>Credit</bk:credit>
-        <bk:to rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4ClintonGeorge"/>
-        <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#GeorgeWashington"/>
-      </bk:Transfer>
-    </bk:consistsOf>
-    <bk:when>1790-07-20</bk:when>
-  </bk:Transaction>
-  <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T6">
-    <bk:entry>TEST 1 pound 2 shilling 2 cent</bk:entry>
-    <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
-    <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4"/>
-    <bk:consistsOf>
       <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T6TM">
         <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T6M0"/>
         <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T6M2"/>
@@ -78,76 +51,61 @@
     </bk:consistsOf>
     <bk:when>1790-07-20</bk:when>
   </bk:Transaction>
-  <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T4">
-    <bk:entry>To Ferriages Since Brummit left the Place</bk:entry>
-    <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
-    <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4"/>
-    <bk:consistsOf>
-      <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T4TM">
-        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T4M0"/>
-        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T4M1"/>
-        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T4M2"/>
-        <bk:debit>Debit</bk:debit>
-        <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#GeorgeWashington"/>
-        <bk:from rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4WashingtonLund"/>
-      </bk:Transfer>
-    </bk:consistsOf>
-    <bk:when>1775-02-28</bk:when>
-  </bk:Transaction>
   <depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#Dataset">
     <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
     <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4"/>
-    <depcha:isMainEconomicUnit>
-      <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#GeorgeWashington">
+    <depcha:isMainEconomicAgent>
+      <bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#GeorgeWashington">
         <rdfs:label>George Washington</rdfs:label>
-      </bk:EconomicUnit>
-    </depcha:isMainEconomicUnit>
+      </bk:EconomicAgent>
+    </depcha:isMainEconomicAgent>
     <depcha:numberOfTransactions rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</depcha:numberOfTransactions>
-    <depcha:numberOfEconomicUnits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</depcha:numberOfEconomicUnits>
+    <depcha:numberOfTransfers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</depcha:numberOfTransfers>
+    <depcha:numberOfEconomicAgents rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</depcha:numberOfEconomicAgents>
     <depcha:numberOfEconomicGoods rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</depcha:numberOfEconomicGoods>
     <depcha:numberOfServices rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</depcha:numberOfServices>
     <depcha:numberOfCommodities rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</depcha:numberOfCommodities>
     <depcha:numberOfRights rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</depcha:numberOfRights>
     <depcha:numberOfTotals rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</depcha:numberOfTotals>
     <depcha:isMainCurrency>
-      <bk:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#pound">
+      <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#pound">
         <rdfs:label>pound</rdfs:label>
-      </bk:Unit>
+      </huc:HistoricalUnit>
     </depcha:isMainCurrency>
     <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
     <depcha:currency>
-      <bk:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#shilling">
+      <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#shilling">
         <rdfs:label>shilling</rdfs:label>
-      </bk:Unit>
+      </huc:HistoricalUnit>
     </depcha:currency>
     <depcha:currency>
-      <bk:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#pence">
+      <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#pence">
         <rdfs:label>pence</rdfs:label>
-      </bk:Unit>
+      </huc:HistoricalUnit>
     </depcha:currency>
     <depcha:currency>
-      <bk:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#dollar">
+      <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#dollar">
         <rdfs:label>dollar</rdfs:label>
-      </bk:Unit>
+      </huc:HistoricalUnit>
     </depcha:currency>
     <depcha:currency>
-      <bk:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#cent">
+      <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#cent">
         <rdfs:label>cent</rdfs:label>
-      </bk:Unit>
+      </huc:HistoricalUnit>
     </depcha:currency>
-    <depcha:aggregates>
-      <depcha:Aggregation rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#1775">
-        <depcha:date>1775</depcha:date>
-        <bk:unit>pound</bk:unit>
-        <depcha:revenue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">8.5</depcha:revenue>
-        <depcha:expenses rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</depcha:expenses>
-      </depcha:Aggregation>
-    </depcha:aggregates>
     <depcha:aggregates>
       <depcha:Aggregation rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#1791">
         <depcha:date>1791</depcha:date>
         <bk:unit>pound</bk:unit>
         <depcha:revenue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">192.0</depcha:revenue>
+        <depcha:expenses rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</depcha:expenses>
+      </depcha:Aggregation>
+    </depcha:aggregates>
+    <depcha:aggregates>
+      <depcha:Aggregation rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#1775">
+        <depcha:date>1775</depcha:date>
+        <bk:unit>pound</bk:unit>
+        <depcha:revenue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">8.5</depcha:revenue>
         <depcha:expenses rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</depcha:expenses>
       </depcha:Aggregation>
     </depcha:aggregates>
@@ -191,6 +149,79 @@
     </bk:consistsOf>
     <bk:when>1790-07-20</bk:when>
   </bk:Transaction>
+  <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T7">
+    <bk:entry>TEST 1 pound 5 cent</bk:entry>
+    <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
+    <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4"/>
+    <bk:consistsOf>
+      <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T7TM">
+        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T7M0"/>
+        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T7M4"/>
+        <bk:credit>Credit</bk:credit>
+        <bk:to rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4ClintonGeorge"/>
+        <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#GeorgeWashington"/>
+      </bk:Transfer>
+    </bk:consistsOf>
+    <bk:when>1790-07-20</bk:when>
+  </bk:Transaction>
+  <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T10">
+    <bk:entry>1 penceAAA</bk:entry>
+    <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
+    <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4"/>
+    <bk:consistsOf>
+      <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T10TM">
+        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T10M2"/>
+        <bk:credit>Credit</bk:credit>
+        <bk:to rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4ClintonGeorge"/>
+        <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#GeorgeWashington"/>
+      </bk:Transfer>
+    </bk:consistsOf>
+    <bk:when>1790-07-20</bk:when>
+  </bk:Transaction>
+  <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T1">
+    <bk:entry>By Cash</bk:entry>
+    <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
+    <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4"/>
+    <bk:consistsOf>
+      <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T1TM">
+        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T1M0"/>
+        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T1M1"/>
+        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T1M2"/>
+        <bk:credit>Credit</bk:credit>
+        <bk:to rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4ClintonGeorge"/>
+        <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#GeorgeWashington"/>
+      </bk:Transfer>
+    </bk:consistsOf>
+    <bk:when>1790-07-20</bk:when>
+  </bk:Transaction>
+  <huc:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#penceConversion">
+    <huc:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pence"/>
+    <huc:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
+    <huc:formula>$BaseUnit / 240</huc:formula>
+  </huc:Conversion>
+  <huc:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#centConversion">
+    <huc:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#cent"/>
+    <huc:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#dollar"/>
+    <huc:formula>$BaseUnit / 100</huc:formula>
+  </huc:Conversion>
+  <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T0">
+    <bk:entry>To Sundry Items from Ledger B.</bk:entry>
+    <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
+    <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4"/>
+    <bk:consistsOf>
+      <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T0TM">
+        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T0M0"/>
+        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T0M1"/>
+        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T0M2"/>
+      </bk:Transfer>
+    </bk:consistsOf>
+    <bk:when>1790-09</bk:when>
+  </bk:Transaction>
+  <huc:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#shillingConversion">
+    <huc:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#shilling"/>
+    <huc:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
+    <huc:formula>$BaseUnit / 20</huc:formula>
+  </huc:Conversion>
   <bk:Total rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#To3">
     <bk:entry>[Total]</bk:entry>
     <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
@@ -207,6 +238,22 @@
       </bk:Transfer>
     </bk:consistsOf>
   </bk:Total>
+  <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T4">
+    <bk:entry>To Ferriages Since Brummit left the Place</bk:entry>
+    <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
+    <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4"/>
+    <bk:consistsOf>
+      <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T4TM">
+        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T4M0"/>
+        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T4M1"/>
+        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T4M2"/>
+        <bk:debit>Debit</bk:debit>
+        <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#GeorgeWashington"/>
+        <bk:from rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4WashingtonLund"/>
+      </bk:Transfer>
+    </bk:consistsOf>
+    <bk:when>1775-02-28</bk:when>
+  </bk:Transaction>
   <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T8">
     <bk:entry>hihi</bk:entry>
     <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
@@ -239,150 +286,101 @@
     </bk:consistsOf>
     <bk:when>1791-12-28</bk:when>
   </bk:Transaction>
-  <bk:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#shillingConversion">
-    <bk:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#shilling"/>
-    <bk:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
-    <bk:formula>$BaseUnit / 20</bk:formula>
-  </bk:Conversion>
-  <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T7">
-    <bk:entry>TEST 1 pound 5 cent</bk:entry>
-    <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
-    <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4"/>
-    <bk:consistsOf>
-      <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T7TM">
-        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T7M0"/>
-        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T7M4"/>
-        <bk:credit>Credit</bk:credit>
-        <bk:to rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4ClintonGeorge"/>
-        <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#GeorgeWashington"/>
-      </bk:Transfer>
-    </bk:consistsOf>
-    <bk:when>1790-07-20</bk:when>
-  </bk:Transaction>
-  <bk:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#penceConversion">
-    <bk:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pence"/>
-    <bk:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
-    <bk:formula>$BaseUnit / 240</bk:formula>
-  </bk:Conversion>
-  <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T1">
-    <bk:entry>By Cash</bk:entry>
-    <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp"/>
-    <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4"/>
-    <bk:consistsOf>
-      <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T1TM">
-        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T1M0"/>
-        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T1M1"/>
-        <bk:transfers rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4#T1M2"/>
-        <bk:credit>Credit</bk:credit>
-        <bk:to rdf:resource="https://gams.uni-graz.at/o:depcha.gwfp.4ClintonGeorge"/>
-        <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#GeorgeWashington"/>
-      </bk:Transfer>
-    </bk:consistsOf>
-    <bk:when>1790-07-20</bk:when>
-  </bk:Transaction>
-  <bk:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#centConversion">
-    <bk:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#cent"/>
-    <bk:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#dollar"/>
-    <bk:formula>$BaseUnit / 100</bk:formula>
-  </bk:Conversion>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T8M3">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#dollar"/>
+  </bk:Money>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T5M2">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.1</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pence"/>
+  </bk:Money>
   <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#To3M4">
     <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">67.0</bk:quantity>
     <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#cent"/>
   </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T10M2">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">111.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pence"/>
-  </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T7M0">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
-  </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T7M4">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#cent"/>
-  </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T4M2">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.5</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pence"/>
-  </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T4M0">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
-  </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T9M3">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#dollar"/>
-  </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T1M2">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.5</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pence"/>
-  </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T6M4">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#cent"/>
-  </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T1M0">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">67.0</bk:quantity>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#To3M0">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2908.0</bk:quantity>
     <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
   </bk:Money>
   <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#To3M1">
     <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">8.0</bk:quantity>
     <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#shilling"/>
   </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#To3M0">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2908.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
-  </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T2M0">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">192.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
-  </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T5M2">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">10.1</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pence"/>
-  </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T8M1">
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T9M4">
     <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#shilling"/>
-  </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T0M2">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">8.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pence"/>
-  </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T8M2">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pence"/>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#cent"/>
   </bk:Money>
   <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T4M1">
     <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.0</bk:quantity>
     <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#shilling"/>
   </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T0M0">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">18.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T10M2">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">111.0</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pence"/>
   </bk:Money>
-  <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4LearTobias">
-    <rdfs:label>Lear, Tobias</rdfs:label>
-  </bk:EconomicUnit>
   <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T0M1">
     <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">18.0</bk:quantity>
     <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#shilling"/>
   </bk:Money>
-  <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4WashingtonLund">
-    <rdfs:label>Washington, Lund</rdfs:label>
-  </bk:EconomicUnit>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T6M0">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T9M3">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#dollar"/>
   </bk:Money>
   <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#To3M3">
     <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">9694.0</bk:quantity>
     <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#dollar"/>
   </bk:Money>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T4M0">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
+  </bk:Money>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T5M1">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">29.0</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#shilling"/>
+  </bk:Money>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T7M0">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
+  </bk:Money>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T1M2">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.5</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pence"/>
+  </bk:Money>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T2M0">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">192.0</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
+  </bk:Money>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T0M0">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">18.0</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
+  </bk:Money>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T7M4">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.0</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#cent"/>
+  </bk:Money>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T8M1">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#shilling"/>
+  </bk:Money>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T6M4">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#cent"/>
+  </bk:Money>
   <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T8M4">
     <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</bk:quantity>
     <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#cent"/>
   </bk:Money>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T1M0">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">67.0</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
+  </bk:Money>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T8M2">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pence"/>
+  </bk:Money>
+  <bk:EconomicAgent rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4LearTobias">
+    <rdfs:label>Lear, Tobias</rdfs:label>
+  </bk:EconomicAgent>
   <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T1M1">
     <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">19.0</bk:quantity>
     <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#shilling"/>
@@ -391,27 +389,30 @@
     <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">167.5</bk:quantity>
     <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
   </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T8M0">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</bk:quantity>
+  <bk:EconomicAgent rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4WashingtonLund">
+    <rdfs:label>Washington, Lund</rdfs:label>
+  </bk:EconomicAgent>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T6M0">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.0</bk:quantity>
     <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
+  </bk:Money>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T4M2">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5.5</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pence"/>
   </bk:Money>
   <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T6M2">
     <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2.0</bk:quantity>
     <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pence"/>
   </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T9M4">
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T8M0">
     <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#cent"/>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pound"/>
   </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T5M1">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">29.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#shilling"/>
+  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T0M2">
+    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">8.0</bk:quantity>
+    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#pence"/>
   </bk:Money>
-  <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4#T8M3">
-    <bk:quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3.0</bk:quantity>
-    <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.gwfp#dollar"/>
-  </bk:Money>
-  <bk:EconomicUnit rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4ClintonGeorge">
+  <bk:EconomicAgent rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.4ClintonGeorge">
     <rdfs:label>Clinton, George</rdfs:label>
-  </bk:EconomicUnit>
+  </bk:EconomicAgent>
 </rdf:RDF>

@@ -27,7 +27,7 @@ count_moneys = 0
 count_commodities = 0
 count_services = 0
 count_rights = 0
-count_EconomicUnits = 0
+count_EconomicAgents = 0
 
 ########################################################################################
 # FUNCTIONS
@@ -54,7 +54,7 @@ def normalizeStringforJSON(string):
 # creates a bk:Money and add bk:unit (uri) and bk:quantity (literal)
 # param: getBKMoney(URIRef(), double, string)
 # <bk:Transfer> <bk:transfers> <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#T220M1">
-def get_Money(Measurable_Money, bk_quantity, bk_unit_index, Transfer): 
+def get_Money(Measurable_Money, bk_quantity, HUC_Unit_index, Transfer): 
     try:
         if(pd.notnull(bk_quantity)):
             output_graph.add((Measurable_Money, RDF.type,  BK.Money))
@@ -65,9 +65,9 @@ def get_Money(Measurable_Money, bk_quantity, bk_unit_index, Transfer):
             # make some string operators to fix ","  and whitspaces to make valid floats
             output_graph.add((Measurable_Money, BK.quantity, Literal(float(str(bk_quantity).replace(' ','').replace(',','.')))))
             for currency in config_data["BK_CURRENCY"]["currency"]:
-                if(currency.get("id") == bk_unit_index):
-                    bk_unit = currency.get("unit")        
-            output_graph.add((Measurable_Money, BK.unit, URIRef(BASE_URL + CONTEXT + "#" + bk_unit) ))
+                if(currency.get("id") == HUC_Unit_index):
+                    HUC_Unit = currency.get("unit")        
+            output_graph.add((Measurable_Money, BK.unit, URIRef(BASE_URL + CONTEXT + "#" + HUC_Unit) ))
             
             if(pd.notnull(row["bk_when"]) and pd.notnull(row["bk_debit_credit"])):
                 try:
@@ -76,17 +76,17 @@ def get_Money(Measurable_Money, bk_quantity, bk_unit_index, Transfer):
                         year = normalized_date.date().strftime("%Y")
                         
                         # select the income_db|expense_db via year as key and depending on bk:debit|bk:credit 
-                        # add {bk_unit : bk_quantity} to the list; from this list the sum for every year can be calculated
+                        # add {HUC_Unit : bk_quantity} to the list; from this list the sum for every year can be calculated
                         debitOrCredit = row['bk_debit_credit']
                         if re.search('debit', debitOrCredit, re.IGNORECASE):
-                            income_db[year].append({bk_unit : bk_quantity} )
+                            income_db[year].append({HUC_Unit : bk_quantity} )
                         elif re.search('credit', debitOrCredit, re.IGNORECASE):
-                            expense_db[year].append({bk_unit : bk_quantity} )
+                            expense_db[year].append({HUC_Unit : bk_quantity} )
                         else:
                             False
             #Debug_DebitCreditEmptyCell += 1     
                 except:
-                    print(f"Exception: failed to add money and unit to key YYYY-MM: {bk_quantity} {bk_unit}")
+                    print(f"Exception: failed to add money and unit to key YYYY-MM: {bk_quantity} {HUC_Unit}")
     except:
         print(f"Exception: no valid number in BK_MONEY: Currencies must not contain commas, spaces, or characters: {bk_quantity}")
     # <bk:unit>  https://gams.uni-graz.at/context:depcha.gwfp#pence
@@ -152,19 +152,19 @@ def createTransferOfMoney(Transaction_URI, Transaction):
 # 
 def getFromOrTo(Transfer):
     if(pd.notnull(row["bk_economic_unit"])):
-        #EconomicUnit_URI = BASE_URL + PID + str(normalized_name)
-        EconomicUnit_URI = BASE_URL + PID + normalizeStringforURI(row["bk_economic_unit"])
-        EconomicUnit = URIRef(EconomicUnit_URI)
+        #EconomicAgent_URI = BASE_URL + PID + str(normalized_name)
+        EconomicAgent_URI = BASE_URL + PID + normalizeStringforURI(row["bk_economic_unit"])
+        EconomicAgent = URIRef(EconomicAgent_URI)
         # check the already graph pattern if the current transfer has bk:debit or bk:credit
         # if bk:debit than Washington is getting money
         # A debit entry in an account represents a transfer of value to that account
         if (Transfer, BK.debit, None) in output_graph:
             output_graph.add((Transfer, BK.to, BK_MAIN_ECONOMIC_UNIT_URI))
-            output_graph.add((Transfer, BK_from_property, EconomicUnit)) 
+            output_graph.add((Transfer, BK_from_property, EconomicAgent)) 
         # if bk:credit than Washington is spending money
         # and a credit entry represents a transfer from the account.
         elif (Transfer, BK.credit, None) in output_graph:
-            output_graph.add((Transfer, BK.to,  EconomicUnit))
+            output_graph.add((Transfer, BK.to,  EconomicAgent))
             output_graph.add((Transfer, BK_from_property, BK_MAIN_ECONOMIC_UNIT_URI ))  
         else:
             False
@@ -317,26 +317,26 @@ for json_file in all_JSON_filenames:
     ##############################
     ### define variables for RDF graph
     BK = Namespace("https://gams.uni-graz.at/o:depcha.bookkeeping#")
-    GAMS = Namespace("https://gams.uni-graz.at/o:gams-ontology#") 
-    OM = Namespace("http://www.ontology-of-units-of-measure.org/resource/om-2/")
+    GAMS = Namespace("https://gams.uni-graz.at/o:gams-ontology#")
     VOID = Namespace("http://rdfs.org/ns/void#")
     FOAF = Namespace("http://xmlns.com/foaf/spec/")
     DCTERMS = Namespace("http://purl.org/dc/terms/")
     DEPCHA = Namespace("https://gams.uni-graz.at/o:depcha.ontology#")
     BASE_URL = "https://gams.uni-graz.at/"
     DC = Namespace("http://purl.org/dc/elements/1.1/")
+    HUC = Namespace("https://gams.uni-graz.at/o:depcha.huc-ontology#")
     
     # make a graph
     output_graph = Graph()
     # define namespace in output file
     output_graph.bind("bk", BK)
     output_graph.bind("gams", GAMS)
-    output_graph.bind("om", OM)
     output_graph.bind("void", VOID)
     output_graph.bind("foaf", FOAF)
     output_graph.bind("dcterms", DCTERMS)
     output_graph.bind("dc", DC)
     output_graph.bind("depcha", DEPCHA)
+    output_graph.bind("huc", HUC)
 
     #############################
     ### load data from confic file
@@ -373,7 +373,6 @@ for json_file in all_JSON_filenames:
     output_graph.add((VOID_Dataset, VOID.dataDump, URIRef(BASE_URL + PID  + "/ONTOLOGY")))
     output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("https://gams.uni-graz.at/o:depcha.bookkeeping#")))
     output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("https://gams.uni-graz.at/o:gams-ontology#")))
-    output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("http://xmlns.com/foaf/spec/")))
     output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("http://purl.org/dc/terms/")))
     output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("http://www.ontology-of-units-of-measure.org/resource/om-2/")))
     output_graph.add((VOID_Dataset, VOID.triples, Literal(0)))
@@ -395,14 +394,14 @@ for json_file in all_JSON_filenames:
 
         
     ########################################################################################
-    ### Distinct bk:EconomicUnit
+    ### Distinct bk:EconomicAgent
     ########################################################################################
-    # * if a bk_EconomicUnit column exists create a distinct set of <bk:EconomicUnit>
+    # * if a bk_EconomicAgent column exists create a distinct set of <bk:EconomicAgent>
     # * therwise make a distinct list of all entries in the BK_FROM and BK:TO column   
     
     # todo bk:Group, bk:Individual
     if(BK_MAIN_ECONOMIC_UNIT_URI):
-        output_graph.add((BK_MAIN_ECONOMIC_UNIT_URI, RDF.type,  BK.EconomicUnit))
+        output_graph.add((BK_MAIN_ECONOMIC_UNIT_URI, RDF.type,  BK.EconomicAgent))
         output_graph.add((BK_MAIN_ECONOMIC_UNIT_URI , RDFS.label,  Literal(normalizeStringforJSON(BK_MAIN_ECONOMIC_UNIT_LABEL)) ))
         count_economic_units += 1
     
@@ -413,19 +412,19 @@ for json_file in all_JSON_filenames:
             # normalize for URI
             if(type(name)==str):
                 normalized_name = normalizeStringforURI(name)
-                EconomicUnit_URI = BASE_URL + PID + str(normalized_name)
-                EconomicUnit = URIRef(EconomicUnit_URI)
-                output_graph.add((EconomicUnit, RDF.type,  BK.EconomicUnit))
-                output_graph.add((EconomicUnit , RDFS.label,  Literal(normalizeStringforJSON(name)) ))
+                EconomicAgent_URI = BASE_URL + PID + str(normalized_name)
+                EconomicAgent = URIRef(EconomicAgent_URI)
+                output_graph.add((EconomicAgent, RDF.type,  BK.EconomicAgent))
+                output_graph.add((EconomicAgent , RDFS.label,  Literal(normalizeStringforJSON(name)) ))
                 count_economic_units += 1
-        print("Log: distinct bk_EconomicUnit ... check") 
+        print("Log: distinct bk_EconomicAgent ... check") 
     elif('bk_to' in df.columns or 'bk_from' in df.columns):
         print("yes")
     else:
-        print("Log: was not able to create distinct BK.EconomicUnit")    
+        print("Log: was not able to create distinct BK.EconomicAgent")    
 
     
-    # bk:EconomicUnit
+    # bk:EconomicAgent
     # multiple names in column, seperator from forename and surname is the same as seperator from names
     # hack: if 1 or less , than its just on name or cash or orgName
          
@@ -555,9 +554,10 @@ for json_file in all_JSON_filenames:
     output_graph.add((DEPCHA_Dataset, GAMS.isMemberOfCollection,  URIRef(BASE_URL + CONTEXT) ))
     output_graph.add((DEPCHA_Dataset, GAMS.isPartOf, URIRef(BASE_URL + PID) )) 
 
-    output_graph.add((DEPCHA_Dataset, DEPCHA.isMainEconomicUnit,  URIRef(BK_MAIN_ECONOMIC_UNIT_URI) ))
+    output_graph.add((DEPCHA_Dataset, DEPCHA.isMainEconomicAgent,  URIRef(BK_MAIN_ECONOMIC_UNIT_URI) ))
     output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfTransactions, Literal(count_transactions)))
-    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfEconomicUnits, Literal(count_economic_units)))
+    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfTransfers, Literal(count_transfers)))
+    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfEconomicAgents, Literal(count_economic_units)))
     count_economic_goods = count_commodities + count_services + count_rights
     output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfEconomicGoods, Literal(count_economic_goods)))
     output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfServices, Literal(count_services)))
@@ -609,22 +609,18 @@ for json_file in all_JSON_filenames:
         #BK_MAIN_CURRENCY = config_data["BK_CURRENCY"]["currency"][0]
         # <bk:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#shilling">
         for currency in config_data["BK_CURRENCY"]["currency"]:
-            BK_Unit = URIRef(BASE_URL + CONTEXT + "#" + currency["unit"])
-            output_graph.add((BK_Unit, RDF.type, BK.Unit ))
-            output_graph.add((BK_Unit, RDFS.label, Literal(normalizeStringforJSON(currency["unit"])) ))
+            HUC_Unit = URIRef(BASE_URL + CONTEXT + "#" + currency["unit"])
+            output_graph.add((HUC_Unit, RDF.type, HUC.HistoricalUnit ))
+            output_graph.add((HUC_Unit, RDFS.label, Literal(normalizeStringforJSON(currency["unit"])) ))
             # add to depcha:Dataset the unit
-            output_graph.add((DEPCHA_Dataset, DEPCHA.currency, BK_Unit ))
+            output_graph.add((DEPCHA_Dataset, DEPCHA.currency, HUC_Unit ))
             if(currency.get("conversion", False)):
-                BK_Conversion = URIRef(BASE_URL + CONTEXT + "#" + currency["unit"] + "Conversion")
-                output_graph.add((BK_Conversion, RDF.type, BK.Conversion ))
-                output_graph.add((BK_Conversion, BK.convertsFrom, BK_Unit ))
+                HUC_Conversion = URIRef(BASE_URL + CONTEXT + "#" + currency["unit"] + "Conversion")
+                output_graph.add((HUC_Conversion, RDF.type, HUC.Conversion ))
+                output_graph.add((HUC_Conversion, HUC.convertsFrom, HUC_Unit ))
                 toCurrency = URIRef(BASE_URL + CONTEXT + "#" + currency["conversion"]["convertsTo"])
-                output_graph.add((BK_Conversion, BK.convertsTo,  toCurrency))
-                output_graph.add((BK_Conversion, BK.formula, Literal(normalizeStringforJSON(currency["conversion"]["formula"]))))
-                #BaseUnit = URIRef(BASE_URL + CONTEXT + "#" + currency["conversion"]["hasBaseUnit"])
-                #output_graph.add((BK_Unit, OM.hasBaseUnit, BaseUnit ))
-                # Todo find om:proeprty for conversion: ConversionStmt with value and operator in property ?
-                #output_graph.add((BK_Unit, BK.conversionFormular, Literal(currency["conversion"]["formular"]) ))  
+                output_graph.add((HUC_Conversion, HUC.convertsTo,  toCurrency))
+                output_graph.add((HUC_Conversion, HUC.formula, Literal(normalizeStringforJSON(currency["conversion"]["formula"]))))
         print("Log: BK_CURRENCY ... check") 
     ###  currency info in csv
     # if bk_currency is in the spreadsheet?
@@ -633,8 +629,8 @@ for json_file in all_JSON_filenames:
     elif('bk_currency' in df.columns):
         print("ToDo bk_currency")
     else:
-        Debug_CurrencyInformation = "Error 'BK_CURRENCY' missing: no Information about currency in spreadsheet or in confic file"
-        print("Log: BK_CURRENCY ... failed")   
+        Debug_CurrencyInformation = "Error 'HUC_CURRENCY' missing: no Information about currency in spreadsheet or in confic file"
+        print("Log: HUC_CURRENCY ... failed")   
 
 
 
@@ -642,8 +638,8 @@ for json_file in all_JSON_filenames:
     ### DEBUGGING
     print("################## DATASET:")
     #print(DataSets)
-    print("################## Distinct bk:EconomicUnit:")
-    #print(DistinctEconomicUnit)
+    print("################## Distinct bk:EconomicAgent:")
+    #print(DistinctEconomicAgent)
     print("################## Columns:")
     #print(df.columns.values)
     print("################## Log:")
@@ -661,7 +657,7 @@ for json_file in all_JSON_filenames:
     print(f"Log: {count_commodities} bk:Commodity created")
     print(f"Log: {count_services} bk:Service created")
     print(f"Log: {count_rights} bk:Right created")
-    print(f"Log: {count_EconomicUnits} bk:EconomicUnit created")
+    print(f"Log: {count_EconomicAgents} bk:EconomicAgent created")
     print(f"Log: {Debug_Count_No_BK_ENTRY} no valid bk:entry in row.")    
         
     ########################################################################################
