@@ -59,7 +59,7 @@
 				<unitDef type="currency" xml:id="schilling" ana="bk:mainCurrency" ref="wd:Q208730"
 					from="1925" to="1938" cert="high"
 					source="https://de.wikipedia.org/wiki/%C3%96sterreichischer_Schilling">
-					<label>Schilling</label>
+					<label>currency 1</label>
 					<desc>Der Schilling war von 1925 bis 1938 und von 1945 bis zur Einführung des
 						Euros am 1. Jänner 1999 die Währung und anschließend noch bis zum 28.
 						Februar 2002 gesetzliches Zahlungsmittel der Republik Österreich. Nach dem
@@ -78,9 +78,55 @@
 					<country>Austria</country>
 				</unitDef>
 			</unitDecl>
+			<classDecl>
+				<!-- hierachy of bk:EconomicGoods -->
+				<taxonomy ana="bk:index">
+					<category xml:id="commodity.1">
+						<gloss>Commodities</gloss>
+						<category xml:id="commodity.1.1">
+							<gloss>Holz</gloss>
+						</category>
+					</category>
+					<category xml:id="service.1">
+						<gloss>Service</gloss>
+						<category xml:id="service.1.1">
+							<gloss>Holzarbeit</gloss>
+						</category>
+					</category>
+					<category xml:id="right.1">
+						<gloss>Right</gloss>
+						<category xml:id="right.1.1">
+							<gloss>Weiderecht</gloss>
+						</category>
+					</category>
+				</taxonomy>
+				<!-- hierachy of accounts -->
+				<taxonomy ana="bk:account">
+					<category ana="bk:to" xml:id="income">
+						<catDesc><gloss>Einnahmen</gloss></catDesc>
+						<category xml:id="income.1">
+							<gloss>Zoll</gloss>
+							<desc>...</desc>
+							<category xml:id="income.1.1">
+								<gloss>Zoll Paulustor</gloss>
+							</category>
+						</category>
+					</category>
+					<category ana="bk:from" xml:id="expenses">
+						<catDesc><gloss>Ausgaben</gloss></catDesc>
+						<category xml:id="expenses.1">
+							<catDesc><gloss>Bau</gloss></catDesc>
+							<category xml:id="expenses.1.1">
+								<catDesc><gloss>Verteidigung</gloss></catDesc>
+							</category>
+						</category>
+					</category>
+				</taxonomy>
+			</classDecl>
 		</encodingDesc>
 	</teiHeader>
 	<standOff>
+		<!-- bk:EconomicAgent -->
 		<listPerson ana="bk:index">
 			<person xml:id="pers.1">
 				<name>Christopher</name>
@@ -91,6 +137,7 @@
 				<orgName>City of Graz</orgName>
 			</org>
 		</listOrg>
+		<!-- bk:Place -->
 		<listPlace ana="bk:index">
 			<place xml:id="place.1">
 				<placeName>Graz</placeName>
@@ -100,28 +147,7 @@
 	<text>
 		<body>
 			<div>
-				<head>IM Jahr 1956</head>
-				<table>
-					<row ana="bk:entry">
-						<cell/>
-						<cell/>
-						<cell/>
-						<cell/>
-					</row>
-					<row ana="bk:entry">
-						<cell/>
-						<cell/>
-						<cell/>
-						<cell/>
-					</row>
-					<row ana="bk:entry">
-						<cell/>
-						<cell/>
-						<cell/>
-						<cell/>
-					</row>
-				</table>
-			</div>
+				<!-- add transactions here --> </div>
 		</body>
 	</text>
 </TEI>
