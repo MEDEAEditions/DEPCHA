@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>DEPCHA Template</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+				<idno type="PID">o:depcha.example.template</idno>
+				<ref target="context:depcha.example" type="context">Examples</ref>
+			</publicationStmt>
+			<sourceDesc>
+				<!-- metadata about the documentm,  -->
+				<msDesc>
+					<!-- collections view -->
+					<msIdentifier>
+						<country>Austria</country>
+						<settlement>Graz</settlement>
+						<institution>Steiermärkischen Landesarchiv</institution>
+						<collection>Collection X</collection>
+						<idno>xxx</idno>
+						<msName>Grazer City Accountbook 1925</msName>
+					</msIdentifier>
+					<msContents>
+						<!-- collection view -->
+						<msItem>
+							<title>Grazer City Accountbook 1925</title>
+							<docAuthor>Franziska Müller</docAuthor>
+							<docDate>1500</docDate>
+							<textLang> <lang>German</lang> </textLang>
+						</msItem>
+					</msContents>
+				</msDesc>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<listPrefixDef>
+				<prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+					replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+					<p>Analytical descriptors are considered to represent concepts from the DEPCHA
+						bookkeeping ontology and can be extended to respective URIs.</p>
+				</prefixDef>
+				<prefixDef ident="depcha" matchPattern="([(a-z)|(A-Z)]+)"
+					replacementPattern="https://gams.uni-graz.at/o:depcha.ontology#$1">
+					<p>Analytical descriptors are considered to represent concepts from the
+						project-specific DEPCHA ontology and can be extended to respective URIs.</p>
+				</prefixDef>
+				<prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+					replacementPattern="http://www.wikidata.org/entity/$1">
+					<p><ref target="https://www.wikidata.org/wiki/Help:Namespaces"/></p>
+				</prefixDef>
+			</listPrefixDef>
+			<!-- defining units -->
+			<unitDecl>
+				<unitDef type="currency" xml:id="schilling" ana="bk:mainCurrency" ref="wd:Q208730"
+					from="1925" to="1938" cert="high"
+					source="https://de.wikipedia.org/wiki/%C3%96sterreichischer_Schilling">
+					<label>Schilling</label>
+					<desc>Der Schilling war von 1925 bis 1938 und von 1945 bis zur Einführung des
+						Euros am 1. Jänner 1999 die Währung und anschließend noch bis zum 28.
+						Februar 2002 gesetzliches Zahlungsmittel der Republik Österreich. Nach dem
+						„Anschluss“ Österreichs an das Deutsche Reich im März 1938 (siehe auch:
+						Österreich in der Zeit des Nationalsozialismus) stellte die Reichsmark bis
+						1945 die Währung dar.</desc>
+					<country>Austria</country>
+					<conversion fromUnit="#schilling" toUnit="#groschen" formula="$fromUnit div 100"
+					/>
+				</unitDef>
+				<unitDef type="currency" xml:id="groschen" ana="bk:mainCurrency" ref="wd:Q208730"
+					from="1925" to="2002" cert="high"
+					source="https://de.wikipedia.org/wiki/%C3%96sterreichischer_Schilling">
+					<label>Groschen</label>
+					<desc>Der Schilling wurde in 100 Groschen unterteilt.</desc>
+					<country>Austria</country>
+				</unitDef>
+			</unitDecl>
+		</encodingDesc>
+	</teiHeader>
+	<standOff>
+		<listPerson ana="bk:index">
+			<person xml:id="pers.1">
+				<name>Christopher</name>
+			</person>
+		</listPerson>
+		<listOrg ana="bk:index">
+			<org xml:id="org.1" ana="bk:accountHolder">
+				<orgName>City of Graz</orgName>
+			</org>
+		</listOrg>
+		<listPlace ana="bk:index">
+			<place xml:id="place.1">
+				<placeName>Graz</placeName>
+			</place>
+		</listPlace>
+	</standOff>
+	<text>
+		<body>
+			<div>
+				<head>IM Jahr 1956</head>
+				<table>
+					<row ana="bk:entry">
+						<cell/>
+						<cell/>
+						<cell/>
+						<cell/>
+					</row>
+					<row ana="bk:entry">
+						<cell/>
+						<cell/>
+						<cell/>
+						<cell/>
+					</row>
+					<row ana="bk:entry">
+						<cell/>
+						<cell/>
+						<cell/>
+						<cell/>
+					</row>
+				</table>
+			</div>
+		</body>
+	</text>
+</TEI>
