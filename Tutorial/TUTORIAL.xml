@@ -83,7 +83,7 @@
           <ab type="transcription">
             <table>
               <head>Stagville August 1st 1808 <lb/> 69 James Haley Self Dr.</head>
-              <row>              
+              <row>
                 <cell>1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6</cell>
                 <cell/>
                 <cell>7</cell>
@@ -1462,7 +1462,7 @@
               also use a <code rend="element"><![CDATA[<desc>]]></code> to describe the account. The
               income is marked with <code>ana="bk:to"</code> and expenses with
                 <code>ana="bk:from"</code>. All the <code>bk:account</code> are associated to the
-                <code>ana="accountHolder"</code>. In the snippet below the
+                <code>ana="bk:accountHolder"</code>. In the snippet below the
                 <code>bk:accountHolder</code> is represented by the revenue office as an
               institution. So, we have to add <code>bk:accountholder</code> in the index entry of
               the corresponding <code>bk:EconomicAgent</code>. In the <code rend="element"
@@ -3192,117 +3192,137 @@
           </div>
           <div xml:id="annotation_overview">
             <head>Annotation Overview</head>
-            <p>This table provides an overview of the Classes and Properties of the Bookkeeping
-              Ontology and their corresponding TEI annotation:</p>
-           
-              <table>
-                <head>Classes and TEI Annotations</head>
-                <row>
-                  <cell>Account</cell>
-                  <cell></cell>
-                  <cell>ana="bk:account"</cell>
-                </row>
-                <row>
-                  <cell>Agent</cell>
-                  <cell></cell>
-                  <cell>ana="bk:agent"</cell>
-                </row>
-                <row>
-                  <cell>Booking</cell>
-                  <cell></cell>
-                  <cell>ana="bk:crebit" | ana="bk:debit"</cell>
-                </row>
-                <row>
-                  <cell>Commodity</cell>
-                  <cell></cell>
-                  <cell>ana="bk:commodity"</cell>
-                </row>
-                <row>
-                  <cell>Context</cell>
-                  <cell></cell>
-                  <cell>TODO</cell>
-                </row>
-                <row>
-                  <cell>Date</cell>
-                  <cell></cell>
-                  <cell>ana="bk:bk:when"</cell>
-                </row>
-                <row>
-                  <cell>Economic Agent</cell>
-                  <cell></cell>
-                  <cell>ana="bk:from" | ana="bk:to"</cell>
-                </row>
-                <row>
-                  <cell>Economic Good</cell>
-                  <cell></cell>
-                  <cell>ana="bk:commodity" | ana="bk:right" | ana="bk:service"</cell>
-                </row>
-                <row>
-                  <cell>Group</cell>
-                  <cell></cell>
-                  <cell>ana="bk:group"</cell>
-                </row>
-                <row>
-                  <cell>Individual</cell>
-                  <cell></cell>
-                  <cell>ana="bk:individual"</cell>
-                </row>
-                <row>
-                  <cell>Monetary Unit</cell>
-                  <cell></cell>
-                  <cell>ana="bk:money"  + unit="cent" | ana="bk:money" + unitRef="#c"</cell>
-                </row>
-                <row>
-                  <cell>Monetary Value</cell>
-                  <cell></cell>
-                  <cell>ana="bk:money"</cell>
-                </row>
-                <row>
-                  <cell>Organisation</cell>
-                  <cell></cell>
-                  <cell>ana="bk:organisation"</cell>
-                </row>
-                <row>
-                  <cell>Place</cell>
-                  <cell></cell>
-                  <cell>ana="bk:where"</cell>
-                </row>
-                <row>
-                  <cell>Price</cell>
-                  <cell></cell>
-                  <cell>ana="bk:price"</cell>
-                </row>
-                <row>
-                  <cell>Right</cell>
-                  <cell></cell>
-                  <cell>ana="bk:right"</cell>
-                </row>
-                <row>
-                  <cell>Service</cell>
-                  <cell></cell>
-                  <cell>ana="bk:service"</cell>
-                </row>
-                <row>
-                  <cell>Subtotal Transaction</cell>
-                  <cell></cell>
-                  <cell>ana="bk:subtotal"</cell>
-                </row>
-                <row>
-                  <cell>Tax</cell>
-                  <cell></cell>
-                  <cell>ana="bk:tax"</cell>
-                </row>
-                <row>
-                  <cell>Total Transaction</cell>
-                  <cell></cell>
-                  <cell>ana="bk:total"</cell>
-                </row>
-                <row>
-                  <cell>Unit</cell>
-                  <cell></cell>
-                  <cell>TODO</cell>
-                </row>       
-              </table>          
+            <p>This table provides an overview of Entities that can be annotated with <code
+                rend="attribute">@ana</code> attributes corresponding to the Bookkeeping Ontology
+              (and the DEPCHA Ontology). </p>
+
+            <table>
+              <head>Bookkeeping Entities and their TEI Annotations </head>
+              <row>
+                <cell>Account</cell>
+                <cell/>
+                <cell>ana="bk:account"</cell>
+              </row>
+              <row>
+                <cell>Commodity</cell>
+                <cell/>
+                <cell>ana="bk:commodity"</cell>
+              </row>
+              <row>
+                <cell>Context</cell>
+                <cell/>
+                <cell>ana="bk:context"</cell>
+              </row>
+              <row>
+                <cell>Date</cell>
+                <cell/>
+                <cell>ana="bk:when"</cell>
+              </row>
+              <row>
+                <cell>Economic Agent</cell>
+                <cell/>
+                <cell>ana="bk:from" | ana="bk:to"</cell>
+              </row>
+              <row>
+                <cell>Economic Good</cell>
+                <cell/>
+                <cell>ana="bk:commodity" | ana="bk:right" | ana="bk:service"</cell>
+              </row>
+              <row>
+                <cell>Group</cell>
+                <cell/>
+                <cell>ana="bk:from bk:group" | ana="bk:to bk:group"</cell>
+              </row>
+              <row>
+                <cell>Individual</cell>
+                <cell/>
+                <cell>ana="bk:from bk:individual" | ana="bk:to bk:individual"</cell>
+              </row>
+              <row>
+                <cell>Monetary Value</cell>
+                <cell/>
+                <cell>ana="bk:money" + quantity="" + unit="" | ana="bk:money" + quantity="" + unitRef="#"</cell>
+              </row>
+              <row>
+                <cell>Organisation</cell>
+                <cell/>
+                <cell>ana="bk:from bk:organisation" | ana="bk:to bk:organisation"</cell>
+              </row>
+              <row>
+                <cell>Place</cell>
+                <cell/>
+                <cell>ana="bk:where"</cell>
+              </row>
+              <row>
+                <cell>Price</cell>
+                <cell/>
+                <cell>ana="bk:price"</cell>
+              </row>
+              <row>
+                <cell>Right</cell>
+                <cell/>
+                <cell>ana="bk:right"</cell>
+              </row>
+              <row>
+                <cell>Service</cell>
+                <cell/>
+                <cell>ana="bk:service"</cell>
+              </row>
+              <row>
+                <cell>Subtotal Transaction</cell>
+                <cell/>
+                <cell>ana="bk:subtotal"</cell>
+              </row>
+              <row>
+                <cell>Tax</cell>
+                <cell/>
+                <cell>ana="bk:tax"</cell>
+              </row>
+              <row>
+                <cell>Total Transaction</cell>
+                <cell/>
+                <cell>ana="bk:total"</cell>
+              </row>
+              <row>
+                <cell>Unit</cell>
+                <cell/>
+                <cell>unit="" | unitRef="#" | quantity=""</cell>
+              </row>
+            </table>
+            <table>
+              <head>Properties and the corresponding TEI Annotations</head>
+              <row>
+                <cell>credit</cell>
+                <cell/>
+                <cell>ana="bk:crebit"</cell>
+              </row>
+              <row>
+                <cell>debit</cell>
+                <cell/>
+                <cell>ana="bk:debit"</cell>
+              </row>
+              <row>
+                <cell>entry</cell>
+                <cell/>
+                <cell>ana="entry"</cell>
+              </row>
+              <row>
+                <cell>has accountHolder</cell>
+                <cell/>
+                <cell>ana="bk:accountHolder"</cell>
+              </row>
+              <row>
+                <cell>status</cell>
+                <cell/>
+                <cell>ana="bk:status"</cell>
+              </row>
+              <row>
+                <cell>main Currency</cell>
+                <cell/>
+                <cell>depcha:mainCuurency</cell>
+              </row>
+
+            </table>
           </div>
         </div>
         <div xml:id="lod">
