@@ -29,7 +29,7 @@
 						<!-- collection view -->
 						<msItem>
 							<title>City accounts of Lviv 1480</title>
-							<docDate>1480</docDate>
+							<docDate ana="bk:when" when="1480">1480</docDate>
 							<textLang> <lang>Latin</lang><lang>German</lang> </textLang>
 						</msItem>
 					</msContents>
@@ -117,7 +117,6 @@
 						<catDesc><gloss>Income</gloss></catDesc>
 						<category xml:id="zoll">
 							<gloss>Zoll</gloss>
-							<desc>...</desc>
 						</category>
 					</category>
 					<category ana="bk:to" xml:id="expenses">
@@ -160,6 +159,18 @@
 							<category xml:id="johannes_pixidarius">
 								<catDesc><gloss>Johannes Pixidarius</gloss></catDesc>
 							</category>
+							<category xml:id="penesticarius">
+								<catDesc><gloss>Penesticarius</gloss></catDesc>
+							</category>
+							<category xml:id="valentinus_pixidarius">
+								<catDesc><gloss>Valentinus Pixidarius</gloss></catDesc>
+							</category>
+							<category xml:id="rector_horalogii">
+								<catDesc><gloss>Rector Horalogii</gloss></catDesc>
+							</category>
+							<category xml:id="latrifex">
+								<catDesc><gloss>Latrifex</gloss></catDesc>
+							</category>
 						</category>
 					</category>
 				</taxonomy>
@@ -168,13 +179,22 @@
 	</teiHeader>
 	<standOff>
 		<listOrg ana="bk:index">
-			<org xml:id="org.1" ana="bk:accountHolder">
+			<org xml:id="org.1" ana="depcha:accountHolder">
 				<orgName>City of Lviv</orgName>
 			</org>
 		</listOrg>
 	</standOff>
 	<text>
 		<body>
+			<!-- test -->
+			<div>
+				<head><name ref="#zoll" ana="bk:account" rend="bold">Test Einkommen</name></head>
+				<p ana="bk:entry">
+					<measure ana="bk:money" unitRef="#halbgrosch" quantity="14"
+						>XIIII gr.</measure>
+				</p>
+			</div>
+			<!-- test -->
 			<div>
 				<pb n="398"/>
 				<div>
@@ -183,7 +203,7 @@
 					<note>[puste]</note>
 				</div>
 				<div>
-					<head><name ref="#thomas" rend="bold">Thomas</name></head>
+					<head><name ref="#thomas" ana="bk:account" rend="bold">Thomas</name></head>
 					<p><seg ana="bk:entry"><date ana="bk:when" when="1480">Sabbato post Kathedra s.
 						Petri</date> <measure ana="bk:money" unitRef="#halbgrosch" quantity="14"
 						>XIIII gr.</measure></seg> <seg ana="bk:entry">Item <measure ana="bk:money"
@@ -269,7 +289,7 @@
 					</p>
 				</div>
 				<div>
-					<head><name ref="#johannes" rend="bold">Johannes</name></head>
+					<head><name ref="#johannes" ana="bk:account" rend="bold">Johannes</name></head>
 					<p><seg ana="bk:entry"><date>Sabbato post festum s. Petri Catedra</date> XIIII
 						gr.</seg> <seg ana="bk:entry">Item <measure ana="bk:money"
 						unitRef="#halbgrosch" quantity="14">XIIII gr.</measure></seg> <seg
@@ -351,7 +371,7 @@
 						quantity="14">XIIII gr.</measure></seg> </p>
 				</div>
 				<div>
-					<head><name ref="#alter_thomas" rend="bold">Alter Thomas</name></head>
+					<head><name ref="#alter_thomas" ana="bk:account" rend="bold">Alter Thomas</name></head>
 					<p> <seg ana="bk:entry"><date>Sabbato post festum s. Petri ad Catedram</date>
 						<measure ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII
 						gr.</measure></seg> <seg ana="bk:entry">Item <measure ana="bk:money"
@@ -434,7 +454,7 @@
 						quantity="14">XIIII gr.</measure></seg> </p>
 				</div>
 				<div>
-					<head><name ref="#laurencius" rend="bold">Laurencius</name></head>
+					<head><name ref="#laurencius" ana="bk:account" rend="bold">Laurencius</name></head>
 					<p> <seg ana="bk:entry"><date>Sabbato Kathedre s. Petri</date> <measure
 						ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
@@ -515,7 +535,7 @@
 				</div>
 				<pb n="399"/>
 				<div>
-					<head><name ref="#michael" rend="bold">Michael</name></head>
+					<head><name ref="#michael" ana="bk:account" rend="bold">Michael</name></head>
 					<p> <seg ana="bk:entry"><date>Sabbato post Cathedra Petri</date> <measure
 						ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
@@ -598,7 +618,7 @@
 					</p>
 				</div>
 				<div>
-					<head><name ref="#auriga_civitatis" rend="bold">Auriga civitatis</name></head>
+					<head><name ref="#auriga_civitatis" ana="bk:account" rend="bold">Auriga civitatis</name></head>
 					<p> <seg ana="bk:entry"><date>Sabbato post Cathedra Petri</date> <measure
 						ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
@@ -676,7 +696,7 @@
 						quantity="14">XIIII gr.</measure></seg> </p>
 				</div>
 				<div>
-					<head><name ref="#tubicena" rend="bold">Tubicena</name></head>
+					<head><name ref="#tubicena" ana="bk:account" rend="bold">Tubicena</name></head>
 					<p> <seg ana="bk:entry"> <date>Sabbato post Cathedra Petri</date> <measure
 						ana="bk:money" unitRef="#halbgrosch" quantity="18">XVIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
@@ -759,7 +779,7 @@
 					</p>
 				</div>
 				<div>
-					<head><name ref="#magiste_canalium" rend="bold">Magister canalium</name></head>
+					<head><name ref="#magiste_canalium" ana="bk:account" rend="bold">Magister canalium</name></head>
 					<p> <seg ana="bk:entry"><date>Sabbato post festum s. Petri ad Cathedre</date>
 						<del>XVIII gr.</del> <add><measure ana="bk:money" unitRef="#halbgrosch"
 						quantity="30">XXX gr.</measure></add></seg> <seg ana="bk:entry">Item
@@ -844,7 +864,7 @@
 				</div>
 				<pb n="400"/>
 				<div>
-					<head><name ref="#ductor_brasealis" rend="bold">Ductor brasealis</name></head>
+					<head><name ref="#ductor_brasealis" ana="bk:account" rend="bold">Ductor brasealis</name></head>
 					<p> <seg><date>Sabbato post Cathedra Petri</date> <measure ana="bk:money"
 						unitRef="#mark" quantity="0.5">mediam mrc.</measure></seg> <seg
 						ana="bk:entry">Item <measure ana="bk:money" unitRef="#mark" quantity="0.5"
@@ -934,7 +954,7 @@
 						unitRef="#mark" quantity="0.5">½ mrc.</measure></seg> </p>
 				</div>
 				<div>
-					<head><name ref="#portulani" rend="bold">Portulani</name></head>
+					<head><name ref="#portulani" ana="bk:account" rend="bold">Portulani</name></head>
 					<p> <seg ana="bk:entry"><date>Sabbato post festum s. Petri ad cathedram</date>
 						<measure ana="bk:money" unitRef="#mark" quantity="0.5">mediam
 						mrc.</measure></seg> <seg ana="bk:entry">Item <measure ana="bk:money"
@@ -1014,7 +1034,7 @@
 						frt.</measure></seg></p>
 				</div>
 				<div>
-					<head><name ref="#johannes_magister" rend="bold">Johannes magister fossatorum
+					<head><name ref="#johannes_magister" ana="bk:account" rend="bold">Johannes magister fossatorum
 						<add>et pixidarius</add></name></head>
 					<p> <del><seg ana="bk:entry"><date>Sabbato post festum s. Petri ad
 						cathedre</date> <measure ana="bk:money" unitRef="#firdung" quantity="1">
@@ -1056,7 +1076,7 @@
 						frt.</measure></seg></del></p>
 				</div>
 				<div>
-					<head><del><name ref="#johannes_pixidarius" rend="bold">Johannes pixidarius anno
+					<head><del><name ref="#johannes_pixidarius" ana="bk:account" rend="bold">Johannes pixidarius anno
 						preterito susceptus</name></del></head>
 					<p> <del><seg ana="bk:entry"><date>Sabbato post festum s. Petri ad
 						Catedra</date> <measure ana="bk:money" unitRef="#firdung" quantity="1"
@@ -1079,7 +1099,7 @@
 				</div>
 				<pb n="401"/>
 				<div>
-					<head><name ref="#penesticarius" rend="bold">Penesticarius alias iudex
+					<head><name ref="#penesticarius" ana="bk:account" rend="bold">Penesticarius alias iudex
 						vetularum</name></head>
 					<p> <seg ana="bk:entry"><date>Sabbato post festum s. Petri Cathedre</date>
 						<measure ana="bk:money" unitRef="#halbgrosch" quantity="6">VI
@@ -1160,7 +1180,7 @@
 						quantity="6">VI gr.</measure></seg></p>
 				</div>
 				<div>
-					<head><name ref="#valentinus_pixidarius" rend="bold">Valentinus pixidarius ad
+					<head><name ref="#valentinus_pixidarius" ana="bk:account" rend="bold">Valentinus pixidarius ad
 						Quatuor tempora solariandus</name></head>
 					<p> <seg ana="bk:entry">Item eidem <measure ana="bk:money" unitRef="#mark"
 						quantity="1">mrc.</measure> dedimus <date>ad IIIIor tempora
@@ -1173,7 +1193,7 @@
 						mrc.</measure></seg></p>
 				</div>
 				<div>
-					<head><name ref="#rector_horalogii" rend="bold">Rector horalogii</name></head>
+					<head><name ref="#rector_horalogii" ana="bk:account" rend="bold">Rector horalogii</name></head>
 					<p> <seg ana="bk:entry">Eidem <date>ad IIIIor tempora Jeiunii</date> <measure
 						ana="bk:money" unitRef="#schok" quantity="0.5">½ sxg.</measure></seg> <seg
 						ana="bk:entry">Item <date>quatuor tempora Penthecostes</date> <del>I
@@ -1188,7 +1208,7 @@
 						unitRef="#halbgrosch" quantity="30"> XXX grossiculos.</measure></seg></p>
 				</div>
 				<div>
-					<head><name ref="#latrifex" rend="bold">Latrifex</name></head>
+					<head><name ref="#latrifex" ana="bk:account" rend="bold">Latrifex</name></head>
 					<p> <seg>Dominus Petrus Lumar resignavit laterificium domino Hanel sabbato ante
 						festum s. Stanislai in mayo cum fornace integro iam parato de
 						lateribus.</seg> <seg ana="bk:entry">Item idem recepit aput dominos
