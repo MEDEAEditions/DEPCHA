@@ -186,7 +186,7 @@
             <caption>Annotation of a textual structure - in this case a row in a table - as a text
               entry of a transaction. </caption>
           </ab>
-          <div xml:id="commodities">
+          <div xml:id="basics">
             <head>The Basics</head>
             <p> Now we can define further concepts which describe a <code>bk:Transaction</code>
               inside the <code rend="element"><![CDATA[<row>]]></code> element
@@ -1428,10 +1428,12 @@
           </div>
           <div xml:id="taxes">
             <head>Taxes</head>
-            <p>If we want to categorize a money transfer as a <code>bk:Tax</code> from our ontology,
-              we can add <code>@ana="bk:tax"</code> to the element that expresses a monetary value.
-              In the example <code>bk:tax</code> was used instead of <code>bk:money</code>. The
-              annotation of <code>bk:tax</code> has to be added inside a <code>bk:entry</code>. </p>
+            <p>If we want to categorize a transfer as a <code>bk:Tax</code> from our ontology, we
+              can add <code>@ana="bk:tax"</code> to the element that expresses a monetary value or a
+              commodity that is paid as tax. In the example <code>bk:tax</code> was used
+              additionally to <code>bk:money</code>. So, we have the information that some monetary
+              value was paid as tax. The annotation of <code>bk:tax</code> has to be added inside a
+                <code>bk:entry</code>. </p>
             <ab><code rend="block" lang="XML"><![CDATA[<list type="payers">
   <item ana="bk:entry" xml:id="item_mc5_2zg_ghb">
     <seg type="entry">
@@ -1446,7 +1448,7 @@
       </roleName>
     </seg>
     <seg type="payment">
-      <measure ana="bk:tax" quantity="18" unit="deniers">xviii.d</measure>
+      <measure ana="bk:money bk:tax" quantity="18" unit="deniers">xviii.d</measure>
     </seg>
     <seg type="status"> p</seg>
   </item>
@@ -3204,6 +3206,11 @@
                 <cell>ana="bk:account"</cell>
               </row>
               <row>
+                <cell>Accountholder</cell>
+                <cell/>
+                <cell>ana="bk:accountHolder"</cell>
+              </row>
+              <row>
                 <cell>Commodity</cell>
                 <cell/>
                 <cell>ana="bk:commodity"</cell>
@@ -3214,9 +3221,19 @@
                 <cell>ana="bk:context"</cell>
               </row>
               <row>
+                <cell>Credit</cell>
+                <cell/>
+                <cell>ana="bk:crebit"</cell>
+              </row>
+              <row>
                 <cell>Date</cell>
                 <cell/>
                 <cell>ana="bk:when"</cell>
+              </row>
+              <row>
+                <cell>Debit</cell>
+                <cell/>
+                <cell>ana="bk:debit"</cell>
               </row>
               <row>
                 <cell>Economic Agent</cell>
@@ -3227,6 +3244,11 @@
                 <cell>Economic Good</cell>
                 <cell/>
                 <cell>ana="bk:commodity" | ana="bk:right" | ana="bk:service"</cell>
+              </row>
+              <row>
+                <cell>Entry</cell>
+                <cell/>
+                <cell>ana="entry"</cell>
               </row>
               <row>
                 <cell>Group</cell>
@@ -3241,7 +3263,8 @@
               <row>
                 <cell>Monetary Value</cell>
                 <cell/>
-                <cell>ana="bk:money" + quantity="" + unit="" | ana="bk:money" + quantity="" + unitRef="#"</cell>
+                <cell>ana="bk:money" + quantity="" + unit="" | ana="bk:money" + quantity="" +
+                  unitRef="#"</cell>
               </row>
               <row>
                 <cell>Organisation</cell>
@@ -3269,59 +3292,30 @@
                 <cell>ana="bk:service"</cell>
               </row>
               <row>
+                <cell>Status</cell>
+                <cell/>
+                <cell>ana="bk:status"</cell>
+              </row>
+              <row>
                 <cell>Subtotal Transaction</cell>
                 <cell/>
-                <cell>ana="bk:subtotal"</cell>
+                <cell>ana="bk:subtotal" (instead of bk:entry)</cell>
               </row>
               <row>
                 <cell>Tax</cell>
                 <cell/>
-                <cell>ana="bk:tax"</cell>
+                <cell>ana="bk:money bk:tax"</cell>
               </row>
               <row>
                 <cell>Total Transaction</cell>
                 <cell/>
-                <cell>ana="bk:total"</cell>
+                <cell>ana="bk:total" (instead of bk:entry)</cell>
               </row>
               <row>
                 <cell>Unit</cell>
                 <cell/>
                 <cell>unit="" | unitRef="#" | quantity=""</cell>
               </row>
-            </table>
-            <table>
-              <head>Properties and the corresponding TEI Annotations</head>
-              <row>
-                <cell>credit</cell>
-                <cell/>
-                <cell>ana="bk:crebit"</cell>
-              </row>
-              <row>
-                <cell>debit</cell>
-                <cell/>
-                <cell>ana="bk:debit"</cell>
-              </row>
-              <row>
-                <cell>entry</cell>
-                <cell/>
-                <cell>ana="entry"</cell>
-              </row>
-              <row>
-                <cell>has accountHolder</cell>
-                <cell/>
-                <cell>ana="bk:accountHolder"</cell>
-              </row>
-              <row>
-                <cell>status</cell>
-                <cell/>
-                <cell>ana="bk:status"</cell>
-              </row>
-              <row>
-                <cell>main Currency</cell>
-                <cell/>
-                <cell>depcha:mainCuurency</cell>
-              </row>
-
             </table>
           </div>
         </div>
@@ -3360,9 +3354,9 @@
         </div>
         <div xml:id="csv_excel">
           <head>CSV/Excel</head>
-          <div type="body">
+      
             <p>Coming soon</p>
-          </div>
+          
         </div>
       </div>
     </body>
