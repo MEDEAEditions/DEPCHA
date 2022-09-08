@@ -77,6 +77,20 @@
 					<desc>Der Schilling wurde in 100 Groschen unterteilt.</desc>
 					<country>Austria</country>
 				</unitDef>
+				<unitDef xml:id="sack" from="1900" to="1925">
+					<label>Säcke</label>
+					<desc>bla</desc>
+					<country>Österreich</country>
+				</unitDef>
+				<!--  -->
+				<unitDef xml:id="floren.1" from="1200" to="1250" cert="medium">
+					<label>Floren 1</label>
+					<desc>bla</desc>
+				</unitDef>
+				<unitDef xml:id="floren.2" from="1250" to="1272" cert="medium">
+					<label>Floren 1</label>
+					<desc>bla</desc>
+				</unitDef>
 			</unitDecl>
 			<classDecl>
 				<!-- hierachy of bk:EconomicGoods -->
@@ -85,6 +99,10 @@
 						<gloss>Commodities</gloss>
 						<category xml:id="commodity.1.1">
 							<gloss>Holz</gloss>
+						</category>
+						<category xml:id="apple">
+							<gloss>Äpfel</gloss>
+							<desc/>
 						</category>
 					</category>
 					<category xml:id="service.1">
@@ -130,6 +148,11 @@
 		<listPerson ana="bk:index">
 			<person xml:id="pers.1">
 				<name>Christopher</name>
+				<occupation>Torwächter</occupation>
+			</person>
+			<person xml:id="pers.2">
+				<name>Jakob</name>
+				<occupation>Äpfelverkäufer</occupation>
 			</person>
 		</listPerson>
 		<listOrg ana="bk:index">
@@ -147,7 +170,14 @@
 	<text>
 		<body>
 			<div>
-				<!-- add transactions here --> </div>
+				<p> <seg ana="bk:entry"><del>Ha</del>Item <persName ref="#pers.1" ana="bk:from"
+					>Christopher</persName> kauft am <date when="1926-09-05" ana="bk:when">05
+					September 1926</date> von <persName ref="#pers.2" ana="bk:to">Jakob</persName>
+					<measure ana="bk:commodity" quantity="0.5" commodity="apple" unitRef="#sack">1/2
+					Säcke Apfel</measure> <measure ana="bk:money" quantity="1" commodity="currency"
+					unitRef="#c1">1 00</measure></seg> </p>
+				<!-- add transactions here -->
+			</div>
 		</body>
 	</text>
 </TEI>
