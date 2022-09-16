@@ -32,7 +32,35 @@
                     </p>
                 </prefixDef>
             </listPrefixDef>
+            <classDecl>
+                <taxonomy ana="bk:account">
+                    <category ana="bk:to" xml:id="income">
+                        <catDesc><gloss>Wheaton Income</gloss></catDesc>                    
+                    </category>
+                </taxonomy>
+            </classDecl>
         </encodingDesc>
+        <profileDesc>
+            <particDesc>
+                <listPerson ana="depcha:index">
+                    <person xml:id="pers_WCDH001">
+                        <persName>
+                            <forename type="first">Eliza</forename>
+                            <forename type="middle">Baylies</forename>
+                            <surname type="birth">Chapin</surname>
+                            <surname type="married">Wheaton</surname>
+                        </persName>
+                    </person>
+                    <person xml:id="pers_WCDH002" ana="bk:accountHolder">
+                        <persName>
+                            <forename type="first">Laban</forename>
+                            <forename type="middle">Morey</forename>
+                            <surname>Wheaton</surname>
+                        </persName>
+                    </person>
+                </listPerson>
+            </particDesc>
+        </profileDesc>
     </teiHeader>
     <text>
         <body>
@@ -49,7 +77,7 @@
                                     <expan>debtor</expan>
                                 </choice>
                             </span>
-                            <lb/> To <name ana="bk:to" ref="#pers_WCDH002">cash
+                            <lb/> To <name ana="bk:to" ref="#account">cash
                                 $20.00 </name>
                         </cell>
                         <cell ana="bk:debit">
