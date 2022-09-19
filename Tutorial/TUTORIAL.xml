@@ -1459,11 +1459,13 @@
           <div xml:id="accountholder">
             <head>Accounts &amp; Accountholder</head>
             <p>To create a <code>bk:Account</code> we need a <code rend="element"
-                ><![CDATA[<taxonomy>]]></code> element enriched by <code>ana="bk:account"</code> in
-              which we can express the hierarchy of the accounts (income vs. expenses etc). You can
-              also use a <code rend="element"><![CDATA[<desc>]]></code> to describe the account. The
-              income is marked with <code>ana="bk:to"</code> and expenses with
-                <code>ana="bk:from"</code>. All the <code>bk:account</code> are associated to the
+                ><![CDATA[<taxonomy>]]></code> element enriched by <code>ana="bk:account"</code>
+              where we can express the type and also the hierarchy of the accounts (income vs.
+              expenses etc). You can also use a <code rend="element"><![CDATA[<desc>]]></code> to
+              describe the account. The income is marked with <code>ana="bk:to"</code> and expenses
+              with <code>ana="bk:from"</code>. To avoid processing problems please make sure that
+              there is only one <code>ana="bk:to"</code> and one <code>ana="bk:from"</code> in your
+              taxonomy. All the <code>bk:account</code> are associated to the
                 <code>ana="bk:accountHolder"</code>. In the snippet below the
                 <code>bk:accountHolder</code> is represented by the revenue office as an
               institution. So, we have to add <code>bk:accountholder</code> in the index entry of
@@ -1600,7 +1602,93 @@
 </text>]]>
               </code>
               <caption>Creating one or more <code>bk:Account</code>.</caption></ab>
+            <p>The previous example is one way to annotate accounts where there are no explicit text
+              passages pointing to an account and the annotator has some additional background
+              information. However, there might also be a textual representation of an account like
+              in our next example where the "Notarius civitatis" represents an account name. So, we
+              can use a <code rend="element"><![CDATA[<name>]]></code> element, label it with
+                <code>ana="bk:account"</code> and a @ref attribute that points to the corresponding
+              account in the <code rend="element"><![CDATA[<taxonomy>]]></code>.</p>
+            <ab><code rend="block" lang="XML">
+                <![CDATA[<encodingDesc>
+<!-- ... -->
+<unitDecl>
+  <unitDef type="currency" xml:id="schok" from="1300" to="1600"
+    ana="depcha:mainCurrency">
+    <label xml:lang="pl">Schok</label>
+    <label type="abbr">sxg.</label>
+    <desc>...</desc>
+    <country>Poland</country>
+    <conversion fromUnit="#schok" toUnit="#mark" formula="$fromUnit div 1.25"/>
+    <conversion fromUnit="#schok" toUnit="#floren" formula="$fromUnit div 1.875"/>
+    <conversion fromUnit="#schok" toUnit="#firdung" formula="$fromUnit div 5"/>
+    <conversion fromUnit="#schok" toUnit="#schott" formula="$fromUnit div 30"/>
+    <conversion fromUnit="#schok" toUnit="#grosch" formula="$fromUnit div 60"/>
+    <conversion fromUnit="#schok" toUnit="#halbgrosch" formula="$fromUnit div 120"/>
+    <conversion fromUnit="#schok" toUnit="#dreier" formula="$fromUnit div 360"/>
+    <conversion fromUnit="#schok" toUnit="#pfennig" formula="$fromUnit div 1080"/>
+  </unitDef>
+  <unitDef type="currency" xml:id="halbgrosch" from="1300" to="1600">
+    <label xml:lang="pl">Halbgrosch</label>
+    <label type="abbr">gr.</label>
+    <desc>...</desc>
+    <country>Poland</country>
+  </unitDef>
+</unitDecl>
+<classDecl>
+  <taxonomy ana="bk:account">
+    <category ana="bk:to" xml:id="expenses">
+      <catDesc><gloss>Expenses</gloss></catDesc>
+      <category xml:id="familia">
+        <catDesc><gloss>Familia civitatis</gloss></catDesc>
+        <category xml:id="notarius">
+          <catDesc><gloss>Notarius civitatis</gloss></catDesc>
+        </category>
+        <category xml:id="famuli">
+          <catDesc><gloss>famuli</gloss></catDesc>
+          <category xml:id="thomas">
+            <catDesc><gloss>Thomas</gloss></catDesc>
+          </category>
+        </category>
+      </category> 
+    </category>
+  </taxonomy>
+</classDecl>
+</encodingDesc>
+</teiHeader>
+<text>
+<body>
+  <pb n="398"/>
+  <div>
+    <head><name ana="bk:account" ref="#notariusCivitatis" rend="bold">Notarius<lb/>
+      civitatis</name></head>
+    <note>[puste]</note>
+  </div>
+  <div>
+    <head><name ref="#thomas" ana="bk:account" rend="bold">Thomas</name></head>
+    <p><seg ana="bk:entry"><date ana="bk:when" when="1480">Sabbato post Kathedra s.
+      Petri</date>
+      <measure ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII
+        gr.</measure></seg>
+      <seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+        quantity="14">XIIII gr.</measure></seg>
+      <seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+        quantity="14">XIIII gr.</measure></seg>
+      <seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+        quantity="14">XIIII gr.</measure></seg>
+      <seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+        quantity="14">XIIII gr.</measure></seg>
+      <seg ana="bk:entry">Item in <date ana="bk:when" when="1480">vigilia
+        Pasce</date>
+        <measure ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII
+          gr.</measure></seg>
+    </p>
+  </div>
+</body>]]>
+              </code>
+              <caption>Creating one or more <code>bk:Account</code>.</caption></ab>
           </div>
+
           <div xml:id="prefixdef">
             <head>Definition of Prefixes</head>
             <p>As the prefix <code>bk:</code> is used as abbreviation in <code rend="attribute"
@@ -3318,6 +3406,14 @@
               </row>
             </table>
           </div>
+          <div xml:id="example_collection">
+            <head>Example Collection</head>
+            <p>Here you can find a <ref target="/context:depcha.example">Collection of all the
+                Examples</ref> discussed in this tutorial. You will be able to see how the
+              annotations of the examples will be processed and displayed in the edition view.</p>
+
+
+          </div>
         </div>
         <div xml:id="lod">
           <head>Linked Open Data</head>
@@ -3354,9 +3450,9 @@
         </div>
         <div xml:id="csv_excel">
           <head>CSV/Excel</head>
-      
-            <p>Coming soon</p>
-          
+
+          <p>Coming soon</p>
+
         </div>
       </div>
     </body>

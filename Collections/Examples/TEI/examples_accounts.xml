@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Example Accounts</title>
+            <editor>Sabrina Strutz</editor>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+            <idno type="PID">o:depcha.example.accounts</idno>
+            <ref target="context:depcha.example" type="context">Examples</ref>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>This is an exemplary extract of one dataset of the DEPCHA collection. It might
+               differ from the original dataset due to eventual adaptions that should help to
+               understand the possibilities of mapping different contents to the Bookkeeping
+               Ontology.</bibl>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+               <p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                  bookkeeping ontology and can be extended to respective URIs. </p>
+            </prefixDef>
+            <prefixDef ident="depcha" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="https://gams.uni-graz.at/o:depcha.ontology#$1">
+               <p>Analytical descriptors are considered to represent concepts from the
+                  project-specific DEPCHA ontology and can be extended to respective URIs.</p>
+            </prefixDef>
+            <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="http://www.wikidata.org/entity/$1">
+               <p><ref target="https://www.wikidata.org/wiki/Help:Namespaces"/></p>
+            </prefixDef>
+         </listPrefixDef>
+         <unitDecl>
+            <unitDef type="currency" xml:id="schok" from="1300" to="1600"
+               ana="depcha:mainCurrency">
+               <label xml:lang="pl">Schok</label>
+               <label type="abbr">sxg.</label>
+               <desc>...</desc>
+               <country>Poland</country>
+               <conversion fromUnit="#schok" toUnit="#mark" formula="$fromUnit div 1.25"/>
+               <conversion fromUnit="#schok" toUnit="#floren" formula="$fromUnit div 1.875"/>
+               <conversion fromUnit="#schok" toUnit="#firdung" formula="$fromUnit div 5"/>
+               <conversion fromUnit="#schok" toUnit="#schott" formula="$fromUnit div 30"/>
+               <conversion fromUnit="#schok" toUnit="#grosch" formula="$fromUnit div 60"/>
+               <conversion fromUnit="#schok" toUnit="#halbgrosch" formula="$fromUnit div 120"/>
+               <conversion fromUnit="#schok" toUnit="#dreier" formula="$fromUnit div 360"/>
+               <conversion fromUnit="#schok" toUnit="#pfennig" formula="$fromUnit div 1080"/>
+            </unitDef>
+            <unitDef type="currency" xml:id="halbgrosch" from="1300" to="1600">
+               <label xml:lang="pl">Halbgrosch</label>
+               <label type="abbr">gr.</label>
+               <desc>...</desc>
+               <country>Poland</country>
+            </unitDef>
+         </unitDecl>
+         <classDecl>
+            <taxonomy ana="bk:account">
+               <category ana="bk:to" xml:id="expenses">
+                  <catDesc><gloss>Expenses</gloss></catDesc>
+                  <category xml:id="familia">
+                     <catDesc><gloss>Familia civitatis</gloss></catDesc>
+                     <category xml:id="notarius">
+                        <catDesc><gloss>Notarius civitatis</gloss></catDesc>
+                     </category>
+                     <category xml:id="famuli">
+                        <catDesc><gloss>famuli</gloss></catDesc>
+                        <category xml:id="thomas">
+                           <catDesc><gloss>Thomas</gloss></catDesc>
+                        </category>
+                     </category>
+                  </category> 
+               </category>
+            </taxonomy>
+         </classDecl>
+      </encodingDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <pb n="398"/>
+         <div>
+            <head><name ana="bk:account" ref="#notariusCivitatis" rend="bold">Notarius<lb/>
+               civitatis</name></head>
+            <note>[puste]</note>
+         </div>
+         <div>
+            <head><name ref="#thomas" ana="bk:account" rend="bold">Thomas</name></head>
+            <p><seg ana="bk:entry"><date ana="bk:when" when="1480">Sabbato post Kathedra s.
+               Petri</date>
+               <measure ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII
+                  gr.</measure></seg>
+               <seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+                  quantity="14">XIIII gr.</measure></seg>
+               <seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+                  quantity="14">XIIII gr.</measure></seg>
+               <seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+                  quantity="14">XIIII gr.</measure></seg>
+               <seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+                  quantity="14">XIIII gr.</measure></seg>
+               <seg ana="bk:entry">Item in <date ana="bk:when" when="1480">vigilia
+                  Pasce</date>
+                  <measure ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII
+                     gr.</measure></seg>
+            </p>
+         </div>
+      </body>
+  </text>
+</TEI>
