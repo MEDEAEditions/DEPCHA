@@ -27,7 +27,7 @@
         <xsl:copy>
             <xsl:apply-templates/>
             <listPlace xmlns="http://www.tei-c.org/ns/1.0" ana="depcha:index">
-                <xsl:for-each-group select="//t:text//t:placeName" group-by="@ref">
+                <xsl:for-each-group select="//t:text//t:placeName[@ref][contains(@ana, 'bk:where')]" group-by="@ref">
                     <xsl:sort select="current-grouping-key()"/>
                     <place xml:id="{substring-after(current-grouping-key(), '#')}">
                         <xsl:for-each select="distinct-values(current-group())">
