@@ -454,6 +454,9 @@
 									<category xml:id="fortat">
 										<catDesc><gloss>Fortat Armenus</gloss></catDesc>
 									</category>
+									<category xml:id="celarium">
+										<catDesc><gloss>celarium sub pretorio</gloss></catDesc>
+									</category>
 								</category>
 								<category xml:id="terra">
 									<catDesc><gloss>census terrestris</gloss></catDesc>
@@ -489,9 +492,10 @@
 							</category>
 							<category/>
 						</category>
+						<category xml:id="debitum"><catDesc><gloss>Debitum</gloss></catDesc></category>
 					</category>
 					<category ana="bk:to" xml:id="expenses">
-						<catDesc><gloss>Expenses</gloss></catDesc>
+						<catDesc><gloss xml:lang="en">Expenses</gloss></catDesc>
 						<category xml:id="familia">
 							<catDesc><gloss>Familia civitatis</gloss></catDesc>
 							<category xml:id="notarius">
@@ -501,9 +505,15 @@
 								<catDesc><gloss>famuli</gloss></catDesc>
 								<category xml:id="thomas">
 									<catDesc><gloss>Thomas</gloss></catDesc>
+									<catDesc>Unter der Rubrik Thomas ist die <term ref="canalia"
+											>Dienstleistung X</term> zu versthen</catDesc>
 								</category>
-								<category>
-									<catDesc><gloss>Johannes</gloss></catDesc>
+								<category xml:id="johannes.d">
+									<catDesc><gloss>Johannes</gloss></catDesc><category xml:id="johannes.1">
+										<catDesc><gloss>Johannes</gloss></catDesc>
+									</category><category xml:id="johannes.2">
+										<catDesc><gloss>Johannes</gloss></catDesc>
+									</category>
 								</category>
 								<category xml:id="alter_thomas">
 									<catDesc><gloss>Alter Thomas</gloss></catDesc>
@@ -571,9 +581,11 @@
 				<name>Johannes</name>
 				<note/>
 			</person>
+			
 		</listPerson>
 	</standOff>
 	<text>
+
 		<body>
 			<!-- test -->
 			<div>
@@ -583,37 +595,39 @@
 				</p>
 			</div>
 			<!-- test -->
+			<pb n="398"/>
 			<div>
-				<pb n="398"/>
-				<div>
-					<head><name ana="bk:account" ref="#notariusCivitatis" rend="bold">Notarius<lb/>
-							civitatis</name></head>
-					<note>[puste]</note>
-				</div>
+				<head><name ana="bk:account" ref="#notariusCivitatis" rend="bold">Notarius<lb/>
+						civitatis</name></head>
+				<note>[puste]</note>
+			</div>
+			<div>
+				<cb/>
 				<div>
 					<head><name ref="#thomas" ana="bk:account" rend="bold">Thomas</name></head>
-					<p><seg ana="bk:entry"><date ana="bk:when" when="1480">Sabbato post Kathedra s.
-								Petri</date>
+					<p><seg ana="bk:entry"><date ana="bk:when" when="1480-02-22">Sabbato post
+								Kathedra s.<lb/> Petri</date>
 							<measure ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII
 								gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
+								quantity="14">XIIII gr.</measure><date ana="bk:when"
+								when="1480-03-01" type="editor"/></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
+								quantity="14">XIIII gr.</measure></seg><lb/>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item in <date ana="bk:when" when="1480">vigilia
 								Pasce</date>
-							<measure ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII
+							<measure ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII<lb/>
 								gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
+								quantity="14">XIIII</measure></seg><lb/>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
@@ -621,12 +635,12 @@
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
+								quantity="14">XIIII gr.</measure></seg><lb/>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg><del>Item XIIII gr.</del></seg>
 						<seg><del>Item XIIII gr.</del></seg>
-						<seg><del>Item XIIII gr.</del></seg>
+						<seg><del>Item XIIII gr.</del></seg><lb/>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
@@ -634,7 +648,7 @@
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
+								quantity="14">XIIII gr.</measure></seg><lb/>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
@@ -643,144 +657,36 @@
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
+								quantity="14">XIIII gr.</measure></seg><lb/>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
-					</p>
-				</div>
-				<div>
-					<head><name ref="#johannes" ana="bk:account" rend="bold">Johannes</name></head>
-					<p><seg ana="bk:entry"><date>Sabbato post festum s. Petri Catedra</date> XIIII
-							gr.</seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure>
-							<date>in vigilia Pasce</date>.</seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
+								quantity="14">XIIII gr.</measure></seg><lb/>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
+								quantity="14">XIIII gr.</measure></seg><lb/>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item<lb/>
+							<measure ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII
+								gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
+								quantity="14">XIIII gr.</measure></seg><lb/>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
@@ -788,7 +694,7 @@
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
+								quantity="14">XIIII gr.</measure></seg><lb/>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
@@ -796,7 +702,7 @@
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
+								quantity="14">XIIII gr.</measure></seg><lb/>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
@@ -804,7 +710,7 @@
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
+								quantity="14">XIIII gr.</measure></seg><lb/>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
@@ -812,7 +718,7 @@
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
+								quantity="14">XIIII gr.</measure></seg><lb/>
 					</p>
 				</div>
 				<div>
@@ -833,6 +739,118 @@
 						<seg ana="bk:entry">Item <date>in vigilia Pasce</date>
 							<measure ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII
 								gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+					</p>
+				</div>
+			</div>
+			<div>
+				<cb/>
+				<div>
+					<head><name ref="#johannes" ana="bk:account" rend="bold">Johannes</name></head>
+					<p><seg ana="bk:entry"><date>Sabbato post festum s. Petri Catedra</date> XIIII
+							gr.</seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure>
+							<date>in vigilia Pasce</date>.</seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
@@ -1035,7 +1053,10 @@
 								quantity="14">XIIII gr.</measure></seg>
 					</p>
 				</div>
-				<pb n="399"/>
+			</div>
+			<pb n="399"/>
+			<div>
+				<cb/>
 				<div>
 					<head><name ref="#michael" ana="bk:account" rend="bold">Michael</name></head>
 					<p>
@@ -1059,112 +1080,6 @@
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-					</p>
-				</div>
-				<div>
-					<head><name ref="#auriga_civitatis" ana="bk:account" rend="bold">Auriga
-							civitatis</name></head>
-					<p>
-						<seg ana="bk:entry"><date>Sabbato post Cathedra Petri</date>
-							<measure ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII
-								gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="14">XIIII gr.</measure></seg>
-						<seg ana="bk:entry">Item <date>in vigilia Pasce</date>
-							<measure ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII
-								gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
 								quantity="14">XIIII gr.</measure></seg>
 						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
@@ -1365,8 +1280,117 @@
 								quantity="18">XVIII gr.</measure></seg>
 					</p>
 				</div>
+			</div>
+			<div>
+				<cb/>
 				<div>
-					<head><name ref="#magiste_canalium" ana="bk:account" rend="bold">Magister
+					<head><name ref="#auriga_civitatis" ana="bk:account" rend="bold">Auriga
+							civitatis</name></head>
+					<p>
+						<seg ana="bk:entry"><date>Sabbato post Cathedra Petri</date>
+							<measure ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII
+								gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <date>in vigilia Pasce</date>
+							<measure ana="bk:money" unitRef="#halbgrosch" quantity="14">XIIII
+								gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+								quantity="14">XIIII gr.</measure></seg>
+					</p>
+				</div>
+				<div>
+					<head><name ref="#magister_canalium" ana="bk:account" rend="bold">Magister
 							canalium</name></head>
 					<p>
 						<seg ana="bk:entry"><date>Sabbato post festum s. Petri ad Cathedre</date>
@@ -1478,7 +1502,10 @@
 								quantity="30">XXX gr.</measure></seg>
 					</p>
 				</div>
-				<pb n="400"/>
+			</div>
+			<pb n="400"/>
+			<div>
+				<cb/>
 				<div>
 					<head><name ref="#ductor_brasealis" ana="bk:account" rend="bold">Ductor
 							brasealis</name></head>
@@ -1605,6 +1632,65 @@
 					</p>
 				</div>
 				<div>
+					<head><name ref="#johannes_magister" ana="bk:account" rend="bold">Johannes
+							magister fossatorum <add>et pixidarius</add></name></head>
+					<p>
+						<del><seg ana="bk:entry"><date>Sabbato post festum s. Petri ad
+									cathedre</date>
+								<measure ana="bk:money" unitRef="#firdung" quantity="1">
+									frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> frt.</measure></seg>
+							<seg ana="bk:entry">Item <date>in vigilia Pasce</date>
+								<measure ana="bk:money" unitRef="#firdung" quantity="1">
+									frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> I frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> I frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> I frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> I frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> I frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> I frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> I frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> I frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> I frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> I frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> I frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> I frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> I frt.</measure></seg>
+							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
+									quantity="1"> I frt.</measure></seg>
+							<seg ana="bk:entry">Item <date>sabbato ipso die s. Marie
+									Magdalene</date> recepit, licenciatus et tunc sibi datus est
+									<measure ana="bk:money" unitRef="#firdung" quantity="1"> I
+									frt.</measure></seg></del></p>
+				</div>
+			</div>
+			<div>
+				<cb/>
+				<div>
 					<head><name ref="#portulani" ana="bk:account" rend="bold"
 						>Portulani</name></head>
 					<p>
@@ -1713,64 +1799,9 @@
 								quantity="1">unum frt.</measure></seg></p>
 				</div>
 				<div>
-					<head><name ref="#johannes_magister" ana="bk:account" rend="bold">Johannes
-							magister fossatorum <add>et pixidarius</add></name></head>
-					<p>
-						<del><seg ana="bk:entry"><date>Sabbato post festum s. Petri ad
-									cathedre</date>
-								<measure ana="bk:money" unitRef="#firdung" quantity="1">
-									frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> frt.</measure></seg>
-							<seg ana="bk:entry">Item <date>in vigilia Pasce</date>
-								<measure ana="bk:money" unitRef="#firdung" quantity="1">
-									frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> I frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> I frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> I frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> I frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> I frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> I frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> I frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> I frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> I frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> I frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> I frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> I frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> I frt.</measure></seg>
-							<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#firdung"
-									quantity="1"> I frt.</measure></seg>
-							<seg ana="bk:entry">Item <date>sabbato ipso die s. Marie
-									Magdalene</date> recepit, licenciatus et tunc sibi datus est
-									<measure ana="bk:money" unitRef="#firdung" quantity="1"> I
-									frt.</measure></seg></del></p>
-				</div>
-				<div>
 					<head><del><name ref="#johannes_pixidarius" ana="bk:account" rend="bold"
-								>Johannes pixidarius anno preterito susceptus</name></del></head>
+								>Johannes pixidarius<lb/> anno preterito
+						susceptus<lb/></name></del></head>
 					<p>
 						<del><seg ana="bk:entry"><date>Sabbato post festum s. Petri ad
 									Catedra</date>
@@ -1789,202 +1820,206 @@
 									frt.</measure></seg></del>
 						<seg>Idem licenciatus est <date>sabbato ante Quasimodo</date>.</seg></p>
 				</div>
-				<div>
-					<p><seg>Dominus Johannes Frylich de castro <del>ad</del> ex mandato domini
-							vicecapitanei recepit unam cistulam cum pecuniis censuum de pretorio per
-							vicecapitaneum repositorum feria IIa post Concepcionis Marie.</seg>
-						<note>[reszta strony niezapisana]</note></p>
-				</div>
-				<pb n="401"/>
-				<div>
-					<head><name ref="#penesticarius" ana="bk:account" rend="bold">Penesticarius
-							alias iudex vetularum</name></head>
-					<p>
-						<seg ana="bk:entry"><date>Sabbato post festum s. Petri Cathedre</date>
-							<measure ana="bk:money" unitRef="#halbgrosch" quantity="6">VI
-								gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry">Item <date>in vigilia Pasce</date>
-							<measure ana="bk:money" unitRef="#halbgrosch" quantity="6">VI
-								gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg>
-						<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="6">VI gr.</measure></seg></p>
-				</div>
-				<div>
-					<head><name ref="#valentinus_pixidarius" ana="bk:account" rend="bold">Valentinus
-							pixidarius ad Quatuor tempora solariandus</name></head>
-					<p>
-						<seg ana="bk:entry">Item eidem <measure ana="bk:money" unitRef="#mark"
-								quantity="1">mrc.</measure> dedimus <date>ad IIIIor tempora
-								Cinerum</date>.</seg>
-						<seg ana="bk:entry">Item <date>ad Quautor tempora Penthecostes</date> data
-							est sibi <measure ana="bk:money" unitRef="#mark" quantity="1">I
-								mrc.</measure></seg>
-						<seg ana="bk:entry"><date>Ad festum Michaelis</date> data <measure
-								ana="bk:money" unitRef="#mark" quantity="1">I mrc.</measure></seg>
-						<seg ana="bk:entry">Item <date>ad festum Lucie</date>
-							<measure ana="bk:money" unitRef="#mark" quantity="1">I
-							mrc.</measure></seg></p>
-				</div>
-				<div>
-					<head><name ref="#rector_horalogii" ana="bk:account" rend="bold">Rector
-							horalogii</name></head>
-					<p>
-						<seg ana="bk:entry">Eidem <date>ad IIIIor tempora Jeiunii</date>
-							<measure ana="bk:money" unitRef="#schok" quantity="0.5">½
-							sxg.</measure></seg>
-						<seg ana="bk:entry">Item <date>quatuor tempora Penthecostes</date>
-							<del>I frt.</del>
-							<measure ana="bk:money" unitRef="#schok" quantity="0.5">½
-							sxg.</measure></seg>
-						<seg ana="bk:entry">Item <date>ad Quatuor tempora ad festum Crucis</date>
-							recepit <measure ana="bk:money" unitRef="#firdung" quantity="1">I
-								frt.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#grosch"
-								quantity="36">XXXVI gr.</measure></seg>
-						<seg ana="bk:entry">Item <date>pro festo Lucie</date>
-							<measure ana="bk:money" unitRef="#grosch" quantity="30">XXX
-								gr.</measure> solutum.</seg>
-						<seg ana="bk:entry">Item aduc <measure ana="bk:money" unitRef="#halbgrosch"
-								quantity="30"> XXX grossiculos.</measure></seg></p>
-				</div>
-				<div>
-					<head><name ref="#latrifex" ana="bk:account" rend="bold">Latrifex</name></head>
-					<p>
-						<seg>Dominus Petrus Lumar resignavit laterificium domino Hanel sabbato ante
-							festum s. Stanislai in mayo cum fornace integro iam parato de
-							lateribus.</seg>
-						<seg ana="bk:entry">Item idem recepit aput dominos <date>sabbato post
-								Ascensionem Domini</date>
-							<measure ana="bk:money" unitRef="#schok" quantity="2">II
-							sxg.</measure></seg>
-						<seg><del>Item eidem suscepit in</del></seg>
-						<seg ana="bk:entry">Item <date>feria 2a post Johannis Baptiste</date> aput
-							dominos recepit <measure ana="bk:money" unitRef="#schok" quantity="2">II
-								sxg.</measure></seg>
-						<seg ana="bk:entry">Item <date>sabbato ante Margarethe</date>
-							<measure ana="bk:money" unitRef="#schok" quantity="1">I
-							sxg.</measure></seg>
-						<seg ana="bk:entry">Item <date>sabbato ipso die s. Marie Magdalene</date>
-							recepit <measure ana="bk:money" unitRef="#schok" quantity="1">I
-								sxg.</measure></seg>
-						<seg ana="bk:entry">Item <date>sabbato infra octavas Assumpcionis
-								Marie</date>
-							<measure ana="bk:money" unitRef="#schok" quantity="1">I
-							sxg.</measure></seg>
-						<seg ana="bk:entry">Item <date>sabbato post Nativitatis Marie</date> recepit
-								<measure ana="bk:money" unitRef="#firdung" quantity="12">XII
-								frt.</measure></seg>
-						<seg ana="bk:entry">Item <date>feria quarta vigilie s. Crucis
-								Exaltacionis</date>
-							<measure ana="bk:money" unitRef="#mark" quantity="2">II
-							mrc.</measure></seg>
-						<seg ana="bk:entry">Item <date>sabbato post Mathei</date>
-							<measure ana="bk:money" unitRef="#schok" quantity="2">II
-							sxg.</measure></seg>
-						<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#schok"
-								quantity="1">I sxg.</measure></seg>
-						<seg ana="bk:entry">Item <date>sabbato in crastino Purifiacionis</date>
-							super novam fornacem domini dederunt <measure ana="bk:money"
-								unitRef="#schok" quantity="3">III sxg.</measure>
-						</seg></p>
-				</div>
 			</div>
 			<div>
-				<head>Census civitatis.</head>
+				<p><seg>Dominus Johannes Frylich de castro <del>ad</del> ex mandato domini
+						vicecapitanei recepit unam cistulam cum pecuniis censuum de pretorio per
+						vicecapitaneum repositorum feria IIa post Concepcionis Marie.</seg>
+					<note>[reszta strony niezapisana]</note></p>
+			</div>
+			<pb n="401"/>
+			<cb/>
+		<div>	<div>
+				<head><name ref="#penesticarius" ana="bk:account" rend="bold">Penesticarius
+						alias<lb/> iudex vetularum</name></head>
+				<p>
+					<seg ana="bk:entry"><date>Sabbato post festum s. Petri Cathedre</date>
+						<measure ana="bk:money" unitRef="#halbgrosch" quantity="6">VI
+						gr.</measure></seg>
+					<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry">Item <date>in vigilia Pasce</date>
+						<measure ana="bk:money" unitRef="#halbgrosch" quantity="6">VI
+						gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg>
+					<seg ana="bk:entry"> Item <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="6">VI gr.</measure></seg></p>
+			</div>
+			<div>
+				<head><name ref="#rector_horalogii" ana="bk:account" rend="bold">Rector
+						horalogii</name></head>
+				<p>
+					<seg ana="bk:entry">Eidem <date>ad IIIIor tempora Jeiunii</date>
+						<measure ana="bk:money" unitRef="#schok" quantity="0.5">½
+						sxg.</measure></seg>
+					<seg ana="bk:entry">Item <date>quatuor tempora Penthecostes</date>
+						<del>I frt.</del>
+						<measure ana="bk:money" unitRef="#schok" quantity="0.5">½
+						sxg.</measure></seg>
+					<seg ana="bk:entry">Item <date>ad Quatuor tempora ad festum Crucis</date>
+						recepit <measure ana="bk:money" unitRef="#firdung" quantity="1">I
+							frt.</measure></seg>
+					<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#grosch" quantity="36"
+							>XXXVI gr.</measure></seg>
+					<seg ana="bk:entry">Item <date>pro festo Lucie</date>
+						<measure ana="bk:money" unitRef="#grosch" quantity="30">XXX gr.</measure>
+						solutum.</seg>
+					<seg ana="bk:entry">Item aduc <measure ana="bk:money" unitRef="#halbgrosch"
+							quantity="30"> XXX grossiculos.</measure></seg></p>
+			</div>
+			<div>
+				<head><name ref="#latrifex" ana="bk:account" rend="bold">Latrifex</name></head>
+				<p>
+					<seg>Dominus Petrus Lumar resignavit laterificium domino Hanel sabbato ante
+						festum s. Stanislai in mayo cum fornace integro iam parato de
+						lateribus.</seg>
+					<seg ana="bk:entry">Item idem recepit aput dominos <date>sabbato post
+							Ascensionem Domini</date>
+						<measure ana="bk:money" unitRef="#schok" quantity="2">II
+						sxg.</measure></seg>
+					<seg><del>Item eidem suscepit in</del></seg>
+					<seg ana="bk:entry">Item <date>feria 2a post Johannis Baptiste</date> aput
+						dominos recepit <measure ana="bk:money" unitRef="#schok" quantity="2">II
+							sxg.</measure></seg>
+					<seg ana="bk:entry">Item <date>sabbato ante Margarethe</date>
+						<measure ana="bk:money" unitRef="#schok" quantity="1">I sxg.</measure></seg>
+					<seg ana="bk:entry">Item <date>sabbato ipso die s. Marie Magdalene</date>
+						recepit <measure ana="bk:money" unitRef="#schok" quantity="1">I
+							sxg.</measure></seg>
+					<seg ana="bk:entry">Item <date>sabbato infra octavas Assumpcionis Marie</date>
+						<measure ana="bk:money" unitRef="#schok" quantity="1">I sxg.</measure></seg>
+					<seg ana="bk:entry">Item <date>sabbato post Nativitatis Marie</date> recepit
+							<measure ana="bk:money" unitRef="#firdung" quantity="12">XII
+							frt.</measure></seg>
+					<seg ana="bk:entry">Item <date>feria quarta vigilie s. Crucis
+							Exaltacionis</date>
+						<measure ana="bk:money" unitRef="#mark" quantity="2">II mrc.</measure></seg>
+					<seg ana="bk:entry">Item <date>sabbato post Mathei</date>
+						<measure ana="bk:money" unitRef="#schok" quantity="2">II
+						sxg.</measure></seg>
+					<seg ana="bk:entry">Item <measure ana="bk:money" unitRef="#schok" quantity="1">I
+							sxg.</measure></seg>
+					<seg ana="bk:entry">Item <date>sabbato in crastino Purifiacionis</date> super
+						novam fornacem domini dederunt <measure ana="bk:money" unitRef="#schok"
+							quantity="3">III sxg.</measure>
+					</seg></p>
+			</div>
+			<div>
+				<head><orgName ref="#cementarii" ana="bk:account" rend="bold"
+					>Cementarii.</orgName></head>
+				<p><seg>Solwnt a qualibet fornace in quo cementum cremant unam telangam, quotque
+					in anno excremaverint.</seg></p>
+			</div></div>
+			<cb/>
+			<div><div>
+				<head><name ref="#valentinus_pixidarius" ana="bk:account" rend="bold">Valentinus
+						pixidarius<lb/> ad Quatuor tempora solariandus</name></head>
+				<p>
+					<seg ana="bk:entry">Item eidem <measure ana="bk:money" unitRef="#mark"
+							quantity="1">mrc.</measure> dedimus <date>ad IIIIor tempora
+							Cinerum</date>.</seg>
+					<seg ana="bk:entry">Item <date>ad Quautor tempora Penthecostes</date> data est
+						sibi <measure ana="bk:money" unitRef="#mark" quantity="1">I
+						mrc.</measure></seg>
+					<seg ana="bk:entry"><date>Ad festum Michaelis</date> data <measure
+							ana="bk:money" unitRef="#mark" quantity="1">I mrc.</measure></seg>
+					<seg ana="bk:entry">Item <date>ad festum Lucie</date>
+						<measure ana="bk:money" unitRef="#mark" quantity="1">I
+					mrc.</measure></seg></p>
+			</div>
+			
+				<div><head>Census civitatis.</head></div>
 				<div>
 					<head><placeName ref="#balneum" ana="bk:account" rend="bold">Balneum
 							civitatis</placeName></head>
@@ -2017,12 +2052,7 @@
 								mrc.</measure></seg>
 						<seg>Solvit totum.</seg></p>
 				</div>
-				<div>
-					<head><orgName ref="#cementarii" ana="bk:account" rend="bold"
-							>Cementarii.</orgName></head>
-					<p><seg>Solwnt a qualibet fornace in quo cementum cremant unam telangam, quotque
-							in anno excremaverint.</seg></p>
-				</div>
+				
 				<div>
 					<head><placeName ref="#cerefrixorium" ana="bk:account" rend="bold"
 							>Cerefrixor</placeName></head>
@@ -2031,41 +2061,43 @@
 							mrc.</measure></seg>
 						<seg ana="bk:entry">Tenetur in residuis <measure ana="bk:money"
 								unitRef="#mark" quantity="1">I mrc.</measure></seg></p>
-				</div>
+				</div></div>
 				<pb n="402"/>
 				<div>
-					<head><placeName ref="#pauperes" ana="bk:account" rend="bold">Instite pauperes
-						</placeName>utriusque festi Pasce et Michaelis</head>
-					<p><seg>Her Wolczko et Simon de minoribus institis solverunt per XXX
-							grossiculos.</seg></p>
-					<div>
-						<head><date>Ad festum Pasce</date></head>
-						<p>
-							<seg ana="bk:entry">Hec instite ad ratam presentem fecerunt solucionem
+					<head><placeName ref="#pauperes" ana="bk:account" rend="bold">Instite
+							pauperes<lb/>
+						</placeName>utriusque festi<lb/> Pasce et Michaelis<lb/></head>
+					<table>
+						<row>
+							<cell rend="bold"><date>Ad festum Pasce</date></cell>
+							<cell/>
+							<cell rend="bold">Ad festum Michaelis</cell>
+						</row>
+						<row>
+							<cell>
+								<seg ana="bk:entry">Hec instite ad ratam<lb/> presentem fecerunt solucionem<lb/>
 									<measure ana="bk:money" unitRef="#halbgrosch" quantity="510"/>,
-								solum adhuc tres camere non solverunt XIX grossiculos.</seg>
-							<seg ana="bk:entry">Tenentur aduc <del>½ sxg.</del>
-								<measure ana="bk:money" unitRef="#halbgrosch" quantity="34">XXX et
-									IIII grossiculos</measure>.</seg>
-						</p>
-					</div>
-					<div>
-						<head><date>Ad festum Michaelis</date></head>
-						<p><seg ana="bk:entry">Hec instite ratam presentem fecerunt solucionem
-									<measure ana="bk:money" unitRef="#schok" quantity="3.5">III ½
-									sxg.</measure></seg>
-							<seg ana="bk:entry">Aduc tenentur <measure ana="bk:money"
-									unitRef="#schok" quantity="1.5">I ½ sxg.</measure></seg></p>
-					</div>
+									solum adhuc tres<lb/> camere non solverunt<lb/> XIX
+									grossiculos.</seg>
+								<seg>Tenentur<lb/> aduc <del>½ sxg.</del> XXX et IIII
+									grossiculos.<lb/></seg></cell>
+							<cell>Her Wolczko et Simon de<lb/> minoribus institis solverunt per XXX
+								grossiculos.<lb/></cell>
+							<cell><seg ana="bk:entry">Hec instite ratam presentem<lb/> fecerunt
+									solucionem <measure ana="bk:money" unitRef="#schok"
+										quantity="3.5">III ½ sxg.</measure></seg><lb/>
+								<seg>Aduc tenentur I ½ sxg.</seg><lb/></cell>
+						</row>
+					</table>
 				</div>
 				<div>
 					<head><placeName ref="#divites" ana="bk:account" rend="bold">Divites
 							instite</placeName></head>
 					<table>
 						<row>
-							<cell>Ad Pasche</cell>
+							<cell rend="bold">Ad Pasche</cell>
 							<cell/>
-							<cell>Ad Michaelis</cell>
+							<cell rend="bold">Ad Michaelis</cell>
 						</row>
 						<row>
 							<cell/>
@@ -2174,129 +2206,198 @@
 				<div>
 					<head><orgName ref="#salis_venditores" ana="bk:account" rend="bold">Salis
 							venditores</orgName></head>
-					<div>
-						<head><date>Ad medium Quadragesime solventes</date></head>
-						<p><seg ana="bk:entry">Ad predictum tempus omnes solverunt<measure
-									ana="bk:money" unitRef="#halbgrosch" quantity="300"/>.</seg></p>
-					</div>
-					<div>
-						<head><date>Ad festum Penthecostes</date></head>
-						<p><seg ana="bk:entry">Pro rata huius temporis omnes solverunt videlicet X
-								ipsorum, quilibet per XX grossiculos<measure ana="bk:money"
-									unitRef="#halbgrosch" quantity="300"/>.</seg></p>
-					</div>
+					<table>
+						<row>
+							<cell rend="bold">Ad medium Quadra<lb/>gesime solventes</cell>
+							<cell/>
+							<cell rend="bold">Ad festum Penthecostes</cell>
+						</row>
+						<row>
+							<cell ana="bk:entry">Ad predictum tempus<lb/> omnes solverunt<measure
+									ana="bk:money" unitRef="#halbgrosch" quantity="300"
+								/>.<lb/></cell>
+							<cell/>
+							<cell ana="bk:entry">Pro rata huius temporis<lb/> omnes solverunt
+								videlicet X ipsorum,<lb/> quilibet per XX grossiculos<measure
+									ana="bk:money" unitRef="#halbgrosch" quantity="300"
+								/>.<lb/></cell>
+						</row>
+					</table>
 				</div>
 				<pb n="403"/>
 				<div>
 					<head><placeName ref="#circa_sutorum" ana="bk:account" rend="bold">Instite circa
-							bancos sutorum</placeName>
+							bancos sutorum</placeName><lb/>
 						<date>ad festum Michaelis</date> solventes.</head>
-					<p><seg ana="bk:entry">Item Martha Rumenska <measure ana="bk:money"
-								unitRef="#grosch" quantity="45">III frt.
-							Rutenicales</measure>.</seg><lb/>
-						<seg ana="bk:entry">Item instita Climek Prusky <measure ana="bk:money"
-								unitRef="#schok" quantity="0.5">½ sxg.</measure> dedit.</seg><lb/>
-						<seg ana="bk:entry">Item instita parva Tertat, ubi vendit mygma <measure
-								ana="bk:money" unitRef="#halbgrosch" quantity="30">XXX
-							gr.</measure>.</seg><lb/>
-						<seg ana="bk:entry">Item Johannes Pyerzinka <measure ana="bk:money"
-								unitRef="#mark" quantity="1">mrc.</measure> cum <measure
-								ana="bk:money" unitRef="#halbgrosch" quantity="12">XII
-							gr.</measure></seg><lb/>
-						<seg ana="bk:entry">Item Margareta <measure ana="bk:money" unitRef="#schok"
-								quantity="0.5">½ sxg.</measure></seg><lb/>
-						<seg ana="bk:entry">Item Maruscha <measure ana="bk:money" unitRef="#schok"
-								quantity="0.5">½ sxg.</measure> dedit.</seg><lb/>
-						<seg ana="bk:entry">Item instita dominorum, in qua moratur Elizabet et dat
-							per <measure ana="bk:money" unitRef="#mark" quantity="1">I
-								mrc.</measure> dedit.</seg><lb/>
-						<seg ana="bk:entry">Item domina Haldmorthin <measure ana="bk:money"
-								unitRef="#schok" quantity="1">I sxg.</measure> dedit.</seg><lb/>
-						<seg ana="bk:entry">Item Augustinus antiquus aurifaber <measure
-								ana="bk:money" unitRef="#schok" quantity="1">I sxg.</measure>
-							dedit.</seg><lb/>
-						<seg ana="bk:entry">Item Maczkova strycharka <measure ana="bk:money"
-								unitRef="#schok" quantity="0.5">½ sxg.</measure> dedit.</seg><lb/>
-						<seg ana="bk:entry">Item Micolaiova <measure ana="bk:money" unitRef="#schok"
-								quantity="0.5">½ sxg.</measure> dedit.</seg></p>
+					<table>
+						<row>
+							<cell>Item Martha Rumenska III frt. Rutenicales.</cell>
+							<cell/>
+						</row>
+						<row ana="bk:entry">
+							<cell>Item instita Climek Prusky ½ sxg.</cell>
+							<cell><measure ana="bk:money" unitRef="#schok" quantity="0.5"
+									>dedit</measure></cell>
+						</row>
+						<row>
+							<cell>Item instita parva Tertat, ubi vendit mygma XXX gr.</cell>
+							<cell/>
+						</row>
+						<row>
+							<cell>Item Johannes Pyerzinka mrc. cum XII gr.</cell>
+							<cell/>
+						</row>
+						<row>
+							<cell>Item Margareta ½ sxg.</cell>
+							<cell/>
+						</row>
+						<row ana="bk:entry">
+							<cell>Item Maruscha ½ sxg.</cell>
+							<cell><measure ana="bk:money" unitRef="#schok" quantity="0.5"
+									>dedit</measure></cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Item instita dominorum, in qua moratur Elizabet et dat per I
+								mrc.</cell>
+							<cell><measure ana="bk:money" unitRef="#mark" quantity="1"
+									>dedit</measure></cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Item domina Haldmorthin I sxg.</cell>
+							<cell><measure ana="bk:money" unitRef="#schok" quantity="1"
+									>dedit</measure></cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Item Augustinus antiquus aurifaber I sxg.</cell>
+							<cell><measure ana="bk:money" unitRef="#schok" quantity="1"
+									>dedit</measure></cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Item Maczkova strycharka ½ sxg.</cell>
+							<cell><measure ana="bk:money" unitRef="#schok" quantity="0.5"
+									>dedit</measure></cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Item Micolaiova ½ sxg.</cell>
+							<cell><measure ana="bk:money" unitRef="#schok" quantity="0.5"
+									>dedit</measure></cell>
+						</row>
+					</table>
 					<lb/>
 				</div>
 				<div>
-					<head><orgName ref="#figuli" ana="bk:account" rend="bold"
-							>Figuli</orgName><date>ad festum Michaelis</date> solventes.</head>
-					<p>
-						<seg ana="bk:entry">Wawrzyniecz <measure ana="bk:money" unitRef="#schok"
-								quantity="0.5">½ sxg.</measure> solvit.</seg><lb/>
-						<seg ana="bk:entry">Jan lutifigulus <measure ana="bk:money" unitRef="#schok"
-								quantity="0.5">½ sxg.</measure> solvit.</seg><lb/>
-						<seg ana="bk:entry">Stanislaus Koth <measure ana="bk:money" unitRef="#schok"
-								quantity="0.5">½ sxg.</measure> solvit.</seg><lb/>
-						<seg ana="bk:entry">Jan Zyelonka <measure ana="bk:money" unitRef="#schok"
-								quantity="0.5">½ sxg.</measure> solvit.</seg><lb/>
-						<seg ana="bk:entry">Marczin Samborsky <measure ana="bk:money"
-								unitRef="#schok" quantity="0.5">½ sxg.</measure> solvit.</seg><lb/>
-						<seg ana="bk:entry">Micolai Toliey <measure ana="bk:money" unitRef="#schok"
-								quantity="0.5">½ sxg.</measure> solvit.</seg><lb/>
-						<seg ana="bk:entry">Grzegorz <measure ana="bk:money" unitRef="#schok"
-								quantity="0.5">½ sxg.</measure> solvit.</seg><lb/>
-						<seg ana="bk:entry">Clymek <measure ana="bk:money" unitRef="#schok"
-								quantity="0.5">½ sxg.</measure> solvit.</seg><lb/>
-						<seg ana="bk:entry">Voytkova solvit <measure ana="bk:money" unitRef="#schok"
-								quantity="0.5">½ sxg.</measure></seg><lb/>
-						<seg ana="bk:entry">Sczepan solvit <measure ana="bk:money" unitRef="#schok"
-								quantity="0.5"/>.</seg></p>
+					<head><orgName ref="#figuli" ana="bk:account" rend="bold">Figuli</orgName><date>
+							ad festum<lb/> Michaelis</date> solventes.</head>
+					<table>
+						<row ana="bk:entry">
+							<cell>Wawrzyniecz </cell>
+							<cell><measure ana="bk:money" unitRef="#schok" quantity="0.5">½
+									sxg.</measure> solvit</cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Jan lutifigulus </cell>
+							<cell><measure ana="bk:money" unitRef="#schok" quantity="0.5">½
+									sxg.</measure> solvit</cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Stanislaus Koth </cell>
+							<cell><measure ana="bk:money" unitRef="#schok" quantity="0.5">½
+									sxg.</measure> solvit</cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Jan Zyelonka </cell>
+							<cell><measure ana="bk:money" unitRef="#schok" quantity="0.5">½
+									sxg.</measure> solvit</cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Marczin Samborsky </cell>
+							<cell><measure ana="bk:money" unitRef="#schok" quantity="0.5">½
+									sxg.</measure> solvit</cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Micolai Toliey </cell>
+							<cell><measure ana="bk:money" unitRef="#schok" quantity="0.5">½
+									sxg.</measure> solvit</cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Grzegorz </cell>
+							<cell><measure ana="bk:money" unitRef="#schok" quantity="0.5">½
+									sxg.</measure> solvit</cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Clymek </cell>
+							<cell><measure ana="bk:money" unitRef="#schok" quantity="0.5">½
+									sxg.</measure> solvit</cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Voytkova </cell>
+							<cell>solvit <measure ana="bk:money" unitRef="#schok" quantity="0.5">½
+									sxg.</measure></cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Sczepan </cell>
+							<cell><measure ana="bk:money" unitRef="#schok" quantity="0.5"
+									>solvit</measure></cell>
+						</row>
+					</table>
 					<lb/>
 					<note>[uw. dwie ostatnie pozycje wpisane już, gdy następna zapiska o piekarzach
 						była już wpisana na stronie]</note>
 				</div>
 				<div>
 					<p>
-						<seg>Pistores dederunt super X mrc., quas ipsis domini accomodaverunt III
-							sxg. et quartam dare debet braseator <date>ante festum Martini</date>,
-							quam solvit.</seg></p>
+						<seg ana="bk:entry">Pistores dederunt super <name ana="bk:account"
+								ref="#debitum">X mrc., quas ipsis domini accomodaverunt</name>
+							<measure ana="bk:money" quantity="3" unitRef="#schok">III sxg.</measure>
+							et <measure ana="bk:money" quantity="1" unitRef="#schok"
+								>quartam</measure> dare debet braseator <date>ante festum
+								Martini</date>, quam solvit.</seg></p>
 				</div>
 				<div>
 					<head>Ville civitatis.</head>
-					<div>
-						<head><placeName ref="#goltberg" ana="bk:account" rend="bold"
-								>Goltberg</placeName></head>
-						<p><seg ana="bk:entry">Hriczko solvit <measure ana="bk:money"
-									unitRef="#mark" quantity="1">I mrc.</measure> census.</seg><lb/>
-							<seg ana="bk:entry">Zyn solvit <measure ana="bk:money" unitRef="#mark"
-									quantity="1">I mrc.</measure></seg><lb/>
-							<seg ana="bk:entry">Boze Gregerin dedit <measure ana="bk:money"
-									unitRef="#grosch" quantity="14">XIIII gr. latos</measure>,
-									<measure ana="bk:money" unitRef="#grosch" quantity="34">residuum
-									ad mrc.</measure> dicebat advocatum Capsar
-							intercesisse.</seg></p>
-					</div>
-					<div>
-						<head><placeName ref="#byelohoszcz" ana="bk:account" rend="bold"
-								>Byelohoszcz</placeName></head>
-						<p><seg ana="bk:entry">Iwan Tymun solvit <measure ana="bk:money"
-									unitRef="#halbgrosch" quantity="50">L grossiculos</measure>
-								census.</seg><lb/>
-							<seg ana="bk:entry">Pasko solvit <measure ana="bk:money"
-									unitRef="#halbgrosch" quantity="50">L
-								grossiculos</measure>.</seg><lb/>
-							<seg ana="bk:entry">Szenko cum Hrad <measure ana="bk:money"
-									unitRef="#halbgrosch" quantity="50">L gr.</measure></seg><lb/>
-							<seg ana="bk:entry">Ivan cum fratre Komyn <measure ana="bk:money"
-									unitRef="#halbgrosch" quantity="50">L gr.</measure></seg><lb/>
-							<note>[w tym miejscu ciąg dalszy zapiski z rejestru Goltbergu]</note><lb/>
-							<seg ana="bk:entry">Ostasz et Fedor <measure ana="bk:money"
-									unitRef="#halbgrosch" quantity="50">L gr.</measure></seg><lb/>
-							<seg ana="bk:entry">Jacz et Hrin <measure ana="bk:money"
-									unitRef="#halbgrosch" quantity="50">L gr.</measure></seg><lb/>
-							<seg ana="bk:entry">Ihnath et Costuk <measure ana="bk:money"
-									unitRef="#halbgrosch" quantity="50">L
-							gr.</measure></seg><lb/></p>
+					<div rend="row">
+						<div>
+							<head><placeName ref="#goltberg" ana="bk:account" rend="bold"
+									>Goltberg</placeName></head>
+							<p><seg ana="bk:entry">Hriczko solvit <measure ana="bk:money"
+										unitRef="#mark" quantity="1">I mrc.</measure> census.</seg><lb/>
+								<seg ana="bk:entry">Zyn solvit <measure ana="bk:money"
+										unitRef="#mark" quantity="1">I mrc.</measure></seg><lb/>
+								<seg ana="bk:entry">Boze Gregerin dedit <measure ana="bk:money"
+										unitRef="#grosch" quantity="14">XIIII gr. latos</measure>,
+										<measure ana="bk:money" unitRef="#grosch" quantity="34"
+										>residuum ad mrc.</measure> dicebat advocatum Capsar
+									intercesisse.</seg></p>
+						</div>
+						<div>
+							<head><placeName ref="#byelohoszcz" ana="bk:account" rend="bold"
+									>Byelohoszcz</placeName></head>
+							<p><seg ana="bk:entry">Iwan Tymun solvit <measure ana="bk:money"
+										unitRef="#halbgrosch" quantity="50">L grossiculos</measure>
+									census.</seg><lb/>
+								<seg ana="bk:entry">Pasko solvit <measure ana="bk:money"
+										unitRef="#halbgrosch" quantity="50">L
+									grossiculos</measure>.</seg><lb/>
+								<seg ana="bk:entry">Szenko cum Hrad <measure ana="bk:money"
+										unitRef="#halbgrosch" quantity="50">L gr.</measure></seg><lb/>
+								<seg ana="bk:entry">Ivan cum fratre Komyn <measure ana="bk:money"
+										unitRef="#halbgrosch" quantity="50">L gr.</measure></seg><lb/>
+								<note>[w tym miejscu ciąg dalszy zapiski z rejestru
+									Goltbergu]</note><lb/>
+								<seg ana="bk:entry">Ostasz et Fedor <measure ana="bk:money"
+										unitRef="#halbgrosch" quantity="50">L gr.</measure></seg><lb/>
+								<seg ana="bk:entry">Jacz et Hrin <measure ana="bk:money"
+										unitRef="#halbgrosch" quantity="50">L gr.</measure></seg><lb/>
+								<seg ana="bk:entry">Ihnath et Costuk <measure ana="bk:money"
+										unitRef="#halbgrosch" quantity="50">L
+								gr.</measure></seg><lb/></p>
+						</div>
 					</div>
 				</div>
 				<div>
 					<head><placeName ref="#sepultura_judeorum" ana="bk:account" rend="bold">Judei de
-							sepultura sua ortu</placeName>Judei de sepultura sua ortu <date>ad
-							Michaelis</date> ½ sxg. astricti sunt dare singulis annis.</head>
+							sepultura sua ortu</placeName>
+						<date>ad Michaelis</date> ½ sxg. astricti sunt dare singulis annis.</head>
 					<p><seg ana="bk:entry">Solverunt<measure ana="bk:money" unitRef="#schok"
 								quantity="0.5"/>.</seg></p>
 				</div>
@@ -2307,50 +2408,77 @@
 					<note>[puste]</note>
 				</div>
 				<div>
-					<head><placeName ref="#holowsko" ana="bk:account" rend="bold"
-							>Holowsko</placeName>Holowsko villa</head>
+					<head><placeName ref="#holowsko" ana="bk:account" rend="bold">Holowsko
+							villa</placeName></head>
 					<note>[puste]</note>
 				</div>
 				<div>
 					<head>De <placeName ref="#corrigiarii" ana="bk:account" rend="bold">laboratorio
-							corrigatorium</placeName><date>ad <del>Michaelis festum</del>
-							Agnetis</date>.</head>
-					<p><seg ana="bk:entry">Johannes Skorczik <measure ana="bk:money"
-								unitRef="#grosch" quantity="20">XX gr.</measure> dedit.</seg><lb/>
-						<seg ana="bk:entry">Andris <measure ana="bk:money" unitRef="#grosch"
-								quantity="20">XX gr.</measure> dedit.</seg><lb/>
-						<seg ana="bk:entry">Jacobus <measure ana="bk:money" unitRef="#grosch"
-								quantity="20">XX gr.</measure> dedit.</seg><lb/>
-						<seg ana="bk:entry">Stanislaus Sobyegon <measure ana="bk:money"
-								unitRef="#grosch" quantity="20">XX gr.</measure> dedit.</seg><lb/>
-						<seg ana="bk:entry">Mathias <measure ana="bk:money" unitRef="#grosch"
-								quantity="20">XX gr.</measure> dedit.</seg><lb/>
-						<seg ana="bk:entry">Nicolaus Lassek <measure ana="bk:money"
-								unitRef="#grosch" quantity="20">XX gr.</measure>
-							dedit.</seg><lb/><seg ana="bk:entry"> Andris <del>s</del> rimer <measure
-								ana="bk:money" unitRef="#grosch" quantity="20">XX gr.</measure>
-							dedit.</seg><lb/>
-						<seg><del>Michalke</del></seg><lb/>
-						<seg ana="bk:entry"><add>quatuor solverunt<measure ana="bk:money"
+							corrigatorium</placeName>
+						<date>ad<del> Michaelis festum</del> Agnetis</date>.</head>
+					<table>
+						<row ana="bk:entry">
+							<cell>Johannes Skorczik </cell>
+							<cell><measure ana="bk:money" unitRef="#grosch" quantity="20">XX
+									gr.</measure> dedit</cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Andris </cell>
+							<cell><measure ana="bk:money" unitRef="#grosch" quantity="20">XX
+									gr.</measure> dedit</cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Jacobus </cell>
+							<cell><measure ana="bk:money" unitRef="#grosch" quantity="20">XX
+									gr.</measure> dedit</cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Stanislaus Sobyegon </cell>
+							<cell><measure ana="bk:money" unitRef="#grosch" quantity="20">XX
+									gr.</measure> dedit</cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Mathias </cell>
+							<cell><measure ana="bk:money" unitRef="#grosch" quantity="20">XX
+									gr.</measure> dedit</cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Nicolaus Lassek</cell>
+							<cell><measure ana="bk:money" unitRef="#grosch" quantity="20">XX
+									gr.</measure> dedit</cell>
+						</row>
+						<row ana="bk:entry">
+							<cell>Andris <del>s</del> rimer </cell>
+							<cell><measure ana="bk:money" unitRef="#grosch" quantity="20">XX
+									gr.</measure> dedit</cell>
+						</row>
+						<row>
+							<cell><del>Michalke</del></cell>
+							<cell/>
+						</row>
+					</table>
+					<p><seg ana="bk:entry"><add>quatuor solverunt<measure ana="bk:money"
 									unitRef="#grosch" quantity="80"
 						/><date>1482</date>.</add></seg></p>
 				</div>
 				<div>
 					<head><placeName ref="#fortat" ana="bk:account" rend="bold">Fortat
 							Armenus</placeName></head>
-					<p><seg ana="bk:entry">a turri <measure ana="bk:money" unitRef="#firdung"
-								quantity="1">frt.</measure><date>ad Michaelis</date>.</seg></p>
+					<p><seg>a turri frt.<date>ad Michaelis</date>.</seg></p>
 				</div>
 				<div>
 					<p>Item dominus Ebrek tenetur accomodatas peccunias II ½ mrc.</p>
 				</div>
 				<div>
-					<p><date>Anno Domini millesimo CCCC octuagesimo primo</date> Hannuswalach
-						arendavit celarium sub pretorio <date>a festo s. Agnetis</date> usque
-							<date>ad diem festi s. Agnetis per annum</date> pro III mrc. per ipsum
-						dominis consulibus solvendis. Solvit.</p>
+					<p><seg ana="bk:entry"><date>Anno Domini millesimo CCCC octuagesimo primo</date>
+							Hannuswalach arendavit <placeName ana="bk:account" ref="#celarium"
+								>celarium sub pretorio</placeName>
+							<date>a festo s. Agnetis</date> usque <date>ad diem festi s. Agnetis per
+								annum</date> pro <measure ana="bk:money" unitRef="#mark"
+								quantity="3">III mrc.</measure> per ipsum dominis consulibus
+							solvendis. Solvit.</seg></p>
 				</div>
-			</div>
+			
 			<div>
 				<pb n="405"/>
 				<head><name ref="#communia_distributa" ana="bk:account" rend="bold">Distributa
@@ -2460,8 +2588,8 @@
 							>laquearis</measure> et <measure ana="bk:commodity"
 							commodity="bau_tegulum">tegulis</measure> et <measure ana="bk:commodity"
 							commodity="alia">aliis</measure>
-						<measure ana="bk:money" unitRef="#grosch" quantity="110">I<hi
-								rend="supercript">C</hi> et X gr.</measure></seg>
+						<measure ana="bk:money" unitRef="#grosch" quantity="110">I <hi
+								rend="superscript">C</hi> et X gr.</measure></seg>
 				</p>
 				<pb n="406"/>
 				<p><seg ana="bk:entry"> Johanni carpentario <measure ana="bk:commodity"
