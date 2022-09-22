@@ -1564,7 +1564,7 @@
 							<nameLink>de</nameLink> <surname> <placeName ref="#geo_Soissons"
 							>Soissons</placeName> </surname> </persName>
 					</person>
-					<person xml:id="P04" ana="bk:to bk:accountHolder">
+					<person xml:id="P04" ana="bk:to depcha:accountHolder">
 						<persName key="Philippe IV &apos;le Bel&apos;, roi de France" type="reg">
 							<forename>Philippe</forename> <genName>IV</genName> <addName>le
 							Bel</addName> <nameLink>de</nameLink> <placeName>France</placeName> </persName>
@@ -2206,10 +2206,10 @@
 					<rs ref="#P04" type="person"> <roleName ref="#P04" role="king" type="office">roy
 					nostre<lb/> sires</roleName> </rs> pour la chevalerie <persName ref="#L10">
 					<roleName ref="#L10" role="king" type="office">Le Roy<lb/> de <placeName
-					ref="#geo_Navarre">Navarre</placeName> </roleName> </persName> <rs ref="#L10"
+					ref="#geo_Navarre" ana="bk:where">Navarre</placeName> </roleName> </persName> <rs ref="#L10"
 					>son ainz ne filz</rs> assise en la meson <lb/> <persName ref="#EB01">
 					<forename>Estienne</forename> <surname>barbete<ptr target="#note1"
-					type="footnote"/> </surname> </persName> en <placeName ref="topo_Place_de_Grève"
+					type="footnote"/> </surname> </persName> en <placeName ref="topo_Place_de_Grève" ana="bk:where"
 					>greve</placeName>. par <persName ref="#JB01"> <forename>Jehan</forename>
 					<surname>barbete</surname> </persName>.<lb/> <persName ref="#JB02">
 					<forename>Jacques</forename> <surname>bourdon</surname> </persName>. <persName
@@ -2221,11 +2221,11 @@
 					<surname> <roleName ref="#VP01" role="poissonnier" type="occupation"
 					>poisson<ex>n</ex>ier de mer</roleName> </surname> </persName>. <persName
 					ref="#JM01"> <forename>Jehan</forename> <nameLink>de</nameLink> <surname>
-					<placeName ref="#geo_Montreuil,_Seine-Saint-Denis">monterueil</placeName>
+					<placeName ref="#geo_Montreuil,_Seine-Saint-Denis" ana="bk:where">monterueil</placeName>
 					</surname> </persName> <roleName ref="#JM01" role="tisserand" type="occupation">
 					tesser<lb break="no"/>ant<ptr target="#note3" type="footnote"/> </roleName>.
 					<persName ref="#TN01"> <forename>Thomas</forename> <nameLink>de</nameLink>
-					<surname> <placeName ref="#geo_Noisy">Noisy</placeName> </surname> </persName>
+					<surname> <placeName ref="#geo_Noisy" ana="bk:where">Noisy</placeName> </surname> </persName>
 					<roleName ref="#TN01" role="vinetier" type="occupation"> vinetier </roleName>.
 					<persName ref="#GG01"> <forename>Gerart</forename> <surname>Go<lb break="no"
 					/>defroy</surname> </persName> <roleName ref="#GG01" role="épicier"
@@ -2236,7 +2236,7 @@
 					<surname>saint benoit</surname> </persName> <roleName ref="#SSB01"
 					role="drapier" type="occupation"> drapier </roleName>. <persName ref="#GT01">
 					<forename>Guill<ex>aum</ex>e</forename> <nameLink>de</nameLink> <surname>
-					<placeName ref="#geo_Trie">trie<ptr target="#note4" type="footnote"/>
+					<placeName ref="#geo_Trie">trie<ptr target="#note4" type="footnote" ana="bk:where"/>
 					</placeName> </surname> </persName>. <roleName ref="#GT01" role="pelletier"
 					type="occupation"> pelletier </roleName>.<lb/> <persName ref="#ST01">
 					<forename>Symon</forename> <surname>tybert</surname> </persName> <roleName
@@ -2246,7 +2246,7 @@
 					<nameLink>de</nameLink> <surname>chatou</surname> </persName> <roleName
 					ref="#SC01" role="mercier" type="occupation"> mercier </roleName>. <persName
 					ref="#RL01"> <forename>Robert</forename> <nameLink>de</nameLink> <surname>
-					<placeName ref="#geo_Linay">Linays</placeName> </surname> </persName> <roleName
+					<placeName ref="#geo_Linay" ana="bk:where">Linays</placeName> </surname> </persName> <roleName
 					ref="#RL01" role="courroier" type="occupation"> courraier </roleName>.<lb/>
 					<persName ref="#EL01"> <forename>Evroin</forename> <surname>ligier</surname>
 					</persName> <roleName ref="#EL01" role="talemelier" type="occupation"> talmelier
@@ -2265,8 +2265,8 @@
 					<div type="street">
 						<head xml:id="head_id4_qbh_ghb">si com<ex>m</ex>ance de la <rs
 							ref="#street_Rue_St-Honoré #streetSeg_Rue_St-Honoré_dehors"> <placeName
-							ref="#topo_Porte_St-Honoré">porte saint honore</placeName> de hors le
-							mur jusques aus <placeName ref="#bldg_Hôpital_Quinze-Vingts">a<g
+							ref="#topo_Porte_St-Honoré" ana="bk:where">porte saint honore</placeName> de hors le
+							mur jusques aus <placeName ref="#bldg_Hôpital_Quinze-Vingts" ana="bk:where">a<g
 							type="W">vu</g>gles</placeName> </rs>.</head>
 						<lb/>
 						<list type="payers">
@@ -2280,7 +2280,7 @@
 							<lb/>
 							<item ana="bk:entry" xml:id="item_mc5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#RF01"> <forename>Robert</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Fresviau"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Fresviau" ana="bk:where"
 								>fresviau</placeName> </surname> </persName> <roleName ref="#RF01"
 								role="regratier" type="occupation"> regratier </roleName> </seg>
 								<seg type="payment"> <measure ana="bk:money bk:tax" quantity="18"
@@ -2323,21 +2323,21 @@
 							<lb/>
 							<item ana="bk:entry" xml:id="item_sc5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#GC01"> <forename>Geffroy</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Champeaux"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Champeaux" ana="bk:where"
 								>champiaus</placeName> </surname> </persName>. </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="24" unit="sous"
 								>xxiiii.s. </measure> </seg> <seg ana="bk:status">p.</seg> </item>
 							<lb/>
 							<item ana="bk:entry" xml:id="item_tc5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JC02"> <forename>Jehan</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Chaumont"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Chaumont" ana="bk:where"
 								>chaumont</placeName> </surname> </persName>. </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="9" unit="sous"
 								>ix.s</measure> </seg> </item>
 							<lb/>
 							<item ana="bk:entry" xml:id="item_uc5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#PVN01"> <forename>Pierre</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Ville_Neuve"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Ville_Neuve" ana="bk:where"
 								>ville nueve</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="30" unit="sous"
 								>xxx. s.</measure> </seg> <seg ana="bk:status"> p</seg> </item>
@@ -2351,7 +2351,7 @@
 							<lb/>
 							<item ana="bk:entry" xml:id="item_wc5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#GSH01"> <forename>Guillaume</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_St-Honore"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_St-Honore" ana="bk:where"
 								>saint honore</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="18" unit="deniers"
 								>xviii.d.</measure> </seg> <seg ana="bk:status"> p</seg> </item>
@@ -2364,7 +2364,7 @@
 							<lb/>
 							<item ana="bk:entry" xml:id="item_yc5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#PR01"> <forename>Phelippe</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Reims"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Reims" ana="bk:where"
 								>Reins</placeName> </surname> </persName>. <roleName ref="#PR01"
 								role="chandelier" type="occupation"> chandelier </roleName>. </seg>
 								<seg type="payment"> <measure ana="bk:money bk:tax" quantity="6"
@@ -2373,7 +2373,7 @@
 							<item ana="bk:entry" xml:id="item_zc5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#GT02">
 								<forename>Guill<ex>aum</ex>e</forename> <nameLink>du</nameLink>
-								<surname> <placeName ref="#geo_Til">tilg</placeName> </surname>
+								<surname> <placeName ref="#geo_Til" ana="bk:where">tilg</placeName> </surname>
 								</persName> <roleName ref="#GT02" role="tailleur de pierre"
 								type="occupation"> taillieur de pierre </roleName>. </seg> <seg
 								type="payment"> <measureGrp> <measure ana="bk:money bk:tax" quantity="4"
@@ -2452,7 +2452,7 @@
 							<lb/>
 							<item ana="bk:entry" xml:id="item_jd5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#HB01"> <forename>Hernon</forename>
-								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Bretagne"
+								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Bretagne" ana="bk:where"
 								>breton</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measureGrp> <measure ana="bk:money bk:tax" quantity="7"
 								unit="sous">vii.s.</measure> <measure ana="bk:money bk:tax" quantity="6"
@@ -2484,7 +2484,7 @@
 							<item ana="bk:entry" xml:id="item_nd5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#RPR01"> <forename>Robert</forename>
 								<nameLink>du</nameLink> <surname> <placeName
-								ref="#geo_Pont_la_Reyne">pont la rayne</placeName> </surname>
+								ref="#geo_Pont_la_Reyne" ana="bk:where">pont la rayne</placeName> </surname>
 								</persName> </seg> <seg type="payment"> <measure ana="bk:money bk:tax"
 								quantity="9" unit="livres">ix. lb.</measure> </seg> <seg
 								ana="bk:status"> p.</seg> </item>
@@ -2501,7 +2501,7 @@
 							<lb/>
 							<item ana="bk:entry" xml:id="item_pd5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JVN01"> <forename>Jehan</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Ville_Neuve"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Ville_Neuve" ana="bk:where"
 								>ville nueve</placeName> </surname> </persName> <roleName
 								ref="#JVN01" role="maître des aveugles" type="occupation"> mestre
 								des a<g type="W">vu</g>egles </roleName> <g type="tyronian_et"
@@ -2526,8 +2526,8 @@
 					<div type="street">
 						<head xml:id="head_jd4_qbh_ghb"> <g ref="#2E3F"/> <rs
 							ref="#street_Quai_de_Seine_du_Louvre">Des <placeName
-							ref="#topo_Tuileries">tuilleries</placeName> jusques au <placeName
-							ref="#bldg_Louvre">louvre</placeName> </rs>.</head>
+							ref="#topo_Tuileries" ana="bk:where">tuilleries</placeName> jusques au <placeName
+							ref="#bldg_Louvre" ana="bk:where">louvre</placeName> </rs>.</head>
 						<lb/>
 						<list type="payers">
 							<item ana="bk:entry" xml:id="item_rd5_2zg_ghb"> <seg type="entry">
@@ -2551,7 +2551,7 @@
 							<item ana="bk:entry" xml:id="item_td5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#PB02"> <forename>Pierre</forename>
 								<nameLink>de</nameLink> <surname> <placeName cert="medium"
-								ref="#geo_Bonneuil_sur_Marne">bonueil</placeName> </surname>
+								ref="#geo_Bonneuil_sur_Marne" ana="bk:where">bonueil</placeName> </surname>
 								</persName> </seg> <seg type="payment"> <measureGrp> <measure
 								ana="bk:money bk:tax" quantity="7" unit="livres">vii.lb.</measure> <measure
 								ana="bk:money bk:tax" quantity="10" unit="sous">x.s.</measure>
@@ -2584,7 +2584,7 @@
 					<div type="street">
 						<head xml:id="head_kd4_qbh_ghb"> <g ref="#2E3F"/> <rs
 							ref="#street_Rue_Froit_Mantel #streetSeg_Rue_Froit_Mantel_E">Froit
-							mantel le renc devers le <placeName ref="#bldg_Louvre"
+							mantel le renc devers le <placeName ref="#bldg_Louvre" ana="bk:where"
 							>louvre</placeName> </rs>.</head>
 						<list type="payers">
 							<item ana="bk:entry" xml:id="item_xd5_2zg_ghb"> <seg type="entry">
@@ -2607,14 +2607,14 @@
 							<item ana="bk:entry" xml:id="item_zd5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#AD01"> <forename>Anesot</forename>
 								<nameLink>de</nameLink> <surname> <placeName
-								ref="#geo_Dammartin-en-Goële">danmart</placeName> </surname>
+								ref="#geo_Dammartin-en-Goële" ana="bk:where">danmart</placeName> </surname>
 								</persName> </seg> <seg type="payment"> <measure ana="bk:money bk:tax"
 								quantity="18" unit="deniers">xviii.d </measure> </seg> <seg
 								ana="bk:status">p.</seg> </item>
 							<lb/>
 							<item ana="bk:entry" xml:id="item_a25_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JB04"> <forename>Jehan</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Biaumont"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Biaumont" ana="bk:where"
 								>biaumont</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="9" unit="sous"
 								>ix.s </measure> </seg> <seg ana="bk:status">p.</seg> </item>
@@ -2629,7 +2629,7 @@
 							<lb/>
 							<item ana="bk:entry" xml:id="item_c25_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#LG01"> <forename>Lorenz</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Guoy"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Guoy" ana="bk:where"
 								>gouy</placeName> </surname> </persName>. </seg> <seg type="payment"
 								> <measure ana="bk:money bk:tax" quantity="27" unit="deniers">xxvii.d
 								</measure> </seg> </item>
@@ -2688,7 +2688,7 @@
 								<surname>becaire</surname> </persName> <roleName ref="#HB02"
 								role="cuisinier" type="occupation">queu</roleName> <rs ref="#MB03"
 								type="person"> <roleName ref="#MB03" role="queen" type="office">la
-								rayne de <placeName ref="#geo_Navarre">navarre</placeName>
+								rayne de <placeName ref="#geo_Navarre" ana="bk:where">navarre</placeName>
 								</roleName> </rs> </seg> <seg type="payment"> <measure
 								ana="bk:money bk:tax" quantity="9" unit="livres">ix.lb.</measure> </seg> </item>
 							<lb/>
@@ -2712,7 +2712,7 @@
 								<nameLink>Le</nameLink> <roleName ref="#ANON001" role="concierge"
 								type="occupation">concierge</roleName> </rs> a <rs ref="#R05"
 								type="person"> <roleName ref="#R05" role="count" type="office">Conte
-								de <placeName ref="#geo_Dreus">dreus</placeName> </roleName> </rs>.
+								de <placeName ref="#geo_Dreus" ana="bk:where">dreus</placeName> </roleName> </rs>.
 								</seg> <seg type="payment"> <measure ana="bk:money bk:tax" quantity="18"
 								unit="deniers">xviii.d</measure> </seg> <seg ana="bk:status">
 								p.</seg> </item>
@@ -2732,7 +2732,7 @@
 					<div type="street">
 						<head xml:id="head_md4_qbh_ghb"> <g ref="#2E3F"/> <rs
 							ref="#street_Rue_Biauvoir #streetSeg_Rue_Biauvoir_S">La rue de
-							biauveoir. le renc dev<ex>er</ex>s le <placeName ref="#bldg_Louvre"
+							biauveoir. le renc dev<ex>er</ex>s le <placeName ref="#bldg_Louvre" ana="bk:where"
 							>louvre</placeName> </rs>.</head>
 						<list type="payers">
 							<item ana="bk:entry" xml:id="item_n25_2zg_ghb"> <seg type="entry">
@@ -2824,7 +2824,7 @@
 								chan[d..]</unclear> </note> </item>
 							<item ana="bk:entry" xml:id="item_x25_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#RE01"> <forename>Robert</forename>
-								<nameLink>l</nameLink> <surname> <placeName ref="#geo_Scotland"
+								<nameLink>l</nameLink> <surname> <placeName ref="#geo_Scotland" ana="bk:where"
 								>escot</placeName> </surname> </persName> <roleName ref="#RE01"
 								role="pelletier" type="occupation"> pelletier </roleName> </seg>
 								<seg type="payment"> <measure ana="bk:money bk:tax" quantity="6"
@@ -2880,7 +2880,7 @@
 								ana="bk:status"> p</seg> </item>
 							<item ana="bk:entry" xml:id="item_ef5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#CP01"> <forename>Colin</forename>
-								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Picardie"
+								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Picardie" ana="bk:where"
 								>picart</placeName> </surname> </persName>.</seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="9" unit="livres"
 								>.ix.lb</measure> </seg> <seg ana="bk:status"> p</seg> </item>
@@ -2949,7 +2949,7 @@
 								</seg> </item>
 							<item ana="bk:entry" xml:id="item_lf5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#HB03"> <forename>Hervi</forename>
-								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Bretaigne"
+								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Bretaigne" ana="bk:where"
 								>breton</placeName> </surname> </persName> dit <persName ref="#HB03"
 								> <addName>bon repos</addName> </persName> <g type="tyronian_et"
 								>et</g> <rs ana="bk:from" ref="#ANON007" subtype="anon_sing"
@@ -3006,7 +3006,7 @@
 								p</seg> </item>
 							<item ana="bk:entry" xml:id="item_qf5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#PP03"> <forename>Pierre</forename>
-								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Picardie"
+								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Picardie" ana="bk:where"
 								>picart</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="6" unit="livres"
 								>vi.lb.</measure> </seg> <seg ana="bk:status"> p</seg> </item>
@@ -3068,14 +3068,14 @@
 								>vi. lb</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_zf5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#RN02"> <forename>Robert</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Nogent"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Nogent" ana="bk:where"
 								>nogent</placeName> </surname> </persName> <roleName ref="#RN02"
 								role="sergent du guet" type="occupation"> sergient du guiet
 								</roleName>.</seg> <seg type="payment"> <measure ana="bk:money bk:tax"
 								quantity="6" unit="sous">vi.s</measure> </seg> </item>
 							<item ana="bk:entry" xml:id="item_ag5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JM03"> <forename>Jehan</forename>
-								<nameLink>du</nameLink> <surname> <placeName ref="#geo_Mesnil"
+								<nameLink>du</nameLink> <surname> <placeName ref="#geo_Mesnil" ana="bk:where"
 								>mesnil</placeName> </surname> </persName> <roleName ref="#JM03"
 								role="hôtelier" type="occupation"> hostelier </roleName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="60" unit="sous"
@@ -3089,14 +3089,14 @@
 								<seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_cg5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#TL01"> <forename>Thomas</forename>
-								<nameLink>l</nameLink> <surname> <placeName ref="#geo_Angleterre"
+								<nameLink>l</nameLink> <surname> <placeName ref="#geo_Angleterre" ana="bk:where"
 								>anglois</placeName> </surname> </persName> <roleName ref="#TL01"
 								role="talemelier" type="occupation"> tallemelier </roleName> </seg>
 								<seg type="payment"> <measure ana="bk:money bk:tax" quantity="15"
 								unit="sous">xv.s</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_dg5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JP03"> <forename>Jehan</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Pontoise"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Pontoise" ana="bk:where"
 								>pontaise</placeName> </surname> </persName> <roleName ref="#JP03"
 								role="serrurier" type="occupation"> serreurier </roleName> </seg>
 								<seg type="payment"> <measure ana="bk:money bk:tax" quantity="3"
@@ -3132,7 +3132,7 @@
 							<item ana="bk:entry" xml:id="item_hg5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JT01"> <roleName>Dame</roleName>
 								<forename>Jehanne</forename> <nameLink>de</nameLink> <surname>
-								<placeName ref="#geo_Termes">t<ex>er</ex>mes</placeName> </surname>
+								<placeName ref="#geo_Termes" ana="bk:where">t<ex>er</ex>mes</placeName> </surname>
 								</persName> </seg> <seg type="payment"> <measure ana="bk:money bk:tax"
 								quantity="45" unit="sous">xlv.s</measure> </seg> <seg
 								ana="bk:status"> p</seg> </item>
@@ -3152,7 +3152,7 @@
 								ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_kg5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#HB04"> <forename>Hervi</forename>
-								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Bretaigne"
+								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Bretaigne" ana="bk:where"
 								>breton</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="15" unit="sous"
 								>xv.s</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
@@ -3172,7 +3172,7 @@
 								ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_ng5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#SC02"> <forename>Symonet</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Craonville"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Craonville" ana="bk:where"
 								>craoville<ptr target="#note7" type="footnote"/> </placeName>
 								</surname> </persName> </seg> <seg type="payment"> <measure
 								ana="bk:money bk:tax" quantity="18" unit="deniers">xviii.d</measure> </seg>
@@ -3186,7 +3186,7 @@
 								p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_pg5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#RC02"> <forename>Richart</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Cornwall"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Cornwall" ana="bk:where"
 								>corn<seg rend="superscript">o</seg>aille</placeName> </surname>
 								</persName> <roleName ref="#RC02" role="couturier" type="occupation"
 								> costurier </roleName> </seg> <seg type="payment"> <measureGrp>
@@ -3195,7 +3195,7 @@
 								</measureGrp> </seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_qg5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#RA01"> <forename>Renaut</forename>
-								<nameLink>l</nameLink> <surname> <placeName ref="#geo_Angleterre"
+								<nameLink>l</nameLink> <surname> <placeName ref="#geo_Angleterre" ana="bk:where"
 								>anglois</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="6" unit="sous">vi.
 								s. </measure> </seg> <seg ana="bk:status">p.</seg> </item>
@@ -3224,7 +3224,7 @@
 							<item xml:id="item_ug5_2zg_ghb"> <note place="inline">.f. </note> <seg
 								type="entry"> <del rend="strikethrough"> <persName ref="#JT02">
 								<forename>Jehan</forename> <nameLink>de</nameLink> <surname>
-								<placeName ref="#geo_Trocy_en_Multien">troci</placeName> </surname>
+								<placeName ref="#geo_Trocy_en_Multien" ana="bk:where">troci</placeName> </surname>
 								</persName> <roleName ref="#JT02" role="monnayeur" type="occupation"
 								> monoier </roleName> <g type="tyronian_et">et</g> <roleName
 								ref="#JT02" role="tavernier" type="occupation"> tav<ex>er</ex>nier
@@ -3232,7 +3232,7 @@
 							<item ana="bk:entry" xml:id="item_vg5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#G01"> <forename>Guillaume</forename>
 								</persName> <roleName ref="#G01" role="paumier du four gauquelin"
-								type="occupation"> paumier du <placeName ref="#topo_Four_Gauquelin"
+								type="occupation"> paumier du <placeName ref="#topo_Four_Gauquelin" ana="bk:where"
 								>four gauq<ex>ue</ex>lin</placeName> <ptr target="#note8"
 								type="footnote"/> </roleName> </seg> <seg type="payment">
 								<measureGrp>.<measure ana="bk:money bk:tax" quantity="7" unit="livres"
@@ -3289,7 +3289,7 @@
 							<item ana="bk:entry" xml:id="item_dh5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#F01"> <forename>Frederic</forename>
 								</persName> filz a <name ref="#G01">celui dou <placeName
-								ref="#topo_Four_Gauquelin">four gauq<ex>ue</ex>lin</placeName>
+								ref="#topo_Four_Gauquelin" ana="bk:where">four gauq<ex>ue</ex>lin</placeName>
 								</name> </seg> <seg type="payment"> <measure ana="bk:money bk:tax"
 								quantity="30" unit="sous">.xxx.s</measure> </seg> </item>
 							<item ana="bk:entry" xml:id="item_eh5_2zg_ghb"> <seg type="entry">
@@ -3335,7 +3335,7 @@
 								>xxii.d</measure> </seg> <seg ana="bk:status"> p</seg> </item>
 							<item ana="bk:entry" xml:id="item_jh5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#SN01"> <forename>Symon</forename>
-								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Normandie"
+								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Normandie" ana="bk:where"
 								>normant</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="12" unit="sous"
 								>xii.s</measure> </seg> <seg ana="bk:status"> p</seg> </item>
@@ -3350,14 +3350,14 @@
 								ana="bk:from" ref="#ANON011" subtype="anon_sing" type="person">La
 								fame</rs> feu <persName ref="#GB02">
 								<forename>Guill<ex>aum</ex>e</forename> <nameLink>de</nameLink>
-								<surname> <placeName ref="#geo_Beaufou">biaufou</placeName>
+								<surname> <placeName ref="#geo_Beaufou" ana="bk:where">biaufou</placeName>
 								</surname> </persName> </seg> <seg type="payment"> <measure
 								ana="bk:money bk:tax" quantity="60" unit="sous">lx.s</measure> </seg> <note
 								place="inline">non <unclear reason="illegible"
 								>[...]<lb/>[...]</unclear> </note> </item>
 							<item ana="bk:entry" xml:id="item_mh5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#GB03"> <forename>Geffroy</forename>
-								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Bretaigne"
+								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Bretaigne" ana="bk:where"
 								>breton</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measureGrp> <measure ana="bk:money bk:tax" quantity="7"
 								unit="sous">vii s</measure>.<measure ana="bk:money bk:tax" quantity="6"
@@ -3433,7 +3433,7 @@
 						<list type="payers">
 							<item ana="bk:entry" xml:id="item_wh5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JL04"> <forename>Jehan</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Laon"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Laon" ana="bk:where"
 								>Laon</placeName> </surname> </persName> </seg> <seg type="payment">
 								<measure ana="bk:money bk:tax" quantity="15" unit="sous">xv.s</measure>
 								</seg> <seg ana="bk:status"> p</seg> </item>
@@ -3445,7 +3445,7 @@
 								quantity="3" unit="sous">iii.s</measure> </seg> </item>
 							<item ana="bk:entry" xml:id="item_yh5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#DP01"> <forename>Durant</forename>
-								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Picardie"
+								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Picardie" ana="bk:where"
 								>picart</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="18" unit="sous"
 								>xviii.s</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
@@ -3457,7 +3457,7 @@
 								</seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_a35_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JB08"> <forename>Jehan</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Baubigny"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Baubigny" ana="bk:where"
 								>baubigny</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="9" unit="livres"
 								>ix.lb</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
@@ -3469,7 +3469,7 @@
 								>xviii.d</measure> </seg> </item>
 							<item ana="bk:entry" xml:id="item_c35_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#SSG01"> <forename>Sanson</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_St-Geneviève"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_St-Geneviève" ana="bk:where"
 								>Sainte Genevieve</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="22" unit="deniers"
 								>xxii.d.</measure> </seg> <seg ana="bk:status"> p</seg> </item>
@@ -3496,13 +3496,13 @@
 								ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_g35_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#EC01"> <forename>Estienne</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Cormeilles"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Cormeilles" ana="bk:where"
 								>Cormeilles</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="18" unit="deniers"
 								>xviii.d.</measure> </seg> </item>
 							<item ana="bk:entry" xml:id="item_h35_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#OS01"> <forename>Oudin</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Soissons"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Soissons" ana="bk:where"
 								>Soissons</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measureGrp>.<measure ana="bk:money bk:tax" quantity="2"
 								unit="sous">ii.s</measure>.<measure ana="bk:money bk:tax" quantity="6"
@@ -3511,25 +3511,25 @@
 							<item ana="bk:entry" xml:id="item_i35_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#E01"> <forename>Edeline</forename>
 								</persName> fame <persName ref="#JP05"> <forename>Jehan</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Poigny"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Poigny" ana="bk:where"
 								>Poigny</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="6" unit="sous"
 								>vi.s</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_j35_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JV02"> <forename>Jehan</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Vanves"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Vanves" ana="bk:where"
 								>Vauves</placeName> </surname> </persName> <ptr target="#note9"/>
 								</seg> <seg type="payment"> <measure ana="bk:money bk:tax" quantity="30"
 								unit="livres">xxx.lb.</measure> </seg> </item>
 							<item ana="bk:entry" xml:id="item_k35_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#PV01"> <forename>Pierre</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Vanves"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Vanves" ana="bk:where"
 								>Vauves</placeName> </surname> </persName> son filz</seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="20" unit="livres"
 								>xx.lb</measure> </seg> </item>
 							<item ana="bk:entry" xml:id="item_l35_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#AB01"> <forename>Aalis</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Baubigny"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Baubigny" ana="bk:where"
 								>Baubigny</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measureGrp> <measure ana="bk:money bk:tax" quantity="4"
 								unit="livres">iiii.lb</measure>.<measure ana="bk:money bk:tax"
@@ -3538,13 +3538,13 @@
 							<item ana="bk:entry" xml:id="item_m35_2zg_ghb"> <seg type="entry"> <rs
 								ana="bk:from" ref="#AGRP001" subtype="anon_group" type="person">Les
 								enfans</rs> <persName ref="#JT04"> <forename>Jehan</forename>
-								<nameLink>du</nameLink> <surname> <placeName ref="#geo_Til"
+								<nameLink>du</nameLink> <surname> <placeName ref="#geo_Til" ana="bk:where"
 								>til</placeName> </surname> </persName>. </seg> <seg type="payment">
 								<measure ana="bk:money bk:tax" quantity="30" unit="sous">xxx.s</measure>
 								</seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_n35_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JA01"> <forename>Jehan</forename>
-								<nameLink>L</nameLink> <surname> <placeName ref="#geo_Angleterre"
+								<nameLink>L</nameLink> <surname> <placeName ref="#geo_Angleterre" ana="bk:where"
 								>anglois</placeName> </surname> </persName> <roleName ref="#JA01"
 								role="tavernier" type="occupation">tav<ex>er</ex>nier</roleName>
 								</seg> <seg type="payment"> <measureGrp>.<measure ana="bk:money bk:tax"
@@ -3567,7 +3567,7 @@
 								ana="bk:status"> p</seg> </item>
 							<item ana="bk:entry" xml:id="item_p35_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JG02"> <forename>Jehan</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Guilly"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Guilly" ana="bk:where"
 								>guilly</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="18" unit="deniers"
 								>xviii.d</measure> </seg> <seg ana="bk:status"> p</seg> </item>
@@ -3596,7 +3596,7 @@
 								</seg> <seg ana="bk:status"> p</seg> </item>
 							<item ana="bk:entry" xml:id="item_u35_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#TB02"> <forename>Thomas</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Biaufo"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Biaufo" ana="bk:where"
 								>biaufo</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measureGrp> <measure ana="bk:money bk:tax" quantity="4"
 								unit="livres">iiii.lb</measure>.<measure ana="bk:money bk:tax"
@@ -3610,7 +3610,7 @@
 								p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_w35_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#MB01"> <forename>Martin</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Bar_sur_Aube"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Bar_sur_Aube" ana="bk:where"
 								>bar sur aube</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="3" unit="sous"
 								>iii. s</measure> </seg> </item>
@@ -3650,7 +3650,7 @@
 							<item ana="bk:entry" xml:id="item_cj5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#YN01"> <roleName>Dame</roleName>
 								<forename>ysabiau</forename> <nameLink>de</nameLink> <surname>
-								<placeName ref="#geo_Neelle">neelle</placeName> </surname>.
+								<placeName ref="#geo_Neelle" ana="bk:where">neelle</placeName> </surname>.
 								</persName> </seg> <seg type="payment"> <measureGrp> <measure
 								ana="bk:money bk:tax" quantity="4" unit="livres">iiii.lb</measure> <measure
 								ana="bk:money bk:tax" quantity="10" unit="sous">x s</measure> </measureGrp>
@@ -3658,13 +3658,13 @@
 							<item ana="bk:entry" xml:id="item_dj5_2zg_ghb"> <locus n="7"
 								target="#bib_buchon"/> <seg type="entry"> <persName ana="bk:from"
 								ref="#GB04"> <forename>Giles</forename> <nameLink>de</nameLink>
-								<surname> <placeName ref="#geo_Ballay">ballay</placeName> </surname>
+								<surname> <placeName ref="#geo_Ballay" ana="bk:where">ballay</placeName> </surname>
 								</persName> </seg> <seg type="payment"> <measure ana="bk:money bk:tax"
 								quantity="3" unit="sous">iii.s</measure> </seg> </item>
 							<item ana="bk:entry" xml:id="item_ej5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#GB05">
 								<forename>Guill<ex>aum</ex>e</forename> <nameLink>de</nameLink>
-								<surname> <placeName ref="#geo_Bruyères">bruieres</placeName>
+								<surname> <placeName ref="#geo_Bruyères" ana="bk:where">bruieres</placeName>
 								</surname> </persName>. </seg> <seg type="payment"> <measure
 								ana="bk:money bk:tax" quantity="3" unit="sous">iii.s</measure> </seg> <seg
 								ana="bk:status"> p</seg> </item>
@@ -3689,13 +3689,13 @@
 								>iii.s</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_hj5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#ML01"> <forename>Marie</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Lorrez"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Lorrez" ana="bk:where"
 								>lorrez</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="24" unit="sous"
 								>xxiiii.s</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_ij5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#PD01"> <forename>Pierre</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Dammartin"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Dammartin" ana="bk:where"
 								>danmartin</placeName> </surname> </persName> <roleName ref="#PD01"
 								role="cordonnier" type="occupation">corduanier</roleName> </seg>
 								<seg type="payment"> <measure ana="bk:money bk:tax" quantity="30"
@@ -3708,7 +3708,7 @@
 								ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_kj5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#RN03"> <forename>Richart</forename>
-								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Normandie"
+								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Normandie" ana="bk:where"
 								>normant</placeName> </surname> </persName> <roleName ref="#RN03"
 								role="hôtelier" type="occupation">hostelier</roleName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="18" unit="sous"
@@ -3722,7 +3722,7 @@
 								</seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_mj5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#GH02"> <forename>Guillaume</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Haqueville"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Haqueville" ana="bk:where"
 								>haqueville</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="18" unit="sous"
 								>xviii.s</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
@@ -3734,7 +3734,7 @@
 								unit="sous">xviii.s.</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_oj5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#NC01"> <forename>Nicolas</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Chesay"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Chesay" ana="bk:where"
 								>chesay</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="18" unit="sous"
 								>xviii s</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
@@ -3757,7 +3757,7 @@
 							<cb n="C"/>
 							<item ana="bk:entry" xml:id="item_qj5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#MSD01"> <forename>Marie</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Saint-Denis"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Saint-Denis" ana="bk:where"
 								>saint denys</placeName> </surname> </persName> <roleName
 								ref="#MSD01" role="lainier" type="occupation">lainere</roleName>
 								</seg> <seg type="payment"> <measureGrp> <measure ana="bk:money bk:tax"
@@ -3789,7 +3789,7 @@
 								>xviii.d</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_vj5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#OR01"> <forename>Oudin</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Rueil"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Rueil" ana="bk:where"
 								>rueil</placeName> </surname> </persName>. </seg> <seg
 								type="payment"> <measureGrp> <measure ana="bk:money bk:tax" quantity="2"
 								unit="sous">ii.s</measure>.<measure ana="bk:money bk:tax" quantity="6"
@@ -3819,14 +3819,14 @@
 						<list type="payers">
 							<item ana="bk:entry" xml:id="item_yj5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JM06"> <forename>Jaques</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Mante"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Mante" ana="bk:where"
 								>Mante</placeName> </surname> </persName> <roleName ref="#JM06"
 								role="savetier" type="occupation">Cavatier</roleName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="3" unit="sous"
 								>iii.s</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_zj5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#ASJ01"> <forename>Aalis</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_St-Josse"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_St-Josse" ana="bk:where"
 								>saint joce</placeName> </surname> </persName> <g type="tyronian_et"
 								>et</g> <rs ana="bk:from" ref="#ANON012" subtype="anon_sing"
 								type="person">sa co<ex>m</ex>pai<ex>n</ex>gne</rs> </seg> <seg
@@ -3862,14 +3862,14 @@
 								>xv. s</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_ek5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#DL01"> <forename>Drouet</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Laon"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Laon" ana="bk:where"
 								>laon</placeName> </surname> </persName> <roleName ref="#DL01"
 								role="corretier" type="occupation">corretier</roleName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="6" unit="sous"
 								>vi.s</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_fk5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#MD01"> <forename>Marie</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Dreux"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Dreux" ana="bk:where"
 								>dreus</placeName> </surname> </persName> <roleName ref="#MD01"
 								role="hôtelier" type="occupation">hosteliere</roleName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="30" unit="sous"
@@ -3896,7 +3896,7 @@
 								>iii. s</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_ik5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JN01"> <forename>Jehan</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Nantueil"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Nantueil" ana="bk:where"
 								>nantueil</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="3" unit="sous"
 								>iii. s</measure> </seg> <seg ana="bk:status"> p</seg> </item>
@@ -3932,20 +3932,20 @@
 								>iii. s</measure> </seg> <seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_nk5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JR02"> <forename>Jehan</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Rueil"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Rueil" ana="bk:where"
 								>rueil</placeName> </surname> </persName> </seg> <seg type="payment"
 								> <measure ana="bk:money bk:tax" quantity="6" unit="sous">vi. s</measure>
 								</seg> <seg ana="bk:status"> p</seg> </item>
 							<item ana="bk:entry" xml:id="item_ok5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#GQ01">
 								<forename>Guill<ex>aum</ex>e</forename> <nameLink>de</nameLink>
-								<surname> <placeName ref="#geo_Quatremare">quatremares</placeName>
+								<surname> <placeName ref="#geo_Quatremare" ana="bk:where">quatremares</placeName>
 								</surname> </persName> </seg> <seg type="payment"> <measure
 								ana="bk:money bk:tax" quantity="18" unit="deniers">xviii.d</measure> </seg>
 								<seg ana="bk:status"> p</seg> </item>
 							<item ana="bk:entry" xml:id="item_pk5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JF01"> <forename>Jehan</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Fleury"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Fleury" ana="bk:where"
 								>fleuri</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="18" unit="deniers"
 								>xviii.d</measure> </seg> </item>
@@ -3958,13 +3958,13 @@
 								>iii. s</measure> </seg> </item>
 							<item ana="bk:entry" xml:id="item_rk5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JF02"> <forename>Jehan</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Fleury"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Fleury" ana="bk:where"
 								>fleuri</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="18" unit="deniers"
 								>xviii.d</measure> </seg> </item>
 							<item ana="bk:entry" xml:id="item_sk5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#JG05"> <forename>Jehan</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Gentilly"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Gentilly" ana="bk:where"
 								>Gentilli</placeName> </surname> </persName> </seg> <seg
 								type="payment"> <measureGrp> <measure ana="bk:money bk:tax" quantity="2"
 								unit="sous">ii.s</measure>.<measure ana="bk:money bk:tax" quantity="6"
@@ -3973,7 +3973,7 @@
 							<item ana="bk:entry" xml:id="item_tk5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#GN01">
 								<forename>Guill<ex>aum</ex>e</forename> <nameLink>le</nameLink>
-								<surname> <placeName ref="#geo_Normandie">normant</placeName>
+								<surname> <placeName ref="#geo_Normandie" ana="bk:where">normant</placeName>
 								</surname> </persName>. </seg> <seg type="payment"> <measure
 								ana="bk:money bk:tax" quantity="6" unit="sous">vi. s</measure> </seg> <seg
 								ana="bk:status"> p.</seg> </item>
@@ -4004,7 +4004,7 @@
 								ana="bk:status"> p</seg> </item>
 							<item ana="bk:entry" xml:id="item_xk5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#PR02"> <forename>Pierre</forename>
-								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Rueil"
+								<nameLink>de</nameLink> <surname> <placeName ref="#geo_Rueil" ana="bk:where"
 								>rueil</placeName> </surname> </persName>. </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="18" unit="deniers"
 								>xviii.d</measure> </seg> <seg ana="bk:status"> p</seg> </item>
@@ -4049,7 +4049,7 @@
 								<seg ana="bk:status"> p.</seg> </item>
 							<item ana="bk:entry" xml:id="item_cl5_2zg_ghb"> <seg type="entry">
 								<persName ana="bk:from" ref="#SN02"> <forename>Symon</forename>
-								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Normandie"
+								<nameLink>le</nameLink> <surname> <placeName ref="#geo_Normandie" ana="bk:where"
 								>normant</placeName> </surname> </persName>. </seg> <seg
 								type="payment"> <measure ana="bk:money bk:tax" quantity="18" unit="sous"
 								>xviii. s.</measure> </seg> <seg ana="bk:status"> p.</seg> </item>

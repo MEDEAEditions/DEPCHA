@@ -15,28 +15,10 @@
             <ref target="context:depcha.example" type="context">Examples</ref>
          </publicationStmt>
          <sourceDesc>
-            <bibl>This is an exemplary extract of one dataset of the DEPCHA collection. It might differ
-               from the original dataset due to eventual adaptions that should help to understand the possibilities of
-               mapping different contents to the Bookkeeping Ontology.</bibl>
-            <msDesc>
-               <msIdentifier>
-                  <repository>GAMS</repository>
-                  <idno>o:depcha.example.accountholder</idno>
-               </msIdentifier>
-               <msContents>
-                  <msItem>
-                     <docAuthor>Sabrina Strutz</docAuthor>
-                     <docDate>September 2022</docDate>
-                     <title>Example Accountholder</title>
-                     <note>
-                        <p>Adapted extract of the collection <ref target="https://gams.uni-graz.at/context:depcha.rentrechnung">"Rentrechnung 1718"</ref></p>
-                     </note>
-                     <textLang>
-                        <lang>German</lang>
-                     </textLang>
-                  </msItem>
-               </msContents>
-            </msDesc>
+            <bibl>This is an exemplary extract of one dataset of the DEPCHA collection. It might
+               differ from the original dataset due to eventual adaptions that should help to
+               understand the possibilities of mapping different contents to the Bookkeeping
+               Ontology.</bibl>
          </sourceDesc>
       </fileDesc>
       <encodingDesc>
@@ -111,7 +93,7 @@
                </person>
             </listPerson>
             <listOrg ana="depcha:index">
-               <org xml:id="org_1" ana="bk:accountHolder">
+               <org xml:id="org_1" ana="depcha:accountHolder">
                   <orgName>Rentamt des Fürstentums Liechtenstein</orgName>
                </org>
             </listOrg>
@@ -124,8 +106,8 @@
             <div ana="bk:account" corresp="#income">
                <div ana="bk:account" corresp="#customshauptzoller">
                   <note>No. 2</note>
-                  <head> Von dem Haupt Zollner Liechtenstein <name ana="bk:from" ref="#pers_1"
-                        >Thomas Walser</name></head>
+                  <head> Von dem Haupt Zollner Liechtenstein <name ref="#pers_1">Thomas
+                        Walser</name></head>
                   <p ana="bk:entry"> Von <date ana="bk:when" from="1718-10-22" to="1718-11-22">1.
                         und respective 22. Octobris bis 22. Novembris 1718</date>
                      <measure ana="bk:money" quantity="48" unitRef="#fl">48</measure>

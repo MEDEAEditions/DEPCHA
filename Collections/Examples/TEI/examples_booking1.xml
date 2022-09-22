@@ -12,10 +12,10 @@
                 <ref target="context:depcha.example" type="context">Examples</ref>
             </publicationStmt>
             <sourceDesc>
-                <p>This is an exemplary extract of one dataset of the DEPCHA collection. It might
+                <bibl>This is an exemplary extract of one dataset of the DEPCHA collection. It might
                     differ from the original dataset due to eventual adaptions that should help to
                     understand the possibilities of mapping different contents to the Bookkeeping
-                    Ontology.</p>
+                    Ontology.</bibl>
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
@@ -51,7 +51,7 @@
                             <surname type="married">Wheaton</surname>
                         </persName>
                     </person>
-                    <person xml:id="pers_WCDH002" ana="bk:accountHolder">
+                    <person xml:id="pers_WCDH002">
                         <persName>
                             <forename type="first">Laban</forename>
                             <forename type="middle">Morey</forename>
@@ -77,8 +77,7 @@
                                     <expan>debtor</expan>
                                 </choice>
                             </span>
-                            <lb/> To <name ana="bk:to" ref="#account">cash
-                                $20.00 </name>
+                            <lb/> To <name ana="bk:to" ref="#pers_WCDH002">cash</name>
                         </cell>
                         <cell ana="bk:debit">
                             <measure ana="bk:money" quantity="20" unit="dollar">20</measure>

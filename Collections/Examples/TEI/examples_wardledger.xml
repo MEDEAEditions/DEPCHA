@@ -12,59 +12,44 @@
                 <ref target="context:depcha.example" type="context">Examples</ref>
             </publicationStmt>
             <sourceDesc>
-                <bibl>This is an exemplary extract of the above-named dataset of the DEPCHA collection.
-                    It might differ from the original dataset due to eventual adaptions that should
-                    help to understand the possibilities of mapping different contents to the
-                    Bookkeeping Ontology.</bibl>
-                <msDesc>
-                    <msIdentifier>
-                        <idno>S.124.3</idno>
-                    </msIdentifier>
-                    <msContents>
-                        <msItem>
-                            <docAuthor>Thos. W. Ward</docAuthor>
-                            <docDate>June 1934</docDate>
-                            <title>Ledger No. 2</title>
-                            <note>
-                                <p>Accounts of <orgName ana="bk:from" ref="ThosWardLtd">Thos W. Ward
-                                        Ltd</orgName> from <date ana="bk:when" when="1934-06-01"
-                                        >June 1934</date>. </p>
-                            </note>
-                            <textLang>
-                                <lang>English</lang>
-                            </textLang>
-                        </msItem>
-                    </msContents>
-                </msDesc>
-                <listPlace ana="depcha:index">
-                    <place xml:id="barrow">
-                        <placeName>Barrow</placeName>
-                        <location>
-                            <geo decls="#WGS">54.108967 -3.218894</geo>
-                        </location>
-                    </place>
-                    <place xml:id="briton_ferry">
-                        <placeName>Briton Ferry</placeName>
-                        <location>
-                            <geo decls="#WGS">51.632119 -3.824315</geo>
-                        </location>
-                    </place>
-                    <place xml:id="grays">
-                        <placeName>Grays</placeName>
-                        <location>
-                            <geo decls="#WGS">51.478404 0.323015</geo>
-                        </location>
-                    </place>
-                    <!-- ... -->
-                </listPlace>
+                <bibl>This is an exemplary extract of one dataset of the DEPCHA collection. It might
+                    differ from the original dataset due to eventual adaptions that should help to
+                    understand the possibilities of mapping different contents to the Bookkeeping
+                    Ontology.</bibl>     
+            <listPlace ana="depcha:index">
+                <place xml:id="barrow">
+                    <placeName>Barrow</placeName>
+                    <location>
+                        <geo decls="#WGS">54.108967 -3.218894</geo>
+                    </location>
+                </place>
+                <place xml:id="briton_ferry">
+                    <placeName>Briton Ferry</placeName>
+                    <location>
+                        <geo decls="#WGS">51.632119 -3.824315</geo>
+                    </location>
+                </place>
+                <place xml:id="grays">
+                    <placeName>Grays</placeName>
+                    <location>
+                        <geo decls="#WGS">51.478404 0.323015</geo>
+                    </location>
+                </place>
+                <!-- ... -->
+            </listPlace>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <particDesc>
                 <listOrg ana="depcha:index">
                     <org xml:id="LeslieGodwinLd">
                         <orgName>Leslie &amp; Godwin Limited</orgName>
                         <desc>Insurance broker</desc>
                     </org>
                 </listOrg>
-            </sourceDesc>
-        </fileDesc>
+            </particDesc>
+        </profileDesc>
+
         <encodingDesc>
             <listPrefixDef>
                 <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
