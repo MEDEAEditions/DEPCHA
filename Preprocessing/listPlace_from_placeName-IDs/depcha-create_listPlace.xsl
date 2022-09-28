@@ -5,29 +5,9 @@
     <xsl:output method="xml" indent="yes"/>
 
     <xsl:template match="/">
-        <xsl:if test="//t:sourceDesc/t:listPlace">
-            <xsl:message>
-                A listPlace element already exists within the sourceDesc!!!
-            </xsl:message>
-        </xsl:if>
-        <xsl:apply-templates/>
-    </xsl:template>
-
-    <xsl:template match="@* | text()" priority="-1">
-        <xsl:copy-of select="."/>
-    </xsl:template>
-
-    <xsl:template match="*" priority="-1">
-        <xsl:copy>
-            <xsl:apply-templates select="@* | text() | *"/>
-        </xsl:copy>
-    </xsl:template>
-
-    <xsl:template match="t:sourceDesc[not(t:listPlace)]">
-        <xsl:copy>
-            <xsl:apply-templates/>
-            <listPlace xmlns="http://www.tei-c.org/ns/1.0" ana="depcha:index">
-                <xsl:for-each-group select="//t:text//t:placeName[@ref][contains(@ana, 'bk:where')]" group-by="@ref">
+            <listPlace ana="depcha:index">
+                <xsl:comment>Places added from //text//placeName[@bk:when]/@ref</xsl:comment>
+                <xsl:for-each-group select="//t:text//t:placeName[@ref][contains(@ana, 'bk:where')][not(substring-after(@ref, '#') = //t:listPlace//t:place/@xml:id)]" group-by="@ref">
                     <xsl:sort select="current-grouping-key()"/>
                     <place xml:id="{substring-after(current-grouping-key(), '#')}">
                         <xsl:for-each select="distinct-values(current-group())">
@@ -38,7 +18,6 @@
                     </place>
                 </xsl:for-each-group>
             </listPlace>
-        </xsl:copy>
     </xsl:template>
 
 </xsl:stylesheet>
