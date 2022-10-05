@@ -80,8 +80,8 @@
          	<unitDef type="weight" xml:id="schoet" source="https://de.wikipedia.org/wiki/Schett_(Einheit)">
                <label xml:lang="de">Schöt</label>
             </unitDef>
-            <unitDef type="volume" xml:id="Lägl">
-               <label xml:lang="de">Lägl</label>
+            <unitDef type="volume" xml:id="laegel">
+               <label xml:lang="de">Lägel</label>
             </unitDef>
             <unitDef type="volume" xml:id="Urne">
                <label xml:lang="de">Urne</label>
@@ -89,6 +89,7 @@
             <unitDef type="volume" xml:id="Puntze">
                <label xml:lang="de">Puntze</label>
             </unitDef>
+            <!-- es fehlen: #Fass, #Stück, #m -->
          </unitDecl>
          <classDecl>
             <taxonomy ana="depcha:index">
@@ -1108,7 +1109,7 @@
                      ref="#pers_SR006" type="person">lichtnek</name> gerait worden<lb/> Und auch das
                   selben <measure ana="bk:commodity" commodity="Eisen" quantity="3" unitRef="#Pfund"
                      >eisens sind<lb/> 3 pund </measure>zü dem <placeName ana="bk:where"
-                     ref="SchlossKasten">kasten</placeName> chinnen</seg>.<lb/>
+                     ref="#SchlossKasten">kasten</placeName> chinnen</seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR007" type="person">hans Rudel </name>
                   <measure ana="bk:commodity" commodity="Eisen" quantity="2" unitRef="#Pfund">1 pund
                      eisen</measure>kenhardÿ.</seg>
@@ -1139,17 +1140,17 @@
                      >michel under weg</name> geben <measure ana="bk:commodity" commodity="Roggen"
                      quantity="2" unitRef="#Mütt"> 2 mütt<lb/> Roken </measure>die gab der <name
                      ref="#pers_SR071" type="person">parott</name> umb 1 mütt<lb/> arbaid daz kam zw
-                  dem <placeName ana="bk:where" ref="SchlossKasten">kasten</placeName> in der <lb/>
+                  dem <placeName ana="bk:where" ref="#SchlossKasten">kasten</placeName> in der <lb/>
                   fasten <!-- in der fasten? --></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR011" ana="bk:from bk:individual">Jacob
-                     Ehinisner </name>von <placeName ana="bk:where" ref="Lantsch">Lantsch
+                     Ehinisner </name>von <placeName ana="bk:where" ref="#Lantsch">Lantsch
                   </placeName>hat geben <measure ana="bk:commodity" commodity="Weizen" quantity="1"
                      unitRef="#Mütt">1 mut<lb/> waitz</measure> das gab der <name ref="#pers_SR071"
                      type="person">pratt</name> umb <measure ana="bk:money" commodity="currency"
                      quantity="1" unitRef="#Groschen">ainen grhosen</measure><lb/> dem chüne choch aber
                   der waitz kam nit<lb/> her in das <!-- Burg Schlandersberg? -->haus</seg>.<lb/>
                <seg ana="bk:entry">Item so hat der <name ref="#pers_SR012" type="person"
-                     ana="bk:from">maier von<placeName ana="bk:where" ref="Ulten">ulten
+                     ana="bk:from">maier von<placeName ana="bk:where" ref="#Ulten">ulten
                      </placeName></name> geben <measure ana="bk:commodity" commodity="Gerste"
                      quantity="8" unitRef="#Mütt">8 mütt<lb/> gersten</measure> dÿ hat <name
                      ref="#pers_SR071" type="person">paratt</name> in den aker geseert und<lb/> gab
@@ -1163,7 +1164,7 @@
                      <measure ana="bk:commodity" commodity="Gerste" quantity="3" unitRef="#Mütt">3 von
                      gerstpreÿ</measure></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR013" ana="bk:from bk:individual">Michel
-                     won von <placeName ana="bk:where" ref="Mals">Mals</placeName></name> hat zinst<lb/>
+                     won von <placeName ana="bk:where" ref="#Mals">Mals</placeName></name> hat zinst<lb/>
                      <measure ana="bk:commodity" commodity="Weizen" quantity="1" unitRef="#Mütt">1 mutt
                         waitz </measure> dez <date ana="bk:when" when="1402-10-02"> nachsten mantag
                         nach<lb/> sand michels tag
@@ -1177,7 +1178,7 @@
                      pön</measure> gab er für den <measure ana="bk:commodity" commodity="Weizen"
                      quantity="1" unitRef="#Mütt">ainen mut waitz</measure></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR015" ana="bk:from bk:individual">haug vor
-                        <placeName ana="bk:where" ref="Mals">mals</placeName></name><measure
+                        <placeName ana="bk:where" ref="#Mals">mals</placeName></name><measure
                      ana="bk:commodity" commodity="Weizen" quantity="2" unitRef="#Mütt">2 mut
                      waitz</measure></seg><lb/>
                <seg ana="bk:entry">Item<name ref="#pers_SR030" ana="bk:from bk:individual"
@@ -1193,7 +1194,7 @@
 
             <p>
                <seg ana="bk:entry">Item <name ref="#pers_SR015" ana="bk:from bk:individual">Hans von
-                        <placeName ana="bk:where" ref="Mals"> mals</placeName>
+                        <placeName ana="bk:where" ref="#Mals"> mals</placeName>
                   </name>hat zinst <measure ana="bk:commodity"
                         commodity="Gerste" quantity="5" unitRef="#Mütt">5 mütt
                      gersten</measure>. </seg><lb/>
@@ -1202,13 +1203,13 @@
                         commodity="Gerste" quantity="5" unitRef="#Mütt">5 mütt
                      gersten</measure>.<lb/></seg>
                <seg ana="bk:entry">Item <name ref="#pers_SR017" ana="bk:from bk:individual">micel von
-                        <placeName ana="bk:where" ref="Ulten">ulten</placeName></name> hat <measure
+                        <placeName ana="bk:where" ref="#Ulten">ulten</placeName></name> hat <measure
                      ana="bk:tax">zinst <measure ana="bk:commodity" commodity="Gerste" quantity="5"
                         unitRef="#Mütt">13 mut gersten</measure><lb/>
                      <date ana="bk:when" when="1402-10-14">Am frenig nach martini
                            <supplied>17.November</supplied></date></measure>.<lb/></seg>
                <seg ana="bk:entry">Item <name ref="#pers_SR018" ana="bk:from bk:individual">hann
-                     letr</name> sain von<placeName ana="bk:where" ref="Mals"> mals </placeName>
+                     letr</name> sain von<placeName ana="bk:where" ref="#Mals"> mals </placeName>
                   unterwey<lb/> hat zinst <measure ana="bk:commodity"
                         commodity="Gerste" quantity="5" unitRef="#Mütt">5 mut gersten </measure> un
                         <measure ana="bk:commodity" commodity="Weizen" quantity="2.5" unitRef="#Mütt"> 2
@@ -1301,41 +1302,41 @@
                      >wain</measure> vand<lb/> Nota<lb/> Als ich <name ref="#pers_SR001"
                      ana="bk:from bk:individual">hans Kelner</name> ward <date ana="bk:when"
                      when="1402-03-04">3 wochen vor<lb/> annunciationis maria</date> in der
-                     <placeName ana="bk:where" ref="SchlossKasten">kasten</placeName> do fand<lb/>
+                     <placeName ana="bk:where" ref="#SchlossKasten">kasten</placeName> do fand<lb/>
                   ich in dem untern keler <measure ana="bk:commodity" commodity="Wein" quantity="6"
                      unitRef="#Puntze"> 6 puntzen wein</measure><lb/> Und in dem obrn cheler <measure
                      ana="bk:commodity" commodity="Wein" quantity="6" unitRef="#Puntze">4
-                        puntzen<placeName ana="bk:where" ref="Salen">salen</placeName><lb/>
+                        puntzen<placeName ana="bk:where" ref="#Salen">salen</placeName><lb/>
                      wein</measure>und <measure ana="bk:commodity" commodity="Bier" quantity="4"
                      unitRef="#Fass"><!-- In Quelle: eher vii also 7 -->vir perfas</measure>
                   <date ana="bk:when" when="1402">anno domini 1402 </date>.<lb/>
                   <!-- wird hier Wein vom Kasten abtransportiert -> wenn ja wohin zur Burg? heißt das dann auch dass engel und sei Bruder vllt Bediestete der Schlandersberger waren?  -->
                   Nota hie ist ze wissen wie vil puntzen<lb/> alter wein von dem <placeName
-                     ana="bk:where" ref="SchlossKasten">kasten</placeName> chumen seind<lb/> dÿ weil
+                     ana="bk:where" ref="#SchlossKasten">kasten</placeName> chumen seind<lb/> dÿ weil
                   ich kelner gewesen pin</seg>.<lb/>
                <seg ana="bk:entry">Item Ez pracht <name ref="#pers_SR020" ana="bk:from bk:individual"
                      >nikel engeleins prueder</name><lb/>
                   <measure ana="bk:commodity" commodity="Wein" quantity="7" unitRef="#Urne">7 urn
-                     weines</measure> von dem <placeName ana="bk:where" ref="SchlossKasten"
+                     weines</measure> von dem <placeName ana="bk:where" ref="#SchlossKasten"
                      >kasten</placeName>an <date ana="bk:when" when="1402-06-08"> sand<lb/> medarden
                      tag <supplied>8.Juni</supplied></date></seg>.<lb/>
                <seg ana="bk:entry">Item so pracht der <name ref="#pers_SR021" type="person"
                      ana="bk:from">engel</name><measure ana="bk:commodity" commodity="Wein"
                      quantity="7" unitRef="#Urne">7 urn wein</measure><lb/> von dem <placeName
-                     ana="bk:where" ref="SchlossKasten">kasten</placeName> am <date ana="bk:when"
+                     ana="bk:where" ref="#SchlossKasten">kasten</placeName> am <date ana="bk:when"
                      when="1402-07-18">Eritag vor Maria=<lb/> Magdalene <supplied>18.
                         Juli</supplied></date></seg>.<lb/>
                <seg ana="bk:entry">Item so pracht der <name ref="#pers_SR021" type="person"
                      ana="bk:from">Engel</name><measure ana="bk:commodity" commodity="Wein"
                      quantity="8" unitRef="#Urne"> 8 urn wein</measure><lb/> von dem <placeName
-                     ana="bk:where" ref="SchlossKasten">kasten</placeName> an <date ana="bk:when"
+                     ana="bk:where" ref="#SchlossKasten">kasten</placeName> an <date ana="bk:when"
                      when="1402-08-05">sand eswaltztag <supplied>5. August</supplied></date></seg>.<lb/>
                <seg ana="bk:entry">Item so pracht <name ref="#pers_SR020" ana="bk:from bk:individual"
                      >nicel dez engeleins pruerder</name><lb/>
                   <measure ana="bk:commodity" commodity="Wein" quantity="1" unitRef="#Puntze">ain
                      puntzen wein</measure> am <date ana="bk:when" when="1402-06-08">freitag nach said<lb/>
                      <!-- hier stimmt in der Transkription etwas nicht -->lalortzentag </date> von
-                  sedor urn vom <placeName ana="bk:where" ref="SchlossKasten"
+                  sedor urn vom <placeName ana="bk:where" ref="#SchlossKasten"
                   >kasten</placeName>.</seg>
             </p>
          </div>
@@ -1376,11 +1377,11 @@
                      >jandl</name><measure ana="bk:commodity" commodity="Wein" quantity="1"
                      unitRef="#Wagen"> 1 wa</measure></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR031" ana="bk:from bk:individual">nicla von
-                        <placeName ana="bk:where" ref="Ulten">ulten</placeName></name><measure
+                        <placeName ana="bk:where" ref="#Ulten">ulten</placeName></name><measure
                      ana="bk:commodity" commodity="Wein" quantity="1" unitRef="#Wagen"> 1
                   w</measure></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR032" ana="bk:from bk:individual">serfrid von
-                        <placeName ana="bk:where" ref="Ulten">ulten</placeName></name><measure
+                        <placeName ana="bk:where" ref="#Ulten">ulten</placeName></name><measure
                      ana="bk:commodity" commodity="Wein" quantity="1" unitRef="#Wagen"> 1
                   w</measure></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR014" ana="bk:from bk:individual">hans
@@ -1390,18 +1391,18 @@
                      platz</name><measure ana="bk:commodity" commodity="Wein" quantity="1"
                      unitRef="#Wagen"> 1 w</measure></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR035" ana="bk:from bk:individual">mesner von
-                        <placeName ana="bk:where" ref="Lantsch">lantsch</placeName></name><measure
+                        <placeName ana="bk:where" ref="#Lantsch">lantsch</placeName></name><measure
                      ana="bk:commodity" commodity="Wein" quantity="1" unitRef="#Wagen"> 1
                   w</measure></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR036" ana="bk:from bk:individual"
                      >nesella</name><measure ana="bk:commodity" commodity="Wein" quantity="1"
                      unitRef="#Wagen"> 1 w</measure></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR037" ana="bk:from bk:individual">jacob
-                     thursuer von <placeName ana="bk:where" ref="Lantsch"
+                     thursuer von <placeName ana="bk:where" ref="#Lantsch"
                      >lantsch</placeName></name><measure ana="bk:commodity" commodity="Wein"
                      quantity="1" unitRef="#Wagen"> 1 w</measure></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR038" ana="bk:from bk:individual">jager von
-                        <placeName ana="bk:where" ref="Burgeis">purgaiwz</placeName></name><measure
+                        <placeName ana="bk:where" ref="#Burgeis">purgaiwz</placeName></name><measure
                      ana="bk:commodity" commodity="Wein" quantity="1" unitRef="#Wagen"> 1
                   w</measure></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR039" ana="bk:from bk:individual">maie von
@@ -1411,14 +1412,14 @@
                      tmpin</name><measure ana="bk:commodity" commodity="Wein" quantity="1"
                      unitRef="#Wagen"> 1 wag</measure></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR041" ana="bk:from bk:individual">haug von
-                        <placeName ana="bk:where" ref="Mals">mals</placeName></name><measure
+                        <placeName ana="bk:where" ref="#Mals">mals</placeName></name><measure
                      ana="bk:commodity" commodity="Wein" quantity="1" unitRef="#Wagen"> 1
                      wagen</measure></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR042" ana="bk:from bk:individual">maier aus
                      dem widem</name><measure ana="bk:commodity" commodity="Wein" quantity="1"
                      unitRef="#Wagen"> 1 w</measure></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR043" ana="bk:from bk:individual">maier an
-                     der gazz von <placeName ana="bk:where" ref="Schlanders"
+                     der gazz von <placeName ana="bk:where" ref="#Schlanders"
                      >slands</placeName></name><lb/>
                   <measure ana="bk:commodity" commodity="Wein" quantity="1" unitRef="#Wagen"> 1
                      wagenlait</measure></seg>.<lb/>
@@ -1512,7 +1513,7 @@
                   <!-- Datum -->am<date ana="bk:when" when="1402-01-01"> mitwoch dar nach</date>
                   Rait <name ref="#pers_SR052" type="person">herr Kaspar</name><lb/>
                   <!-- phunds = Pfunds (AT) oder Pfunders (IT) --> gen <placeName ana="bk:where"
-                     ref="Pfunds">phuns</placeName></seg>.<lb/>
+                     ref="#Pfunds">phuns</placeName></seg>.<lb/>
                <seg ana="bk:entry">Item am <date ana="bk:when" when="1402-05-03">mitwochen nach
                      philippi jacobi</date>
                   <supplied>3. Mai</supplied><lb/> das was am auffart abnt pracht der<lb/>
@@ -1546,7 +1547,7 @@
                      ana="bk:when" when="1402-08-22"> ergtag<!-- Dienstag? --><lb/> als mein
                      genediger herr hie waz<lb/> vor wartholomei
                      <supplied>22.August</supplied></date> Und dir <name ref="#pers_SR057"
-                     type="person">hofmaister<lb/> von <placeName ana="bk:where" ref="Kaltern"
+                     type="person">hofmaister<lb/> von <placeName ana="bk:where" ref="#Kaltern"
                         >Kaltÿrn</placeName></name></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR050" ana="bk:from bk:individual">nikel
                      vischer</name><measure ana="bk:commodity" commodity="Fisch" quantity="5"
@@ -1580,7 +1581,7 @@
                der <measure ana="bk:commodity" commodity="Kitz" quantity="1" unitRef="#Stück">kitz
                   ez</measure><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR058" ana="bk:from bk:individual"
-                     >Christoffel von <placeName ana="bk:where" ref="Schlanders"
+                     >Christoffel von <placeName ana="bk:where" ref="#Schlanders"
                      >Slans</placeName></name><measure ana="bk:commodity" commodity="Lamm"
                      quantity="1" unitRef="#Stück">1 lempel</measure>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR059" ana="bk:from bk:individual">uler von
@@ -1631,7 +1632,7 @@
             <pb n="13r"/>
             <p>
                <seg ana="bk:entry">Item <name ref="#pers_SR001" ana="bk:from bk:individual">mïr</name>
-                  ist von <placeName ana="bk:where" ref="Pfunds">phuns</placeName> kumen <measure
+                  ist von <placeName ana="bk:where" ref="#Pfunds">phuns</placeName> kumen <measure
                      ana="bk:commodity" commodity="Lempt" quantity="4">4 lempt</measure> vnd <lb/>
                   <measure ana="bk:commodity" commodity="Schaf" quantity="2">2 schaff
                      </measure><date ana="bk:when" when="1402-06-08">am mantag nach johanis ante
@@ -1643,7 +1644,7 @@
                      schaff</measure> und <measure ana="bk:commodity" commodity="Schaf" quantity="5"
                      >5 schaff</measure> von zobrist.<lb/>
                   <name ref="#pers_SR038" type="person">Jager von <placeName ana="bk:where"
-                        ref="Burgeis">purgwaz</placeName></name></seg>
+                        ref="#Burgeis">purgwaz</placeName></name></seg>
                <lb/> Nota: hie is ze wissen das der <name ref="#pers_SR038" type="person"
                   ana="bk:from">jager von<lb/> purgawz</name><measure ana="bk:commodity"
                   commodity="Schwein" quantity="2">2 swein</measure> geben hat<date ana="bk:when"
@@ -1653,7 +1654,7 @@
                <name ref="#pers_SR112" type="person">haubtm</name> und <name ref="#pers_SR071"
                   ana="bk:from bk:individual">der parott</name> und <name ref="#pers_SR072"
                   ana="bk:from bk:individual">peter Rauscher</name><lb/> und <name ref="#pers_SR013"
-                  type="person">michel won von <placeName ana="bk:where" ref="Mals"
+                  type="person">michel won von <placeName ana="bk:where" ref="#Mals"
                   >mals</placeName></name> geschatz umb <measure ana="bk:commodity" commodity="Geld"
                   quantity="6.5" unitRef="#lb">6 ½<lb/> lb perner</measure> und das hat man im ab
                gezogen an seiner<lb/> zinses <measure ana="bk:commodity" commodity="Käse"
@@ -1666,7 +1667,7 @@
                kelnar gewesen pin<lb/> von kitz von aier von schulter und waz weisat<lb/> seind und
                von hüner.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR035" ana="bk:from bk:individual">nicla
-                     mesner von <placeName ana="bk:where" ref="Lantsch"
+                     mesner von <placeName ana="bk:where" ref="#Lantsch"
                      >läntsch</placeName></name><measure ana="bk:commodity" commodity="Sonstiges"
                      quantity="2">2 weiset</measure> zwïr<lb/>
                   <measure ana="bk:commodity" commodity="Eier" quantity="60">60 aier</measure> am
@@ -1680,7 +1681,7 @@
                         frawentag<supplied>19.März</supplied>
                   </date></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR034" ana="bk:from bk:individual">michel am
-                     platz von <placeName ana="bk:where" ref="Mals">mals</placeName></name> hat
+                     platz von <placeName ana="bk:where" ref="#Mals">mals</placeName></name> hat
                   geben <measure ana="bk:commodity" commodity="Kitz" quantity="1">1
                   kitz</measure><lb/> am ergtag in den estrern das was der nachst</seg><lb/>
                <date ana="bk:when" when="1402-03-28">ergtag nach unßr frauemtag <supplied>28.
@@ -1690,7 +1691,7 @@
                      chitz</measure> am <date ana="bk:when" when="1402-03-31">freitag auch nach
                      unßr<lb/> frawen tag annuntiationis <supplied>31. März</supplied></date></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR074" ana="bk:from bk:individual">michel
-                     unter weg von <placeName ana="bk:where" ref="Mals"
+                     unter weg von <placeName ana="bk:where" ref="#Mals"
                      >mals</placeName></name><measure ana="bk:commodity" commodity="Kitz"
                      quantity="1">an kitz</measure> am<lb/>
                   <date ana="bk:when" when="1402-03-26">suntag nach dem ostrertag daz was nach
@@ -1734,7 +1735,7 @@
                      quantity="1">1 kitz</measure><date ana="bk:when" when="1402-04-16">am<lb/>
                      suntag vor sand jorgentag <supplied>16.April</supplied></date></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR079" ana="bk:from bk:individual">edgen
-                     tampüy von <placeName ana="bk:where" ref="Burgeis">pürgäwz</placeName></name>
+                     tampüy von <placeName ana="bk:where" ref="#Burgeis">pürgäwz</placeName></name>
                   hat geben<lb/>
                   <measure ana="bk:commodity" commodity="Schultern" quantity="2">zwo
                      schultrn</measure> für <measure ana="bk:commodity" commodity="Sonstiges"
@@ -1742,23 +1743,23 @@
                      suntag<lb/> vürtzabentag vor sand jorgentag <supplied>16.
                      April</supplied></date></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR037" ana="bk:from bk:individual">jacob
-                     chursner von <placeName ana="bk:where" ref="Lantsch">lantsch</placeName></name>
+                     chursner von <placeName ana="bk:where" ref="#Lantsch">lantsch</placeName></name>
                   hat geben <measure ana="bk:commodity" commodity="Eier" quantity="60">60
                      aier</measure><lb/> für <measure ana="bk:commodity" commodity="Sonstiges"
                      quantity="1">ain weiset </measure> In die johannis ante portam latinam <date
                      ana="bk:when" when="1402-05-06"><supplied>6. Mai</supplied></date></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR041" ana="bk:from bk:individual">haug von
-                        <placeName ana="bk:where" ref="Mals">mals</placeName></name><measure
+                        <placeName ana="bk:where" ref="#Mals">mals</placeName></name><measure
                      ana="bk:commodity" commodity="Lamm" quantity="1">1 lamp</measure><date
                      ana="bk:when" when="1402-05-07">am suntag nach Gothardi <supplied>7.
                         Mai</supplied></date></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR024" ana="bk:from bk:individual">michel
-                     won von <placeName ana="bk:where" ref="Mals">mals</placeName></name><measure
+                     won von <placeName ana="bk:where" ref="#Mals">mals</placeName></name><measure
                      ana="bk:commodity" commodity="Lamm" quantity="1">1 lamp</measure></seg><date
                   ana="bk:when" when="1402-05-07">am suntag<lb/> nach Gothardi <supplied>7.
                      Mai</supplied></date>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR024" ana="bk:from bk:individual">michel
-                     won von <placeName ana="bk:where" ref="Mals">mals</placeName></name><measure
+                     won von <placeName ana="bk:where" ref="#Mals">mals</placeName></name><measure
                      ana="bk:commodity" commodity="Lamm" quantity="1">1 lampt</measure><date
                      ana="bk:when" when="1402-05-28">am<lb/> suntag nach
                         Urbani<supplied>28.Mai</supplied></date>.</seg><lb/>
@@ -1767,7 +1768,7 @@
                      >ain lamp</measure><date ana="bk:when" when="1402-06-04">am<lb/> suntag nach
                      Erasmÿ <supplied>4.Juni</supplied></date>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR074" ana="bk:from bk:individual">michel
-                     under wag von <placeName ana="bk:where" ref="Mals">mals</placeName></name> hat
+                     under wag von <placeName ana="bk:where" ref="#Mals">mals</placeName></name> hat
                   geben <lb/>
                   <measure ana="bk:commodity" commodity="Hundlir" quantity="4">4 junge
                      handlïr</measure> für <measure ana="bk:commodity" commodity="Sonstiges"
@@ -1779,7 +1780,7 @@
                   <date ana="bk:when" when="1402-07-30">am suntag nach jabobi <supplied>30.
                         Juli</supplied></date></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR083" ana="bk:from bk:individual">michel
-                     unter der gazz von <placeName ana="bk:where" ref="Mals"
+                     unter der gazz von <placeName ana="bk:where" ref="#Mals"
                   >mals</placeName></name><lb/> hat geben <measure ana="bk:commodity"
                      commodity="Hundlir" quantity="4">4 junge handlïr</measure> für <measure
                      ana="bk:commodity" commodity="Sonstiges" quantity="1">ain <lb/>
@@ -1791,7 +1792,7 @@
             <pb n="14r"/>
             <p>
                <seg ana="bk:entry">Item <name ref="#pers_SR084" ana="bk:from bk:individual">minig
-                     jandleins sün von <placeName ana="bk:where" ref="Mals"
+                     jandleins sün von <placeName ana="bk:where" ref="#Mals"
                   >mals</placeName></name><lb/> hat geben für <measure ana="bk:commodity"
                      commodity="Sonstiges" quantity="1">ain weissert</measure><measure
                      ana="bk:commodity" commodity="Huhn" quantity="2"> 2 hennen</measure><lb/>
@@ -1811,7 +1812,7 @@
                         reason="missing">ag</supplied> vor sand ptholomo
                         <supplied>20.August</supplied></date></seg>.<lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR030" ana="bk:from bk:individual">jandl von
-                        <placeName ana="bk:where" ref="Mals">mals</placeName></name><measure
+                        <placeName ana="bk:where" ref="#Mals">mals</placeName></name><measure
                      ana="bk:commodity" commodity="Huhn" quantity="2">2 hennen</measure> für<measure
                      ana="bk:commodity" commodity="Sonstiges" quantity="1">ain<lb/>
                      weisät</measure><date ana="bk:when" when="1402"><supplied reason="illegible"
@@ -1882,7 +1883,7 @@
                            September</supplied> anno secundo.</date></seg><lb/></del>
                <seg ana="bk:entry">Item so hat zinst <name ref="#pers_SR092" type="person"
                      ana="bk:from">hans michel leten sur<lb/> von <placeName ana="bk:where"
-                        ref="Mals">mals</placeName></name><measure ana="bk:commodity"
+                        ref="#Mals">mals</placeName></name><measure ana="bk:commodity"
                      commodity="Käse" quantity="13" unitRef="#schoet">13 schöt käs</measure><date
                      ana="bk:when" when="1402-09-29">an sand michels<lb/>
                         tag<supplied>29.September</supplied>
@@ -1909,28 +1910,28 @@
 
             <p>
                <seg ana="bk:entry">Item <name ref="#pers_SR032" ana="bk:from bk:individual">serfrid
-                     von <placeName ana="bk:where" ref="Ulten">ulten</placeName></name>hat zinst dez nachsten<lb/>
+                     von <placeName ana="bk:where" ref="#Ulten">ulten</placeName></name>hat zinst dez nachsten<lb/>
                   <date ana="bk:when" when="1402-10-07">samptzagts nach sand franzisken tag
                         <supplied>7.Oktober</supplied>
                   </date><lb/>
-                  <measure ana="bk:commodity" commodity="Käse" quantity="53" unitRef="#schöt">53 schöt
+                  <measure ana="bk:commodity" commodity="Käse" quantity="53" unitRef="#schoet">53 schöt
                      kes</measure> und <measure ana="bk:commodity" commodity="Geld" quantity="2"
                      unitRef="#Mark">2 märch</measure> und <measure ana="bk:commodity"
-                     commodity="Schmalz" quantity="4.5" unitRef="#schöt">4 1/2 schöt<lb/>
+                     commodity="Schmalz" quantity="4.5" unitRef="#schoet">4 1/2 schöt<lb/>
                      smaltz</measure>.</seg><lb/>
                <seg ana="bk:entry">Item so hat zïnst <name ref="#pers_SR017" type="person"
-                     ana="bk:from">micl von <placeName ana="bk:where" ref="Ulten"
+                     ana="bk:from">micl von <placeName ana="bk:where" ref="#Ulten"
                      >ulten</placeName></name> auch an <date ana="bk:when" when="1402-10-04"
                      >sand<lb/> frantzisken tag <supplied>4. Oktober</supplied></date><measure
                      ana="bk:commodity" commodity="march" quantity="52.5">52 1/2</measure>
                      und<measure ana="bk:commodity" commodity="march" quantity="2">2 march</measure>
-                  und <measure ana="bk:commodity" commodity="Schmalz" quantity="3" unitRef="#schöt"
+                  und <measure ana="bk:commodity" commodity="Schmalz" quantity="3" unitRef="#schoet"
                      >3<lb/> schöt smaltz</measure> und <measure ana="bk:commodity" commodity="Mark"
                      quantity="4">4 mark</measure>.</seg><lb/>
                <del>
                   <seg ana="bk:entry">Item so hat zinst <name ref="#pers_SR094" type="person"
                         ana="bk:from">abraham aus sulden</name><lb/>
-                     <measure ana="bk:commodity" commodity="Käse" quantity="15" unitRef="#schöt">15
+                     <measure ana="bk:commodity" commodity="Käse" quantity="15" unitRef="#schoet">15
                         schöt käs</measure> und <measure ana="bk:commodity" commodity="Sonstiges"
                         quantity="8" unitRef="#m">8 m francisci</measure>.</seg><lb/>
                </del>
@@ -1939,45 +1940,45 @@
                   <del>an <date ana="bk:when" when="1402-10-04">sand francisten tag <supplied>4.
                            Oktober</supplied>
                      </date><measure ana="bk:commodity" commodity="Käse" quantity="33.5"
-                        unitRef="#schöt">33 1/2 schöt käs</measure><lb/></del> und <measure
-                     ana="bk:commodity" commodity="Schmalz" quantity="2" unitRef="#Schmalz">2 schöt
+                        unitRef="#schoet">33 1/2 schöt käs</measure><lb/></del> und <measure
+                     ana="bk:commodity" commodity="Schmalz" quantity="2" unitRef="#schoet">2 schöt
                      smaltz</measure> von <measure ana="bk:commodity" commodity="Käse" quantity="40"
-                     unitRef="#schöt">40 schöt käs</measure><lb/>
+                     unitRef="#schoet">40 schöt käs</measure><lb/>
                   <date ana="bk:when" when="1402-11-18">octava martini</date>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR123" ana="bk:from bk:individual">minig ab
-                        <placeName ana="bk:where" ref="Lueg">lüg</placeName></name> hat zïnst am
+                        <placeName ana="bk:where" ref="#Lueg">lüg</placeName></name> hat zïnst am
                      <date ana="bk:when" when="1402-10-09">mantag<lb/> nach sand francisti
                         <supplied>9. Oktober</supplied></date><del><measure ana="bk:commodity"
-                        commodity="Käse" quantity="30" unitRef="#schöt">30 schöt käs</measure> und<lb/>
+                        commodity="Käse" quantity="30" unitRef="#schoet">30 schöt käs</measure> und<lb/>
                      <supplied reason="illegible">...</supplied></del>
-                  <measure ana="bk:commodity" commodity="Schmalz" quantity="4" unitRef="#schöt">4 schöt
+                  <measure ana="bk:commodity" commodity="Schmalz" quantity="4" unitRef="#schoet">4 schöt
                      smaltz</measure> und <measure ana="bk:commodity" commodity="Käse" quantity="50"
-                     unitRef="#schöt">50 schöt käs</measure>.</seg><lb/>
+                     unitRef="#schoet">50 schöt käs</measure>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR096" ana="bk:from bk:individual">alex ab
-                        <placeName ana="bk:where" ref="Lueg">lug</placeName></name> hat zïnst am
+                        <placeName ana="bk:where" ref="#Lueg">lug</placeName></name> hat zïnst am
                      <date ana="bk:when" when="1402-10-09">mantag nach<lb/>
                         francisti</date><del><measure ana="bk:commodity" commodity="Käse"
-                        quantity="36" unitRef="#schöt">36 schöt käs</measure> und</del><measure
-                     ana="bk:commodity" commodity="Schmalz" quantity="50" unitRef="#schöt">4 schöt<lb/>
+                        quantity="36" unitRef="#schoet">36 schöt käs</measure> und</del><measure
+                     ana="bk:commodity" commodity="Schmalz" quantity="50" unitRef="#schoet">4 schöt<lb/>
                      smaltz</measure> und<measure ana="bk:commodity" commodity="Käse" quantity="50"
-                     unitRef="#schöt">50 schöt käs</measure>.</seg><lb/>
+                     unitRef="#schoet">50 schöt käs</measure>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR097" ana="bk:from bk:individual">chinitz
                      purdeller</name>ab dem kampen<lb/> aus sulden hat zïnst am <date ana="bk:when"
                      when="1402-10-13">Freitag vor<lb/> galli <supplied>13.
                      Oktober</supplied></date><measure ana="bk:commodity" commodity="Käse"
-                     quantity="50" unitRef="#schöt">50 schöt käs</measure> und <measure
-                     ana="bk:commodity" commodity="Käse" quantity="4" unitRef="#schöt">4 schöt
+                     quantity="50" unitRef="#schoet">50 schöt käs</measure> und <measure
+                     ana="bk:commodity" commodity="Käse" quantity="4" unitRef="#schoet">4 schöt
                      smaltz</measure>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR118" ana="bk:from bk:individual"
                      >goltsmid</name> hat zinst<measure ana="bk:commodity" commodity="Käse"
-                     quantity="10" unitRef="#schöt">10 schöt käs</measure><lb/> am <date ana="bk:when"
+                     quantity="10" unitRef="#schoet">10 schöt käs</measure><lb/> am <date ana="bk:when"
                      when="1402-10-11">mitwochen vor
                   galli<supplied>11.Oktober</supplied></date>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR014" ana="bk:from bk:individual">hans
                      getraut</name> hat zinst am<lb/>
                   <date ana="bk:when" when="1402-10-14">samptzag vor galli <supplied>14.
                         Oktober</supplied></date><measure ana="bk:commodity" commodity="Käse"
-                     quantity="13" unitRef="#schöt">13 schöt käs</measure>.</seg>
+                     quantity="13" unitRef="#schoet">13 schöt käs</measure>.</seg>
             </p>
          </div>
 
@@ -1988,61 +1989,61 @@
                <seg ana="bk:entry">Item <name ref="#pers_SR033" ana="bk:from bk:individual">chuntz
                      von alsokch</name>hat zïnst am <date ana="bk:when" when="1402-10-14"
                      >samptz<lb/> ag vor galli <supplied>14.Oktober</supplied></date><measure
-                     ana="bk:commodity" commodity="Käse" quantity="22.5" unitRef="#schöt">22 1/2 schö
+                     ana="bk:commodity" commodity="Käse" quantity="22.5" unitRef="#schoet">22 1/2 schö
                      käs</measure>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR098" ana="bk:from bk:individual"
                      >Luetzÿ</name> hat zïnst am <date ana="bk:when" when="1402-10-14">samptzag<lb/>
                      vor galli <supplied>14. Oktober</supplied></date><measure ana="bk:commodity"
-                     commodity="Käse" quantity="8" unitRef="#schöt">8 schöt käs</measure>.</seg><lb/>
+                     commodity="Käse" quantity="8" unitRef="#schoet">8 schöt käs</measure>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR099" ana="bk:from bk:individual">chüntz
                      chramer</name> hat zïnst am<lb/>
                   <date ana="bk:when" when="1402-10-14">samtzag vor galli<supplied>14.
                         Oktober</supplied></date><measure ana="bk:commodity" commodity="Käse"
-                     quantity="6" unitRef="#schöt">6 schöt käs</measure>.</seg><lb/>
+                     quantity="6" unitRef="#schoet">6 schöt käs</measure>.</seg><lb/>
                <seg ana="bk:entry">Item so hat zïnst <name ref="#pers_SR094" type="person"
                      ana="bk:from">Abraham Aüs<lb/>
-                     <placeName ana="bk:where" ref="Sulden">Sulden</placeName></name><measure
-                     ana="bk:commodity" commodity="Käse" quantity="28.5" unitRef="#schöt">28 1/2 schöt
+                     <placeName ana="bk:where" ref="#Sulden">Sulden</placeName></name><measure
+                     ana="bk:commodity" commodity="Käse" quantity="28.5" unitRef="#schoet">28 1/2 schöt
                      käs</measure> und<lb/>
-                  <measure ana="bk:commodity" commodity="Käse" quantity="4" unitRef="#schöt">4 schöt
+                  <measure ana="bk:commodity" commodity="Käse" quantity="4" unitRef="#schoet">4 schöt
                      smaltz</measure> minder <measure ana="bk:commodity" commodity="Mark"
                      quantity="2">2 mark</measure><lb/> am <date ana="bk:when" when="1402-10-18"
                      >mitwochen nach galli <supplied>18. Oktober</supplied></date>.</seg><lb/>
                <seg ana="bk:entry">Item Es hat zïnst <name ref="#pers_SR089" type="person"
                      ana="bk:from">nikel mesner</name> aus<lb/>
-                  <placeName ana="bk:where" ref="Sulden">Sulden</placeName>
-                  <measure ana="bk:commodity" commodity="Käse" quantity="30" unitRef="#schöt">30 schöt
+                  <placeName ana="bk:where" ref="#Sulden">Sulden</placeName>
+                  <measure ana="bk:commodity" commodity="Käse" quantity="30" unitRef="#schoet">30 schöt
                      käs</measure>
                   <date ana="bk:when" when="1402-10-04">francisci</date>.</seg><lb/>
                <seg ana="bk:entry">Item Es hat zïnst <name ref="#pers_SR120" type="person"
-                     ana="bk:from">nikel aus <placeName ana="bk:where" ref="Sulden"
+                     ana="bk:from">nikel aus <placeName ana="bk:where" ref="#Sulden"
                         >Sulden</placeName></name><lb/> pei der chirichen <measure
-                     ana="bk:commodity" commodity="Käse" quantity="40" unitRef="#schöt">40 schöt<lb/>
+                     ana="bk:commodity" commodity="Käse" quantity="40" unitRef="#schoet">40 schöt<lb/>
                      käs</measure> und <measure ana="bk:commodity" commodity="Schmalz" quantity="5"
-                     unitRef="#schöt">5 schöt smaltz</measure>
+                     unitRef="#schoet">5 schöt smaltz</measure>
                   <date ana="bk:when" when="1402-10-04">francisci</date>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR100" ana="bk:from bk:individual">Teomel
                      aus zinrïst</name>hat zïnst<lb/>
-                  <measure ana="bk:commodity" commodity="Käse" quantity="50" unitRef="#schöt">50 schöt
+                  <measure ana="bk:commodity" commodity="Käse" quantity="50" unitRef="#schoet">50 schöt
                      käs</measure> und <measure ana="bk:commodity" commodity="Schmalz" quantity="4"
-                     unitRef="#schöt">4 schöt smaltz</measure><lb/>
+                     unitRef="#schoet">4 schöt smaltz</measure><lb/>
                   <date ana="bk:when" when="1402-10-04">francisci</date>.</seg><lb/>
                <seg ana="bk:entry">Item ez hat zïnst <name ref="#pers_SR124" type="person">minig
                      märer</name> 16<lb/>
-                  <measure ana="bk:commodity" commodity="Käse" quantity="16" unitRef="#schöt">schöt
+                  <measure ana="bk:commodity" commodity="Käse" quantity="16" unitRef="#schoet">schöt
                      käs</measure> am <date ana="bk:when" when="1402-10-21">samptzag nach gallÿ
                         <supplied>21.Oktober</supplied></date>.</seg><lb/>
                <seg ana="bk:entry">Item ÿz hät zinst <name ref="#pers_SR101" type="person"
                      ana="bk:from">christan von pisel</name><lb/>
-                  <measure ana="bk:commodity" commodity="Käse" quantity="6" unitRef="#schöt">6 schöt
+                  <measure ana="bk:commodity" commodity="Käse" quantity="6" unitRef="#schoet">6 schöt
                      käs</measure> und <measure ana="bk:commodity" commodity="Schmalz" quantity="2"
-                     unitRef="#schöt">2 schöt smaltz</measure><lb/> am <date ana="bk:when"
+                     unitRef="#schoet">2 schöt smaltz</measure><lb/> am <date ana="bk:when"
                      when="1402-10-21">samptzag nach galli <supplied>21. Oktober</supplied>
                   </date>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR102" ana="bk:from bk:individual">stoltzel
                      von puntseil</name> hat zïnst<lb/> am <date ana="bk:when" when="1402-10-23"
                      >mantag vor sÿmoisen jude <supplied>23. Oktober</supplied></date> 9<lb/>
-                  <measure ana="bk:commodity" commodity="Käse" quantity="9" unitRef="#schöt">schöt
+                  <measure ana="bk:commodity" commodity="Käse" quantity="9" unitRef="#schoet">schöt
                      käs</measure>.</seg>
             </p>
          </div>
@@ -2053,38 +2054,38 @@
             <p>
                <seg ana="bk:entry">Item <name ref="#pers_SR008" ana="bk:from bk:individual">minig ab
                      zobrist</name>hat zïnst<lb/>
-                  <measure ana="bk:commodity" commodity="Käse" quantity="30" unitRef="#schöt">30 schöt
+                  <measure ana="bk:commodity" commodity="Käse" quantity="30" unitRef="#schoet">30 schöt
                      käs</measure><date ana="bk:when" when="1402-10-16">galli
                         <supplied>16.Oktober</supplied></date>.</seg><lb/>
                <seg ana="bk:entry">Item Ez hat zinst <name ref="#pers_SR060" type="person"
-                     ana="bk:from">jändl von <placeName ana="bk:where" ref="Mals"
+                     ana="bk:from">jändl von <placeName ana="bk:where" ref="#Mals"
                      >mals</placeName></name> am <date ana="bk:when" when="1402">johintzag<lb/> vor
                      sermois <supplied/></date>
                   <supplied>...</supplied><measure ana="bk:commodity" commodity="Käse" quantity="13"
-                     unitRef="#schöt">13 schöt käs</measure>.</seg><lb/>
+                     unitRef="#schoet">13 schöt käs</measure>.</seg><lb/>
                <seg ana="bk:entry">Item Ez hat zinst <name ref="#pers_SR103" type="person"
-                     ana="bk:from">hannes von <placeName ana="bk:where" ref="Mals"
+                     ana="bk:from">hannes von <placeName ana="bk:where" ref="#Mals"
                      >mals</placeName></name><measure ana="bk:commodity" commodity="Mehl"
-                     quantity="12" unitRef="#schöt">12 schö<supplied>t</supplied><lb/> käs</measure>
+                     quantity="12" unitRef="#schoet">12 schö<supplied>t</supplied><lb/> käs</measure>
                   und</seg><lb/>
                <!-- Zeile endet hier -->
                <seg ana="bk:entry">Item <name ref="#pers_SR104" ana="bk:from bk:individual">florin
                      platt</name> hat zinst <measure ana="bk:commodity" commodity="Käse"
-                     quantity="6.5" unitRef="#schät">6 ½ schät käs</measure>.</seg><lb/>
+                     quantity="6.5" unitRef="#schoet">6 ½ schöt käs</measure>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR044" ana="bk:from bk:individual">maier im
                      spital</name> hat zïnst <measure ana="bk:commodity" commodity="Käse"
-                     quantity="30" unitRef="#schöt">30 schöt<lb/> käs</measure> und <measure
-                     ana="bk:commodity" commodity="Käse" quantity="10" unitRef="#schöt">10
+                     quantity="30" unitRef="#schoet">30 schöt<lb/> käs</measure> und <measure
+                     ana="bk:commodity" commodity="Käse" quantity="10" unitRef="#schoet">10
                      schöt</measure> vom <name ref="#pers_SR105" ana="bk:from bk:individual">maier ab
-                     der gazz<lb/> von <placeName ana="bk:where" ref="Schlanders"
+                     der gazz<lb/> von <placeName ana="bk:where" ref="#Schlanders"
                         >slanders</placeName></name>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR060" ana="bk:from bk:individual"
                      >mülner</name> hat zinst<measure ana="bk:commodity" commodity="Käse"
-                     quantity="6" unitRef="#schöt">6 schöt käs</measure>.</seg><lb/>
+                     quantity="6" unitRef="#schoet">6 schöt käs</measure>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR106" ana="bk:from bk:individual">maier ab
                      greist</name> hat zinst am <date ana="bk:when" when="1402">freitag<lb/> nach
                      lucie <supplied/></date><measure ana="bk:commodity" commodity="Käse"
-                     quantity="12.5" unitRef="#schöt">12 ½ schöt käs</measure>.</seg><lb/>
+                     quantity="12.5" unitRef="#schoet">12 ½ schöt käs</measure>.</seg><lb/>
             </p>
          </div>
          <div n="17v">
@@ -2116,7 +2117,7 @@
                   <measure ana="bk:commodity" commodity="Mehl" quantity="53" unitRef="#Mütt">53 müt
                      mel</measure> am <date ana="bk:when" when="1402">mitwoch vor tibürtÿ
                      <supplied/></date> mer is<lb/> und das <measure ana="bk:commodity"
-                     commodity="Korn">korn</measure> was von <placeName ana="bk:where" ref="Ulten"
+                     commodity="Korn">korn</measure> was von <placeName ana="bk:where" ref="#Ulten"
                      >ulten</placeName>.</seg><lb/>
                <seg ana="bk:entry">Item sohann <name ref="#pers_SR001" type="person">ich</name>
                   enphangen vom <name ref="#pers_SR060" ana="bk:from bk:individual"
@@ -2130,21 +2131,21 @@
                      >mitwoch vor<lb/> tiburtÿ <supplied/></date><measure ana="bk:commodity"
                      commodity="Mehl" quantity="3" unitRef="#Mütt">3 mut mel</measure> das korn was von
                      <name ref="#pers_SR107" type="person">sind<lb/> von <placeName ana="bk:where"
-                        ref="Lantsch">lantsch</placeName></name>.</seg><lb/>
+                        ref="#Lantsch">lantsch</placeName></name>.</seg><lb/>
                <seg ana="bk:entry">Item so hann ich enphangen von <name ref="#pers_SR060"
                      ana="bk:from bk:individual">mulner</name> am <date ana="bk:when" when="1402"
                      >freitag<lb/> vor benedicti<supplied/></date><measure ana="bk:commodity"
                      commodity="huntäs" quantity="5" unitRef="#Mütt">5 mut huntäs</measure> die <measure
                      ana="bk:commodity" commodity="Gerste">gersten</measure> was<lb/> von <name
                      ref="#pers_SR038" type="person">jager von <placeName ana="bk:where"
-                        ref="Burgeis">pürgawz</placeName></name>.</seg><lb/>
+                        ref="#Burgeis">pürgawz</placeName></name>.</seg><lb/>
                <seg ana="bk:entry">Item so han ich enphangen von <name ref="#pers_SR060"
                      ana="bk:from bk:individual">mulner</name><measure ana="bk:commodity"
                      commodity="huntäs" quantity="5" unitRef="#Mütt">5 mütt<lb/> huntäs</measure>am<date
                      ana="bk:when" when="1402">samptzag vor sand jorgen tag <supplied/></date> dïe<lb/>
                   <measure ana="bk:commodity" commodity="Gerste">gersten</measure> gab der <name
                      ref="#pers_SR012" ana="bk:from bk:individual">maier von <placeName
-                        ana="bk:where" ref="Ulten">ulten</placeName></name>.</seg><lb/>
+                        ana="bk:where" ref="#Ulten">ulten</placeName></name>.</seg><lb/>
                <seg ana="bk:entry">Item so han ich enphangen an <date ana="bk:when"
                      when="1402-04-25">sand marxtag <supplied>25. April</supplied></date> vom<lb/>
                   <name ref="#pers_SR060" ana="bk:from bk:individual">mulner</name><measure
@@ -2165,18 +2166,18 @@
                      mel</measure><lb/> Gestrichen am <date ana="bk:when" when="1402-06-05">mantag
                      nach Erasmi <supplied>5. Juni</supplied></date> und<lb/>
                   <!-- Ort Me/ais? --><measure ana="bk:commodity" commodity="Pfeil" quantity="1"
-                     unitRef="#Lägel">1 lägel mit pheil</measure> dÿ stat in <placeName ana="bk:where"
-                     ref="BurgMais">meis</placeName>hrrer kainer.</seg><lb/>
+                     unitRef="#laegel">1 lägel mit pheil</measure> dÿ stat in <placeName ana="bk:where"
+                     ref="#BurgMais">meis</placeName>hrrer kainer.</seg><lb/>
                <seg ana="bk:entry">Item so han ich enphangen <measure ana="bk:commodity"
                      commodity="huntäs" quantity="7">7 mit huntäs</measure><lb/> von der <name
                      ref="#pers_SR126" ana="bk:from bk:individual">raninsser</name>in wegen.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR105" ana="bk:from bk:individual">maier ab
-                     der gazz von <placeName ana="bk:where" ref="Schlanders"
+                     der gazz von <placeName ana="bk:where" ref="#Schlanders"
                      >slanders</placeName></name>
                   <lb/>
                   <measure ana="bk:commodity" commodity="Mehl" quantity="12" unitRef="#Mütt">12 müt
                      mel</measure><measure ana="bk:commodity" commodity="Weizenmehl" quantity="2"
-                     unitRef="#Müz">2 müt waitzen mel</measure>.</seg><lb/>
+                     unitRef="#Mütt">2 müt waitzen mel</measure>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR060" ana="bk:from bk:individual"
                      >mülner</name> hat geben<measure ana="bk:commodity" commodity="Roggenmehl"
                      quantity="10" unitRef="#Mütt">10 müt Roken mel</measure>.</seg><lb/>
@@ -2185,14 +2186,14 @@
                      >paustadl</name><lb/> pracht der <name ref="#pers_SR060" type="person"
                      ana="bk:from">müllner</name>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR030" ana="bk:from bk:individual">jandl von
-                        <placeName ana="bk:where" ref="Mals">mals</placeName></name><measure
+                        <placeName ana="bk:where" ref="#Mals">mals</placeName></name><measure
                      ana="bk:commodity" commodity="Mehl" quantity="5" unitRef="#Mütt">5 mut
                      mel</measure> pracht der<lb/>
                   <name ref="#pers_SR060" type="person">müllner</name>.</seg><lb/>
                <seg ana="bk:entry">Item so paracht der <name ref="#pers_SR060" type="person"
                      ana="bk:from">müllner</name><measure ana="bk:commodity" commodity="Mehl"
                      quantity="10" unitRef="#Mütt">10 müt mel</measure><lb/> vom <name ref="#pers_SR109"
-                     type="person">hans mesner</name> von <placeName ana="bk:where" ref="Mals"
+                     type="person">hans mesner</name> von <placeName ana="bk:where" ref="#Mals"
                      >mals</placeName>.</seg>
             </p>
          </div>
@@ -2208,12 +2209,12 @@
                      unitRef="#Mütt">5 müt mel</measure> pracht<lb/> auch der <name ref="#pers_SR060"
                      ana="bk:from bk:individual">müller</name>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR111" ana="bk:from bk:individual">Cainel
-                     sneider</name> von <placeName ana="bk:where" ref="Burgweis">purgawz</placeName>gab<lb/>
+                     sneider</name> von <placeName ana="bk:where" ref="#Burgweis">purgawz</placeName>gab<lb/>
                   <measure ana="bk:commodity" commodity="Mehl" quantity="6" unitRef="#Mütt">6 mutt
                      mel</measure>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR020" ana="bk:from bk:individual">nicel
                      Engelems pruder</name> gab <measure ana="bk:commodity" commodity="Mehl"
-                     quantity="6" unitRef="#MÜtt">6 mut<lb/> mel</measure>.</seg><lb/>
+                     quantity="6" unitRef="#Mütt">6 mut<lb/> mel</measure>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR027" ana="bk:from bk:individual"
                      >Florin</name> platt<measure ana="bk:commodity" commodity="Mehl" quantity="3"
                      unitRef="#Mütt">3 mütt mel</measure> gab auch.</seg><lb/>
@@ -2244,11 +2245,11 @@
                <seg ana="bk:entry">Item <name ref="#pers_SR0113" ana="bk:from bk:individual"
                      >andre</name> hat gezinst<measure ana="bk:commodity" commodity="Käse"
                      quantity="40" unitRef="#schoet">40 schot käs</measure><measure ana="bk:commodity"
-                     commodity="Käse" quantity="2" unitRef="#schöt">2 sch<supplied reason="illegible"
+                     commodity="Käse" quantity="2" unitRef="#schoet">2 sch<supplied reason="illegible"
                         >öt</supplied><lb/> Smalz</measure> und hat gar gezinst auf <date
                      ana="bk:when" when="1428">diz ÿar</date>.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_S096" ana="bk:from bk:individual">allesch ab
-                        <placeName ana="bk:where" ref="Lueg">lueg</placeName></name>hat gezinst
+                        <placeName ana="bk:where" ref="#Lueg">lueg</placeName></name>hat gezinst
                      <measure ana="bk:commodity" commodity="Käse" quantity="60" unitRef="#schoet">60
                      schot käs</measure><lb/>
                   <measure ana="bk:commodity" commodity="Schmalz" quantity="4" unitRef="#schoet">4 schot
@@ -2257,18 +2258,18 @@
                <seg ana="bk:entry">Auf greist<lb/>
                   <supplied reason="illegible">...</supplied>
                   <name ref="#pers_SR115" ana="bk:from bk:individual">nariz ab greist</name> hat
-                  gezinst <measure ana="bk:commodity" commodity="Käse" quantity="13" unitRef="#schöt">13<lb/>
+                  gezinst <measure ana="bk:commodity" commodity="Käse" quantity="13" unitRef="#schoet">13<lb/>
                      <supplied reason="illegible">schöt</supplied> käs</measure> und hat gar gezinst auf<lb/>
                   <date ana="bk:when" when="1402"><supplied reason="illegible"
                      >diz</supplied>ÿar</date>.</seg><lb/>
-               <placeName ana="bk:where" ref="Pontveill">ponttueill</placeName><lb/>
+               <placeName ana="bk:where" ref="#Pontveill">ponttueill</placeName><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR116" ana="bk:from bk:individual">thonig
                      von pontueil</name> hat gezinst<lb/> hat gezinst <measure ana="bk:commodity"
                      commodity="Käse" quantity="9" unitRef="#schoet">9 schot käs</measure> und <measure
                      ana="bk:commodity" commodity="Gerste" quantity="3" unitRef="#Mütt">3 mutt<lb/>
                      gersten</measure> und hat gar gezinst.</seg><lb/>
                <seg ana="bk:entry">Item <name ref="#pers_SR117" ana="bk:from bk:individual">pedrusch
-                     von <placeName ana="bk:where" ref="SandMaria">sand</placeName> maria</name> hat gezinst<lb/>
+                     von <placeName ana="bk:where" ref="#SandMaria">sand</placeName> maria</name> hat gezinst<lb/>
                   <measure ana="bk:commodity" commodity="Käse" quantity="16" unitRef="#schoet">16 schot
                      käs</measure> und hat die kes gar gezinst<lb/> auf <date ana="bk:when"
                      when="1428">diz ÿar.</date></seg><lb/>
