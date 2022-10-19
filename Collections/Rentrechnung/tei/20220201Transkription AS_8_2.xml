@@ -112,7 +112,7 @@
    </teiHeader>
    <standOff>
       <listPerson ana="depcha:index">
-         <person xml:id="pers_x">
+         <person xml:id="pers_">
             <name><!-- preliminary -->Unknown Person</name>
          </person>
          <person xml:id="pers_1">
@@ -248,7 +248,7 @@
             <name><surname>Marxer</surname>
                <forename>Jacob</forename></name>
             <occupation>amtstragender Landamman</occupation>
-            <note type="place">aus Ruggell</note>
+            <note ana="from" type="placeName">Ruggell</note>
          </person>
          <person xml:id="pers_26">
             <name><surname>Nescher</surname></name>
@@ -316,8 +316,12 @@
             <occupation>Hofbäcker</occupation>
          </person>
          <person xml:id="pers_40">
-            <name><surname>Anton</surname>
-               <forename>Banzer</forename></name>
+            <name>
+               <surname>Banzer</surname>
+               <forename>Franz</forename>
+               <forename>Anton</forename>
+            </name>
+            <occupation>Forstknecht</occupation>
             <note ana="from" type="placeName">Balzers</note>
          </person>
          <person xml:id="pers_41">
@@ -412,6 +416,33 @@
             <name><surname type="ledig">Karrer</surname>
                <forename>Michael</forename></name>
             <occupation>Schlossküfer</occupation>
+         </person>
+         <person xml:id="pers_61">
+            <name>
+               <surname>Reinberger</surname>
+            </name>
+            <occupation>Pächter Rheinmühle</occupation>
+            <note ana="from" type="placeName">Schaan</note>
+            <note ana="social_role">Hochfürstlicher Benefiziat</note>
+         </person>
+         <person xml:id="pers_63">
+            <name><surname>Köscher</surname>
+               <forename>Johann</forename></name>
+         </person>
+         <person xml:id="pers_64">
+            <name><surname>Petter</surname>
+               <forename>Frieidtle</forename></name>
+            <occupation>Herrschaftlicher Schlosser</occupation>
+         </person>
+         <person xml:id="pers_65">
+            <name><surname>Singer</surname>
+               <forename>Andreas</forename></name>
+            <occupation>Torwart</occupation>
+         </person>
+         <person xml:id="pers_66">
+            <name><surname>Batuster</surname>
+               <forename>Johann</forename></name>
+            <occupation>Winzermeister</occupation>
          </person>
       </listPerson>
       <listOrg ana="depcha:index">
@@ -1734,12 +1765,12 @@
                      <div>
                         <note>36</note>
                         <p>Nach <unclear>inhalt bekhommendt</unclear> gnedigsten decrets von dem
-                              <name ana="bk:from" ref="#pers_24"><persName>Johann Georg
-                                 Khauffman</persName> hochfürstl underthan ausz dem ambt <placeName
-                                 ref="#geo_mauren">Mauren</placeName></name> die ihme nou gesambt
-                           abgab wegen erledigung der leibaigenschafft zue bezahlen auferlegt
-                           empfangen <fw><measure ana="bk:money" quantity="3" unit="fl"
-                              >3</measure>Latus per se</fw></p>
+                              <persName ana="bk:from" ref="#pers_24">Johann Georg
+                              Khauffman</persName> hochfürstl underthan ausz dem ambt <placeName
+                              ref="#geo_mauren">Mauren</placeName> die ihme nou gesambt abgab wegen
+                           erledigung der leibaigenschafft zue bezahlen auferlegt empfangen
+                                 <fw><measure ana="bk:money" quantity="3" unit="fl">3</measure>Latus
+                              per se</fw></p>
                      </div>
 
 
@@ -1845,8 +1876,8 @@
                               ausz dem ambt <placeName ref="#geo_triesen"
                               >Triesen</placeName></persName>
                            <measure ana="bk:money" quantity="18" unit="fl">18</measure></p>
-                        <p ana="bk:entry">Von dem <persName>Jacob Nidharth auszengedachtem ambt
-                                 <placeName ref="#geo_triesen">Triesen</placeName></persName>
+                        <p ana="bk:entry">Von dem <persName ref="#pers_35">Jacob Nidharth</persName>
+                           auszengedachtem ambt <placeName ref="#geo_triesen">Triesen</placeName>
                            <measure ana="bk:money" quantity="18" unit="fl">18</measure></p>
                         <fw ana="bk:total">Ew:<measure ana="bk:money" quantity="54" unit="fl"
                               >54</measure></fw>
@@ -1876,8 +1907,9 @@
                            vertauschten pferdten, so die ausländer einander abgenommen der
                            gewohnliche ausschlag von iedem <measure ana="bk:money" quantity="2"
                               unit="kr">2</measure> zusammen aber an S: <unclear>aukärg</unclear>
-                           tag 1719 durch fl <persName>landtschreiber Ludovic</persName> angebracht
-                           worden pr <measure ana="bk:money" quantity="3" unit="fl">3</measure></p>
+                           tag 1719 durch fl <persName ref="#pers_13">landtschreiber
+                              Ludovic</persName> angebracht worden pr <measure ana="bk:money"
+                              quantity="3" unit="fl">3</measure></p>
                      </div>
                      <div>
                         <note>No. 45</note>
@@ -1938,27 +1970,29 @@
                         <note>No. 50</note>
                         <p ana="bk:entry">Bey gehaltenen Markht in Liechtenstein den <date
                               when="1719-12-23">23. xbris 1719</date> ist lauth beylag von dem
-                           maister <persName>Joseph <unclear>lathaum</unclear></persName> glastere
-                           in veltkürch vor einen gemasten ochsen, so zum zeugen untauglich worden
-                           pr <measure ana="bk:money" quantity="25" unit="fl">25</measure> dan vor
-                           eine mast khue <measure ana="bk:money" quantity="22" unit="fl"
-                              >22</measure> zusamen aber empfangen worden <measure ana="bk:money"
-                              quantity="47" unit="fl">47</measure></p>
+                           maister <persName ref="#pers_36">Joseph
+                              <unclear>lathaum</unclear></persName> glastere in veltkürch vor einen
+                           gemasten ochsen, so zum zeugen untauglich worden pr <measure
+                              ana="bk:money" quantity="25" unit="fl">25</measure> dan vor eine mast
+                           khue <measure ana="bk:money" quantity="22" unit="fl">22</measure> zusamen
+                           aber empfangen worden <measure ana="bk:money" quantity="47" unit="fl"
+                              >47</measure></p>
                      </div>
                      <div>
                         <note>51</note>
-                        <p ana="bk:entry">Dan bezahle <persName>ich verwalter</persName> lauth
-                              ihr<unclear>o zetl</unclear> vor 2 zue meiner hausz noturft <date
-                              when="1719">anno 1719</date> geschlachtete 3:lo 4 jahrige oxen pr.
-                              <measure ana="bk:money" quantity="36" unit="fl">36</measure></p>
+                        <p ana="bk:entry">Dan bezahle <persName ref="#pers_">ich
+                              verwalter</persName> lauth ihr<unclear>o zetl</unclear> vor 2 zue
+                           meiner hausz noturft <date when="1719">anno 1719</date> geschlachtete
+                           3:lo 4 jahrige oxen pr. <measure ana="bk:money" quantity="36" unit="fl"
+                              >36</measure></p>
                      </div>
                      <div>
                         <note>No. 52</note>
                         <p ana="bk:entry">Den <date when="1720-04-15">15 Aprill 1720</date> von
-                              <persName>Ihro hochfl. maister bihler von <placeName>Embs aus grau
-                                 pünthen</placeName></persName> wegen ihme verkhauften oxen: und
-                           khue zue auch empfangen <measure ana="bk:money" quantity="51" unit="fl"
-                              >51</measure></p>
+                              <persName ref="#pers_38">Ihro hochfl. maister bihler von
+                                 <placeName>Embs aus grau pünthen</placeName></persName> wegen ihme
+                           verkhauften oxen: und khue zue auch empfangen <measure ana="bk:money"
+                              quantity="51" unit="fl">51</measure></p>
                      </div>
                      <div>
                         <note>No. 53</note>
@@ -1969,9 +2003,9 @@
                      </div>
                      <div>
                         <note>No. 54</note>
-                        <p ana="bk:entry"><add>I la</add>stl: bezahle <persName>ich</persName>
-                           verwalts für eine zue meier haus noturft empfangenes saug kalb den <date
-                              when="1720-12-24">24. xber 1720</date>
+                        <p ana="bk:entry"><add>I la</add>stl: bezahle <persName ref="#pers_"
+                              >ich</persName> verwalts für eine zue meier haus noturft empfangenes
+                           saug kalb den <date when="1720-12-24">24. xber 1720</date>
                            <!-- commodity Ochsen, Kühe, Kälber und Saugkälber kodieren -->
                            <measure ana="bk:money" quantity="20" unit="fl">20</measure></p>
                      </div>
@@ -2006,9 +2040,9 @@
                         <note>No. 58</note>
                         <p ana="bk:entry">Ferner den <date when="1719-11-20">20:</date> et <date
                               when="1719-11-29">29 9bris</date>
-                           <add>dem <persName>hoffbäkhen</persName></add> 3 derglaichen stukh
-                           verkhauft pr <measure ana="bk:money" quantity="34" unit="fl"
-                              >34</measure><measure ana="bk:money" quantity="30" unit="kr"
+                           <add>dem <persName ref="#pers_39">hoffbäkhen</persName></add> 3
+                           derglaichen stukh verkhauft pr <measure ana="bk:money" quantity="34"
+                              unit="fl">34</measure><measure ana="bk:money" quantity="30" unit="kr"
                               >30</measure></p>
                      </div>
                      <div>
@@ -2019,9 +2053,9 @@
                      </div>
                      <div>
                         <note>No. 61</note>
-                        <p ana="bk:entry">ingleichen <persName>Franz Anthoni Banzer</persName> auch
-                           1 stukh verkauft pr <measure ana="bk:money" quantity="9" unit="fl"
-                              >9</measure></p>
+                        <p ana="bk:entry">ingleichen <persName ref="#pers_40">Franz Anthoni
+                              Banzer</persName> auch 1 stukh verkauft pr <measure ana="bk:money"
+                              quantity="9" unit="fl">9</measure></p>
                      </div>
                      <fw ana="bk:total">Summa<measure ana="bk:money" quantity="78" unit="fl"
                            >78</measure><measure ana="bk:money" quantity="55" unit="kr"
@@ -2077,7 +2111,8 @@
                               >24</measure></fw>
                      </div>
                      <div ana="bk:account" corresp="#ZollRuggell">
-                        <head>Von dem <persName>zoller zue Roggell Andreas Büchl</persName></head>
+                        <head>Von dem <persName ref="#pers_7">zoller zue Roggell Andreas
+                              Büchl</persName></head>
                         <div>
                            <note>No. 3</note>
                            <p ana="bk:entry"><date from="1718-04-01" to="1718-11-22">Von 1. und
@@ -2719,7 +2754,7 @@
 
                         <div ana="bk:account" corresp="#ZollKleinMels">
                            <note>No. 16</note>
-                           <head>Von dem <persName><placeName>klein
+                           <head>Von dem <persName ref="#pers_9"><placeName>klein
                                  Mölser</placeName>Zoller</persName></head>
                            <p ana="bk:entry">Von<date from="1719-04-22" to="1719-05-22">22 aprill
                                  bis 22 may 1719</date>
@@ -2915,7 +2950,7 @@
                            <note>No. 20</note>
                            <p ana="bk:entry">fehrner von dem so genannten <placeName>wollenwes
                                  hoff</placeName>von den iezmahligen
-                                 <unclear>hoffemoren</unclear><persName ana="bk:from" ref="#pers_x"
+                                 <unclear>hoffemoren</unclear><persName ana="bk:from" ref="#pers_16"
                                  >Christian Walkh</persName>und des<persName ana="bk:from"
                                  ref="#pers_17">Mayr</persName>ab <placeName ref="#geo_schellenberg"
                                  >Schelleberg</placeName> auch <date from="1719" to="1720">von
@@ -3057,7 +3092,7 @@
                         <div>
                            <note>No. 30</note>
                            <p ana="bk:entry">Den <date when="1720-01-11">11. Jener 1720</date>. Den
-                                 <persName ref="#pers_x">Georg Hohenzeitten</persName>landtsmann von
+                                 <persName ref="#pers_">Georg Hohenzeitten</persName>landtsmann von
                                  <placeName>St. Gallen</placeName>sint sine wahren, weillen derselbe
                               2 landtsfürstliche zollstatten ohnverzolter vorbey gangen und yber den
                                  <placeName>Rhin</placeName>sich wollen transprotieren lassen,
@@ -3737,7 +3772,7 @@
                         >30</measure></p>
                      <p ana="bk:entry">Den <placeName type="Fluss">bach hinder dem gulmen
                         </placeName>verzinset <persName ana="bk:from" ref="#pers_45">Jäger Mathias
-                           Dürmeyer </persName>mit <measure ana="bk:money" quantity="1" unit="fl"
+                           Dürmeyer</persName> mit <measure ana="bk:money" quantity="1" unit="fl"
                            >1</measure></p>
                      <p ana="bk:entry">Das fischwasser in den undern <del>und obern</del>ämbteren am
                            <placeName>Eschnerberg </placeName>den <placeName type="Fluss">obern und
@@ -4097,11 +4132,11 @@
                   <div ana="bk:account" corresp="#Umgeld">
                      <note>No. 14/</note>
                      <head>Ahn umbgelt gelifferet</head>
-                     <p ana="bk:entry">Den <date when="1723-04-22">22 April </date><persName>von den
-                              <unclear>löbl </unclear>fürstlichen schreiberij </persName>
+                     <p ana="bk:entry">Den <date when="1723-04-22">22 April </date><persName
+                           ref="#pers_13">von den <unclear>löbl </unclear>fürstlichen schreiberij </persName>
                         <measure ana="bk:money" quantity="57" unit="fl">57</measure></p>
-                     <p ana="bk:entry">Den <date when="1723-04-29">29 ten dito </date><persName>von
-                           besagten landschreiberij</persName>
+                     <p ana="bk:entry">Den <date when="1723-04-29">29 ten dito </date><persName
+                           ref="#pers_13">von besagten landschreiberij</persName>
                         <measure ana="bk:money" quantity="19" unit="fl">19</measure></p>
                      <p ana="bk:entry">Den letsten <unclear>vom sollberth</unclear>umgelt <measure
                            ana="bk:money" quantity="7" unit="fl">7 </measure><measure ana="bk:money"
@@ -5530,14 +5565,13 @@
                         </date>jahres besoldung L: vier quittungen p. <measure ana="bk:money"
                            quantity="500" unit="fl">500</measure></p>
 
-                     <p n="67" ana="bk:to">Herren <persName ref="#pers_62">Landtschreiber
-                           Deyl</persName>pro <date when="1723">anno 1723 </date> jahres besoldung
-                        lauth vier scheinen <measure ana="bk:money" quantity="350" unit="fl"
-                           >350</measure></p>
+                     <p n="67" ana="bk:to">Herren <persName ref="#pers_13">Landtschreiber</persName>
+                        Deyl pro <date when="1723">anno 1723 </date> jahres besoldung lauth vier
+                        scheinen <measure ana="bk:money" quantity="350" unit="fl">350</measure></p>
                      <p n="67" ana="bk:to">Mir <persName ref="#pers_37">Raittungs führer </persName>
                         <date when="1723">jahres besoldung </date>
                         <measure ana="bk:money" quantity="450" unit="fl">450</measure></p>
-                     <p n="68" ana="bk:to"><persName ref="#pers_62">Herrn Landtschreiber</persName>
+                     <p n="68" ana="bk:to"><persName ref="#pers_13">Herrn Landtschreiber</persName>
                         an umbgelts <unclear>anidenzien </unclear>das umbgelt zue berechnen L:
                         schein <measure ana="bk:money" quantity="88" unit="fl">88 </measure><measure
                            ana="bk:money" quantity="10" unit="kr">10 </measure><measure
@@ -5551,11 +5585,12 @@
                      <p n="70" ana="bk:to">Herrschaftl. <unclear>sänn notturft</unclear> auss götti
                         jahres besoldung L: vier scheinen <measure ana="bk:money" quantity="160"
                            unit="fl">160</measure></p>
-                     <p n="71" ana="bk:to">Herrschaftl: <unclear>führkherhts </unclear><persName
-                           ref="#pers_63">Joann Köscher </persName>jahrs besoldung L: vier scheinen
-                        p. <measure ana="bk:money" quantity="200" unit="fl">200</measure></p>
+                     <p n="71" ana="bk:to">Herrschaftl: <unclear>führkherhts</unclear>
+                        <persName ref="#pers_63">Joann Köscher</persName> jahrs besoldung L: vier
+                        scheinen p. <measure ana="bk:money" quantity="200" unit="fl"
+                        >200</measure></p>
                      <p n="72" ana="bk:to">Dem <persName ref="#pers_64">herrschaftl. schlosser
-                           Frieidtle Petter</persName>ferl. besoldung <date from="1723-01-01"
+                           Frieidtle Petter</persName> ferl. besoldung <date from="1723-01-01"
                            to="1723-10-31"> von <choice>
                               <orig>primo Januarij </orig>
                               <ex>1. Januar </ex>
@@ -5565,7 +5600,7 @@
                            </choice></date> lauth zweyer scheinen bezahlt p. <measure ana="bk:money"
                            quantity="83" unit="fl">83 </measure><measure ana="bk:money"
                            quantity="20" unit="kr">20</measure></p>
-                     <p n="73" ana="bk:to">dem <persName ref="#pers_">jäger Mathias
+                     <p n="73" ana="bk:to">dem <persName ref="#pers_45">jäger Mathias
                               <unclear>Saümayer</unclear></persName>jahres besoldung pro <date
                            when="1723">Anno 1723</date> lauth vier scheinen <measure ana="bk:money"
                            quantity="80" unit="fl">80</measure></p>
@@ -5579,13 +5614,13 @@
                            </choice>1723</date> ap fünf quartallen besoldung L: zweyer scheine
                         bezahlt <measure ana="bk:money" quantity="100" unit="fl">100</measure></p>
                      <p n="75" ana="bk:to">Dess <persName ref="#pers_66">wingertt meister Joann
-                           Batuster</persName>jahres besoldung L: schein p: <measure ana="bk:money"
+                           Batuster</persName> jahres besoldung L: schein p: <measure ana="bk:money"
                            quantity="15" unit="fl">15</measure></p>
                      <p n="76" ana="bk:to">Des <persName ref="#pers_67">obsichters </persName>im
                            <placeName>herrschaftl. wingert zue Triesen </placeName>jahres
                            <unclear>compens</unclear>
                         <measure ana="bk:money" quantity="4" unit="fl">4</measure></p>
-                     <p n="77" ana="bk:to">Des <persName ref="#pers_68">forstknechts Anton Balzers
+                     <p n="77" ana="bk:to">Des <persName ref="#pers_40">forstknechts Anton Balzers
                         </persName>v. <placeName ref="#geo_balzers">Balzers </placeName>jahres
                         besoldung L: 3er scheinen p. <measure ana="bk:money" quantity="10" unit="fl"
                            >10</measure></p>
@@ -5685,7 +5720,7 @@
                         type="swapped">angetauschten obern Gamandra </measure> aussgelt L: schein
                         <measure ana="bk:money" quantity="4" unit="fl">4 </measure><measure
                         ana="bk:money" quantity="48" unit="kr">48</measure></p>
-                  <p n="92" ana="bk:to">dem<persName ref="#pers_78">Anton Walser </persName>von
+                  <p n="92" ana="bk:to">dem <persName ref="#pers_3">Anton Walser</persName> von
                         <placeName ref="#geo_schaan">Schann</placeName> wegen <measure
                         commodity="land" type="swapped">angetauschten wiesrechs in der
                         gamandra</measure> p. <measure ana="bk:money" quantity="17" unit="fl">17
@@ -5773,7 +5808,7 @@
                         <placeName>Veltkirchen</placeName> L: schein <measure ana="bk:money"
                         quantity="29" unit="fl">29 </measure><measure ana="bk:money" quantity="20"
                         unit="kr">20</measure></p>
-                  <p n="104" ana="bk:to"><persName ana="bk:Group">Martin Matten seel.
+                  <p n="104" ana="bk:to"><persName ana="bk:Group" ref="#pers_">Martin Matten seel.
                         Erben</persName> von <placeName>Veltkirchen</placeName> l auth Quittung p <!-- @ CP: So gedacht? -->
                      <measure ana="bk:money" quantity="34" unit="fl">34 </measure><measure
                         ana="bk:money" quantity="3" unit="kr">3</measure></p>
@@ -7290,17 +7325,17 @@
                               <placeName ref="#geo_feldkirch">Veldtkirch</placeName></persName> L:
                         schein <measure ana="bk:money" quantity="1" unit="fl">1 </measure><measure
                            ana="bk:money" quantity="28" unit="kr">28</measure></p>
-                     <p n="323" ana="bk:to">Einem <persName>botten</persName> nacher
+                     <p n="323" ana="bk:to">Einem <persName ref="#pers_">botten</persName> nacher
                            <placeName>Razins</placeName> mit brieffen L: schein <!-- @CP: wie sollen wir solche Personen kodieren, die wir nicht genau identifizieren könnnen? -->
                         <measure ana="bk:money" quantity="1" unit="fl">1 </measure><measure
                            ana="bk:money" quantity="28" unit="kr">28</measure></p>
                      <p n="324" ana="bk:to">Einen botten an den <placeName>Eschnerberg</placeName>
                         L: schein p <measure ana="bk:money" quantity="24" unit="kr">24</measure></p>
-                     <p n="325" ana="bk:to">Einen botten nochen <placeName>Razins </placeName>wegen
-                        des <persName>juden <unclear>trett heimter</unclear></persName> L: schein
-                        den <date when="1723-07-11">11ten july</date> p <measure ana="bk:money"
-                           quantity="1" unit="fl">1 </measure><measure ana="bk:money" quantity="30"
-                           unit="kr">30</measure></p>
+                     <p n="325" ana="bk:to">Einen <persName ref="#pers_">botten</persName> nochen
+                           <placeName>Razins </placeName>wegen des juden <unclear>trett
+                           heimter</unclear> L: schein den <date when="1723-07-11">11ten july</date>
+                        p <measure ana="bk:money" quantity="1" unit="fl">1 </measure><measure
+                           ana="bk:money" quantity="30" unit="kr">30</measure></p>
                      <p n="326" ana="bk:to">Einen botten ins <placeName>pretters bordt</placeName>
                         zum <persName ref="#pers_100">prinzen emanuel v savoyen</persName>
                         <unclear>d hl: p </unclear>
@@ -7572,7 +7607,8 @@
 
                <div ana="bk:account" corresp="#KupferschmiedenLohn">
                   <head>Kupfer Schmiedt</head>
-                  <p n="367" ana="bk:to">Vor einen newen brandtenwein hatten dem <persName><choice>
+                  <p n="367" ana="bk:to">Vor einen newen brandtenwein hatten dem <persName
+                        ref="#pers_"><choice>
                            <orig>mstr</orig>
                            <ex>meister</ex>
                         </choice>
@@ -8342,9 +8378,9 @@
                   <note type="en">kringel über ganze seite</note>
 
                   <pb facs="http://URI:" n="76r"/>
-                  <p ana="bk:to"><persName>Joann Schindler hanser sohn</persName> in d zemmeiss
-                           <fw><measure ana="bk:money" quantity="6" unit="kr"
-                           ><unclear>6</unclear></measure></fw></p>
+                  <p ana="bk:to"><persName ref="#pers_">Joann Schindler hanser sohn</persName> in d
+                     zemmeiss <fw><measure ana="bk:money" quantity="6" unit="kr"
+                              ><unclear>6</unclear></measure></fw></p>
                   <p ana="bk:to"><persName ref="#pers_130">Joseph Banzer</persName>
                      <choice>
                         <orig>v</orig>
@@ -8445,7 +8481,7 @@
                            ana="bk:money" quantity="5" unit="kr">5</measure></fw></p>
                   <p ana="bk:to"><persName ref="#pers_154">Thomas Ritterstein </persName>
                      <fw><measure ana="bk:money" quantity="11" unit="kr">11</measure></fw></p>
-                  <p ana="bk:to"><persName>Adam Hilti Seeger</persName>
+                  <p ana="bk:to"><persName ref="#pers_">Adam Hilti Seeger</persName>
                      <fw><measure ana="bk:money" quantity="1" unit="fl">1 </measure><measure
                            ana="bk:money" quantity="47" unit="kr">47</measure></fw></p>
                   <fw ana="bk:subtotal">Latus<measure ana="bk:money" quantity="848" unit="fl">848
