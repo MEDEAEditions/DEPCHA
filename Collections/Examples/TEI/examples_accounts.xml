@@ -43,7 +43,6 @@
                ana="depcha:mainCurrency">
                <label xml:lang="pl">Schok</label>
                <label type="abbr">sxg.</label>
-               <desc>...</desc>
                <country>Poland</country>
                <conversion fromUnit="#schok" toUnit="#mark" formula="$fromUnit div 1.25"/>
                <conversion fromUnit="#schok" toUnit="#floren" formula="$fromUnit div 1.875"/>
@@ -57,7 +56,6 @@
             <unitDef type="currency" xml:id="halbgrosch" from="1300" to="1600">
                <label xml:lang="pl">Halbgrosch</label>
                <label type="abbr">gr.</label>
-               <desc>...</desc>
                <country>Poland</country>
             </unitDef>
          </unitDecl>
@@ -86,7 +84,7 @@
       <body>
          <pb n="398"/>
          <div>
-            <head><name ana="bk:account" ref="#notariusCivitatis" rend="bold">Notarius<lb/>
+            <head><name ana="bk:account" ref="#notarius" rend="bold">Notarius<lb/>
                civitatis</name></head>
             <note>[puste]</note>
          </div>

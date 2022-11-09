@@ -24,14 +24,21 @@
             <listPrefixDef>
                 <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
                     replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
-                    <p> Analytical descriptors are considered to represent concepts from the DEPCHA
-                        bookkeeping ontology and can be extended to respective URIs. </p>
+                    <p>Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs.</p>
+                </prefixDef>
+                <prefixDef ident="depcha" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.ontology#$1">
+                    <p>Analytical descriptors are considered to represent concepts from the
+                        project-specific DEPCHA ontology and can be extended to respective URIs.</p>
+                </prefixDef>
+                <prefixDef ident="huc" matchPattern="([(a-z)|(A-Z)]+)"
+                    replacementPattern="https://gams.uni-graz.at/o:depcha.huc#$1">
+                    <p>Analytical descriptors are considered to represent concepts from the historical units and currencies ontology and can be extended to respective URIs.</p>
                 </prefixDef>
                 <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
-                    replacementPattern="http://www.wikidata.org/wiki/$1">
-                    <p>
-                        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
-                    </p>
+                    replacementPattern="http://www.wikidata.org/entity/$1">
+                    <p><ref target="https://www.wikidata.org/wiki/Help:Namespaces"/></p>
                 </prefixDef>
             </listPrefixDef>
             <unitDecl>

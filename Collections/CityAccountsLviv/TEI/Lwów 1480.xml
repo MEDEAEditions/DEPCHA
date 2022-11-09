@@ -50,6 +50,10 @@
 					<p>Analytical descriptors are considered to represent concepts from the
 						project-specific DEPCHA ontology and can be extended to respective URIs.</p>
 				</prefixDef>
+				<prefixDef ident="huc" matchPattern="([(a-z)|(A-Z)]+)"
+					replacementPattern="https://gams.uni-graz.at/o:depcha.huc#$1">
+					<p>Analytical descriptors are considered to represent concepts from the historical units and currencies ontology and can be extended to respective URIs.</p>
+				</prefixDef>
 				<prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
 					replacementPattern="http://www.wikidata.org/entity/$1">
 					<p><ref target="https://www.wikidata.org/wiki/Help:Namespaces"/></p>
@@ -195,7 +199,7 @@
 						</category>
 					</category>
 					<category xml:id="debita">
-						<catDesc><gloss/></catDesc>
+						<catDesc><gloss>debita</gloss></catDesc>
 					</category>
 					<category xml:id="res">
 						<catDesc><gloss>res</gloss></catDesc>
@@ -490,7 +494,6 @@
 									<catDesc><gloss>Cementarii</gloss></catDesc>
 								</category>
 							</category>
-							<category/>
 						</category>
 						<category xml:id="debitum"><catDesc><gloss>Debitum</gloss></catDesc></category>
 					</category>
@@ -541,7 +544,7 @@
 								</category>
 							</category>
 							<category xml:id="portulani">
-								<catDesc><gloss/></catDesc>
+								<catDesc><gloss>portulani</gloss></catDesc>
 							</category>
 							<category xml:id="johannes_magister">
 								<catDesc><gloss>Johannes Magister</gloss></catDesc>
