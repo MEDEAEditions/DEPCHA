@@ -1279,11 +1279,11 @@
               text “By Puffer" can be interpreted as an information about someone who is carrying
               out the transaction for someone else. Adding <code>@ana="bk:agent"</code> helps
               annotating the person as a <code>bk:Agent</code>. As we can see a person named Derius
-              Drake worked for Wheaton (owner and main author of the day book). Derius
-              Drake paid his debt of 1 pound 59 shillings and 6 pence with his work <hi
-                rend="italic">by cutting two sticks</hi>. To do the job he got an axe which was
-              delivered by a person called <hi rend="italic">Puffer</hi> that represents another
-                <code>bk:Agent</code>.</p>
+              Drake worked for Wheaton (owner and main author of the day book). Derius Drake paid
+              his debt of 1 pound 59 shillings and 6 pence with his work <hi rend="italic">by
+                cutting two sticks</hi>. To do the job he got an axe which was delivered by a person
+              called <hi rend="italic">Puffer</hi> that represents another
+              <code>bk:Agent</code>.</p>
             <ab><code rend="block" lang="XML"><![CDATA[<table>
   <head>Monday <date ana="bk:when" when="1828-09-15">September-15th-1828</date></head>
   <row>  
@@ -1307,54 +1307,123 @@
           <div xml:id="places">
             <head>Places</head>
             <p>The annotation <code>bk:where</code> can be used to express locations as
-                <code>bk:Place</code> that are associated with transactions. However, it is
-              important to note that this connection to a place is not specified any further. So,
-              don't expect to find a reference to a place inside the <code rend="element"
-                ><![CDATA[<bk:Transaction>]]></code> element in the RDF. Just add
+                <code>bk:Place</code> that are associated with transactions. Just add
                 <code>ana="bk:where"</code> to a <code rend="element"><![CDATA[<place>]]></code> and
               also consider referencing it to a <code rend="element"><![CDATA[<listPlace>]]></code>
-              element in the <code rend="element"><![CDATA[<teiHeader>]]></code>.</p>
-            <ab><code rend="block" lang="XML"><![CDATA[<listPlace ana="depcha:index">
-  <place xml:id="manorKasten">  
-    <placeName>Kasten</placeName>  
-    <location> 
-      <country>Italien</country>   
-      <settlement>Kastelbell</settlement> 
-      <geo>46.63455486353947, 10.91606818862674</geo>  
-    </location>
-  </place>
-</listPlace>
-<!-- ... -->
-<p>
-  <seg ana="bk:entry">Item so hatdo <name ref="pers_SR009" type="person" ana="bk:from"> 
-  michel under weg</name> geben <measure ana="bk:commodity" commodity="rye"    
-  quantity="2" unit="muett">2 mütt<lb/> Roken</measure> die gab der   
-  <name ref="pers_SR071" type="person" ana="bk:to">parott</name> umb 1 mütt<lb/> arbaid  
-  daz kam zw dem <placeName ana="bk:where" ref="#manorKasten">kasten</placeName> in 
-  der <lb/> fasten</seg>
-</p>]]>
+              element in the <code rend="element"><![CDATA[<teiHeader>]]></code>. </p>
+            <ab><code rend="block" lang="XML"><![CDATA[<teiHeader>
+  <fileDesc>
+     <sourceDesc>
+         <listPlace ana="depcha:index">
+           <place xml:id="manorKasten">
+              <placeName>Kasten</placeName>
+              <location>
+                 <country>Italien</country>
+                 <settlement>Kastelbell</settlement>
+                 <geo>46.63455486353947, 10.91606818862674</geo>
+              </location>
+           </place>
+           <place xml:id="Lantsch">
+              <placeName>Läntsch/Lentsch</placeName>
+              <location>
+                 <country>Italien</country>
+                 <settlement>Laatsch/ Laudes</settlement>
+                 <geo>46.6771283157355, 10.53109516682290</geo>
+              </location>
+           </place>
+        </listPlace>
+     </sourceDesc>
+  </fileDesc>
+</teiHeader>
+<text>
+  <body>
+     <p>
+        <seg ana="bk:entry">Item so hatdo <name ref="pers_SR009" type="person" ana="bk:from"
+              >michel under weg</name> geben <measure ana="bk:commodity" commodity="rye"
+              quantity="2" unit="muett">2 mütt<lb/> Roken</measure> die gab der <name
+              ref="pers_SR071" type="person" ana="bk:to">parott</name> umb 1 mütt<lb/> arbaid
+           daz kam zw dem <placeName ana="bk:where" ref="#manorKasten">kasten</placeName> in
+           der <lb/> fasten</seg>
+     </p>
+  </body>
+</text>]]>
               </code>
-              <caption>Annotation of a place using <code>bk:where</code>.</caption></ab>
-            <p>Without the generation of a <code rend="element"><![CDATA[<listPlace>]]></code> that
-              is attributed with <code>depcha:index</code> you will not get the <code rend="element"
-                ><![CDATA[<schema:Place>]]></code> in your RDF and also the <code>bk:Place</code>
-              entities will not be counted in the informative section of the <code rend="element"
-                ><![CDATA[<depcha:Dataset>]]></code>. Transferring the data to an RDF structure
-              would lead to this result: </p>
-            <ab><code rend="block" lang="RDF"><![CDATA[<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.places#T1">
-  <!-- ... -->
-  <bk:where rdf:resource="https://gams.uni-graz.at/o:depcha.example.places#kasten"/>
+              <caption>Annotation of places using depcha:index and bk:where.</caption></ab>
+            <p>As you can see in the RDF code snippet below, the transformation generates a
+              reference to the annotated place in the <code rend="element"
+                ><![CDATA[<bk:Transaction]]></code>. However, without the creation of a <code
+                rend="element"><![CDATA[<listPlace>]]></code> that is attributed with
+                <code>depcha:index</code> you will not get the <code rend="element"
+                ><![CDATA[<schema:Place>]]></code> in your RDF and there is no summing up of the
+                <code>bk:Place</code> entities inside the <code rend="element"
+                ><![CDATA[<depcha:numberOfPlaces>]]></code> in the informative section of the <code
+                rend="element"><![CDATA[<depcha:Dataset>]]></code>. The aggregation of places,
+              however, contains only those places that were also mentioned in a <code rend="element"
+                ><![CDATA[<bk:entry>]]></code>. 
+              <lb/> Transferring the data to an RDF structure would lead to a result containing the
+              following information: </p>
+            <ab><code rend="block" lang="RDF"><![CDATA[ <depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.places.dataset">
+    <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+    <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.places"/>
+    <depcha:numberOfTransactions>1</depcha:numberOfTransactions>
+    <depcha:numberOfTransfers>1</depcha:numberOfTransfers>
+    <depcha:numberOfEconomicAgents>2</depcha:numberOfEconomicAgents>
+    <depcha:numberOfMonetaryValues>0</depcha:numberOfMonetaryValues>
+    <depcha:numberOfEconomicGoods>1</depcha:numberOfEconomicGoods>
+    <depcha:numberOfPlaces>1</depcha:numberOfPlaces>
+    <depcha:numberOfAccounts>0</depcha:numberOfAccounts>
+</depcha:Dataset>
+<void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.places">
+    <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
+    <dc:publisher>Institute Centre for Information Modelling, University of Graz</dc:publisher>
+</void:Dataset>
+<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.places#T1">
+    <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+    <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.places"/>
+    <bk:entry>Item so hatdo michel under weg geben 2 mütt Roken die gab der parott umb 1 mütt
+        arbaid daz kam zw dem kasten in der fasten</bk:entry>
+    <bk:consistsOf>
+        <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.places#T1T1">
+            <bk:transfers>
+                <bk:Commodity
+                    rdf:about="https://gams.uni-graz.at/o:depcha.example.places#T1T1EA">
+                    <bk:unit
+                        rdf:resource="https://gams.uni-graz.at/context:depcha.example#muett"/>
+                    <bk:quantity>2</bk:quantity>
+                    <bk:classified
+                        rdf:resource="https://gams.uni-graz.at/context:depcha.example#rye"/>
+                </bk:Commodity>
+            </bk:transfers>
+            <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_SR071"/>
+            <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_SR009"/>
+        </bk:Transfer>
+    </bk:consistsOf>
+    <bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.example#manorkasten"/>
 </bk:Transaction>
-<!-- ... -->
-<schema:Place rdf:about="https://gams.uni-graz.at/o:depcha.example.places#manorKasten">
-  <schema:name>Kasten</schema:name>
-  <schema:containedInPlace>Italien</schema:containedInPlace>
-  <schema:containedInPlace>Kastelbell</schema:containedInPlace>
-  <schema:longitude>46.63455486353947</schema:longitude>
-  <schema:latitude>10.91606818862674</schema:latitude>
+<bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.example#pers_SR009">
+    <rdfs:label>michel under weg</rdfs:label>
+</bk:EconomicAgent>
+<bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.example#pers_SR071">
+    <rdfs:label>parott</rdfs:label>
+</bk:EconomicAgent>
+<schema:Place rdf:about="https://gams.uni-graz.at/context:depcha.example#manorkasten">
+    <rdfs:label>Kasten</rdfs:label>
+    <schema:name>Kasten</schema:name>
+    <schema:containedInPlace>Italien</schema:containedInPlace>
+    <schema:containedInPlace>Kastelbell</schema:containedInPlace>
+    <schema:longitude>46.63455486353947</schema:longitude>
+    <schema:latitude>10.91606818862674</schema:latitude>
+</schema:Place>
+<schema:Place rdf:about="https://gams.uni-graz.at/context:depcha.example#lantsch">
+    <rdfs:label>Läntsch/Lentsch</rdfs:label>
+    <schema:name>Läntsch/Lentsch</schema:name>
+    <schema:containedInPlace>Italien</schema:containedInPlace>
+    <schema:containedInPlace>Laatsch/ Laudes</schema:containedInPlace>
+    <schema:longitude>46.6771283157355</schema:longitude>
+    <schema:latitude>10.53109516682290</schema:latitude>
 </schema:Place>]]>
               </code>
-              <caption>Transfer of places annotated with <code>bk:where</code> to an RDF
+              <caption>Transfer of places annotated with depcha:index in listPlaces and bk:where inside bk:entryto an RDF
                 structure.</caption></ab>
           </div>
           <div xml:id="price">
