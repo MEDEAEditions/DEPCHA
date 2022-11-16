@@ -76,14 +76,33 @@
                <label>Denari</label>
                <label type="abbreviation">d</label>
             </unitDef>
-            <unitDef type="volume" xml:id="kl">
+            <unitDef type="length" xml:id="kl">
                <label>Klafter</label>
-               <!-- @ tb: Verhältnis Klafter-Fuder ergänzen -->
             </unitDef>
-            <unitDef type="volume" xml:id="fd">
+            <unitDef type="length" xml:id="shoe">
+               <label>Schuh</label>
+               <conversion fromUnit="#shoe" toUnit="#kl" formula="6"/>
+            </unitDef>
+            <unitDef type="capacity" xml:id="fd">
                <label>Fuder</label>
+               <!-- Fuhre/Ladung -->
             </unitDef>
-            <!-- es fehlen: pound, quarter, mäsli, bd, shoe -->
+            <unitDef type="capacity" xml:id="bd">
+               <label>Bund</label>
+               <!-- räbstickhel à 126 burden ... Bünden? -->
+            </unitDef>
+            <unitDef type="volume" xml:id="quarter">
+               <label>Viertel</label>
+               <!-- https://hls-dhs-dss.ch/de/articles/014201/2014-01-15/ -->
+            </unitDef>
+            <unitDef type="volume" xml:id="mäsli">
+               <label>Mässli</label>
+               <conversion fromUnit="#mäsli" toUnit="#quarter" formula="4"/>
+               <!-- https://hls-dhs-dss.ch/de/articles/014201/2014-01-15/ -->
+            </unitDef>
+            <unitDef type="weight" xml:id="pound">
+               <label>Pfund</label>
+            </unitDef>
          </unitDecl>
          <classDecl>
             <taxonomy ana="depcha:index">
