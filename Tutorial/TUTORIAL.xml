@@ -165,12 +165,16 @@
               rend="attribute">@ana</code> for the connection with the <hi rend="italic">Bookkeeping
               Ontology</hi>. Let's look at that in more detail now.</p>
           <p>The starting point is to define a container for a <code>bk:Transaction</code> by
-            annotating the textual representation of a <code>bk:entry</code> in a <code
-              rend="element"><![CDATA[<div>]]></code>, <code rend="element"><![CDATA[<row>]]></code>
-            or <code rend="element"><![CDATA[<seg>]]></code> (or any other element that fits to your
-            data and the TEI guidelines). By using <code rend="attribute">@ana</code> with the value
-            "bk:entry" a TEI structure is defined as a <code>bk:entry</code> according to the <hi
-              rend="italic">Bookkeeping Ontology</hi>.</p>
+            annotating the textual representation of a <code>bk:entry</code>. Currently supported
+            and recommended elements for the annotation of <code>bk:entry</code>: <code
+              rend="element"><![CDATA[<row>]]></code>, <code rend="element"
+            ><![CDATA[<seg>]]></code>, <code rend="element"><![CDATA[<cell>]]></code>, <code
+              rend="element"><![CDATA[<ab>]]></code>, <code rend="element"><![CDATA[<p>]]></code>,
+              <code rend="element"><![CDATA[<item]]></code> or <code rend="element"
+              ><![CDATA[<div>]]></code> (use only if no other options for <code>bk:entry</code> available). By using <code rend="attribute"
+              >@ana</code> with the value "bk:entry" a TEI structure is defined as a
+              <code>bk:entry</code> according to the <hi rend="italic">Bookkeeping
+            Ontology</hi>.</p>
           <ab>
             <code rend="block" lang="XML"><![CDATA[<row ana="bk:entry">
   <cell>1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6</cell>
@@ -385,10 +389,11 @@
                 <code>bk:MonetaryValue</code> of 7 shillings and 6 pence flows <hi rend="bold"
                 >from</hi> James Haley (normalized by an <code rend="attribute">@xml:id</code>
               reference as <hi rend="italic">economic_agent.2</hi>) <hi rend="bold">to</hi>
-              Stagville (with the reference <hi rend="italic">economic_agent.1</hi>). Notice that by
-              default the flow of money is always encoded explicitly in DEPCHA.
-              <!--TO BE SOLVED! You can, however, express the flow direction explicitly yourself. 
-                You can find more information about that under <ref target="#">XY</ref>.--></p>
+              Stagville (with the reference <hi rend="italic">economic_agent.1</hi>). It is <hi
+                rend="bold">recommended to describe the flow direction of the money</hi> with
+                <code>bk:from</code> and <code>bk:to</code>. From this description of the flow
+              direction the flow of the commodities, services or rights can be inferred
+              automatically. </p>
             <ab><code rend="block" lang="XML"><![CDATA[<head><name ana="bk:to" ref="#economic_agent.1">Stagville</name> August 1st 1808</head>
 <table>
   <head>69 <name ana="bk:from" ref="#economic_agent.2">James Haley</name> Self Dr.</head>
@@ -509,7 +514,7 @@
   </cell>
   <cell>
     <name ana="bk:to" ref="#LeslieGodwinLd">Leslie &amp; Godwin Ld</name>
-    <measure ana="bk:service" commodity="#insurance">Insurance under Collision
+    <measure ana="bk:service" commodity="insurance">Insurance under Collision
       Clause</measure>
   </cell>
   <cell>
@@ -529,7 +534,7 @@
           <date ana="bk:when" when="1897-04-26">&quot;</date>
       </cell>
       <cell>
-          <measure ana="bk:right" commodity="#grazing_rights">right of pasture - 1/2 year</measure>
+          <measure ana="bk:right" commodity="grazing_rights">right of pasture - 1/2 year</measure>
           <span ana="bk:status">in full</span> - <name ana="bk:from" ref="org.3">John Coleman</name>
       </cell>
       <cell>
@@ -626,12 +631,12 @@
     <p>Memorandum of a Day of work done by Michael Nilson &amp; his son Fred and by his cousin Richard Smith &amp; his son Robert.</p>  
     <table>   
       <row ana="bk:entry">    
-        <cell><name ana="bk:from" ref="#between.1">self &amp; Fred</name> <measure ana="bk:service" commodity="work">1 day</measure>
+        <cell><name ana="bk:from" ref="pers.1">self &amp; Fred</name> <measure ana="bk:service" commodity="work">1 day</measure>
         </cell>  
         <cell><measure ana="bk:money" unit="dollar" quantity="1.50">$1.50</measure></cell>    
       </row>  
       <row ana="bk:entry">     
-        <cell><name ana="bk:from" ref="#between.1">Richard &amp; Robert</name> <measure ana="bk:service" commodity="work">½ day</measure></cell>   
+        <cell><name ana="bk:from" ref="#pers.2">Richard &amp; Robert</name> <measure ana="bk:service" commodity="work">½ day</measure></cell>   
         <cell><measure ana="bk:money" unit="dollar" quantity="0.75">$0.75</measure></cell>  
       </row> 
     </table>
@@ -649,20 +654,23 @@
           </div>
           <div xml:id="economic_agents">
             <head> Economic Agents</head>
-            <p>Economic agents can be individuals, groups of people, organisations, a state, a city
-              or a king. By default, every <code>bk:from</code> and <code>bk:to</code> creates a
+            <p>Economic agents can be individuals, groups of people, organisations, a state, a city,
+              a king, etc. By default, every <code>bk:from</code> and <code>bk:to</code> creates a
                 <code>bk:EconomicAgent</code>. You can also determine the category of a
                 <code>bk:EconomicAgent</code> by adding <code>bk:group</code>,
-              <!--SST: auch <code>bk:organisation</code>???--> or <code>bk:individual</code> to the
-              attribute <code rend="attribute">@ana</code>. The following example shows the
-              annotation of a group of fishermen delivering fish. In this case the <code
-                rend="element"><![CDATA[<name>]]></code> element is extended by <code>ana="bk:from
-                bk:group"</code> for the fishermen and <code>ana="bk:to bk:individual"</code> for
-              the person receiving the fish.</p>
+                <code>bk:organisation</code> or <code>bk:individual</code> to the attribute <code
+                rend="attribute">@ana</code>. If you explicitly use <code rend="element"
+                ><![CDATA[<persName>]]></code> or <code rend="element"><![CDATA[<orgName>]]></code>
+              in combination with a <code>bk:to</code> or <code>bk:from</code>, the Classes
+              (bk:Individual or bk:Group) will be applied automatically in the RDF. The following
+              example shows the annotation of a group of fishermen delivering fish. In this case the
+                <code rend="element"><![CDATA[<seg>]]></code> element is extended by
+                <code>ana="bk:from bk:group"</code> for the fishermen and <code>ana="bk:to
+                bk:individual"</code> for the person receiving the fish.</p>
             <ab>
               <code rend="block" lang="XML"><![CDATA[<p ana="bk:entry">
   Item am <date ana="bk:when" when="1402-01-01">s<supplied reason="missing">[o]</supplied>nntag nach Eibnitÿ</date>
-  prachten dÿ<lb/><name ref="#pers_SR051" ana="bk:from bk:group">obgeschriben visser</name>
+  prachten dÿ<lb/><seg ref="#pers_SR051" ana="bk:from bk:group">obgeschriben visser</name>
   <measure ana="bk:commodity" commodity="fish" quantity="18" unit="pound">18 lb visch</measure> 
   dem <name ref="#pers_SR052" ana="bk:to bk:individual">herrn Kaspar</name>.
 </p>]]>
@@ -1359,9 +1367,8 @@
                 ><![CDATA[<depcha:numberOfPlaces>]]></code> in the informative section of the <code
                 rend="element"><![CDATA[<depcha:Dataset>]]></code>. The aggregation of places,
               however, contains only those places that were also mentioned in a <code rend="element"
-                ><![CDATA[<bk:entry>]]></code>. 
-              <lb/> Transferring the data to an RDF structure would lead to a result containing the
-              following information: </p>
+                ><![CDATA[<bk:entry>]]></code>. <lb/> Transferring the data to an RDF structure
+              would lead to a result containing the following information: </p>
             <ab><code rend="block" lang="RDF"><![CDATA[ <depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.places.dataset">
     <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
     <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.places"/>
@@ -1423,8 +1430,8 @@
     <schema:latitude>10.53109516682290</schema:latitude>
 </schema:Place>]]>
               </code>
-              <caption>Transfer of places annotated with depcha:index in listPlaces and bk:where inside bk:entryto an RDF
-                structure.</caption></ab>
+              <caption>Transfer of places annotated with depcha:index in listPlaces and bk:where
+                inside bk:entryto an RDF structure.</caption></ab>
           </div>
           <div xml:id="price">
             <head>Prices</head>
@@ -1432,7 +1439,7 @@
               together inside a <code rend="element"><![CDATA[<measure>]]></code> element. We have
               to create an additional <code rend="element"><![CDATA[<measure>]]></code> element that
               surrounds the numbers or the specific text indicating a price. Additionally, we need
-              to explicitly an <code rend="attribute">@ana</code> with the value
+              to explicitly add an <code rend="attribute">@ana</code> with the value
                 <code>bk:price</code>. </p>
             <ab><code rend="block" lang="XML"><![CDATA[<head><name ana="bk:to" ref="#economic_agent.1">Stagville</name> August 1st 1808</head>
 <table>
@@ -1467,14 +1474,14 @@
           </div>
           <div xml:id="totals">
             <head>Subtotals &amp; Totals</head>
-            <p>Furthermore, the <hi rend="italic">Bookkeeping Ontology</hi> enables us to express if
-              a monetary value represents a <code>bk:TotalTransaction</code> or a
+            <p>The <hi rend="italic">Bookkeeping Ontology</hi> enables us to express if a monetary
+              value represents a <code>bk:TotalTransaction</code> or a
                 <code>bk:SubtotalTransaction</code>. We only need to add an
                 <code>@ana="bk:total</code> or an <code>@ana="bk:subtotal</code> to an element that
-              surrounds all the <code>bk:money</code> that correspond to the total or subtotal. In
-              the following example the best spot for the <code>bk:subtotal</code> and the
-                <code>bk:total</code> is in the <code rend="element"><![CDATA[<row>]]></code>
-              element replacing <code>bk:entry</code>.</p>
+              surrounds the element annotated with <code>bk:money</code> that corresponds to the
+              total or subtotal. In the following example the best spot for the
+                <code>bk:subtotal</code> and the <code>bk:total</code> is in the <code
+                rend="element"><![CDATA[<row>]]></code> element replacing <code>bk:entry</code>.</p>
             <ab><code rend="block" lang="XML"><![CDATA[<head><name ana="bk:to" ref="#economic_agent.1">Stagville</name> August 1st 1808</head>
 <table>
   <head>69 <name ana="bk:from" ref="#economic_agent.2">James Haley</name> J Self Dr.</head>
@@ -1526,8 +1533,12 @@
               can add <code>@ana="bk:tax"</code> to the element that expresses a monetary value or a
               commodity that is paid as tax. In the example <code>bk:tax</code> was used
               additionally to <code>bk:money</code>. So, we have the information that some monetary
-              value was paid as tax. The annotation of <code>bk:tax</code> has to be added inside a
-                <code>bk:entry</code>. </p>
+              value was paid as tax. In the past, tax obligations might have been settled also with
+              commodities or services. Therefore it is also possible to add <code>bk:tax</code> to
+              an element that describes a <code>bk:commodity</code> or <code>bk:service</code> (and
+              of course this also applies to <code>bk:right</code>). The annotation of
+                <code>bk:tax</code> has to be surrounded by another element with a
+                <code>bk:entry</code> annotation.</p>
             <ab><code rend="block" lang="XML"><![CDATA[<list type="payers">
   <item ana="bk:entry" xml:id="item_mc5_2zg_ghb">
     <seg type="entry">
@@ -1554,26 +1565,29 @@
             <head>Accounts &amp; Accountholder</head>
             <p>To create a <code>bk:Account</code> we need a <code rend="element"
                 ><![CDATA[<taxonomy>]]></code> element enriched by <code>ana="bk:account"</code>
-              where we can express the type and also the hierarchy of the accounts (income vs.
-              expenses etc). You can also use a <code rend="element"><![CDATA[<desc>]]></code> to
-              describe the account. The income is marked with <code>ana="bk:to"</code> and expenses
-              with <code>ana="bk:from"</code>. To avoid processing problems please make sure that
-              there is only one <code>ana="bk:to"</code> and one <code>ana="bk:from"</code> in your
-              taxonomy. All the <code>bk:account</code> are associated to the
-                <code>ana="bk:accountHolder"</code>. In the snippet below the
-                <code>bk:accountHolder</code> is represented by the revenue office as an
-              institution. So, we have to add <code>bk:accountholder</code> in the index entry of
-              the corresponding <code>bk:EconomicAgent</code>. In the <code rend="element"
-                ><![CDATA[<head>]]></code> element of the snippet below we can see that the accounts
-              belong to Thomas Walser with an <code rend="attribute">@xml:id</code> reference to
-                <code rend="element"><![CDATA[<listPerson>]]></code>.</p>
-            <p>Every account is embedded into a <code rend="element"><![CDATA[<div>]]></code>
-              attributed with an <code>ana="bk:account"</code> and <code>corresp="#income"</code>
-              surrounding another <code rend="element"><![CDATA[<div>]]></code> that contains the
-              attributes <code>ana="bk:account"</code> and
-                <code>corresp="#customshauptzoller"</code> referring to the <code rend="attribute"
-                >@xml:id</code> in the <code rend="element"
-                ><![CDATA[<taxonomy ana="bk:account">]]></code>.</p>
+              that allows us to express the type (i.e. income vs. expenses) and also the hierarchy
+              of the accounts (income vs. expenses etc). You can also use a <code rend="element"
+                ><![CDATA[<desc>]]></code> to describe the account in your taxonomy. The income is
+              marked with <code>ana="bk:to"</code> and expenses with <code>ana="bk:from"</code>. To
+              avoid processing problems please make sure that there is only one
+                <code>ana="bk:to"</code> and one <code>ana="bk:from"</code> in your taxonomy. All
+              the <code>bk:account</code> are associated to the <code>ana="bk:accountHolder"</code>.
+              In the snippet below the <code>bk:accountHolder</code> is represented by the revenue
+              office as an institution. This means, we have to add the <code>bk:accountholder</code>
+              annotation to the corresponding <code>bk:EconomicAgent</code> in the
+              <![CDATA[<listPerson>]]> or <![CDATA[<listOrg>]]> which needs to be annotated with
+                <code>ana="depcha:index"</code>. The <code rend="element"><![CDATA[<head>]]></code>
+              element of the snippet below tells us that the accounts belong to Thomas Walser who is
+              connected to the <code rend="element"><![CDATA[<listPerson>]]></code> via an <code
+                rend="attribute">@xml:id</code> reference.</p>
+            <p>Moreover, in the following example every account is embedded into a <code
+                rend="element"><![CDATA[<div>]]></code> element attributed with an
+                <code>ana="bk:account"</code> and <code>corresp="#income"</code>. So, nested inside
+              this <code rend="element"><![CDATA[<div>]]></code> we can find other <code
+                rend="element"><![CDATA[<div>]]></code> element that contains the attributes
+                <code>ana="bk:account"</code> and <code>corresp="#customshauptzoller"</code>
+              referring to the <code rend="attribute">@xml:id</code> in the <code rend="element"
+                ><![CDATA[<taxonomy>]]></code>.</p>
             <ab><code rend="block" lang="XML"><![CDATA[<teiHeader>
 	<!-- ... -->
   <encodingDesc>  
@@ -1695,14 +1709,16 @@
   </body>
 </text>]]>
               </code>
-              <caption>Creating one or more <code>bk:Account</code>.</caption></ab>
-            <p>The previous example is one way to annotate accounts where there are no explicit text
-              passages pointing to an account and the annotator has some additional background
+              <caption>Creating one or more <code>bk:Account</code> based on background
+                information.</caption></ab>
+            <p>The previous example is one way to annotate accounts without explicit text passages
+              pointing to an account. So, the annotator must have had some additional background
               information. However, there might also be a textual representation of an account like
-              in our next example where the "Notarius civitatis" represents an account name. So, we
-              can use a <code rend="element"><![CDATA[<name>]]></code> element, label it with
-                <code>ana="bk:account"</code> and a @ref attribute that points to the corresponding
-              account in the <code rend="element"><![CDATA[<taxonomy>]]></code>.</p>
+              in our next example where the "Notarius civitatis" represents an account name. We can
+              use a <code rend="element"><![CDATA[<name>]]></code> element, label it with
+                <code>ana="bk:account"</code> and a <code rend="attribute">@ref</code> attribute
+              that points to the corresponding account in the <code rend="element"
+                ><![CDATA[<taxonomy>]]></code>.</p>
             <ab><code rend="block" lang="XML">
                 <![CDATA[<encodingDesc>
 <!-- ... -->
@@ -1754,7 +1770,7 @@
 <body>
   <pb n="398"/>
   <div>
-    <head><name ana="bk:account" ref="#notariusCivitatis" rend="bold">Notarius<lb/>
+    <head><name ana="bk:account" ref="#notarius" rend="bold">Notarius<lb/>
       civitatis</name></head>
     <note>[puste]</note>
   </div>
@@ -1780,19 +1796,20 @@
   </div>
 </body>]]>
               </code>
-              <caption>Creating one or more <code>bk:Account</code>.</caption></ab>
+              <caption>Creating a <code>bk:Account</code> based on a textual
+                representation.</caption></ab>
           </div>
 
           <div xml:id="prefixdef">
             <head>Definition of Prefixes</head>
-            <p>As the prefix <code>bk:</code> is used as abbreviation in <code rend="attribute"
+            <p>As the prefix <code>bk:</code> is used as an abbreviation in <code rend="attribute"
                 >@ana</code>, we need to define it in a <code rend="element"
                 ><![CDATA[<prefixDef>]]></code> element in the <code rend="element"
-                ><![CDATA[<teiHeader>]]></code>. You may just copy it from this snippet. If you are
-              using also other controlled vocabularies or LOD resources, you can define their
-              prefixes here as well. For instance, in the example below the abbreviation "wd" is
-              defined as a prefix for Wikidata concepts and can now be used in <code
-                rend="attribute">@ana</code>.</p>
+                ><![CDATA[<teiHeader>]]></code>. You may just copy the prefix definition from this
+              snippet. If you are using also other controlled vocabularies or LOD resources, you can
+              define their prefixes here as well. In the example below, for instance, the
+              abbreviation "wd" is defined as a prefix for Wikidata concepts and can later be used
+              in <code rend="attribute">@ana</code> attributes.</p>
             <ab><code rend="block" lang="XML"><![CDATA[<encodingDesc>
   <listPrefixDef>
     <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
@@ -1809,8 +1826,8 @@
   </listPrefixDef>
 </encodingDesc>]]>
               </code>
-              <caption>Using <code rend="element"><![CDATA[<prefixDef>]]></code> to define prefixes
-                and to be able to refer to ontologies or controlled vocabularies.</caption></ab>
+              <caption>Using <code rend="element"><![CDATA[<prefixDef>]]></code> to be able to refer
+                to ontologies or controlled vocabularies.</caption></ab>
           </div>
           <div xml:id="msdesc">
             <head>Metadata</head>
@@ -3486,7 +3503,8 @@
               <row>
                 <cell>Tax</cell>
                 <cell/>
-                <cell>ana="bk:money bk:tax"</cell>
+                <cell>ana="bk:money bk:tax" | ana="bk:commodity bk:tax | ana="bk:service bk:tax" |
+                  ana="bk:right bk:tax"</cell>
               </row>
               <row>
                 <cell>Total Transaction</cell>
@@ -3505,22 +3523,20 @@
             <p>Here you can find a <ref target="/context:depcha.example">Collection of all the
                 Examples</ref> discussed in this tutorial. You will be able to see how the
               annotations of the examples will be processed and displayed in the edition view.</p>
-
-
           </div>
         </div>
         <div xml:id="lod">
           <head>Linked Open Data</head>
           <p>DEPCHA tries to offer its data in the LOD cloud. Therefore, you can add Wikidata
             concepts directly into the attributes or you can define your vocabulary in the TEI
-            header in the form of a taxonomy. The following TEI snippet and the figure below should
-            serve as examples.</p>
-
+            header in the form of a taxonomy. Don't forget to add a prefix definition (see also:
+            chapter <ref target="prefixdef">Definition of Prefixes</ref>). The following TEI snippet
+            should serve as an example.</p>
           <ab><code rend="block" lang="XML">
               <![CDATA[<body> 
-   <head><name ana="bk:to" ref="#between.1">Stagville</name> August 1st 1808</head>  
+   <head><name ana="bk:to" ref="#org.1">Stagville</name> August 1st 1808</head>  
    <table>  	
-     <head>69 <name ana="bk:from" ref="#between.2">James Haley</name> J Self Dr.</head>  	
+     <head>69 <name ana="bk:from" ref="#pers.1">James Haley</name> J Self Dr.</head>  	
      <row ana="bk:entry">  		
        <cell>  			
          <measure ana="bk:commodity bk:from" commodity="wiki:Q11002" quantity="1" unit="wiki:Q100995"> 1 lb Sugar <measure ana="bk:price" quantity="2" unit="wiki:Q213142">2</measure> / <measure ana="bk:price" quantity="6" unit="wiki:Q234129">6</measure></measure>
@@ -3537,16 +3553,10 @@
 </body>]]>
             </code>
             <caption>Connecting DEPCHA data with the LOD cloud.</caption></ab>
-          <figure source="/archive/objects/context:depcha/datastreams/GRAPH_WIKIDATA/content"
-            type="web"/>
-          <p>In this example the editor has defined his own concepts in the TEI header and links
-            them to it.</p>
         </div>
         <div xml:id="csv_excel">
           <head>CSV/Excel</head>
-
           <p>Coming soon</p>
-
         </div>
       </div>
     </body>
