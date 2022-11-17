@@ -12,11 +12,12 @@
                 <ref target="context:depcha.example" type="context">Examples</ref>
             </publicationStmt>
             <sourceDesc>
-                <p>This is an exemplary extract of one dataset of the DEPCHA collection. It might differ
-                    from the original dataset due to eventual adaptions that should help to understand the possibilities of
-                    mapping different contents to the Bookkeeping Ontology.</p>
+                <p>This is an exemplary extract of one dataset of the DEPCHA collection. It might
+                    differ from the original dataset due to eventual adaptions that should help to
+                    understand the possibilities of mapping different contents to the Bookkeeping
+                    Ontology.</p>
             </sourceDesc>
-        </fileDesc>  
+        </fileDesc>
         <encodingDesc>
             <listPrefixDef>
                 <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
@@ -31,7 +32,9 @@
                 </prefixDef>
                 <prefixDef ident="huc" matchPattern="([(a-z)|(A-Z)]+)"
                     replacementPattern="https://gams.uni-graz.at/o:depcha.huc#$1">
-                    <p>Analytical descriptors are considered to represent concepts from the historical units and currencies ontology and can be extended to respective URIs.</p>
+                    <p>Analytical descriptors are considered to represent concepts from the
+                        historical units and currencies ontology and can be extended to respective
+                        URIs.</p>
                 </prefixDef>
                 <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
                     replacementPattern="http://www.wikidata.org/entity/$1">
@@ -43,49 +46,56 @@
     <text>
         <body>
             <div type="example">
-                <head><name ana="bk:to" ref="#economic_agent.1">Stagville</name> August 1st
-                    1808</head>
-                <table>
-                    <head>69 <name ana="bk:from" ref="#economic_agent.2">James Haley</name> J Self
-                        Dr.</head>
-                    <row ana="bk:entry bk:subtotal">
-                        <cell>
-                            <measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb"
-                                >1/4 lb Powder</measure>
-                            <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb
-                                Shot</measure>
-                            <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1
-                                lb Sugar</measure>
-                        </cell>
-                        <cell/>
-                        <cell>
-                            <measure ana="bk:money" quantity="7" unit="shilling">7</measure>
-                        </cell>
-                        <cell>
-                            <measure ana="bk:money" quantity="6" unit="pence">6</measure>
-                        </cell>
-                    </row>
-                    <row ana="bk:entry bk:subtotal">
-                        <cell>
-                            <measure ana="bk:commodity" commodity="shoeknife" quantity="1">1 Shoe
-                                Knife 1/6</measure>
-                        </cell>
-                        <cell/>
-                        <cell>
-                            <measure ana="bk:money" quantity="1" unit="shilling">1</measure>
-                        </cell>
-                        <cell>
-                            <measure ana="bk:money" quantity="6" unit="pence">6</measure>
-                        </cell>
-                    </row>
-                    <row ana="bk:total">
-                        <cell/>
-                        <cell/>
-                        <cell/>
-                        <cell><measure ana="bk:money" quantity="9" unit="shilling">9</measure></cell>
-                        <cell>-</cell>
-                    </row>
-                </table>
+                    <note>No. 3</note>
+                    <head>Von dem Zollner zue <placeName ref="#geo_ruggell" ana="bk:where"
+                            >Roggell</placeName>
+                        <persName ana="bk:from" ref="#pers_7">Andreas Büchl</persName></head>
+                    <p ana="bk:entry"><date ana="bk:when" from="1718-10-22" to="1718-11-22">Von 1.
+                            und respective 22 Octobris bis 22 November 1718</date>
+                        <measure ana="bk:money" quantity="5" unit="fl">5 </measure>
+                        <measure ana="bk:money" quantity="57" unit="kr">57</measure>
+                    </p>
+                    <p ana="bk:entry"><date ana="bk:when" from="1718-11-22" to="1718-12-22">Von 22
+                            November bis 22 Dezember </date>
+                        <measure ana="bk:money" quantity="7" unit="fl">7 </measure>
+                        <measure ana="bk:money" quantity="9" unit="kr">9 </measure>
+                        <measure ana="bk:money" quantity="0.25" unit="d">1/4</measure>
+                    </p>
+                    <fw ana="bk:subtotal">Latus <measure ana="bk:money" quantity="13" unit="fl">13</measure>
+                        <measure ana="bk:money" quantity="6" unit="kr">6</measure>
+                        <measure ana="bk:money" quantity="0.25" unit="d">1/4</measure>
+                    </fw>
+                    <pb n="2v"/>
+                    <fw ana="subtotal">Latus heryber gezogen per 
+                        <measure ana="bk:money" quantity="13" unit="fl">13 </measure>
+                        <measure ana="bk:money" quantity="6" unit="kr">6 </measure>
+                        <measure ana="bk:money" quantity="0.25" unit="d">1/4</measure>
+                    </fw>
+                    <p ana="bk:entry"><date ana="bk:when" from="1718-12-22" to="1719-01-22">Von 22
+                            Decembris bis 22 January 1719 </date>
+                        <measure ana="bk:money" quantity="5" unit="fl">5 </measure>
+                        <measure ana="bk:money" quantity="54" unit="kr">54</measure>
+                    </p>
+                    <p ana="bk:entry"><date ana="bk:when" from="1719-01-22" to="1719-02-22">Von 22
+                            Jener bis 22 Februar</date>
+                        <measure ana="bk:money" quantity="7" unit="fl">7 </measure>
+                        <measure ana="bk:money" quantity="10" unit="kr">10</measure>
+                    </p>
+                    <p ana="bk:entry"><date ana="bk:when" from="1719-02-22" to="1719-03-22">Von 22
+                            Februar bis 22 Marty </date>
+                        <measure ana="bk:money" quantity="7" unit="fl">7 </measure>
+                        <measure ana="bk:money" quantity="51" unit="kr">51</measure>
+                    </p>
+                    <p ana="bk:entry"><date ana="bk:when" from="1719-03-22" to="1719-04-22">Von 22
+                            Marty bis 22 Aprill </date>
+                        <measure ana="bk:money" quantity="5" unit="fl">5 </measure>
+                        <measure ana="bk:money" quantity="12" unit="kr">12</measure>
+                    </p>
+                    <fw ana="bk:total">Summa 
+                        <measure ana="bk:money" quantity="39" unit="fl">39 </measure>
+                        <measure ana="bk:money" quantity="19" unit="kr">19</measure>
+                        <measure ana="bk:money" quantity="0.25" unit="d">1/4</measure>
+                    </fw>
             </div>
         </body>
     </text>

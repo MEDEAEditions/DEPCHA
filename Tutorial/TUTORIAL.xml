@@ -55,10 +55,11 @@
             <item>If something in this tutorial begins with the prefix <code>bk:</code>, it means
               that it is a <hi rend="bold">concept</hi> defined in the <hi rend="italic">Bookkeeping
                 Ontology</hi>. The prefix <code>bk:</code> stands for the URI
-                <code>http://gams.uni-graz.at/o:depcha.bookkeeping#</code>.
-              <!-- SSt TODO: Sollte hier auch die Depcha Ontology erwähnt werden? Gibt es dazu einen Link? 
-                The prefix <code>depcha:</code>, on the other hand, stands for the <hi rend="italic">Bookkeeping
-                Ontology</hi>.--> (See more about TEI-prefix definitions with <ref
+                <code>http://gams.uni-graz.at/o:depcha.bookkeeping#</code>. You will also find the
+              prefix <code>depcha:</code> that links concepts to the project-specific <hi
+                rend="italic">DEPCHA Ontology</hi> and <code>huc:</code> that stands for the <hi
+                rend="italic">Historical Units and Currencies Ontology.</hi> (See more about
+              TEI-prefix definitions with <ref
                 target="https://tei-c.org/release/doc/tei-p5-doc/en/html/ref-prefixDef.html"><code
                   rend="element"><![CDATA[<tei:prefixDef>]]></code></ref> in the chapter <ref
                 target="#prefixdef">Definition of Prefixes</ref>).</item>
@@ -66,7 +67,7 @@
           <p><hi rend="italic">Note:</hi> All the snippets and exemplary extracts of datasets of the
             DEPCHA collection might differ from the original datasets due to eventual adaptions that
             should help to understand the options of mapping different contents to the <hi
-              rend="italic">Bookkeeping Ontology</hi>.</p>
+              rend="italic">Bookkeeping Ontology</hi>. We will also </p>
         </div>
         <div xml:id="xml_tei">
           <head>XML/TEI</head>
@@ -171,10 +172,10 @@
             ><![CDATA[<seg>]]></code>, <code rend="element"><![CDATA[<cell>]]></code>, <code
               rend="element"><![CDATA[<ab>]]></code>, <code rend="element"><![CDATA[<p>]]></code>,
               <code rend="element"><![CDATA[<item]]></code> or <code rend="element"
-              ><![CDATA[<div>]]></code> (use only if no other options for <code>bk:entry</code> available). By using <code rend="attribute"
-              >@ana</code> with the value "bk:entry" a TEI structure is defined as a
-              <code>bk:entry</code> according to the <hi rend="italic">Bookkeeping
-            Ontology</hi>.</p>
+              ><![CDATA[<div>]]></code> (use only if no other options for <code>bk:entry</code>
+            available). By using <code rend="attribute">@ana</code> with the value "bk:entry" a TEI
+            structure is defined as a <code>bk:entry</code> according to the <hi rend="italic"
+              >Bookkeeping Ontology</hi>.</p>
           <ab>
             <code rend="block" lang="XML"><![CDATA[<row ana="bk:entry">
   <cell>1/4 lb Powder 2/6 1 lb Shot 2/6 1 lb Sugar 2/6</cell>
@@ -187,8 +188,7 @@
   <cell/>
   <cell>1</cell>
   <cell>6</cell>
-</row>
-]]>
+</row>]]>
             </code>
             <caption>Annotation of a textual structure - in this case a row in a table - as a text
               entry of a transaction. </caption>
@@ -662,7 +662,7 @@
                 rend="attribute">@ana</code>. If you explicitly use <code rend="element"
                 ><![CDATA[<persName>]]></code> or <code rend="element"><![CDATA[<orgName>]]></code>
               in combination with a <code>bk:to</code> or <code>bk:from</code>, the Classes
-              (bk:Individual or bk:Group) will be applied automatically in the RDF. The following
+              (bk:Individual or bk:Organisation) will be applied automatically in the RDF. The following
               example shows the annotation of a group of fishermen delivering fish. In this case the
                 <code rend="element"><![CDATA[<seg>]]></code> element is extended by
                 <code>ana="bk:from bk:group"</code> for the fishermen and <code>ana="bk:to
@@ -775,7 +775,7 @@
               structure to LOD statements in RDF. </p>
             <ab>
               <code rend="block" lang="RDF"><![CDATA[<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1">
-  <bk:entry>522 Eliza Wheaton D debtor To cash $20.00 20 00</bk:entry>
+  <bk:entry>522 Eliza Wheaton debtor To cash $20.00 20 00</bk:entry>
   <bk:consistsOf>  
     <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.1#T1T1">    
       <bk:transfers>      
@@ -1479,49 +1479,62 @@
                 <code>bk:SubtotalTransaction</code>. We only need to add an
                 <code>@ana="bk:total</code> or an <code>@ana="bk:subtotal</code> to an element that
               surrounds the element annotated with <code>bk:money</code> that corresponds to the
-              total or subtotal. In the following example the best spot for the
-                <code>bk:subtotal</code> and the <code>bk:total</code> is in the <code
-                rend="element"><![CDATA[<row>]]></code> element replacing <code>bk:entry</code>.</p>
-            <ab><code rend="block" lang="XML"><![CDATA[<head><name ana="bk:to" ref="#economic_agent.1">Stagville</name> August 1st 1808</head>
-<table>
-  <head>69 <name ana="bk:from" ref="#economic_agent.2">James Haley</name> J Self Dr.</head>
-  <row ana="bk:entry">  
-    <cell>    
-      <measure><measure ana="bk:commodity" commodity="powder" quantity="0.25" unit="lb">1/4 lb Powder<measure ana="bk:price" >2/6</measure></measure>    
-      <measure ana="bk:commodity" commodity="shot" quantity="1" unit="lb">1 lb Shot<measure ana="bk:price">2/6</measure></measure>    
-      <measure ana="bk:commodity" commodity="sugar" quantity="1" unit="lb">1 lb Sugar<measure ana="bk:price">2/6</measure></measure> 
-    </cell>  
-    <cell>   
-      <measure ana="bk:commodity" commodity="shoe_knife" quantity="1" unit="piece">1 Shoe knife</measure><measure ana="bk:price">1/6</measure>  
-    </cell> 
-    <cell/> 
-    <cell>  
-      <measure ana="bk:money" quantity="7" unit="shilling">7</measure>  
-    </cell> 
-    <cell>   
-     <measure ana="bk:money" quantity="6" unit="pence">6</measure> 
-    </cell>
-   </row>
-   <row ana="bk:entry">
-     <cell>
-       <measure ana="bk:commodity" commodity="shoeknife" quantity="1">1 Shoe Knife 1/6</measure>
-     </cell>
-     <cell/>
-     <cell>
-       <measure ana="bk:money" quantity="1" unit="shilling">1</measure>
-     </cell>
-     <cell>
-       <measure ana="bk:money" quantity="6" unit="pence">6</measure>
-     </cell>
-   </row>
-   <row ana="bk:total">
-     <cell/>
-     <cell/>
-     <cell/>
-     <cell><measure ana="bk:money" quantity="9" unit="shilling">9</measure></cell>
-     <cell>-</cell>
-   </row>
-</table>]]>
+              total or subtotal. In the following example the annotator placed the
+                <code>bk:subtotal</code> and the <code>bk:total</code> into the <code rend="element"
+                ><![CDATA[<fw>]]></code> elements on the same level (or in replacement) of a
+                <code>bk:entry</code> annotation.</p>
+            <ab><code rend="block" lang="XML"><![CDATA[<div ana="bk:account" corresp="#ZollRuggell">
+  <note>No. 3</note>
+  <head>Von dem Zollner zue <placeName ref="#geo_ruggell" ana="bk:where"
+          >Roggell</placeName>
+      <persName ana="bk:from" ref="#pers_7">Andreas Büchl</persName></head>
+  <p ana="bk:entry"><date ana="bk:when" from="1718-10-22" to="1718-11-22">Von 1.
+          und respective 22 Octobris bis 22 November 1718</date>
+      <measure ana="bk:money" quantity="5" unit="fl">5 </measure>
+      <measure ana="bk:money" quantity="57" unit="kr">57</measure>
+  </p>
+  <p ana="bk:entry"><date ana="bk:when" from="1718-11-22" to="1718-12-22">Von 22
+          November bis 22 Dezember </date>
+      <measure ana="bk:money" quantity="7" unit="fl">7 </measure>
+      <measure ana="bk:money" quantity="9" unit="kr">9 </measure>
+      <measure ana="bk:money" quantity="0.25" unit="d">1/4</measure>
+  </p>
+  <fw ana="bk:subtotal">Latus <measure ana="bk:money" quantity="13" unit="fl">13</measure>
+      <measure ana="bk:money" quantity="6" unit="kr">6</measure>
+      <measure ana="bk:money" quantity="0.25" unit="d">1/4</measure>
+  </fw>
+  <pb n="2v"/>
+  <fw ana="subtotal">Latus heryber gezogen per 
+      <measure ana="bk:money" quantity="13" unit="fl">13 </measure>
+      <measure ana="bk:money" quantity="6" unit="kr">6 </measure>
+      <measure ana="bk:money" quantity="0.25" unit="d">1/4</measure>
+  </fw>
+  <p ana="bk:entry"><date ana="bk:when" from="1718-12-22" to="1719-01-22">Von 22
+          Decembris bis 22 January 1719 </date>
+      <measure ana="bk:money" quantity="5" unit="fl">5 </measure>
+      <measure ana="bk:money" quantity="54" unit="kr">54</measure>
+  </p>
+  <p ana="bk:entry"><date ana="bk:when" from="1719-01-22" to="1719-02-22">Von 22
+          Jener bis 22 Februar</date>
+      <measure ana="bk:money" quantity="7" unit="fl">7 </measure>
+      <measure ana="bk:money" quantity="10" unit="kr">10</measure>
+  </p>
+  <p ana="bk:entry"><date ana="bk:when" from="1719-02-22" to="1719-03-22">Von 22
+          Februar bis 22 Marty </date>
+      <measure ana="bk:money" quantity="7" unit="fl">7 </measure>
+      <measure ana="bk:money" quantity="51" unit="kr">51</measure>
+  </p>
+  <p ana="bk:entry"><date ana="bk:when" from="1719-03-22" to="1719-04-22">Von 22
+          Marty bis 22 Aprill </date>
+      <measure ana="bk:money" quantity="5" unit="fl">5 </measure>
+      <measure ana="bk:money" quantity="12" unit="kr">12</measure>
+  </p>
+  <fw ana="bk:total">Summa 
+      <measure ana="bk:money" quantity="39" unit="fl">39 </measure>
+      <measure ana="bk:money" quantity="19" unit="kr">19</measure>
+      <measure ana="bk:money" quantity="0.25" unit="d">1/4</measure>
+  </fw>
+</div>]]>
               </code>
               <caption>Annotation of <code>bk:subtotal</code> and <code>bk:total</code> to be
                 processed as <code>bk:SubtotalTransaction</code> and
@@ -1812,18 +1825,25 @@
               in <code rend="attribute">@ana</code> attributes.</p>
             <ab><code rend="block" lang="XML"><![CDATA[<encodingDesc>
   <listPrefixDef>
-    <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
-      replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
-      <p> Analytical descriptors are considered to represent concepts from the DEPCHA
-        bookkeeping ontology and can be extended to respective URIs. </p>
-    </prefixDef>
-    <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
-      replacementPattern="http://www.wikidata.org/wiki/$1">
-      <p>
-        <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
-      </p>
-    </prefixDef>
-  </listPrefixDef>
+		<prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+			replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+			<p>Analytical descriptors are considered to represent concepts from the DEPCHA
+				bookkeeping ontology and can be extended to respective URIs.</p>
+		</prefixDef>
+		<prefixDef ident="depcha" matchPattern="([(a-z)|(A-Z)]+)"
+			replacementPattern="https://gams.uni-graz.at/o:depcha.ontology#$1">
+			<p>Analytical descriptors are considered to represent concepts from the
+				project-specific DEPCHA ontology and can be extended to respective URIs.</p>
+		</prefixDef>
+		<prefixDef ident="huc" matchPattern="([(a-z)|(A-Z)]+)"
+			replacementPattern="https://gams.uni-graz.at/o:depcha.huc#$1">
+			<p>Analytical descriptors are considered to represent concepts from the historical units and currencies ontology and can be extended to respective URIs.</p>
+		</prefixDef>
+		<prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+			replacementPattern="http://www.wikidata.org/entity/$1">
+			<p><ref target="https://www.wikidata.org/wiki/Help:Namespaces"/></p>
+		</prefixDef>
+	</listPrefixDef>
 </encodingDesc>]]>
               </code>
               <caption>Using <code rend="element"><![CDATA[<prefixDef>]]></code> to be able to refer
@@ -1833,7 +1853,28 @@
             <head>Metadata</head>
             <p>For every TEI document you can use the <code rend="element"
                 ><![CDATA[<msDesc>]]></code> in the <code rend="element"
-                ><![CDATA[<teiHeader>]]></code> to define some Metadata for your document.</p>
+                ><![CDATA[<teiHeader>]]></code> to define some metadata. <lb/>The minimal requirements
+              for the collection summary in the web interface are the following TEI elements: <list>
+                <item><hi rend="bold">Title</hi> of the booking account: <code rend="element"
+                    ><![CDATA[<title>]]></code></item>
+                <item><hi rend="bold">Author</hi> of the booking account: <code rend="element"
+                    ><![CDATA[<docAuthor>]]></code></item>
+                <item><hi rend="bold">Language</hi> of the booking account: <code rend="element"
+                    ><![CDATA[<textLang>]]></code> with a nested <code rend="element"
+                    ><![CDATA[<lang>]]></code></item>
+                <item><hi rend="bold">Date</hi> or time span of the booking account: <code
+                    rend="element"><![CDATA[<docDate>]]></code></item>
+                <item><hi rend="bold">Origin</hi> of the source: <code rend="element"
+                    ><![CDATA[<projectDesc>]]></code> with a nested <code rend="element"
+                    ><![CDATA[<ab>]]></code> and a nested <code rend="element"
+                    ><![CDATA[<placeName>]]></code></item>
+                <item><hi rend="bold">Description</hi> of the historical accounts: <code
+                    rend="element"><![CDATA[<projectDesc>]]></code> with a nested <code
+                    rend="element"><![CDATA[<ab>]]></code></item>
+              </list> Any further information on the source that should be displayed can be added to
+              the <code rend="element"><![CDATA[<msIdentifier>]]></code>
+            </p>
+
             <ab><code rend="block" lang="XML"><![CDATA[<msDesc>
   <msIdentifier>  
     <country>USA</country> 
@@ -1890,16 +1931,16 @@
               accounting books. It should help to get a better picture of how TEI documents that
               differ a lot in their structure can be mapped onto the <hi rend="italic">Bookkeeping
                 Ontology</hi>.</p>
-            <p><hi rend="bold">1. Schlandersberger Rechnungen, 1402</hi></p>
-            <p>Let's start with a snippet from the Schlandersberger Accounts dated back to the
-              beginnings of the 15th century.</p>
+            <p><hi rend="bold">1. Schlandberg Rechnungen, Spätmittelalter</hi></p>
+            <p>Let's start with a snippet from the Schlandberg Accounts dated back to the beginnings
+              of the 15th century.</p>
             <ab><code rend="block" lang="XML"><![CDATA[<teiHeader>
  <!-- ... -->
   <profileDesc>
     <particDesc>
       <listPerson ana="depcha:index">
         <head> Prosopography </head>
-        <desc> Persons named in the Schlandersberger Accounts </desc>
+        <desc> Persons named in the Schlandberg Accounts </desc>
         <person xml:id="pers_SR001">
           <persName>
             <forename>Hans </forename>
@@ -1943,7 +1984,7 @@
   </body>
 </text>]]>
               </code>
-              <caption>Mapping the Schlandersberger Accounts to the <hi rend="italic">Bookkeeping
+              <caption>Mapping the Schlandberg Accounts to the <hi rend="italic">Bookkeeping
                   Ontology</hi>.</caption>
             </ab>
             <p>In the first paragraph of this example we can see that the person <hi rend="italic"
@@ -1972,26 +2013,26 @@
                 Kaspar</hi> does not have any further relevant <code>bk:</code> annotations he does
               not have a function in this <code>bk:entry</code>.</p>
             <p>The RDF that we can generate from our example would look like this:</p>
-            <ab><code rend="block" lang="RDF"><![CDATA[<depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.schlandersberger#Dataset">
+            <ab><code rend="block" lang="RDF"><![CDATA[<depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.schlandberg#Dataset">
   <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
-  <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.schlandersberger"/>
+  <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.schlandberg"/>
   <depcha:numberOfTransactions>1</depcha:numberOfTransactions>
   <depcha:numberOfEconomicAgents>2</depcha:numberOfEconomicAgents>
   <depcha:numberOfMonetaryValues>0</depcha:numberOfMonetaryValues>
   <depcha:numberOfEconmicGoods>1</depcha:numberOfEconmicGoods>
   <depcha:accountHolder rdf:resource="https://gams.uni-graz.at/context:depcha.example#"/>
 </depcha:Dataset>
-<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.schlandersberger#T1">
+<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.schlandersberg#T1">
   <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
-  <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.schlandersberger"/>
+  <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.schlandberg"/>
   <bk:entry>Item am s [o] nntag nach Eibnitÿ [] prachten dÿ obgeschriben visser 18 lb visch
     und am mitwoch dar nach Rait herr Kaspar gen phenïs.</bk:entry>
   <bk:when>1402-01-01</bk:when>
   <bk:consistsOf>
-    <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.schlandersberger#T1T1">
+    <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.schlandberg#T1T1">
       <bk:transfers>
         <bk:Commodity
-          rdf:about="https://gams.uni-graz.at/o:depcha.example.schlandersberger#T1T1EA">
+          rdf:about="https://gams.uni-graz.at/o:depcha.example.schlandberg#T1T1EA">
           <bk:unit
             rdf:resource="https://gams.uni-graz.at/context:depcha.example#pound"/>
           <bk:quantity>18</bk:quantity>
@@ -2022,7 +2063,7 @@
   <rdfs:label>Herr Kaspar Herr von Hans Kelner</rdfs:label>
 </bk:EconomicAgent>]]>
               </code>
-              <caption>RDF transformation of the Schlandersberger Accounts.</caption></ab>
+              <caption>RDF transformation of the Schlandberg Accounts.</caption></ab>
             <p>The RDF first contains some information about the dataset and gives an overview of
               the number of transactions, economic agents and economic goods etc. Moreover, it
               contains all the annotated information about the <code>bk:Transaction</code> as well
@@ -3457,7 +3498,7 @@
               <row>
                 <cell>Individual</cell>
                 <cell/>
-                <cell>ana="bk:from bk:individual" | ana="bk:to bk:individual"</cell>
+                <cell>ana="bk:from bk:individual" | ana="bk:to bk:individual" | persName + ana="bk:to" | persName + ana="bk:from"</cell>
               </row>
               <row>
                 <cell>Monetary Value</cell>
@@ -3468,7 +3509,7 @@
               <row>
                 <cell>Organisation</cell>
                 <cell/>
-                <cell>ana="bk:from bk:organisation" | ana="bk:to bk:organisation"</cell>
+                <cell>ana="bk:from bk:organisation" | ana="bk:to bk:organisation" | orgName + ana="bk:to" | orgName + ana="bk:from"</cell>
               </row>
               <row>
                 <cell>Place</cell>
