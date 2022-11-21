@@ -62,6 +62,7 @@
             <!-- @ tb: alles in mainCurrency umrechnen -->
             <unitDef type="currency" xml:id="fl" ana="bk:mainCurrency">
                <label>Gulden Reichswährung</label>
+               <label type="abbreviation">fl</label>
                <!-- @ tb: Ab 1776 Guldern Reichswährung (auf 24-Gulden-Fuss beruhend), davor wohl auch Süddeutscher Gulden (20 Gulden-Fuss) -->
                <conversion fromUnit="#kr" toUnit="#fl" formula="60"/>
                <conversion fromUnit="#d" toUnit="#fl" formula="600"/>
@@ -1114,7 +1115,9 @@
             <note ana="from" type="placeName">Triesen</note>
          </person>
          <person xml:id="pers_22">
-            <name>Herrn Pater Statthalter von Benderen</name>
+            <name>
+               <surname>Pater</surname>
+            </name>
             <occupation>Statthalter von <placeName ref="#geo_bendern"
                >Bendern</placeName></occupation>
          </person>
@@ -1189,7 +1192,6 @@
             <note ana="from" type="placeName">Feldkirch</note>
          </person>
          <person xml:id="pers_37">
-            <name><surname/><forename/></name>
             <occupation>Verwalter</occupation>
          </person>
          <person xml:id="pers_38">
