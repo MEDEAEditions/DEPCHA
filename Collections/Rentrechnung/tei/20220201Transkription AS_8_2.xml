@@ -62,6 +62,7 @@
             <!-- @ tb: alles in mainCurrency umrechnen -->
             <unitDef type="currency" xml:id="fl" ana="bk:mainCurrency">
                <label>Gulden Reichswährung</label>
+               <label type="abbreviation">fl</label>
                <!-- @ tb: Ab 1776 Guldern Reichswährung (auf 24-Gulden-Fuss beruhend), davor wohl auch Süddeutscher Gulden (20 Gulden-Fuss) -->
                <conversion fromUnit="#kr" toUnit="#fl" formula="60"/>
                <conversion fromUnit="#d" toUnit="#fl" formula="600"/>
@@ -105,67 +106,67 @@
          <classDecl>
             <taxonomy ana="depcha:index">
                <!--Commodities added from //text//@commodity-->
-               <category xml:id="c_Axt">
+               <category xml:id="c_axt">
                   <catDesc>
                      <gloss>Axt</gloss>
                   </catDesc>
                </category>
-               <category xml:id="c_Beil">
+               <category xml:id="c_beil">
                   <catDesc>
                      <gloss>Beil</gloss>
                   </catDesc>
                </category>
-               <category xml:id="c_Fell">
+               <category xml:id="c_fell">
                   <catDesc>
                      <gloss>Fell</gloss>
                   </catDesc>
                </category>
-               <category xml:id="c_Fuchsbalg">
+               <category xml:id="c_fuchsbalg">
                   <catDesc>
                      <gloss>Fuchsbalg</gloss>
                   </catDesc>
                </category>
-               <category xml:id="c_Gamshäute">
+               <category xml:id="c_gamshäute">
                   <catDesc>
                      <gloss>Gamshäute</gloss>
                   </catDesc>
                </category>
-               <category xml:id="c_Gams">
+               <category xml:id="c_gams">
                   <catDesc>
                      <gloss>Gämse</gloss>
                   </catDesc>
                </category>
-               <category xml:id="c_Halsketten">
+               <category xml:id="c_halsketten">
                   <catDesc>
                      <gloss>Halsketten</gloss>
                   </catDesc>
                </category>
-               <category xml:id="c_Krebse">
+               <category xml:id="c_krebse">
                   <catDesc>
                      <gloss>Krebse</gloss>
                   </catDesc>
                </category>
-               <category xml:id="c_Murmeltierhaut">
+               <category xml:id="c_murmeltierhaut">
                   <catDesc>
                      <gloss>Murmeltierhäute</gloss>
                   </catDesc>
                </category>
-               <category xml:id="c_Rebstickel">
+               <category xml:id="c_rebstickel">
                   <catDesc>
                      <gloss>Rebstöcke</gloss>
                   </catDesc>
                </category>
-               <category xml:id="c_Schaufel">
+               <category xml:id="c_schaufel">
                   <catDesc>
                      <gloss>Schaufeln</gloss>
                   </catDesc>
                </category>
-               <category xml:id="c_Schnaps">
+               <category xml:id="c_schnaps">
                   <catDesc>
                      <gloss>Schnaps</gloss>
                   </catDesc>
                </category>
-               <category xml:id="c_Wagenräder">
+               <category xml:id="c_wagenräder">
                   <catDesc>
                      <gloss>Wagenräder</gloss>
                   </catDesc>
@@ -479,535 +480,517 @@
 
             <taxonomy ana="bk:account">
                <!--Places added from //text//*[@ana = "bk:account"]/@corresp-->
-               <category xml:id="Vieh">
+               <category xml:id="vieh">
                   <gloss>Vieh</gloss>
                </category>
-               <category xml:id="Abzug">
+               <category xml:id="abzug">
                   <gloss>Abzug</gloss>
                </category>
-               <category xml:id="AbzugGeld">
+               <category xml:id="abzuggeld">
                   <gloss>AbzugGeld</gloss>
                </category>
-               <category xml:id="AbzugsGeld">
+               <category xml:id="abzugsgeld">
                   <gloss>AbzugsGeld</gloss>
                </category>
-               <category xml:id="AdmodiationsGelt">
+               <category xml:id="admodiationsgelt">
                   <gloss>AdmodiationsGelt</gloss>
                </category>
-               <category xml:id="AlterRest">
+               <category xml:id="alterrest">
                   <gloss>AlterRest</gloss>
                </category>
-               <category xml:id="Ausgaben">
+               <category xml:id="ausgaben">
                   <gloss>Ausgaben</gloss>
                </category>
-               <category xml:id="BandundBast">
+               <category xml:id="bandundbast">
                   <gloss>BandundBast</gloss>
                </category>
-               <category xml:id="BauAnliegen">
+               <category xml:id="bauanliegen">
                   <gloss>BauAnliegen</gloss>
                </category>
-               <category xml:id="BauFuhrfrohnen">
+               <category xml:id="baufuhrfrohnen">
                   <gloss>BauFuhrfrohnen</gloss>
                </category>
-               <category xml:id="Bauholz">
+               <category xml:id="bauholz">
                   <gloss>Bauholz</gloss>
                </category>
-               <category xml:id="BergGeld">
+               <category xml:id="berggeld">
                   <gloss>BergGeld</gloss>
                </category>
-               <category xml:id="Besoldungen">
+               <category xml:id="besoldungen">
                   <gloss>Besoldungen</gloss>
                </category>
-               <category xml:id="BestandZins">
+               <category xml:id="bestandzins">
                   <gloss>BestandZins</gloss>
                </category>
-               <category xml:id="Bestandszinsen">
+               <category xml:id="bestandszinsen">
                   <gloss>Bestandszinsen</gloss>
                </category>
-               <category xml:id="Bohnen">
+               <category xml:id="bohnen">
                   <gloss>Bohnen</gloss>
                </category>
-               <category xml:id="Brennholz">
+               <category xml:id="brennholz">
                   <gloss>Brennholz</gloss>
                </category>
-               <category xml:id="BrunnenMacherLohn">
+               <category xml:id="brunnenmacherlohn">
                   <gloss>BrunnenMacherLohn</gloss>
                </category>
-               <category xml:id="Burggrafenamt">
+               <category xml:id="burggrafenamt">
                   <gloss>Burggrafenamt</gloss>
                </category>
-               <category xml:id="BurggrafenamtNutzung">
+               <category xml:id="burggrafenamtnutzung">
                   <gloss>BurggrafenamtNutzung</gloss>
                </category>
-               <category xml:id="BurggrafenamtRindvieh">
+               <category xml:id="burggrafenamtrindvieh">
                   <gloss>BurggrafenamtRindvieh</gloss>
                </category>
-               <category xml:id="BurggrafenamtsNutzung">
+               <category xml:id="burggrafenamtsnutzung">
                   <gloss>BurggrafenamtsNutzung</gloss>
                </category>
-               <category xml:id="BurggrafenamtsUnkösten">
+               <category xml:id="burggrafenamtsunkösten">
                   <gloss>BurggrafenamtsUnkösten</gloss>
                </category>
-               <category xml:id="CautionDarlehen">
+               <category xml:id="cautiondarlehen">
                   <gloss>CautionDarlehen</gloss>
                </category>
-               <category xml:id="CautionsDarlehensGelder">
+               <category xml:id="cautionsdarlehensgelder">
                   <gloss>CautionsDarlehensGelder</gloss>
                </category>
-               <category xml:id="CautsionsDarlehensGelder">
+               <category xml:id="cautsionsdarlehensgelder">
                   <gloss>CautsionsDarlehensGelder</gloss>
                </category>
-               <category xml:id="ClarerRoggen">
+               <category xml:id="clarerroggen">
                   <gloss>ClarerRoggen</gloss>
                </category>
-               <category xml:id="CompetenzWein">
+               <category xml:id="competenzwein">
                   <gloss>CompetenzWein</gloss>
                </category>
-               <category xml:id="ConcessionsgelderFremderWein">
+               <category xml:id="concessionsgelderfremderwein">
                   <gloss>ConcessionsgelderFremderWein</gloss>
                </category>
-               <category xml:id="ConfiscationsGelder">
+               <category xml:id="confiscationsgelder">
                   <gloss>ConfiscationsGelder</gloss>
                </category>
-               <category xml:id="ContributionKontingent">
+               <category xml:id="contributionkontingent">
                   <gloss>ContributionKontingent</gloss>
                </category>
-               <category xml:id="ContributionsGelder">
+               <category xml:id="contributionsgelder">
                   <gloss>ContributionsGelder</gloss>
                </category>
-               <category xml:id="CosterAmtsNutzung">
+               <category xml:id="costeramtsnutzung">
                   <gloss>CosterAmtsNutzung</gloss>
                </category>
-               <category xml:id="Cyster">
+               <category xml:id="cyster">
                   <gloss>Cyster</gloss>
                </category>
-               <category xml:id="DachSchindeln">
+               <category xml:id="dachschindeln">
                   <gloss>DachSchindeln</gloss>
                </category>
-               <category xml:id="Ehrschatz">
+               <category xml:id="ehrschatz">
                   <gloss>Ehrschatz</gloss>
                </category>
-               <category xml:id="Eier">
+               <category xml:id="eier">
                   <gloss>Eier</gloss>
                </category>
-               <category xml:id="EinkaufGeld">
+               <category xml:id="einkaufgeld">
                   <gloss>EinkaufGeld</gloss>
                </category>
-               <category xml:id="EinkaufGelder">
-                  <gloss>EinkaufGelder</gloss>
-               </category>
-               <category xml:id="Einkaufgelder">
+               <category xml:id="einkaufgelder">
                   <gloss>Einkaufgelder</gloss>
                </category>
-               <category xml:id="Eisen">
+               <category xml:id="eisen">
                   <gloss>Eisen</gloss>
                </category>
-               <category xml:id="EmfpangGeld">
+               <category xml:id="emfpanggeld">
                   <gloss>EmfpangGeld</gloss>
                </category>
-               <category xml:id="EntledigungLeibeigenschaft">
+               <category xml:id="entledigungleibeigenschaft">
                   <gloss>EntledigungLeibeigenschaft</gloss>
                </category>
-               <category xml:id="EntledungLeibeigenschaft">
+               <category xml:id="entledungleibeigenschaft">
                   <gloss>EntledungLeibeigenschaft</gloss>
                </category>
-               <category xml:id="FastenamtsNutzung">
+               <category xml:id="fastenamtsnutzung">
                   <gloss>FastenamtsNutzung</gloss>
                </category>
-               <category xml:id="FederWildbret">
+               <category xml:id="federwildbret">
                   <gloss>FederWildbret</gloss>
                </category>
-               <category xml:id="FischWasser">
+               <category xml:id="fischwasser">
                   <gloss>FischWasser</gloss>
                </category>
-               <category xml:id="FischWasserUnkosten">
+               <category xml:id="fischwasserunkosten">
                   <gloss>FischWasserUnkosten</gloss>
                </category>
-               <category xml:id="FrohnRobott">
+               <category xml:id="frohnrobott">
                   <gloss>FrohnRobott</gloss>
                </category>
-               <category xml:id="FrohnRobottGeld">
+               <category xml:id="frohnrobottgeld">
                   <gloss>FrohnRobottGeld</gloss>
                </category>
-               <category xml:id="FuhrFrohnen">
+               <category xml:id="fuhrfrohnen">
                   <gloss>FuhrFrohnen</gloss>
                </category>
-               <category xml:id="FuhrenTagelöhner">
+               <category xml:id="fuhrentagelöhner">
                   <gloss>FuhrenTagelöhner</gloss>
                </category>
-               <category xml:id="Fuxtaxe_Murmeltierbälge">
+               <category xml:id="fuxtaxe_murmeltierbälge">
                   <gloss>Fuxtaxe_Murmeltierbälge</gloss>
                </category>
-               <category xml:id="Gams">
+               <category xml:id="gams">
                   <gloss>Gams</gloss>
                </category>
-               <category xml:id="GamsHirsch">
+               <category xml:id="gamshirsch">
                   <gloss>GamsHirsch</gloss>
                </category>
-               <category xml:id="Gamshäute">
+               <category xml:id="gamshäute">
                   <gloss>Gamshäute</gloss>
                </category>
-               <category xml:id="GefundeneGeissen">
+               <category xml:id="gefundenegeissen">
                   <gloss>GefundeneGeissen</gloss>
                </category>
-               <category xml:id="Gestern">
+               <category xml:id="gestern">
                   <gloss>Gestern</gloss>
                </category>
-               <category xml:id="GlaserLohn">
+               <category xml:id="glaserlohn">
                   <gloss>GlaserLohn</gloss>
                </category>
-               <category xml:id="GnadenAlmosen">
+               <category xml:id="gnadenalmosen">
                   <gloss>GnadenAlmosen</gloss>
                </category>
-               <category xml:id="GrünesObst">
+               <category xml:id="grünesobst">
                   <gloss>GrünesObst</gloss>
                </category>
-               <category xml:id="Hafer">
+               <category xml:id="hafer">
                   <gloss>Hafer</gloss>
                </category>
-               <category xml:id="HafnerLohn">
+               <category xml:id="hafnerlohn">
                   <gloss>HafnerLohn</gloss>
                </category>
-               <category xml:id="HandFrohnen">
+               <category xml:id="handfrohnen">
                   <gloss>HandFrohnen</gloss>
                </category>
-               <category xml:id="HandwerkerLöhne">
+               <category xml:id="handwerkerlöhne">
                   <gloss>HandwerkerLöhne</gloss>
                </category>
-               <category xml:id="Hanf">
+               <category xml:id="hanf">
                   <gloss>Hanf</gloss>
                </category>
-               <category xml:id="HeiratskonzessionsGelder">
+               <category xml:id="heiratskonzessionsgelder">
                   <gloss>HeiratskonzessionsGelder</gloss>
                </category>
-               <category xml:id="HerrschaftsConcessionsGelder">
+               <category xml:id="herrschaftsconcessionsgelder">
                   <gloss>HerrschaftsConcessionsGelder</gloss>
                </category>
-               <category xml:id="Heu">
+               <category xml:id="heu">
                   <gloss>Heu</gloss>
                </category>
-               <category xml:id="HindersässGelder">
+               <category xml:id="hindersässgelder">
                   <gloss>HindersässGelder</gloss>
                </category>
-               <category xml:id="Hühner">
+               <category xml:id="hühner">
                   <gloss>Hühner</gloss>
                </category>
-               <category xml:id="Interessensgelder">
+               <category xml:id="interessensgelder">
                   <gloss>Interessensgelder</gloss>
                </category>
-               <category xml:id="JahrWochenmarkt">
+               <category xml:id="jahrwochenmarkt">
                   <gloss>JahrWochenmarkt</gloss>
                </category>
-               <category xml:id="JahrWochenmärkte">
+               <category xml:id="jahrwochenmärkte">
                   <gloss>JahrWochenmärkte</gloss>
                </category>
-               <category xml:id="Kalk">
+               <category xml:id="kalk">
                   <gloss>Kalk</gloss>
                </category>
-               <category xml:id="KellerAmtsKosten">
+               <category xml:id="kelleramtskosten">
                   <gloss>KellerAmtsKosten</gloss>
                </category>
-               <category xml:id="KellerAmtsNutzung">
+               <category xml:id="kelleramtsnutzung">
                   <gloss>KellerAmtsNutzung</gloss>
                </category>
-               <category xml:id="KellereiundTorkel">
+               <category xml:id="kellereiundtorkel">
                   <gloss>KellereiundTorkel</gloss>
                </category>
-               <category xml:id="Kohle">
+               <category xml:id="kohle">
                   <gloss>Kohle</gloss>
                </category>
-               <category xml:id="Korn">
+               <category xml:id="korn">
                   <gloss>Korn</gloss>
                </category>
-               <category xml:id="KupferschmiedenLohn">
+               <category xml:id="kupferschmiedenlohn">
                   <gloss>KupferschmiedenLohn</gloss>
                </category>
-               <category xml:id="Käse">
+               <category xml:id="käse">
                   <gloss>Käse</gloss>
                </category>
-               <category xml:id="LandRheinZoll">
+               <category xml:id="landrheinzoll">
                   <gloss>LandRheinZoll</gloss>
                </category>
-               <category xml:id="Landsteuer">
+               <category xml:id="landsteuer">
                   <gloss>Landsteuer</gloss>
                </category>
-               <category xml:id="LehenGrundzinsSchellenberg">
+               <category xml:id="lehengrundzinsschellenberg">
                   <gloss>LehenGrundzinsSchellenberg</gloss>
                </category>
-               <category xml:id="LehenGrundzinsen">
+               <category xml:id="lehengrundzinsen">
                   <gloss>LehenGrundzinsen</gloss>
                </category>
-               <category xml:id="LohnWinzer">
+               <category xml:id="lohnwinzer">
                   <gloss>LohnWinzer</gloss>
                </category>
-               <category xml:id="LohnkostenAckerbau">
+               <category xml:id="lohnkostenackerbau">
                   <gloss>LohnkostenAckerbau</gloss>
                </category>
-               <category xml:id="MagerHeuKosten">
+               <category xml:id="magerheukosten">
                   <gloss>MagerHeuKosten</gloss>
                </category>
-               <category xml:id="Maler">
+               <category xml:id="maler">
                   <gloss>Maler</gloss>
                </category>
-               <category xml:id="Maurerlöhne">
+               <category xml:id="maurerlöhne">
                   <gloss>Maurerlöhne</gloss>
                </category>
-               <category xml:id="MautGottgeld">
+               <category xml:id="mautgottgeld">
                   <gloss>MautGottgeld</gloss>
                </category>
-               <category xml:id="MähenundHeuen">
+               <category xml:id="mähenundheuen">
                   <gloss>MähenundHeuen</gloss>
                </category>
-               <category xml:id="MähenundHeuerlohn">
+               <category xml:id="mähenundheuerlohn">
                   <gloss>MähenundHeuerlohn</gloss>
                </category>
-               <category xml:id="MühlKorn">
+               <category xml:id="mühlkorn">
                   <gloss>MühlKorn</gloss>
                </category>
-               <category xml:id="Mühlen">
+               <category xml:id="mühlen">
                   <gloss>Mühlen</gloss>
                </category>
-               <category xml:id="NeuerEmpfang">
+               <category xml:id="neuerempfang">
                   <gloss>NeuerEmpfang</gloss>
                </category>
-               <category xml:id="NeugreutZins">
-                  <gloss>NeugreutZins</gloss>
-               </category>
-               <category xml:id="Neugreutzins">
+               <category xml:id="neugreutzins">
                   <gloss>Neugreutzins</gloss>
                </category>
-               <category xml:id="Novalzehnt">
+               <category xml:id="novalzehnt">
                   <gloss>Novalzehnt</gloss>
                </category>
-               <category xml:id="NutzungSchwarzwild">
+               <category xml:id="nutzungschwarzwild">
                   <gloss>NutzungSchwarzwild</gloss>
                </category>
-               <category xml:id="Nägel">
+               <category xml:id="nägel">
                   <gloss>Nägel</gloss>
                </category>
-               <category xml:id="Pand">
+               <category xml:id="pand">
                   <gloss>Pand</gloss>
                </category>
-               <category xml:id="PassivSchulden">
+               <category xml:id="passivschulden">
                   <gloss>PassivSchulden</gloss>
                </category>
-               <category xml:id="PostundBotenLohn">
+               <category xml:id="postundbotenlohn">
                   <gloss>PostundBotenLohn</gloss>
                </category>
-               <category xml:id="Pulver">
+               <category xml:id="pulver">
                   <gloss>Pulver</gloss>
                </category>
-               <category xml:id="Rebstickel">
+               <category xml:id="rebstickel">
                   <gloss>Rebstickel</gloss>
                </category>
-               <category xml:id="Recharbeit">
+               <category xml:id="recharbeit">
                   <gloss>Recharbeit</gloss>
                </category>
-               <category xml:id="Rentamtsrechnung1723">
+               <category xml:id="rentamtsrechnung1723">
                   <gloss>Rentamtsrechnung1723</gloss>
                </category>
-               <category xml:id="Restantien">
+               <category xml:id="restantien">
                   <gloss>Restantien</gloss>
                </category>
-               <category xml:id="RobotGeld">
+               <category xml:id="robotgeld">
                   <gloss>RobotGeld</gloss>
                </category>
-               <category xml:id="Roggen">
+               <category xml:id="roggen">
                   <gloss>Roggen</gloss>
                </category>
-               <category xml:id="Ruder">
+               <category xml:id="ruder">
                   <gloss>Ruder</gloss>
                </category>
-               <category xml:id="Salz">
+               <category xml:id="salz">
                   <gloss>Salz</gloss>
                </category>
-               <category xml:id="SattlerLohn">
+               <category xml:id="sattlerlohn">
                   <gloss>SattlerLohn</gloss>
                </category>
-               <category xml:id="SauresObst">
+               <category xml:id="sauresobst">
                   <gloss>SauresObst</gloss>
                </category>
-               <category xml:id="Schafe">
+               <category xml:id="schafe">
                   <gloss>Schafe</gloss>
                </category>
-               <category xml:id="SchafeZiegen">
+               <category xml:id="schafeziegen">
                   <gloss>SchafeZiegen</gloss>
                </category>
-               <category xml:id="SchattVieh">
+               <category xml:id="schattvieh">
                   <gloss>SchattVieh</gloss>
                </category>
-               <category xml:id="Schmalz">
+               <category xml:id="schmalz">
                   <gloss>Schmalz</gloss>
                </category>
-               <category xml:id="SchmiedenLohn">
+               <category xml:id="schmiedenlohn">
                   <gloss>SchmiedenLohn</gloss>
                </category>
-               <category xml:id="SchreinerLohn">
+               <category xml:id="schreinerlohn">
                   <gloss>SchreinerLohn</gloss>
                </category>
-               <category xml:id="Schupflehen">
+               <category xml:id="schupflehen">
                   <gloss>Schupflehen</gloss>
                </category>
-               <category xml:id="SchwarzVieh">
+               <category xml:id="schwarzvieh">
                   <gloss>SchwarzVieh</gloss>
                </category>
-               <category xml:id="SennereiMeierei">
+               <category xml:id="sennereimeierei">
                   <gloss>SennereiMeierei</gloss>
                </category>
-               <category xml:id="Speck">
+               <category xml:id="speck">
                   <gloss>Speck</gloss>
                </category>
-               <category xml:id="SprengerLohn">
+               <category xml:id="sprengerlohn">
                   <gloss>SprengerLohn</gloss>
                </category>
-               <category xml:id="StandZins">
+               <category xml:id="standzins">
                   <gloss>StandZins</gloss>
                </category>
-               <category xml:id="StrafGelder">
+               <category xml:id="strafgelder">
                   <gloss>StrafGelder</gloss>
                </category>
-               <category xml:id="StrafRestanten">
+               <category xml:id="strafrestanten">
                   <gloss>StrafRestanten</gloss>
                </category>
-               <category xml:id="Stroh">
+               <category xml:id="stroh">
                   <gloss>Stroh</gloss>
                </category>
-               <category xml:id="SummarischerExtractAusgaben">
+               <category xml:id="summarischerextractausgaben">
                   <gloss>SummarischerExtractAusgaben</gloss>
                </category>
-               <category xml:id="SummarischerExtractEinnahmen">
+               <category xml:id="summarischerextracteinnahmen">
                   <gloss>SummarischerExtractEinnahmen</gloss>
                </category>
-               <category xml:id="Sägeholz">
+               <category xml:id="sägeholz">
                   <gloss>Sägeholz</gloss>
                </category>
-               <category xml:id="SägerLohn">
+               <category xml:id="sägerlohn">
                   <gloss>SägerLohn</gloss>
                </category>
-               <category xml:id="Säghölzer">
+               <category xml:id="säghölzer">
                   <gloss>Säghölzer</gloss>
                </category>
-               <category xml:id="Tavernenzins">
+               <category xml:id="tavernenzins">
                   <gloss>Tavernenzins</gloss>
                </category>
-               <category xml:id="Umgeld">
+               <category xml:id="umgeld">
                   <gloss>Umgeld</gloss>
                </category>
-               <category xml:id="UmgeldRestanten">
+               <category xml:id="umgeldrestanten">
                   <gloss>UmgeldRestanten</gloss>
                </category>
-               <category xml:id="Underschidlich">
+               <category xml:id="underschidlich">
                   <gloss>Underschidlich</gloss>
                </category>
-               <category xml:id="UnderschiedlicheAusgaben">
+               <category xml:id="underschiedlicheausgaben">
                   <gloss>UnderschiedlicheAusgaben</gloss>
                </category>
-               <category xml:id="Verkauft">
+               <category xml:id="verkauft">
                   <gloss>Verkauft</gloss>
                </category>
-               <category xml:id="WaldAmtsNutzung">
-                  <gloss>WaldAmtsNutzung</gloss>
-               </category>
-               <category xml:id="WaldamtFischwasser">
+               <category xml:id="waldamtfischwasser">
                   <gloss>WaldamtFischwasser</gloss>
                </category>
-               <category xml:id="WaldamtUnkostenSchussgeld">
+               <category xml:id="waldamtunkostenschussgeld">
                   <gloss>WaldamtUnkostenSchussgeld</gloss>
                </category>
-               <category xml:id="Waldamtsnutzung">
+               <category xml:id="waldamtsnutzung">
                   <gloss>Waldamtsnutzung</gloss>
                </category>
-               <category xml:id="WegGeld">
+               <category xml:id="weggeld">
                   <gloss>WegGeld</gloss>
                </category>
-               <category xml:id="WeideZins">
-                  <gloss>WeideZins</gloss>
-               </category>
-               <category xml:id="Weidezins">
+               <category xml:id="weidezins">
                   <gloss>Weidezins</gloss>
                </category>
-               <category xml:id="WeinFässer">
+               <category xml:id="weinfässer">
                   <gloss>WeinFässer</gloss>
                </category>
-               <category xml:id="WeingartenUnkosten">
+               <category xml:id="weingartenunkosten">
                   <gloss>WeingartenUnkosten</gloss>
                </category>
-               <category xml:id="WochenJahrmarktEinkünfte">
+               <category xml:id="wochenjahrmarkteinkünfte">
                   <gloss>WochenJahrmarktEinkünfte</gloss>
                </category>
-               <category xml:id="Wolle">
+               <category xml:id="wolle">
                   <gloss>Wolle</gloss>
                </category>
-               <category xml:id="ZehentFrucht">
+               <category xml:id="zehentfrucht">
                   <gloss>ZehentFrucht</gloss>
                </category>
-               <category xml:id="Zehnt">
+               <category xml:id="zehnt">
                   <gloss>Zehnt</gloss>
                </category>
-               <category xml:id="ZehntRüben">
+               <category xml:id="zehntrüben">
                   <gloss>ZehntRüben</gloss>
                </category>
-               <category xml:id="Ziegelsteine">
+               <category xml:id="ziegelsteine">
                   <gloss>Ziegelsteine</gloss>
                </category>
-               <category xml:id="Zinsen">
+               <category xml:id="zinsen">
                   <gloss>Zinsen</gloss>
                </category>
-               <category xml:id="ZollHauptzoller">
+               <category xml:id="zollhauptzoller">
                   <gloss>ZollHauptzoller</gloss>
                </category>
-               <category xml:id="ZollKleinMels">
+               <category xml:id="zollkleinmels">
                   <gloss>ZollKleinMels</gloss>
                </category>
-               <category xml:id="ZollRofenberg">
+               <category xml:id="zollrofenberg">
                   <gloss>ZollRofenberg</gloss>
                </category>
-               <category xml:id="ZollRuggell">
+               <category xml:id="zollruggell">
                   <gloss>ZollRuggell</gloss>
                </category>
-               <category xml:id="ZollVaduz">
+               <category xml:id="zollvaduz">
                   <gloss>ZollVaduz</gloss>
                </category>
-               <category xml:id="ZollundUmgeld">
+               <category xml:id="zollundumgeld">
                   <gloss>ZollundUmgeld</gloss>
                </category>
-               <category xml:id="Zäunarbeiten">
+               <category xml:id="zäunarbeiten">
                   <gloss>Zäunarbeiten</gloss>
                </category>
-               <category xml:id="Zäune">
+               <category xml:id="zäune">
                   <gloss>Zäune</gloss>
                </category>
-               <category xml:id="ausstehendesZollgeld">
+               <category xml:id="ausstehendeszollgeld">
                   <gloss>ausstehendesZollgeld</gloss>
                </category>
-               <category xml:id="erkaufteGüter">
+               <category xml:id="erkauftegüter">
                   <gloss>erkaufteGüter</gloss>
                </category>
-               <category xml:id="erkauftesVieh">
+               <category xml:id="erkauftesvieh">
                   <gloss>erkauftesVieh</gloss>
                </category>
-               <category xml:id="gelieferterWein">
+               <category xml:id="gelieferterwein">
                   <gloss>gelieferterWein</gloss>
                </category>
-               <category xml:id="landsfürstlicherBefehl">
+               <category xml:id="landsfürstlicherbefehl">
                   <gloss>landsfürstlicherBefehl</gloss>
                </category>
-               <category xml:id="underschiedlicheAusgaben">
-                  <gloss>underschiedlicheAusgaben</gloss>
-               </category>
-               <category xml:id="underschiedlicherEmpfang">
+               <category xml:id="underschiedlicherempfang">
                   <gloss>underschiedlicherEmpfang</gloss>
                </category>
-               <category xml:id="verschiedeneSachen">
+               <category xml:id="verschiedenesachen">
                   <gloss>verschiedeneSachen</gloss>
                </category>
-               <category xml:id="ÖffnungsGeld">
-                  <gloss>ÖffnungsGeld</gloss>
-               </category>
-               <category xml:id="ÖffnungsGelder">
+               <category xml:id="öffnungsgelder">
                   <gloss>ÖffnungsGelder</gloss>
                </category>
-               <category xml:id="Öffnungsgeld">
+               <category xml:id="öffnungsgeld">
                   <gloss>Öffnungsgeld</gloss>
                </category>
             </taxonomy>
@@ -1132,7 +1115,9 @@
             <note ana="from" type="placeName">Triesen</note>
          </person>
          <person xml:id="pers_22">
-            <name>Herrn Pater Statthalter von Benderen</name>
+            <name>
+               <surname>Pater</surname>
+            </name>
             <occupation>Statthalter von <placeName ref="#geo_bendern"
                >Bendern</placeName></occupation>
          </person>
@@ -1207,7 +1192,6 @@
             <note ana="from" type="placeName">Feldkirch</note>
          </person>
          <person xml:id="pers_37">
-            <name><surname/><forename/></name>
             <occupation>Verwalter</occupation>
          </person>
          <person xml:id="pers_38">
@@ -1458,7 +1442,7 @@
          <div>
             <div>
                <head>Empfang Gelt<lb/> Alter Rest</head>
-               <div ana="bk:account" corresp="#AdmodiationsGelt">
+               <div ana="bk:account" corresp="#admodiationsgelt">
                   <note>No. 1</note>
                   <!-- muss ich das in der Taxonomy hinterlegen? -->
                   <div>
@@ -1480,7 +1464,7 @@
                            fl</measure></fw>
                      </p>
                   </div>
-                  <div ana="bk:account" corresp="#gelieferterWein">
+                  <div ana="bk:account" corresp="#gelieferterwein">
                      <head>mit geliferten wein</head>
                      <p ana="bk:entry"> auf gnedigste genembhaltung und lauth beygelegter
                         attestation auf die ausgerufene <measure ana="bk:commodity"
@@ -1489,7 +1473,7 @@
                            quantity="1176" unit="fl">1176</measure>
                      </p>
                   </div>
-                  <div ana="bk:account" corresp="#ZollHauptzoller">
+                  <div ana="bk:account" corresp="#zollhauptzoller">
                      <note>No. 2</note>
                      <head> Von dem Haupt Zollner Liechtenstein <persName ana="bk:from"
                            ref="#pers_2">Thomas Walser</persName></head>
@@ -1509,7 +1493,7 @@
                      </fw>
                   </div>
                   <pb facs="http://URI:" n="1v"/>
-                  <div ana="bk:account" corresp="#CompetenzWein">
+                  <div ana="bk:account" corresp="#competenzwein">
                      <p ana="bk:entry">An mitgelieferten <measure ana="bk:commodity"
                            commodity="c_wine" type="CompetenzWein">competenz wein </measure>
                         <name ana="bk:from">denen hrn. hofcaplänen <persName ref="#pers_5"
@@ -1521,7 +1505,7 @@
                            ana="currency" quantity="84" unit="fl">84</measure></p>
                   </div>
                   <!-- wo sollte man sagen, auf welche Einheit (Viertel) sich der Preis bezieht? -->
-                  <div ana="bk:account" corresp="#ZollundUmgeld">
+                  <div ana="bk:account" corresp="#zollundumgeld">
                      <head>Mit überlassenen Zohl und Umbgelt </head>
                      <p ana="bk:entry">Vermög beylag vom <date ana="bk:when" from="1718-10-01"
                            to="1719-04-23">1. Oktober 1718 bis Georgi 1719 </date>vor das erste
@@ -1546,7 +1530,7 @@
                </div>
                <pb facs="http://URI:" n="2r"/>
                <div ana="Zölle">
-                  <div ana="bk:account" corresp="#ausstehendesZollgeld">
+                  <div ana="bk:account" corresp="#ausstehendeszollgeld">
                      <p>Ferner nemme per empfang dasjenige zollgelt, was an statt deren <measure
                            ana="bk:money" quantity="230" unit="fl">230 fl </measure>, so deren
                         beständern gutt beschrieben von <date from="1718-10-01" to="1719-04-22">1.
@@ -1591,7 +1575,7 @@
                               44</measure></fw>
                      </div>
 
-                     <div ana="bk:account" corresp="#ZollRuggell">
+                     <div ana="bk:account" corresp="#zollruggell">
                         <note>No. 3</note>
                         <head>Von dem Zollner zue <placeName ref="#geo_ruggell" ana="bk:where"
                               >Roggell</placeName>
@@ -1637,7 +1621,7 @@
                               >1/4</measure></fw>
                      </div>
 
-                     <div ana="bk:account" corresp="#ZollRofenberg">
+                     <div ana="bk:account" corresp="#zollrofenberg">
                         <note>No. 4</note>
                         <head>Von <persName ana="bk:from" ref="#pers_8">Roffenberger Zollner Joseph
                               Hölberth</persName></head>
@@ -1673,7 +1657,7 @@
 
 
                      <pb facs="http://URI:" n="3r"/>
-                     <div ana="bk:account" corresp="#ZollKleinMels">
+                     <div ana="bk:account" corresp="#zollkleinmels">
                         <note>No. 5</note>
                         <head>Von <name ana="bk:from" ref="#pers_9">Klein Melser
                            Zoller</name></head>
@@ -1713,7 +1697,7 @@
 
 
                <pb facs="http://URI:" n="3v"/>
-               <div ana="bk:account" corresp="#Umgeld">
+               <div ana="bk:account" corresp="#umgeld">
                   <note/>
                   <head>Umbgelt</head>
                   <p ana="bk:entry">Nach inhalt umbgelts rechnung ist ebenfalls statt deren anderen
@@ -1742,7 +1726,7 @@
 
 
                <pb facs="http://URI:" n="4r"/>
-               <div ana="bk:account" corresp="#CautionDarlehen">
+               <div ana="bk:account" corresp="#cautiondarlehen">
                   <head>Neuer Empfang</head>
                   <p>Da die Admodiation ausgelosten, und die gefälle der landtshocheit anheimb
                      gefallen, ist von <date ana="bk:when" from="1719-04-22" to="1720-12-31">22
@@ -1750,7 +1734,7 @@
                      worden</p>
 
 
-                  <div ana="bk:account" corresp="#CautionsDarlehensGelder">
+                  <div ana="bk:account" corresp="#cautionsdarlehensgelder">
                      <head>Caution Darlehens Gelter</head>
 
                      <div>
@@ -1800,7 +1784,7 @@
 
 
                <pb facs="http://URI:" n="4v"/>
-               <div ana="bk:account" corresp="#LehenGrundzinsen">
+               <div ana="bk:account" corresp="#lehengrundzinsen">
                   <head>Verschiedene Lehen und Grundzünsen pro Anno <date ana="bk:when" when="1719"
                         >1719</date></head>
 
@@ -1848,7 +1832,7 @@
 
                   <pb facs="http://URI:" n="5r"/>
 
-                  <div ana="bk:account" corresp="#LehenGrundzinsSchellenberg">
+                  <div ana="bk:account" corresp="#lehengrundzinsschellenberg">
                      <note>No. 12</note>
                      <head>Verschiedene Lehen und Grundzins im Schellenbergischen</head>
                      <p>Lauth Schellenbergischen Urbar Extract pro anno <date ana="bk:when"
@@ -1944,7 +1928,7 @@
    Da die Admodiation ausgelossten, beider Gefälls der Landtshocheit anhereinb gefallen ist von 22 Aprill bis letzten Dezember 1720 geliefert und bezogen worden @CP: Wie kann ich das als durchgestrichenen/gelöschten Text ausweisen? <del> hat es mir nicht genommen...-->
 
                <div ana="Zollgeld_1719_1720">
-                  <div ana="bk:account" corresp="#LandRheinZoll">
+                  <div ana="bk:account" corresp="#landrheinzoll">
                      <note>No. 13</note>
                      <head>Landt, und Rhein Strom Zoll</head>
 
@@ -2049,7 +2033,7 @@
                      </div>
                   </div>
 
-                  <div ana="bk:account" corresp="#ZollRuggell">
+                  <div ana="bk:account" corresp="#zollruggell">
                      <note>No. 14</note>
                      <head>Von dem <persName ana="bk:from" ref="#pers_7">Zoller von Roggell Andreas
                            Büchl</persName></head>
@@ -2143,7 +2127,7 @@
                      </fw>
                   </div>
 
-                  <div ana="bk:account" corresp="#ZollRofenberg">
+                  <div ana="bk:account" corresp="#zollrofenberg">
                      <note>No. 15</note>
                      <head>Von dem <persName ana="bk:from" ref="#pers_8">Zollner von Rofenberg Josef
                            Hölberthen</persName></head>
@@ -2322,7 +2306,7 @@
                         </measure><measure ana="bk:money" quantity="3" unit="d">3</measure></fw>
 
 
-                  <div ana="bk:account" corresp="#BergGeld">
+                  <div ana="bk:account" corresp="#berggeld">
                      <note>No. 17</note>
                      <head>Berg Gelt</head>
                      <p>Vermög gnedigster resolution dedat: von die <date when="1718-11-19">19.
@@ -2382,7 +2366,7 @@
                      <fw ana="bk:total">Summa <measure ana="bk:money" quantity="84" unit="fl">84
                            </measure><measure ana="bk:money" quantity="9" unit="kr">9</measure></fw>
                   </div>
-                  <div ana="bk:account" corresp="#Umgeld">
+                  <div ana="bk:account" corresp="#umgeld">
                      <note>No 18</note>
                      <head>Umbgelt</head>
                      <p ana="bk:entry">Laut besagter Umbgelts Rechnung <date ana="bk:when"
@@ -2427,7 +2411,7 @@
 
 
                   <pb facs="http://URI:" n="9v"/>
-                  <div ana="bk:account" corresp="#StandZins">
+                  <div ana="bk:account" corresp="#standzins">
                      <head>Stand Züns</head>
                      <div>
                         <note>No. 19</note>
@@ -2489,7 +2473,7 @@
 
                   <pb facs="http://URI:" n="10r"/>
 
-                  <div ana="bk:account" corresp="#Tavernenzins">
+                  <div ana="bk:account" corresp="#tavernenzins">
                      <div>
                         <note>No. 23</note>
                         <p ana="bk:entry"><unclear>Dem </unclear>
@@ -2521,7 +2505,7 @@
                            >42</measure></fw>
                   </div>
 
-                  <div ana="bk:account" corresp="#Landsteuer">
+                  <div ana="bk:account" corresp="#landsteuer">
                      <head>Die jährlich bezalte Landsteur</head>
                      <div>
                         <note>No. 25</note>
@@ -2554,7 +2538,7 @@
 
 
                   <pb facs="http://URI:" n="10v"/>
-                  <div ana="bk:account" corresp="#FrohnRobottGeld">
+                  <div ana="bk:account" corresp="#frohnrobottgeld">
                      <note>No. 27</note>
                      <head>Frohn oder Robott Gelt</head>
                      <p ana="bk:entry">Aus den ämbtern <placeName ref="#geo_balzers" ana="bk:where"
@@ -2565,7 +2549,7 @@
                         jährlich 15 fl. in allem aber per 3 Jahre <unclear>…</unclear> worden
                            <measure ana="bk:money" quantity="90" unit="fl">90</measure></p>
                   </div>
-                  <div ana="bk:account" corresp="#ConfiscationsGelder">
+                  <div ana="bk:account" corresp="#confiscationsgelder">
                      <div>
                         <note>No. 28</note>
                         <head>Confiskations Gelder</head>
@@ -2680,7 +2664,7 @@
                            ana="bk:money" quantity="58" unit="fl">58</measure></fw>
                   </div>
 
-                  <div ana="bk:account" corresp="#EntledigungLeibeigenschaft">
+                  <div ana="bk:account" corresp="#entledigungleibeigenschaft">
                      <head>Von Entledigung der Leibaigenschafft</head>
                      <div>
                         <note>36</note>
@@ -2764,7 +2748,7 @@
 
                   <pb facs="http://URI:" n="12v"/>
 
-                  <div ana="bk:account" corresp="#AbzugsGeld">
+                  <div ana="bk:account" corresp="#abzugsgeld">
                      <head>Abzug geltes</head>
                      <p n="42" ana="bk:entry">Den <date ana="bk:when" when="1720-05-16">16 May
                            1720</date> zahlt <persName ana="bk:from" ref="#pers_28">Andreas Marxer
@@ -2780,7 +2764,7 @@
                            >30</measure></fw>
                   </div>
 
-                  <div ana="bk:account" corresp="#Einkaufgelder">
+                  <div ana="bk:account" corresp="#einkaufgelder">
                      <head>Ein khauff gelter</head>
                      <p>Alhier wemb pr empfang di lauth urbari von ienen <unclear>inde</unclear> in
                         die <placeName>formahlige graffschafft Vaduz</placeName> eingezogen: so
@@ -2806,7 +2790,7 @@
                   </div>
 
                   <pb facs="http://URI:" n="13r"/>
-                  <div ana="bk:account" corresp="#Öffnungsgeld">
+                  <div ana="bk:account" corresp="#öffnungsgeld">
                      <head>öffnunng gelt</head>
                      <div>
                         <note>No 43</note>
@@ -2819,7 +2803,7 @@
                            per se</p>
                      </div>
                   </div>
-                  <div ana="bk:account" corresp="#WochenJahrmarktEinkünfte">
+                  <div ana="bk:account" corresp="#wochenjahrmarkteinkünfte">
                      <head>Wochen <del>Marcht</del>jahrmarckhtsz einkhunfften</head>
                      <div>
                         <note>No. 44</note>
@@ -2885,7 +2869,7 @@
                   </div>
 
                   <pb facs="http://URI:" n="14r"/>
-                  <div ana="bk:account" corresp="#BurggrafenamtRindvieh">
+                  <div ana="bk:account" corresp="#burggrafenamtrindvieh">
                      <head>Nutzung desz Purggraffen ambtsz. von rindt viech</head>
                      <div>
                         <note>No. 50</note>
@@ -2942,7 +2926,7 @@
                   </div>
 
                   <pb facs="http://URI:" n="14v"/>
-                  <div ana="bk:account" corresp="#NutzungSchwarzwild">
+                  <div ana="bk:account" corresp="#nutzungschwarzwild">
                      <head>Nutzung von Schwarz wich<reg>wild</reg></head>
                      <div>
                         <note>No. 56</note>
@@ -2982,7 +2966,7 @@
                            >78</measure><measure ana="bk:money" quantity="55" unit="kr"
                         >55</measure></fw>
                   </div>
-                  <div ana="bk:account" corresp="#Vieh">
+                  <div ana="bk:account" corresp="#vieh">
                      <p>Von <unclear>behaft</unclear>vich</p>
                   </div>
                   <!-- überprüfen -->
@@ -2995,7 +2979,7 @@
                            to="1719-04-22">22 8bris 1718 bisz 22 aprill 1719</date>. alss durch
                         welche zeit die gedachte bestände solches noch hettten beziehen sollen,
                         eingebracht worden alss</p>
-                     <div ana="bk:account" corresp="#ZollVaduz">
+                     <div ana="bk:account" corresp="#zollvaduz">
                         <head>Von dem <persName ana="bk:from" ref="#pers_2">haupt zoller zue
                               lichtenstein Thoma Walser</persName></head>
                         <div>
@@ -3031,7 +3015,7 @@
                               >352</measure><measure ana="bk:money" quantity="24" unit="kr"
                               >24</measure></fw>
                      </div>
-                     <div ana="bk:account" corresp="#ZollRuggell">
+                     <div ana="bk:account" corresp="#zollruggell">
                         <head>Von dem <persName ref="#pers_7">zoller zue Roggell Andreas
                               Büchl</persName></head>
                         <div>
@@ -3068,7 +3052,7 @@
                            >1</measure></fw>
                      </div>
                      <pb facs="http://URI:" n="15v"/>
-                     <div ana="bk:account" corresp="#ZollRofenberg">
+                     <div ana="bk:account" corresp="#zollrofenberg">
                         <note>No. 4</note>
                         <head>Von Rofenberger Zoller Joseph Hölberth</head>
                         <p ana="bk:entry"><date from="1718-10-01" to="1718-11-22">Von 1.et
@@ -3099,7 +3083,7 @@
                               >18</measure><measure ana="bk:money" quantity="7" unit="kr"
                               >7</measure></fw>
                      </div>
-                     <div ana="bk:account" corresp="#ZollKleinMels">
+                     <div ana="bk:account" corresp="#zollkleinmels">
                         <note>No. 5</note>
                         <head>Von dem klein Mölser Zoller</head>
                         <p ana="bk:entry"><date from="1718-10-01" to="1718-11-22"> Von 1: d
@@ -3135,7 +3119,7 @@
                         >1</measure></fw>
                   </div>
                   <pb facs="http://URI:" n="16r"/>
-                  <div ana="bk:account" corresp="#Umgeld">
+                  <div ana="bk:account" corresp="#umgeld">
                      <note>No. 6</note>
                      <head>Umbgelt</head>
                      <p ana="bk:entry">Nach inhalt umbgelt rechnung ist ebenfalls statt dem an die
@@ -3167,14 +3151,14 @@
                   </div>
 
                   <pb facs="http://URI:" n="16v"/>
-                  <div ana="bk:account" corresp="#NeuerEmpfang">
+                  <div ana="bk:account" corresp="#neuerempfang">
                      <head ana="#bk_to">Neüer Emfpang</head>
                      <div type="Vorwort">
                         <p>Da die Modiation auszgelassen, und die gefälle der landtshocheit anheimb
                            gefallen, ist <date from="1719-04-22" to="1720-12-31">vom 22 aprillen
                               1719 bisz lesten Xber 1720 gelifert und bezochen worden.</date></p>
                      </div>
-                     <div ana="bk:account" corresp="#CautsionsDarlehensGelder">
+                     <div ana="bk:account" corresp="#cautsionsdarlehensgelder">
                         <head>Caution und Darlechens Gelter</head>
                         <p ana="bk:entry">Von herrn <persName ana="bk:from" ref="#pers_10">landtvogt
                               Joseph von Grenzing</persName>
@@ -3223,7 +3207,7 @@
                         </div>
 
                         <pb facs="http://URI:" n="17r"/>
-                        <div ana="bk:account" corresp="#LehenGrundzinsen">
+                        <div ana="bk:account" corresp="#lehengrundzinsen">
                            <note>No 11</note>
                            <head>verschidene lehen und grundzinsen pro <date when="1719">anno
                                  1719</date>
@@ -3380,7 +3364,7 @@
                            <head>Von dem <persName ana="bk:from" ref="#pers_2">zoller zue
                                     <placeName>Lichtenstein</placeName>Thoma
                               Walser</persName></head>
-                           <div ana="bk:account" corresp="#ZollVaduz">
+                           <div ana="bk:account" corresp="#zollvaduz">
                               <note>No. 13</note>
                               <p ana="bk:entry"><date from="1719-04-22" to="1719-05-22"> Von 22
                                     aprill</date>bis <date>22 May 1719</date>
@@ -3489,7 +3473,7 @@
                                        unit="d">3</measure></fw>
                               </div>
                            </div>
-                           <div ana="bk:account" corresp="#ZollRuggell">
+                           <div ana="bk:account" corresp="#zollruggell">
                               <note>No. 14</note>
                               <head>Von dem <persName ana="bk:from" ref="#pers_7">zoller zue
                                        <placeName ref="#geo_ruggell" ana="bk:where"
@@ -3583,7 +3567,7 @@
                                     unit="kr">45</measure></fw>
                            </div>
                         </div>
-                        <div ana="bk:account" corresp="#ZollRofenberg">
+                        <div ana="bk:account" corresp="#zollrofenberg">
                            <note>No. 15</note>
                            <head>Von dem <persName ana="bk:from" ref="#pers_8">Zoller zue
                                     <placeName>Rofenberg</placeName>Joseph
@@ -3681,7 +3665,7 @@
                                  >39</measure></fw>
                         </div>
 
-                        <div ana="bk:account" corresp="#ZollKleinMels">
+                        <div ana="bk:account" corresp="#zollkleinmels">
                            <note>No. 16</note>
                            <head>Von dem <persName ref="#pers_9"><placeName>klein
                                  Mölser</placeName>Zoller</persName></head>
@@ -3763,7 +3747,7 @@
                               >3</measure></fw>
                      </div>
                      <pb facs="http://URI:" n="20v"/>
-                     <div ana="bk:account" corresp="#WegGeld">
+                     <div ana="bk:account" corresp="#weggeld">
                         <note>No. 17></note>
                         <head>Weeg Gelt</head>
                         <p>Vermög gnedigster resolution de dat. <placeName>Wien</placeName>
@@ -3818,7 +3802,7 @@
                      </div>
 
                      <pb facs="http://URI:" n="21r"/>
-                     <div ana="bk:account" corresp="#Umgeld">
+                     <div ana="bk:account" corresp="#umgeld">
                         <note>No. 18</note>
                         <head>Umbgelt</head>
                         <p ana="bk:entry">lauth besagter umbgelt rechnung vom <date
@@ -3859,7 +3843,7 @@
                            >3</measure></fw>
                      </div>
 
-                     <div ana="bk:account" corresp="#BestandZins">
+                     <div ana="bk:account" corresp="#bestandzins">
                         <head>bestandt züns</head>
                         <div>
                            <note>No. 19</note>
@@ -3947,7 +3931,7 @@
                               >42</measure></fw>
                      </div>
                      <pb facs="http://URI:" n="22r"/>
-                     <div ana="bk:account" corresp="#Landsteuer">
+                     <div ana="bk:account" corresp="#landsteuer">
                         <head>die jährlich bezahlte <add>befäbte</add>landsteur</head>
                         <div>
                            <note>No. 25</note>
@@ -3981,7 +3965,7 @@
                               >14</measure><measure ana="bk:money" quantity="2" unit="d"
                            >2</measure></fw>
                      </div>
-                     <div ana="bk:account" corresp="#RobotGeld">
+                     <div ana="bk:account" corresp="#robotgeld">
                         <note>No. 27</note>
                         <head>fron: oder robott gelt</head>
                         <p ana="bk:entry">aus den ämbter<placeName ref="#geo_balzers" ana="bk:where"
@@ -3996,7 +3980,7 @@
 
                      <pb facs="http://URI:" n="22v"/>
 
-                     <div ana="bk:account" corresp="#ConfiscationsGelder">
+                     <div ana="bk:account" corresp="#confiscationsgelder">
                         <note>No. 28</note>
                         <head>confiscations gelter</head>
                         <p ana="bk:entry">den <date when="1719-09-22">22 7ber 1719</date>ist dem
@@ -4105,7 +4089,7 @@
 
                   <pb facs="http://URI:" n="23v"/>
 
-                  <div ana="bk:account" corresp="#EntledigungLeibeigenschaft">
+                  <div ana="bk:account" corresp="#entledigungleibeigenschaft">
                      <note>No. 36</note>
                      <head>Von Entlädigung der Leibaigenschafft</head>
                      <p ana="bk:entry">Nach inhalt beikhommendt gnedigisten decrets von dem
@@ -4187,7 +4171,7 @@
                         >62</measure><measure ana="bk:money" quantity="27" unit="kr"
                      >27</measure></fw>
                </div>
-               <div ana="bk:account" corresp="#AbzugGeld">
+               <div ana="bk:account" corresp="#abzuggeld">
                   <note>No: 42</note>
                   <head>Abzug Gelter</head>
 
@@ -4201,7 +4185,7 @@
                            ><measure ana="bk:money" quantity="20" unit="fl">20 </measure>Summa per
                         se</fw></p>
                </div>
-               <div ana="bk:account" corresp="#EinkaufGeld">
+               <div ana="bk:account" corresp="#einkaufgeld">
                   <head>Einkhauff Gelter</head>
                   <div type="Vorwort">
                      <p>Alhir bringe pr empfang die lauth urbary von <unclear>von ...</unclear>in
@@ -4232,7 +4216,7 @@
 
                   <pb facs="http://URI:" n="24v"/>
 
-                  <div ana="bk:account" corresp="#ÖffnungsGeld">
+                  <div ana="bk:account" corresp="#öffnungsgeld">
                      <note>No: 43</note>
                      <head>Öffnung Gelt</head>
                      <p ana="bk:entry">Das <orgName ref="#org_">durchlauchtigste Haus
@@ -4247,7 +4231,7 @@
                            se</fw></p>
                   </div>
 
-                  <div ana="bk:account" corresp="#JahrWochenmarkt">
+                  <div ana="bk:account" corresp="#jahrwochenmarkt">
                      <head>Jahr: und Wochenmarchts Einkhünften</head>
                      <div>
                         <note>No: 44</note>
@@ -4313,7 +4297,7 @@
                         </measure><measure ana="bk:money" quantity="36" unit="kr">36</measure></fw>
                </div>
                <pb facs="http://URI:" n="25v"/>
-               <div ana="bk:account" corresp="#Burggrafenamt">
+               <div ana="bk:account" corresp="#burggrafenamt">
                   <head><unclear>dlurijung</unclear>des Purggraffen ambts.</head>
                   <div>
                      <note>No:50</note>
@@ -4381,7 +4365,7 @@
                </div>
 
 
-               <div ana="bk:account" corresp="#SchwarzVieh">
+               <div ana="bk:account" corresp="#schwarzvieh">
                   <head>Vom Schwarz Vich</head>
                   <div>
                      <note>No: 56</note>
@@ -4439,9 +4423,9 @@
                </div>
                <!--  -->
                <pb facs="http://URI:" n="26v"/>
-               <div ana="bk:account" corresp="#SchattVieh">
+               <div ana="bk:account" corresp="#schattvieh">
                   <head>Von <unclear>Schatt</unclear> Vich</head>
-                  <div ana="bk:account" corresp="#Hühner">
+                  <div ana="bk:account" corresp="#hühner">
                      <note>No: 62</note>
                      <head>Vor alt: und junge Hiener</head>
                      <p ana="bk:entry">Lauth burggraffen ambts rechnungen von
@@ -4456,7 +4440,7 @@
                               quantity="142" unit="fl">142 </measure><measure ana="bk:money"
                               quantity="40" unit="kr">40 </measure>Summa per se</fw></p>
                   </div>
-                  <div ana="bk:account" corresp="#Schmalz">
+                  <div ana="bk:account" corresp="#schmalz">
                      <note>No: 63</note>
                      <head>Vor Schmalz</head>
                      <p ana="bk:entry">Lauth burggraffen ambts rechnung vor <measure type="quantity"
@@ -4467,7 +4451,7 @@
                               </measure><measure ana="bk:money" quantity="3" unit="d"
                            >3</measure></fw></p>
                   </div>
-                  <div ana="bk:account" corresp="#Käse">
+                  <div ana="bk:account" corresp="#käse">
                      <note>No: 64.</note>
                      <head>Vor Käsz</head>
                      <p ana="bk:entry">Lauth burggraffen ambts rechnung vor pro <date when="1719"
@@ -4484,7 +4468,7 @@
 
                <pb facs="http://URI:" n="27r"/>
 
-               <div ana="bk:account" corresp="#Rentamtsrechnung1723">
+               <div ana="bk:account" corresp="#rentamtsrechnung1723">
                   <head>Reichs Fürstenthumb <placeName>Liechtenstein</placeName></head>
                   <head>Rentamts Rechnung</head>
                   <head>Von Anno <date from="1723-01-01" to="1724-01-01">January 1723 bisz ad
@@ -4492,7 +4476,7 @@
 
                   <pb facs="http://URI:" n="27v"/>
 
-                  <div ana="bk:account" corresp="#NeugreutZins">
+                  <div ana="bk:account" corresp="#neugreutzins">
                      <p>Nach dismahlen disen neus gerüth zünnsz v <placeName ref="#geo_balzers"
                            ana="bk:where">Balzers</placeName> und <placeName>Klein
                         Melsz</placeName>p <unclear>
@@ -4507,7 +4491,7 @@
                   </div>
 
                   <pb facs="http://URI:" n="28r"/>
-                  <div ana="bk:account" corresp="#EmfpangGeld">
+                  <div ana="bk:account" corresp="#emfpanggeld">
                      <head>Empffang Gelt</head>
                      <head>Alter Rest</head>
                      <p ana="bk:entry">Nach geschlossener <unclear>pnehenung</unclear><date
@@ -4528,7 +4512,7 @@
                   <pb facs="http://URI:" n="28v"/>
 
                   <note>2./</note>
-                  <div ana="bk:account" corresp="#verschiedeneSachen">
+                  <div ana="bk:account" corresp="#verschiedenesachen">
                      <head>An verschidenen sahen</head>
                      <div>
                         <head>Schupf und erb lehen auch pfenning undgrundt zinsen</head>
@@ -4721,7 +4705,7 @@
                   <pb facs="http://URI:" n="30v"/>
 
                   <note type="page">6./</note>
-                  <div ana="bk:account" corresp="#WeideZins">
+                  <div ana="bk:account" corresp="#weidezins">
                      <head>Waydt Zins</head>
                      <div>
                         <note>No 7</note>
@@ -4746,7 +4730,7 @@
 
                   <pb facs="http://URI:" n="31r"/>
                   <note type="page">7/</note>
-                  <div ana="bk:account" corresp="#FrohnRobott">
+                  <div ana="bk:account" corresp="#frohnrobott">
                      <head>Ahn Frohn: und Robott</head>
                      <p ana="bk:entry">Das ambt <placeName ref="#geo_balzers" ana="bk:where"
                            >Balzers</placeName>gibt jährl: auff htl: <date>Martini </date>zue
@@ -4762,7 +4746,7 @@
 
                   <pb facs="http://URI:" n="31v"/>
                   <note>8./</note>
-                  <div ana="bk:account" corresp="#MautGottgeld">
+                  <div ana="bk:account" corresp="#mautgottgeld">
                      <head>Von Mauth und Gottgelt</head>
                      <div>
                         <note>No 9:</note>
@@ -4891,7 +4875,7 @@
 
                      <pb facs="http://URI:" n="32r"/>
                      <note>9/</note>
-                     <div ana="bk:account" corresp="#ZollRofenberg">
+                     <div ana="bk:account" corresp="#zollrofenberg">
                         <note>11.</note>
                         <head>Zoller auff <placeName ref="#geo_schellenberg" ana="bk:where"
                               >Schellenberg</placeName>
@@ -4948,7 +4932,7 @@
                            >34</measure></fw>
                      </div>
 
-                     <div ana="bk:account" corresp="#ZollKleinMels">
+                     <div ana="bk:account" corresp="#zollkleinmels">
                         <note>12.</note>
                         <head><persName ana="bk:from" ref="#pers_9"><placeName>Klein Melser
                               </placeName> Zoller Johan Jacob Burgmayer</persName></head>
@@ -5016,7 +5000,7 @@
                   <pb facs="http://URI:" n="32v"/>
 
                   <note type="page">10/</note>
-                  <div ana="bk:account" corresp="#WegGeld">
+                  <div ana="bk:account" corresp="#weggeld">
                      <note>No 13</note>
                      <head>Ahn weg = gelt</head>
                      <p ana="bk:entry">Im <date when="1723-01">Januar </date>
@@ -5063,7 +5047,7 @@
 
                   <pb facs="http://URI:" n="33r"/>
                   <note type="page">11.</note>
-                  <div ana="bk:account" corresp="#Umgeld">
+                  <div ana="bk:account" corresp="#umgeld">
                      <note>No. 14/</note>
                      <head>Ahn umbgelt gelifferet</head>
                      <p ana="bk:entry">Den <date when="1723-04-22">22 April </date><persName
@@ -5140,7 +5124,7 @@
                   <pb facs="http://URI:" n="33v"/>
 
                   <note type="page">12/</note>
-                  <div ana="bk:account" corresp="#AbzugGeld">
+                  <div ana="bk:account" corresp="#abzuggeld">
                      <note>No 15</note>
                      <head>Ahn abfahrt: und abzug gelter</head>
                      <p ana="bk:entry"><persName ana="bk:from" ref="#pers_46">Adam Gassner
@@ -5155,7 +5139,7 @@
 
                   <pb facs="http://URI:" n="34r"/>
 
-                  <div ana="bk:account" corresp="#EntledungLeibeigenschaft">
+                  <div ana="bk:account" corresp="#entledungleibeigenschaft">
                      <head>Ahn entledigung der Leibeinschafft</head>
                      <p ana="bk:entry"><note type="en">[Waagrechte Linie mit Kreis darum] </note>
                         <measure ana="bk:money" quantity="0"/></p>
@@ -5163,12 +5147,12 @@
 
                   <pb facs="http://URI:" n="34v"/>
                   <note type="page">14/</note>
-                  <div ana="bk:account" corresp="#EinkaufGelder">
+                  <div ana="bk:account" corresp="#einkaufgelder">
                      <head><unclear>A</unclear>Ahn einkhauff gelter in das fürstenthumb</head>
                      <p ana="bk:entry">-o- <measure ana="bk:money" quantity="0"/></p>
                   </div>
 
-                  <div ana="bk:account" corresp="#HindersässGelder">
+                  <div ana="bk:account" corresp="#hindersässgelder">
                      <head>Hinder säss gelter</head>
                      <p ana="bk:entry"><persName ana="bk:from" ref="#pers_48">Joann
                               <unclear>Edensche</unclear> Beckh</persName> zue <placeName
@@ -5192,7 +5176,7 @@
                   <pb facs="http://URI:" n="35r"/>
 
                   <note type="page">15/</note>
-                  <div ana="bk:account" corresp="#JahrWochenmarkt">
+                  <div ana="bk:account" corresp="#jahrwochenmarkt">
                      <head>Ahn Jahr: und Wochenmärchtt</head>
                      <div>
                         <note>No 16</note>
@@ -5213,7 +5197,7 @@
                      <pb facs="http://URI:" n="35v"/>
 
                      <note type="page">16/</note>
-                     <div ana="bk:account" corresp="#ConfiscationsGelder">
+                     <div ana="bk:account" corresp="#confiscationsgelder">
                         <head>An confiscations: gelter</head>
                         <p ana="bk:entry"><note type="en">[Kringel, der wahrscheinlich für "nichts"
                               steht] </note><measure ana="bk:money" quantity="0" unit="fl"/></p>
@@ -5223,7 +5207,7 @@
                      <pb facs="http://URI:" n="36r"/>
 
                      <note type="page">17/</note>
-                     <div ana="bk:account" corresp="#HerrschaftsConcessionsGelder">
+                     <div ana="bk:account" corresp="#herrschaftsconcessionsgelder">
                         <note>No. 18</note>
                         <head>Ahn herrschafts concessions gelter</head>
                         <p ana="bk:entry">Von <persName ana="bk:from" ref="#pers_51">Johann: Eberle
@@ -5240,7 +5224,7 @@
                         <pb facs="http://URI:" n="36v"/>
 
                         <note type="page">18/</note>
-                        <div ana="bk:account" corresp="#ContributionKontingent">
+                        <div ana="bk:account" corresp="#contributionkontingent">
                            <head>Ahn contributions gelter von denen unterthanen wegen underhaltung
                               des creys contingents</head>
                            <p>Ist über die einnamb und auss gaab
@@ -5297,7 +5281,7 @@
                         <pb facs="http://URI:" n="37v"/>
 
                         <note type="page">20/</note>
-                        <div ana="bk:account" corresp="#BurggrafenamtNutzung">
+                        <div ana="bk:account" corresp="#burggrafenamtnutzung">
                            <note>No. 21/</note>
                            <head>Burggraffenambts Nuzung</head>
                            <div>
@@ -5342,14 +5326,14 @@
 
                            <pb facs="http://URI:" n="38r"/>
                            <note type="page">21</note>
-                           <div ana="bk:account" corresp="#Schafe">
+                           <div ana="bk:account" corresp="#schafe">
                               <head>Umb schaaff</head>
                               <p ana="bk:entry"><note type="en">[kringel, der eine Unterschrift
                                     darstellen könnte] </note>
                                  <measure ana="bk:money" quantity="0" unit="fl"/></p>
                            </div>
 
-                           <div ana="bk:account" corresp="#GefundeneGeissen">
+                           <div ana="bk:account" corresp="#gefundenegeissen">
                               <note>No: 25:</note>
                               <head>Umb gefundene gaiss</head>
                               <p ana="bk:entry">Vor <measure quantity="3" ana="bk:commodity"
@@ -5360,7 +5344,7 @@
                                     se</fw></p>
                            </div>
 
-                           <div ana="bk:account" corresp="#SchwarzVieh">
+                           <div ana="bk:account" corresp="#schwarzvieh">
                               <head>Umb S: V: Schwartz Vich</head>
                               <p ana="bk:entry">Vom <persName ana="bk:from" ref="#pers_54">müller
                                     Ulrich Seyfriedt aus dem <placeName>Mühlenholz
@@ -5462,7 +5446,7 @@
                         <pb facs="http://URI:" n="39v"/>
 
                         <note type="page">24/</note>
-                        <div ana="bk:account" corresp="#Eier">
+                        <div ana="bk:account" corresp="#eier">
                            <head>Umb ayer</head>
                            <p ana="bk:entry">Nach mehr <unclear>einenten </unclear>extract urbarij
                               sub # 3. tio in denen underen ämbtern in allen <measure
@@ -5476,7 +5460,7 @@
                                     quantity="1" unit="d">1</measure></fw></p>
                         </div>
 
-                        <div ana="bk:account" corresp="#GrünesObst">
+                        <div ana="bk:account" corresp="#grünesobst">
                            <note>No 31</note>
                            <head>Umb grüenes obs</head>
                            <p ana="bk:entry">Vor das itemige <date when="1723">disz jahr </date>
@@ -5488,7 +5472,7 @@
                                  </measure>Per se</fw></p>
                         </div>
 
-                        <div ana="bk:account" corresp="#SauresObst">
+                        <div ana="bk:account" corresp="#sauresobst">
                            <head>Umb sures obs</head>
                            <p ana="bk:entry">Vor <measure quantity="3">drey </measure>
                               <unclear>mäsler schrathen </unclear>
@@ -5501,7 +5485,7 @@
                            <p ana="bk:entry"><note type="en">[Waagrechter Strich mit Kringel]</note>
                               <measure ana="bk:money" quantity="0"/></p>
                         </div>
-                        <div ana="bk:account" corresp="#Speck">
+                        <div ana="bk:account" corresp="#speck">
                            <head>Umb speckh</head>
                            <p ana="bk:entry"><note type="en">[Waagrechter Strich mit
                                  Kringel]</note><measure ana="bk:money" quantity="0"/></p>
@@ -5531,7 +5515,7 @@
                         <pb facs="http://URI:" n="40v"/>
 
                         <note type="page">26</note>
-                        <div ana="bk:account" corresp="#Hanf">
+                        <div ana="bk:account" corresp="#hanf">
                            <head>Umb hampff</head>
                            <p ana="bk:entry">Vor <measure quantity="180.5">ein hundert achzig unnd
                                  ein halbss </measure>
@@ -5542,13 +5526,13 @@
                                  </measure><measure ana="bk:money" quantity="2" unit="kr">2
                               </measure>Summa per se</p>
 
-                           <div ana="bk:account" corresp="#Ruder">
+                           <div ana="bk:account" corresp="#ruder">
                               <head>Ahn <unclear>ruder</unclear></head>
                               <p ana="bk:entry"><note type="en">[Kringel]</note><measure
                                     ana="bk:money" quantity="0"/></p>
                            </div>
 
-                           <div ana="bk:account" corresp="#Wolle">
+                           <div ana="bk:account" corresp="#wolle">
                               <head>Umb Woll</head>
                               <p ana="bk:entry"><note type="en">[Kringel]</note><measure
                                     ana="bk:money" quantity="0"/></p>
@@ -5562,12 +5546,12 @@
                            <pb facs="http://URI:" n="41r"/>
 
                            <note type="page">27/</note>
-                           <div ana="bk:account" corresp="#Eisen">
+                           <div ana="bk:account" corresp="#eisen">
                               <head>Umb Eyszen</head>
                               <p ana="bk:entry"><note type="en">[Kringel]</note><measure
                                     ana="bk:money" quantity="0"/></p>
                            </div>
-                           <div ana="bk:account" corresp="#Ziegelsteine">
+                           <div ana="bk:account" corresp="#ziegelsteine">
                               <head>Umb Ziegelstein</head>
                               <p ana="bk:entry"><note type="en">[Kringel]</note><measure
                                     ana="bk:money" quantity="0"/></p>
@@ -5580,13 +5564,13 @@
                               <p ana="bk:entry"><note type="en">[Kringel]</note><measure
                                     ana="bk:money" quantity="0"/></p>
                            </div>
-                           <div ana="bk:account" corresp="#Heu">
+                           <div ana="bk:account" corresp="#heu">
                               <head>Umb Heu</head>
                               <p ana="bk:entry"><note type="en">[Kringel]</note><measure
                                     ana="bk:money" quantity="0"/></p>
                            </div>
                            <fw><del>Sa Summarum</del></fw>
-                           <div ana="bk:account" corresp="#Stroh">
+                           <div ana="bk:account" corresp="#stroh">
                               <head>Umb Stroh</head>
                               <p ana="bk:entry">Im<unclear>jarl</unclear>
                                  <persName ana="bk:from" ref="#pers_55">hl: pfarrer zu <placeName
@@ -5606,7 +5590,7 @@
                                  <measure ana="bk:money" quantity="0"/>Summa per se</p>
                            </div>
 
-                           <div ana="bk:account" corresp="#ZehntRüben">
+                           <div ana="bk:account" corresp="#zehntrüben">
                               <note>No 32</note>
                               <head>Zechendt <unclear>Rueben</unclear></head>
                               <p ana="bk:entry">Vor verkhaufte zehendt rüeben <unclear>L:
@@ -5640,7 +5624,7 @@
                            </div>
                         </div>
 
-                        <div ana="bk:account" corresp="#FastenamtsNutzung">
+                        <div ana="bk:account" corresp="#fastenamtsnutzung">
                            <head>Fastenambts Nuzung</head>
                            <div>
                               <head>Umb fasten</head>
@@ -5654,7 +5638,7 @@
                                     ana="bk:money" quantity="40" unit="kr">40</measure></p>
                            </div>
 
-                           <div ana="bk:account" corresp="#Korn">
+                           <div ana="bk:account" corresp="#korn">
                               <head>An Körn</head>
                               <div>
                                  <note>No 34</note>
@@ -5667,7 +5651,7 @@
                                           >38</measure></fw></p>
                               </div>
 
-                              <div ana="bk:account" corresp="#Schupflehen">
+                              <div ana="bk:account" corresp="#schupflehen">
                                  <note>No 35/</note>
                                  <p ana="bk:entry">Im <date from="1723-09-22" to="1723-11-22">Herbst
                                        1723 </date><!-- so sinnvoll kodiert oder kann man auch einfach den nicht trennnscharf umrissenen Herbst referenzieren=? -->
@@ -5702,7 +5686,7 @@
                               <pb facs="http://URI:" n="42v"/>
 
                               <note type="page">30/</note>
-                              <div ana="bk:account" corresp="#Roggen">
+                              <div ana="bk:account" corresp="#roggen">
                                  <note>No 37</note>
                                  <p ana="bk:entry">Umb <measure ana="bk:commodity" commodity="c_rye"
                                        >Roggen </measure>oder von <unclear>freszen ausgeibete frucht
@@ -5714,7 +5698,7 @@
                                        >26 </measure><measure ana="bk:money" quantity="56" unit="kr"
                                        >56</measure></fw>
                               </div>
-                              <div ana="bk:account" corresp="#ClarerRoggen">
+                              <div ana="bk:account" corresp="#clarerroggen">
                                  <note>No 38</note>
                                  <head>Umb <measure ana="bk:commodity" commodity="c_rye" type="klar"
                                        >claren Roggen</measure></head>
@@ -5726,7 +5710,7 @@
                                           </measure><measure ana="bk:money" quantity="36" unit="kr"
                                           >36</measure></fw></p>
                               </div>
-                              <div ana="bk:account" corresp="#Gestern">
+                              <div ana="bk:account" corresp="#gestern">
                                  <note>No 39</note>
                                  <head>Umb <measure ana="bk:commodity" commodity="c_gerste"
                                        >Gersten</measure></head>
@@ -5767,7 +5751,7 @@
 
                               <note><del>No. <unclear>43</unclear></del></note>
 
-                              <div ana="bk:account" corresp="#MühlKorn">
+                              <div ana="bk:account" corresp="#mühlkorn">
                                  <note>No 40</note>
                                  <head>umb mühl korn</head>
                                  <p ana="bk:entry">Im <date when="1723">ganzen jahr </date>an
@@ -5786,7 +5770,7 @@
 
                               <note type="page">31/</note>
 
-                              <div ana="bk:account" corresp="#Bohnen">
+                              <div ana="bk:account" corresp="#bohnen">
                                  <head>Umb Bohnen</head>
                                  <p ana="bk:entry">Dem <persName ana="bk:from" ref="#pers_57"
                                        >Mathias Koller </persName><measure type="quantity"
@@ -5814,7 +5798,7 @@
 
                               <note>32/</note>
 
-                              <div ana="bk:account" corresp="#Hafer">
+                              <div ana="bk:account" corresp="#hafer">
                                  <head>Umb <measure ana="bk:commodity" commodity="c_oat">Haber
                                     </measure></head>
                                  <p ana="bk:entry">Vermög <unclear>oppgedachten</unclear>
@@ -5836,7 +5820,7 @@
                                     <measure ana="bk:money" quantity="0"/></p>
                               </div>
 
-                              <div ana="bk:account" corresp="#Verkauft">
+                              <div ana="bk:account" corresp="#verkauft">
                                  <note>No 41</note>
                                  <p ana="bk:entry">Nach ausz weisz beylaagen 332under schidlich
                                     verkhauft pro <measure ana="bk:money" quantity="21" unit="fl">21
@@ -5849,7 +5833,7 @@
                                     >57</measure></fw>
                            </div>
 
-                           <div ana="bk:account" corresp="#GamsHirsch">
+                           <div ana="bk:account" corresp="#gamshirsch">
                               <head>Umb Gembs oder hiersch</head>
                               <p ana="bk:entry"><note type="en">[Strich mit Kreis]</note><measure
                                     ana="bk:money" quantity="0"/></p>
@@ -5913,7 +5897,7 @@
                                        unit="fl">438 </measure><measure ana="bk:money" quantity="50"
                                        unit="kr">50</measure></fw></p>
                            </div>
-                           <div ana="bk:account" corresp="#Novalzehnt">
+                           <div ana="bk:account" corresp="#novalzehnt">
                               <p ana="bk:entry">An <unclear>erainnusz</unclear>
                                  <date when="1723">1723 </date> verkhauft worden dem <persName
                                     ana="bk:from" ref="#pers_55">pfarrer zu <placeName
@@ -5961,7 +5945,7 @@
                               </div>
                               <div>
                                  <note>47</note>
-                                 <head>Ahn <measure ana="bk:commodity" commodity="c_Schnaps"
+                                 <head>Ahn <measure ana="bk:commodity" commodity="c_schnaps"
                                        type="Kirschengeist">kürschen geist </measure></head>
                                  <p ana="bk:entry">Nach ausweis der specification an kürschengeist
                                        <measure type="quantity" quantity="4" unit="quarter">4
@@ -5992,15 +5976,15 @@
 
                            <note type="page">36</note>
 
-                           <div ana="bk:account" corresp="#Waldamtsnutzung">
+                           <div ana="bk:account" corresp="#waldamtsnutzung">
                               <head>Wald Ambts Nuzung</head>
-                              <div ana="bk:account" corresp="#Gams">
+                              <div ana="bk:account" corresp="#gams">
                                  <note>48</note>
                                  <head>Umb gambs</head>
                                  <p ana="bk:entry">Nach Specification bey laag ausz <measure
                                        type="quantity"><measure quantity="12">12
                                        </measure></measure><measure ana="bk:commodity"
-                                       commodity="c_Gams">gambs</measure>gewlöset worden <measure
+                                       commodity="c_gams">gambs</measure>gewlöset worden <measure
                                        ana="bk:money" quantity="21" unit="fl">21 </measure><measure
                                        ana="bk:money" quantity="50" unit="kr">50 </measure><measure
                                        ana="bk:money" quantity="41" unit="d"
@@ -6021,7 +6005,7 @@
                            <pb facs="http://URI:" n="46r"/>
 
                            <note type="page">37</note>
-                           <div ana="bk:account" corresp="#FederWildbret">
+                           <div ana="bk:account" corresp="#federwildbret">
                               <note>50</note>
                               <head>Umb verschiedenes feder wild prett </head>
                               <p ana="bk:entry">Vorgelistetes zerschidenes
@@ -6034,7 +6018,7 @@
                            <div>
                               <head>Fisch Wasser</head>
                               <p ana="bk:entry">Vor <measure quantity="375" ana="bk:commodity"
-                                    commodity="c_Krebse">375 </measure>krebsen p.
+                                    commodity="c_krebse">375 </measure>krebsen p.
                                     <!-- Preis kodieren? --><measure ana="bk:money" quantity="48"
                                     unit="kr">48 </measure>
                                  <unclear>des 15 ... </unclear>
@@ -6050,22 +6034,22 @@
 
                         <note type="page">38</note>
 
-                        <div ana="bk:account" corresp="#Gamshäute">
+                        <div ana="bk:account" corresp="#gamshäute">
                            <head>Umb gambs haüth</head>
                            <p ana="bk:entry">Vor <measure quantity="5" ana="bk:commodity"
-                                 commodity="c_Gamshäute">fünf stuekh verkhauffte gambs haüth
+                                 commodity="c_gamshäute">fünf stuekh verkhauffte gambs haüth
                               </measure> l schon bezahlt worden <measure ana="bk:money" quantity="3"
                                  unit="fl">3 </measure><measure ana="bk:money" quantity="15"
                                  unit="kr">15 </measure>Summa per se</p>
-                           <div ana="bk:account" corresp="#Fuxtaxe_Murmeltierbälge">
+                           <div ana="bk:account" corresp="#fuxtaxe_murmeltierbälge">
                               <div>
                                  <note>52</note>
                                  <head>Umb füx-tax unnd murmelthieren <del>folg</del>bälg</head>
 
                                  <p ana="bk:entry">Nach ausweisz der bey laag vor die brauch- und
                                     unbrauchbahre <measure ana="bk:commodity"
-                                       commodity="c_Fuchsbalg">fuxbalg</measure> sambt einem
-                                       <measure ana="bk:commodity" commodity="c_Murmeltierhaut"
+                                       commodity="c_fuchsbalg">fuxbalg</measure> sambt einem
+                                       <measure ana="bk:commodity" commodity="c_murmeltierhaut"
                                        >murmel thiere haütlin</measure> p <measure ana="bk:money"
                                        quantity="33" unit="fl">33 </measure><measure ana="bk:money"
                                        quantity="29" unit="kr">29</measure></p>
@@ -6088,21 +6072,21 @@
                         <pb facs="http://URI:" n="47r"/>
 
                         <note>39</note>
-                        <div ana="bk:account" corresp="#Bauholz">
+                        <div ana="bk:account" corresp="#bauholz">
                            <head>Umb pau holz</head>
                            <p ana="bk:entry"><note type="en">kreis mit einer waagrechten linie
                                  dadurch </note>
                               <measure ana="bk:money" quantity="0"/></p>
                         </div>
 
-                        <div ana="bk:account" corresp="#Säghölzer">
+                        <div ana="bk:account" corresp="#säghölzer">
                            <head>Umb säg hölzer</head>
                            <p ana="bk:entry"><note type="en">kreis mit einer waagrechten linie
                                  durch</note><measure ana="bk:money" quantity="0"/></p>
                         </div>
                      </div>
 
-                     <div ana="bk:account" corresp="#Brennholz">
+                     <div ana="bk:account" corresp="#brennholz">
                         <head>Umb prenn holz</head>
                         <note>54</note>
                         <p ana="bk:entry">diess <date when="1723">jahr hindurch</date> an abholz p
@@ -6131,7 +6115,7 @@
                      <pb facs="http://URI:" n="47v"/>
 
                      <note type="page">40</note>
-                     <div ana="bk:account" corresp="#underschiedlicherEmpfang">
+                     <div ana="bk:account" corresp="#underschiedlicherempfang">
                         <head>Underschiedlicher Empffang</head>
                         <p ana="bk:entry">Im märtzen näyliche erben wegen eines Schupflehen Zins so
                            erst empfangen worden <measure ana="bk:money" quantity="28" unit="kr">28
@@ -6169,19 +6153,19 @@
                      <pb facs="http://URI:" n="48v"/>
 
                      <note>42</note>
-                     <div ana="bk:account" corresp="#SummarischerExtractEinnahmen">
+                     <div ana="bk:account" corresp="#summarischerextracteinnahmen">
                         <head>Summarischer Extract aller Einnamb </head>
                         <p ana="bk:entry">Aus der hochfürstl. cassa <measure ana="bk:money"
                               quantity="0">-</measure></p>
 
-                        <div ana="bk:account" corresp="#AlterRest">
+                        <div ana="bk:account" corresp="#alterrest">
                            <p ana="bk:entry">Alter Rest <fw ana="bk:total"><measure ana="bk:money"
                                     quantity="453" unit="fl">453 </measure><measure ana="bk:money"
                                     quantity="29" unit="kr">29 </measure><measure ana="bk:money"
                                     quantity="1" unit="d">1</measure></fw></p>
                         </div>
 
-                        <div ana="bk:account" corresp="#Zinsen">
+                        <div ana="bk:account" corresp="#zinsen">
                            <p ana="bk:entry">An Erb-Schupf Lehen, Pfennig- und Grund Zinsen <fw
                                  ana="bk:total"><measure ana="bk:money" quantity="459" unit="fl">459
                                     </measure><measure ana="bk:money" quantity="56" unit="kr">56
@@ -6195,26 +6179,26 @@
                                     ana="bk:money" quantity="39" unit="kr">39</measure></fw></p>
                         </div>
 
-                        <div ana="bk:account" corresp="#Bestandszinsen">
+                        <div ana="bk:account" corresp="#bestandszinsen">
                            <p ana="bk:entry">An Bestandt Zünsen <fw ana="bk:total"><measure
                                     ana="bk:money" quantity="152" unit="fl">152 </measure><measure
                                     ana="bk:money" quantity="12" unit="kr">12 </measure><measure
                                     ana="bk:money" quantity="2" unit="d">2</measure></fw></p>
                         </div>
 
-                        <div ana="bk:account" corresp="#FischWasser">
+                        <div ana="bk:account" corresp="#fischwasser">
                            <p ana="bk:entry">Fisch Wasser Züns <fw ana="bk:total"><measure
                                     ana="bk:money" quantity="27" unit="fl">27 </measure><measure
                                     ana="bk:money" quantity="7" unit="kr">7</measure></fw></p>
                         </div>
 
-                        <div ana="bk:account" corresp="#Weidezins">
+                        <div ana="bk:account" corresp="#weidezins">
                            <p ana="bk:entry">Waidt Züns <fw ana="bk:total"><measure ana="bk:money"
                                     quantity="27" unit="fl">27 </measure><measure ana="bk:money"
                                     quantity="7" unit="kr">7</measure></fw></p>
                         </div>
 
-                        <div ana="bk:account" corresp="#FrohnRobottGeld">
+                        <div ana="bk:account" corresp="#frohnrobottgeld">
                            <p ana="bk:entry">Frohn und Robott <fw ana="bk:total"><measure
                                     ana="bk:money" quantity="30" unit="fl">30</measure></fw></p>
                         </div>
@@ -6240,79 +6224,79 @@
                                     quantity="43" unit="kr">43 </measure><measure ana="bk:money"
                                     quantity="1" unit="d">1</measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#Abzug">
+                        <div ana="bk:account" corresp="#abzug">
                            <p ana="bk:entry">Abfahrt und Abzüg <fw ana="bk:total"><measure
                                     ana="bk:money" quantity="2" unit="fl">2 </measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#EntledigungLeibeigenschaft">
+                        <div ana="bk:account" corresp="#entledigungleibeigenschaft">
                            <p ana="bk:entry">Entledigung der Leibeigenschaft <fw ana="bk:total"
                                     ><measure quantity="0">-</measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#EinkaufGelder">
+                        <div ana="bk:account" corresp="#einkaufgelder">
                            <p ana="bk:entry">Einkhauff Gelter <fw ana="bk:total"><measure
                                     quantity="0">-</measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#HindersässGelder">
+                        <div ana="bk:account" corresp="#hindersässgelder">
                            <p ana="bk:entry">Hinder-säss Gelter <fw ana="bk:total"><measure
                                     ana="bk:money" quantity="4" unit="fl">4 </measure><measure
                                     ana="bk:money" quantity="30" unit="kr">30</measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#JahrWochenmärkte">
+                        <div ana="bk:account" corresp="#jahrwochenmärkte">
                            <p ana="bk:entry">Jahr- und Wochenmärkh <fw ana="bk:total"><measure
                                     ana="bk:money" quantity="3" unit="fl">3 </measure><measure
                                     ana="bk:money" quantity="20" unit="kr">20</measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#ConfiscationsGelder">
+                        <div ana="bk:account" corresp="#confiscationsgelder">
                            <p ana="bk:entry">An Confiscations-Gelter <fw ana="bk:total"><measure
                                     quantity="0">-</measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#HeiratskonzessionsGelder">
+                        <div ana="bk:account" corresp="#heiratskonzessionsgelder">
                            <p ana="bk:entry">Heiraths Concessions Gelter <fw ana="bk:total"><measure
                                     ana="bk:money" quantity="1" unit="fl">1 </measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#ConcessionsgelderFremderWein">
+                        <div ana="bk:account" corresp="#concessionsgelderfremderwein">
                            <p ana="bk:entry">Concessions Gelter Einführung frömbder Wein <fw
                                  ana="bk:total"><measure quantity="0">-</measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#ContributionsGelder">
+                        <div ana="bk:account" corresp="#contributionsgelder">
                            <p ana="bk:entry">An Contributions Gelter <fw ana="bk:total"><measure
                                     ana="bk:money" quantity="55" unit="fl">55 </measure><measure
                                     ana="bk:money" quantity="32" unit="kr">32 </measure><measure
                                     ana="bk:money" quantity="2" unit="d">2</measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#StrafGelder">
+                        <div ana="bk:account" corresp="#strafgelder">
                            <p ana="bk:entry">Straff-Gelter <fw ana="bk:total"><measure
                                     ana="bk:money" quantity="322" unit="fl">322 </measure><measure
                                     ana="bk:money" quantity="29" unit="kr">29 </measure><measure
                                     ana="bk:money" quantity="2" unit="d">2</measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#Ehrschatz">
+                        <div ana="bk:account" corresp="#ehrschatz">
                            <p ana="bk:entry">An Ehrschatz <fw ana="bk:total"><measure ana="bk:money"
                                     quantity="12" unit="fl">12</measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#BurggrafenamtsNutzung">
+                        <div ana="bk:account" corresp="#burggrafenamtsnutzung">
                            <p ana="bk:entry">Purg Graffen Ambts Nutzung <fw ana="bk:total"><measure
                                     ana="bk:money" quantity="1191" unit="fl">1191</measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#CosterAmtsNutzung">
+                        <div ana="bk:account" corresp="#costeramtsnutzung">
                            <p ana="bk:entry">Coster Ambts Nutzung <fw ana="bk:total"><measure
                                     ana="bk:money" quantity="1487" unit="fl">1487 </measure><measure
                                     ana="bk:money" quantity="21" unit="kr">21 </measure><measure
                                     ana="bk:money" quantity="3" unit="d">3</measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#KellerAmtsNutzung">
+                        <div ana="bk:account" corresp="#kelleramtsnutzung">
                            <p ana="bk:entry">Keller Ambts Nutzung <fw ana="bk:total"><measure
                                     ana="bk:money" quantity="2926" unit="fl">2926 </measure><measure
                                     ana="bk:money" quantity="35" unit="kr">35 </measure><measure
                                     ana="bk:money" quantity="2" unit="d">2</measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#WaldAmtsNutzung">
+                        <div ana="bk:account" corresp="#waldamtsnutzung">
                            <p ana="bk:entry">Waldt Ambts Nutzung <fw ana="bk:total"><measure
                                     ana="bk:money" quantity="145" unit="fl">145 </measure><measure
                                     ana="bk:money" quantity="40" unit="kr">40 </measure><measure
                                     ana="bk:money" quantity="1" unit="d">1</measure></fw></p>
                         </div>
-                        <div ana="bk:account" corresp="#Underschidlich">
+                        <div ana="bk:account" corresp="#underschidlich">
                            <p ana="bk:entry">Underschidlich <fw ana="bk:total"><measure
                                     ana="bk:money" quantity="57" unit="fl">57 </measure><measure
                                     ana="bk:money" quantity="13" unit="kr">13</measure></fw></p>
@@ -6330,7 +6314,7 @@
 
             <note type="page">43</note>
 
-            <div ana="bk:account" corresp="#Ausgaben">
+            <div ana="bk:account" corresp="#ausgaben">
                <note><name ana="bk:from" ref="#org_1"/></note>
                <head>Aus Gaab</head>
                <div ana="bk:to">
@@ -6344,7 +6328,7 @@
                <pb facs="http://URI:" n="49v"/>
 
                <note type="page">44</note>
-               <div ana="bk:account" corresp="#landsfürstlicherBefehl">
+               <div ana="bk:account" corresp="#landsfürstlicherbefehl">
                   <head>Aus lands fürstl: gnädigsten befehl</head>
                   <p ana="bk:to" n="56">Aus landtes fürstl: <choice>
                         <orig>gdgstm </orig>
@@ -6363,7 +6347,7 @@
                <pb facs="http://URI:" n="50r"/>
 
                <note>45</note>
-               <div ana="bk:account" corresp="#GnadenAlmosen">
+               <div ana="bk:account" corresp="#gnadenalmosen">
                   <head>Aus gnaden und allmosen <lb/>gelter</head>
                   <!-- soll ich die alle umkodieren mit note wie bei den einnahmen? -->
                   <p n="57" ana="bk:to">Denen <choice>
@@ -6391,7 +6375,7 @@
                         >27</measure></fw>
                </div>
 
-               <div ana="bk:account" corresp="#ÖffnungsGelder">
+               <div ana="bk:account" corresp="#öffnungsgelder">
                   <head>Auss öffnungs gelter</head>
                   <p>
                      <note type="en">Kreis mit langem waagrechtem Strich </note>
@@ -6401,7 +6385,7 @@
 
                <note type="page">46</note>
 
-               <div ana="bk:account" corresp="#Interessensgelder">
+               <div ana="bk:account" corresp="#interessensgelder">
                   <head>Auss intresse gelter</head>
                   <p n="58" ana="bk:to">Dem <choice>
                         <orig>löbl.</orig>
@@ -6507,7 +6491,7 @@
 
                <note type="page">48</note>
                <div>
-                  <div ana="bk:account" corresp="#Besoldungen">
+                  <div ana="bk:account" corresp="#besoldungen">
                      <head>Auff besoldungen</head>
                      <p n="65" ana="bk:to"><persName ref="#pers_11">hochfürstl. rath unnd
                            landtvogten hr. Penz </persName>pro <date when="1723">anno 1723
@@ -6580,7 +6564,7 @@
                   <pb facs="http://URI:" n="52r"/>
 
                   <note type="page">49</note>
-                  <div ana="bk:account" corresp="#Besoldungen">
+                  <div ana="bk:account" corresp="#besoldungen">
                      <head>Auff Besoldungen</head>
                      <fw ana="bk:subtotal">Latus herüber <measure ana="bk:money" quantity="2214"
                            unit="fl">2214 </measure><measure ana="bk:money" quantity="32" unit="kr"
@@ -6644,7 +6628,7 @@
                <pb facs="http://URI:" n="52v"/>
 
                <note>50</note>
-               <div ana="bk:account" corresp="#erkaufteGüter">
+               <div ana="bk:account" corresp="#erkauftegüter">
                   <head>Umb erkhauffte Güetter</head>
                   <p n="88" ana="bk:to">Dem<persName ref="#pers_74">Andreas Conradt jung
                      </persName>wegen <measure type="commodity">angetauschter
@@ -6740,7 +6724,7 @@
 
                <note type="page">51</note>
 
-               <div ana="bk:account" corresp="#PassivSchulden">
+               <div ana="bk:account" corresp="#passivschulden">
                   <head>In d. bründlischen consigration zue ruekh gelassene passiv schulden.</head>
 
                   <p n="100" ana="bk:to">Dem mster <persName ref="#pers_86">Christian Kauffmann
@@ -6777,23 +6761,23 @@
                <pb facs="http://URI:" n="53v"/>
 
                <note type="page">52</note>
-               <div ana="bk:account" corresp="#BurggrafenamtsUnkösten">
+               <div ana="bk:account" corresp="#burggrafenamtsunkösten">
                   <head>Burggrafen ambts ohn costen</head>
 
-                  <div ana="bk:account" corresp="#erkauftesVieh">
+                  <div ana="bk:account" corresp="#erkauftesvieh">
                      <head>Umb erkhaufftes <unclear>S: V.</unclear> Vieh</head>
                      <p n="106" ana="bk:to">Vor zwey vehstig vor den <unclear>20er </unclear>eine im
                         fohren schwartz worden zur mastung gekhaufft worden p <measure
                            ana="bk:money" quantity="55" unit="fl">55</measure></p>
                   </div>
-                  <div ana="bk:account" corresp="#SchafeZiegen">
+                  <div ana="bk:account" corresp="#schafeziegen">
                      <head>Umb Schaaff und Gaisz</head>
                      <p n="107" ana="bk:to">Von <measure quantity="3">drey stukh</measure> im gebärg
                         desz winters gefundenen <measure ana="bk:commodity" commodity="c_goat"
                            type="young">gitzen</measure> finderlohn L: schein p. <measure
                            ana="bk:money" quantity="30" unit="kr">30</measure></p>
                   </div>
-                  <div ana="bk:account" corresp="#SchwarzVieh">
+                  <div ana="bk:account" corresp="#schwarzvieh">
                      <head>Umb Schwarz Vieh</head>
                      <p n="108" ana="bk:to">Vor zwey junge spann ferkhell im <del>frue </del>fruhe
                         jahr der bey der sennerey gar keine gemasten L: schein <measure
@@ -6806,7 +6790,7 @@
                <pb facs="http://URI:" n="54r"/>
 
                <note>53</note>
-               <div ana="bk:account" corresp="#SennereiMeierei">
+               <div ana="bk:account" corresp="#sennereimeierei">
                   <head>Umb zur Sennerey und Meyerejen erforderliche Notturft</head>
                   <p n="109" ana="bk:to">Im fruhe Jahr die S: V: schain unnd terzu verschneiden L:
                      schein <measure ana="bk:money" quantity="20" unit="kr">20</measure></p>
@@ -6853,18 +6837,18 @@
                         unit="fl">5 </measure><measure ana="bk:money" quantity="17" unit="kr"
                         >17</measure></p>
                   <p n="120" ana="bk:to">Vor <measure type="bought"><measure ana="bk:commodity"
-                           commodity="c_Beil">beyel</measure> und <measure ana="bk:commodity"
+                           commodity="c_beil">beyel</measure> und <measure ana="bk:commodity"
                            commodity="c_zugmesser">zugmesser </measure></measure>zur sennerey L:
                      schein <measure ana="bk:money" quantity="34" unit="kr">34</measure></p>
-                  <p n="121" ana="bk:to">Vor <measure ana="bk:commodity" commodity="c_Halsketten"
+                  <p n="121" ana="bk:to">Vor <measure ana="bk:commodity" commodity="c_halsketten"
                         type="bought">erkhauffte halsz ketten </measure> à
                         <!-- Preis kodieren? --><measure ana="bk:money" quantity="81" unit="kr"
                            ><unclear>81 </unclear></measure>unnd eine <measure ana="bk:commodity"
-                        commodity="c_Schaufel" type="bought">schauffeln</measure> bezahlt L: schein
+                        commodity="c_schaufel" type="bought">schauffeln</measure> bezahlt L: schein
                         <measure ana="bk:money" quantity="2" unit="fl">2 </measure><measure
                         ana="bk:money" quantity="26" unit="kr">26</measure></p>
                   <p n="122" ana="bk:to">Vor ein <measure type="bought">erkhauffte <measure
-                           ana="bk:commodity" commodity="c_Axt">ax </measure>unnd <measure
+                           ana="bk:commodity" commodity="c_axt">ax </measure>unnd <measure
                            ana="bk:commodity" commodity="c_mistgabel" quantity="2">zwey stuekh
                            trenzen </measure></measure>
                      <measure ana="bk:money" quantity="1" unit="fl">1 </measure><measure
@@ -6972,7 +6956,7 @@
                      schein <measure ana="bk:money" quantity="1" unit="fl">1 </measure><measure
                         ana="bk:money" quantity="30" unit="kr">30</measure> Summa per se</p>
                </div>
-               <div ana="bk:account" corresp="#Salz">
+               <div ana="bk:account" corresp="#salz">
                   <head>Umb Salz</head>
                   <p n="140" ana="bk:to">Zur <orgName ref="#org_">herrschftl. sennerey</orgName> das
                      ganze jahr hindurch lauth vier scheinen an <measure ana="bk:commodity"
@@ -6996,14 +6980,14 @@
                <pb facs="http://URI:" n="55v"/>
 
                <note>56</note>
-               <div ana="bk:account" corresp="#Hanf">
+               <div ana="bk:account" corresp="#hanf">
                   <head>Aussgaab umb Hampf</head>
                   <p n="142" ana="bk:to">vor <measure ana="bk:commodity" commodity="c_hemp"
                         >hampf</measure> zue einem neuen mühlen seil sambt <unclear>morher</unclear>
                      lohn L: quittung pr <measure ana="bk:money" quantity="21" unit="fl">21
                         </measure><measure ana="bk:money" quantity="8" unit="kr">8</measure></p>
                </div>
-               <div ana="bk:account" corresp="#Cyster">
+               <div ana="bk:account" corresp="#cyster">
                   <head>Auss auff Cyster</head>
                   <p n="143" ana="bk:to">L: schein von 63 A scheinen Fyssen à
                         <!-- Preis kodieren? --><measure ana="bk:money" quantity="4" unit="kr">4
@@ -7054,7 +7038,7 @@
 
                <pb facs="http://URI:" n="56r"/>
                <note type="page">56</note>
-               <div ana="bk:account" corresp="#Nägel">
+               <div ana="bk:account" corresp="#nägel">
                   <head>Auss gaab auf Negell</head>
                   <p n="152" ana="bk:to">vor<measure quantity="400">400 sth</measure> bretter
                         <measure ana="bk:commodity" commodity="c_nails">negell</measure> zum
@@ -7078,7 +7062,7 @@
                         </measure><measure ana="bk:money" quantity="37" unit="kr">37</measure></fw>
                </div>
 
-               <div ana="bk:account" corresp="#DachSchindeln">
+               <div ana="bk:account" corresp="#dachschindeln">
                   <head>Auff Tach Schindlen</head>
                   <p n="156" ana="bk:to">Vor <measure ana="bk:commodity" commodity="c_balken"
                         quantity="51">51 balken</measure>, die <unclear>bretter </unclear>à
@@ -7098,7 +7082,7 @@
                         ana="bk:money" quantity="13" unit="kr">13</measure></fw>
                </div>
 
-               <div ana="bk:account" corresp="#Kalk">
+               <div ana="bk:account" corresp="#kalk">
                   <head>Aussgaab auf Kalck</head>
                   <p ana="bk:to"><note type="en">waagrechte linie die in der mitte von einem kreis
                         geschnitten wird</note>
@@ -7108,12 +7092,12 @@
                <pb facs="http://URI:" n="56v"/>
 
                <note>57</note>
-               <div ana="bk:account" corresp="#Ziegelsteine">
+               <div ana="bk:account" corresp="#ziegelsteine">
                   <head>Auss gaab umb Ziegelstein</head>
                   <p ana="bk:to">-<measure ana="bk:money" quantity="0"/></p>
                </div>
 
-               <div ana="bk:account" corresp="#Kohle">
+               <div ana="bk:account" corresp="#kohle">
                   <head>Aussgaab umb Kohl</head>
                   <p n="158" ana="bk:to">Dem <persName ref="#pers_94">Petter <unclear>scherter
                         </unclear>flösser </persName>vor geliefferti kohlen vermög ferl:
@@ -7130,7 +7114,7 @@
                      </choice><measure ana="bk:money" quantity="28" unit="fl">28 </measure><measure
                         ana="bk:money" quantity="50" unit="kr">50</measure></fw>
                </div>
-               <div ana="bk:account" corresp="#Pand">
+               <div ana="bk:account" corresp="#pand">
                   <head>Auss gaab umb <unclear>pand</unclear>
                      <measure ana="bk:money" quantity="0"/></head>
                </div>
@@ -7138,7 +7122,7 @@
                <pb facs="http://URI:" n="57r"/>
 
                <note>59</note>
-               <div ana="bk:account" corresp="#Heu">
+               <div ana="bk:account" corresp="#heu">
                   <head>Umb Hew</head>
                   <p n="160" ana="bk:to">vor <measure ana="bk:commodity" commodity="c_hey"
                         quantity="13.5" unit="kl">13 1/2 klaffter hew</measure> zur <orgName
@@ -7148,7 +7132,7 @@
                         </measure><measure ana="bk:money" quantity="2" unit="d">2</measure></p>
                </div>
 
-               <div ana="bk:account" corresp="#Stroh">
+               <div ana="bk:account" corresp="#stroh">
                   <head>Umb Stroh und Streue</head>
                   <p n="161" ana="bk:to">Vor <measure ana="bk:commodity" commodity="c_straw"
                         quantity="2" unit="fd">zwey fuhder ströhe </measure>
@@ -7203,7 +7187,7 @@
                <pb facs="http://URI:" n="58v"/>
 
                <note type="page">62</note>
-               <div ana="bk:account" corresp="#ZehentFrucht">
+               <div ana="bk:account" corresp="#zehentfrucht">
                   <head>Auss gaab <unclear>Trösser bohes </unclear>der herrsch: aignen
                         <unclear>rind</unclear> zechent frucht</head>
                   <p n="173" ana="bk:to">L: schein das träschen in <orgName ref="#org_"
@@ -7227,7 +7211,7 @@
 
                <pb facs="http://URI:" n="59r"/>
                <note>63</note>
-               <div ana="bk:account" corresp="#KellerAmtsKosten">
+               <div ana="bk:account" corresp="#kelleramtskosten">
                   <head>Keller Ambts Unkösten</head>
                   <div>
                      <head>Umb erkhauffte unnd anstatt paarem gelt eingekhommenen
@@ -7272,7 +7256,7 @@
                   <pb facs="http://URI:" n="59v"/>
 
                   <note type="page">64</note>
-                  <div ana="bk:account" corresp="#LohnWinzer">
+                  <div ana="bk:account" corresp="#lohnwinzer">
                      <head>Auff Weingarten Bauer Lohn Ohncosten</head>
                      <p n="178" ana="bk:to"><orgName ref="#org_">Weingarten in <placeName>M:
                               Liechtenstein </placeName></orgName><unclear>Poekh </unclear>nach
@@ -7341,7 +7325,7 @@
                   <pb facs="http://URI:" n="60r"/>
 
                   <note type="page">65</note>
-                  <div ana="bk:account" corresp="#WeingartenUnkosten">
+                  <div ana="bk:account" corresp="#weingartenunkosten">
                      <head>Auff Weingärtten Ohn kösten</head>
 
                      <p n="192" ana="bk:to">Zu <placeName ref="#geo_triesen" ana="bk:where"
@@ -7435,12 +7419,12 @@
                   <pb facs="http://URI:" n="60v"/>
 
                   <note type="page">66</note>
-                  <div ana="bk:account" corresp="#WeinFässer">
+                  <div ana="bk:account" corresp="#weinfässer">
                      <head>Umb Wein Vässer</head>
                      <p ana="bk:to">-</p>
                   </div>
 
-                  <div ana="bk:account" corresp="#BandundBast">
+                  <div ana="bk:account" corresp="#bandundbast">
                      <head>Umb Band und Bast</head>
                      <p n="208" ana="bk:to">Vor <measure ana="bk:commodity" commodity="c_band">bandt
                            die räben</measure> in fruhe jahr zue binden in <orgName ref="#org_1"
@@ -7471,10 +7455,10 @@
                         >43</measure></fw>
                   </div>
 
-                  <div ana="bk:account" corresp="#Rebstickel">
+                  <div ana="bk:account" corresp="#rebstickel">
                      <head>Umb Wein Reben Stickhel</head>
 
-                     <p n="212" ana="bk:to">Vor <measure ana="bk:commodity" commodity="c_Rebstickel"
+                     <p n="212" ana="bk:to">Vor <measure ana="bk:commodity" commodity="c_rebstickel"
                            quantity="126" unit="bd">räbstickhel à 126 burden </measure> p
                            <!-- Preis kodieren? --><measure ana="bk:money" quantity="0" unit="kr"
                            /><measure ana="bk:money" quantity="2" unit="d">2 </measure>pro <date
@@ -7482,7 +7466,7 @@
                            ana="bk:money" quantity="11" unit="fl">11 </measure><measure
                            ana="bk:money" quantity="33" unit="kr">33</measure></p>
                      <p n="213" ana="bk:to">Vor gemachten <measure ana="bk:commodity"
-                           commodity="c_Rebstickel">räbstickhell </measure> auss der herrschaftl.
+                           commodity="c_rebstickel">räbstickhell </measure> auss der herrschaftl.
                         bürst à <!-- Preis kodieren? --><measure ana="bk:money" quantity="5"
                            unit="kr">5 </measure><measure ana="bk:money" quantity="2" unit="d"
                            >2</measure> pro <date when="1724">anno 1724</date> zu brauchen in denen
@@ -7492,14 +7476,14 @@
                         <measure ana="bk:money" quantity="12" unit="fl">12 </measure><measure
                            ana="bk:money" quantity="17" unit="kr">17</measure></p>
                      <p n="214" ana="bk:to">Denen <measure ana="bk:service" type="frohn">frohnen so
-                           die <measure ana="bk:commodity" commodity="c_Rebstickel"
+                           die <measure ana="bk:commodity" commodity="c_rebstickel"
                               >stickhell</measure> ab dem <placeName>triesner berg</placeName>
                            gezogen unnd hernach <placeName>in den bockh</placeName>
                            geführt</measure> pr. <measure ana="bk:money" quantity="1" unit="fl">1
                            </measure><measure ana="bk:money" quantity="12" unit="kr"
                         >12</measure></p>
                      <p n="215" ana="bk:to">So die <measure ana="bk:commodity"
-                           commodity="c_Rebstickel">stickhell</measure> in den <orgName ref="#org_"
+                           commodity="c_rebstickel">stickhell</measure> in den <orgName ref="#org_"
                            >herrschaftl. triesner weingartten</orgName> geführt auff der
                            <unclear>fahn</unclear>L: schein <measure ana="bk:money" quantity="18"
                            unit="kr">18</measure></p>
@@ -7515,9 +7499,9 @@
                <pb facs="http://URI:" n="61r"/>
 
                <note type="page">67</note>
-               <div ana="bk:account" corresp="#underschiedlicheAusgaben">
+               <div ana="bk:account" corresp="#underschiedlicheausgaben">
                   <head>Auss Gaab underschidlich</head>
-                  <div ana="bk:account" corresp="#KellereiundTorkel">
+                  <div ana="bk:account" corresp="#kellereiundtorkel">
                      <head>Zue der <orgName>Herrschaftl: Kellerey, und Torkhele <placeName>M:
                               Liechtenstein</placeName>
                            <placeName ref="#geo_eschen" ana="bk:where">Eschen</placeName> und
@@ -7632,8 +7616,8 @@
 
                   <note type="page">69</note>
 
-                  <div ana="bk:account" corresp="#WaldamtFischwasser">
-                     <div ana="bk:account" corresp="#WaldamtUnkostenSchussgeld">
+                  <div ana="bk:account" corresp="#waldamtfischwasser">
+                     <div ana="bk:account" corresp="#waldamtunkostenschussgeld">
                         <head>Waldt ambts ohn cösten ahn schussgelt</head>
                         <p n="234" ana="bk:to">Lauth schein vor geschossene <measure
                               ana="bk:commodity" commodity="c_fox">füx</measure>, <measure
@@ -7648,7 +7632,7 @@
                            <measure ana="bk:service">schussgelt </measure>
                            <measure ana="bk:money" quantity="1" unit="fl">1 </measure><measure
                               ana="bk:money" quantity="56" unit="kr">56</measure></p>
-                        <p ana="bk:to">Vor geschossen <measure ana="bk:commodity" commodity="c_Gams"
+                        <p ana="bk:to">Vor geschossen <measure ana="bk:commodity" commodity="c_gams"
                               quantity="13">13 stuekh gambs</measure> L: beylaag waldtambts rechnung
                            Sub <choice>
                               <orig>po </orig>
@@ -7660,16 +7644,16 @@
                               geflügell</measure> schuss gelt dauon p <measure ana="bk:money"
                               quantity="3" unit="fl">3 </measure><measure ana="bk:money"
                               quantity="35" unit="kr">35</measure></p>
-                        <p n="236" ana="bk:to">Vor <measure ana="bk:commodity" commodity="c_Gams"
+                        <p n="236" ana="bk:to">Vor <measure ana="bk:commodity" commodity="c_gams"
                               quantity="13">13 stuekh gambs</measure> auss dem gebärg <measure
                               ana="bk:service">auff der frohn</measure>
                            <del>aus dem gebärg heraus zu tragen p</del>
                            <measure ana="bk:money" quantity="52" unit="kr">52</measure></p>
                      </div>
 
-                     <div ana="bk:account" corresp="#FischWasserUnkosten">
+                     <div ana="bk:account" corresp="#fischwasserunkosten">
                         <head>Fisch Wasser Unkösten</head>
-                        <p ana="bk:to">Vor <measure ana="bk:commodity" commodity="c_Krebse"
+                        <p ana="bk:to">Vor <measure ana="bk:commodity" commodity="c_krebse"
                               quantity="375">375 krebse</measure> diselbige zue fangen wie den
                               <orgName>eschner</orgName> allzeit gegeben worden <fw ana="bk:total"
                                  ><measure ana="bk:money" quantity="1" unit="fl">1
@@ -7684,7 +7668,7 @@
 
                      <note type="page">70</note>
 
-                     <div ana="bk:account" corresp="#Zäune">
+                     <div ana="bk:account" corresp="#zäune">
                         <head>Vor <unclear>scheyen</unclear> und Steckhen zur Zeünung der
                            Herrschaftl. Güther</head>
                         <p n="237" ana="bk:to">Vor scheyen unnd steckhen zur herrsl: zeünung L:
@@ -7693,7 +7677,7 @@
                                  unit="kr">36</measure></fw></p>
                      </div>
 
-                     <div ana="bk:account" corresp="#Sägeholz">
+                     <div ana="bk:account" corresp="#sägeholz">
                         <head>Umb Sägholzer</head>
                         <p ana="bk:to"><measure ana="bk:money" quantity="0">-</measure></p>
                      </div>
@@ -7737,7 +7721,7 @@
                         ersechen. <measure ana="bk:money" quantity="0">-</measure></p>
                   </div>
 
-                  <div ana="bk:account" corresp="#Mühlen">
+                  <div ana="bk:account" corresp="#mühlen">
                      <head>Klein Mühlen, Un Kösten</head>
                      <p n="238" ana="bk:to">L: beygelegtem conto vom <persName ref="#pers_7">Andreas
                            Büchell </persName>als gewesten obsichter der <unclear>behr </unclear>
@@ -7772,7 +7756,7 @@
 
                   <note type="page">73</note>
 
-                  <div ana="bk:account" corresp="#Zehnt">
+                  <div ana="bk:account" corresp="#zehnt">
                      <head>Auff ordinari Zehent</head>
                      <p n="243" ana="bk:to">Das zehendt knechts im <placeName>M:
                            Liechtenstein</placeName> und <placeName ref="#geo_schaan" ana="bk:where"
@@ -7836,7 +7820,7 @@
                   <pb facs="http://URI:" n="64v"/>
 
                   <note type="page">74</note>
-                  <div ana="bk:account" corresp="#Neugreutzins">
+                  <div ana="bk:account" corresp="#neugreutzins">
                      <head>Auff New Gereuts Zehenden</head>
 
                      <p n="252" ana="bk:to"><measure ana="bk:service" type="lohn"
@@ -7862,7 +7846,7 @@
                         >35</measure></fw>
                   </div>
 
-                  <div ana="bk:account" corresp="#LohnkostenAckerbau">
+                  <div ana="bk:account" corresp="#lohnkostenackerbau">
                      <head>Ackher baw Lohns Unkösten</head>
                      <p n="255" ana="bk:to">L: schein so im <measure ana="bk:service" type="frohn"
                            subtype="bodenbearbeitung">frohn jahr zum pflueg gehouen und schollin
@@ -7986,7 +7970,7 @@
 
                   <note type="page">76</note>
 
-                  <div ana="bk:account" corresp="#MähenundHeuerlohn">
+                  <div ana="bk:account" corresp="#mähenundheuerlohn">
                      <head>Mehen- und Heyerlohns Ohncösten opp <unclear>frist</unclear></head>
                      <p n="273" ana="bk:to">Das <measure ana="bk:service" type="frohn"
                            subtype="heuen">feistheüen und mähen auff der frohn bey der <orgName
@@ -8037,7 +8021,7 @@
                         >32</measure></fw>
                   </div>
 
-                  <div ana="bk:account" corresp="#MagerHeuKosten">
+                  <div ana="bk:account" corresp="#magerheukosten">
                      <head>Mager Heu Costen</head>
                      <p ana="bk:to">Bey der <orgName ref="#org_">sennerey</orgName>
                         <measure ana="bk:service" type="heuen">mager heu-mähen und heüen</measure>
@@ -8087,7 +8071,7 @@
                   <pb facs="http://URI:" n="66r"/>
 
                   <note type="page">77</note>
-                  <div ana="bk:account" corresp="#MähenundHeuen">
+                  <div ana="bk:account" corresp="#mähenundheuen">
                      <head><unclear>Öhmet</unclear> Mähen und Heüen</head>
                      <p n="289" ana="bk:to"><measure ana="bk:service" type="taglohn" subtype="heuen"
                            >Mähen und heüen in <placeName>meyerhof bey der sennerey</placeName> in
@@ -8137,7 +8121,7 @@
                            >56</measure></p>
                   </div>
 
-                  <div ana="bk:account" corresp="#BauFuhrfrohnen">
+                  <div ana="bk:account" corresp="#baufuhrfrohnen">
                      <head>Baw führen auff der frohn-bohnen güthern</head>
                      <p n="298" ana="bk:to">Das <measure ana="bk:service" type="transport">baw
                            führen auff den <orgName>schloss güthern</orgName> diss jahr lauth zweyer
@@ -8159,7 +8143,7 @@
                   <pb facs="http://URI:" n="66v"/>
 
                   <note type="page">78</note>
-                  <div ana="bk:account" corresp="#BauAnliegen">
+                  <div ana="bk:account" corresp="#bauanliegen">
                      <head>Baw Anlegen</head>
                      <p n="300" ana="bk:to">Das baw anlegen im <placeName>meyerhoff bey der
                            sennerey</placeName> lauth schein <measure ana="bk:money" quantity="14"
@@ -8181,7 +8165,7 @@
                            >22</measure></fw>
                   </div>
 
-                  <div ana="bk:account" corresp="#Recharbeit">
+                  <div ana="bk:account" corresp="#recharbeit">
                      <head>Raumen und thung aussrechen bey truckhen frühlings zeiten</head>
                      <p n="304" ana="bk:to">In <measure ana="bk:service" type="rechen">dem <orgName
                               ref="#org_">meyerhoff bey der sennerey</orgName></measure> L: schein
@@ -8209,7 +8193,7 @@
                         >36</measure></fw>
                   </div>
 
-                  <div ana="bk:account" corresp="#Zäunarbeiten">
+                  <div ana="bk:account" corresp="#zäunarbeiten">
                      <head>Zeüner auff den herrschaftl. güthern</head>
                      <p n="309" ana="bk:to">Den <measure ana="bk:service" type="taglohn"
                            subtype="raeumen"><orgName>herrschl: weingartten im <placeName>M:
@@ -8280,7 +8264,7 @@
                   </div>
 
 
-                  <div ana="bk:account" corresp="#PostundBotenLohn">
+                  <div ana="bk:account" corresp="#postundbotenlohn">
                      <head>Auss Post Spechie und Botten Lohn</head>
                      <p n="320" ana="bk:to">L: elff scheinen <date when="1723">das ganze jahr
                            hindurch bis <choice>
@@ -8335,14 +8319,14 @@
 
                <pb facs="http://URI:" n="67v"/>
                <note type="page">80</note>
-               <div ana="bk:account" corresp="#HandwerkerLöhne">
+               <div ana="bk:account" corresp="#handwerkerlöhne">
                   <head>Auff allerhandt kunstleren und hand wercks leuthen</head>
-                  <div ana="bk:account" corresp="#Maler">
+                  <div ana="bk:account" corresp="#maler">
                      <head>Mahleren</head>
                      <p ana="bk:to"><measure ana="bk:money" quantity="0"/>- </p>
                   </div>
 
-                  <div ana="bk:account" corresp="#Maurerlöhne">
+                  <div ana="bk:account" corresp="#maurerlöhne">
                      <head>Maurer Arbeith</head>
                      <p n="329" ana="bk:to">Dem <persName ref="#pers_102">Maurer Thöni</persName> L:
                         schein <measure ana="bk:money" quantity="24" unit="kr">24</measure></p>
@@ -8375,7 +8359,7 @@
 
                   <note type="page">81</note>
 
-                  <div ana="bk:account" corresp="#SägerLohn">
+                  <div ana="bk:account" corresp="#sägerlohn">
                      <head>Säger Lohn</head>
                      <p n="335" ana="bk:to">Nach auswaiss dreyer <measure ana="bk:service"
                            type="lohn" subtype="sägerlohn">scheinen vor säger lohn</measure> des
@@ -8384,7 +8368,7 @@
                            quantity="36" unit="kr">36</measure></p>
                   </div>
 
-                  <div ana="bk:account" corresp="#HafnerLohn">
+                  <div ana="bk:account" corresp="#hafnerlohn">
                      <head>Haffneren</head>
                      <p n="336" ana="bk:to">Dem <persName ref="#pers_105" ana="bk:to">haffner von
                               <placeName>Veldtkirchen</placeName></persName> L: conto pr <measure
@@ -8393,7 +8377,7 @@
                      <!-- @CP: Passt das so oder müssten wir das bk:to ins persName-Tag geben? -->
                   </div>
 
-                  <div ana="bk:account" corresp="#GlaserLohn">
+                  <div ana="bk:account" corresp="#glaserlohn">
                      <head>Glasseren</head>
                      <p n="337" ana="bk:to"><persName ref="#pers_106" ana="bk:to"><choice>
                               <orig>mstr</orig>
@@ -8406,7 +8390,7 @@
                   <pb facs="http://URI:" n="68v"/>
 
                   <note type="page">82</note>
-                  <div ana="bk:account" corresp="#SchreinerLohn">
+                  <div ana="bk:account" corresp="#schreinerlohn">
                      <head>Schreiner</head>
                      <p n="338" ana="bk:to">Der <persName ref="#pers_107">schreiner Georg
                            Wolff</persName> l: zweyer conto ist bezahlt worden p <measure
@@ -8476,7 +8460,7 @@
                   <!-- @TB: -> überprüfen -> wie können wir die beiden nummerierten Absätze stehen lassen aber zeigen, dass der Betrag im fw beide umfasst?? -->
                   <p n="348" ana="bk:to">Dan Jhme <persName ref="#pers_111">Ospelt</persName> l.
                      schein <measure ana="bk:money" quantity="20" unit="kr">20</measure></p>
-                  <p n="349" ana="bk:to">Vor <measure ana="bk:commodity" commodity="c_Wagenräder"
+                  <p n="349" ana="bk:to">Vor <measure ana="bk:commodity" commodity="c_wagenräder"
                         quantity="2">zwey neuen wagen <choice>
                            <orig>räd </orig>
                            <ex>räder </ex>
@@ -8491,7 +8475,7 @@
                         ana="bk:money" quantity="40" unit="kr">40</measure></p>
                </div>
 
-               <div ana="bk:account" corresp="#SchmiedenLohn">
+               <div ana="bk:account" corresp="#schmiedenlohn">
                   <head>Kunst und andere schmidts <del>arbeith</del> conto</head>
                   <p n="350" ana="bk:to">Vor <measure ana="bk:commodity" commodity="c_feuerhaken"
                         type="gross" quantity="2">2 grosse feür haggen</measure> auff des
@@ -8552,9 +8536,9 @@
                <pb facs="http://URI:" n="69v"/>
 
                <note type="page">84</note>
-               <div ana="bk:account" corresp="#SattlerLohn">
+               <div ana="bk:account" corresp="#sattlerlohn">
                   <head>Satler Arbeith</head>
-                  <p n="359" ana="bk:to">vor <measure ana="bk:commodity" commodity="c_Fell"
+                  <p n="359" ana="bk:to">vor <measure ana="bk:commodity" commodity="c_fell"
                         type="Kalb" quantity="4">Vier gegerbte kalb feller</measure> zue
                         <unclear>oxen </unclear>fellen l: schein pr <measure ana="bk:money"
                         quantity="2" unit="fl">2 </measure><measure ana="bk:money" quantity="40"
@@ -8586,7 +8570,7 @@
                         </measure><measure ana="bk:money" quantity="3" unit="kr">3</measure></fw>
                </div>
 
-               <div ana="bk:account" corresp="#KupferschmiedenLohn">
+               <div ana="bk:account" corresp="#kupferschmiedenlohn">
                   <head>Kupfer Schmiedt</head>
                   <p n="367" ana="bk:to">Vor einen newen brandtenwein hatten dem <persName
                         ref="#pers_"><choice>
@@ -8611,7 +8595,7 @@
 
                <note type="page">85</note>
 
-               <div ana="bk:account" corresp="#Pulver">
+               <div ana="bk:account" corresp="#pulver">
                   <head>Vor Pulver</head>
                   <p n="369" ana="bk:to">Vor <measure ana="bk:commodity" commodity="c_powder"
                         >pulver</measure> so bey der letsteren huldigung freigegeben worden l.
@@ -8631,7 +8615,7 @@
                </div>
 
 
-               <div ana="bk:account" corresp="#SprengerLohn">
+               <div ana="bk:account" corresp="#sprengerlohn">
                   <head>Stein Sprengers Arbeith</head>
                   <p n="371" ana="bk:to">In der <placeName>Alp Sicca</placeName> in dem milckh
                      keller vor der felsen werkh zu sprengen und zu ebern l: schein p <measure
@@ -8649,7 +8633,7 @@
 
                <pb facs="http://URI:" n="70v"/>
                <note type="page">86</note>
-               <div ana="bk:account" corresp="#BrunnenMacherLohn">
+               <div ana="bk:account" corresp="#brunnenmacherlohn">
                   <head>Brunnen Macher Arbeith</head>
                   <p>Und was die zwey neüen brunnen bretter <placeName>bey der senn- und
                         meyerey</placeName> durch <unclear>deichell</unclear> zue
@@ -8755,7 +8739,7 @@
 
                <note type="page">88</note>
 
-               <div ana="bk:account" corresp="#FuhrenTagelöhner">
+               <div ana="bk:account" corresp="#fuhrentagelöhner">
                   <head><choice>
                         <orig>und </orig>
                         <ex>under </ex>
@@ -8798,7 +8782,7 @@
                <pb facs="http://URI:" n="72r"/>
 
                <note type="page">89</note>
-               <div ana="bk:account" corresp="#FuhrFrohnen">
+               <div ana="bk:account" corresp="#fuhrfrohnen">
                   <head><choice>
                         <orig>und </orig>
                         <ex>under </ex>
@@ -8934,7 +8918,7 @@
                <pb facs="http://URI:" n="73r"/>
 
                <note type="page">93</note>
-               <div ana="bk:account" corresp="#HandFrohnen">
+               <div ana="bk:account" corresp="#handfrohnen">
                   <head><choice>
                         <orig>Und</orig>
                         <ex>Under</ex>
@@ -9008,7 +8992,7 @@
                <pb facs="http://URI:" n="73v"/>
 
                <note type="page">94</note>
-               <div ana="bk:account" corresp="#UnderschiedlicheAusgaben">
+               <div ana="bk:account" corresp="#underschiedlicheausgaben">
                   <head>Underschidliche Aussgaaben</head>
                   <p n="423" ana="bk:to">einen verbrochenen kelch <choice>
                         <orig>wied </orig>
@@ -9089,7 +9073,7 @@
                <pb facs="http://URI:" n="74r"/>
 
                <note type="page">95</note>
-               <div ana="bk:account" corresp="#UnderschiedlicheAusgaben">
+               <div ana="bk:account" corresp="#underschiedlicheausgaben">
                   <head><choice>
                         <orig>Und</orig>
                         <ex>Under</ex>
@@ -9182,7 +9166,7 @@
 
                <note type="page"><unclear>6</unclear></note>
 
-               <div ana="bk:account" corresp="#SummarischerExtractAusgaben">
+               <div ana="bk:account" corresp="#summarischerextractausgaben">
                   <head>Summarischer Extract der Aussgaaben</head>
                   <p ana="bk:to">Aus landts fürstl gnädigstem befehl <fw ana="bk:total"><measure
                            ana="bk:money" quantity="40" unit="fl">40</measure></fw></p>
@@ -9298,7 +9282,7 @@
                            unit="d">1 </measure>summa per se</fw></p>
                </div>
 
-               <div ana="bk:account" corresp="#Restantien">
+               <div ana="bk:account" corresp="#restantien">
                   <head>An restantien hingegen wie <choice>
                         <orig>uolgt </orig>
                         <reg>folgt </reg>
@@ -9485,7 +9469,7 @@
 
                <pb facs="http://URI:" n="76v"/>
 
-               <div ana="bk:account" corresp="#UmgeldRestanten">
+               <div ana="bk:account" corresp="#umgeldrestanten">
                   <head>An Umbgelts Restanten</head>
                   <p ana="bk:to"><persName ref="#pers_2">Thomas Walser Zoller</persName>
                      <fw><measure ana="bk:money" quantity="24" unit="fl">24 </measure><measure
@@ -9563,7 +9547,7 @@
                            ana="bk:money" quantity="36" unit="kr">36</measure></fw></p>
                </div>
 
-               <div ana="bk:account" corresp="#StrafRestanten">
+               <div ana="bk:account" corresp="#strafrestanten">
                   <head>An Straff <unclear>Restanten</unclear></head>
                   <p ana="bk:to"><persName ref="#pers_159">Anna Maria Manhartin von <placeName>Flums
                         </placeName></persName>
