@@ -1579,7 +1579,7 @@
             <p>To create a <code>bk:Account</code> we need a <code rend="element"
                 ><![CDATA[<taxonomy>]]></code> element enriched by <code>ana="bk:account"</code>
               that allows us to express the type (i.e. income vs. expenses) and also the hierarchy
-              of the accounts (income vs. expenses etc). You can also use a <code rend="element"
+              of the accounts. You can also use a <code rend="element"
                 ><![CDATA[<desc>]]></code> to describe the account in your taxonomy. The income is
               marked with <code>ana="bk:to"</code> and expenses with <code>ana="bk:from"</code>. To
               avoid processing problems please make sure that there is only one
@@ -1588,7 +1588,7 @@
               In the snippet below the <code>bk:accountHolder</code> is represented by the revenue
               office as an institution. This means, we have to add the <code>bk:accountholder</code>
               annotation to the corresponding <code>bk:EconomicAgent</code> in the
-              <![CDATA[<listPerson>]]> or <![CDATA[<listOrg>]]> which needs to be annotated with
+              <code rend="element"><![CDATA[<listPerson>]]></code> or <code rend="element"><![CDATA[<listOrg>]]></code> which needs to be annotated with
                 <code>ana="depcha:index"</code>. The <code rend="element"><![CDATA[<head>]]></code>
               element of the snippet below tells us that the accounts belong to Thomas Walser who is
               connected to the <code rend="element"><![CDATA[<listPerson>]]></code> via an <code
