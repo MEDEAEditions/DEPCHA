@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:functx="http://www.functx.com" xmlns:gn="http://www.geonames.org/ontology#"
+    xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
+    xmlns:huc="https://gams.uni-graz.at/o:depcha.huc-ontology"
+    xmlns:time="http://www.w3.org/2006/time#" xmlns:schema="https://schema.org/"
+    xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:t="http://www.tei-c.org/ns/1.0"
+    xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#" xmlns:void="http://rdfs.org/ns/void#">
+    <depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.units.dataset">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.units"/>
+        <depcha:numberOfTransactions>0</depcha:numberOfTransactions>
+        <depcha:numberOfTransfers>0</depcha:numberOfTransfers>
+        <depcha:numberOfEconomicAgents>0</depcha:numberOfEconomicAgents>
+        <depcha:numberOfMonetaryValues>0</depcha:numberOfMonetaryValues>
+        <depcha:numberOfEconomicGoods>0</depcha:numberOfEconomicGoods>
+        <depcha:numberOfPlaces>0</depcha:numberOfPlaces>
+        <depcha:numberOfAccounts>0</depcha:numberOfAccounts>
+        <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#maravedi"/>
+        <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#dollar"/>
+        <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#euro"/>
+        <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#cent"/>
+    </depcha:Dataset>
+    <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.units">
+        <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
+        <dc:publisher>Institute Centre for Information Modelling, University of Graz</dc:publisher>
+    </void:Dataset>
+    <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#maravedi">
+        <rdfs:label>Spanish maravedí</rdfs:label>
+        <huc:definedBy>
+            <huc:Context
+                rdf:about="https://gams.uni-graz.at/context:depcha.example#maravedi.context">
+                <rdfs:label>Context of the historical unit Spanish maravedí</rdfs:label>
+                <rdfs:comment>Historic Iberian currency</rdfs:comment>
+                <huc:atPlace>Spain</huc:atPlace>
+                <huc:atTime>
+                    <time:TemporalEntity
+                        rdf:about="https://gams.uni-graz.at/context:depcha.example#maravedi.context.time">
+                        <time:hasEnd>1854</time:hasEnd>
+                    </time:TemporalEntity>
+                </huc:atTime>
+            </huc:Context>
+        </huc:definedBy>
+        <huc:isNormalizedThrough rdf:resource="http://www.wikidata.org/entity/Q1248202"/>
+        <huc:type rdf:resource="https://www.wikidata.org/entity/Q8142"/>
+    </huc:HistoricalUnit>
+    <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#dollar">
+        <rdfs:label>American Dollar</rdfs:label>
+        <huc:definedBy>
+            <huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.example#dollar.context">
+                <rdfs:label>Context of the historical unit American Dollar</rdfs:label>
+                <huc:atPlace>United States of America</huc:atPlace>
+            </huc:Context>
+        </huc:definedBy>
+        <huc:isNormalizedThrough rdf:resource="http://www.wikidata.org/entity/Q4917"/>
+        <huc:type rdf:resource="https://www.wikidata.org/entity/Q8142"/>
+    </huc:HistoricalUnit>
+    <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#euro">
+        <rdfs:label>Euro</rdfs:label>
+        <huc:definedBy>
+            <huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.example#euro.context">
+                <rdfs:label>Context of the historical unit Euro</rdfs:label>
+                <huc:atPlace>Europe</huc:atPlace>
+                <huc:atTime>
+                    <time:TemporalEntity
+                        rdf:about="https://gams.uni-graz.at/context:depcha.example#euro.context.time">
+                        <time:hasBeginning>2002</time:hasBeginning>
+                    </time:TemporalEntity>
+                </huc:atTime>
+            </huc:Context>
+        </huc:definedBy>
+        <huc:isNormalizedThrough rdf:resource="http://www.wikidata.org/entity/Q4917"/>
+        <huc:type rdf:resource="https://www.wikidata.org/entity/Q8142"/>
+    </huc:HistoricalUnit>
+    <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#cent">
+        <rdfs:label>Cent</rdfs:label>
+        <huc:definedBy>
+            <huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.example#cent.context">
+                <rdfs:label>Context of the historical unit Cent</rdfs:label>
+                <huc:atPlace>Europe</huc:atPlace>
+                <huc:atTime>
+                    <time:TemporalEntity
+                        rdf:about="https://gams.uni-graz.at/context:depcha.example#cent.context.time">
+                        <time:hasBeginning>2002</time:hasBeginning>
+                    </time:TemporalEntity>
+                </huc:atTime>
+            </huc:Context>
+        </huc:definedBy>
+        <huc:isNormalizedThrough rdf:resource="http://www.wikidata.org/entity/Q2377701"/>
+        <huc:type rdf:resource="https://www.wikidata.org/entity/Q8142"/>
+    </huc:HistoricalUnit>
+    <huc:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.example#cent.conversion.1">
+        <huc:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.example#euro"/>
+        <huc:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.example#cent"/>
+        <huc:formula>$fromUnit div 100</huc:formula>
+    </huc:Conversion>
+    <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#pound">
+        <rdfs:label>Pfund</rdfs:label>
+        <huc:definedBy>
+            <huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.example#pound.context">
+                <rdfs:label>Context of the historical unit Pfund</rdfs:label>
+            </huc:Context>
+        </huc:definedBy>
+        <huc:isNormalizedThrough rdf:resource="http://www.wikidata.org/entity/Q100995"/>
+        <huc:type rdf:resource="https://www.wikidata.org/entity/Q3647172"/>
+    </huc:HistoricalUnit>
+    <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#muett">
+        <rdfs:label>Mütt</rdfs:label>
+        <huc:definedBy>
+            <huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.example#muett.context">
+                <rdfs:label>Context of the historical unit Mütt</rdfs:label>
+            </huc:Context>
+        </huc:definedBy>
+        <huc:isNormalizedThrough rdf:resource="http://www.wikidata.org/entity/Q137958"/>
+        <huc:type rdf:resource="https://www.wikidata.org/entity/Q1302471"/>
+    </huc:HistoricalUnit>
+    <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#yard">
+        <rdfs:label>yards</rdfs:label>
+        <huc:definedBy>
+            <huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.example#yard.context">
+                <rdfs:label>Context of the historical unit yards</rdfs:label>
+            </huc:Context>
+        </huc:definedBy>
+        <huc:isNormalizedThrough rdf:resource="http://www.wikidata.org/entity/Q482798"/>
+        <huc:type rdf:resource="https://www.wikidata.org/entity/Q1978718"/>
+    </huc:HistoricalUnit>
+    <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#peck">
+        <rdfs:label>peck</rdfs:label>
+        <huc:definedBy>
+            <huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.example#peck.context">
+                <rdfs:label>Context of the historical unit peck</rdfs:label>
+            </huc:Context>
+        </huc:definedBy>
+        <huc:isNormalizedThrough rdf:resource="http://www.wikidata.org/entity/Q351646"/>
+        <huc:type rdf:resource="https://www.wikidata.org/entity/Q1302471"/>
+    </huc:HistoricalUnit>
+    <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#day">
+        <rdfs:label>days</rdfs:label>
+        <huc:definedBy>
+            <huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.example#day.context">
+                <rdfs:label>Context of the historical unit days</rdfs:label>
+            </huc:Context>
+        </huc:definedBy>
+        <huc:isNormalizedThrough rdf:resource="http://www.wikidata.org/entity/Q573"/>
+        <huc:type rdf:resource="https://www.wikidata.org/entity/Q1790144"/>
+    </huc:HistoricalUnit>
+</rdf:RDF>

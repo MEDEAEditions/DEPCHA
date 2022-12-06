@@ -32,7 +32,9 @@
                 </prefixDef>
                 <prefixDef ident="huc" matchPattern="([(a-z)|(A-Z)]+)"
                     replacementPattern="https://gams.uni-graz.at/o:depcha.huc#$1">
-                    <p>Analytical descriptors are considered to represent concepts from the historical units and currencies ontology and can be extended to respective URIs.</p>
+                    <p>Analytical descriptors are considered to represent concepts from the
+                        historical units and currencies ontology and can be extended to respective
+                        URIs.</p>
                 </prefixDef>
                 <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
                     replacementPattern="http://www.wikidata.org/entity/$1">
@@ -40,35 +42,30 @@
                 </prefixDef>
             </listPrefixDef>
         </encodingDesc>
-        <profileDesc>
-            <particDesc>
-                <listPerson ana="depcha:index">
-                    <head> Prosopographie </head>
-                    <desc> Personen, die in den Schlandberg Rechnungen namentlicht erwähnt
-                        werden. </desc>
-                    <person xml:id="pers_SR051">
-                        <persName>
-                            <forename>Anderlein </forename>
-                            <addName>Fischer </addName>
-                        </persName>
-                    </person>
-                    <person xml:id="pers_SR052">
-                        <persName>
-                            <forename>Herr </forename>
-                            <surname>Kaspar </surname>
-                            <addName>Herr von Hans Kelner </addName>
-                        </persName>
-                    </person>
-                </listPerson>
-            </particDesc>
-        </profileDesc>
     </teiHeader>
+    <standOff>
+        <list ana="depcha:index" type="group">
+            <item xml:id="group_SR051">
+                <name>Anderlein Fischer</name>
+                <desc>Eine Gruppe von nicht namentlich erwähnten Fischern.</desc>
+            </item>
+        </list>
+        <listPerson ana="depcha:index">
+            <head> Prosopographie </head>
+            <desc> Personen, die in den Schlandberg Rechnungen namentlicht erwähnt werden. </desc>
+            <person xml:id="pers_SR052">
+                <persName>
+                    <name>Herr von Hans Kelner </name>
+                </persName>
+            </person>
+        </listPerson>
+    </standOff>
     <text>
         <body>
             <div type="example">
                 <p ana="bk:entry"> Item am <date ana="bk:when" when="1402-01-01">s<supplied
                             reason="missing">[o]</supplied>nntag nach Eibnitÿ</date> prachten
-                        dÿ<lb/><name ref="#pers_SR051" ana="bk:from bk:group">obgeschriben
+                        dÿ<lb/><name ref="#group_SR051" ana="bk:from bk:group">obgeschriben
                         visser</name>
                     <measure ana="bk:commodity" commodity="fish" quantity="18" unit="pound">18 lb
                         visch</measure> dem <name ref="#pers_SR052" ana="bk:to bk:individual">herrn

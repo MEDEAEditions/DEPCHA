@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:functx="http://www.functx.com" xmlns:gn="http://www.geonames.org/ontology#"
+    xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
+    xmlns:huc="https://gams.uni-graz.at/o:depcha.huc-ontology"
+    xmlns:time="http://www.w3.org/2006/time#" xmlns:schema="https://schema.org/"
+    xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:t="http://www.tei-c.org/ns/1.0"
+    xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#" xmlns:void="http://rdfs.org/ns/void#">
+    <depcha:Dataset
+        rdf:about="https://gams.uni-graz.at/o:depcha.example.economicagentsindex.dataset">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.economicagentsindex"/>
+        <depcha:numberOfTransactions>0</depcha:numberOfTransactions>
+        <depcha:numberOfTransfers>0</depcha:numberOfTransfers>
+        <depcha:numberOfEconomicAgents>2</depcha:numberOfEconomicAgents>
+        <depcha:numberOfMonetaryValues>0</depcha:numberOfMonetaryValues>
+        <depcha:numberOfEconomicGoods>0</depcha:numberOfEconomicGoods>
+        <depcha:numberOfPlaces>0</depcha:numberOfPlaces>
+        <depcha:numberOfAccounts>0</depcha:numberOfAccounts>
+    </depcha:Dataset>
+    <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.economicagentsindex">
+        <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
+        <dc:publisher>Institute Centre for Information Modelling, University of Graz</dc:publisher>
+    </void:Dataset>
+    <bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.example#pers_WCDH001">
+        <schema:givenName>Eliza</schema:givenName>
+        <schema:familyName>Wheaton</schema:familyName>
+        <rdfs:label>Eliza Wheaton</rdfs:label>
+        <schema:birthDate>1809-09-27</schema:birthDate>
+        <schema:gender rdf:resource="https://schema.org/Male"/>
+        <schema:deathDate>1905</schema:deathDate>
+    </bk:EconomicAgent>
+    <bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.example#pers_WCDH002">
+        <schema:givenName>Laban</schema:givenName>
+        <schema:givenName>Morey</schema:givenName>
+        <schema:familyName>Wheaton</schema:familyName>
+        <rdfs:label>Laban Morey Wheaton</rdfs:label>
+        <schema:birthDate>1796-09-14</schema:birthDate>
+        <schema:gender rdf:resource="https://schema.org/Male"/>
+        <schema:hasOccupation>Postmaster</schema:hasOccupation>
+        <schema:affiliation>Representative Massachusetts General Court</schema:affiliation>
+        <schema:hasOccupation>Member Massachusetts Governor's Council</schema:hasOccupation>
+        <schema:affiliation>TrusteeState Industrial School for Girls</schema:affiliation>
+        <schema:deathDate>1865</schema:deathDate>
+    </bk:EconomicAgent>
+</rdf:RDF>

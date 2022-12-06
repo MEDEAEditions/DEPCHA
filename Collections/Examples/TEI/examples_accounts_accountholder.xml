@@ -43,7 +43,7 @@
             </prefixDef>
          </listPrefixDef>
          <unitDecl>
-            <unitDef type="currency" xml:id="fl" ana="bk:mainCurrency">
+            <unitDef type="currency" xml:id="fl" ana="depcha:mainCurrency">
                <label>Gulden Reichswährung</label>
                <conversion fromUnit="#kr" toUnit="#fl" formula="60"/>
                <conversion fromUnit="#d" toUnit="#fl" formula="600"/>
@@ -65,7 +65,7 @@
          </unitDecl>
          <classDecl>
             <taxonomy ana="bk:account">
-               <category ana="bk:to" xml:id="income">
+               <category ana="bk:from" xml:id="income">
                   <catDesc><gloss>Einnahmen</gloss></catDesc>
                   <category xml:id="lease">
                      <gloss>Admodiations Gelt</gloss>
@@ -75,7 +75,7 @@
                      <gloss>Zoll Hauptzoller</gloss>
                   </category>
                </category>
-               <category ana="bk:from" xml:id="expenses">
+               <category ana="bk:to" xml:id="expenses">
                   <catDesc><gloss>Ausgaben</gloss></catDesc>
                   <category xml:id="useofwoodland">
                      <catDesc><gloss>Waldamtsnutzung</gloss></catDesc>
@@ -90,23 +90,21 @@
             </taxonomy>
          </classDecl>
       </encodingDesc>
-      <profileDesc>
-         <particDesc>
-            <listPerson ana="depcha:index">
-               <person xml:id="pers_1">
-                  <name><forename>Thomas</forename>
-                     <surname>Walser</surname></name>
-                  <occupation>Alter Landtammann</occupation>
-               </person>
-            </listPerson>
-            <listOrg ana="depcha:index">
-               <org xml:id="org_1" ana="bk:accountHolder">
-                  <orgName>Rentamt des Fürstentums Liechtenstein</orgName>
-               </org>
-            </listOrg>
-         </particDesc>
-      </profileDesc>
    </teiHeader>
+   <standOff>
+      <listPerson ana="depcha:index">
+         <person xml:id="pers_1">
+            <name><forename>Thomas</forename>
+               <surname>Walser</surname></name>
+            <occupation>Alter Landtammann</occupation>
+         </person>
+      </listPerson>
+      <listOrg ana="depcha:index">
+         <org xml:id="org_1" ana="bk:accountHolder">
+            <orgName>Rentamt des Fürstentums Liechtenstein</orgName>
+         </org>
+      </listOrg>
+   </standOff>
    <text>
       <body>
          <div type="example">

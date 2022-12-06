@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:functx="http://www.functx.com" xmlns:gn="http://www.geonames.org/ontology#"
+    xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
+    xmlns:huc="https://gams.uni-graz.at/o:depcha.huc-ontology"
+    xmlns:time="http://www.w3.org/2006/time#" xmlns:schema="https://schema.org/"
+    xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:t="http://www.tei-c.org/ns/1.0"
+    xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#" xmlns:void="http://rdfs.org/ns/void#">
+    <depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts.dataset">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.accounts"/>
+        <depcha:numberOfTransactions>6</depcha:numberOfTransactions>
+        <depcha:numberOfTransfers>6</depcha:numberOfTransfers>
+        <depcha:numberOfEconomicAgents>0</depcha:numberOfEconomicAgents>
+        <depcha:numberOfMonetaryValues>6</depcha:numberOfMonetaryValues>
+        <depcha:numberOfEconomicGoods>0</depcha:numberOfEconomicGoods>
+        <depcha:numberOfPlaces>0</depcha:numberOfPlaces>
+        <depcha:numberOfAccounts>5</depcha:numberOfAccounts>
+        <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#schok"/>
+        <depcha:isMainCurrency rdf:resource="https://gams.uni-graz.at/context:depcha.example#schok"/>
+        <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#halbgrosch"/>
+        <depcha:aggregates>
+            <depcha:Aggregation
+                rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts.dataset.aggre#1480">
+                <depcha:date>1480</depcha:date>
+                <bk:unit>Schok</bk:unit>
+                <depcha:revenue>0</depcha:revenue>
+                <depcha:expenses>0</depcha:expenses>
+            </depcha:Aggregation>
+        </depcha:aggregates>
+    </depcha:Dataset>
+    <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts">
+        <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
+        <dc:publisher>Institute Centre for Information Modelling, University of Graz</dc:publisher>
+    </void:Dataset>
+    <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T1">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.accounts"/>
+        <bk:entry>Sabbato post Kathedra s. Petri XIIII gr.</bk:entry>
+        <bk:when>1480</bk:when>
+        <bk:consistsOf>
+            <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T1T1">
+                <bk:transfers>
+                    <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T1T1EA">
+                        <bk:unit
+                            rdf:resource="https://gams.uni-graz.at/context:depcha.example#halbgrosch"/>
+                        <bk:quantity>14</bk:quantity>
+                    </bk:Money>
+                </bk:transfers>
+                <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"/>
+                <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#thomas"/>
+            </bk:Transfer>
+        </bk:consistsOf>
+    </bk:Transaction>
+    <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T2">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.accounts"/>
+        <bk:entry>Item XIIII gr.</bk:entry>
+        <bk:consistsOf>
+            <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T2T1">
+                <bk:transfers>
+                    <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T2T1EA">
+                        <bk:unit
+                            rdf:resource="https://gams.uni-graz.at/context:depcha.example#halbgrosch"/>
+                        <bk:quantity>14</bk:quantity>
+                    </bk:Money>
+                </bk:transfers>
+                <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"/>
+                <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#thomas"/>
+            </bk:Transfer>
+        </bk:consistsOf>
+    </bk:Transaction>
+    <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T3">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.accounts"/>
+        <bk:entry>Item XIIII gr.</bk:entry>
+        <bk:consistsOf>
+            <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T3T1">
+                <bk:transfers>
+                    <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T3T1EA">
+                        <bk:unit
+                            rdf:resource="https://gams.uni-graz.at/context:depcha.example#halbgrosch"/>
+                        <bk:quantity>14</bk:quantity>
+                    </bk:Money>
+                </bk:transfers>
+                <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"/>
+                <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#thomas"/>
+            </bk:Transfer>
+        </bk:consistsOf>
+    </bk:Transaction>
+    <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T4">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.accounts"/>
+        <bk:entry>Item XIIII gr.</bk:entry>
+        <bk:consistsOf>
+            <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T4T1">
+                <bk:transfers>
+                    <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T4T1EA">
+                        <bk:unit
+                            rdf:resource="https://gams.uni-graz.at/context:depcha.example#halbgrosch"/>
+                        <bk:quantity>14</bk:quantity>
+                    </bk:Money>
+                </bk:transfers>
+                <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"/>
+                <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#thomas"/>
+            </bk:Transfer>
+        </bk:consistsOf>
+    </bk:Transaction>
+    <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T5">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.accounts"/>
+        <bk:entry>Item XIIII gr.</bk:entry>
+        <bk:consistsOf>
+            <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T5T1">
+                <bk:transfers>
+                    <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T5T1EA">
+                        <bk:unit
+                            rdf:resource="https://gams.uni-graz.at/context:depcha.example#halbgrosch"/>
+                        <bk:quantity>14</bk:quantity>
+                    </bk:Money>
+                </bk:transfers>
+                <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"/>
+                <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#thomas"/>
+            </bk:Transfer>
+        </bk:consistsOf>
+    </bk:Transaction>
+    <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T6">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.accounts"/>
+        <bk:entry>Item in vigilia Pasce XIIII gr.</bk:entry>
+        <bk:when>1480</bk:when>
+        <bk:consistsOf>
+            <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T6T1">
+                <bk:transfers>
+                    <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.accounts#T6T1EA">
+                        <bk:unit
+                            rdf:resource="https://gams.uni-graz.at/context:depcha.example#halbgrosch"/>
+                        <bk:quantity>14</bk:quantity>
+                    </bk:Money>
+                </bk:transfers>
+                <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"/>
+                <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#thomas"/>
+            </bk:Transfer>
+        </bk:consistsOf>
+    </bk:Transaction>
+    <bk:Account rdf:about="https://gams.uni-graz.at/context:depcha.example#expenses">
+        <skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <skos:narrower rdf:resource="https://gams.uni-graz.at/context:depcha.example#familia"/>
+        <rdfs:label>Expenses</rdfs:label>
+    </bk:Account>
+    <bk:Account rdf:about="https://gams.uni-graz.at/context:depcha.example#familia">
+        <skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <skos:narrower rdf:resource="https://gams.uni-graz.at/context:depcha.example#notarius"/>
+        <skos:narrower rdf:resource="https://gams.uni-graz.at/context:depcha.example#famuli"/>
+        <skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.example#expenses"/>
+        <rdfs:label>Familia civitatis</rdfs:label>
+    </bk:Account>
+    <bk:Account rdf:about="https://gams.uni-graz.at/context:depcha.example#notarius">
+        <skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.example#familia"/>
+        <rdfs:label>Notarius civitatis</rdfs:label>
+    </bk:Account>
+    <bk:Account rdf:about="https://gams.uni-graz.at/context:depcha.example#famuli">
+        <skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <skos:narrower rdf:resource="https://gams.uni-graz.at/context:depcha.example#thomas"/>
+        <skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.example#familia"/>
+        <rdfs:label>famuli</rdfs:label>
+    </bk:Account>
+    <bk:Account rdf:about="https://gams.uni-graz.at/context:depcha.example#thomas">
+        <skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.example#famuli"/>
+        <rdfs:label>Thomas</rdfs:label>
+    </bk:Account>
+    <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#schok">
+        <rdfs:label>Schok</rdfs:label>
+        <huc:definedBy>
+            <huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.example#schok.context">
+                <rdfs:label>Context of the historical unit Schok</rdfs:label>
+                <huc:atPlace>Poland</huc:atPlace>
+                <huc:atTime>
+                    <time:TemporalEntity
+                        rdf:about="https://gams.uni-graz.at/context:depcha.example#schok.context.time">
+                        <time:hasBeginning>1300</time:hasBeginning>
+                        <time:hasEnd>1600</time:hasEnd>
+                    </time:TemporalEntity>
+                </huc:atTime>
+            </huc:Context>
+        </huc:definedBy>
+        <huc:type rdf:resource="https://www.wikidata.org/entity/Q8142"/>
+    </huc:HistoricalUnit>
+    <huc:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.example#schok.conversion.1">
+        <huc:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.example#schok"/>
+        <huc:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.example#mark"/>
+        <huc:formula>$fromUnit div 1.25</huc:formula>
+    </huc:Conversion>
+    <huc:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.example#schok.conversion.2">
+        <huc:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.example#schok"/>
+        <huc:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.example#floren"/>
+        <huc:formula>$fromUnit div 1.875</huc:formula>
+    </huc:Conversion>
+    <huc:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.example#schok.conversion.3">
+        <huc:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.example#schok"/>
+        <huc:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.example#firdung"/>
+        <huc:formula>$fromUnit div 5</huc:formula>
+    </huc:Conversion>
+    <huc:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.example#schok.conversion.4">
+        <huc:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.example#schok"/>
+        <huc:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.example#schott"/>
+        <huc:formula>$fromUnit div 30</huc:formula>
+    </huc:Conversion>
+    <huc:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.example#schok.conversion.5">
+        <huc:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.example#schok"/>
+        <huc:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.example#grosch"/>
+        <huc:formula>$fromUnit div 60</huc:formula>
+    </huc:Conversion>
+    <huc:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.example#schok.conversion.6">
+        <huc:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.example#schok"/>
+        <huc:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.example#halbgrosch"/>
+        <huc:formula>$fromUnit div 120</huc:formula>
+    </huc:Conversion>
+    <huc:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.example#schok.conversion.7">
+        <huc:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.example#schok"/>
+        <huc:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.example#dreier"/>
+        <huc:formula>$fromUnit div 360</huc:formula>
+    </huc:Conversion>
+    <huc:Conversion rdf:about="https://gams.uni-graz.at/context:depcha.example#schok.conversion.8">
+        <huc:convertsFrom rdf:resource="https://gams.uni-graz.at/context:depcha.example#schok"/>
+        <huc:convertsTo rdf:resource="https://gams.uni-graz.at/context:depcha.example#pfennig"/>
+        <huc:formula>$fromUnit div 1080</huc:formula>
+    </huc:Conversion>
+    <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#halbgrosch">
+        <rdfs:label>Halbgrosch</rdfs:label>
+        <huc:definedBy>
+            <huc:Context
+                rdf:about="https://gams.uni-graz.at/context:depcha.example#halbgrosch.context">
+                <rdfs:label>Context of the historical unit Halbgrosch</rdfs:label>
+                <huc:atPlace>Poland</huc:atPlace>
+                <huc:atTime>
+                    <time:TemporalEntity
+                        rdf:about="https://gams.uni-graz.at/context:depcha.example#halbgrosch.context.time">
+                        <time:hasBeginning>1300</time:hasBeginning>
+                        <time:hasEnd>1600</time:hasEnd>
+                    </time:TemporalEntity>
+                </huc:atTime>
+            </huc:Context>
+        </huc:definedBy>
+        <huc:type rdf:resource="https://www.wikidata.org/entity/Q8142"/>
+    </huc:HistoricalUnit>
+</rdf:RDF>

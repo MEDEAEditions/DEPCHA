@@ -39,36 +39,27 @@
                     <p><ref target="https://www.wikidata.org/wiki/Help:Namespaces"/></p>
                 </prefixDef>
             </listPrefixDef>
-            <classDecl>
-                <taxonomy ana="bk:account">
-                    <category ana="bk:to" xml:id="income">
-                        <catDesc><gloss>Wheaton Income</gloss></catDesc>                    
-                    </category>
-                </taxonomy>
-            </classDecl>
         </encodingDesc>
-        <profileDesc>
-            <particDesc>
-                <listPerson ana="depcha:index">
-                    <person xml:id="pers_WCDH001">
-                        <persName>
-                            <forename type="first">Eliza</forename>
-                            <forename type="middle">Baylies</forename>
-                            <surname type="birth">Chapin</surname>
-                            <surname type="married">Wheaton</surname>
-                        </persName>
-                    </person>
-                    <person xml:id="pers_WCDH002">
-                        <persName>
-                            <forename type="first">Laban</forename>
-                            <forename type="middle">Morey</forename>
-                            <surname>Wheaton</surname>
-                        </persName>
-                    </person>
-                </listPerson>
-            </particDesc>
-        </profileDesc>
     </teiHeader>
+    <standOff>
+        <listPerson ana="depcha:index">
+            <person xml:id="pers_WCDH001">
+                <persName>
+                    <forename type="first">Eliza</forename>
+                    <forename type="middle">Baylies</forename>
+                    <surname type="birth">Chapin</surname>
+                    <surname type="married">Wheaton</surname>
+                </persName>
+            </person>
+            <person xml:id="pers_WCDH002">
+                <persName>
+                    <forename type="first">Laban</forename>
+                    <forename type="middle">Morey</forename>
+                    <surname>Wheaton</surname>
+                </persName>
+            </person>
+        </listPerson>
+    </standOff>
     <text>
         <body>
             <div type="example">
@@ -78,15 +69,15 @@
                         <cell>
                             <name ana="bk:from" ref="#pers_WCDH001" type="person">Eliza
                                 Wheaton</name>
-                            <span>
+                            <seg ana="bk:debit">
                                 <choice>
                                     <abbr>D</abbr>
                                     <expan>debtor</expan>
                                 </choice>
-                            </span>
+                            </seg>
                             <lb/> To <name ana="bk:to" ref="#pers_WCDH002">cash</name>
                         </cell>
-                        <cell ana="bk:debit">
+                        <cell>
                             <measure ana="bk:money" quantity="20" unit="dollar">20</measure>
                         </cell>
                         <cell><measure ana="bk:money" quantity="00" unit="cent"
@@ -96,7 +87,6 @@
                     </row>
                 </table>
             </div>
-
         </body>
     </text>
 </TEI>

@@ -15,27 +15,11 @@
             <ref target="context:depcha.example" type="context">Examples</ref>
          </publicationStmt>
          <sourceDesc>
-            <bibl>This is an exemplary extract of one dataset of the DEPCHA collection. It might differ
-               from the original dataset due to eventual adaptions that should help to understand the possibilities of
-               mapping different contents to the Bookkeeping Ontology.</bibl>
-            <listPlace ana="depcha:index">
-               <place xml:id="manorKasten">
-                  <placeName>Kasten</placeName>
-                  <location>
-                     <country>Italien</country>
-                     <settlement>Kastelbell</settlement>
-                     <geo>46.63455486353947, 10.91606818862674</geo>
-                  </location>
-               </place>
-               <place xml:id="Lantsch">
-                  <placeName>Läntsch/Lentsch</placeName>
-                  <location>
-                     <country>Italien</country>
-                     <settlement>Laatsch/ Laudes</settlement>
-                     <geo>46.6771283157355, 10.53109516682290</geo>
-                  </location>
-               </place>
-            </listPlace>
+            <bibl>This is an exemplary extract of one dataset of the DEPCHA collection. It might
+               differ from the original dataset due to eventual adaptions that should help to
+               understand the possibilities of mapping different contents to the Bookkeeping
+               Ontology.</bibl>
+       
          </sourceDesc>
       </fileDesc>
       <encodingDesc>
@@ -52,7 +36,8 @@
             </prefixDef>
             <prefixDef ident="huc" matchPattern="([(a-z)|(A-Z)]+)"
                replacementPattern="https://gams.uni-graz.at/o:depcha.huc#$1">
-               <p>Analytical descriptors are considered to represent concepts from the historical units and currencies ontology and can be extended to respective URIs.</p>
+               <p>Analytical descriptors are considered to represent concepts from the historical
+                  units and currencies ontology and can be extended to respective URIs.</p>
             </prefixDef>
             <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
                replacementPattern="http://www.wikidata.org/entity/$1">
@@ -61,15 +46,38 @@
          </listPrefixDef>
       </encodingDesc>
    </teiHeader>
+   <standOff>
+      <listPerson ana="depcha:index">
+         <person xml:id="pers_SR001" ana="bk:accountHolder">
+            <persName>Max übern Weg</persName>
+         </person>
+      </listPerson>
+      <listPlace ana="depcha:index">
+         <place xml:id="manorKasten">
+            <placeName>Kasten</placeName>
+            <location>
+               <country>Italien</country>
+               <settlement>Kastelbell</settlement>
+               <geo>46.63455486353947, 10.91606818862674</geo>
+            </location>
+         </place>
+         <place xml:id="Lantsch">
+            <placeName>Läntsch/Lentsch</placeName>
+            <location>
+               <country>Italien</country>
+               <settlement>Laatsch/ Laudes</settlement>
+               <geo>46.6771283157355, 10.53109516682290</geo>
+            </location>
+         </place>
+      </listPlace>
+   </standOff>
    <text>
       <body>
          <p>
             <seg ana="bk:entry">Item so hatdo <name ref="pers_SR009" type="person" ana="bk:from"
-                  >michel under weg</name> geben <measure ana="bk:commodity" commodity="rye"
-                  quantity="2" unit="muett">2 mütt<lb/> Roken</measure> die gab der <name
-                  ref="pers_SR071" type="person" ana="bk:to">parott</name> umb 1 mütt<lb/> arbaid
-               daz kam zw dem <placeName ana="bk:where" ref="#manorKasten">kasten</placeName> in
-               der <lb/> fasten</seg>
+                  >michel under weg von <placeName ana="bk:where" ref="#manorKasten"
+                     >kasten</placeName></name> geben <measure ana="bk:commodity" commodity="rye"
+                  quantity="2" unit="muett">2 mütt<lb/> Roken</measure></seg>
          </p>
       </body>
    </text>

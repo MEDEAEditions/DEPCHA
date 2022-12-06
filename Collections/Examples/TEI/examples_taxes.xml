@@ -12,9 +12,10 @@
                 <ref target="context:depcha.example" type="context">Examples</ref>
             </publicationStmt>
             <sourceDesc>
-                <p>This is an exemplary extract of one dataset of the DEPCHA collection. It might differ
-                    from the original dataset due to eventual adaptions that should help to understand the possibilities of
-                    mapping different contents to the Bookkeeping Ontology.</p>
+                <p>This is an exemplary extract of one dataset of the DEPCHA collection. It might
+                    differ from the original dataset due to eventual adaptions that should help to
+                    understand the possibilities of mapping different contents to the Bookkeeping
+                    Ontology.</p>
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
@@ -31,7 +32,9 @@
                 </prefixDef>
                 <prefixDef ident="huc" matchPattern="([(a-z)|(A-Z)]+)"
                     replacementPattern="https://gams.uni-graz.at/o:depcha.huc#$1">
-                    <p>Analytical descriptors are considered to represent concepts from the historical units and currencies ontology and can be extended to respective URIs.</p>
+                    <p>Analytical descriptors are considered to represent concepts from the
+                        historical units and currencies ontology and can be extended to respective
+                        URIs.</p>
                 </prefixDef>
                 <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
                     replacementPattern="http://www.wikidata.org/entity/$1">
@@ -44,7 +47,7 @@
         <body>
             <div type="example">
                 <list type="payers">
-                     <item ana="bk:entry" xml:id="item_mc5_2zg_ghb">
+                    <item ana="bk:entry" xml:id="item_mc5_2zg_ghb">
                         <seg type="entry">
                             <persName ana="bk:from" ref="#RF01">
                                 <forename>Robert</forename>
@@ -57,7 +60,8 @@
                             </roleName>
                         </seg>
                         <seg type="payment">
-                            <measure ana="bk:money bk:tax" quantity="18" unit="deniers">xviii.d</measure>
+                            <measure ana="bk:money bk:tax" quantity="18" unit="deniers"
+                                >xviii.d</measure>
                         </seg>
                         <seg type="status" ana="bk:status"> p</seg>
                     </item>

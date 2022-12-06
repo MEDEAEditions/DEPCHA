@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:functx="http://www.functx.com" xmlns:gn="http://www.geonames.org/ontology#"
+    xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
+    xmlns:huc="https://gams.uni-graz.at/o:depcha.huc-ontology"
+    xmlns:time="http://www.w3.org/2006/time#" xmlns:schema="https://schema.org/"
+    xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:t="http://www.tei-c.org/ns/1.0"
+    xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#" xmlns:void="http://rdfs.org/ns/void#">
+    <depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.unitref.dataset">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.unitref"/>
+        <depcha:numberOfTransactions>1</depcha:numberOfTransactions>
+        <depcha:numberOfTransfers>1</depcha:numberOfTransfers>
+        <depcha:numberOfEconomicAgents>0</depcha:numberOfEconomicAgents>
+        <depcha:numberOfMonetaryValues>3</depcha:numberOfMonetaryValues>
+        <depcha:numberOfEconomicGoods>0</depcha:numberOfEconomicGoods>
+        <depcha:numberOfPlaces>0</depcha:numberOfPlaces>
+        <depcha:numberOfAccounts>0</depcha:numberOfAccounts>
+        <depcha:numberOfSubTotals>1</depcha:numberOfSubTotals>
+        <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#fl"/>
+        <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#kr"/>
+        <depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.example#d"/>
+    </depcha:Dataset>
+    <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.unitref">
+        <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
+        <dc:publisher>Institute Centre for Information Modelling, University of Graz</dc:publisher>
+    </void:Dataset>
+    <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.unitref#T1">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.unitref"/>
+        <bk:entry>von 22. Novembris bis 22 Decembris 60 15 1\/4</bk:entry>
+        <bk:consistsOf>
+            <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.unitref#T1T1">
+                <bk:transfers>
+                    <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.unitref#T1T1EA1">
+                        <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.example#fl"/>
+                        <bk:quantity>60</bk:quantity>
+                    </bk:Money>
+                </bk:transfers>
+                <bk:transfers>
+                    <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.unitref#T1T1EA2">
+                        <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.example#kr"/>
+                        <bk:quantity>15</bk:quantity>
+                    </bk:Money>
+                </bk:transfers>
+                <bk:transfers>
+                    <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.unitref#T1T1EA3">
+                        <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.example#d"/>
+                        <bk:quantity>0.25</bk:quantity>
+                    </bk:Money>
+                </bk:transfers>
+                <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"/>
+                <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"/>
+            </bk:Transfer>
+        </bk:consistsOf>
+    </bk:Transaction>
+    <bk:SubTotalTransaction rdf:about="https://gams.uni-graz.at/o:depcha.example.unitref#Subtotal1">
+        <bk:comprises>
+            <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.unitref#Subtotal1M1">
+                <bk:quantity>1689</bk:quantity>
+                <bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.example#fl"/>
+            </bk:Money>
+        </bk:comprises>
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.unitref"/>
+        <bk:entry>Latus 1689</bk:entry>
+    </bk:SubTotalTransaction>
+    <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#fl">
+        <rdfs:label>Gulden Reichswährung</rdfs:label>
+        <huc:definedBy>
+            <huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.example#fl.context">
+                <rdfs:label>Context of the historical unit Gulden Reichswährung</rdfs:label>
+            </huc:Context>
+        </huc:definedBy>
+        <huc:type rdf:resource="https://www.wikidata.org/entity/Q8142"/>
+    </huc:HistoricalUnit>
+    <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#kr">
+        <rdfs:label>Kreuzer</rdfs:label>
+        <huc:definedBy>
+            <huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.example#kr.context">
+                <rdfs:label>Context of the historical unit Kreuzer</rdfs:label>
+            </huc:Context>
+        </huc:definedBy>
+        <huc:type rdf:resource="https://www.wikidata.org/entity/Q8142"/>
+    </huc:HistoricalUnit>
+    <huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.example#d">
+        <rdfs:label>Denari</rdfs:label>
+        <huc:definedBy>
+            <huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.example#d.context">
+                <rdfs:label>Context of the historical unit Denari</rdfs:label>
+            </huc:Context>
+        </huc:definedBy>
+        <huc:type rdf:resource="https://www.wikidata.org/entity/Q8142"/>
+    </huc:HistoricalUnit>
+</rdf:RDF>

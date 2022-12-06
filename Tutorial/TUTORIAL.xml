@@ -1586,7 +1586,7 @@
                 <code>ana="bk:to"</code> and one <code>ana="bk:from"</code> in your taxonomy. All
               the <code>bk:account</code> are associated to the <code>ana="bk:accountHolder"</code>.
               In the snippet below the <code>bk:accountHolder</code> is represented by the revenue
-              office as an institution. This means, we have to add the <code>bk:accountholder</code>
+              office as an institution. This means, we have to add the <code>bk:accountHolder</code>
               annotation to the corresponding <code>bk:EconomicAgent</code> in the
               <code rend="element"><![CDATA[<listPerson>]]></code> or <code rend="element"><![CDATA[<listOrg>]]></code> which needs to be annotated with
                 <code>ana="depcha:index"</code>. The <code rend="element"><![CDATA[<head>]]></code>
@@ -1727,7 +1727,7 @@
             <p>The previous example is one way to annotate accounts without explicit text passages
               pointing to an account. So, the annotator must have had some additional background
               information. However, there might also be a textual representation of an account like
-              in our next example where the "Notarius civitatis" represents an account name. We can
+              in our next example where "Notarius civitatis" as well as "Thomas" represent account names. We can
               use a <code rend="element"><![CDATA[<name>]]></code> element, label it with
                 <code>ana="bk:account"</code> and a <code rend="attribute">@ref</code> attribute
               that points to the corresponding account in the <code rend="element"

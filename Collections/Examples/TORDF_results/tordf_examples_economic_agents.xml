@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:functx="http://www.functx.com" xmlns:gn="http://www.geonames.org/ontology#"
+    xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
+    xmlns:om="http://ontology.eil.utoronto.ca/icity/OM/" xmlns:time="http://www.w3.org/2006/time#"
+    xmlns:schema="https://schema.org/" xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:t="http://www.tei-c.org/ns/1.0"
+    xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#"
+    xmlns:foaf="http://xmlns.com/foaf/spec/" xmlns:void="http://rdfs.org/ns/void#">
+    <depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.economicagents#Dataset">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.economicagents"/>
+        <depcha:numberOfTransactions>1</depcha:numberOfTransactions>
+        <depcha:numberOfEconomicAgents>2</depcha:numberOfEconomicAgents>
+        <depcha:numberOfMonetaryValues>0</depcha:numberOfMonetaryValues>
+        <depcha:numberOfEconomicGoods>1</depcha:numberOfEconomicGoods>
+        <depcha:accountHolder rdf:resource="https://gams.uni-graz.at/context:depcha.example#"/>
+        <depcha:aggregates>
+            <depcha:Aggregation
+                rdf:about="https://gams.uni-graz.at/o:depcha.example.economicagents#Dataset.Aggregation#1402">
+                <depcha:date>1402</depcha:date>
+                <bk:unit/>
+                <depcha:revenue>0</depcha:revenue>
+                <depcha:expenses>0</depcha:expenses>
+            </depcha:Aggregation>
+        </depcha:aggregates>
+    </depcha:Dataset>
+    <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.economicagents">
+        <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
+        <dc:publisher>Institute Centre for Information Modelling, University of Graz</dc:publisher>
+    </void:Dataset>
+    <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.economicagents#T1">
+        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.economicagents"/>
+        <bk:entry>Item am s [o] nntag nach Eibnitÿ prachten dÿ obgeschriben visser 18 lb visch dem
+            herrn Kaspar .</bk:entry>
+        <bk:when>1402-01-01</bk:when>
+        <bk:consistsOf>
+            <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.economicagents#T1T1">
+                <bk:transfers>
+                    <bk:Commodity
+                        rdf:about="https://gams.uni-graz.at/o:depcha.example.economicagents#T1T1EA">
+                        <bk:unit
+                            rdf:resource="https://gams.uni-graz.at/context:depcha.example#pound"/>
+                        <bk:quantity>18</bk:quantity>
+                        <bk:classified
+                            rdf:resource="https://gams.uni-graz.at/context:depcha.example#fish"/>
+                    </bk:Commodity>
+                </bk:transfers>
+                <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_SR052"/>
+                <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#pers_SR051"/>
+            </bk:Transfer>
+        </bk:consistsOf>
+    </bk:Transaction>
+    <bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.example#pers_SR051">
+        <rdfs:label>obgeschriben visser</rdfs:label>
+    </bk:EconomicAgent>
+    <bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.example#pers_SR052">
+        <rdfs:label>herrn Kaspar</rdfs:label>
+    </bk:EconomicAgent>
+</rdf:RDF>
