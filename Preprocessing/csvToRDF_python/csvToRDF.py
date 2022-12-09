@@ -28,6 +28,7 @@ count_commodities = 0
 count_services = 0
 count_rights = 0
 count_EconomicAgents = 0
+count_accounts = 0
 
 ########################################################################################
 # FUNCTIONS
@@ -159,13 +160,13 @@ def getFromOrTo(Transfer):
         # if bk:debit than Washington is getting money
         # A debit entry in an account represents a transfer of value to that account
         if (Transfer, BK.debit, None) in output_graph:
-            output_graph.add((Transfer, BK.to, BK_MAIN_ECONOMIC_UNIT_URI))
+            output_graph.add((Transfer, BK.to, depcha_accountHolder))
             output_graph.add((Transfer, BK_from_property, EconomicAgent)) 
         # if bk:credit than Washington is spending money
         # and a credit entry represents a transfer from the account.
         elif (Transfer, BK.credit, None) in output_graph:
             output_graph.add((Transfer, BK.to,  EconomicAgent))
-            output_graph.add((Transfer, BK_from_property, BK_MAIN_ECONOMIC_UNIT_URI ))  
+            output_graph.add((Transfer, BK_from_property, depcha_accountHolder ))  
         else:
             False
             #Debug_FromToEmpty += 1
@@ -325,6 +326,7 @@ for json_file in all_JSON_filenames:
     BASE_URL = "https://gams.uni-graz.at/"
     DC = Namespace("http://purl.org/dc/elements/1.1/")
     HUC = Namespace("https://gams.uni-graz.at/o:depcha.huc-ontology#")
+    SCHEMA = Namespace("https://schema.org/")
     
     # make a graph
     output_graph = Graph()
@@ -337,13 +339,14 @@ for json_file in all_JSON_filenames:
     output_graph.bind("dc", DC)
     output_graph.bind("depcha", DEPCHA)
     output_graph.bind("huc", HUC)
+    output_graph.bind("schema", SCHEMA)
 
     #############################
     ### load data from confic file
     CONTEXT = config_data["CONTEXT"]
     PID = config_data["PID"]
-    BK_MAIN_ECONOMIC_UNIT_LABEL = config_data["BK_MAIN_ECONOMIC_UNIT_LABEL"]
-    BK_MAIN_ECONOMIC_UNIT_URI = URIRef(BASE_URL + CONTEXT + "#" + config_data["BK_MAIN_ECONOMIC_UNIT_ID"])
+    depcha_accountHolder_label = config_data["depcha_accountHolder_label"]
+    depcha_accountHolder = URIRef(BASE_URL + CONTEXT + "#" + config_data["depcha_accountHolder_id"])
     # the first currency ist the main currency
     BK_MAIN_CURRENCY = config_data["BK_CURRENCY"]["currency"][0]
 
@@ -358,6 +361,8 @@ for json_file in all_JSON_filenames:
     count_commodities = 0
     count_services = 0
     count_economic_units = 0
+    count_monetary_values = 0
+    count_places = 0
 
     ########################################################################################
     ### https://www.w3.org/TR/void/
@@ -400,9 +405,9 @@ for json_file in all_JSON_filenames:
     # * therwise make a distinct list of all entries in the BK_FROM and BK:TO column   
     
     # todo bk:Group, bk:Individual
-    if(BK_MAIN_ECONOMIC_UNIT_URI):
-        output_graph.add((BK_MAIN_ECONOMIC_UNIT_URI, RDF.type,  BK.EconomicAgent))
-        output_graph.add((BK_MAIN_ECONOMIC_UNIT_URI , RDFS.label,  Literal(normalizeStringforJSON(BK_MAIN_ECONOMIC_UNIT_LABEL)) ))
+    if(depcha_accountHolder):
+        output_graph.add((depcha_accountHolder, RDF.type,  BK.EconomicAgent))
+        output_graph.add((depcha_accountHolder , RDFS.label,  Literal(normalizeStringforJSON(depcha_accountHolder_label)) ))
         count_economic_units += 1
     
       
@@ -416,6 +421,7 @@ for json_file in all_JSON_filenames:
                 EconomicAgent = URIRef(EconomicAgent_URI)
                 output_graph.add((EconomicAgent, RDF.type,  BK.EconomicAgent))
                 output_graph.add((EconomicAgent , RDFS.label,  Literal(normalizeStringforJSON(name)) ))
+                output_graph.add((EconomicAgent , SCHEMA.name,  Literal(normalizeStringforJSON(name)) ))
                 count_economic_units += 1
         print("Log: distinct bk_EconomicAgent ... check") 
     elif('bk_to' in df.columns or 'bk_from' in df.columns):
@@ -550,26 +556,28 @@ for json_file in all_JSON_filenames:
     ########################################################################################
     DEPCHA_Dataset_URI = BASE_URL + PID + "#Dataset"
     DEPCHA_Dataset = URIRef(DEPCHA_Dataset_URI)
-    output_graph.add((DEPCHA_Dataset, RDF.type,  DEPCHA.Dataset))
-    output_graph.add((DEPCHA_Dataset, GAMS.isMemberOfCollection,  URIRef(BASE_URL + CONTEXT) ))
-    output_graph.add((DEPCHA_Dataset, GAMS.isPartOf, URIRef(BASE_URL + PID) )) 
-
-    output_graph.add((DEPCHA_Dataset, DEPCHA.isMainEconomicAgent,  URIRef(BK_MAIN_ECONOMIC_UNIT_URI) ))
-    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfTransactions, Literal(count_transactions)))
-    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfTransfers, Literal(count_transfers)))
-    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfEconomicAgents, Literal(count_economic_units)))
+    output_graph.add(( DEPCHA_Dataset, RDF.type,  DEPCHA.Dataset))
+    output_graph.add(( DEPCHA_Dataset, GAMS.isMemberOfCollection,  URIRef(BASE_URL + CONTEXT) ))
+    output_graph.add(( DEPCHA_Dataset, GAMS.isPartOf, URIRef(BASE_URL + PID) )) 
+    # depeche ontology aggregation
+    output_graph.add(( DEPCHA_Dataset, DEPCHA.accountHolder, URIRef(depcha_accountHolder) ))
+    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfTransactions, Literal(count_transactions) ))
+    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfTransfers, Literal(count_transfers) ))
+    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfEconomicAgents, Literal(count_economic_units) ))
     count_economic_goods = count_commodities + count_services + count_rights
-    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfEconomicGoods, Literal(count_economic_goods)))
-    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfServices, Literal(count_services)))
-    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfCommodities, Literal(count_commodities)))
-    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfRights, Literal(count_rights)))
-    output_graph.add((DEPCHA_Dataset, DEPCHA.numberOfTotals, Literal(count_totals)))
+    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfEconomicGoods, Literal(count_economic_goods) ))
+    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfMonetaryValues, Literal(count_monetary_values) ))
+    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfServices, Literal(count_services) ))
+    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfCommodities, Literal(count_commodities) ))
+    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfRights, Literal(count_rights) ))
+    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfTotals, Literal(count_totals) ))
+    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfPlaces, Literal(count_places) ))
+    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfAccounts, Literal(count_accounts) ))
 
-    # units and currencies
+    # depeche ontology: units and currencies
     output_graph.add((DEPCHA_Dataset, DEPCHA.isMainCurrency, URIRef(BASE_URL + CONTEXT + "#" + BK_MAIN_CURRENCY["unit"]) ))
     for currency in config_data["BK_CURRENCY"]["currency"]:
         output_graph.add((DEPCHA_Dataset, DEPCHA.currency, URIRef(BASE_URL + CONTEXT + "#" + BK_MAIN_CURRENCY["unit"]) ))
-
 
     # create a bk:Dataset for every year
     # it contains info about the sum of all expense and income          
