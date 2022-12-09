@@ -44,12 +44,6 @@
         </encodingDesc>
     </teiHeader>
     <standOff>
-        <list ana="depcha:index" type="group">
-            <item xml:id="group_SR051">
-                <name>Anderlein Fischer</name>
-                <desc>Eine Gruppe von nicht namentlich erwähnten Fischern.</desc>
-            </item>
-        </list>
         <listPerson ana="depcha:index">
             <head> Prosopographie </head>
             <desc> Personen, die in den Schlandberg Rechnungen namentlicht erwähnt werden. </desc>
@@ -58,11 +52,16 @@
                     <name>Herr von Hans Kelner </name>
                 </persName>
             </person>
+            <personGrp xml:id="group_SR051">
+                <name>Anderlein Fischer</name>
+                <note>Eine Gruppe von nicht namentlich erwähnten Fischern.</note>
+            </personGrp>
         </listPerson>
     </standOff>
     <text>
         <body>
             <div type="example">
+                <p><orgName></orgName></p>
                 <p ana="bk:entry"> Item am <date ana="bk:when" when="1402-01-01">s<supplied
                             reason="missing">[o]</supplied>nntag nach Eibnitÿ</date> prachten
                         dÿ<lb/><name ref="#group_SR051" ana="bk:from bk:group">obgeschriben
