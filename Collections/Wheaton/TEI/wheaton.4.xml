@@ -15882,7 +15882,7 @@
             <row ana="bk:entry">
                <cell ana="bk:status">Settled</cell>
                <cell>
-                  <name ana="bk:to" ref="#" type="person"/>
+                  <name ana="bk:to" ref="#pers_WCDH033" type="person"/>
                   <choice>
                      <abbr ana="bk:debit">D</abbr>
                      <expan>debtor</expan>
@@ -15898,7 +15898,7 @@
             <row ana="bk:entry">
                <cell ana="bk:status">Settled</cell>
                <cell>
-                  <name ana="bk:to" ref="#" type="person"/>
+                  <name ana="bk:to" ref="#pers_WCDH033" type="person"/>
                   <choice>
                      <abbr ana="bk:debit">D</abbr>
                      <expan>debtor</expan>
@@ -15914,15 +15914,13 @@
             <row ana="bk:entry">
                <cell ana="bk:status">Settled</cell>
                <cell>
-                  <name ana="bk:to" ref="#" type="person"/>
+                  <name ana="bk:to" ref="#pers_WCDH373" type="person">Linus Howard</name>
                   <choice>
                      <abbr ana="bk:debit">D</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/>
-                  <name ana="bk:to" ref="#pers_WCDH373" type="person">Linus Howard</name> To
-                     <measure ana="bk:commodity" unit="pounds" quantity="9" commodity="#c_rhubarb">9
-                     lbs rhubarb</measure> 3x</cell>
+                  <lb/>To <measure ana="bk:commodity" unit="pounds" quantity="9"
+                     commodity="#c_rhubarb">9 lbs rhubarb</measure> 3x</cell>
                <cell/>
                <cell>
                   <measure ana="bk:money" quantity="27" unit="cent">27</measure>
@@ -15986,7 +15984,7 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#355">355</cell>
                <cell>
-                  <name ana="bk:to" ref="#pers_WCDH118" type="person">Wheaton Wheeler</name>
+                  <name ana="bk:from" ref="#pers_WCDH118" type="person">Wheaton Wheeler</name>
                   <choice>
                      <abbr ana="bk:credit">Cr</abbr>
                      <expan>credit</expan>
@@ -16006,13 +16004,9 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#355">355</cell>
                <cell>
-                  <name ana="bk:to" ref="#" type="person"/>
-                  <choice>
-                     <abbr ana="bk:credit">Cr</abbr>
-                     <expan>credit</expan>
-                  </choice>
-                  <lb/>" <measure ana="bk:service" commodity="#c_renting" quantity="1" unit="house"
-                     >house rent</measure> to <date ana="bk:when" when="1849-07-01">July 1st</date>
+                  <name ana="bk:from" ref="#pers_WCDH118" type="person">"</name>
+                  <measure ana="bk:service" commodity="#c_renting" quantity="1" unit="house">house
+                     rent</measure> to <date ana="bk:when" when="1849-07-01">July 1st</date>
                </cell>
                <cell>
                   <measure ana="bk:money" quantity="6" unit="dollar">6</measure>
@@ -21139,12 +21133,9 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#538">538</cell>
                <cell>
-                  <name ana="bk:to" ref="#" type="person"/>
-                  <choice>
-                     <abbr ana="bk:debit">D</abbr>
-                     <expan>Debtor</expan>
-                  </choice>
-                  <lb/>" " "44 80" "</cell>
+                  <name ana="bk:to" ref="#pers_WCDH744" type="person"/>" " "<measure
+                     ana="bk:commodity" unit="pounds" quantity="4480" commodity="#c_coal"
+                     >4480</measure>" " </cell>
                <cell>
                   <measure ana="bk:money" quantity="14" unit="dollar">14</measure>
                </cell>
@@ -21157,12 +21148,8 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#538">538</cell>
                <cell>
-                  <name ana="bk:to" ref="#" type="person"/>
-                  <choice>
-                     <abbr ana="bk:debit">D</abbr>
-                     <expan>Debtor</expan>
-                  </choice>
-                  <lb/>" Carting same x other Loads as/Bill</cell>
+                  <name ana="bk:to" ref="#pers_WCDH744" type="person"/>" Carting same &amp; other Loads
+                  as/Bill</cell>
                <cell>
                   <measure ana="bk:money" quantity="25" unit="dollar">25</measure>
                </cell>
@@ -21172,7 +21159,7 @@
                <cell>
                   <measure ana="bk:amount" quantity="51" unit="dollar">51</measure>
                </cell>
-               <cell/>
+               <cell>00</cell>
             </row>
             <row cols="1">
                <cell>

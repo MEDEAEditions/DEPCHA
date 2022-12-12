@@ -19225,7 +19225,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/> To 1 wks. time </cell>
+                  <lb/>To 1 wks. time </cell>
                <cell>
                   <measure ana="bk:money" quantity="2" unit="dollar">2</measure>
                </cell>
@@ -19242,13 +19242,12 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#523">523</cell>
-               <cell>
-                  <name ana="bk:to" ref="#" type="person"/>
-                  <choice>
+               <cell>Geo. Leonard <choice>
                      <abbr ana="bk:credit">Cr</abbr>
                      <expan>credit</expan>
                   </choice>
-                  <lb/>With Geo. Braman as pr. Bill</cell>
+                  <lb/>With <name ana="bk:to" ref="#pers_WCDH190" type="person">Geo. Braman</name>
+                  as pr. Bill </cell>
                <cell>
                   <measure ana="bk:money" quantity="26" unit="dollar">26</measure>
                </cell>
@@ -19375,8 +19374,7 @@
                      <abbr ana="bk:debit">D</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/> To <name ana="bk:to" ref="#" type="account">cash towards Gymnasium</name>
-               </cell>
+                  <lb/>To cash towards Gymnasium </cell>
                <cell>
                   <measure ana="bk:money" quantity="164" unit="dollar">164</measure>
                </cell>
@@ -19389,13 +19387,8 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#524">524</cell>
                <cell>
-                  <name ana="bk:to" ref="#" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/> " <measure ana="bk:commodity" commodity="#c_pinetimber">Pine Timber
-                  </measure> do. </cell>
+                  <name ana="bk:to" ref="#pers_WCDH190" type="person"/>" <measure ana="bk:commodity"
+                     commodity="#c_pinetimber">Pine Timber </measure> do. </cell>
                <cell>
                   <measure ana="bk:money" quantity="10" unit="dollar">10</measure>
                </cell>
@@ -19408,14 +19401,8 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#524">524</cell>
                <cell>
-                  <name ana="bk:to" ref="#" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/>
-                  <measure ana="bk:commodity" unit="feet" quantity="88" commodity="#c_pineplank"
-                     >88ft. Pine Plank</measure>
+                  <name ana="bk:to" ref="#pers_WCDH190" type="person"/><measure ana="bk:commodity"
+                     unit="feet" quantity="88" commodity="#c_pineplank">88ft. Pine Plank</measure>
                </cell>
                <cell/>
                <cell/>
@@ -19425,13 +19412,8 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#524">524</cell>
                <cell>
-                  <name ana="bk:to" ref="#" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/> " <name ana="bk:to" ref="LMWcash" type="account">paying Otis Blandin bill
-                  </name>for </cell>
+                  <name ana="bk:to" ref="#pers_WCDH190" type="person"/>" <name ana="bk:to"
+                     ref="LMWcash" type="account">paying Otis Blandin bill </name>for </cell>
                <cell>
                   <measure ana="bk:money" quantity="2" unit="dollar">2</measure>
                </cell>
@@ -19448,15 +19430,10 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#524">524</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/>
                   <measure ana="bk:service" commodity="#c_work" quantity="1" unit="plairstering"
-                     >plairstering <name ana="bk:to" ref="#pers_WCDH592" type="person">Geo.
-                        Sweet</name>s House</measure><lb/>not allowed </cell>
+                     >plairstering <name ref="#pers_WCDH592" type="person">Geo.
+                        Sweet</name>s House</measure><lb/>not allowed
+               </cell>
                <cell/>
                <cell/>
                <cell/>
