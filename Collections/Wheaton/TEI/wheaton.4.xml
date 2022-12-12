@@ -47,7 +47,8 @@
             </prefixDef>
             <prefixDef ident="huc" matchPattern="([(a-z)|(A-Z)]+)"
                replacementPattern="https://gams.uni-graz.at/o:depcha.huc#$1">
-               <p>Analytical descriptors are considered to represent concepts from the historical units and currencies ontology and can be extended to respective URIs.</p>
+               <p>Analytical descriptors are considered to represent concepts from the historical
+                  units and currencies ontology and can be extended to respective URIs.</p>
             </prefixDef>
             <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
                replacementPattern="http://www.wikidata.org/entity/$1">
@@ -15979,8 +15980,8 @@
                      </choice>
                   </span>
                   <lb/>
-                  <name ana="bk:to" ref="#pers_WCDH118" type="person">Wheaton Wheeler</name> To <name
-                     ana="bk:to" ref="LMWcash" type="account">cash</name> five dollars</cell>
+                  <name ana="bk:to" ref="#pers_WCDH118" type="person">Wheaton Wheeler</name> To
+                     <name ana="bk:to" ref="LMWcash" type="account">cash</name> five dollars</cell>
                <cell>
                   <measure ana="bk:money" quantity="5" unit="dollar">5</measure>
                </cell>
@@ -20550,7 +20551,8 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#540">540</cell>
                <cell>
-                  <orgName ana="bk:to" ref="#org_WCDH42" type="person">Chaz &amp; Oliver Lane</orgName>
+                  <orgName ana="bk:to" ref="#org_WCDH42" type="person">Chaz &amp; Oliver
+                     Lane</orgName>
                   <span ana="bk:debit">
                      <choice>
                         <abbr ana="bk:debit">D</abbr>
@@ -25681,9 +25683,18 @@
                   <date ana="bk:when" when="1852-04-17">17.</date>
                </cell>
             </row>
-            <span>
-               <name ana="bk:to" ref="#pers_WCDH464" type="person">George S. Martin</name> To use of
-               Horses to date </span>
+            <row ana="bk:entry">
+               <cell>
+                  <name ana="bk:to" ref="#pers_WCDH464" type="person">George S. Martin</name>
+                  <span ana="bk:debit">
+                     <choice>
+                        <abbr ana="bk:debit">D</abbr>
+                        <expan>Debtor</expan>
+                     </choice>
+                  </span>
+                  <lb/>To <measure ana="bk:service" commodity="use" quantity="1" unit="count">use of
+                     Horses</measure> to date </cell>
+            </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#547">547</cell>
                <cell>
