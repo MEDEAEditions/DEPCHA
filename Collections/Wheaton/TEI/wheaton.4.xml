@@ -21170,8 +21170,9 @@
                      <expan>debtor</expan>
                   </choice>
                   <lb/>To <measure ana="bk:commodity" unit="feet" quantity="0.5"
-                     commodity="#c_lumber">½ cord hard wood 4</measure><lb/>" 1/2 " " " 2<lb/>deduct 25x for
-                  hard wood</cell>
+                     commodity="#c_lumber">1/2 board hard wood 4</measure><lb/><measure
+                     ana="bk:commodity" unit="feet" quantity="0.25" commodity="#c_lumber">" 1/4 " "
+                     " 2</measure><lb/>deduct 25c for hard wood</cell>
                <cell>
                   <measure ana="bk:money" quantity="2" unit="dollar">2</measure>
                </cell>
@@ -21181,6 +21182,11 @@
                <cell/>
                <cell/>
             </row>
+            <row cols="1">
+               <cell>
+                  <date ana="bk:when" when="1851-03-18">18</date>
+               </cell>
+            </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#518">518</cell>
                <cell>
@@ -21189,43 +21195,19 @@
                      <abbr ana="bk:debit">D</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/>
-                  <date ana="bk:when" when="1851-03-18">18</date>
-               </cell>
-               <cell>
-                  <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
-               </cell>
-               <cell>
-                  <measure ana="bk:money" quantity="25" unit="cent">25</measure>
-               </cell>
-               <cell/>
-               <cell/>
-            </row>
-            <row ana="bk:entry">
-               <cell ana="bk:status" corresp="#529">529</cell>
-               <cell>
-                  <name ana="bk:to" ref="#pers_WCDH468" type="person"/>
-                  <choice>
-                     <abbr ana="bk:debit">D</abbr>
-                     <expan>debtor</expan>
-                  </choice>
                   <lb/>To cash last week </cell>
                <cell>
-                  <measure ana="bk:money" quantity="5" unit="dollar">5</measure>5</cell>
-               <cell/>
+                  <measure ana="bk:money" quantity="5" unit="dollar">5</measure>
+               </cell>
+               <cell>00</cell>
                <cell/>
                <cell/>
             </row>
             <row ana="bk:entry">
-               <cell ana="bk:status" corresp="#529">529</cell>
+               <cell ana="bk:status" corresp="#518">518</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/>Rent to <date ana="bk:when" when="1851-03-27">March 27th</date> at
-                  225/mo.</cell>
+                  <name ana="bk:to" ref="#pers_WCDH468" type="person"/>Rent to <date
+                     when="1851-03-27">March 27th</date> at 225/mo. </cell>
                <cell>
                   <measure ana="bk:money" quantity="4" unit="dollar">4</measure>
                </cell>
@@ -21238,12 +21220,7 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#529">529</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/> Cash this day</cell>
+                  <name ana="bk:to" ref="#pers_WCDH468" type="person"/>Cash this day</cell>
                <cell>
                   <measure ana="bk:money" quantity="9" unit="dollar">9</measure>
                </cell>
@@ -21509,20 +21486,16 @@
                <cell>
                   <measure ana="bk:money" quantity="2" unit="dollar">2</measure>
                </cell>
-               <cell/>
+               <cell>00</cell>
                <cell/>
                <cell/>
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#538">538</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/>" <measure ana="bk:commodity" unit="pounds" quantity="7.75"
-                     commodity="#c_saltpork">7 ¾ Salt Pork</measure> 10x</cell>
+                  <name ana="bk:to" ref="#pers_WCDH384" type="person"/>" <measure ana="bk:commodity"
+                     unit="pounds" quantity="7.75" commodity="#c_saltpork">7 ¾ Salt Pork</measure>
+                  10x</cell>
                <cell/>
                <cell>
                   <measure ana="bk:money" quantity="77" unit="cent">77</measure>
@@ -21618,7 +21591,7 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#518">518</cell>
                <cell>
-                  <name ana="bk:to" ref="#pers_WCDH468" type="person">Patrick McDaniels</name>
+                  <name ana="bk:from" ref="#pers_WCDH468" type="person">Patrick McDaniels</name>
                   <choice>
                      <abbr ana="bk:credit">Cr</abbr>
                      <expan>Credit</expan>
@@ -21634,20 +21607,14 @@
                <cell/>
             </row>
             <row cols="1">
-               <cell>
-                  <date ana="bk:when" when="1851-03-27">March 27</date>
-               </cell>
+               <cell> </cell>
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#518">518</cell>
                <cell>
-                  <name ana="bk:to" ref="#pers_WCDH468" type="person"/>
-                  <choice>
-                     <abbr ana="bk:credit">Cr</abbr>
-                     <expan>Credit</expan>
-                  </choice>
-                  <lb/>
-                  <date ana="bk:when" when="1851-06-27">June 27th</date> at 225 pr mo.</cell>
+                  <name ana="bk:to" ref="#pers_WCDH468" type="person"/>To rent of house from <date
+                     when="1851-03-27">March 27</date> to <lb/><date when="1851-06-27">June
+                     27th</date> at 2 25 pr mo. </cell>
                <cell>
                   <measure ana="bk:money" quantity="6" unit="dollar">6</measure>
                </cell>
@@ -21662,8 +21629,8 @@
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH468" type="person"/>
                   <choice>
-                     <abbr ana="bk:credit">Cr</abbr>
-                     <expan>Credit</expan>
+                     <abbr ana="bk:debit">D</abbr>
+                     <expan>Debit</expan>
                   </choice>
                   <lb/>To cash to ballance</cell>
                <cell>
@@ -21678,16 +21645,11 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#518">518</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/>same to cash </cell>
+                  <name ana="bk:to" ref="#pers_WCDH468" type="person"/>same to cash </cell>
                <cell>
                   <measure ana="bk:money" quantity="5" unit="dollar">5</measure>
                </cell>
-               <cell/>
+               <cell>00</cell>
                <cell>
                   <measure ana="bk:amount" quantity="19" unit="dollar">19</measure>
                </cell>
@@ -22169,12 +22131,8 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#518">518</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/>"Rent to June 27th on Ledger</cell>
+                  <name ana="bk:to" ref="#pers_WCDH468" type="person"/>" Rent to June 27th on
+                  Ledger</cell>
                <cell>
                   <measure ana="bk:money" quantity="2" unit="dollar">2</measure>
                </cell>
@@ -22468,16 +22426,11 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#545">545</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/>" cash </cell>
+                  <name ana="bk:to" ref="#pers_WCDH697" type="person"/>" cash </cell>
                <cell>
                   <measure ana="bk:money" quantity="3" unit="dollar">3</measure>
                </cell>
-               <cell/>
+               <cell>00</cell>
                <cell>
                   <measure ana="bk:amount" quantity="56" unit="dollar">56</measure>
                </cell>
@@ -22565,12 +22518,8 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#547">547</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/>" 40$ cash Augst. 9th 10$ x 30$</cell>
+                  <name ana="bk:to" ref="#pers_WCDH493" type="person"/>" 40$ cash Augst. 9th 10$ x
+                  30$</cell>
                <cell>
                   <measure ana="bk:money" quantity="40" unit="dollar">40</measure>
                </cell>
@@ -22921,20 +22870,15 @@
                <cell>
                   <measure ana="bk:money" quantity="20" unit="dollar">20</measure>
                </cell>
-               <cell/>
+               <cell>00</cell>
                <cell/>
                <cell/>
             </row>
             <row ana="bk:entry">
-               <cell ana="bk:status" corresp="#529">529</cell>
+               <cell ana="bk:status" corresp="#518">518</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/>By cash for house rent to <date ana="bk:when" when="1851-10-31">Oct.
-                     31st</date>
+                  <name ana="bk:to" ref="#pers_WCDH468" type="person"/>By cash for house rent to
+                     <date when="1851-10-31">Oct. 31st</date>
                </cell>
                <cell>
                   <measure ana="bk:money" quantity="2" unit="dollar">2</measure>
@@ -23359,10 +23303,10 @@
                   </choice>
                   <lb/>To cash for work to <date when="1851-12-01">Dec 1st</date> 20 ¼ dys</cell>
                <cell>
-                  <measure ana="bk:money" quantity="15" unit="dollar">15</measure>
+                  <measure ana="bk:money" quantity="15" unit="dollar">13</measure>
                </cell>
                <cell>
-                  <measure ana="bk:money" quantity="58" unit="cent">58</measure>
+                  <measure ana="bk:money" quantity="58" unit="cent">33</measure>
                </cell>
                <cell/>
                <cell/>
@@ -23370,12 +23314,8 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#518">518</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/>" to rent to <date ana="bk:when" when="1851-12-01">Dec 1st</date>
+                  <name ana="bk:to" ref="#pers_WCDH468" type="person"/>" to rent to <date
+                     ana="bk:when" when="1851-12-01">Dec 1st</date>
                </cell>
                <cell>
                   <measure ana="bk:money" quantity="2" unit="dollar">2</measure>
@@ -23393,12 +23333,12 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#518">518</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
                   <choice>
-                     <abbr/>
-                     <expan/>
+                     <abbr ana="bk:credit">Cr</abbr>
+                     <expan>Credit</expan>
                   </choice>
-                  <lb/>By work 20 ¼ dys</cell>
+                  <lb/><name ana="bk:from" ref="#pers_WCDH468" type="person"/>By work 20 ¼
+                  dys</cell>
                <cell>
                   <measure ana="bk:money" quantity="15" unit="dollar">15</measure>
                </cell>
@@ -24286,15 +24226,19 @@
                <cell/>
                <cell/>
             </row>
+            <row cols="1">
+               <cell>
+                  <date ana="bk:when" when="1852-03-15">15</date>
+               </cell>
+            </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#547">547</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
                   <choice>
-                     <abbr/>
-                     <expan/>
+                     <abbr ana="bk:credit">Cr</abbr>
+                     <expan instant="false">credit</expan>
                   </choice>
-                  <lb/>15 <lb/>To cash five dollars</cell>
+                  <lb/><name ana="bk:from" ref="#pers_WCDH384" type="person"/>To cash five dollars </cell>
                <cell>
                   <measure ana="bk:money" quantity="5" unit="dollar">5</measure>
                </cell>
@@ -24305,12 +24249,12 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#547">547</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
+                  <name ana="bk:to" ref="#pers_WCDH384" type="person"/>
                   <choice>
-                     <abbr/>
-                     <expan/>
+                     <abbr ana="bk:debit">D</abbr>
+                     <expan>Debtor</expan>
                   </choice>
-                  <lb/> To cash to ballance account</cell>
+                  <lb/>To cash to ballance account</cell>
                <cell>
                   <measure ana="bk:money" quantity="8" unit="dollar">8</measure>
                </cell>
@@ -24454,13 +24398,8 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#331">331</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/>" Interest to <date ana="bk:when" when="1852-03-31">March 31st</date> 9 mo.
-                  19 dys.</cell>
+                  <name ana="bk:to" ref="#pers_WCDH182" type="person"/>" Interest to <date
+                     ana="bk:when" when="1852-03-31">March 31st</date> 9 mo. 19 dys.</cell>
                <cell>
                   <measure ana="bk:money" quantity="6" unit="dollar">6</measure>
                </cell>
@@ -24473,12 +24412,8 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#331">331</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/>" House rent 150 pr year</cell>
+                  <name ana="bk:to" ref="#pers_WCDH182" type="person"/>" House rent 150 pr
+                  year</cell>
                <cell>
                   <measure ana="bk:money" quantity="112" unit="dollar">112</measure>
                </cell>
@@ -24491,12 +24426,8 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#331">331</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/>" Rent of furniture 10 pr ct. 9 mo.</cell>
+                  <name ana="bk:to" ref="#pers_WCDH182" type="person"/>" Rent of furniture 10 pr ct.
+                  9 mo.</cell>
                <cell>
                   <measure ana="bk:money" quantity="80" unit="dollar">80</measure>
                </cell>
@@ -24509,12 +24440,7 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#331">331</cell>
                <cell>
-                  <name ana="bk:to" ref="LMWcash" type="person"/>
-                  <choice>
-                     <abbr/>
-                     <expan/>
-                  </choice>
-                  <lb/>" Extra damge -</cell>
+                  <name ana="bk:to" ref="#pers_WCDH182" type="person"/>" Extra damge -</cell>
                <cell>
                   <measure ana="bk:money" quantity="5" unit="dollar">5</measure>
                </cell>
@@ -24607,6 +24533,7 @@
                </cell>
             </row>
             <row ana="bk:entry">
+               <cell ana="bk:status" corresp="#405">405</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH464" type="person">George S. Martin</name>
                   <choice>
@@ -24615,6 +24542,10 @@
                   </choice>
                   <lb/>To <measure ana="bk:service" commodity="use" quantity="1" unit="count">use of
                      Horses</measure> to date </cell>
+               <cell/>
+               <cell/>
+               <cell/>
+               <cell/>
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#547">547</cell>
