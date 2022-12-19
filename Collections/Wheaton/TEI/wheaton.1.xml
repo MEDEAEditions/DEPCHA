@@ -125,23 +125,21 @@
             </unitDef>
          </unitDecl>
          <classDecl>
-            <!-- #c_salt
-#c_soap
-#c_cracker
-#c_lampoil
-#c_beetseed
-#c_canbric
-#c_mackerel
-#c_plate
-#c_broom
-#c_letter
-#c_thread
-#c_cheese
-#c_hide
-#c_shoe
-#c_marplegreen
-#c_beer
-#c_peekpine -->
+<!--
+            #c_salt
+            #c_soap
+            #c_cracker
+            #c_headgrass
+            #c_lampoil
+            #c_beetseed
+            #c_canbric
+            #c_ragg
+            #c_mackerel
+            #c_plate
+            #c_thread
+            #c_cheese
+            #c_hide
+-->
             <taxonomy ana="depcha:index">
                <gloss xml:lang="en">Commodities</gloss>
                <category xml:id="c_dairyproduct">
@@ -10182,7 +10180,7 @@
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#370">370</cell>
                <cell>Peter Leirhman<lb/> To<measure ana="bk:commodity" unit="dozen" quantity="2"
-                     commodity="#c_egg">2 doz Eggs</measure>
+                     commodity="#c_eggs">2 doz Eggs</measure>
                </cell>
                <cell/>
                <cell>
@@ -10895,7 +10893,7 @@
             </row>
             <row ana="bk:entry">
                <cell/>
-               <cell>"<measure ana="bk:commodity" unit="dozen" quantity="2" commodity="#c_egg">2 doz
+               <cell>"<measure ana="bk:commodity" unit="dozen" quantity="2" commodity="#c_eggs">2 doz
                      Eggs</measure>
                </cell>
                <cell/>
@@ -11872,7 +11870,7 @@
                      <expan>debtor</expan>
                   </choice>
                   <lb/>
-                  <measure ana="bk:service" commodity="#c_renting" unit="_">To my oxen one day
+                  <measure ana="bk:service" commodity="#c_oxenrental" unit="_">To my oxen one day
                      3/</measure>
                </cell>
                <cell/>
@@ -12169,7 +12167,7 @@
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH402" type="person">Phillip B King</name>
                   <lb/>
-                  <measure ana="bk:service" commodity="#c_renting" quantity="1" unit="day">To oxen 1
+                  <measure ana="bk:service" commodity="#c_oxenrental" quantity="1" unit="day">To oxen 1
                      Day 3/</measure>
                </cell>
                <cell/>
@@ -12219,7 +12217,7 @@
                      <expan>Dabtor</expan>
                   </choice>
                   <lb/>To<measure ana="bk:commodity" unit="pieces" quantity="10"
-                     commodity="#c_letter">letter</measure>10x</cell>
+                     commodity="#c_postageofletter">letter</measure>10x</cell>
                <cell/>
                <cell>
                   <measure ana="bk:money" quantity="10" unit="cent">10</measure>
@@ -12305,7 +12303,7 @@
                      <expan>Dabtor</expan>
                   </choice>
                   <lb/>To<measure ana="bk:commodity" unit="pieces" quantity="10"
-                     commodity="#c_letter">Letter</measure>10x</cell>
+                     commodity="#c_postageofletter">Letter</measure>10x</cell>
                <cell/>
                <cell>
                   <measure ana="bk:money" quantity="10" unit="cent">10</measure>
@@ -12328,7 +12326,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#591">591</cell>
-               <cell>To<measure ana="bk:commodity" unit="pieces" quantity="10" commodity="#c_letter"
+               <cell>To<measure ana="bk:commodity" unit="pieces" quantity="10" commodity="#c_postageofletter"
                      >letter</measure>10x</cell>
                <cell/>
                <cell>
@@ -12436,7 +12434,7 @@
             <row ana="bk:entry">
                <cell/>
                <cell>
-                  <measure ana="bk:service" commodity="oxen rental" quantity="1.5" unit="day">oxen
+                  <measure ana="bk:service" commodity="#c_oxenrental" quantity="1.5" unit="day">oxen
                      one X half days</measure> 3/ </cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -14191,7 +14189,7 @@
                   </choice>
                   <lb/>To cash 6/</cell>
                <cell>
-                  <measure ana="bk:money" commodity="curency" quantity="1" unit="dollar">1</measure>
+                  <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
                </cell>
                <cell/>
                <cell/>
@@ -15477,7 +15475,7 @@
                      <expan>credit</expan>
                   </choice>
                   <lb/>
-                  <measure ana="bk:service" commodity="carrying" unit="_">By carrying lard x M.
+                  <measure ana="bk:service" commodity="#c_work" unit="_">By carrying lard x M.
                      Biden to Boston</measure>
                </cell>
                <cell/>
@@ -16396,7 +16394,7 @@
                      <expan>Debtor</expan>
                   </choice>
                   <lb/> To <measure ana="bk:commodity" unit="pounds" quantity="15"
-                     commodity="#c_turkey">15lbs turkey</measure> 10</cell>
+                     commodity="#c_turkeys">15lbs turkey</measure> 10</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
                </cell>
