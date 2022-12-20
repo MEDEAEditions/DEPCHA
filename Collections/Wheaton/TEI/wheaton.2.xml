@@ -67,61 +67,61 @@
                <label xml:lang="en">cent</label>
                <label type="abbreviation">c</label>
             </unitDef>
-            <unitDef ref="wd:Q216658" type="weight" xml:id="unit.1">
+            <unitDef ref="wd:Q216658" type="weight" xml:id="bushels">
                <label xml:lang="en">bushels</label>
             </unitDef>
-            <unitDef ref="wd:Q100995" type="weight" xml:id="unit.2">
+            <unitDef ref="wd:Q100995" type="weight" xml:id="pounds">
                <label xml:lang="en">pounds</label>
             </unitDef>
-            <unitDef ref="wd:Q48013" type="weight" xml:id="unit.14">
+            <unitDef ref="wd:Q48013" type="weight" xml:id="ounces">
                <label xml:lang="en">ounces</label>
             </unitDef>
-            <unitDef ref="wd:Q218593" type="length" xml:id="unit.18">
+            <unitDef ref="wd:Q218593" type="length" xml:id="inches">
                <label xml:lang="en">inches</label>
             </unitDef>
-            <unitDef ref="wd:Q3710" type="length" xml:id="unit.5">
+            <unitDef ref="wd:Q3710" type="length" xml:id="feet">
                <label xml:lang="en">feet</label>
             </unitDef>
-            <unitDef ref="wd:Q482798" type="length" xml:id="unit.7">
+            <unitDef ref="wd:Q482798" type="length" xml:id="yards">
                <label xml:lang="en">yards</label>
             </unitDef>
-            <unitDef ref="wd:Q844338" type="length" xml:id="unit.23">
+            <unitDef ref="wd:Q844338" type="length" xml:id="hectometer">
                <label xml:lang="en">hectometer</label>
             </unitDef>
-            <unitDef ref="wd:Q61793198" type="length" xml:id="unit.24">
+            <unitDef ref="wd:Q61793198" type="length" xml:id="rods">
                <label xml:lang="en">rods</label>
             </unitDef>
-            <unitDef ref="wd:Q351646" type="capacity" xml:id="unit.15">
+            <unitDef ref="wd:Q351646" type="capacity" xml:id="peck">
                <label xml:lang="en">peck</label>
             </unitDef>
-            <unitDef ref="wd:Q178413" type="capacity" xml:id="unit.20">
+            <unitDef ref="wd:Q178413" type="capacity" xml:id="gallons">
                <label xml:lang="en">gallons</label>
             </unitDef>
-            <unitDef ref="wd:Q178506" type="capacity" xml:id="unit.25">
+            <unitDef ref="wd:Q178506" type="capacity" xml:id="barrels">
                <label xml:lang="en">barrels</label>
             </unitDef>
-            <unitDef type="capacity" xml:id="unit.29">
+            <unitDef type="capacity" xml:id="tub">
                <label xml:lang="en">tub</label>
             </unitDef>
-            <unitDef ref="wd:Q81292" type="surface" xml:id="unit.17">
+            <unitDef ref="wd:Q81292" type="surface" xml:id="acres">
                <label xml:lang="en">acres</label>
             </unitDef>
-            <unitDef ref="wd:Q188869" type="surface" xml:id="unit.27">
+            <unitDef ref="wd:Q188869" type="surface" xml:id="field">
                <label xml:lang="en">field</label>
             </unitDef>
-            <unitDef ref="wd:Q2360918" type="number" xml:id="unit.3">
+            <unitDef ref="wd:Q2360918" type="number" xml:id="pieces">
                <label xml:lang="en">pieces</label>
             </unitDef>
-            <unitDef ref="wd:Q25235" type="time" xml:id="unit.4">
+            <unitDef ref="wd:Q25235" type="time" xml:id="hours">
                <label xml:lang="en">hours</label>
             </unitDef>
-            <unitDef ref="wd:Q573" type="time" xml:id="unit.12">
+            <unitDef ref="wd:Q573" type="time" xml:id="days">
                <label xml:lang="en">days</label>
             </unitDef>
-            <unitDef ref="wd:Q23387" type="time" xml:id="unit.19">
+            <unitDef ref="wd:Q23387" type="time" xml:id="weeks">
                <label xml:lang="en">weeks</label>
             </unitDef>
-            <unitDef ref="wd:Q5151" type="time" xml:id="unit.22">
+            <unitDef ref="wd:Q5151" type="time" xml:id="months">
                <label xml:lang="en">months</label>
             </unitDef>
          </unitDecl>
@@ -7796,7 +7796,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1.5" unit="day">1
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1.5" unit="days">1
                      1/2 days work this week</measure>2/6 </cell>
                <cell/>
                <cell>
@@ -7844,7 +7844,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By<measure ana="bk:service" commodity="#c_work" quantity="3" unit="day">3
+                  <lb/>By<measure ana="bk:service" commodity="#c_work" quantity="3" unit="days">3
                      days work this week</measure>2/6</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -7945,7 +7945,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By<measure ana="bk:service" commodity="#c_work" quantity="4" unit="day">4
+                  <lb/>By<measure ana="bk:service" commodity="#c_work" quantity="4" unit="days">4
                      days work this week</measure>2/6</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -8105,7 +8105,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="3.5" unit="day">3
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="3.5" unit="days">3
                      1/2 days work</measure>this week</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -8174,7 +8174,7 @@
                <cell/>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH118" type="person"/>By <measure ana="bk:service"
-                     commodity="#c_work" quantity="1.5" unit="day">one x 1/2 days work</measure>this
+                     commodity="#c_work" quantity="1.5" unit="days">one x 1/2 days work</measure>this
                   week 2/6</cell>
                <cell/>
                <cell>
@@ -8225,7 +8225,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2.5" unit="day">2
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2.5" unit="days">2
                      1/2 days this week</measure>2/6</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -8318,7 +8318,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>by <measure ana="bk:service" commodity="#c_work" quantity="2" unit="day">two
+                  <lb/>by <measure ana="bk:service" commodity="#c_work" quantity="2" unit="days">two
                      Days work</measure>42x</cell>
                <cell/>
                <cell>
@@ -8415,7 +8415,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2.5" unit="day"
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2.5" unit="days"
                      >two x half days work</measure>2/6</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -8439,7 +8439,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:service" commodity="#c_work" quantity="2.5" unit="day"
+                  <lb/>To <measure ana="bk:service" commodity="#c_work" quantity="2.5" unit="days"
                      >two x half days work</measure>18/</cell>
                <cell>
                   <measure ana="bk:money" quantity="4" unit="dollar">4</measure>
@@ -8533,7 +8533,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2" unit="day">two
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2" unit="days">two
                      days work</measure>2/6</cell>
                <cell/>
                <cell>
@@ -8632,7 +8632,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="day" quantity="0.5"
+                  <lb/>To <measure ana="bk:commodity" unit="days" quantity="0.5"
                      commodity="#c_hammer">hammer half day</measure>1/</cell>
                <cell/>
                <cell>
@@ -8696,7 +8696,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_plank"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_plank"
                      >plank</measure>for sink </cell>
                <cell/>
                <cell>
@@ -8737,7 +8737,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:service" commodity="#c_hammer" quantity="0.5" unit="day"
+                  <lb/>To <measure ana="bk:service" commodity="#c_hammer" quantity="0.5" unit="days"
                      >hammer 1/2 day</measure>1/</cell>
                <cell/>
                <cell>
@@ -8797,7 +8797,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1.5" unit="day">1
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1.5" unit="days">1
                      1/2 days work</measure>the 4th 42x<lb/>two do this week42x</cell>
                <cell/>
                <cell/>
@@ -8843,7 +8843,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:service" commodity="#c_renting" quantity="0.5" unit="day"
+                  <lb/>To <measure ana="bk:service" commodity="#c_renting" quantity="0.5" unit="days"
                      >cattle 1/2 day to plough</measure>
                </cell>
                <cell/>
@@ -8916,7 +8916,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="piece" quantity="0.5" commodity="#c_cow"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="0.5" commodity="#c_cow"
                      >half of a cow</measure>$11.50</cell>
                <cell>
                   <measure ana="bk:money" quantity="5" unit="dollar">5</measure>
@@ -8939,7 +8939,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_plank"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_plank"
                      >plank for sink</measure>45x</cell>
                <cell/>
                <cell>
@@ -8956,7 +8956,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2" unit="day">two
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2" unit="days">two
                      days work last week</measure> 42</cell>
                <cell/>
                <cell>
@@ -9010,7 +9010,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#393">393</cell>
-               <cell>By <measure ana="bk:service" commodity="#c_work" quantity="2.5" unit="day">two
+               <cell>By <measure ana="bk:service" commodity="#c_work" quantity="2.5" unit="days">two
                      and half days work</measure>42x</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -9034,7 +9034,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="qts." quantity="5"
+                  <lb/>To <measure ana="bk:commodity" unit="quarters" quantity="5"
                      commodity="#c_cornseeds">5 qts. seed corn</measure> 4x</cell>
                <cell/>
                <cell>
@@ -9146,7 +9146,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2" unit="day">two
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2" unit="days">two
                      days work last</measure>week </cell>
                <cell/>
                <cell>
@@ -9191,8 +9191,8 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="BM" quantity="1" commodity="#c_cider">1
-                     BM. cider</measure>15/<lb/>
+                  <lb/>To <measure ana="bk:commodity" unit="bottles" quantity="1" commodity="#c_cider">1
+                     Btl. cider</measure>15/<lb/>
                   <measure ana="bk:commodity" unit="bushels" quantity="2" commodity="#c_potatoes">2
                      Buls potatoes</measure>20x</cell>
                <cell>
@@ -9270,7 +9270,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1.5" unit="day"
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1.5" unit="days"
                      >one x half days</measure>this week</cell>
                <cell/>
                <cell>
@@ -9640,7 +9640,7 @@
                      <expan>Debtor</expan>
                   </choice>
                   <lb/>To Tripp <measure ana="bk:service" commodity="#c_work" quantity="0.75"
-                     unit="day">3/4 day</measure>
+                     unit="days">3/4 day</measure>
                </cell>
                <cell/>
                <cell/>
@@ -9650,7 +9650,7 @@
             <row ana="bk:entry">
                <cell/>
                <cell>
-                  <measure ana="bk:service" commodity="#c_work" quantity="0.5" unit="day">1/2
+                  <measure ana="bk:service" commodity="#c_work" quantity="0.5" unit="days">1/2
                      day</measure>before</cell>
                <cell/>
                <cell/>
@@ -9800,7 +9800,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:commodity" unit="day" quantity="1" commodity="#c_hay"
+                  <lb/>By <measure ana="bk:commodity" unit="days" quantity="1" commodity="#c_hay"
                      >making hay</measure>fifty dollars</cell>
                <cell/>
                <cell>
@@ -9969,7 +9969,7 @@
             </row>
             <row ana="bk:entry">
                <cell/>
-               <cell>To <measure ana="bk:commodity" unit="count" quantity="1"
+               <cell>To <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_heiferrental">use of a two year old heifer</measure>1 year</cell>
                <cell>
                   <measure ana="bk:money" quantity="6" unit="dollar">6</measure>
@@ -10083,7 +10083,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2" unit="day">two
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2" unit="days">two
                      days work</measure>this week</cell>
                <cell/>
                <cell>
@@ -10105,7 +10105,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="0.5"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="0.5"
                      commodity="#c_clipboards">25 clipboards</measure>
                </cell>
                <cell/>
@@ -10156,7 +10156,7 @@
             </row>
             <row ana="bk:entry">
                <cell/>
-               <cell>By <measure ana="bk:service" commodity="#c_work" quantity="3" unit="day">three
+               <cell>By <measure ana="bk:service" commodity="#c_work" quantity="3" unit="days">three
                      days work</measure>42x</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -10219,7 +10219,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="0.5" unit="day"
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="0.5" unit="days"
                      >1/2 days</measure>work</cell>
                <cell/>
                <cell>
@@ -10241,7 +10241,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="day">one
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="days">one
                      days work</measure>
                </cell>
                <cell/>
@@ -10285,7 +10285,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_pantaloons">pantaloons</measure>paid son 24/</cell>
                <cell/>
                <cell>
@@ -10394,7 +10394,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:service" commodity="#c_work" quantity="3" unit="day"
+                  <lb/>To <measure ana="bk:service" commodity="#c_work" quantity="3" unit="days"
                      >three day</measure>. AU Blades 1/ </cell>
                <cell/>
                <cell>
@@ -10476,7 +10476,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="10"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="10"
                      commodity="#c_geese">10 geese</measure>70x</cell>
                <cell/>
                <cell>
@@ -10544,7 +10544,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="6"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="6"
                      commodity="#c_turkeys">six turkeys</measure>45x</cell>
                <cell/>
                <cell/>
@@ -10677,7 +10677,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="6"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="6"
                      commodity="#c_chicken">six chickens</measure>1/6</cell>
                <cell/>
                <cell>
@@ -10734,7 +10734,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="quarts" quantity="7" commodity="#c_milk"
+                  <lb/>To <measure ana="bk:commodity" unit="quarters" quantity="7" commodity="#c_milk"
                      >seven quarts milk</measure>4x</cell>
                <cell/>
                <cell>
@@ -10772,7 +10772,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="6" unit="day">six
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="6" unit="days">six
                      days work</measure>42x</cell>
                <cell/>
                <cell>
@@ -10796,7 +10796,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_postageofletter">postages of letter</measure>10x</cell>
                <cell/>
                <cell>
@@ -10818,7 +10818,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2" unit="day">two
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2" unit="days">two
                      days work this week</measure>2/6</cell>
                <cell/>
                <cell>
@@ -10865,7 +10865,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1.75" unit="day"
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1.75" unit="days"
                      >work 1x 3/4 day</measure>
                </cell>
                <cell/>
@@ -10875,7 +10875,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#343">343</cell>
-               <cell>To <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_hat">a
+               <cell>To <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_hat">a
                      hat</measure>9/</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -10894,7 +10894,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_chips"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_chips"
                      >chips</measure>12/</cell>
                <cell/>
                <cell>
@@ -10916,7 +10916,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="day" quantity="1" commodity="#c_chaise"
+                  <lb/>To <measure ana="bk:commodity" unit="days" quantity="1" commodity="#c_chaise"
                      >chaise to Mansfield</measure>2/6</cell>
                <cell/>
                <cell>
@@ -10981,7 +10981,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="day">one
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="days">one
                      days work this week</measure>2/6</cell>
                <cell/>
                <cell>
@@ -11102,7 +11102,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#393">393</cell>
-               <cell>By <measure ana="bk:service" commodity="#c_work" quantity="4" unit="day">four
+               <cell>By <measure ana="bk:service" commodity="#c_work" quantity="4" unit="days">four
                      days work this week</measure>
                </cell>
                <cell>
@@ -11182,7 +11182,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2" unit="day">two
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="2" unit="days">two
                      days work this week</measure>42</cell>
                <cell/>
                <cell>
@@ -11273,7 +11273,7 @@
                      <expan>Debtor</expan>
                   </choice>
                   <lb/>
-                  <lb/> By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="day">one
+                  <lb/> By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="days">one
                      days work this week</measure>
                </cell>
                <cell/>
@@ -11291,7 +11291,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/> To <measure ana="bk:service" commodity="#c_renting" quantity="4" unit="day"
+                  <lb/> To <measure ana="bk:service" commodity="#c_renting" quantity="4" unit="days"
                      >chaise to 4 days</measure>
                </cell>
                <cell>
@@ -11377,7 +11377,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_boots"
+                  <lb/>By <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_boots"
                      >1 for boots</measure>30/</cell>
                <cell>
                   <measure ana="bk:money" quantity="5" unit="dollar">5</measure>
@@ -11405,7 +11405,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_pumplog">a pump log</measure>6/</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -11456,7 +11456,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="3" unit="day"
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="3" unit="days"
                      >three days work </measure>2/6</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -11578,7 +11578,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_gloves">per gloves</measure>5/6</cell>
                <cell/>
                <cell>
@@ -11665,7 +11665,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="2"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="2"
                      commodity="#c_pinetimberstick">stick pine timber</measure>6/</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -11777,7 +11777,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To a <measure ana="bk:commodity" unit="piece" quantity="1" commodity="#c_cow"
+                  <lb/>To a <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_cow"
                      >five years old cow</measure>
                </cell>
                <cell>
@@ -11914,7 +11914,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_lace"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_lace"
                      >lace footing</measure>/9</cell>
                <cell/>
                <cell>12 1/2</cell>
@@ -11929,7 +11929,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="day">work
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="days">work
                      one day last week</measure>2/6</cell>
                <cell/>
                <cell>
@@ -11984,7 +11984,7 @@
                <cell>393</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH118" type="person"/> By <measure ana="bk:service"
-                     commodity="#c_work" quantity="2.5" unit="day">two x half days work this
+                     commodity="#c_work" quantity="2.5" unit="days">two x half days work this
                      week</measure> 42x</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -12047,7 +12047,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_pantaloon">per pantloons</measure>18/</cell>
                <cell>
                   <measure ana="bk:money" quantity="3" unit="dollar">3</measure>
@@ -12250,7 +12250,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#393">393</cell>
-               <cell>By <measure ana="bk:service" commodity="#c_work" quantity="3.5" unit="day">3
+               <cell>By <measure ana="bk:service" commodity="#c_work" quantity="3.5" unit="days">3
                      1/2 days work this week</measure>2/6</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -12333,8 +12333,8 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To a <measure ana="bk:commodity" unit="piece" quantity="1"
-                     commodity="#c_cock">cock</measure> x <measure ana="bk:commodity" unit="piece"
+                  <lb/>To a <measure ana="bk:commodity" unit="pieces" quantity="1"
+                     commodity="#c_cock">cock</measure> x <measure ana="bk:commodity" unit="pieces"
                      quantity="1" commodity="#c_hen">hen</measure>4/6 </cell>
                <cell/>
                <cell>
@@ -12384,7 +12384,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#393">393</cell>
-               <cell>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="day">one
+               <cell>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="days">one
                      days work</measure>2/6</cell>
                <cell/>
                <cell>
@@ -12510,7 +12510,7 @@
             <row ana="bk:entry">
                <cell/>
                <cell>
-                  <measure ana="bk:commodity" unit="do" quantity="1" commodity="#c_corn">1 do.
+                  <measure ana="bk:commodity" unit="bushels" quantity="1" commodity="#c_corn">1 do.
                      corn</measure>6/</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -12566,7 +12566,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="day">one
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="days">one
                      days work</measure>2/8</cell>
                <cell/>
                <cell>
@@ -12745,9 +12745,9 @@
             </row>
             <row ana="bk:entry">
                <cell/>
-               <cell>To <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_shoes">1
+               <cell>To <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_shoes">1
                      paid shoes</measure>
-                  <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_hat"
+                  <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_hat"
                      >hat.</measure> at Boston 9/</cell>
                <cell/>
                <cell/>
@@ -12765,7 +12765,7 @@
             <row ana="bk:entry">
                <cell/>
                <cell>
-                  <measure ana="bk:commodity" unit="quarts" quantity="1" commodity="#c_peas">1 qt.
+                  <measure ana="bk:commodity" unit="quarters" quantity="1" commodity="#c_peas">1 qt.
                      Peas</measure>1/</cell>
                <cell/>
                <cell/>
@@ -12975,7 +12975,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="day">one
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="days">one
                      days work this week</measure>3/</cell>
                <cell/>
                <cell>
@@ -13169,7 +13169,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#Settled">Settled</cell>
-               <cell>By <measure ana="bk:service" commodity="#c_work" quantity="2" unit="day">two
+               <cell>By <measure ana="bk:service" commodity="#c_work" quantity="2" unit="days">two
                      days work this week</measure>
                </cell>
                <cell/>
@@ -13185,9 +13185,9 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="day" quantity="1"
+                  <lb/>To <measure ana="bk:commodity" unit="days" quantity="1"
                      commodity="#c_oxenrental">oxen</measure> x <measure ana="bk:commodity"
-                     unit="day" quantity="1" commodity="#c_cartrental">cart one day</measure>
+                     unit="days" quantity="1" commodity="#c_cartrental">cart one day</measure>
                </cell>
                <cell/>
                <cell>
@@ -13322,7 +13322,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:service" commodity="plouhing" quantity="1" unit="day">two
+                  <lb/>To <measure ana="bk:service" commodity="plouhing" quantity="1" unit="days">two
                      yoke oxen, plough x hand one day</measure>
                </cell>
                <cell/>
@@ -13342,7 +13342,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:service" commodity="#c_ploughing" quantity="1" unit="day"
+                  <lb/>To <measure ana="bk:service" commodity="#c_ploughing" quantity="1" unit="days"
                      >plough one day</measure>1/6</cell>
                <cell/>
                <cell>
@@ -13418,7 +13418,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_shoes"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_shoes"
                      >paying H. Hulet for shoes</measure>9/</cell>
                <cell/>
                <cell>
@@ -13495,7 +13495,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_shoes"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_shoes"
                      >paying for buckskin shoes</measure>9/6</cell>
                <cell/>
                <cell>
@@ -13565,7 +13565,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:service" commodity="#c_ploughing" quantity="1" unit="day"
+                  <lb/>To <measure ana="bk:service" commodity="#c_ploughing" quantity="1" unit="days"
                      >plough one day</measure>
                </cell>
                <cell/>
@@ -13678,7 +13678,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#393">393</cell>
-               <cell>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="day">one
+               <cell>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="days">one
                      days work</measure>2/6</cell>
                <cell/>
                <cell>
@@ -13970,7 +13970,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="100"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="100"
                      commodity="#c_oldiron">100 count old iron</measure>1x</cell>
                <cell/>
                <cell>
@@ -14188,7 +14188,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="0.5" unit="day"
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="0.5" unit="days"
                      >1/2 Days work last week</measure>2/6</cell>
                <cell/>
                <cell>
@@ -14444,7 +14444,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1.75" unit="day"
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1.75" unit="days"
                      >work one and 3/4 day</measure>3/</cell>
                <cell/>
                <cell>
@@ -14549,7 +14549,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="day">work
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="days">work
                      one day</measure> 3/</cell>
                <cell/>
                <cell>
@@ -14571,7 +14571,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_book"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_book"
                      >paying for book</measure>30x</cell>
                <cell/>
                <cell>
@@ -14686,7 +14686,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="day">work
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="days">work
                      one Day</measure>
                </cell>
                <cell/>
@@ -14996,7 +14996,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="quarts" quantity="2"
+                  <lb/>To <measure ana="bk:commodity" unit="quarters" quantity="2"
                      commodity="#c_cider">2 quarts cider</measure>
                   <lb/> cash12/</cell>
                <cell/>
@@ -15137,7 +15137,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To cash to <measure quantity="1" unit="count">pay for
+                  <lb/>To cash to <measure quantity="1" unit="pieces">pay for
                   Bible</measure>18/</cell>
                <cell/>
                <cell>
@@ -15159,7 +15159,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By going to Providence, <measure ana="bk:commodity" unit="count" quantity="1"
+                  <lb/>By going to Providence, <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_wagon">house Wagen</measure> x.</cell>
                <cell/>
                <cell>
@@ -15234,7 +15234,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To cash <measure ana="bk:commodity" unit="count" quantity="1"
+                  <lb/>To cash <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_pins">for hairsetting pins</measure>6x</cell>
                <cell/>
                <cell>
@@ -15256,7 +15256,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To cash <measure ana="bk:commodity" unit="count" quantity="1"
+                  <lb/>To cash <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_bible">paid for Bible</measure>
                </cell>
                <cell/>
@@ -15718,7 +15718,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="day">one
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="1" unit="days">one
                      Days work</measure>2/6</cell>
                <cell/>
                <cell>
@@ -16353,9 +16353,9 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To<measure ana="bk:commodity" unit="day" quantity="1"
+                  <lb/>To<measure ana="bk:commodity" unit="days" quantity="1"
                      commodity="#c_oxenrental">oxen</measure>and <measure ana="bk:commodity"
-                     unit="day" quantity="1" commodity="#c_waggonrental">waggon half day</measure>
+                     unit="days" quantity="1" commodity="#c_waggonrental">waggon half day</measure>
                </cell>
                <cell/>
                <cell/>
@@ -16495,7 +16495,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_psalmbook">Psalm Book</measure>
                </cell>
                <cell/>
@@ -16534,7 +16534,7 @@
             <row ana="bk:entry">
                <cell/>
                <cell>To paying Braman for tools<lb/>To <measure ana="bk:service"
-                     commodity="#c_renting" quantity="1" unit="day">cow one year</measure>
+                     commodity="#c_renting" quantity="1" unit="days">cow one year</measure>
                </cell>
                <cell>
                   <measure ana="bk:money" quantity="34" unit="dollar">34</measure>
@@ -16820,7 +16820,7 @@
             </row>
             <row ana="bk:entry">
                <cell/>
-               <cell>To <measure ana="bk:commodity" unit="count" quantity="10" commodity="#c_button"
+               <cell>To <measure ana="bk:commodity" unit="pieces" quantity="10" commodity="#c_button"
                      >button</measure>10x do. 12 1/2</cell>
                <cell/>
                <cell>
@@ -16880,7 +16880,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_book"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_book"
                      >Latin Reader for daughter</measure>4/6 </cell>
                <cell/>
                <cell>
@@ -16952,7 +16952,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="quarts" quantity="28"
+                  <lb/>To <measure ana="bk:commodity" unit="quarters" quantity="28"
                      commodity="#c_milk">twenty eight quarts milk</measure>3x</cell>
                <cell/>
                <cell>
@@ -17087,7 +17087,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To cash paid <measure ana="bk:commodity" unit="piece" quantity="1"
+                  <lb/>To cash paid <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_bible">for bible for daughter</measure>
                </cell>
                <cell/>
@@ -17103,7 +17103,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_book"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_book"
                      >geography x atlas</measure>6/</cell>
                <cell/>
                <cell/>
@@ -17137,7 +17137,7 @@
             </row>
             <row ana="bk:entry">
                <cell/>
-               <cell>To <measure ana="bk:commodity" unit="quarts" quantity="0.5" commodity="#c_lune"
+               <cell>To <measure ana="bk:commodity" unit="quarters" quantity="0.5" commodity="#c_lune"
                      >1/2 quarts of lunes to plant</measure>, nothing</cell>
                <cell/>
                <cell/>
@@ -17157,7 +17157,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="piece" quantity="1"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_postageofletter">postage of letter</measure>12 1/2</cell>
                <cell/>
                <cell>12 1/2</cell>
@@ -17424,7 +17424,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="piece" quantity="1"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_letter">letter for daughter paid</measure>
                </cell>
                <cell/>
@@ -17830,7 +17830,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="0.5" unit="day"
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" quantity="0.5" unit="days"
                      >part of a day cradling Rye x . .</measure>
                </cell>
                <cell/>
@@ -17851,7 +17851,7 @@
                      <expan>Debtor</expan>
                   </choice>
                   <lb/>To paying for A in Taunton paper <lb/> Do. 1. 25<lb/>
-                  <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_bible"
+                  <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_bible"
                      >Bible</measure>4/6 75 <lb/> on 45</cell>
                <cell/>
                <cell/>
@@ -18120,7 +18120,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="1"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_gloves">gloves for hand</measure>3/ </cell>
                <cell/>
                <cell>
@@ -18210,7 +18210,7 @@
             </row>
             <row ana="bk:entry">
                <cell/>
-               <cell>To <measure ana="bk:commodity" unit="quarts" quantity="72" commodity="#c_milk"
+               <cell>To <measure ana="bk:commodity" unit="quarters" quantity="72" commodity="#c_milk"
                      >72 quarts milk</measure> 4x</cell>
                <cell>
                   <measure ana="bk:money" quantity="3" unit="dollar">3</measure>
@@ -18638,7 +18638,7 @@
             </row>
             <row ana="bk:entry">
                <cell/>
-               <cell>To <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_shoes"
+               <cell>To <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_shoes"
                      >India rubber shoes</measure>for Mary 4/6</cell>
                <cell/>
                <cell>
@@ -18676,7 +18676,7 @@
             <row ana="bk:entry">
                <cell/>
                <cell>
-                  <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_hat"
+                  <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_hat"
                      >hat</measure>7/6</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -18764,7 +18764,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="6" commodity="#c_egg"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="6" commodity="#c_egg"
                      >1/2 dozen Eggs</measure>14x</cell>
                <cell/>
                <cell>
@@ -18849,7 +18849,7 @@
             <row ana="bk:entry">
                <cell/>
                <cell>
-                  <measure ana="bk:service" commodity="keeping" quantity="1" unit="day">Keeping
+                  <measure ana="bk:service" commodity="keeping" quantity="1" unit="days">Keeping
                      horse one week </measure>6/</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>

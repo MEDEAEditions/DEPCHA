@@ -67,61 +67,61 @@
                <label xml:lang="en">cent</label>
                <label type="abbreviation">c</label>
             </unitDef>
-            <unitDef ref="wd:Q216658" type="weight" xml:id="unit.1">
+            <unitDef ref="wd:Q216658" type="weight" xml:id="bushels">
                <label xml:lang="en">bushels</label>
             </unitDef>
-            <unitDef ref="wd:Q100995" type="weight" xml:id="unit.2">
+            <unitDef ref="wd:Q100995" type="weight" xml:id="pounds">
                <label xml:lang="en">pounds</label>
             </unitDef>
-            <unitDef ref="wd:Q48013" type="weight" xml:id="unit.14">
+            <unitDef ref="wd:Q48013" type="weight" xml:id="ounces">
                <label xml:lang="en">ounces</label>
             </unitDef>
-            <unitDef ref="wd:Q218593" type="length" xml:id="unit.18">
+            <unitDef ref="wd:Q218593" type="length" xml:id="inches">
                <label xml:lang="en">inches</label>
             </unitDef>
-            <unitDef ref="wd:Q3710" type="length" xml:id="unit.5">
+            <unitDef ref="wd:Q3710" type="length" xml:id="feet">
                <label xml:lang="en">feet</label>
             </unitDef>
-            <unitDef ref="wd:Q482798" type="length" xml:id="unit.7">
+            <unitDef ref="wd:Q482798" type="length" xml:id="yards">
                <label xml:lang="en">yards</label>
             </unitDef>
-            <unitDef ref="wd:Q844338" type="length" xml:id="unit.23">
+            <unitDef ref="wd:Q844338" type="length" xml:id="hectometer">
                <label xml:lang="en">hectometer</label>
             </unitDef>
-            <unitDef ref="wd:Q61793198" type="length" xml:id="unit.24">
+            <unitDef ref="wd:Q61793198" type="length" xml:id="rods">
                <label xml:lang="en">rods</label>
             </unitDef>
-            <unitDef ref="wd:Q351646" type="capacity" xml:id="unit.15">
+            <unitDef ref="wd:Q351646" type="capacity" xml:id="peck">
                <label xml:lang="en">peck</label>
             </unitDef>
-            <unitDef ref="wd:Q178413" type="capacity" xml:id="unit.20">
+            <unitDef ref="wd:Q178413" type="capacity" xml:id="gallons">
                <label xml:lang="en">gallons</label>
             </unitDef>
-            <unitDef ref="wd:Q178506" type="capacity" xml:id="unit.25">
+            <unitDef ref="wd:Q178506" type="capacity" xml:id="barrels">
                <label xml:lang="en">barrels</label>
             </unitDef>
-            <unitDef type="capacity" xml:id="unit.29">
+            <unitDef type="capacity" xml:id="tub">
                <label xml:lang="en">tub</label>
             </unitDef>
-            <unitDef ref="wd:Q81292" type="surface" xml:id="unit.17">
+            <unitDef ref="wd:Q81292" type="surface" xml:id="acres">
                <label xml:lang="en">acres</label>
             </unitDef>
-            <unitDef ref="wd:Q188869" type="surface" xml:id="unit.27">
+            <unitDef ref="wd:Q188869" type="surface" xml:id="field">
                <label xml:lang="en">field</label>
             </unitDef>
-            <unitDef ref="wd:Q2360918" type="number" xml:id="unit.3">
+            <unitDef ref="wd:Q2360918" type="number" xml:id="pieces">
                <label xml:lang="en">pieces</label>
             </unitDef>
-            <unitDef ref="wd:Q25235" type="time" xml:id="unit.4">
+            <unitDef ref="wd:Q25235" type="time" xml:id="hours">
                <label xml:lang="en">hours</label>
             </unitDef>
-            <unitDef ref="wd:Q573" type="time" xml:id="unit.12">
+            <unitDef ref="wd:Q573" type="time" xml:id="days">
                <label xml:lang="en">days</label>
             </unitDef>
-            <unitDef ref="wd:Q23387" type="time" xml:id="unit.19">
+            <unitDef ref="wd:Q23387" type="time" xml:id="weeks">
                <label xml:lang="en">weeks</label>
             </unitDef>
-            <unitDef ref="wd:Q5151" type="time" xml:id="unit.22">
+            <unitDef ref="wd:Q5151" type="time" xml:id="months">
                <label xml:lang="en">months</label>
             </unitDef>
          </unitDecl>
@@ -7887,7 +7887,7 @@
                      <abbr ana="bk:debit">D</abbr>
                      <expan instant="false">debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:service" commodity="#c_work" quantity="1" unit="day"
+                  <lb/>To <measure ana="bk:service" commodity="#c_work" quantity="1" unit="days"
                      >absence</measure> this day 58x</cell>
                <cell/>
                <cell>
@@ -8208,7 +8208,7 @@
                      <expan instant="false">credit</expan>
                   </choice>
                   <lb/>By gift of <measure ana="bk:service" commodity="#c_work" quantity="1"
-                     unit="day">one day</measure> 6/</cell>
+                     unit="days">one day</measure> 6/</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
                </cell>
@@ -18071,7 +18071,7 @@
                      <abbr ana="bk:debit">D</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:service" commodity="#c_renting" quantity="1" unit="year"
+                  <lb/>To <measure ana="bk:service" commodity="#c_renting" quantity="1" unit="years"
                      >rent</measure> from <date ana="bk:when" when="1849-10-01">Oct. 1st</date> at
                      <measure ana="bk:money" quantity="125" unit="dollar">125.00</measure> pr
                   year</cell>
@@ -18287,7 +18287,7 @@
                      <expan>debtor</expan>
                   </choice>
                   <lb/>To use of <measure ana="bk:service" commodity="pasturing" quantity="1"
-                     unit="year">pasture the past year</measure>
+                     unit="years">pasture the past year</measure>
                </cell>
                <cell>
                   <measure ana="bk:money" quantity="8" unit="dollar">8</measure>

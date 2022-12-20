@@ -66,61 +66,61 @@
                <label xml:lang="en">cent</label>
                <label type="abbreviation">c</label>
             </unitDef>
-            <unitDef ref="wd:Q216658" type="weight" xml:id="unit.1">
+            <unitDef ref="wd:Q216658" type="weight" xml:id="bushels">
                <label xml:lang="en">bushels</label>
             </unitDef>
-            <unitDef ref="wd:Q100995" type="weight" xml:id="unit.2">
+            <unitDef ref="wd:Q100995" type="weight" xml:id="pounds">
                <label xml:lang="en">pounds</label>
             </unitDef>
-            <unitDef ref="wd:Q48013" type="weight" xml:id="unit.14">
+            <unitDef ref="wd:Q48013" type="weight" xml:id="ounces">
                <label xml:lang="en">ounces</label>
             </unitDef>
-            <unitDef ref="wd:Q218593" type="length" xml:id="unit.18">
+            <unitDef ref="wd:Q218593" type="length" xml:id="inches">
                <label xml:lang="en">inches</label>
             </unitDef>
-            <unitDef ref="wd:Q3710" type="length" xml:id="unit.5">
+            <unitDef ref="wd:Q3710" type="length" xml:id="feet">
                <label xml:lang="en">feet</label>
             </unitDef>
-            <unitDef ref="wd:Q482798" type="length" xml:id="unit.7">
+            <unitDef ref="wd:Q482798" type="length" xml:id="yards">
                <label xml:lang="en">yards</label>
             </unitDef>
-            <unitDef ref="wd:Q844338" type="length" xml:id="unit.23">
+            <unitDef ref="wd:Q844338" type="length" xml:id="hectometer">
                <label xml:lang="en">hectometer</label>
             </unitDef>
-            <unitDef ref="wd:Q61793198" type="length" xml:id="unit.24">
+            <unitDef ref="wd:Q61793198" type="length" xml:id="rods">
                <label xml:lang="en">rods</label>
             </unitDef>
-            <unitDef ref="wd:Q351646" type="capacity" xml:id="unit.15">
+            <unitDef ref="wd:Q351646" type="capacity" xml:id="peck">
                <label xml:lang="en">peck</label>
             </unitDef>
-            <unitDef ref="wd:Q178413" type="capacity" xml:id="unit.20">
+            <unitDef ref="wd:Q178413" type="capacity" xml:id="gallons">
                <label xml:lang="en">gallons</label>
             </unitDef>
-            <unitDef ref="wd:Q178506" type="capacity" xml:id="unit.25">
+            <unitDef ref="wd:Q178506" type="capacity" xml:id="barrels">
                <label xml:lang="en">barrels</label>
             </unitDef>
-            <unitDef type="capacity" xml:id="unit.29">
+            <unitDef type="capacity" xml:id="tub">
                <label xml:lang="en">tub</label>
             </unitDef>
-            <unitDef ref="wd:Q81292" type="surface" xml:id="unit.17">
+            <unitDef ref="wd:Q81292" type="surface" xml:id="acres">
                <label xml:lang="en">acres</label>
             </unitDef>
-            <unitDef ref="wd:Q188869" type="surface" xml:id="unit.27">
+            <unitDef ref="wd:Q188869" type="surface" xml:id="field">
                <label xml:lang="en">field</label>
             </unitDef>
-            <unitDef ref="wd:Q2360918" type="number" xml:id="unit.3">
+            <unitDef ref="wd:Q2360918" type="number" xml:id="pieces">
                <label xml:lang="en">pieces</label>
             </unitDef>
-            <unitDef ref="wd:Q25235" type="time" xml:id="unit.4">
+            <unitDef ref="wd:Q25235" type="time" xml:id="hours">
                <label xml:lang="en">hours</label>
             </unitDef>
-            <unitDef ref="wd:Q573" type="time" xml:id="unit.12">
+            <unitDef ref="wd:Q573" type="time" xml:id="days">
                <label xml:lang="en">days</label>
             </unitDef>
-            <unitDef ref="wd:Q23387" type="time" xml:id="unit.19">
+            <unitDef ref="wd:Q23387" type="time" xml:id="weeks">
                <label xml:lang="en">weeks</label>
             </unitDef>
-            <unitDef ref="wd:Q5151" type="time" xml:id="unit.22">
+            <unitDef ref="wd:Q5151" type="time" xml:id="months">
                <label xml:lang="en">months</label>
             </unitDef>
          </unitDecl>
@@ -7892,7 +7892,7 @@
                <cell ana="bk:status" corresp="#25">25</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH260" type="person">Thomas Danforth 2d</name>
-                  <lb/>To <measure ana="bk:commodity" unit="pound" quantity="1" commodity="#c_nails"
+                  <lb/>To <measure ana="bk:commodity" unit="pounds" quantity="1" commodity="#c_nails"
                      >1 lb. 4d Cut Nails .8</measure>
                   <lb/> " <measure ana="bk:commodity" unit="bushels" quantity="1" commodity="#c_rye"
                      >1 Buss. Rye 90t 90</measure>
@@ -7956,7 +7956,7 @@
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH509" type="person">Ms Fanny Perry</name>
                   <span ana="bk:debit">D</span>
-                  <lb/> To<measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_crane"
+                  <lb/> To<measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_crane"
                      >1 Crane</measure>
                </cell>
                <cell/>
@@ -8024,9 +8024,9 @@
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
                   <span ana="bk:debit">D</span>
-                  <lb/> To<measure ana="bk:commodity" unit="count" quantity="1"
+                  <lb/> To<measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_Heiffer">a Heiffer</measure> &amp;<measure ana="bk:commodity"
-                     unit="count" quantity="1" commodity="#c_calf">Calf</measure>
+                     unit="pieces" quantity="1" commodity="#c_calf">Calf</measure>
                </cell>
                <cell>
                   <measure ana="bk:money" quantity="20" unit="dollar">20</measure>
@@ -8166,7 +8166,7 @@
                <cell ana="bk:status" corresp="#368">368</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH574" type="person">Timothy Smith</name>
-                  <lb/> To<measure ana="bk:commodity" unit="count" quantity="1"
+                  <lb/> To<measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_InkStand">1 ink Stand Iron returned</measure>
                </cell>
                <cell/>
@@ -8178,7 +8178,7 @@
                <cell/>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH574" type="person">"</name>
-                  <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_DayBook">1 Day
+                  <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_DayBook">1 Day
                      Book</measure> 10/6</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -8191,7 +8191,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#Settled">Settled</cell>
-               <cell>Amos Wilbur<lb/> To<measure ana="bk:commodity" unit="pecks" quantity="3"
+               <cell>Amos Wilbur<lb/> To<measure ana="bk:commodity" unit="peck" quantity="3"
                      commodity="#c_rye">three pecks Rye 90t</measure>
                </cell>
                <cell/>
@@ -8565,7 +8565,7 @@
                <cell/>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH596" type="person"/> "<measure ana="bk:service"
-                     unit="day" quantity="1" commodity="#c_work">1 Day do.</measure> 2/6</cell>
+                     unit="days" quantity="1" commodity="#c_work">1 Day do.</measure> 2/6</cell>
                <cell>
                   <measure ana="bk:money" quantity="2" unit="dollar">2</measure>
                </cell>
@@ -8768,7 +8768,7 @@
                <cell ana="bk:status" corresp="#364">364</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH596" type="person">Oliver Sweet</name>
-                  <lb/> To<measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_hat">a
+                  <lb/> To<measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_hat">a
                      hat 18/</measure>
                </cell>
                <cell>
@@ -8799,7 +8799,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#settled">settled</cell>
-               <cell>Nathaniel W Lincoln<lb/> By <measure ana="bk:service" unit="day" quantity="1"
+               <cell>Nathaniel W Lincoln<lb/> By <measure ana="bk:service" unit="days" quantity="1"
                      commodity="#c_work">1 Days work</measure> moving Windows 2/6</cell>
                <cell/>
                <cell>
@@ -8932,7 +8932,7 @@
                <cell ana="bk:status" corresp="#375">375</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-                  <lb/> To<measure ana="bk:commodity" unit="gallon" quantity="1" commodity="#c_rum"
+                  <lb/> To<measure ana="bk:commodity" unit="gallons" quantity="1" commodity="#c_rum"
                      >1 gall. St. Rum</measure> 6/</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -8990,7 +8990,7 @@
                <cell ana="bk:status" corresp="#375">375</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pound" quantity="0.5"
+                  <lb/> To<measure ana="bk:commodity" unit="pounds" quantity="0.5"
                      commodity="#c_starch"> 1/2 lb Starch</measure>
                </cell>
                <cell/>
@@ -9100,7 +9100,7 @@
                <cell ana="bk:status" corresp="#375">375</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-                  <lb/> To<measure ana="bk:commodity" unit="gallon" quantity="1"
+                  <lb/> To<measure ana="bk:commodity" unit="gallons" quantity="1"
                      commodity="#c_molasses">1 Gall Molasses</measure>
                </cell>
                <cell/>
@@ -9114,7 +9114,7 @@
                <cell ana="bk:status" corresp="#Settled">Settled</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH235" type="person">Edmund Cobb</name>
-                  <lb/> To<measure ana="bk:commodity" unit="gallon" quantity="1" commodity="#c_BRum"
+                  <lb/> To<measure ana="bk:commodity" unit="gallons" quantity="1" commodity="#c_BRum"
                      >1 gall B Rum 1~~</measure>
                </cell>
                <cell/>
@@ -9158,7 +9158,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#settled">settled</cell>
-               <cell>Peter Leirhman<lb/> To<measure ana="bk:commodity" unit="gallon" quantity=".5"
+               <cell>Peter Leirhman<lb/> To<measure ana="bk:commodity" unit="gallons" quantity=".5"
                      commodity="#c_vinegar"> ½ Gall Vinegar</measure>
                </cell>
                <cell/>
@@ -9172,7 +9172,7 @@
                <cell ana="bk:status" corresp="#375">375</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pound" quantity="8" commodity="#c_sugar"
+                  <lb/> To<measure ana="bk:commodity" unit="pounds" quantity="8" commodity="#c_sugar"
                      >8 lb Sugar 1~~</measure>
                </cell>
                <cell/>
@@ -9184,7 +9184,7 @@
                <cell/>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person"/> " <measure
-                     ana="bk:commodity" unit="pound" quantity=".5" commodity="#c_LoafTea">½ lb Loaf
+                     ana="bk:commodity" unit="pounds" quantity=".5" commodity="#c_LoafTea">½ lb Loaf
                      Tea 34</measure>
                </cell>
                <cell>
@@ -9244,7 +9244,7 @@
                <cell ana="bk:status" corresp="#375">375</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pound" quantity=".5" commodity="#c_tea"
+                  <lb/> To<measure ana="bk:commodity" unit="pounds" quantity=".5" commodity="#c_tea"
                      >½ lb R H Tea</measure>
                </cell>
                <cell/>
@@ -9260,7 +9260,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-                  <lb/> To <measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_gin">1
+                  <lb/> To <measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_gin">1
                      pt Gin</measure>
                </cell>
                <cell/>
@@ -9331,7 +9331,7 @@
                <cell ana="bk:status" corresp="#372">372</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH579" type="person">Amos Starkey</name>
-                  <lb/> To <measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_NERum"
+                  <lb/> To <measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_NERum"
                      >1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -9378,7 +9378,7 @@
                <cell ana="bk:status" corresp="#375">375</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-                  <lb/> To<measure ana="bk:commodity" unit="gallon" quantity="1"
+                  <lb/> To<measure ana="bk:commodity" unit="gallons" quantity="1"
                      commodity="#c_molasses">1 gall Molasses</measure>
                </cell>
                <cell/>
@@ -9394,7 +9394,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-                  <lb/> To 1<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_gin"
+                  <lb/> To 1<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_gin"
                      >1 pt Gin</measure>
                </cell>
                <cell/>
@@ -9430,7 +9430,7 @@
                <cell ana="bk:status" corresp="#372">372</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH579" type="person">Amos Starkey</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_NERum"
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_NERum"
                      >1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -9453,7 +9453,7 @@
                <cell ana="bk:status" corresp="#376">376</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH565" type="person">John Smith</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_NERum"
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_NERum"
                      >1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -9467,7 +9467,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_gin">1
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_gin">1
                      pt Gin</measure>
                </cell>
                <cell/>
@@ -9483,7 +9483,7 @@
                <cell ana="bk:status" corresp="#372">372</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH579" type="person">Amos Starkey</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_NERum"
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_NERum"
                      >1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -9499,7 +9499,7 @@
                <cell ana="bk:status" corresp="#338">338</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH206" type="person">Alanson Bruce</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_NERum"
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_NERum"
                      >1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -9529,7 +9529,7 @@
                <cell/>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH483" type="person"/> "<measure ana="bk:commodity"
-                     unit="pound" quantity="1" commodity="#c_loafsugar">1 lb L Sugar 20</measure>
+                     unit="pounds" quantity="1" commodity="#c_loafsugar">1 lb L Sugar 20</measure>
                </cell>
                <cell/>
                <cell>
@@ -9615,7 +9615,7 @@
                <cell ana="bk:status" corresp="#375">375</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pound" quantity="0.25"
+                  <lb/> To<measure ana="bk:commodity" unit="pounds" quantity="0.25"
                      commodity="#c_saleratus">¼ lb Saleratus</measure>
                </cell>
                <cell/>
@@ -9647,7 +9647,7 @@
                <cell ana="bk:status" corresp="#375">375</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-                  <lb/> To <measure ana="bk:commodity" unit="quart" quantity="1"
+                  <lb/> To <measure ana="bk:commodity" unit="quarters" quantity="1"
                      commodity="#c_bestRum">1 qt best Rum</measure>
                </cell>
                <cell/>
@@ -9661,7 +9661,7 @@
                <cell/>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person"/> "<measure ana="bk:commodity"
-                     unit="quart" quantity="1" commodity="#c_NERum">1 qt N E Rum</measure>
+                     unit="quarters" quantity="1" commodity="#c_NERum">1 qt N E Rum</measure>
                </cell>
                <cell/>
                <cell>
@@ -9674,7 +9674,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#On Bill">On Bill</cell>
-               <cell>Robert Bangs<lb/> To<measure ana="bk:commodity" unit="pint" quantity="1"
+               <cell>Robert Bangs<lb/> To<measure ana="bk:commodity" unit="pints" quantity="1"
                      commodity="#c_NERum">1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -9749,7 +9749,7 @@
                <cell ana="bk:status" corresp="#25">25</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH261" type="person">Thomas Danforth Esquire</name>
-                  <lb/> To<measure ana="bk:commodity" unit="quarts" quantity="1" commodity="#c_gin"
+                  <lb/> To<measure ana="bk:commodity" unit="quarters" quantity="1" commodity="#c_gin"
                      >1 qt Gin</measure>
                </cell>
                <cell/>
@@ -9765,7 +9765,7 @@
                <cell ana="bk:status" corresp="#339">339</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH428" type="person">Cromwell Leonard</name>
-                  <lb/> To <measure ana="bk:commodity" unit="quarts" quantity="2"
+                  <lb/> To <measure ana="bk:commodity" unit="quarters" quantity="2"
                      commodity="#c_NERum">2 qts N E Rum</measure>
                </cell>
                <cell/>
@@ -9823,7 +9823,7 @@
                <cell ana="bk:status" corresp="#376">376</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH565" type="person">John Smith</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pound" quantity="0.25"
+                  <lb/> To<measure ana="bk:commodity" unit="pounds" quantity="0.25"
                      commodity="#c_pepper">¼ lb Pepper</measure>
                </cell>
                <cell/>
@@ -9890,7 +9890,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#On Bill">On Bill </cell>
-               <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" unit="pint" quantity="1"
+               <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" unit="pints" quantity="1"
                      commodity="#c_gin">1 pt Gin</measure>
                </cell>
                <cell/>
@@ -9926,7 +9926,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-                  <lb/> To <measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_gin">1
+                  <lb/> To <measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_gin">1
                      pt Gin</measure>
                </cell>
                <cell/>
@@ -9940,7 +9940,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#On Bill">On Bill</cell>
-               <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" unit="pint" quantity="1"
+               <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" unit="pints" quantity="1"
                      commodity="#c_gin">1 pt Gin</measure>
                </cell>
                <cell/>
@@ -9972,7 +9972,7 @@
                <cell ana="bk:status" corresp="#200">200</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH483" type="person">Doct Samuel Morey</name>
-                  <lb/> To <measure ana="bk:commodity" unit="pint" quantity="1"
+                  <lb/> To <measure ana="bk:commodity" unit="pints" quantity="1"
                      commodity="#c_brandy">1 pt Brandy</measure>
                </cell>
                <cell/>
@@ -9986,7 +9986,7 @@
                <cell/>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH483" type="person"/> " <measure
-                     ana="bk:commodity" unit="pound" quantity="2" commodity="#c_coffee">2 lb
+                     ana="bk:commodity" unit="pounds" quantity="2" commodity="#c_coffee">2 lb
                      Coffee</measure> 18c</cell>
                <cell/>
                <cell>
@@ -10004,7 +10004,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-                  <lb/> To <measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_gin">1
+                  <lb/> To <measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_gin">1
                      pt Gin</measure>
                </cell>
                <cell/>
@@ -10018,7 +10018,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#On Bill">On Bill</cell>
-               <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" unit="pint" quantity="1"
+               <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" unit="pints" quantity="1"
                      commodity="#c_gin">1 pt Gin</measure>
                </cell>
                <cell/>
@@ -10080,7 +10080,7 @@
             </row>
             <row ana="bk:entry">
                <cell/>
-               <cell>" <measure ana="bk:commodity" unit="pound" quantity="1" commodity="#c_soap">1
+               <cell>" <measure ana="bk:commodity" unit="pounds" quantity="1" commodity="#c_soap">1
                      lb soap</measure>
                </cell>
                <cell/>
@@ -10096,7 +10096,7 @@
                <cell ana="bk:status" corresp="#372">372</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH579" type="person">Amos Starkey</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_NERum"
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_NERum"
                      >1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -10130,7 +10130,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-                  <lb/> To <measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_gin">1
+                  <lb/> To <measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_gin">1
                      pt Gin</measure>
                </cell>
                <cell/>
@@ -10144,7 +10144,7 @@
             </row>
             <row ana="bk:entry">
                <cell/>
-               <cell> To <measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_gin">1
+               <cell> To <measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_gin">1
                      pt Gin</measure>
                </cell>
                <cell/>
@@ -10167,7 +10167,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_gin">1
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_gin">1
                      pt Gin</measure>
                </cell>
                <cell/>
@@ -10193,7 +10193,7 @@
                <cell ana="bk:status" corresp="#375">375</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-                  <lb/> To<measure ana="bk:commodity" unit="quart" quantity="1" commodity="#c_NERum"
+                  <lb/> To<measure ana="bk:commodity" unit="quarters" quantity="1" commodity="#c_NERum"
                      >1 qt N E Rum</measure>
                </cell>
                <cell/>
@@ -10207,7 +10207,7 @@
                <cell ana="bk:status" corresp="#372">372</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH579" type="person">Amos Starkey</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_NERum"
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_NERum"
                      >1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -10219,7 +10219,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#370">370</cell>
-               <cell>Peter Leirhman<lb/> To<measure ana="bk:commodity" unit="quart" quantity="1"
+               <cell>Peter Leirhman<lb/> To<measure ana="bk:commodity" unit="quarters" quantity="1"
                      commodity="#c_gin">1 qt Gin</measure>
                </cell>
                <cell/>
@@ -10233,7 +10233,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-                  <lb/> To <measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_pipe"
+                  <lb/> To <measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_pipe"
                      >1 pipe</measure>
                </cell>
                <cell/>
@@ -10247,7 +10247,7 @@
                <cell ana="bk:status" corresp="#25">25</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH259" type="person">Capt Thomas Danforth</name>
-                  <lb/> To <measure ana="bk:commodity" unit="pound" quantity="0.25"
+                  <lb/> To <measure ana="bk:commodity" unit="pounds" quantity="0.25"
                      commodity="#c_tea">¼ lb Tea</measure> 17</cell>
                <cell/>
                <cell/>
@@ -10258,7 +10258,7 @@
                <cell/>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH259" type="person"/> "<measure ana="bk:commodity"
-                     unit="gallon" quantity="1" commodity="#c_molasses">1 Gall Molasses</measure>
+                     unit="gallons" quantity="1" commodity="#c_molasses">1 Gall Molasses</measure>
                   38</cell>
                <cell/>
                <cell>
@@ -10273,7 +10273,7 @@
                <cell ana="bk:status" corresp="#372">372</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH579" type="person">Amos Starkey</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_NERum"
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_NERum"
                      >1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -10287,7 +10287,7 @@
                <cell ana="bk:status" corresp="#25">25</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH259" type="person">Thomas Danforth</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pound" quantity="1"
+                  <lb/> To<measure ana="bk:commodity" unit="pounds" quantity="1"
                      commodity="#c_coffee">1 lb Coffee</measure>
                </cell>
                <cell/>
@@ -10301,7 +10301,7 @@
                <cell ana="bk:status" corresp="#338">338</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH206" type="person">Alanson Bruce</name>
-                  <lb/> To <measure ana="bk:commodity" unit="quart" quantity="1"
+                  <lb/> To <measure ana="bk:commodity" unit="quarters" quantity="1"
                      commodity="#c_NERum">1 qt N E Rum</measure>
                </cell>
                <cell/>
@@ -10334,7 +10334,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_gin">1
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_gin">1
                      pt Gin</measure>
                </cell>
                <cell/>
@@ -10376,7 +10376,7 @@
                <cell ana="bk:status" corresp="#372">372</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH579" type="person">Amos Starkey</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_NERum"
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_NERum"
                      >1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -10388,7 +10388,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#On Bill">On Bill</cell>
-               <cell>Robert Bangs<lb/> To<measure ana="bk:commodity" unit="pint" quantity="1"
+               <cell>Robert Bangs<lb/> To<measure ana="bk:commodity" unit="pints" quantity="1"
                      commodity="#c_gin">1 pt Gin</measure>
                </cell>
                <cell/>
@@ -10481,7 +10481,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1.5" commodity="#c_gin">
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1.5" commodity="#c_gin">
                      1 ½ pt Gin</measure>
                </cell>
                <cell/>
@@ -10493,7 +10493,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#370">370</cell>
-               <cell>Peter Leirhman<lb/> To <measure ana="bk:commodity" unit="quart" quantity="1"
+               <cell>Peter Leirhman<lb/> To <measure ana="bk:commodity" unit="quarters" quantity="1"
                      commodity="#c_gin">1 qt Gin</measure>
                </cell>
                <cell/>
@@ -10521,7 +10521,7 @@
                <cell ana="bk:status" corresp="#375">375</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-                  <lb/> To <measure ana="bk:commodity" unit="quarts" quantity="1" commodity="#c_rum"
+                  <lb/> To <measure ana="bk:commodity" unit="quarters" quantity="1" commodity="#c_rum"
                      >1 qts best Rum</measure>
                </cell>
                <cell/>
@@ -10535,7 +10535,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pound" quantity="1" commodity="#c_sugar"
+                  <lb/> To<measure ana="bk:commodity" unit="pounds" quantity="1" commodity="#c_sugar"
                      >1 lb Sugar</measure>
                </cell>
                <cell/>
@@ -10549,7 +10549,7 @@
                <cell/>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person"/> "<measure ana="bk:commodity"
-                     unit="pound" quantity="1" commodity="#c_coffee">1 lb Coffee</measure>
+                     unit="pounds" quantity="1" commodity="#c_coffee">1 lb Coffee</measure>
                </cell>
                <cell/>
                <cell>
@@ -10560,7 +10560,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#On Bill">On Bill </cell>
-               <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" unit="pint" quantity="1"
+               <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" unit="pints" quantity="1"
                      commodity="#c_NERum">1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -10595,7 +10595,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-                  <lb/> To<measure ana="bk:commodity" unit="gin" quantity="1" commodity="#c_gin">1
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_gin">1
                      pt Gin</measure>
                </cell>
                <cell/>
@@ -10607,7 +10607,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#370">370</cell>
-               <cell>Peter Leirhmand<lb/> To<measure ana="bk:commodity" unit="Blacking" quantity="1"
+               <cell>Peter Leirhmand<lb/> To<measure ana="bk:commodity" unit="jug" quantity="1"
                      commodity="#c_blacking">1 Jug Blacking</measure>
                </cell>
                <cell/>
@@ -10633,7 +10633,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#On Bill">On Bill</cell>
-               <cell>Robert Bangs<lb/> To<measure ana="bk:commodity" unit="pint" quantity="1"
+               <cell>Robert Bangs<lb/> To<measure ana="bk:commodity" unit="pints" quantity="1"
                      commodity="#c_NERum">1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -10647,7 +10647,7 @@
                <cell ana="bk:status" corresp="#375">375</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-                  <lb/> To<measure ana="bk:commodity" unit="quarts" quantity="1"
+                  <lb/> To<measure ana="bk:commodity" unit="quarters" quantity="1"
                      commodity="#c_brandy">1 qts Brandy</measure>
                </cell>
                <cell/>
@@ -10661,7 +10661,7 @@
                <cell/>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person"/> "<measure ana="bk:commodity"
-                     unit="quarts" quantity="1" commodity="#c_wine">1 qts Wine</measure>
+                     unit="quarters" quantity="1" commodity="#c_wine">1 qts Wine</measure>
                </cell>
                <cell/>
                <cell>
@@ -10674,7 +10674,7 @@
                <cell ana="bk:status" corresp="#200">200</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH483" type="person">Samuel Morey</name>
-                  <lb/> To<measure ana="bk:commodity" unit="Gallons" quantity="1"
+                  <lb/> To<measure ana="bk:commodity" unit="gallons" quantity="1"
                      commodity="#c_NERum">1 Gall N E Rum</measure>
                </cell>
                <cell/>
@@ -10688,7 +10688,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_gin">1
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_gin">1
                      pt Gin</measure>
                </cell>
                <cell/>
@@ -10702,7 +10702,7 @@
                <cell ana="bk:status" corresp="#372">372</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH579" type="person">Amos Starkey</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_gin">1
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_gin">1
                      pt Gin</measure>
                </cell>
                <cell/>
@@ -10737,7 +10737,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH540" type="person">Holmes Richmond</name>
-                  <lb/> To <measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_NERum"
+                  <lb/> To <measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_NERum"
                      >1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -10782,7 +10782,7 @@
             </head>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#370">370</cell>
-               <cell>Peter Leirhman<lb/> To<measure ana="bk:commodity" unit="quarts" quantity="1"
+               <cell>Peter Leirhman<lb/> To<measure ana="bk:commodity" unit="quarters" quantity="1"
                      commodity="#c_molasses">1 qt. Molasses</measure>
                </cell>
                <cell/>
@@ -10801,7 +10801,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH535" type="person">Holmes Richmond</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_rum">1
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_rum">1
                      pt N E Rum</measure>
                </cell>
                <cell/>
@@ -10815,7 +10815,7 @@
                <cell ana="bk:status" corresp="#85">85</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH526" type="person">Bailey Rawson</name>
-                  <lb/> By <measure ana="bk:commodity" unit="bushells" quantity="12.5"
+                  <lb/> By <measure ana="bk:commodity" unit="bushels" quantity="12.5"
                      commodity="#c_headgrass">12 ½ Bushells of head Grass</measure>
                </cell>
                <cell/>
@@ -10857,7 +10857,7 @@
                <cell ana="bk:status" corresp="#375">375</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-                  <lb/> To<measure ana="bk:commodity" unit="quart" quantity="1" commodity="#c_NERum"
+                  <lb/> To<measure ana="bk:commodity" unit="quarters" quantity="1" commodity="#c_NERum"
                      >1 qt N E Rum</measure>
                </cell>
                <cell/>
@@ -10869,7 +10869,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#370">370</cell>
-               <cell>Peter Leirhman<lb/> To<measure ana="bk:commodity" unit="quart" quantity="1"
+               <cell>Peter Leirhman<lb/> To<measure ana="bk:commodity" unit="quarters" quantity="1"
                      commodity="#c_lampoil">1 qt L Oil</measure>
                </cell>
                <cell/>
@@ -10881,7 +10881,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#370">370</cell>
-               <cell>Peter Leirhmand<lb/> To<measure ana="bk:commodity" unit="pound" quantity="1"
+               <cell>Peter Leirhmand<lb/> To<measure ana="bk:commodity" unit="pounds" quantity="1"
                      commodity="#c_loafsugar">1 lb L sugar</measure>
                </cell>
                <cell/>
@@ -10926,7 +10926,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH535" type="person">Holmes Richmond</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_NERum"
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_NERum"
                      >1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -10938,7 +10938,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#On Bill">On Bill</cell>
-               <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" unit="pint" quantity="1"
+               <cell>Robert Bangs<lb/> To <measure ana="bk:commodity" unit="pints" quantity="1"
                      commodity="#c_NERum">1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -10952,7 +10952,7 @@
                <cell ana="bk:status" corresp="#375">375</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-                  <lb/> To<measure ana="bk:commodity" unit="count" quantity="1" commodity="#c_broom"
+                  <lb/> To<measure ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_broom"
                      >1 Broom</measure>
                </cell>
                <cell/>
@@ -11002,7 +11002,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#370">370</cell>
-               <cell>Peter Leirhman<lb/> To <measure ana="bk:commodity" unit="quart" quantity="1"
+               <cell>Peter Leirhman<lb/> To <measure ana="bk:commodity" unit="quarters" quantity="1"
                      commodity="#c_gin">1 qt Gin</measure>
                </cell>
                <cell/>
@@ -11016,7 +11016,7 @@
                <cell ana="bk:status" corresp="#339">339</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH428" type="person">Cromwell Leonard</name>
-                  <lb/> To<measure ana="bk:commodity" unit="quarts" quantity="2"
+                  <lb/> To<measure ana="bk:commodity" unit="quarters" quantity="2"
                      commodity="#c_NERum">2 qt N E Rum</measure>
                </cell>
                <cell/>
@@ -11073,7 +11073,7 @@
             </head>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#On Bill">On Bill</cell>
-               <cell>Robert Bangs<lb/> To<measure ana="bk:commodity" unit="pint" quantity="1"
+               <cell>Robert Bangs<lb/> To<measure ana="bk:commodity" unit="pints" quantity="1"
                      commodity="#c_NERum"> 1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -11178,7 +11178,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH535" type="person">Holmes Richmond</name>
-                  <lb/> To<measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_NERum"
+                  <lb/> To<measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_NERum"
                      >1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -11211,7 +11211,7 @@
                <cell ana="bk:status" corresp="#375">375</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH647" type="person">Laban Wheaton</name>
-                  <lb/> To<measure ana="bk:commodity" unit="quarts" quantity="1" commodity="#c_HGin"
+                  <lb/> To<measure ana="bk:commodity" unit="quarters" quantity="1" commodity="#c_HGin"
                      >1 qt H Gin</measure>
                </cell>
                <cell/>
@@ -11236,7 +11236,7 @@
             </row>
             <row ana="bk:entry">
                <cell ana="bk:status" corresp="#370">370</cell>
-               <cell>Peter Leishman<lb/> To<measure ana="bk:commodity" unit="quarts" quantity="1"
+               <cell>Peter Leishman<lb/> To<measure ana="bk:commodity" unit="quarters" quantity="1"
                      commodity="#c_gin">1 qt Gin</measure>
                </cell>
                <cell/>
@@ -11248,7 +11248,7 @@
             </row>
             <row ana="bk:entry">
                <cell/>
-               <cell>"<measure ana="bk:commodity" unit="count" quantity="24" commodity="#c_cracker"
+               <cell>"<measure ana="bk:commodity" unit="pieces" quantity="24" commodity="#c_cracker"
                      >24 Crackers</measure>
                </cell>
                <cell/>
@@ -11306,7 +11306,7 @@
                <cell ana="bk:status" corresp="#367">367</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH535" type="person">Holmes Richmond</name>
-                  <lb/> To<measure ana="bk:commodity" unit="count" quantity="2"
+                  <lb/> To<measure ana="bk:commodity" unit="pieces" quantity="2"
                      commodity="#c_mackerel">2 Mackerell</measure>
                </cell>
                <cell/>
@@ -11320,7 +11320,7 @@
                <cell/>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH535" type="person"/> "<measure ana="bk:commodity"
-                     unit="pint" quantity="1" commodity="#c_rum">1 pt Rum</measure>
+                     unit="pints" quantity="1" commodity="#c_rum">1 pt Rum</measure>
                </cell>
                <cell/>
                <cell>
@@ -11363,7 +11363,7 @@
                <cell ana="bk:status" corresp="#372">372 </cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH579" type="person">Amos Starkey</name>
-                  <lb/> To <measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_NERum"
+                  <lb/> To <measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_NERum"
                      > 1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -11375,7 +11375,7 @@
             </row>
             <row ana="bk:entry">
                <cell/>
-               <cell> To <measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_NERum">
+               <cell> To <measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_NERum">
                      1 pt N E Rum</measure>
                </cell>
                <cell/>
@@ -11567,10 +11567,10 @@
                      commodity="#c_butter">6 LB</measure>
                   <measure ana="bk:commodity" unit="ounces" quantity="14" commodity="#c_butter">14
                      oz Butter</measure> 1/ pr lb 1.15<lb/> To <measure ana="bk:commodity"
-                     unit="quarts" quantity="14" commodity="#c_milk">14 Qts New Milk</measure>
-                  56<lb/> To <measure ana="bk:commodity" unit="quarts" quantity="6"
+                     unit="quarters" quantity="14" commodity="#c_milk">14 Qts New Milk</measure>
+                  56<lb/> To <measure ana="bk:commodity" unit="quarters" quantity="6"
                      commodity="#c_milk">6 Qts</measure> &amp; <measure ana="bk:commodity"
-                     unit="pint" quantity="1" commodity="#c_milk">1</measure> Pt. do 26<lb/>
+                     unit="pints" quantity="1" commodity="#c_milk">1</measure> Pt. do 26<lb/>
                </cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -11845,9 +11845,9 @@
                      <abbr ana="bk:debit">D</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="quarts" quantity="2" commodity="#c_oil"
+                  <lb/>To <measure ana="bk:commodity" unit="quarters" quantity="2" commodity="#c_oil"
                      >2 qts.</measure>
-                  <measure ana="bk:commodity" unit="pint" quantity="1" commodity="#c_oil">1 pt. L,
+                  <measure ana="bk:commodity" unit="pints" quantity="1" commodity="#c_oil">1 pt. L,
                      Oil</measure> 1lb. S Brown</cell>
                <cell/>
                <cell>
@@ -11888,7 +11888,7 @@
                      <abbr ana="bk:credit">Cr</abbr>
                      <expan>credit</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:commodity" unit="gall" quantity="1" commodity="#c_wine">1
+                  <lb/>By <measure ana="bk:commodity" unit="gallons" quantity="1" commodity="#c_wine">1
                      Gall L. Wine</measure> 8/</cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -12167,7 +12167,7 @@
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH402" type="person">Phillip B King</name>
                   <lb/>
-                  <measure ana="bk:service" commodity="#c_oxenrental" quantity="1" unit="day">To oxen 1
+                  <measure ana="bk:service" commodity="#c_oxenrental" quantity="1" unit="days">To oxen 1
                      Day 3/</measure>
                </cell>
                <cell/>
@@ -12434,7 +12434,7 @@
             <row ana="bk:entry">
                <cell/>
                <cell>
-                  <measure ana="bk:service" commodity="#c_oxenrental" quantity="1.5" unit="day">oxen
+                  <measure ana="bk:service" commodity="#c_oxenrental" quantity="1.5" unit="days">oxen
                      one X half days</measure> 3/ </cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -12653,7 +12653,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Dabtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="count" quantity="100"
+                  <lb/>To <measure ana="bk:commodity" unit="pieces" quantity="100"
                      commodity="#c_brick">100 Brick</measure>60/ </cell>
                <cell/>
                <cell>
@@ -12743,7 +12743,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Dabtor</expan>
                   </choice>
-                  <lb/> To <measure ana="bk:commodity" unit="piece" quantity="1"
+                  <lb/> To <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_chaise">chaise to Taunton</measure>
                   <lb/>Trip one day 3/ <lb/>" you to providence 6/</cell>
                <cell>
@@ -12802,7 +12802,7 @@
                <cell/>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH621" type="person"/> Paying for <measure
-                     ana="bk:commodity" unit="count" quantity="1" commodity="#c_windingwatch"
+                     ana="bk:commodity" unit="pieces" quantity="1" commodity="#c_windingwatch"
                      >winding watch</measure> 25</cell>
                <cell>
                   <measure ana="bk:money" quantity="2" unit="dollar">2</measure>
@@ -12948,7 +12948,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Dabtor</expan>
                   </choice>
-                  <lb/>To <measure ana="bk:commodity" unit="day" quantity="1" commodity="#c_chaise"
+                  <lb/>To <measure ana="bk:commodity" unit="days" quantity="1" commodity="#c_chaise"
                      >chaise to Taunton</measure>
                </cell>
                <cell/>
@@ -13064,7 +13064,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Dabtor</expan>
                   </choice>
-                  <lb/> To <measure ana="bk:commodity" unit="count" quantity="1"
+                  <lb/> To <measure ana="bk:commodity" unit="pieces" quantity="1"
                      commodity="#c_ribbon">ribbon</measure>/6</cell>
                <cell/>
                <cell>
@@ -13541,7 +13541,7 @@
                      <expan>Debtor</expan>
                   </choice>
                   <lb/>
-                  <measure ana="bk:service" commodity="#c_work" quantity="1" unit="day">By work for
+                  <measure ana="bk:service" commodity="#c_work" quantity="1" unit="days">By work for
                      this day one day</measure>
                </cell>
                <cell/>
