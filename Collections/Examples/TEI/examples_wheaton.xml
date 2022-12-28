@@ -53,6 +53,22 @@
                     </category>
                 </taxonomy>
             </classDecl>
+            <unitDecl>
+                <unitDef ref="wd:Q4917" type="currency" xml:id="dollar" ana="depcha:mainCurrency"
+                    from="1690">
+                    <label xml:lang="en">dollar</label>
+                    <label type="abbreviation">$</label>
+                    <country>USA</country>
+                    <conversion fromUnit="#dollar" toUnit="#cent" formula="$fromUnit div 100"/>
+                </unitDef>
+                <unitDef ref="wd:Q58093" type="currency" xml:id="cent">
+                    <label xml:lang="en">cent</label>
+                    <label type="abbreviation">c</label>
+                </unitDef>
+                <unitDef ref="wd:Q216658" type="weight" xml:id="bushels">
+                    <label xml:lang="en">bushels</label>
+                </unitDef>         
+            </unitDecl>
         </encodingDesc>
         <profileDesc>
             <particDesc>
@@ -173,8 +189,8 @@
     <text>
         <body>
             <div type="example">           
-                <head><name ana="bk:to" ref="#pers_WCDH002">Laban Morey
-                    Wheaton</name> Day Book</head>
+                <head><persName ana="bk:to" ref="#pers_WCDH002">Laban Morey
+                    Wheaton</persName> Day Book</head>
                 
                 <table>
                     <head>
@@ -183,8 +199,8 @@
                     <row ana="bk:entry">
                         <cell ana="bk:status">settled</cell>
                         <cell>
-                            <name ana="bk:from" type="person" ref="#pers_WCDH699">Samuel
-                                Wrigley</name>
+                            <persName ana="bk:from" type="person" ref="#pers_WCDH699">Samuel
+                                Wrigley</persName>
                             <choice>
                                 <abbr ana="bk:debit">Dr</abbr>
                                 <expan>Debtor</expan>

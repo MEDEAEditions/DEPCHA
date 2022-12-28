@@ -53,12 +53,12 @@
                         </persName>
                     </person>
                     <!-- ... -->
-                    <person xml:id="pers_SR051">
+                    <personGrp xml:id="group_SR051">
                         <persName>
                             <forename>Anderlein </forename>
                             <addName>Fischer </addName>
                         </persName>
-                    </person>
+                    </personGrp>
                     <person xml:id="pers_SR052">
                         <persName>
                             <forename>Herr </forename>
@@ -74,16 +74,16 @@
     <text>
         <body>
             <div type="example">
-                <p> Nota das ist die zetel<lb/> Raigister 1 des <name ref="#pers_SR001"
+                <p> Nota das ist die zetel<lb/> Raigister 1 des <persName ref="#pers_SR001"
                         type="person" ana="bk:to"> hans <damage><supplied reason="missing"
-                                >[kelner]</supplied></damage></name>
+                                >[kelner]</supplied></damage></persName>
                 </p>
                 <p ana="bk:entry"> Item am <date ana="bk:when" when="1402-01-01">s<supplied
                             reason="missing">[o]</supplied>nntag nach Eibnitÿ []</date> prachten dÿ<lb/>
-                    <name ref="#pers_SR051" ana="bk:from bk:group">obgeschriben visser</name>
+                    <seg corresp="#group_SR051" ana="bk:from bk:group">obgeschriben visser</seg>
                     <measure ana="bk:commodity" commodity="fish" quantity="18" unit="pound">18 lb
-                        visch</measure> und<lb/> am mitwoch dar nach Rait <name ref="pers_SR052"
-                        type="person">herr Kaspar</name><lb/> gen phenïs. </p>
+                        visch</measure> und<lb/> am mitwoch dar nach Rait <persName ref="pers_SR052"
+                        type="person">herr Kaspar</persName><lb/> gen phenïs. </p>
             </div>
         </body>
     </text>
