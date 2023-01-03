@@ -1,51 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:functx="http://www.functx.com" xmlns:gn="http://www.geonames.org/ontology#"
-    xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
-    xmlns:huc="https://gams.uni-graz.at/o:depcha.huc-ontology"
-    xmlns:time="http://www.w3.org/2006/time#" xmlns:schema="https://schema.org/"
-    xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
-    xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:t="http://www.tei-c.org/ns/1.0"
-    xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#" xmlns:void="http://rdfs.org/ns/void#">
-    <depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.taxes.dataset">
-        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
-        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.taxes"/>
-        <depcha:numberOfTransactions>1</depcha:numberOfTransactions>
-        <depcha:numberOfTransfers>1</depcha:numberOfTransfers>
-        <depcha:numberOfEconomicAgents>1</depcha:numberOfEconomicAgents>
-        <depcha:numberOfMonetaryValues>0</depcha:numberOfMonetaryValues>
-        <depcha:numberOfEconomicGoods>0</depcha:numberOfEconomicGoods>
-        <depcha:numberOfPlaces>0</depcha:numberOfPlaces>
-        <depcha:numberOfAccounts>0</depcha:numberOfAccounts>
-    </depcha:Dataset>
-    <void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.taxes">
-        <dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
-        <dc:publisher>Institute Centre for Information Modelling, University of Graz</dc:publisher>
-    </void:Dataset>
-    <bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.taxes#T1">
-        <gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
-        <gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.taxes"/>
-        <bk:entry>Robert de fresviau regratier xviii.d p</bk:entry>
-        <bk:consistsOf>
-            <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.taxes#T1T1">
-                <bk:transfers>
-                    <bk:Tax rdf:about="https://gams.uni-graz.at/o:depcha.example.taxes#T1T1EA">
-                        <bk:unit
-                            rdf:resource="https://gams.uni-graz.at/context:depcha.example#deniers"/>
-                        <bk:quantity>18</bk:quantity>
-                    </bk:Tax>
-                </bk:transfers>
-                <bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#RF01"/>
-                <bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"/>
-            </bk:Transfer>
-        </bk:consistsOf>
-        <bk:status>p</bk:status>
-    </bk:Transaction>
-    <bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.example#RF01">
-        <schema:givenName>Robert</schema:givenName>
-        <t:nameLink>de</t:nameLink>
-        <schema:familyName>fresviau</schema:familyName>
-        <rdfs:label>Robert de fresviau</rdfs:label>
-    </bk:EconomicAgent>
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:functx="http://www.functx.com" xmlns:gn="http://www.geonames.org/ontology#"
+	xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
+	xmlns:huc="https://gams.uni-graz.at/o:depcha.huc-ontology#"
+	xmlns:time="http://www.w3.org/2006/time#" xmlns:schema="https://schema.org/"
+	xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:t="http://www.tei-c.org/ns/1.0"
+	xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#" xmlns:void="http://rdfs.org/ns/void#">
+	<depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.taxes.dataset">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.taxes"/>
+		<depcha:numberOfTransactions>1</depcha:numberOfTransactions>
+		<depcha:numberOfTransfers>1</depcha:numberOfTransfers>
+		<depcha:numberOfEconomicAgents>1</depcha:numberOfEconomicAgents>
+		<depcha:numberOfMonetaryValues>1</depcha:numberOfMonetaryValues>
+		<depcha:numberOfEconomicGoods>0</depcha:numberOfEconomicGoods>
+		<depcha:numberOfPlaces>0</depcha:numberOfPlaces>
+		<depcha:numberOfAccounts>0</depcha:numberOfAccounts>
+	</depcha:Dataset>
+	<void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.example.taxes">
+		<dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
+		<dc:publisher>Institute Centre for Information Modelling, University of Graz</dc:publisher>
+	</void:Dataset>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.example.taxes#T1">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.example"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.example.taxes"/>
+		<bk:entry>Robert de fresviau regratier xviii.d p</bk:entry>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.example.taxes#T1T1">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.example.taxes#T1T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.example#deniers"/>
+						<bk:quantity>18</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.example#RF01"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.example#anonymous"/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:status>p</bk:status>
+	</bk:Transaction>
+	<bk:Individual rdf:about="https://gams.uni-graz.at/context:depcha.example#RF01">
+		<rdfs:label>fresviau, Robert</rdfs:label>
+		<schema:givenName>Robert</schema:givenName>
+		<schema:familyName>fresviau</schema:familyName>
+	</bk:Individual>
 </rdf:RDF>
