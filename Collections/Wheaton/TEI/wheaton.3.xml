@@ -195,32 +195,40 @@
             </unitDef>
          </unitDecl>
          <classDecl>
-            <!-- #c_salt
-#c_soap
-#c_cracker
-#c_lampoil
-#c_beetseed
-#c_canbric
-#c_mackerel
-#c_plate
-#c_broom
-#c_letter
-#c_thread
-#c_cheese
-#c_hide
-#c_shoe
-#c_marplegreen
-#c_beer
-#c_peekpine -->
             <taxonomy ana="depcha:index">
                <gloss xml:lang="en">Commodities</gloss>
-               <category xml:id="c_dairyproduct">
+               <category xml:id="c_animalproduct">
                   <catDesc>
-                     <term ref="wd:Q185217" xml:lang="en">dairy product</term>
+                     <term ref="wd:Q629103" xml:lang="en">animal product</term>
                   </catDesc>
-                  <category xml:id="c_butter">
+                  <category xml:id="c_dairyproduct">
                      <catDesc>
-                        <term ref="wd:Q34172" xml:lang="en">butter</term>
+                        <term ref="wd:Q185217" xml:lang="en">dairy product</term>
+                     </catDesc>
+                     <category xml:id="c_butter">
+                        <catDesc>
+                           <term ref="wd:Q34172" xml:lang="en">butter</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_cheese">
+                        <catDesc>
+                           <term ref="wd:Q10943" xml:lang="en">cheese</term>
+                        </catDesc>
+                     </category>
+                  </category>
+                  <category xml:id="c_eggs">
+                     <catDesc>
+                        <term ref="wd:Q93189" xml:lang="en">eggs</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_leather">
+                     <catDesc>
+                        <term ref="wd:Q286" xml:lang="en">leather</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_hide">
+                     <catDesc>
+                        <term ref="wd:Q3291230" xml:lang="en">hide</term>
                      </catDesc>
                   </category>
                </category>
@@ -247,7 +255,7 @@
                            <term xml:lang="en">cart rental</term>
                         </catDesc>
                      </category>
-                     <category xml:id="c_waggonrental">
+                     <category xml:id="c_wagonrental">
                         <catDesc>
                            <term xml:lang="en">waggon rental</term>
                         </catDesc>
@@ -258,6 +266,16 @@
                         </catDesc>
                      </category>
                   </category>
+                  <category xml:id="c_carting">
+                     <catDesc>
+                        <term xml:lang="en">carting</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_postageofletter">
+                     <catDesc>
+                        <term xml:lang="en">postage of letter</term>
+                     </catDesc>
+                  </category>
                </category>
                <category xml:id="c_costumeaccessory">
                   <catDesc>
@@ -266,6 +284,11 @@
                   <category xml:id="c_frenchbraid">
                      <catDesc>
                         <term ref="wd:Q16752165" xml:lang="en">french braid</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_buttons">
+                     <catDesc>
+                        <term ref="wd:Q160464" xml:lang="en">buttons</term>
                      </catDesc>
                   </category>
                </category>
@@ -543,6 +566,11 @@
                            <term ref="wd:Q45190" xml:lang="en">cement</term>
                         </catDesc>
                      </category>
+                     <category xml:id="c_sheeting">
+                        <catDesc>
+                           <term xml:lang="en">sheeting</term>
+                        </catDesc>
+                     </category>
                   </category>
                   <category xml:id="c_paint">
                      <catDesc>
@@ -629,6 +657,26 @@
                         <term ref="wd:Q6918773" xml:lang="en">ribbon</term>
                      </catDesc>
                   </category>
+                  <category xml:id="c_cambric">
+                     <catDesc>
+                        <term ref="wd:Q17103193" xml:lang="en">cambric</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_merino">
+                     <catDesc>
+                        <term ref="wd:Q29530715" xml:lang="en">merino</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_thread">
+                     <catDesc>
+                        <term ref="wd:Q1391831" xml:lang="en">thread</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_yarn">
+                     <catDesc>
+                        <term ref="wd:Q49007" xml:lang="en">yarn</term>
+                     </catDesc>
+                  </category>
                </category>
                <category xml:id="c_products">
                   <catDesc>
@@ -667,6 +715,11 @@
                   <category xml:id="c_cloverseeds">
                      <catDesc>
                         <term ref="wd:Q101538" xml:lang="en">clover seeds</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_beetseeds">
+                     <catDesc>
+                        <term ref="wd:Q165437" xml:lang="en">beet seeds</term>
                      </catDesc>
                   </category>
                </category>
@@ -761,11 +814,7 @@
                   <catDesc>
                      <term ref="wd:Q2095" xml:lang="en">food</term>
                   </catDesc>
-                  <category xml:id="c_eggs">
-                     <catDesc>
-                        <term xml:lang="en">eggs</term>
-                     </catDesc>
-                  </category>
+
                   <category xml:id="c_Sugarandsugarproducts">
                      <catDesc>
                         <term ref="wd:Q32106920" xml:lang="en">Sugar and sugar products</term>
@@ -789,7 +838,7 @@
                         <catDesc>
                            <term ref="wd:Q1042920" xml:lang="en">lump sugar</term>
                         </catDesc>
-                     </category>
+                     </category>  
                   </category>
                   <category xml:id="c_ediblefatsandoils">
                      <catDesc>
@@ -831,7 +880,7 @@
                         </category>
                         <category xml:id="c_coffee">
                            <catDesc>
-                              <term ref="wd:Q8486">coffee</term>
+                              <term ref="wd:Q8486" xml:lang="en">coffee</term>
                            </catDesc>
                         </category>
                      </category>
@@ -1095,6 +1144,21 @@
                            <term ref="wd:Q21546387" xml:lang="en">cranberry</term>
                         </catDesc>
                      </category>
+                     <category xml:id="c_parsnips">
+                        <catDesc>
+                           <term ref="wd:Q104413481" xml:lang="en">parsnips</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_beans">
+                        <catDesc>
+                           <term ref="wd:Q379813" xml:lang="en">beans</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_beets">
+                        <catDesc>
+                           <term ref="wd:Q165437" xml:lang="en">beets</term>
+                        </catDesc>
+                     </category>
                   </category>
                   <category xml:id="c_starch">
                      <catDesc>
@@ -1120,6 +1184,11 @@
                            <term ref="wd:Q13194939" xml:lang="en">codfish</term>
                         </catDesc>
                      </category>
+                     <category xml:id="c_mackerel">
+                        <catDesc>
+                           <term ref="wd:Q8064278" xml:lang="en">mackerel</term>
+                        </catDesc>
+                     </category>
                   </category>
                   <category xml:id="c_pastry">
                      <catDesc>
@@ -1131,7 +1200,12 @@
                         </catDesc>
                         <category xml:id="c_brownbread">
                            <catDesc>
-                              <term>brown bread</term>
+                              <term xml:lang="en">brown bread</term>
+                           </catDesc>
+                        </category>
+                        <category xml:id="c_crackers">
+                           <catDesc>
+                              <term ref="wd:Q856330" xml:lang="en">crackers</term>
                            </catDesc>
                         </category>
                      </category>
@@ -1151,11 +1225,6 @@
                   <catDesc>
                      <term ref="wd:Q11472" xml:lang="en">paper</term>
                   </catDesc>
-                  <category xml:id="c_postageofletter">
-                     <catDesc>
-                        <term xml:lang="en">postage of letter</term>
-                     </catDesc>
-                  </category>
                   <category xml:id="c_book">
                      <catDesc>
                         <term xml:lang="en">book</term>
@@ -1171,10 +1240,15 @@
                         <term xml:lang="en">psalm book</term>
                      </catDesc>
                   </category>
+                  <category xml:id="c_kitchenpaper">
+                     <catDesc>
+                        <term ref="wd:Q1151042" xml:lang="en">kitchen paper</term>
+                     </catDesc>
+                  </category>
                </category>
-               <category xml:id="c_unkown">
+               <category xml:id="c_unknown">
                   <catDesc>
-                     <term xml:lang="en">unkown</term>
+                     <term xml:lang="en">unknown</term>
                   </catDesc>
                   <category xml:id="c_do">
                      <catDesc>
@@ -1386,11 +1460,6 @@
                         <term xml:lang="en">tickets</term>
                      </catDesc>
                   </category>
-                  <category xml:id="c_parsnips">
-                     <catDesc>
-                        <term xml:lang="en">parsnips</term>
-                     </catDesc>
-                  </category>
                   <category xml:id="c_subscription">
                      <catDesc>
                         <term xml:lang="en">subscription</term>
@@ -1399,6 +1468,62 @@
                   <category xml:id="c_beefcorn">
                      <catDesc>
                         <term xml:lang="en">beef corn</term>
+                     </catDesc>
+                  </category>
+                  <!-- !!! -->
+                  <category xml:id="c_headgrass">
+                     <catDesc>
+                        <term xml:lang="en">head grass</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_lampoil">
+                     <catDesc>
+                        <term ref="wd:Q18410610" xml:lang="en">lamp oil</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_plate">
+                     <catDesc>
+                        <term ref="wd:Q57216" xml:lang="en">plates</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_ragg">
+                     <catDesc>
+                        <term xml:lang="en">ragg</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_salt">
+                     <catDesc>
+                        <term ref="wd:Q12370" xml:lang="en">salt</term>
+                     </catDesc>
+                     <category xml:id="c_pinesalt">
+                        <catDesc>
+                           <term xml:lang="en">pine salt</term>
+                        </catDesc>
+                     </category>
+                  </category>
+                  <category xml:id="c_soap">
+                     <catDesc>
+                        <term ref="wd:Q34396" xml:lang="en">soap</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_lune">
+                     <catDesc>
+                        <term xml:lang="en">lune</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_printhat">
+                     <catDesc>
+                        <term xml:lang="en">print hat.</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_morten">
+                     <catDesc>
+                        <term xml:lang="en">morten</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_marplegreen">
+                     <catDesc>
+                        <term xml:lang="en">maple green</term>
                      </catDesc>
                   </category>
                </category>

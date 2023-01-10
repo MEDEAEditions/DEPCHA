@@ -14,9 +14,9 @@
                     xml:id="{$id}">
                     <catDesc>
                         <xsl:for-each select="distinct-values(current-group())">
-                            <gloss>
+                            <term>
                                 <xsl:value-of select="normalize-space(.)"/>
-                            </gloss>
+                            </term>
                         </xsl:for-each>
                     </catDesc>
                 </category>
