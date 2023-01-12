@@ -50,7 +50,8 @@
 
     <xsl:template match="*:publicationStmt/*:idno">
         <xsl:copy>
-            <xsl:apply-templates select="@* | node()"/>
+            <xsl:apply-templates select="@*"/>
+            <xsl:value-of select="concat('o:depcha.', substring-after(., 'o:'))"/>
         </xsl:copy>
         <ref target="context:depcha.srbas" type="context">Jahrrechnungen der Stadt Basel 1535 bis
             1610 – digital</ref>
@@ -171,5 +172,11 @@
 <!-- removing facsimiles and child nodes -->
     
 <xsl:template match="*:facsimile"/> 
+
+<!-- removeing segs -->
+
+<xsl:template match="//*:seg" priority="1">
+    <xsl:apply-templates/>
+</xsl:template>
     
 </xsl:stylesheet>
