@@ -197,13 +197,13 @@
          <classDecl>
             <taxonomy ana="depcha:index">
                <gloss xml:lang="en">Commodities</gloss>
-               <category xml:id="c_animalproduct">
+               <category xml:id="c_animalproducts">
                   <catDesc>
-                     <term ref="wd:Q629103" xml:lang="en">animal product</term>
+                     <term ref="wd:Q629103" xml:lang="en">animal products</term>
                   </catDesc>
-                  <category xml:id="c_dairyproduct">
+                  <category xml:id="c_dairyproducts">
                      <catDesc>
-                        <term ref="wd:Q185217" xml:lang="en">dairy product</term>
+                        <term ref="wd:Q185217" xml:lang="en">dairy products</term>
                      </catDesc>
                      <category xml:id="c_butter">
                         <catDesc>
@@ -230,6 +230,11 @@
                      <catDesc>
                         <term ref="wd:Q3291230" xml:lang="en">hide</term>
                      </catDesc>
+                     <category xml:id="c_calfskins">
+                        <catDesc>
+                           <term xml:lang="en" ref="wd:Q2507067">calf skins</term>
+                        </catDesc>
+                     </category>
                   </category>
                </category>
                <category xml:id="c_service">
@@ -243,7 +248,7 @@
                   </category>
                   <category xml:id="c_rental">
                      <catDesc>
-                        <term ref="wd:Q157171" xml:lang="en">renting</term>
+                        <term ref="wd:Q157171" xml:lang="en">rental</term>
                      </catDesc>
                      <category xml:id="c_oxenrental">
                         <catDesc>
@@ -631,6 +636,11 @@
                            <term ref="wd:Q2236475" xml:lang="en">shirting</term>
                         </catDesc>
                      </category>
+                     <category xml:id="c_burlap">
+                        <catDesc>
+                           <term ref="wd:Q911285" xml:lang="en">burlap</term>
+                        </catDesc>
+                     </category>
                   </category>
                   <category xml:id="c_twill">
                      <catDesc>
@@ -696,6 +706,16 @@
                      <catDesc>
                         <term ref="wd:Q15026" xml:lang="en">chaise</term>
                      </catDesc>
+                  </category>
+                  <category xml:id="c_stove">
+                     <catDesc>
+                        <term ref="wd:Q203789" xml:lang="en">stove</term>
+                     </catDesc>
+                     <category xml:id="c_boxstove">
+                        <catDesc>
+                           <term xml:lang="en">box stove</term>
+                        </catDesc>
+                     </category>
                   </category>
                </category>
                <category xml:id="c_crop">
@@ -1250,6 +1270,21 @@
                   <catDesc>
                      <term xml:lang="en">unknown</term>
                   </catDesc>
+                  <category xml:id="c_batting">
+                     <catDesc>
+                        <term xml:lang="en" ref="wd:Q4869920">batting</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_bedbindings">
+                     <catDesc>
+                        <term xml:lang="en">bed bindings</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_bedtickings">
+                     <catDesc>
+                        <term xml:lang="en">bed tickings</term>
+                     </catDesc>
+                  </category>
                   <category xml:id="c_do">
                      <catDesc>
                         <term xml:lang="en">do</term>
@@ -1500,6 +1535,11 @@
                            <term xml:lang="en">pine salt</term>
                         </catDesc>
                      </category>
+                     <category xml:id="c_beefsalt">
+                        <catDesc>
+                           <term xml:lang="en">beef salt</term>
+                        </catDesc>
+                     </category>
                   </category>
                   <category xml:id="c_soap">
                      <catDesc>
@@ -1524,6 +1564,21 @@
                   <category xml:id="c_marplegreen">
                      <catDesc>
                         <term xml:lang="en">maple green</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_barrels">
+                     <catDesc>
+                        <term xml:lang="en" ref="wd:Q10289">barrels</term>
+                     </catDesc>
+                     <category xml:id="c_flourbarrels">
+                        <catDesc>
+                           <term xml:lang="en">flour barrels</term>
+                        </catDesc>
+                     </category>
+                  </category>
+                  <category xml:id="c_boxforpacking">
+                     <catDesc>
+                        <term xml:lang="en">box for packing</term>
                      </catDesc>
                   </category>
                </category>
@@ -8788,8 +8843,8 @@
                      <abbr ana="bk:credit">Cr</abbr>
                      <expan>credit</expan>
                   </choice>
-                  <lb/> By <measure ana="bk:commodity" unit="barrels" quantity="10"
-                     commodity="#c_flour">ten Flour Blls.</measure>10x </cell>
+                  <lb/> By <measure ana="bk:commodity" unit="pieces" quantity="10"
+                     commodity="#c_flourbarrels">ten Flour Blls.</measure>10x </cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
                </cell>
@@ -12126,7 +12181,7 @@
                      <expan>debtor</expan>
                   </choice>
                   <lb/> To <measure ana="bk:commodity" unit="pieces" quantity="1"
-                     commodity="#c_bullcalf">Bull Calf</measure> $9 00 </cell>
+                     commodity="#c_calf">Bull Calf</measure> $9 00 </cell>
                <cell>
                   <measure ana="bk:money" quantity="9" unit="dollar">9</measure>
                </cell>
