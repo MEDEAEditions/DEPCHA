@@ -190,37 +190,20 @@
             <unitDef type="capacity" xml:id="spools">
                <label xml:lang="en">spools</label>
             </unitDef>
+            <unitDef type="volume" xml:id="corks">
+               <label xml:lang="en">corks</label>
+            </unitDef>
             <unitDef ref="wd:Q11247037" type="weight" xml:id="tons">
                <label xml:lang="en">tons</label>
-            </unitDef>            
+            </unitDef>
          </unitDecl>
          <classDecl>
             <taxonomy ana="depcha:index">
                <gloss xml:lang="en">Commodities</gloss>
-               <category xml:id="c_animalproduct">
+               <category xml:id="c_animalproducts">
                   <catDesc>
-                     <term ref="wd:Q629103" xml:lang="en">animal product</term>
+                     <term ref="wd:Q629103" xml:lang="en">animal products</term>
                   </catDesc>
-                  <category xml:id="c_dairyproduct">
-                     <catDesc>
-                        <term ref="wd:Q185217" xml:lang="en">dairy product</term>
-                     </catDesc>
-                     <category xml:id="c_butter">
-                        <catDesc>
-                           <term ref="wd:Q34172" xml:lang="en">butter</term>
-                        </catDesc>
-                     </category>
-                     <category xml:id="c_cheese">
-                        <catDesc>
-                           <term ref="wd:Q10943" xml:lang="en">cheese</term>
-                        </catDesc>
-                     </category>
-                  </category>
-                  <category xml:id="c_eggs">
-                     <catDesc>
-                        <term ref="wd:Q93189" xml:lang="en">eggs</term>
-                     </catDesc>
-                  </category>
                   <category xml:id="c_leather">
                      <catDesc>
                         <term ref="wd:Q286" xml:lang="en">leather</term>
@@ -229,6 +212,16 @@
                   <category xml:id="c_hide">
                      <catDesc>
                         <term ref="wd:Q3291230" xml:lang="en">hide</term>
+                     </catDesc>
+                     <category xml:id="c_calfskins">
+                        <catDesc>
+                           <term xml:lang="en" ref="wd:Q2507067">calf skins</term>
+                        </catDesc>
+                     </category>
+                  </category>
+                  <category xml:id="c_feathers">
+                     <catDesc>
+                        <term xml:lang="en" ref="wd:Q81025">feathers</term>
                      </catDesc>
                   </category>
                </category>
@@ -243,7 +236,7 @@
                   </category>
                   <category xml:id="c_rental">
                      <catDesc>
-                        <term ref="wd:Q157171" xml:lang="en">renting</term>
+                        <term ref="wd:Q157171" xml:lang="en">rental</term>
                      </catDesc>
                      <category xml:id="c_oxenrental">
                         <catDesc>
@@ -253,6 +246,11 @@
                      <category xml:id="c_cartrental">
                         <catDesc>
                            <term xml:lang="en">cart rental</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_ploughrental">
+                        <catDesc>
+                           <term xml:lang="en">plough rental</term>
                         </catDesc>
                      </category>
                      <category xml:id="c_wagonrental">
@@ -276,6 +274,11 @@
                         <term xml:lang="en">postage of letter</term>
                      </catDesc>
                   </category>
+                  <category xml:id="c_keeping">
+                     <catDesc>
+                        <term xml:lang="en">keeping</term>
+                     </catDesc>
+                  </category>
                </category>
                <category xml:id="c_costumeaccessory">
                   <catDesc>
@@ -289,6 +292,11 @@
                   <category xml:id="c_buttons">
                      <catDesc>
                         <term ref="wd:Q160464" xml:lang="en">buttons</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_buckeles">
+                     <catDesc>
+                        <term ref="wd:Q1135567" xml:lang="en">buckles</term>
                      </catDesc>
                   </category>
                </category>
@@ -337,7 +345,7 @@
                      </category>
                      <category xml:id="c_shovel">
                         <catDesc>
-                           <term xml:lang="en">shovel</term>
+                           <term ref="wd:Q7220961" xml:lang="en">shovel</term>
                         </catDesc>
                      </category>
                   </category>
@@ -354,6 +362,16 @@
                   <category xml:id="c_clipboards">
                      <catDesc>
                         <term ref="wd:Q204461" xml:lang="en">clipboards</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_plainingmachine">
+                     <catDesc>
+                        <term xml:lang="en">plaining machine</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_rod">
+                     <catDesc>
+                        <term ref="wd:Q111311682" xml:lang="en">(coal) rod</term>
                      </catDesc>
                   </category>
                </category>
@@ -384,11 +402,6 @@
                   <category xml:id="c_pig">
                      <catDesc>
                         <term ref="wd:Q787" xml:lang="en">pig</term>
-                     </catDesc>
-                  </category>
-                  <category xml:id="c_cattle">
-                     <catDesc>
-                        <term ref="wd:Q830" xml:lang="en">cattle</term>
                      </catDesc>
                   </category>
                   <category xml:id="c_oxen">
@@ -439,26 +452,46 @@
                            <catDesc>
                               <term ref="wd:Q1503211" xml:lang="en">pine wood</term>
                            </catDesc>
+                           <category xml:id="c_freshpine">
+                              <catDesc>
+                                 <term xml:lang="en">fresh pine</term>
+                              </catDesc>
+                           </category>
+                           <category xml:id="c_pinestick">
+                              <catDesc>
+                                 <term xml:lang="en">pine stick</term>
+                              </catDesc>
+                           </category>
+                           <category xml:id="c_hardpine">
+                              <catDesc>
+                                 <term xml:lang="en">hard pine</term>
+                              </catDesc>
+                           </category>
+                           <category xml:id="c_pineboard">
+                              <catDesc>
+                                 <term xml:lang="en">pine board</term>
+                              </catDesc>
+                           </category>
+                           <category xml:id="c_pineplank">
+                              <catDesc>
+                                 <term xml:lang="en">pine plank</term>
+                              </catDesc>
+                           </category>
+                           <category xml:id="c_sawedpinewood">
+                              <catDesc>
+                                 <term xml:lang="en">sawed pine wood</term>
+                              </catDesc>
+                           </category>
                         </category>
-                        <category xml:id="c_freshpine">
+                        <category xml:id="c_sprucewood">
                            <catDesc>
-                              <term ref="wd:Q1503211" xml:lang="en">fresh pine</term>
+                              <term ref="wd:Q2046308" xml:lang="en">spruce wood</term>
                            </catDesc>
-                        </category>
-                        <category xml:id="c_pinelogs">
-                           <catDesc>
-                              <term ref="wd:Q3737064" xml:lang="en">pine logs</term>
-                           </catDesc>
-                        </category>
-                        <category xml:id="c_pinestick">
-                           <catDesc>
-                              <term ref="wd:Q287" xml:lang="en">pine stick</term>
-                           </catDesc>
-                        </category>
-                        <category xml:id="c_hardpine">
-                           <catDesc>
-                              <term xml:lang="en">hard pine</term>
-                           </catDesc>
+                           <category xml:id="c_spruceplank">
+                              <catDesc>
+                                 <term xml:lang="en">spruce plank</term>
+                              </catDesc>
+                           </category>
                         </category>
                      </category>
                      <category xml:id="c_hardwood">
@@ -470,11 +503,21 @@
                               <term ref="wd:Q2075708" xml:lang="en">oak wood</term>
                            </catDesc>
                         </category>
+                        <category xml:id="c_maplewood">
+                           <catDesc>
+                              <term ref="wd:Q402516" xml:lang="en">maplewood</term>
+                           </catDesc>
+                        </category>
                      </category>
                      <category xml:id="c_logs">
                         <catDesc>
                            <term ref="wd:Q3737064" xml:lang="en">logs</term>
                         </catDesc>
+                        <category xml:id="c_pinelogs">
+                           <catDesc>
+                              <term xml:lang="en">pine logs</term>
+                           </catDesc>
+                        </category>
                      </category>
                   </category>
                   <category xml:id="c_forestproduct">
@@ -485,16 +528,7 @@
                         <catDesc>
                            <term ref="wd:Q1370714" xml:lang="en">lumber</term>
                         </catDesc>
-                        <category xml:id="c_pineboard">
-                           <catDesc>
-                              <term ref="wd:Q1370714" xml:lang="en">pine board</term>
-                           </catDesc>
-                        </category>
-                        <category xml:id="c_sawedpinewood">
-                           <catDesc>
-                              <term xml:lang="en">sawed pine wood</term>
-                           </catDesc>
-                        </category>
+
                         <category xml:id="c_timber">
                            <catDesc>
                               <term ref="wd:Q1370714" xml:lang="en">timber</term>
@@ -545,11 +579,26 @@
                         <catDesc>
                            <term ref="wd:Q41551" xml:lang="en">pipe</term>
                         </catDesc>
-                     </category>
-                     <category xml:id="c_stovepipe">
-                        <catDesc>
-                           <term xml:lang="en">stove pipe</term>
-                        </catDesc>
+                        <category xml:id="c_stovepipe">
+                           <catDesc>
+                              <term xml:lang="en">stove pipe</term>
+                           </catDesc>
+                        </category>
+                        <category xml:id="c_funnel">
+                           <catDesc>
+                              <term ref="wd:Q29957" xml:lang="en">funnel</term>
+                           </catDesc>
+                        </category>
+                        <category xml:id="c_knee">
+                           <catDesc>
+                              <term xml:lang="en">(pipe) knee</term>
+                           </catDesc>
+                        </category>
+                        <category xml:id="c_leadpipe">
+                           <catDesc>
+                              <term xml:lang="en">lead pipe</term>
+                           </catDesc>
+                        </category>
                      </category>
                      <category xml:id="c_rail">
                         <catDesc>
@@ -569,6 +618,26 @@
                      <category xml:id="c_sheeting">
                         <catDesc>
                            <term xml:lang="en">sheeting</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_joist">
+                        <catDesc>
+                           <term ref="wd:Q6587065" xml:lang="en">joist</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_lime">
+                        <catDesc>
+                           <term ref="wd:Q250423" xml:lang="en">lime</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_wall">
+                        <catDesc>
+                           <term ref="wd:Q42948" xml:lang="en">wall</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_shingles">
+                        <catDesc>
+                           <term ref="wd:Q2227106" xml:lang="en">shingles</term>
                         </catDesc>
                      </category>
                   </category>
@@ -591,6 +660,31 @@
                      <catDesc>
                         <term ref="wd:Q11469" xml:lang="en">glass</term>
                      </catDesc>
+                  </category>
+                  <category xml:id="c_coal">
+                     <catDesc>
+                        <term ref="wd:Q24489" xml:lang="en">coal</term>
+                     </catDesc>
+                     <category xml:id="c_charcoal">
+                        <catDesc>
+                           <term ref="wd:Q177463" xml:lang="en">charcoal</term>
+                        </catDesc>
+                     </category>
+                  </category>
+                  <category xml:id="c_cotton">
+                     <catDesc>
+                        <term ref="wd:Q11457" xml:lang="en">cotton</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_wool">
+                     <catDesc>
+                        <term ref="wd:Q42329" xml:lang="en">wool</term>
+                     </catDesc>
+                     <category xml:id="c_mohair">
+                        <catDesc>
+                           <term ref="wd:Q179628" xml:lang="en">mohair</term>
+                        </catDesc>
+                     </category>
                   </category>
                </category>
                <category xml:id="c_textile">
@@ -618,7 +712,17 @@
                      </category>
                      <category xml:id="c_gingham">
                         <catDesc>
-                           <term ref="Q2289640" xml:lang="en">gingham</term>
+                           <term ref="wd:Q2289640" xml:lang="en">gingham</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_jean">
+                        <catDesc>
+                           <term ref="wd:Q652698" xml:lang="en">jean</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_muslin">
+                        <catDesc>
+                           <term ref="wd:Q725457" xml:lang="en">muslin</term>
                         </catDesc>
                      </category>
                   </category>
@@ -629,6 +733,21 @@
                      <category xml:id="c_shirting">
                         <catDesc>
                            <term ref="wd:Q2236475" xml:lang="en">shirting</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_burlap">
+                        <catDesc>
+                           <term ref="wd:Q911285" xml:lang="en">burlap</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_linen">
+                        <catDesc>
+                           <term ref="wd:Q1426327" xml:lang="en">linen</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_whalebone">
+                        <catDesc>
+                           <term ref="wd:Q2997827" xml:lang="en">whale bone (textile)</term>
                         </catDesc>
                      </category>
                   </category>
@@ -651,6 +770,16 @@
                      <catDesc>
                         <term ref="wd:Q37681" xml:lang="en">silk</term>
                      </catDesc>
+                     <category xml:id="c_sarsenet">
+                        <catDesc>
+                           <term ref="wd:Q97107503" xml:lang="en">sarsenet</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_satin">
+                        <catDesc>
+                           <term ref="wd:Q14298" xml:lang="en">satin</term>
+                        </catDesc>
+                     </category>
                   </category>
                   <category xml:id="c_ribbon">
                      <catDesc>
@@ -697,30 +826,100 @@
                         <term ref="wd:Q15026" xml:lang="en">chaise</term>
                      </catDesc>
                   </category>
+                  <category xml:id="c_stove">
+                     <catDesc>
+                        <term ref="wd:Q203789" xml:lang="en">stove</term>
+                     </catDesc>
+                     <category xml:id="c_boxstove">
+                        <catDesc>
+                           <term xml:lang="en">box stove</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_cookstove">
+                        <catDesc>
+                           <term xml:lang="en">cook stove</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_cylinderstove">
+                        <catDesc>
+                           <term xml:lang="en">cylinder stove</term>
+                        </catDesc>
+                     </category>
+                  </category>
+                  <category xml:id="c_comb">
+                     <catDesc>
+                        <term ref="wd:Q23834" xml:lang="en">comb</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_cornsheller">
+                     <catDesc>
+                        <term ref="wd:Q16248227" xml:lang="en">corn sheller</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_handkerchief">
+                     <catDesc>
+                        <term ref="wd:Q192411" xml:lang="en">handkerchief</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_needles">
+                     <catDesc>
+                        <term ref="wd:Q56145959" xml:lang="en">needles</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_umbrella">
+                     <catDesc>
+                        <term ref="wd:Q41607" xml:lang="en">umbrella</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_parasol">
+                     <catDesc>
+                        <term ref="wd:Q1762975" xml:lang="en">parasol</term>
+                     </catDesc>
+                  </category>
                </category>
                <category xml:id="c_crop">
                   <catDesc>
                      <term ref="wd:Q235352" xml:lang="en">crop</term>
                   </catDesc>
-                  <category xml:id="c_cornseeds">
-                     <catDesc>
-                        <term ref="wd:Q40763" xml:lang="en">corn seeds</term>
-                     </catDesc>
-                  </category>
                   <category xml:id="c_hay">
                      <catDesc>
                         <term ref="wd:Q336989" xml:lang="en">hay</term>
                      </catDesc>
                   </category>
-                  <category xml:id="c_cloverseeds">
+                  <category xml:id="c_seeds">
                      <catDesc>
-                        <term ref="wd:Q101538" xml:lang="en">clover seeds</term>
+                        <term ref="wd:Q40763" xml:lang="en">seeds</term>
                      </catDesc>
+                     <category xml:id="c_cloverseeds">
+                        <catDesc>
+                           <term ref="wd:Q101538" xml:lang="en">clover seeds</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_beetseeds">
+                        <catDesc>
+                           <term ref="wd:Q165437" xml:lang="en">beet seeds</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_cornseeds">
+                        <catDesc>
+                           <term ref="wd:Q11575" xml:lang="en">corn seeds</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_hayseeds">
+                        <catDesc>
+                           <term>Hayseed</term>
+                        </catDesc>
+                     </category>
                   </category>
-                  <category xml:id="c_beetseeds">
+                  <category xml:id="c_tree">
                      <catDesc>
-                        <term ref="wd:Q165437" xml:lang="en">beet seeds</term>
+                        <term ref="wd:Q10884" xml:lang="en">tree</term>
                      </catDesc>
+                     <category xml:id="c_elmtree">
+                        <catDesc>
+                           <term ref="wd:Q59779164" xml:lang="en">elm tree</term>
+                        </catDesc>
+                     </category>
                   </category>
                </category>
                <!--  -->
@@ -743,6 +942,16 @@
                         <term ref="wd:Q39908" xml:lang="en">pants</term>
                      </catDesc>
                   </category>
+                  <category xml:id="c_hose">
+                     <catDesc>
+                        <term ref="wd:Q3059530" xml:lang="en">hose</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_hosiery">
+                     <catDesc>
+                        <term ref="wd:Q2524539" xml:lang="en">hosiery</term>
+                     </catDesc>
+                  </category>
                   <category xml:id="c_headgear">
                      <catDesc>
                         <term ref="wd:Q14952" xml:lang="en">headgear</term>
@@ -750,6 +959,11 @@
                      <category xml:id="c_hat">
                         <catDesc>
                            <term ref="wd:Q80151" xml:lang="en">hat</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_bonnet">
+                        <catDesc>
+                           <term ref="wd:Q1149531" xml:lang="en">bonnet</term>
                         </catDesc>
                      </category>
                   </category>
@@ -777,6 +991,11 @@
                            <term ref="wd:Q43663" xml:lang="en">socks</term>
                         </catDesc>
                      </category>
+                     <category xml:id="c_slippers">
+                        <catDesc>
+                           <term ref="wd:Q876824" xml:lang="en">slippers</term>
+                        </catDesc>
+                     </category>
                   </category>
                   <category xml:id="c_handwear">
                      <catDesc>
@@ -788,14 +1007,39 @@
                         </catDesc>
                      </category>
                   </category>
+                  <category xml:id="c_neckwear">
+                     <catDesc>
+                        <term ref="wd:Q6985603" xml:lang="en">neckwear</term>
+                     </catDesc>
+                     <category xml:id="c_collar">
+                        <catDesc>
+                           <term ref="wd:Q497903" xml:lang="en">collar</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_cravat">
+                        <catDesc>
+                           <term ref="wd:Q3245189" xml:lang="en">cravat</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_scarf">
+                        <catDesc>
+                           <term ref="wd:Q191022" xml:lang="en">scarf</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_shawl">
+                        <catDesc>
+                           <term ref="wd:Q3354532" xml:lang="en">shawl</term>
+                        </catDesc>
+                     </category>
+                  </category>
                   <category xml:id="c_coat">
                      <catDesc>
                         <term ref="wd:Q152574" xml:lang="en">coat</term>
                      </catDesc>
                   </category>
-                  <category xml:id="c_buckeles">
+                  <category xml:id="c_cloak">
                      <catDesc>
-                        <term xml:lang="en">buckeles</term>
+                        <term ref="wd:Q516992" xml:lang="en">cloak</term>
                      </catDesc>
                   </category>
                </category>
@@ -815,9 +1059,9 @@
                      <term ref="wd:Q2095" xml:lang="en">food</term>
                   </catDesc>
 
-                  <category xml:id="c_Sugarandsugarproducts">
+                  <category xml:id="c_sugarandsugarproducts">
                      <catDesc>
-                        <term ref="wd:Q32106920" xml:lang="en">Sugar and sugar products</term>
+                        <term ref="wd:Q32106920" xml:lang="en">sugar and sugar products</term>
                      </catDesc>
                      <category xml:id="c_sugar">
                         <catDesc>
@@ -1025,6 +1269,31 @@
                         </catDesc>
                      </category>
                   </category>
+                  <category xml:id="c_dairyproducts">
+                     <catDesc>
+                        <term ref="wd:Q185217" xml:lang="en">dairy products</term>
+                     </catDesc>
+                     <category xml:id="c_butter">
+                        <catDesc>
+                           <term ref="wd:Q34172" xml:lang="en">butter</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_cheese">
+                        <catDesc>
+                           <term ref="wd:Q10943" xml:lang="en">cheese</term>
+                        </catDesc>
+                        <category xml:id="c_sagecheese">
+                           <catDesc>
+                              <term xml:lang="en">sage cheese</term>
+                           </catDesc>
+                        </category>
+                     </category>
+                  </category>
+                  <category xml:id="c_eggs">
+                     <catDesc>
+                        <term ref="wd:Q93189" xml:lang="en">eggs</term>
+                     </catDesc>
+                  </category>
                   <category xml:id="c_meat">
                      <catDesc>
                         <term ref="wd:Q10990" xml:lang="en">meat</term>
@@ -1087,6 +1356,16 @@
                      <category xml:id="c_ribs">
                         <catDesc>
                            <term xml:lang="en">ribs</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_sausages">
+                        <catDesc>
+                           <term ref="wd:Q131419" xml:lang="en">sausages</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="c_sausagemeat">
+                        <catDesc>
+                           <term ref="wd:Q995566" xml:lang="en">sausage meat</term>
                         </catDesc>
                      </category>
                   </category>
@@ -1159,6 +1438,11 @@
                            <term ref="wd:Q165437" xml:lang="en">beets</term>
                         </catDesc>
                      </category>
+                     <category xml:id="c_raisins" xml:lang="en">
+                        <catDesc>
+                           <term ref="wd:Q13186">raisins</term>
+                        </catDesc>
+                     </category>
                   </category>
                   <category xml:id="c_starch">
                      <catDesc>
@@ -1196,7 +1480,7 @@
                      </catDesc>
                      <category xml:id="c_bread">
                         <catDesc>
-                           <term ref="Q7802" xml:lang="en">bread</term>
+                           <term ref="wd:Q7802" xml:lang="en">bread</term>
                         </catDesc>
                         <category xml:id="c_brownbread">
                            <catDesc>
@@ -1246,10 +1530,30 @@
                      </catDesc>
                   </category>
                </category>
-               <category xml:id="c_unknown">
+               <category xml:id="c_unspecified">
                   <catDesc>
-                     <term xml:lang="en">unknown</term>
+                     <term xml:lang="en">unspecified</term>
                   </catDesc>
+                  <category xml:id="c_batting">
+                     <catDesc>
+                        <term xml:lang="en" ref="wd:Q4869920">batting</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_bedbindings">
+                     <catDesc>
+                        <term xml:lang="en">bed bindings</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_bedtickings">
+                     <catDesc>
+                        <term xml:lang="en">bed tickings</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_patches">
+                     <catDesc>
+                        <term ref="wd:Q2058306" xml:lang="en">patches</term>
+                     </catDesc>
+                  </category>
                   <category xml:id="c_do">
                      <catDesc>
                         <term xml:lang="en">do</term>
@@ -1500,6 +1804,11 @@
                            <term xml:lang="en">pine salt</term>
                         </catDesc>
                      </category>
+                     <category xml:id="c_beefsalt">
+                        <catDesc>
+                           <term xml:lang="en">beef salt</term>
+                        </catDesc>
+                     </category>
                   </category>
                   <category xml:id="c_soap">
                      <catDesc>
@@ -1524,6 +1833,91 @@
                   <category xml:id="c_marplegreen">
                      <catDesc>
                         <term xml:lang="en">maple green</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_barrels">
+                     <catDesc>
+                        <term xml:lang="en" ref="wd:Q10289">barrels</term>
+                     </catDesc>
+                     <category xml:id="c_flourbarrels">
+                        <catDesc>
+                           <term xml:lang="en">flour barrels</term>
+                        </catDesc>
+                     </category>
+                  </category>
+                  <category xml:id="c_boxforpacking">
+                     <catDesc>
+                        <term xml:lang="en">box for packing</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_fringe">
+                     <catDesc>
+                        <term xml:lang="en">fringe</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_goods">
+                     <catDesc>
+                        <term xml:lang="en">goods</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_hair">
+                     <catDesc>
+                        <term xml:lang="en">hair</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_irondoor">
+                     <catDesc>
+                        <term xml:lang="en">iron door</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_lead">
+                     <catDesc>
+                        <term xml:lang="en">lead</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_lock">
+                     <catDesc>
+                        <term xml:lang="en">lock</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_newmilk">
+                     <catDesc>
+                        <term xml:lang="en">new milk</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_oldchimney">
+                     <catDesc>
+                        <term xml:lang="en">old chimney</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_powder">
+                     <catDesc>
+                        <term xml:lang="en">powder</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_quilt">
+                     <catDesc>
+                        <term ref="wd:Q1064538" xml:lang="en">quilt</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_wagon">
+                     <catDesc>
+                        <term ref="wd:Q859281" xml:lang="en">wagon</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_sockrounds">
+                     <catDesc>
+                        <term>sock rounds</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_stringbells">
+                     <catDesc>
+                        <term xml:lang="en">string bells</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_stripes">
+                     <catDesc>
+                        <term xml:lang="en">stripes</term>
                      </catDesc>
                   </category>
                </category>
