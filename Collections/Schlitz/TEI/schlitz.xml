@@ -4,12 +4,12 @@
         <fileDesc>
             <titleStmt>
                 <title>Alhambra Theater p177</title>
-                <author ana="bk:to" ref="pers_TheSchlitzBros">Schlitz</author>
+                <author ref="#pers_schlitz">Schlitz</author>
             </titleStmt>
             <publicationStmt>
                 <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
                 <idno type="PID">o:depcha.schlitz.1</idno>
-                <ref target="info:fedora/context:depcha.schlitz" type="context">Schlitz</ref>
+                <ref target="context:depcha.schlitz" type="context">Schlitz</ref>
             </publicationStmt>
             <sourceDesc>
                 <msDesc>
@@ -49,7 +49,7 @@
                 </prefixDef>
             </listPrefixDef>
             <unitDecl>
-                <unitDef ref="wd:Q4917" type="currency" xml:id="dollar" ana="bk:mainCurrency" from="1690">
+                <unitDef ref="wd:Q4917" type="currency" xml:id="dollar" ana="depcha:mainCurrency" from="1690">
                     <label xml:lang="en">dollar</label>
                     <label type="abbreviation">$</label>
                     <country>USA</country>
@@ -74,6 +74,17 @@
                 </taxonomy>
             </classDecl>
         </encodingDesc>
+        <profileDesc>
+            <particDesc>
+                <listPerson ana="depcha:index">
+                    <person xml:id="pers_schlitz" ana="bk:to depcha:accountHolder">
+                        <persName>
+                            <surname>Schlitz</surname>
+                        </persName>
+                    </person>
+                </listPerson>
+            </particDesc>
+        </profileDesc>
     </teiHeader>
     <text>
         <body>
