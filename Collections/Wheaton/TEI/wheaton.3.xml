@@ -393,6 +393,11 @@
                      <catDesc>
                         <term ref="wd:Q11748378" xml:lang="en">cow</term>
                      </catDesc>
+                     <category xml:id="c_heifer">
+                        <catDesc>
+                           <term ref="wd:Q9092653" xml:lang="en">heifer</term>
+                        </catDesc>
+                     </category>
                   </category>
                   <category xml:id="c_calf">
                      <catDesc>
@@ -435,7 +440,6 @@
                      </catDesc>
                   </category>
                </category>
-               <!--  -->
                <category xml:id="c_basematerial">
                   <catDesc>
                      <term ref="wd:Q214609" xml:lang="en">base material</term>
@@ -506,6 +510,11 @@
                         <category xml:id="c_maplewood">
                            <catDesc>
                               <term ref="wd:Q402516" xml:lang="en">maplewood</term>
+                           </catDesc>
+                        </category>
+                        <category xml:id="c_birchwood">
+                           <catDesc>
+                              <term ref="wd:Q865564" xml:lang="en">birch wood</term>
                            </catDesc>
                         </category>
                      </category>
@@ -683,6 +692,16 @@
                      <category xml:id="c_mohair">
                         <catDesc>
                            <term ref="wd:Q179628" xml:lang="en">mohair</term>
+                        </catDesc>
+                     </category>
+                  </category>
+                  <category xml:id="c_iron">
+                     <catDesc>
+                        <term ref="wd:Q10772391" xml:lang="en">iron</term>
+                     </catDesc>
+                     <category xml:id="c_wroughiron">
+                        <catDesc>
+                           <term ref="wd:Q860451" xml:lang="en">wrough iron</term>
                         </catDesc>
                      </category>
                   </category>
@@ -876,6 +895,11 @@
                         <term ref="wd:Q1762975" xml:lang="en">parasol</term>
                      </catDesc>
                   </category>
+                  <category xml:id="c_curtains">
+                     <catDesc>
+                        <term ref="wd:Q49005" xml:lang="en">curtains</term>
+                     </catDesc>
+                  </category>
                </category>
                <category xml:id="c_crop">
                   <catDesc>
@@ -907,7 +931,7 @@
                      </category>
                      <category xml:id="c_hayseeds">
                         <catDesc>
-                           <term>Hayseed</term>
+                           <term xml:lang="en">hay seeds</term>
                         </catDesc>
                      </category>
                   </category>
@@ -922,7 +946,6 @@
                      </category>
                   </category>
                </category>
-               <!--  -->
                <category xml:id="c_clothing">
                   <catDesc>
                      <term ref="wd:Q11460" xml:lang="en">clothing</term>
@@ -1043,7 +1066,6 @@
                      </catDesc>
                   </category>
                </category>
-               <!--  -->
                <category xml:id="c_spice">
                   <catDesc>
                      <term ref="wd:Q42527" xml:lang="en">spice</term>
@@ -1058,7 +1080,6 @@
                   <catDesc>
                      <term ref="wd:Q2095" xml:lang="en">food</term>
                   </catDesc>
-
                   <category xml:id="c_sugarandsugarproducts">
                      <catDesc>
                         <term ref="wd:Q32106920" xml:lang="en">sugar and sugar products</term>
@@ -1440,7 +1461,7 @@
                      </category>
                      <category xml:id="c_raisins" xml:lang="en">
                         <catDesc>
-                           <term ref="wd:Q13186">raisins</term>
+                           <term xml:lang="en" ref="wd:Q13186">raisins</term>
                         </catDesc>
                      </category>
                   </category>
@@ -1774,7 +1795,6 @@
                         <term xml:lang="en">beef corn</term>
                      </catDesc>
                   </category>
-                  <!-- !!! -->
                   <category xml:id="c_headgrass">
                      <catDesc>
                         <term xml:lang="en">head grass</term>
@@ -1907,7 +1927,7 @@
                   </category>
                   <category xml:id="c_sockrounds">
                      <catDesc>
-                        <term>sock rounds</term>
+                        <term xml:lang="en">sock rounds</term>
                      </catDesc>
                   </category>
                   <category xml:id="c_stringbells">
@@ -1918,6 +1938,16 @@
                   <category xml:id="c_stripes">
                      <catDesc>
                         <term xml:lang="en">stripes</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_insurance">
+                     <catDesc>
+                        <term ref="wd:Q43183" xml:lang="en">insurance</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_tax">
+                     <catDesc>
+                        <term ref="wd:Q8161" xml:lang="en">tax</term>
                      </catDesc>
                   </category>
                </category>
@@ -14208,7 +14238,7 @@
                      <abbr ana="bk:credit">Cr</abbr>
                      <expan>credit</expan>
                   </choice>
-                  <lb/> By <measure ana="bk:service" commodity="#c_keeping">keeping Heiffer to
+                  <lb/> By <measure ana="bk:service" commodity="#c_keeping" unit="_" quantity="1">keeping Heiffer to
                      date</measure>
                </cell>
                <cell/>
@@ -14242,7 +14272,7 @@
                      <abbr ana="bk:debit">D</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/> To <measure ana="bk:commodity" commodity="#c_apples">lot of Apples</measure>
+                  <lb/> To <measure ana="bk:commodity" commodity="#c_apples" unit="_" quantity="1">lot of Apples</measure>
                   4/6 </cell>
                <cell/>
                <cell>
@@ -16032,7 +16062,7 @@
                      <abbr ana="bk:credit">Cr</abbr>
                      <expan>credit</expan>
                   </choice>
-                  <lb/> " <measure ana="bk:service" commodity="#c_work">work </measure>from date pr
+                  <lb/> " <measure ana="bk:service" commodity="#c_work" unit="_" quantity="1">work </measure>from date pr
                   agreement </cell>
                <cell/>
                <cell/>
@@ -17615,7 +17645,7 @@
                      <abbr ana="bk:debit">D</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/> To <measure ana="bk:service" commodity="#c_use"> use of
+                  <lb/> To <measure ana="bk:service" commodity="#c_use" unit="_" quantity="1"> use of
                   Land</measure>, damage </cell>
                <cell>
                   <measure ana="bk:money" quantity="20" unit="dollar">20</measure>
@@ -17900,7 +17930,7 @@
                <cell ana="bk:status" corresp="#524">524</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH190" type="person"/>By <measure ana="bk:service"
-                     commodity="#c_work">work at Doct. Morey Place</measure>
+                     commodity="#c_work" unit="_" quantity="1">work at Doct. Morey Place</measure>
                </cell>
                <cell>
                   <measure ana="bk:money" quantity="25" unit="dollar">25</measure>
@@ -18170,7 +18200,7 @@
                      <abbr ana="bk:credit">Cr</abbr>
                      <expan>credit</expan>
                   </choice>
-                  <lb/> To <measure ana="bk:commodity" commodity="#c_timber"> Timber</measure> April
+                  <lb/> To <measure ana="bk:commodity" commodity="#c_timber" unit="_" quantity="1"> Timber</measure> April
                   20th 1843 </cell>
                <cell/>
                <cell>
@@ -18551,7 +18581,7 @@
                      <abbr ana="bk:debit">D</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/>to paying for House, towards <measure ana="bk:service" commodity="#c_work"
+                  <lb/>to paying for House, towards <measure ana="bk:service" commodity="#c_work" unit="_" quantity="1"
                      >Work on House</measure>
                </cell>
                <cell>
@@ -18569,7 +18599,7 @@
                      <abbr ana="bk:debit">D</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/> To <measure ana="bk:service" commodity="#c_ploughrental">cattle + Plough </measure>to plough two
+                  <lb/> To <measure ana="bk:service" commodity="#c_ploughrental" unit="_" quantity="1">cattle + Plough </measure>to plough two
                   <lb/>gardens </cell>
                <cell/>
                <cell/>
@@ -18686,7 +18716,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/> " <measure ana="bk:commodity" commodity="#c_potatoes">Potatoes</measure>
+                  <lb/> " <measure ana="bk:commodity" commodity="#c_potatoes" unit="_" quantity="1">Potatoes</measure>
                </cell>
                <cell/>
                <cell/>
@@ -18934,7 +18964,7 @@
                      <abbr ana="bk:debit">D</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/> To <measure ana="bk:commodity" commodity="#c_potatoes">Potatoes
+                  <lb/> To <measure ana="bk:commodity" commodity="#c_potatoes" unit="_" quantity="1">Potatoes
                   </measure>some time since </cell>
                <cell/>
                <cell/>
@@ -19229,7 +19259,7 @@
                <cell ana="bk:status" corresp="#524">524</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH190" type="person"/>" <measure ana="bk:commodity"
-                     commodity="#c_hay"> Hay</measure>
+                     commodity="#c_hay" unit="_" quantity="1"> Hay</measure>
                </cell>
                <cell>
                   <measure ana="bk:money" quantity="1" unit="dollar">1</measure>
@@ -19257,7 +19287,7 @@
                      <abbr ana="bk:debit">D</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/> To <measure ana="bk:service" commodity="#c_use">use of Grass land
+                  <lb/> To <measure ana="bk:service" commodity="#c_use" unit="_" quantity="1">use of Grass land
                      &amp;c.</measure>
                </cell>
                <cell/>
@@ -19422,7 +19452,7 @@
                      <abbr ana="bk:credit">Cr</abbr>
                      <expan>credit</expan>
                   </choice>
-                  <lb/> By <measure ana="bk:service" commodity="#c_work">work from Aug. 23 at 3/ pr
+                  <lb/> By <measure ana="bk:service" commodity="#c_work" unit="_" quantity="1">work from Aug. 23 at 3/ pr
                      day</measure>
                </cell>
                <cell/>
@@ -19604,7 +19634,7 @@
                <cell ana="bk:status" corresp="#524">524</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH190" type="person"/>" <measure ana="bk:commodity"
-                     commodity="#c_pinetimber">Pine Timber </measure> do. </cell>
+                     commodity="#c_pinetimber" unit="_" quantity="1">Pine Timber </measure> do. </cell>
                <cell>
                   <measure ana="bk:money" quantity="10" unit="dollar">10</measure>
                </cell>
@@ -19918,7 +19948,7 @@
                   </choice>
                   <lb/>
                   <measure ana="bk:commodity" unit="pairs" quantity="1" commodity="#c_hose">1 pr
-                     Worsted Hose</measure> 30x <measure ana="bk:commodity" commodity="#c_wool">Wool
+                     Worsted Hose</measure> 30x <measure ana="bk:commodity" commodity="#c_wool" unit="_" quantity="1">Wool
                   </measure>do 50x </cell>
                <cell/>
                <cell>
@@ -20541,7 +20571,7 @@
                      <abbr ana="bk:debit">D</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/> To <measure ana="bk:service" commodity="#c_rental">use of building
+                  <lb/> To <measure ana="bk:service" commodity="#c_use" unit="_" quantity="1">use of building
                      spot for nothing</measure>
                </cell>
                <cell/>
@@ -20675,7 +20705,7 @@
                      <abbr ana="bk:debit">Dr</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/>To paying Kelley for <measure ana="bk:commodity" commodity="#c_lock"
+                  <lb/>To paying Kelley for <measure ana="bk:commodity" commodity="#c_lock" unit="pieces" quantity="1"
                      >Lock</measure>
                   <lb/>puting on the same </cell>
                <cell>
@@ -20698,7 +20728,7 @@
                      <abbr ana="bk:debit">D</abbr>
                      <expan>debtor</expan>
                   </choice>
-                  <lb/> To <measure ana="bk:commodity" unit="pieces" commodity="#c_linen">Linen for
+                  <lb/> To <measure ana="bk:commodity" commodity="#c_linen" quantity="1" unit="_">Linen for
                      Shirts </measure> as pr Book </cell>
                <cell/>
                <cell>
@@ -21169,7 +21199,7 @@
                      <expan>debtor</expan>
                   </choice>
                   <lb/>
-                  <measure ana="bk:commodity" unit="pieces" commodity="#c_charcoal">Char Coal dld.
+                  <measure ana="bk:commodity" commodity="#c_charcoal" quantity="1" unit="_">Char Coal dld.
                      John</measure>
                </cell>
                <cell/>
@@ -22584,8 +22614,8 @@
                      <abbr ana="bk:credit">Cr</abbr>
                      <expan>credit</expan>
                   </choice>
-                  <lb/>By <measure ana="bk:service" commodity="#c_work">work</measure> of himself
-                  &amp; <measure ana="bk:service" commodity="#c_work">wife</measure> from April 1st?
+                  <lb/>By <measure ana="bk:service" commodity="#c_work" unit="_" quantity="1">work</measure> of himself
+                  &amp; <measure ana="bk:service" commodity="#c_work" unit="_" quantity="1">wife</measure> from April 1st?
                   to date -</cell>
                <cell/>
                <cell>

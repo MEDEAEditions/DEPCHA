@@ -392,6 +392,11 @@
                      <catDesc>
                         <term ref="wd:Q11748378" xml:lang="en">cow</term>
                      </catDesc>
+                     <category xml:id="c_heifer">
+                        <catDesc>
+                           <term ref="wd:Q9092653" xml:lang="en">heifer</term>
+                        </catDesc>
+                     </category>
                   </category>
                   <category xml:id="c_calf">
                      <catDesc>
@@ -434,7 +439,6 @@
                      </catDesc>
                   </category>
                </category>
-               <!--  -->
                <category xml:id="c_basematerial">
                   <catDesc>
                      <term ref="wd:Q214609" xml:lang="en">base material</term>
@@ -505,6 +509,11 @@
                         <category xml:id="c_maplewood">
                            <catDesc>
                               <term ref="wd:Q402516" xml:lang="en">maplewood</term>
+                           </catDesc>
+                        </category>
+                        <category xml:id="c_birchwood">
+                           <catDesc>
+                              <term ref="wd:Q865564" xml:lang="en">birch wood</term>
                            </catDesc>
                         </category>
                      </category>
@@ -682,6 +691,16 @@
                      <category xml:id="c_mohair">
                         <catDesc>
                            <term ref="wd:Q179628" xml:lang="en">mohair</term>
+                        </catDesc>
+                     </category>
+                  </category>
+                  <category xml:id="c_iron">
+                     <catDesc>
+                        <term ref="wd:Q10772391" xml:lang="en">iron</term>
+                     </catDesc>
+                     <category xml:id="c_wroughiron">
+                        <catDesc>
+                           <term ref="wd:Q860451" xml:lang="en">wrough iron</term>
                         </catDesc>
                      </category>
                   </category>
@@ -875,6 +894,11 @@
                         <term ref="wd:Q1762975" xml:lang="en">parasol</term>
                      </catDesc>
                   </category>
+                  <category xml:id="c_curtains">
+                     <catDesc>
+                        <term ref="wd:Q49005" xml:lang="en">curtains</term>
+                     </catDesc>
+                  </category>
                </category>
                <category xml:id="c_crop">
                   <catDesc>
@@ -906,7 +930,7 @@
                      </category>
                      <category xml:id="c_hayseeds">
                         <catDesc>
-                           <term>Hayseed</term>
+                           <term xml:lang="en">hay seeds</term>
                         </catDesc>
                      </category>
                   </category>
@@ -921,7 +945,6 @@
                      </category>
                   </category>
                </category>
-               <!--  -->
                <category xml:id="c_clothing">
                   <catDesc>
                      <term ref="wd:Q11460" xml:lang="en">clothing</term>
@@ -1042,7 +1065,6 @@
                      </catDesc>
                   </category>
                </category>
-               <!--  -->
                <category xml:id="c_spice">
                   <catDesc>
                      <term ref="wd:Q42527" xml:lang="en">spice</term>
@@ -1057,7 +1079,6 @@
                   <catDesc>
                      <term ref="wd:Q2095" xml:lang="en">food</term>
                   </catDesc>
-
                   <category xml:id="c_sugarandsugarproducts">
                      <catDesc>
                         <term ref="wd:Q32106920" xml:lang="en">sugar and sugar products</term>
@@ -1439,7 +1460,7 @@
                      </category>
                      <category xml:id="c_raisins" xml:lang="en">
                         <catDesc>
-                           <term ref="wd:Q13186">raisins</term>
+                           <term xml:lang="en" ref="wd:Q13186">raisins</term>
                         </catDesc>
                      </category>
                   </category>
@@ -1773,7 +1794,6 @@
                         <term xml:lang="en">beef corn</term>
                      </catDesc>
                   </category>
-                  <!-- !!! -->
                   <category xml:id="c_headgrass">
                      <catDesc>
                         <term xml:lang="en">head grass</term>
@@ -1906,7 +1926,7 @@
                   </category>
                   <category xml:id="c_sockrounds">
                      <catDesc>
-                        <term>sock rounds</term>
+                        <term xml:lang="en">sock rounds</term>
                      </catDesc>
                   </category>
                   <category xml:id="c_stringbells">
@@ -1917,6 +1937,16 @@
                   <category xml:id="c_stripes">
                      <catDesc>
                         <term xml:lang="en">stripes</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_insurance">
+                     <catDesc>
+                        <term ref="wd:Q43183" xml:lang="en">insurance</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="c_tax">
+                     <catDesc>
+                        <term ref="wd:Q8161" xml:lang="en">tax</term>
                      </catDesc>
                   </category>
                </category>
@@ -12203,7 +12233,7 @@
                      <expan>Debtor</expan>
                   </choice>
                   <lb/>
-                  <measure ana="bk:service" commodity="#c_work">By work from this day</measure>
+                  <measure ana="bk:service" commodity="#c_work" unit="_" quantity="1">By work from this day</measure>
                   pd</cell>
                <cell>$2</cell>
                <cell/>
@@ -12459,7 +12489,7 @@
                      <expan>debtor</expan>
                   </choice>
                   <lb/>
-                  <measure ana="bk:service" commodity="#c_oxenrental" unit="_">To my oxen one day
+                  <measure ana="bk:service" commodity="#c_oxenrental" quantity="1" unit="_">To my oxen one day
                      3/</measure>
                </cell>
                <cell/>
@@ -13011,7 +13041,7 @@
                      <abbr ana="bk:debit">DR</abbr>
                      <expan>Dabtor</expan>
                   </choice>
-                  <lb/>By<measure ana="bk:service" commodity="#c_work">work</measure> up to this
+                  <lb/>By<measure ana="bk:service" commodity="#c_work" unit="_" quantity="1">work</measure> up to this
                   date</cell>
                <cell>
                   <measure ana="bk:money" quantity="33" unit="dollar">33</measure>
@@ -13844,7 +13874,7 @@
                <cell/>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH495" type="person"/>To <measure ana="bk:service"
-                     commodity="#c_work">work</measure> 3/</cell>
+                     commodity="#c_work" unit="_" quantity="1">work</measure> 3/</cell>
                <cell/>
                <cell>
                   <measure ana="bk:money" quantity="50" unit="cent">50</measure>
@@ -14478,7 +14508,7 @@
                      <expan>Debtor</expan>
                   </choice>
                   <lb/>
-                  <measure ana="bk:service" commodity="#c_work"> By work to the 14th </measure>
+                  <measure ana="bk:service" commodity="#c_work" unit="_" quantity="1"> By work to the 14th </measure>
                </cell>
                <cell/>
                <cell/>
@@ -15993,7 +16023,7 @@
                <cell ana="bk:status" corresp="#96">96</cell>
                <cell>
                   <name ana="bk:to" ref="#pers_WCDH302" type="person">Phillis frazier</name>
-                  <measure ana="bk:service" commodity="#c_work">by work</measure> from <choice>
+                  <measure ana="bk:service" commodity="#c_work" unit="_" quantity="1">by work</measure> from <choice>
                      <abbr ana="bk:credit">Cr</abbr>
                      <expan>credit</expan>
                   </choice>
@@ -16064,7 +16094,7 @@
                      <expan>credit</expan>
                   </choice>
                   <lb/>
-                  <measure ana="bk:service" commodity="#c_work" unit="_">By carrying lard x M.
+                  <measure ana="bk:service" commodity="#c_work" quantity="1" unit="_">By carrying lard x M.
                      Biden to Boston</measure>
                </cell>
                <cell/>
