@@ -113,16 +113,23 @@
             </listPrefixDef>
             <!-- Adding unitDecl and currencies -->
             <unitDecl>
-                <xsl:for-each-group select="//*:measure" group-by="@unit">
-                    <unitDef type="currency" xml:id="{current-grouping-key()}">
-                        <xsl:if test="current-grouping-key() = 'lb'">
-                            <xsl:attribute name="ana" select="'depcha:mainCurrency'"/>
-                        </xsl:if>
-                        <label>
-                            <xsl:value-of select="current-grouping-key()"/>
-                        </label>
-                    </unitDef>
-                </xsl:for-each-group>
+                <unitDef type="currency" xml:id="lb" ana="depcha:mainCurrency">
+                    <label xml:lang="de">Pfund</label>
+                    <label type="abbreviation">lb</label>
+                    <country>Schweiz</country>
+                    <conversion fromUnit="#lb" toUnit="#ß-w" formula="$fromUnit div 20"/>
+                    <conversion fromUnit="#lb" toUnit="#d" formula="$fromUnit div 240"/>
+                </unitDef>
+                <unitDef type="currency" xml:id="ß-w">
+                    <label xml:lang="de">Schilling</label>
+                    <label type="abbreviation">ß</label>
+                    <country>Schweiz</country>
+                </unitDef>
+                <unitDef type="currency" xml:id="d">
+                    <label xml:lang="de">Pfennig</label>
+                    <label type="abbreviation">d</label>
+                    <country>Schweiz</country>
+                </unitDef>
             </unitDecl>
             <!-- Adding classDecl and  taxonomy with incomes and expenses -->
             <classDecl>
