@@ -132,8 +132,8 @@
           <label xml:lang="eng">pound</label>
           <label type="abbreviation">£</label>
           <country>UK</country>
-          <conversion fromUnit="#shilling" toUnit="#pound" formula="$fromUnit div 20"/>
-          <conversion fromUnit="#pence" toUnit="#pound" formula="$fromUnit div 240"/>
+          <conversion fromUnit="#pound" toUnit="#shilling" formula="$fromUnit div 20"/>
+          <conversion fromUnit="#pound" toUnit="#pence" formula="$fromUnit div 240"/>
         </unitDef>
         <unitDef type="currency" xml:id="shilling">
           <label xml:lang="eng">shilling</label>
