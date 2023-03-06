@@ -136,19 +136,19 @@
       </listPrefixDef>
       <unitDecl>
         <unitDef type="currency" xml:id="pound" ana="depcha:mainCurrency">
-          <label xml:lang="eng">pound</label>
+          <label xml:lang="en">pound</label>
           <label type="abbreviation">£</label>
           <country>UK</country>
           <conversion fromUnit="#pound" toUnit="#shilling" formula="$fromUnit div 20"/>
           <conversion fromUnit="#pound" toUnit="#pence" formula="$fromUnit div 240"/>
         </unitDef>
         <unitDef type="currency" xml:id="shilling">
-          <label xml:lang="eng">shilling</label>
+          <label xml:lang="en">shilling</label>
           <label type="abbreviation">sh</label>
           <country>UK</country>
         </unitDef>
         <unitDef type="currency" xml:id="pence">
-          <label xml:lang="eng">pence</label>
+          <label xml:lang="en">pence</label>
           <label type="abbreviation">p</label>
           <country>UK</country>
         </unitDef>
