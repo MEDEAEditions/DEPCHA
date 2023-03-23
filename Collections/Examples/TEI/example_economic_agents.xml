@@ -1,0 +1,74 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Example Economic Agents</title>
+        <editor>Sabrina Strutz</editor>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+        <idno type="PID">o:depcha.example.economicagents</idno>
+        <ref target="info:fedora/context:depcha.example" type="context">Examples</ref>
+      </publicationStmt>
+      <sourceDesc>
+        <p>This is an exemplary extract of one dataset of the DEPCHA collection. It might
+                    differ from the original dataset due to eventual adaptions that should help to
+                    understand the possibilities of mapping different contents to the Bookkeeping
+                    Ontology.</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <listPrefixDef>
+        <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)" replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+          <p>Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs.</p>
+        </prefixDef>
+        <prefixDef ident="depcha" matchPattern="([(a-z)|(A-Z)]+)" replacementPattern="https://gams.uni-graz.at/o:depcha.ontology#$1">
+          <p>Analytical descriptors are considered to represent concepts from the
+                        project-specific DEPCHA ontology and can be extended to respective URIs.</p>
+        </prefixDef>
+        <prefixDef ident="huc" matchPattern="([(a-z)|(A-Z)]+)" replacementPattern="https://gams.uni-graz.at/o:depcha.huc#$1">
+          <p>Analytical descriptors are considered to represent concepts from the
+                        historical units and currencies ontology and can be extended to respective
+                        URIs.</p>
+        </prefixDef>
+        <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)" replacementPattern="http://www.wikidata.org/entity/$1">
+          <p>
+            <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/>
+          </p>
+        </prefixDef>
+      </listPrefixDef>
+    </encodingDesc>
+  </teiHeader>
+  <standOff>
+    <list ana="depcha:index" type="group">
+      <item xml:id="group_SR051">
+        <name>Anderlein Fischer</name>
+        <desc>Eine Gruppe von nicht namentlich erwähnten Fischern.</desc>
+      </item>
+    </list>
+    <listPerson ana="depcha:index">
+      <head> Prosopographie </head>
+      <desc> Personen, die in den Schlandberg Rechnungen namentlicht erwähnt werden. </desc>
+      <person xml:id="pers_SR052">
+        <persName>
+          <name>Herr von Hans Kelner </name>
+        </persName>
+      </person>
+    </listPerson>
+  </standOff>
+  <text>
+    <body>
+      <div type="example">
+        <p ana="bk:entry"> Item am <date ana="bk:when" when="1402-01-01">s<supplied reason="missing">[o]</supplied>nntag nach Eibnitÿ</date> prachten
+                        dÿ<lb/>
+          <name ana="bk:from bk:group" ref="#group_SR051">obgeschriben
+                        visser</name>
+          <measure ana="bk:commodity" commodity="fish" quantity="18"
+            unit="pound">18 lb
+                        visch</measure> dem <name ana="bk:to bk:individual" ref="#pers_SR052">herrn
+                        Kaspar</name>. </p>
+      </div>
+    </body>
+  </text>
+</TEI>
