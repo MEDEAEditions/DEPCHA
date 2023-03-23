@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:r="http://gams.uni-graz.at/rem/ns/1.0">
+  <teiHeader xml:id="d2e4">
+    <fileDesc xml:id="d2e6">
+      <titleStmt xml:id="d2e8">
+        <title xml:id="d2e10">Jahrrechnung Stadt Basel 1584/1585</title>
+        <principal xml:id="d2e13">Burghartz, Susanna (Universität Basel)</principal>
+      </titleStmt>
+      <publicationStmt>
+        <distributor xml:id="d2e19">Zentrum für Informationsmodellierung - Austrian Centre for Digital Humanities, Universität Graz</distributor>
+        <idno type="PID" xml:id="d2e22">o:depcha.srbas.1584</idno><ref target="context:depcha.srbas" type="context">Jahrrechnungen der Stadt Basel 1535 bis
+            1610 – digital</ref>
+      </publicationStmt>
+      <sourceDesc xml:id="d2e26">
+        <msDesc xml:id="d2e28">
+          <msIdentifier xml:id="d2e30">
+            <repository xml:id="d2e32">StABS</repository>
+            <collection xml:id="d2e35">Finanz H</collection>
+            <idno xml:id="d2e38">Nicht vorhanden</idno>
+          </msIdentifier>
+          <msContents xml:id="d2e42">
+            <p xml:id="d2e44">
+              <origDate extent="52 Wochen" from="1584-06-27" to="1585-06-26" xml:id="d2e45"/>
+            </p>
+          </msContents>
+        </msDesc>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc xml:id="d2e51"><listPrefixDef><prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)" replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1"><p> Analytical descriptors are considered to represent concepts from the DEPCHA
+                        bookkeeping ontology and can be extended to respective URIs. </p></prefixDef><prefixDef ident="depcha" matchPattern="([(a-z)|(A-Z)]+)" replacementPattern="https://gams.uni-graz.at/o:depcha.ontology#$1"><p> Analytical descriptors are considered to represent concepts from the
+                        project-specific DEPCHA ontology and can be extended to respective URIs.
+                    </p></prefixDef><prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)" replacementPattern="http://www.wikidata.org/entity/$1"><p><ref target="https://www.wikidata.org/wiki/Help:Namespaces"/></p></prefixDef></listPrefixDef><unitDecl><unitDef type="currency" xml:id="lb" ana="depcha:mainCurrency"><label xml:lang="de">Pfund</label><label type="abbreviation">lb</label><country>Schweiz</country><conversion fromUnit="#lb" toUnit="#ß-w" formula="$fromUnit div 20"/><conversion fromUnit="#lb" toUnit="#d" formula="$fromUnit div 240"/></unitDef><unitDef type="currency" xml:id="ß-w"><label xml:lang="de">Schilling</label><label type="abbreviation">ß</label><country>Schweiz</country></unitDef><unitDef type="currency" xml:id="d"><label xml:lang="de">Pfennig</label><label type="abbreviation">d</label><country>Schweiz</country></unitDef></unitDecl><classDecl><taxonomy ana="bk:account"><category ana="depcha:accountHolder" xml:id="stadtbasel"><catDesc><gloss>Stadt Basel</gloss></catDesc></category><category ana="bk:from" xml:id="income"><catDesc><gloss>Income</gloss></catDesc></category><category ana="bk:to" xml:id="expense"><catDesc><gloss>Expense</gloss></catDesc></category></taxonomy></classDecl>
+      <editorialDecl xml:id="d2e53">
+        <p xml:id="d2e55">Die Transkriptions-/Editionsprinzipien sind in der <ref target="/context:srbas?mode=projekt" xml:id="d2e57">zentralen Projektbeschreibung</ref> dokumentiert.</p>
+      </editorialDecl>
+      <projectDesc xml:id="d2e62">
+        <p xml:id="d2e64">
+          <ref target="info:fedora/context:srbas" type="context" xml:id="d2e65">Im Kontext der Digitalen Edition der Jahrrechnungen der Stadt Basel.</ref>
+        </p>
+        <p xml:id="d2e68">Diese Rechnung ist verloren gegangen.</p>
+      </projectDesc>
+    </encodingDesc>
+  </teiHeader>
+  <text xml:id="d2e77">
+    <body xml:id="d2e79">
+      <div xml:id="d2e81">
+        <p ana="bk:entry" xml:id="d2e83">
+          <note resp="#editor" xml:id="d2e84" xml:space="preserve">Die Rechnungsunterlagen 1584/85 sind vollständig verloren gegangen.</note>
+        <name ana="bk:from" ref="#stadtbasel"/><name ana="bk:to" ref="#d2e83"/></p>
+      </div>
+    </body>
+  </text>
+</TEI>

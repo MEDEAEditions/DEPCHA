@@ -9,16 +9,18 @@
             <xsl:comment>Commodities added from //text//@commodity</xsl:comment>
             <xsl:for-each-group select="//t:text//t:measure" group-by="@commodity">
                 <xsl:sort select="current-grouping-key()"/>
-                <category
-                    xml:id="{if (starts-with(current-grouping-key(), '#')) then (substring-after(current-grouping-key(), '#')) else current-grouping-key()}">
+                <xsl:variable name="id" select="if (starts-with(current-grouping-key(), '#')) then (substring-after(current-grouping-key(), '#')) else current-grouping-key()"/>
+                <xsl:if test="not(//t:taxonomy[@ana='depcha:index']//t:*[@xml:id=$id])">                <category
+                    xml:id="{$id}">
                     <catDesc>
-                        <xsl:for-each select="current-group()">
-                            <gloss>
+                        <xsl:for-each select="distinct-values(current-group())">
+                            <term>
                                 <xsl:value-of select="normalize-space(.)"/>
-                            </gloss>
+                            </term>
                         </xsl:for-each>
                     </catDesc>
                 </category>
+                </xsl:if>
             </xsl:for-each-group>
         </taxonomy>
     </xsl:template>

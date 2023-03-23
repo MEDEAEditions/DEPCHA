@@ -56,7 +56,7 @@
 				</prefixDef>
 			</listPrefixDef>
 			<unitDecl>
-				<unitDef ref="wd:Q4917" type="currency" xml:id="dollar">
+				<unitDef ref="wd:Q4917" type="currency" xml:id="dollar" ana="depcha:mainCurrency">
 					<label xml:lang="de">US dollar</label>
 					<label type="abbr">$</label>
 				</unitDef>
@@ -72,7 +72,7 @@
 		<profileDesc>
 			<particDesc>
 				<listPerson ana="depcha:index">
-					<person ana="bk:to bk:accountholder" xml:id="accountholder.1">
+					<person ana="bk:to depcha:accountHolder" xml:id="accountholder.1">
 						<persName>
 							<forename>Jane</forename>
 							<surname>Addams</surname>

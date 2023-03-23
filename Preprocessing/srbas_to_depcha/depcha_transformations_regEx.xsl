@@ -23,6 +23,36 @@
         <xsl:copy>
             <xsl:attribute name="ana" select="'bk:entry'"/>
             <xsl:apply-templates select="@* | node()"/>
+
+            <!-- installing bk:from -->
+            <xsl:element name="name">
+                <xsl:attribute name="ana" select="'bk:from'"/>
+                <xsl:attribute name="ref">
+                    <xsl:choose>
+                        <xsl:when test="ancestor::*[tokenize(@ana, ' ') = '#bs_Einnahmen']">
+                            <xsl:value-of select="concat('#', @xml:id)"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="'#stadtbasel'"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:attribute>
+            </xsl:element>
+
+            <!-- installing bk:to -->
+            <xsl:element name="name">
+                <xsl:attribute name="ana" select="'bk:to'"/>
+                <xsl:attribute name="ref">
+                    <xsl:choose>
+                        <xsl:when test="ancestor::*[tokenize(@ana, ' ') = '#bs_Einnahmen']">
+                            <xsl:value-of select="'#stadtbasel'"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="concat('#', @xml:id)"/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:attribute>
+            </xsl:element>
         </xsl:copy>
     </xsl:template>
 
@@ -36,7 +66,7 @@
     </xsl:template>
 
     <!-- changing #bk_total to bk:total  -->
-    
+
     <xsl:template match="*[@ana = '#bk_total']">
         <xsl:copy>
             <xsl:attribute name="ana" select="'bk:total'"/>
@@ -50,7 +80,8 @@
 
     <xsl:template match="*:publicationStmt/*:idno">
         <xsl:copy>
-            <xsl:apply-templates select="@* | node()"/>
+            <xsl:apply-templates select="@*"/>
+            <xsl:value-of select="concat('o:depcha.', substring-after(., 'o:'))"/>
         </xsl:copy>
         <ref target="context:depcha.srbas" type="context">Jahrrechnungen der Stadt Basel 1535 bis
             1610 – digital</ref>
@@ -82,20 +113,32 @@
             </listPrefixDef>
             <!-- Adding unitDecl and currencies -->
             <unitDecl>
-                <xsl:for-each-group select="//*:measure" group-by="@unit">
-                    <unitDef type="currency" xml:id="{current-grouping-key()}">
-                        <xsl:if test="current-grouping-key() = 'lb'">
-                            <xsl:attribute name="ana" select="'depcha:mainCurrency'"/>
-                        </xsl:if>
-                        <label>
-                            <xsl:value-of select="current-grouping-key()"/>
-                        </label>
-                    </unitDef>
-                </xsl:for-each-group>
+                <unitDef type="currency" xml:id="lb" ana="depcha:mainCurrency">
+                    <label xml:lang="de">Pfund</label>
+                    <label type="abbreviation">lb</label>
+                    <country>Schweiz</country>
+                    <conversion fromUnit="#lb" toUnit="#ß-w" formula="$fromUnit div 20"/>
+                    <conversion fromUnit="#lb" toUnit="#d" formula="$fromUnit div 240"/>
+                </unitDef>
+                <unitDef type="currency" xml:id="ß-w">
+                    <label xml:lang="de">Schilling</label>
+                    <label type="abbreviation">ß</label>
+                    <country>Schweiz</country>
+                </unitDef>
+                <unitDef type="currency" xml:id="d">
+                    <label xml:lang="de">Pfennig</label>
+                    <label type="abbreviation">d</label>
+                    <country>Schweiz</country>
+                </unitDef>
             </unitDecl>
             <!-- Adding classDecl and  taxonomy with incomes and expenses -->
             <classDecl>
                 <taxonomy ana="bk:account">
+                    <category ana="depcha:accountHolder" xml:id="stadtbasel">
+                        <catDesc>
+                            <gloss>Stadt Basel</gloss>
+                        </catDesc>
+                    </category>
                     <category ana="bk:from" xml:id="income">
                         <catDesc>
                             <gloss>Income</gloss>
@@ -126,7 +169,7 @@
                                     <catDesc>
                                         <gloss>
                                             <xsl:value-of
-                                                select="replace(substring-after(current-grouping-key(), '#bs_'),'(.+?)([A-Z].*?)', '$1  $2')"
+                                                select="replace(substring-after(current-grouping-key(), '#bs_'), '(.+?)([A-Z].*?)', '$1  $2')"
                                             />
                                         </gloss>
                                     </catDesc>
@@ -167,9 +210,15 @@
             <xsl:apply-templates select="@* | node()"/>
         </xsl:copy>
     </xsl:template>
-    
-<!-- removing facsimiles and child nodes -->
-    
-<xsl:template match="*:facsimile"/> 
-    
+
+    <!-- removing facsimiles and child nodes -->
+
+    <xsl:template match="*:facsimile"/>
+
+    <!-- removeing segs -->
+
+    <xsl:template match="//*:seg" priority="1">
+        <xsl:apply-templates/>
+    </xsl:template>
+
 </xsl:stylesheet>

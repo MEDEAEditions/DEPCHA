@@ -4,12 +4,12 @@
         <fileDesc>
             <titleStmt>
                 <title>Alhambra Theater p177</title>
-                <author ana="bk:to" ref="pers_TheSchlitzBros">Schlitz</author>
+                <author ref="#pers_schlitz">Schlitz</author>
             </titleStmt>
             <publicationStmt>
                 <publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
                 <idno type="PID">o:depcha.schlitz.1</idno>
-                <ref target="info:fedora/context:depcha.schlitz" type="context">Schlitz</ref>
+                <ref target="context:depcha.schlitz" type="context">Schlitz</ref>
             </publicationStmt>
             <sourceDesc>
                 <msDesc>
@@ -49,7 +49,7 @@
                 </prefixDef>
             </listPrefixDef>
             <unitDecl>
-                <unitDef ref="wd:Q4917" type="currency" xml:id="dollar" ana="bk:mainCurrency" from="1690">
+                <unitDef ref="wd:Q4917" type="currency" xml:id="dollar" ana="depcha:mainCurrency" from="1690">
                     <label xml:lang="en">dollar</label>
                     <label type="abbreviation">$</label>
                     <country>USA</country>
@@ -74,6 +74,17 @@
                 </taxonomy>
             </classDecl>
         </encodingDesc>
+        <profileDesc>
+            <particDesc>
+                <listPerson ana="depcha:index">
+                    <person xml:id="pers_schlitz" ana="bk:to depcha:accountHolder">
+                        <persName>
+                            <surname>Schlitz</surname>
+                        </persName>
+                    </person>
+                </listPerson>
+            </particDesc>
+        </profileDesc>
     </teiHeader>
     <text>
         <body>
@@ -93,10 +104,10 @@
                     <cell>415</cell>
                     <cell>2</cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="212" unit="dollars">212</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="212" unit="dollar">212</measure>
                     </cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">50</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cent">50</measure>
                     </cell>
                 </row>
                 <row ana="bk:entry" n="4" corresp="#context.1">
@@ -111,10 +122,10 @@
                     <cell>417</cell>
                     <cell></cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="50" unit="dollars">50</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="dollar">50</measure>
                     </cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cent">&quot;-&quot;</measure>
                     </cell>
                 </row>
                 <row ana="bk:entry" n="5" corresp="#context.2">
@@ -131,10 +142,10 @@
                     <cell>129</cell>
                     <cell></cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="260" unit="dollars">260</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="260" unit="dollar">260</measure>
                     </cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cent">&quot;-&quot;</measure>
                     </cell>
                 </row>
                 <row ana="bk:entry" n="6" corresp="#context.2">
@@ -150,10 +161,10 @@
                     <cell>134</cell>
                     <cell>3</cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="778" unit="dollars">778</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="778" unit="dollar">778</measure>
                     </cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cent">&quot;-&quot;</measure>
                     </cell>
                 </row>
                 <row ana="bk:entry" n="7" corresp="#context.1">
@@ -169,10 +180,10 @@
                     <cell>419</cell>
                     <cell></cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="200" unit="dollars">200</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="200" unit="dollar">200</measure>
                     </cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cent">&quot;-&quot;</measure>
                     </cell>
                 </row>
                 <row ana="bk:entry" n="8" corresp="#context.1">
@@ -187,10 +198,10 @@
                     <cell>138</cell>
                     <cell>2</cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="100" unit="dollars">100</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="100" unit="dollar">100</measure>
                     </cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cent">&quot;-&quot;</measure>
                     </cell>
                 </row>
                 <row ana="bk:entry" n="9" corresp="#context.1">
@@ -206,10 +217,10 @@
                     <cell>&quot;</cell>
                     <cell>1</cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="100" unit="dollars">100</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="100" unit="dollar">100</measure>
                     </cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cent">&quot;-&quot;</measure>
                     </cell>
                 </row>
                 <row ana="bk:entry" n="10" corresp="#context.2">
@@ -225,10 +236,10 @@
                     <cell>141</cell>
                     <cell></cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="138" unit="dollars">138</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="138" unit="dollar">138</measure>
                     </cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="45" unit="cents">45</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="45" unit="cent">45</measure>
                     </cell>
                 </row>
                 <row ana="bk:entry" n="11" corresp="#context.2">
@@ -242,10 +253,10 @@
                     <cell>&quot;</cell>
                     <cell>5</cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="0" unit="dollars">0</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="0" unit="dollar">0</measure>
                     </cell>
                     <cell>
-                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cents">&quot;-&quot;</measure>
+                        <measure ana="bk:money" commodity="currency" quantity="50" unit="cent">&quot;-&quot;</measure>
                     </cell>
                 </row>
             </table>

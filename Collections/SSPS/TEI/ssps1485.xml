@@ -62,7 +62,7 @@
         </prefixDef>
       </listPrefixDef>
       <unitDecl>
-        <unitDef ref="wd:Q2656092" type="currency" xml:id="unc." ana="bk:mainCurrency">
+        <unitDef ref="wd:Q2656092" type="currency" xml:id="unc." ana="depcha:mainCurrency">
           <label>Oncia</label>
           <label type="abbreviation">unc.</label>
           <conversion fromUnit="#unc." toUnit="#duc." formula="$fromUnit div 6"/>
@@ -79,10 +79,10 @@
           <label type="abbreviation">t.</label>
           <conversion fromUnit="#duc." toUnit="#t." formula="$fromUnit div 5"/>
         </unitDef>
-        <unitDef type="currency" xml:id="gr.">
+        <unitDef type="currency" xml:id="g.">
           <label>Grana</label>
-          <label type="abbreviation">gr.</label>
-          <conversion fromUnit="#t." toUnit="#gr." formula="$fromUnit div 20"/>
+          <label type="abbreviation">g.</label>
+          <conversion fromUnit="#t." toUnit="#g." formula="$fromUnit div 20"/>
         </unitDef>
       </unitDecl>
     </encodingDesc>
