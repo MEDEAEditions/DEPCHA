@@ -1,0 +1,2421 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title type="main">Digital Edition of the account book from the archive of the
+					monastery of SS. Pietro and Sebastiano of Naples, "ASN 1398, "Quaternus" di
+					introito ed esito , 1477 - 1484" </title>
+				<editor> <forename>Giuseppe</forename> <surname>Consolo</surname> </editor>
+				<sponsor>Università Federico II, Napoli</sponsor>
+				<respStmt>
+					<resp>Transcribed form the original account book and encoded by</resp>
+					<persName>Giuseppe Consolo</persName>
+				</respStmt>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Zentrum für Informationsmodellierung - Universität Graz</publisher>
+				<ref target="context:depcha.ssps" type="context">Annata SS. Pietro e Sebastiano
+					1485</ref>
+				<idno type="PID">o:depcha.ssps.1477-1484</idno>
+				<availability>
+					<p>Alpha version, internal use only</p>
+				</availability>
+			</publicationStmt>
+			<sourceDesc>
+				<listBibl>
+					<bibl> <publisher>TRP document creator: giuseppe.consolo2@gmail.com</publisher> </bibl>
+					<bibl xml:id="b1">A. Ambrosio, Oratrices nostrae. Un'esperienza monastica a
+						Napoli fra XIV e XV secolo, Università degli studi di Palermo, 2001</bibl>
+					<bibl xml:id="b2">G. Colesanti, La priora domenicana Maria Francesca Orsini,
+						note per uno studio, in Anuario de Estudios Medievales, La corona
+						Catalo-aragonesa, l'Islam el mòn Mediterrani, Estudis d'historia medieval en
+						homenatge a la doctora Maria Teresa Ferrer I Mallol vol.71, Consejo superior
+						de investigaciones cientìficas "Instituciò Mila I Fontanals", departamento
+						de estudios medeivales, Barcelona, 2012. pp.183-192</bibl>
+				</listBibl>
+				<msDesc>
+					<msIdentifier>
+						<country>Italy</country>
+						<settlement>Napoli</settlement>
+						<institution ref="https://www.archiviodistatonapoli.it/">Archivio di Stato
+							di Napoli (ASN)</institution>
+						<msName>"Quaternus" di introito ed esito , 1477 - 1484</msName>
+					</msIdentifier>
+					<msContents>
+						<msItem>
+							<docDate>1477 - 1484</docDate>
+							<!-- CP: language in the source -->
+							<textLang> <lang>Italian</lang> </textLang>
+						</msItem>
+					</msContents>
+					<physDesc>
+						<objectDesc form="manuscript">
+							<supportDesc material="paper">
+								<extent> There are <measure unit="pages" quantity="411">411
+									pages</measure> of which <measure unit="pages" quantity="194"
+									type="blank">194 are blank</measure> <dimensions scope="all"
+									unit="mm">
+									<height>220</height>
+									<width>150</width>
+									</dimensions> </extent>
+							</supportDesc>
+							<layoutDesc>
+								<layout columns="+2"> There are two or three text colum</layout>
+							</layoutDesc>
+						</objectDesc>
+						<handDesc>
+							<p>Written by several hands, some female, in <term>minuscola
+								corsiva</term></p>
+						</handDesc>
+					</physDesc>
+				</msDesc>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<projectDesc>
+				<p>The puprose of the project is to produce some digital editions of the second half
+					of the XV century account books from the archive of the Dominican monastery of
+					SS. Pietro and Sebastiano in Naples</p>
+			</projectDesc>
+			<tagsDecl partial="true">
+				<namespace name="http://www.tei-c.org/ns/1.0">
+					<tagUsage gi="date">Used to mark all the dates in the text</tagUsage>
+					<tagUsage gi="p" ana="head">Used to mark all "incipit" in the text that matches
+						the part before "entry".</tagUsage>
+					<tagUsage gi="p" ana="bk:entry">Used to mark all the "entry" in the
+						text</tagUsage>
+				</namespace>
+			</tagsDecl>
+			<editorialDecl>
+				<normalization>
+					<p>The text has been transcribed following modern typographical criteria.
+						Distinction between "u" and "v", the "j" is now "i", roman number are
+						converted into arabic number excpeted for the indiction number. Modern use
+						of capital letters for pers-name and toponyms, and modern use of the
+						separation of words. Modern use for puntuaction. The text is presented
+						without abbreviations. The element <gi>choice</gi> is used only for
+						uncertain abbreviation</p>
+				</normalization>
+			</editorialDecl>
+			<listPrefixDef>
+				<prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+					replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+					<p>Analytical descriptors are considered to represent concepts from the DEPCHA
+						bookkeeping ontology and can be extended to respective URIs.</p>
+				</prefixDef>
+				<prefixDef ident="depcha" matchPattern="([(a-z)|(A-Z)]+)"
+					replacementPattern="https://gams.uni-graz.at/o:depcha.ontology#$1">
+					<p>Analytical descriptors are considered to represent concepts from the
+						project-specific DEPCHA ontology and can be extended to respective URIs.</p>
+				</prefixDef>
+				<prefixDef ident="huc" matchPattern="([(a-z)|(A-Z)]+)"
+					replacementPattern="https://gams.uni-graz.at/o:depcha.huc#$1">
+					<p>Analytical descriptors are considered to represent concepts from the
+						historical units and currencies ontology and can be extended to respective
+						URIs.</p>
+				</prefixDef>
+				<prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+					replacementPattern="http://www.wikidata.org/entity/$1">
+					<p> <ref target="https://www.wikidata.org/wiki/Help:Namespaces"/> </p>
+				</prefixDef>
+			</listPrefixDef>
+			<unitDecl>
+				<unitDef xml:id="bottone" type="weight">
+					<label>bottone, 523 L.</label>
+					<desc> <bibl>M.Martini, Pesi, misure e monete nella storia del Regno di Napoli,
+						Napoli, 2018, p.25</bibl> <bibl>E.Sakellariou, Southern Italy in the late
+						Middle Ages. Demographic, institutional and economic change in the Kingdom
+						of Naples, c. 1440-1530. Leiden, Boston: Brill, 2012.</bibl> </desc>
+				</unitDef>
+				<unitDef xml:id="botte" type="weight">
+					<label>botte = 470 L.</label>
+					<!-- CP: here we want express the conversion in a formal way -->
+					<!-- CP: what is L. liters ? then we define here a unit Liters and we can express all conversion statments -->
+					<conversion fromUnit="#botte" toUnit="#L" formula="#botte mult 470"/>
+				</unitDef>
+				<unitDef xml:id="salma" type="weight">
+					<label>salma = 161,296 L.</label>
+				</unitDef>
+				<unitDef xml:id="soma" type="weight">
+					<label>soma = 87,242 L.</label>
+				</unitDef>
+				<unitDef xml:id="barile" type="weight">
+					<label>barile = 43,621 L.</label>
+				</unitDef>
+				<unitDef xml:id="quartarane" type="weight">
+					<label>quartarolo (equivalente ad un quarto di barile, a 15 caraffe) = 10,905
+						L.</label>
+				</unitDef>
+				<unitDef xml:id="tomoli" type="weight">
+					<label>tomolo (tumulo, tumola, thomola, thomeni) = 55,3189 litri = 40 kg</label>
+				</unitDef>
+				<unitDef xml:id="carro" type="weight">
+					<label>carro = 36 tomoli = 1440 kg </label>
+				</unitDef>
+				<unitDef xml:id="fascio" type="weight">
+					<label>fascio = 100 libbre = 33 kg</label>
+				</unitDef>
+				<unitDef ana="depcha:mainCurrency" ref="wd:Q2656092" type="currency" xml:id="unc.">
+					<label>Oncia</label>
+					<label type="abbreviation">unc.</label>
+					<conversion formula="$fromUnit div 6" fromUnit="#unc." toUnit="#duc."/>
+					<desc> <bibl>N.F. Faraglia, Storia dei prezzi in Napoli dal 1131 al 1860,
+						Napoli, 1878, p. 22.</bibl> </desc>
+				</unitDef>
+				<!-- CP: the "." in "duc." is not perfect. "duc" is better. -->
+				<unitDef type="currency" xml:id="duc.">
+					<label>Ducati</label>
+					<label type="abbreviation">duc.</label>
+					<conversion formula="$fromUnit div 5" fromUnit="#unc." toUnit="#duc."/>
+				</unitDef>
+				<unitDef type="currency" xml:id="tr.">
+					<label>Tarì</label>
+					<label type="abbreviation">tr.</label>
+					<conversion formula="$fromUnit div 5" fromUnit="#duc." toUnit="#tr."/>
+				</unitDef>
+				<unitDef type="currency" xml:id="gr.">
+					<label>Grana</label>
+					<label type="abbreviation">gr.</label>
+					<conversion formula="$fromUnit div 20" fromUnit="#tr." toUnit="#gr."/>
+				</unitDef>
+				<unitDef type="currency" xml:id="cav">
+					<label>Cavalli</label>
+					<conversion formula="$fromUnit div 12" fromUnit="#gr." toUnit="#cav"/>
+					<desc> <bibl>A. Sambon, I cavalli di Ferdinando I d'Aragona
+						re di Napoli, 1891</bibl> </desc>
+				</unitDef>
+			</unitDecl>
+		</encodingDesc>
+		<profileDesc>
+			<!-- CP: for DEPCHA the langauge statments have to be in the msDesc; -->
+			<langUsage>
+				<language ident="ver">Vernacular Napolitan</language>
+				<language ident="lat">Medieval latin</language>
+			</langUsage>
+		</profileDesc>
+	</teiHeader>
+	<standOff>
+		<listPerson ana="depcha:index">
+			<person xml:id="p1">
+				<persName> <forename>Maria Francesca</forename> <surname>Orsini</surname>
+					<roleName>Prioria del monastero dei SS. Pietro e Sebastiano</roleName> </persName>
+				<birth notBefore="1428" notAfter="1429"/>
+				<death when="1484"/>
+				<state from="1449" to="1453" type="marriage">
+					<p>During 1449 Maria Francesca Orsini married Giovanni Antonio Marzano, Duke of
+						Sessa</p>
+				</state>
+				<state when="1453" type="widow">
+					<p>In the 1453, after four years of marriage, her husband died</p>
+				</state>
+				<state when="1458" type="nun">
+					<p>In 1458 she enter in the monastery of "SS Pietro e Sebastiano" of Naples as a
+						nun</p>
+				</state>
+				<state from="1459-02" to="1484" type="prioress">
+					<p>From February 1459 she appears in documents as prioress of the monastery of
+						"SS Pietro e Sebastiano" of Naples</p>
+				</state>
+			</person>
+			<person xml:id="p2">
+				<persName> <forename>unkown</forename> <roleName>ortolano</roleName> <state>
+					<p>greengrocer of the garden of the monastery of SS. Piero e Sebastiano</p>
+					</state> </persName>
+			</person>
+			<person xml:id="p3">
+				<!-- CP: what do you want to exüpress with key ?  -->
+				<persName key="Tommaso">Thomasi</persName>
+			</person>
+			<person xml:id="p4">
+				<persName>
+					<!-- "unkown" is a bad value 
+						<forename> -> that woudl be better: <forename cert="unknown"/>
+					--> <forename>unkown</forename> <roleName key="mulettiere"
+					ref="https://www.wikidata.org/wiki/Q3866984">molecteri</roleName> <state>
+					<p>person who drives mules</p>
+					</state> </persName>
+			</person>
+			<person xml:id="p5">
+				<!-- CP: nasty whitspace missing  "ame>Iac" -> "ame> Iac" -->
+				<persName key="Padre Iacobo"><roleName>reverendo padre
+					domno</roleName>Iacobo</persName>
+			</person>
+			<person xml:id="p6">
+				<persName key="Padre Iacobo da Larino"> <roleName>domno</roleName> Iacobo de
+					<placeName>Larino</placeName> </persName>
+			</person>
+			<person xml:id="p7">
+				<persName key="Fantino">Fantino <roleName>ortolano</roleName></persName>
+			</person>
+			<person xml:id="p8">
+				<persName key="Antonio Messanello mastro massaro">Antonio de Messanello
+					<roleName>mastro massaro</roleName></persName>
+			</person>
+			<person xml:id="p9">
+				<persName key="Frate Simone"><roleName>confrate</roleName> Simono</persName>
+			</person>
+			<person xml:id="p10">
+				<persName key="Infantino ortolano">Infantino</persName>
+				<state>
+					<p>from the documents it is clear that he is the one who manages one of the
+						gardens of the monastery</p>
+				</state>
+			</person>
+			<person xml:id="p11">
+				<persName key="Caliso mulattiere">Caliso</persName>
+				<state>
+					<p>mulattiere of monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p12">
+				<persName key="Stasio mulattiere">Stasio</persName>
+				<state>
+					<p>mulattiere of monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p13">
+				<persName key="Francesco mulattiere">Francesco
+					<roleName>mulactere</roleName></persName>
+			</person>
+			<person xml:id="p14">
+				<persName key="Gabriele mulattiere">Gabriele
+					<roleName>mulactere</roleName></persName>
+			</person>
+			<person xml:id="p15">
+				<persName key="Belardino mulattiere">Belardino</persName>
+			</person>
+			<person xml:id="p16">
+				<persName key="Giuliano Speciale">Juliano Speciale</persName>
+			</person>
+			<person xml:id="p17">
+				<persName> <forename>Unknow</forename> <roleName key="carrettiere"> garrise
+					</roleName> <state>
+					<p>person driving a carriage</p>
+					</state> </persName>
+			</person>
+			<person xml:id="p18">
+				<persName key="Antonio Severino">Antonii Severino</persName>
+				<state>
+					<p>Antonio Severino had land in the "starza" of the port into the territories of
+						San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p19">
+				<persName key="Fusco Severino">Fussco Severino</persName>
+				<state>
+					<p>Fussco Severino had land in the "starza" of the port into the territories of
+						San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p20">
+				<persName key="Maiello de Ambrosio">Mayello de Ambrosi</persName>
+				<state>
+					<p>Mayello de Ambrosi had land in the "starza" of the port into the territories
+						of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p21">
+				<persName key="Nardo Casale di Casolla Valenziana">Nardo Casale de Casulla
+					Valensana</persName>
+				<state>
+					<p>Nardo Casale had land in the "starza" of San Nicanrdo</p>
+				</state>
+			</person>
+			<person xml:id="p22">
+				<persName key="Giovanni Cinella di Casolla Valenziana">Iohanne Cinella de Casulla
+					Valenzana</persName>
+				<state>
+					<p>Giovanni Cinella had five and half "mogi" in the territories of San
+						Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p23">
+				<persName key="Giovanni de Maiello">Iohanne de Mayello</persName>
+			</person>
+			<person xml:id="p24">
+				<persName key="Petruzzo Ceri">Petruzo Ceri</persName>
+				<state>
+					<p>Petruzo Ceri had a land in the territories of San Nicandro and San
+						Negrato</p>
+				</state>
+			</person>
+			<person xml:id="p25">
+				<persName key="Giovanni di Maio"> Iohanne de Mayo</persName>
+				<state>
+					<p>Giovanni di Maio had a land in the "starza" of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p26">
+				<persName key="Antonio mastro massaro">Antonio mastro massaro</persName>
+			</person>
+			<person xml:id="p27">
+				<persName key="Chirico"> domno Chirico</persName>
+			</person>
+			<person xml:id="p28">
+				<persName key="Monaco di Caivano">domno Monacho de
+					<placeName>Caivano</placeName></persName>
+				<state>
+					<p>Monaco di Caivano had a garden in the territories of San Negrato</p>
+				</state>
+			</person>
+			<person xml:id="p29">
+				<persName key="Antonio di Nicola di Napoli">Antonio de Nicolo de
+					<placeName>Napoli</placeName></persName>
+				<state>
+					<p>He was a "mulattiere" of the monastery of SS. Pietro e Sebatiano</p>
+				</state>
+			</person>
+			<person xml:id="p30">
+				<persName key="Antonio mulattiere">Antonio</persName>
+				<state>
+					<p>"mulattiere" of the monastery of SS. Pietro e Sebatiano</p>
+				</state>
+			</person>
+			<person xml:id="p31">
+				<persName key="Polito mulattiere">Polito</persName>
+				<state>
+					<p>"mulattiere" of the monastery of SS. Pietro e Sebatiano</p>
+				</state>
+			</person>
+			<person xml:id="p32">
+				<persName key="Domenico mulattiere">Domenico</persName>
+				<state>
+					<p>"mulattiere" of the monastery of SS. Pietro e Sebatiano</p>
+				</state>
+			</person>
+			<person xml:id="p33">
+				<persName key="Cristofano di Ladino">Cristofano de Ladinmo</persName>
+				<state>
+					<p>He had a land in the territories of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p34">
+				<persName key="Rainaldo Casale di Casolla Valenziana">Raynaldo</persName>
+				<state>
+					<p>Son of <persName ref="#p21">Nardo Casale</persName> he had a land in the
+						territory of San Negrato</p>
+				</state>
+			</person>
+			<person xml:id="p35">
+				<persName key="Angelino Capogrosso di Casolla Valenziana">Angelello Capo
+					Grosso</persName>
+				<state>
+					<p>He had a land in the "starza" of San Negrato</p>
+				</state>
+			</person>
+			<person xml:id="p36">
+				<persName key="Battista signore di Caivano">Battista domno [...] de
+					<placeName>Caivano</placeName></persName>
+				<state>
+					<p>He had a land in the territories of San Negrato</p>
+				</state>
+			</person>
+			<person xml:id="p37">
+				<persName key="Angelo de Miglio">Angelo de miglio di Casolla</persName>
+			</person>
+			<person xml:id="p38">
+				<persName key="Giovanni di Massanello">Ioanni de Messanello</persName>
+				<state>
+					<p><roleName ref="#p17">carrese</roleName> of the monastery of SS. Pietro e
+						Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p39">
+				<persName key="Bianca de Rosa de Casolla">Biancha Rosa de Casolla</persName>
+				<state>
+					<p>She had a land in the territories of San Negrato</p>
+				</state>
+			</person>
+			<person xml:id="p40">
+				<persName key="Cobello">Cobello de Orto Magno</persName>
+			</person>
+			<person xml:id="p41">
+				<persName key="Giovanni Caruso">Ioanni Caruso de messanello</persName>
+			</person>
+			<person xml:id="p42">
+				<persName key="Guglielmo de Rayano">Gullielmo de Rayano</persName>
+				<state>
+					<p>mulattiero of the monastery</p>
+				</state>
+			</person>
+			<person xml:id="p43">
+				<persName key="Pietro Arurgico"> mastro Petro Arurgico</persName>
+			</person>
+			<person xml:id="p44">
+				<persName key="Securanza di Massanello">Securanza de Massanello carrisi</persName>
+			</person>
+			<person xml:id="p45">
+				<persName key="Filippo Cinella"> Filippo Cinella</persName>
+				<state>
+					<p>he had a land in the territories of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p46">
+				<persName key="Giovanni di Caivano">Ioanne de Caivano</persName>
+				<state>
+					<p>Have land in "starza" of the port into the territories of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p47">
+				<persName key="Numico Casale">Numico Casale de Casolla Valentiana</persName>
+				<state>
+					<p>Son of <persName ref="#p21">Nardo Casale</persName></p>
+				</state>
+			</person>
+			<person xml:id="p48">
+				<persName key="Giacomo Zampella">Iacovo Zanupella de Caivano</persName>
+			</person>
+			<person xml:id="p49">
+				<persName key="Cristofano di Sant'Arcangelo">Cristophano de Sancto
+					Arcangelo</persName>
+				<state>
+					<p>He had land in the territories of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p50">
+				<persName key="Paolo Alfieri">Paulo de Alferi</persName>
+				<state>
+					<p>He had land in the territories of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p51">
+				<persName key="Cola Fusco">Cola Fusscho</persName>
+				<state>
+					<p>He had land in the territory of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p52">
+				<persName key="Angelo Greco">Angelo grecho</persName>
+				<state>
+					<p>He had land in the territories of San Nicandro named "bosco"</p>
+				</state>
+			</person>
+			<person xml:id="p53">
+				<persName key="Monaco de Dato de Casolla Valenziana">Monacho de Dato</persName>
+				<state>
+					<p>He had land in the territories of San Nicandro named "casine" and a land
+						named "arbustata"</p>
+				</state>
+			</person>
+			<person xml:id="p54">
+				<persName key="Mastro Stefano Arzano">Mastro Stephano Arzano</persName>
+				<state>
+					<p>He had land in the territories of San Nicandro named "casine"</p>
+				</state>
+			</person>
+			<person xml:id="p55">
+				<persName key="Paolo di Angelo Fortunato">Paulo de Angelo Fortunato</persName>
+				<state>
+					<p>He had land in the territories of San Nicandro named "casine"</p>
+				</state>
+			</person>
+			<person xml:id="p56">
+				<persName key="Iacovello Capogrosso">Iacovello Capogrosso de Casolla
+					Valentiana</persName>
+				<state>
+					<p>He have land in the territories of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p57">
+				<persName key="Cola d'Amore di Casolla Valenziana">Cola de Amore de
+					Casolla</persName>
+			</person>
+			<person xml:id="p58">
+				<persName key="Iacobo de Magella">Iacobo de Magella</persName>
+			</person>
+			<person xml:id="p59">
+				<persName key="Munchello Pastaro">Munchello Pastaro</persName>
+			</person>
+			<person xml:id="p60">
+				<persName key="Cola Caruto">Cola Caruto</persName>
+			</person>
+			<person xml:id="p61">
+				<persName key="Leone di Casolla Valenziana">Leone de Casolla Valentiana</persName>
+				<state>
+					<p>He had two "mogi" of land in the territories of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p62">
+				<persName key="Domenico di Giovanni Arno di Casolla Valenziana">Dominichello de
+					Iohanni arno de casolla Valentiana</persName>
+				<state>
+					<p>He had two "mogi" of land in the territories of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p63">
+				<persName key="Angelino de Puntillo di Casolla">Angellello de Puntillo de
+					casolla</persName>
+				<state>
+					<p>He had two "mogi" of land in the territories of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p64">
+				<persName key="Bratullo di Crispano">Bratullo de Crespano</persName>
+			</person>
+			<person xml:id="p65">
+				<persName key="Antonio Maramone di Crispano">Antonii Maramone</persName>
+			</person>
+			<person xml:id="p66">
+				<persName key="Angelino de Ianuillo di Crispano">Angelilo de Ianuillo</persName>
+			</person>
+			<person xml:id="p67">
+				<persName key="Capuano Michele di Crispano">Capouano Michele</persName>
+			</person>
+			<person xml:id="p68">
+				<persName key="Giovanni Daniele di Crispano">Iohanne Daniele</persName>
+			</person>
+			<person xml:id="p69">
+				<persName key="Antonio Paruneri di Crispano">Antoni Paruneri</persName>
+			</person>
+			<person xml:id="p70">
+				<persName key="Giovanni De Vitale di Crispano">Iohanni de Vitale</persName>
+			</person>
+			<person xml:id="p71">
+				<persName key="Mactuczo de Gabreli di Crispano">Mactuczo de Gabreli</persName>
+			</person>
+			<person xml:id="p72">
+				<persName key="Giacomo Avello di Crispano">Iacovo Anello</persName>
+			</person>
+			<person xml:id="p73">
+				<persName key="Luise Mocza di Crispano">Liuse Mocza</persName>
+			</person>
+			<person xml:id="p74">
+				<persName key="Petruczo Stantone di Crispano">Petruczo Stantone de
+					Crespano</persName>
+			</person>
+			<person xml:id="p75">
+				<persName key="Iacovo Stantone di Crispano">Iacovo Stantone de Cresapno</persName>
+			</person>
+			<person xml:id="p76">
+				<persName key="Magella di Caivano">Magella de Caivano</persName>
+				<state>
+					<p>He have land near the port</p>
+				</state>
+			</person>
+			<person xml:id="p77">
+				<persName key="Antonio Capone de la Cava">Antonii Capone de la cava</persName>
+				<state>
+					<p>He had a "casina" into the the territories of San Nicandro of seven and half
+						"mogi"</p>
+				</state>
+			</person>
+			<person xml:id="p78">
+				<persName key="Angelo di Pisciotta">Angelo de Pissciopta</persName>
+				<state>
+					<p>He had a "casina" into the territories of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p79">
+				<persName key="Giacomo di Angriso">Iacovo de Angriso</persName>
+				<state>
+					<p>He had a "casina" into the territories of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p80">
+				<persName key="Galiano de Cava">Galiano de cava</persName>
+				<state>
+					<p>He had a "casina" into the territories of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p81">
+				<persName key="Cantello Mannocza de Cava">Cantello Mannocza</persName>
+				<state>
+					<p>He had a "casina" into the territories of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p82">
+				<persName key="Marchione Russcio de la Cava">Marchione Russcio de la Cava</persName>
+			</person>
+			<person xml:id="p83">
+				<persName key=""> <persName key="Minicho de Caivano">Minicho de Terra de
+					Caivano</persName> </persName>
+			</person>
+			<person xml:id="p84">
+				<persName key="Santella Casina">Santella Casina</persName>
+			</person>
+			<person xml:id="p85">
+				<persName key="Antonio Mancino de la Cava">Antonio mancino de la Cava</persName>
+			</person>
+			<person xml:id="p86">
+				<persName key="Bartomeo Ruffino de la Cava">Bartomeo de Ruffino de la
+					Cava</persName>
+			</person>
+			<person xml:id="p87">
+				<persName key="Niucho di Caivano">Niucho de terra de Caivano</persName>
+			</person>
+			<person xml:id="p88">
+				<persName key="Cola Matone">Cola Matone</persName>
+			</person>
+			<person xml:id="p89">
+				<persName key="Antonello Marigliano">Antonello Marigliano</persName>
+				<state>
+					<p>He had land in the territories of the Infermeria</p>
+				</state>
+			</person>
+			<person xml:id="p90">
+				<persName key="Francesco Greco">Francisco Grecho</persName>
+				<state>
+					<p>He had land that used to belong to Lorenzo de Mayello</p>
+				</state>
+			</person>
+			<person xml:id="p91">
+				<persName key="Cristoforo di Adani di Sant'Arcangelo"/>
+			</person>
+			<person xml:id="p92">
+				<persName key="Cerillo">Cerillo</persName>
+				<state>
+					<p>Mulattiere of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p93">
+				<persName key="Santillo Manoczo">Santillo Manoczo</persName>
+				<state>
+					<p>He had a "casina" of four "mogi"</p>
+				</state>
+			</person>
+			<person xml:id="p94">
+				<persName key="Francesco di Angelo Greco di casolla Valenziana">Francisscho de
+					Angelo Grecho de Casolla Valentiana</persName>
+			</person>
+			<person xml:id="p95">
+				<persName key="Antoni Carrisi de Massanello">Antoni Carrisi de Massanello</persName>
+			</person>
+			<person xml:id="p96">
+				<persName key="Giovanni de Magro">Iohanni de Magro</persName>
+			</person>
+			<person xml:id="p97">
+				<persName key="Prete Marturo">Sancto prete Marturo</persName>
+			</person>
+			<person xml:id="p98">
+				<persName key="Iesue di Casolla">Iesue de Casulla</persName>
+			</person>
+			<person xml:id="p99">
+				<persName key="Antonio de la Pietra">Antonii de la Petra mastro massaro</persName>
+			</person>
+			<person xml:id="p100">
+				<persName key="giumentaro"> <forename>unknown</forename>
+					<roleName>iumentari</roleName> </persName>
+				<state>
+					<p>keeper of farmed horses</p>
+				</state>
+			</person>
+			<person xml:id="p101">
+				<persName key="Aprile Civella di Casolla Valenziana">Abrile Civella</persName>
+				<state>
+					<p>He had half land that used to belong to <persName ref="#p88">Cola
+						Matone</persName></p>
+				</state>
+			</person>
+			<person xml:id="p102">
+				<persName key="Domenico">Dominico</persName>
+				<state>
+					<p>He was a driver carriage for the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p103">
+				<persName key="Gabriele">Grabriele</persName>
+				<state>
+					<p>He was a driver carriage for the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p104">
+				<persName key="mastro Domenico">mastro Dominico</persName>
+			</person>
+			<person xml:id="p105">
+				<persName key="Dactulo">Dactulo</persName>
+				<state>
+					<p>"mulattiere" of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p106">
+				<persName key="Giovanni mulattiere">Iohanni</persName>
+				<state>
+					<p>"mulattiere" of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p107">
+				<persName key="Santo">Sancto</persName>
+				<state>
+					<p>He was a driver carriage for the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p108">
+				<persName key="Renzo">Renzo de Dato</persName>
+				<state>
+					<p>He had land in the "starza" of the port</p>
+				</state>
+			</person>
+			<person xml:id="p109">
+				<persName key="Giovanni di Melito">Iohanni de Milito</persName>
+				<state>
+					<p>He was a driver carriage for the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p110">
+				<persName key="Fantuczo Caputo">Fantuczo Caputo</persName>
+				<state>
+					<p>He had land in the "starza" of the port</p>
+				</state>
+			</person>
+			<person xml:id="p111">
+				<persName key="Angelo Capogrosso">Angelo Capogrosso</persName>
+			</person>
+			<person xml:id="p112">
+				<persName key="Domenico de Misa">Dominico de Misa</persName>
+				<state>
+					<p>He had the land that used to belong to Cola Matone</p>
+				</state>
+			</person>
+			<person xml:id="p113">
+				<persName key="don Matteo">domno Matheo</persName>
+			</person>
+			<person xml:id="p114">
+				<persName key="mastro Francesco de la Pietra">mastro Francisco de la
+					Petra</persName>
+			</person>
+			<person xml:id="p115">
+				<persName key="Michele de Casolla">Michele de Casolla</persName>
+			</person>
+			<person xml:id="p116">
+				<persName key="fra Tommaso">fra Tomasi</persName>
+			</person>
+			<person xml:id="p117">
+				<persName key="Santo Cappelletta de la Cerra">Sancto Cappellecta de la
+					cerra</persName>
+			</person>
+			<person xml:id="p118">
+				<persName key="fra Lorenzo">Laurenczo</persName>
+			</person>
+			<person xml:id="p119">
+				<persName key="fra Marcello">Marzello</persName>
+			</person>
+			<person xml:id="p120">
+				<persName key="mastro Nitardo">Mastro Nitardo</persName>
+			</person>
+			<person xml:id="p121">
+				<persName key="procuratore"> <forename>unknown</forename>
+					<roleName>procoratore,</roleName> </persName>
+				<state>
+					<p>procuratore of monastery dei SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p122">
+				<persName key="Cola Iancraro">Cola Iancraro</persName>
+			</person>
+			<person xml:id="p123">
+				<persName key="panettiere"> <forename>unknown</forename>
+					<roleName>panentiere</roleName> <state>
+					<p>baker</p>
+					</state> </persName>
+			</person>
+			<person xml:id="p124">
+				<persName key="Iucerni Colaurenzo de Mayello Mezzo Campo">Iucerni Colaurenzo de
+					Mayello Mezo Campo</persName>
+				<state>
+					<p>He had land in the territories of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p125">
+				<persName key="Pacello">Pacello</persName>
+				<state>
+					<p>He was a driver carriage for the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p126">
+				<persName key="Adanese">Adanese</persName>
+				<state>
+					<p>He was a driver carriage for the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p127">
+				<persName key="Vactino">Vactino</persName>
+				<state>
+					<p>"mulattiere" of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p128">
+				<persName key="Nardo">Nardo</persName>
+				<state>
+					<p>"mulattiere" of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p129">
+				<persName key="Renzo di Casolla"/>
+				<state>
+					<p>He had land in the territory named "port"</p>
+				</state>
+			</person>
+			<person xml:id="p130">
+				<persName key="Pietro Casale">Petri Casale</persName>
+				<state>
+					<p>He had land in the "starza" of San Nicandro</p>
+				</state>
+			</person>
+			<person xml:id="p131">
+				<persName key="Quanto">Quanto</persName>
+				<state>
+					<p>He was a driver carriage for the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p132">
+				<persName key="Galione de la Cera">Galione de la cera</persName>
+				<state>
+					<p>Ha had a "Noccioleto" from the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p133">
+				<persName key="trebbiatore">scumgniaturi</persName>
+				<state>
+					<p>Thrasher</p>
+				</state>
+			</person>
+			<person xml:id="p134">
+				<persName key="Ioffredo">Ioffredo</persName>
+				<state>
+					<p>"mulattiere" of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p135">
+				<persName key="Domenico di Castellane">Dominico de Castellane</persName>
+				<state>
+					<p>"mulattiere" of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p136">
+				<persName key="Ippolito di Mamella">Ypolito de Mamella</persName>
+				<state>
+					<p>"mulattiere" of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p137">
+				<persName key="Antonio massaro">Antonio massaro</persName>
+			</person>
+			<person xml:id="p138">
+				<persName key="Anonello de la Cava">Anonello de la Cava</persName>
+			</person>
+			<person xml:id="p139">
+				<persName key="Goffredo de Vicino">Goffredo de Vicino</persName>
+			</person>
+			<person xml:id="p140">
+				<persName key="Minico">Minico</persName>
+				<state>
+					<p>"mulattiere" of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p141">
+				<persName key="Giovanni Tommaso">Iohani Tomasi</persName>
+				<state>
+					<p>"mulactiere" of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p142">
+				<persName key="Belardino">Belardino</persName>
+				<state>
+					<p>"mulactiere" of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p143">
+				<persName key="Iacobo Mayano">Iacobo Mayano</persName>
+				<state>
+					<p>He had land in the territories of Quarto</p>
+				</state>
+			</person>
+			<person xml:id="p144">
+				<persName key="Filippo Aversano">Philippo de Adversano</persName>
+				<state>
+					<p>He had land in the territories of Quarto</p>
+				</state>
+			</person>
+			<person xml:id="p145">
+				<persName key="Pietro mulattiere">Pietro molecteri</persName>
+				<state>
+					<p>"mulattiere" of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p146">
+				<persName key="Goffreda mulattiere">Ioffreda molecteri</persName>
+				<state>
+					<p> <state>
+						<p>"mulattiere" of the monastery of SS. Pietro e Sebastiano</p>
+						</state> </p>
+				</state>
+			</person>
+			<person xml:id="p147">
+				<persName key="Ippolito mulattiere">Ypolito mulactero</persName>
+				<state>
+					<p>"mulattiere" of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p148">
+				<persName key="Sabatino Mayano">Sabatino Mayano</persName>
+				<state>
+					<p>He had land in the territories of Quarto</p>
+				</state>
+			</person>
+			<person xml:id="p149">
+				<persName key="Domenico di Castellone">Dominico de Castellone</persName>
+			</person>
+			<person xml:id="p150">
+				<persName key="Filippo de Marano">Filippo de Marano</persName>
+				<state>
+					<p>He had land in the territories of Quarto</p>
+				</state>
+			</person>
+			<person xml:id="p151">
+				<persName key="Antonello mulactere">Antonello</persName>
+				<state>
+					<p>"mulattirere" of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p152">
+				<persName key="Itonino de Matanio">Itonino de Matanio</persName>
+				<state>
+					<p>He had land in the territories named "puczo"</p>
+				</state>
+			</person>
+			<person xml:id="p153">
+				<persName key="Minicone di Marano">Minicone de Marano</persName>
+				<state>
+					<p>He had land in the territories of Quarto</p>
+				</state>
+			</person>
+			<person xml:id="p154">
+				<persName key="Iacobo de Roncha">Iacobo de Roncha</persName>
+				<state>
+					<p>He had land in the territories of Melito</p>
+				</state>
+			</person>
+			<person xml:id="p155">
+				<persName key="Antonazo de Melito">Antonazo de Melito</persName>
+				<state>
+					<p>He had a land in the territories of Melito</p>
+				</state>
+			</person>
+			<person xml:id="p156">
+				<persName key="Anello de melito">Anello de melito</persName>
+				<state>
+					<p>He had land in the territories of Melito</p>
+				</state>
+			</person>
+			<person xml:id="p157">
+				<persName key="Aversano">Aversano della starsa di Melito</persName>
+			</person>
+			<person xml:id="p158">
+				<persName key="Cola Sansaro">Cola Sansaro</persName>
+			</person>
+			<person xml:id="p159">
+				<persName key="Polisena di Melito">Polisena de Malito</persName>
+				<state>
+					<p>He had a garden in the territories of the monastery of SS. Pietro e
+						Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p160">
+				<persName key="Lisa di Melito">Lisa</persName>
+			</person>
+			<person xml:id="p161">
+				<persName key="Manella di Melito">Manella de Melito</persName>
+			</person>
+			<person xml:id="p162">
+				<persName key="Anello Cecere di Melito">Anello Cecere de Melito</persName>
+			</person>
+			<person xml:id="p163">
+				<persName key="Luise Sarretano">Luise Sarretano di Piscinola</persName>
+				<state>
+					<p>He had three "mogi" of land</p>
+				</state>
+			</person>
+			<person xml:id="p164">
+				<persName key="Lorenzo di Piscinola">Laurenzo de Pissinula</persName>
+			</person>
+			<person xml:id="p165">
+				<persName key="Missere Nicola">Missere Nicolo</persName>
+			</person>
+			<person xml:id="p166">
+				<persName key="Andrea de Costanza de Peczulo">Andrea de Costanza de
+					Peczulo</persName>
+			</person>
+			<person xml:id="p167">
+				<persName key="Giovanni Salliano">Iohanne Salliano</persName>
+			</person>
+			<person xml:id="p168">
+				<persName key="Nardo de Falco">Nardo de Falco</persName>
+			</person>
+			<person xml:id="p169">
+				<persName key="Agustino de Falco">Agustino de Falco</persName>
+			</person>
+			<person xml:id="p170">
+				<persName key="Bernardo Cocchiara">Bernardo Cocchiara</persName>
+				<state>
+					<p>mulattiere of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p171">
+				<persName key="Giovanni Antonio Cocchiara">Iohanne Antoni Cocchiara</persName>
+			</person>
+			<person xml:id="p172">
+				<persName key="mastro massaro Antoni Caruso">mastro massaro Antoni Caruso</persName>
+			</person>
+			<person xml:id="p173">
+				<persName key="Tamborrino de Feregnano piccolo">Tamborrino de Fregnano
+					piczulo</persName>
+			</person>
+			<person xml:id="p174">
+				<persName key="figlio di Tamborrino"> <persName> <forename>unknown</forename>
+					</persName> <state>
+					<p>he was the son of <persName ref="#p173">Tamborrino</persName></p>
+					</state> </persName>
+			</person>
+			<person xml:id="p175">
+				<persName key="Frate Luca">Frate Luca</persName>
+				<state>
+					<p>He was a "converso" of the monastry of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+			<person xml:id="p176">
+				<persName key="Cirillo mulattiere">Cirillo</persName>
+				<state>
+					<p>mulattiere of the monastery of SS. Pietro e Sebastiano</p>
+				</state>
+			</person>
+		</listPerson>
+		<listPlace>
+			<place>
+				<!--inserire qui i luoghi --> </place>
+		</listPlace>
+		<listOrg ana="depcha:index">
+			<org xml:id="o1">
+				<orgName type="monastery" key="Monastero dei Santi Pietro e Sebastiano"
+					ref="https://www.wikidata.org/wiki/Q3672018">monastero Sanctorum Petri et
+					Sebestiani</orgName>
+			</org>
+			<org>
+				<!-- inserire qui le organizzazioni --> </org>
+		</listOrg>
+		<list ana="commodities">
+			<head>Lexicon</head>
+			<item xml:id="cavolo">Follie</item>
+		</list>
+		<listBibl>
+			<bibl xml:id="DDT">S.Argenziano, Dizionario del Dialetto Torrese con citazioni dal
+				Dialetto Napoletano. Da Dammaggio a Muzzunaro, <biblScope xml:id="DDT-16"
+				>p.16</biblScope></bibl>
+		</listBibl>
+	</standOff>
+	<facsimile xml:id="facs_3">
+		<surface ulx="0" uly="0" lrx="1854" lry="3000">
+			<graphic url="1398_completo_ordinato-0003.jpg" width="1854px" height="3000px"/>
+			<zone points="625,629 945,629 945,798 625,798" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_3_region_1678810791942_502"> <zone
+				points="678,717 867,710 869,760 680,767" rendition="Line"
+				xml:id="facs_3_line_1678810815241_511"/> </zone>
+			<zone points="409,794 1762,794 1762,1970 409,1970" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_3_region_1678810804652_505"> <zone
+				points="468,831 976,820 977,870 469,881" rendition="Line"
+				xml:id="facs_3_line_1678810820924_516"/> <zone
+				points="498,897 939,900 939,950 498,947" rendition="Line"
+				xml:id="facs_3_line_1678810824979_521"/> <zone
+				points="460,968 979,965 979,1015 460,1018" rendition="Line"
+				xml:id="facs_3_line_1678810828150_526"/> <zone
+				points="485,1034 788,1023 790,1073 487,1084" rendition="Line"
+				xml:id="facs_3_line_1678810832552_531"/> <zone
+				points="457,1098 890,1084 891,1134 458,1148" rendition="Line"
+				xml:id="facs_3_line_1678810835219_536"/> <zone
+				points="466,1166 772,1161 773,1211 467,1216" rendition="Line"
+				xml:id="facs_3_line_1678810838793_541"/> <zone
+				points="436,1242 757,1227 759,1277 438,1292" rendition="Line"
+				xml:id="facs_3_line_1678810842968_546"/> <zone
+				points="425,1319 1768,1264 1770,1314 427,1369" rendition="Line"
+				xml:id="facs_3_line_1678810846785_551"/> <zone
+				points="416,1418 1195,1370 1198,1420 419,1468" rendition="Line"
+				xml:id="facs_3_line_1678810863765_556"/> <zone
+				points="415,1517 820,1482 824,1532 419,1567" rendition="Line"
+				xml:id="facs_3_line_1678810879248_561"/> <zone
+				points="406,1589 722,1557 728,1607 412,1639" rendition="Line"
+				xml:id="facs_3_line_1678810889340_566"/> <zone
+				points="408,1662 1056,1596 1062,1646 414,1712" rendition="Line"
+				xml:id="facs_3_line_1678810894052_571"/> <zone
+				points="412,1745 744,1734 745,1784 413,1795" rendition="Line"
+				xml:id="facs_3_line_1678810903236_576"/> <zone
+				points="392,1840 786,1812 789,1862 395,1890" rendition="Line"
+				xml:id="facs_3_line_1678810908525_581"/> <zone
+				points="391,1910 743,1912 743,1962 391,1960" rendition="Line"
+				xml:id="facs_3_line_1678810915299_586"/> </zone>
+			<zone points="838,2127 1140,2127 1140,1977 838,1977" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_3_region_1678810808275_508"> <zone
+				points="863,2056 1085,2033 1091,2083 869,2106" rendition="Line"
+				xml:id="facs_3_line_1678810919119_591"/> </zone>
+		</surface>
+	</facsimile>
+	<facsimile xml:id="facs_4">
+		<surface ulx="0" uly="0" lrx="2070" lry="3000">
+			<graphic url="1398_completo_ordinato-0004.jpg" width="2070px" height="3000px"/>
+			<zone points="1699,165 1846,165 1846,328 1699,328" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_4_region_1678957273907_12"> <zone
+				points="1719,249 1810,249 1810,299 1719,299" rendition="Line"
+				xml:id="facs_4_line_1678957282433_15"/> </zone>
+			<zone points="143,367 624,106 1678,106 1781,367 1796,1146 1796,1556 289,1556 143,1180"
+				rendition="TextRegion" subtype="paragraph"
+				xml:id="facs_4_TextRegion_1679394428891_12"> <zone
+				points="684,228 1620,287 1617,337 681,278" rendition="Line"
+				xml:id="facs_4_line_1678812432757_742"/> <zone
+				points="745,311 1617,400 1611,450 739,361" rendition="Line"
+				xml:id="facs_4_line_1678812437355_747"/> <zone
+				points="297,539 1717,641 1714,691 294,589" rendition="Line"
+				xml:id="facs_4_line_1678812441281_752"/> <zone
+				points="386,631 1714,727 1711,777 383,681" rendition="Line"
+				xml:id="facs_4_line_1678812445598_757"/> <zone
+				points="384,676 1675,789 1671,839 380,726" rendition="Line"
+				xml:id="facs_4_line_1678812449548_762"/> <zone
+				points="386,776 1744,880 1741,930 383,826" rendition="Line"
+				xml:id="facs_4_line_1678812454584_767"/> <zone
+				points="375,864 1653,939 1650,989 372,914" rendition="Line"
+				xml:id="facs_4_line_1678812458620_772"/> <zone
+				points="361,937 1680,1014 1677,1064 358,987" rendition="Line"
+				xml:id="facs_4_line_1678812488116_777"/> <zone
+				points="383,1009 1688,1095 1685,1145 380,1059" rendition="Line"
+				xml:id="facs_4_line_1678812493519_782"/> <zone
+				points="363,1092 1152,1130 1150,1180 361,1142" rendition="Line"
+				xml:id="facs_4_line_1678812505339_787"/> <zone
+				points="367,1192 1757,1278 1754,1328 364,1242" rendition="Line"
+				xml:id="facs_4_line_1678812513325_792"/> <zone
+				points="377,1272 1754,1342 1752,1392 375,1322" rendition="Line"
+				xml:id="facs_4_line_1678812517671_797"/> <zone
+				points="403,1350 1730,1417 1728,1467 401,1400" rendition="Line"
+				xml:id="facs_4_line_1678812521530_802"/> <zone
+				points="382,1428 1708,1476 1706,1526 380,1478" rendition="Line"
+				xml:id="facs_4_line_1678812526893_807"/> </zone>
+		</surface>
+	</facsimile>
+	<facsimile xml:id="facs_5">
+		<surface ulx="0" uly="0" lrx="2041" lry="3000">
+			<graphic url="1398_completo_ordinato-0005.jpg" width="2041px" height="3000px"/>
+			<zone points="1668,94 1811,94 1811,227 1668,227" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_5_region_1680601725442_79"> <zone
+				points="1692,146 1774,149 1772,199 1690,196" rendition="Line"
+				xml:id="facs_5_line_1680601731161_82"/> </zone>
+			<zone points="201,271 849,43 1353,43 1658,211 1733,271 1733,866 201,866"
+				rendition="TextRegion" subtype="paragraph"
+				xml:id="facs_5_TextRegion_1678887634289_45"> <zone
+				points="882,107 1342,115 1341,165 881,157" rendition="Line"
+				xml:id="facs_5_line_1678809412608_256"/> <zone
+				points="783,297 1618,331 1616,381 781,347" rendition="Line"
+				xml:id="facs_5_line_1678809426593_261"/> <zone
+				points="347,422 1602,462 1601,512 346,472" rendition="Line"
+				xml:id="facs_5_line_1678809436823_266"/> <zone
+				points="496,501 1571,526 1570,576 495,551" rendition="Line"
+				xml:id="facs_5_line_1678809447379_271"/> <zone
+				points="506,556 1551,593 1549,643 504,606" rendition="Line"
+				xml:id="facs_5_line_1678809451960_276"/> <zone
+				points="486,642 1628,651 1628,701 486,692" rendition="Line"
+				xml:id="facs_5_line_1678809457446_281"/> <zone
+				points="496,696 1596,718 1595,768 495,746" rendition="Line"
+				xml:id="facs_5_line_1678809463835_286"/> <zone
+				points="500,754 1581,791 1579,841 498,804" rendition="Line"
+				xml:id="facs_5_line_1678809474120_291"/> <zone
+				points="500,815 899,830 897,880 498,865" rendition="Line"
+				xml:id="facs_5_line_1678809483960_296"/> </zone>
+			<zone points="295,874 1760,874 1760,1263 295,1263" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_5_region_1678809284103_232"> <zone
+				points="390,964 1577,1062 1573,1112 386,1014" rendition="Line"
+				xml:id="facs_5_line_1678809502246_301"/> <zone
+				points="502,1047 1586,1138 1582,1188 498,1097" rendition="Line"
+				xml:id="facs_5_line_1678809510217_306"/> <zone
+				points="489,1132 1756,1211 1753,1261 486,1182" rendition="Line"
+				xml:id="facs_5_line_1678809561977_311"/> </zone>
+			<zone points="361,1226 1760,1226 1760,1553 361,1553" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_5_region_1678809349750_244"> <zone
+				points="451,1298 1636,1353 1634,1403 449,1348" rendition="Line"
+				xml:id="facs_5_line_1678809646018_316"/> <zone
+				points="504,1356 1673,1435 1670,1485 501,1406" rendition="Line"
+				xml:id="facs_5_line_1678809650409_321"/> <zone
+				points="472,1463 1681,1514 1679,1564 470,1513" rendition="Line"
+				xml:id="facs_5_line_1678809663143_326"/> </zone>
+			<zone points="377,1539 1799,1539 1799,1944 377,1944" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_5_region_1678809376212_247"> <zone
+				points="467,1551 1640,1630 1637,1680 464,1601" rendition="Line"
+				xml:id="facs_5_line_1678809675673_331"/> <zone
+				points="492,1645 1615,1712 1612,1762 489,1695" rendition="Line"
+				xml:id="facs_5_line_1678809680666_336"/> <zone
+				points="504,1734 1649,1801 1646,1851 501,1784" rendition="Line"
+				xml:id="facs_5_line_1678809685721_341"/> <zone
+				points="501,1819 1880,1913 1877,1963 498,1869" rendition="Line"
+				xml:id="facs_5_line_1678809692463_346"/> </zone>
+			<zone points="358,1922 1796,1922 1796,2300 358,2300" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_5_region_1678809383922_250"> <zone
+				points="457,1944 1688,2002 1686,2052 455,1994" rendition="Line"
+				xml:id="facs_5_line_1678809697567_351"/> <zone
+				points="491,2020 1651,2072 1649,2122 489,2070" rendition="Line"
+				xml:id="facs_5_line_1678809702183_356"/> <zone
+				points="490,2120 1632,2154 1631,2204 489,2170" rendition="Line"
+				xml:id="facs_5_line_1678809712301_361"/> <zone
+				points="475,2212 1693,2227 1692,2277 474,2262" rendition="Line"
+				xml:id="facs_5_line_1678809720504_366"/> </zone>
+			<zone points="397,2280 1939,2280 1939,2545 397,2545" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_5_region_1678809388527_253"> <zone
+				points="472,2318 1651,2364 1649,2414 470,2368" rendition="Line"
+				xml:id="facs_5_line_1678809727334_371"/> <zone
+				points="471,2422 1891,2465 1890,2515 470,2472" rendition="Line"
+				xml:id="facs_5_line_1678809733386_376"/> </zone>
+		</surface>
+	</facsimile>
+	<facsimile xml:id="facs_6">
+		<surface ulx="0" uly="0" lrx="1862" lry="3000">
+			<graphic url="1398_completo_ordinato-0006.jpg" width="1862px" height="3000px"/>
+			<zone points="791,34 1789,127 1781,247 784,171" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_6_region_1678812884555_845"> <zone
+				points="854,102 1719,187 1715,237 850,152" rendition="Line"
+				xml:id="facs_6_line_1678965026795_86"/> </zone>
+			<zone points="332,237 1784,237 1784,619 332,619" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_6_region_1678812919971_848"> <zone
+				points="412,312 1039,317 1651,395 1644,445 1036,367 412,362" rendition="Line"
+				xml:id="facs_6_line_1678965033058_91"/> <zone
+				points="437,358 1069,384 1644,459 1637,509 1065,434 435,408" rendition="Line"
+				xml:id="facs_6_line_1678965037506_96"/> <zone
+				points="436,454 1332,480 1661,516 1655,566 1329,530 435,504" rendition="Line"
+				xml:id="facs_6_line_1678965045069_101"/> <zone
+				points="426,550 1662,573 1661,623 425,600" rendition="Line"
+				xml:id="facs_6_line_1678965049150_106"/> </zone>
+			<zone points="318,613 1801,613 1801,945 318,945" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_6_region_1678812925888_851"> <zone
+				points="410,667 1200,682 1630,734 1624,784 1197,732 409,717" rendition="Line"
+				xml:id="facs_6_line_1678965055437_111"/> <zone
+				points="464,742 1096,752 1627,809 1621,859 1093,802 463,792" rendition="Line"
+				xml:id="facs_6_line_1678965059341_116"/> <zone
+				points="447,822 1246,851 1718,882 1715,932 1244,901 445,872" rendition="Line"
+				xml:id="facs_6_line_1678965063866_121"/> </zone>
+			<zone points="330,934 1810,934 1810,1173 357,1100" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_6_region_1678812962734_854"> <zone
+				points="419,962 1645,1027 1643,1077 417,1012" rendition="Line"
+				xml:id="facs_6_line_1678965068813_126"/> <zone
+				points="464,1053 1768,1128 1765,1178 461,1103" rendition="Line"
+				xml:id="facs_6_line_1678965074047_131"/> </zone>
+			<zone points="301,1127 1570,1179 1820,1299 351,1289" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_6_region_1678812991055_858"> <zone
+				points="424,1133 1544,1185 1542,1235 422,1183" rendition="Line"
+				xml:id="facs_6_line_1678965078297_136"/> <zone
+				points="449,1229 1763,1247 1762,1297 448,1279" rendition="Line"
+				xml:id="facs_6_line_1678965083241_141"/> </zone>
+			<zone points="318,1296 1837,1296 1837,1536 351,1464" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_6_region_1678813007110_862"> <zone
+				points="411,1322 886,1346 1568,1390 1565,1440 883,1396 409,1372" rendition="Line"
+				xml:id="facs_6_line_1678965089063_146"/> <zone
+				points="444,1418 1126,1437 1760,1473 1757,1523 1124,1487 443,1468" rendition="Line"
+				xml:id="facs_6_line_1678965095012_151"/> </zone>
+			<zone points="384,1495 1844,1495 1836,1727 1757,1932 419,1808 397,1640"
+				rendition="TextRegion" subtype="paragraph"
+				xml:id="facs_6_TextRegion_1678966575140_388"> <zone
+				points="419,1499 1560,1577 1557,1627 416,1549" rendition="Line"
+				xml:id="facs_6_line_1678965107231_156"/> <zone
+				points="453,1579 1736,1670 1733,1720 450,1629" rendition="Line"
+				xml:id="facs_6_line_1678965110865_161"/> <zone
+				points="428,1665 1703,1766 1699,1816 424,1715" rendition="Line"
+				xml:id="facs_6_line_1678965113994_166"/> <zone
+				points="451,1758 1703,1857 1699,1907 447,1808" rendition="Line"
+				xml:id="facs_6_line_1678965117363_171"/> </zone>
+			<zone points="295,1806 1776,1947 1785,2203 295,2071" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_6_TextRegion_1678814026323_996"> <zone
+				points="412,1849 1491,1953 1487,2003 408,1899" rendition="Line"
+				xml:id="facs_6_line_1678965122465_176"/> <zone
+				points="458,1947 1542,2017 1539,2067 455,1997" rendition="Line"
+				xml:id="facs_6_line_1678965126107_181"/> <zone
+				points="442,2010 1263,2106 1755,2098 1756,2148 1261,2156 436,2060" rendition="Line"
+				xml:id="facs_6_line_1678965130604_186"/> </zone>
+			<zone points="295,2071 1785,2203 1793,2394 295,2324" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_6_TextRegion_1678814026323_995"> <zone
+				points="383,2134 1601,2209 1598,2259 380,2184" rendition="Line"
+				xml:id="facs_6_line_1678965134656_191"/> <zone
+				points="453,2240 1742,2274 1741,2324 452,2290" rendition="Line"
+				xml:id="facs_6_line_1678965139388_196"/> </zone>
+			<zone points="295,2324 1793,2394 1799,2551 295,2487" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_6_TextRegion_1678814017726_991"> <zone
+				points="412,2354 1149,2370 1675,2396 1673,2446 1147,2420 411,2404" rendition="Line"
+				xml:id="facs_6_line_1678965145373_201"/> <zone
+				points="434,2427 969,2450 1725,2456 1725,2506 968,2500 432,2477" rendition="Line"
+				xml:id="facs_6_line_1678965151776_206"/> </zone>
+			<zone points="295,2487 1799,2551 1806,2732 295,2732" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_6_TextRegion_1678814009372_987"> <zone
+				points="381,2502 1610,2541 1609,2591 380,2552" rendition="Line"
+				xml:id="facs_6_line_1678965156291_211"/> <zone
+				points="449,2577 1164,2608 1738,2611 1738,2661 1163,2658 447,2627" rendition="Line"
+				xml:id="facs_6_line_1678965161357_216"/> </zone>
+		</surface>
+	</facsimile>
+	<facsimile xml:id="facs_7">
+		<surface ulx="0" uly="0" lrx="2070" lry="3000">
+			<graphic url="1398_completo_ordinato-0007.jpg" width="2070px" height="3000px"/>
+			<zone points="1734,45 1880,45 1880,170 1734,170" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_region_1680601767277_97"> <zone
+				points="1753,104 1857,100 1859,150 1755,154" rendition="Line"
+				xml:id="facs_7_line_1680601775411_100"/> </zone>
+			<zone points="155,54 1961,177 1963,343 155,284" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813960606_977"> <zone
+				points="242,159 1619,186 1618,236 241,209" rendition="Line"
+				xml:id="facs_7_line_1678958433293_61"/> <zone
+				points="339,231 1821,251 1820,301 338,281" rendition="Line"
+				xml:id="facs_7_line_1678958438413_66"/> </zone>
+			<zone points="155,284 1963,343 1965,498 155,408" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813960606_976"> <zone
+				points="292,299 1718,328 1717,378 291,349" rendition="Line"
+				xml:id="facs_7_line_1678958443850_71"/> <zone
+				points="335,364 1884,411 1883,461 334,414" rendition="Line"
+				xml:id="facs_7_line_1678958448145_76"/> </zone>
+			<zone points="155,408 1965,498 1967,645 155,534" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813950389_972"> <zone
+				points="287,431 1722,469 1721,519 286,481" rendition="Line"
+				xml:id="facs_7_line_1678958452503_81"/> <zone
+				points="344,499 1870,535 1869,585 343,549" rendition="Line"
+				xml:id="facs_7_line_1678958458027_86"/> </zone>
+			<zone points="155,534 1967,645 1969,800 155,687" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813941642_968"> <zone
+				points="279,564 1766,640 1764,690 277,614" rendition="Line"
+				xml:id="facs_7_line_1678958462790_91"/> <zone
+				points="333,638 1831,721 1829,771 331,688" rendition="Line"
+				xml:id="facs_7_line_1678958467429_96"/> </zone>
+			<zone points="155,687 1969,800 1971,921 155,825" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813932136_964"> <zone
+				points="273,699 1748,780 1746,830 271,749" rendition="Line"
+				xml:id="facs_7_line_1678958473298_101"/> <zone
+				points="327,766 1799,829 1797,879 325,816" rendition="Line"
+				xml:id="facs_7_line_1678958477919_106"/> </zone>
+			<zone points="155,825 1971,921 1973,1068 155,968" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813923658_960"> <zone
+				points="302,849 1739,917 1737,967 300,899" rendition="Line"
+				xml:id="facs_7_line_1678958483263_111"/> <zone
+				points="302,919 1802,991 1800,1041 300,969" rendition="Line"
+				xml:id="facs_7_line_1678958489914_116"/> </zone>
+			<zone points="155,968 1973,1068 1975,1213 155,1097" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813907308_956"> <zone
+				points="265,994 1720,1070 1718,1120 263,1044" rendition="Line"
+				xml:id="facs_7_line_1678958502745_121"/> <zone
+				points="321,1075 1801,1156 1799,1206 319,1125" rendition="Line"
+				xml:id="facs_7_line_1678958507408_126"/> </zone>
+			<zone points="155,1097 1975,1213 1979,1412 155,1288" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813907308_955"> <zone
+				points="249,1160 1726,1223 1724,1273 247,1210" rendition="Line"
+				xml:id="facs_7_line_1678958511691_131"/> <zone
+				points="291,1232 1195,1261 1194,1311 290,1282" rendition="Line"
+				xml:id="facs_7_line_1678958516236_136"/> </zone>
+			<zone points="155,1288 1979,1412 1979,1586 155,1468" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813752277_942"> <zone
+				points="247,1340 1733,1398 1731,1448 245,1390" rendition="Line"
+				xml:id="facs_7_line_1678958521456_141"/> <zone
+				points="301,1423 1947,1495 1945,1545 299,1473" rendition="Line"
+				xml:id="facs_7_line_1678958526632_146"/> </zone>
+			<zone points="155,1468 1979,1586 1979,1750 155,1606" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813731375_938"> <zone
+				points="265,1495 1753,1576 1751,1626 263,1545" rendition="Line"
+				xml:id="facs_7_line_1678958531415_151"/> <zone
+				points="303,1565 1839,1644 1837,1694 301,1615" rendition="Line"
+				xml:id="facs_7_line_1678958536167_156"/> </zone>
+			<zone points="155,1606 1979,1750 1979,1869 155,1765" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813724856_934"> <zone
+				points="277,1630 1721,1727 1718,1777 274,1680" rendition="Line"
+				xml:id="facs_7_line_1678958541296_161"/> <zone
+				points="278,1707 1958,1787 1956,1837 276,1757" rendition="Line"
+				xml:id="facs_7_line_1678958548678_166"/> </zone>
+			<zone points="155,1765 1979,1869 1979,1923 155,1844" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813718128_930"> <zone
+				points="240,1778 1792,1855 1790,1905 238,1828" rendition="Line"
+				xml:id="facs_7_line_1678958561201_171"/> </zone>
+			<zone points="155,1844 1979,1923 1979,2009 155,1906" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813586822_926"> <zone
+				points="276,1855 1868,1931 1866,1981 274,1905" rendition="Line"
+				xml:id="facs_7_line_1678958565755_176"/> </zone>
+			<zone points="155,1906 1979,2009 1979,2070 155,1982" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813502527_912"> <zone
+				points="264,1907 1858,1997 1855,2047 261,1957" rendition="Line"
+				xml:id="facs_7_line_1678958580715_181"/> </zone>
+			<zone points="155,1982 1979,2070 1979,2147 155,2048" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813473579_908"> <zone
+				points="246,1982 1827,2068 1825,2118 244,2032" rendition="Line"
+				xml:id="facs_7_line_1678958592786_186"/> </zone>
+			<zone points="155,2048 1979,2147 1979,2375 155,2302" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813463015_904"> <zone
+				points="256,2088 1707,2119 1706,2169 255,2138" rendition="Line"
+				xml:id="facs_7_line_1678958597412_191"/> <zone
+				points="277,2135 1732,2198 1730,2248 275,2185" rendition="Line"
+				xml:id="facs_7_line_1678958607558_196"/> <zone
+				points="298,2216 1779,2277 1777,2327 296,2266" rendition="Line"
+				xml:id="facs_7_line_1678958613282_201"/> </zone>
+			<zone points="155,2302 1979,2375 1979,2738 155,2742" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_7_TextRegion_1678813454033_900"> <zone
+				points="245,2335 1704,2373 1703,2423 244,2385" rendition="Line"
+				xml:id="facs_7_line_1678958617869_206"/> <zone
+				points="300,2391 1721,2454 1719,2504 298,2441" rendition="Line"
+				xml:id="facs_7_line_1678958623042_211"/> <zone
+				points="291,2466 1822,2529 1820,2579 289,2516" rendition="Line"
+				xml:id="facs_7_line_1678958628455_216"/> </zone>
+		</surface>
+	</facsimile>
+	<facsimile xml:id="facs_8">
+		<surface ulx="0" uly="0" lrx="2062" lry="3000">
+			<graphic url="1398_completo_ordinato-0008.jpg" width="2062px" height="3000px"/>
+			<zone points="195,107 2011,107 2011,387 195,423" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_8_TextRegion_1678958746107_253"> <zone
+				points="228,205 1746,152 1748,202 230,255" rendition="Line"
+				xml:id="facs_8_line_1678958756254_256"/> <zone
+				points="382,263 1790,231 1791,281 383,313" rendition="Line"
+				xml:id="facs_8_line_1678958760408_261"/> <zone
+				points="356,345 1985,319 1986,369 357,395" rendition="Line"
+				xml:id="facs_8_line_1678958764434_266"/> </zone>
+			<zone points="195,423 2011,387 2011,566 195,575" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_8_TextRegion_1678958746107_252"> <zone
+				points="320,446 1796,407 1797,457 321,496" rendition="Line"
+				xml:id="facs_8_line_1678958770080_271"/> <zone
+				points="383,511 1986,508 1986,558 383,561" rendition="Line"
+				xml:id="facs_8_line_1678958776206_276"/> </zone>
+			<zone points="195,575 2011,566 2011,856 195,854" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_8_TextRegion_1678958735552_248"> <zone
+				points="310,619 1743,567 1745,617 312,669" rendition="Line"
+				xml:id="facs_8_line_1678958781900_281"/> <zone
+				points="357,678 2035,678 2035,728 357,728" rendition="Line"
+				xml:id="facs_8_line_1678958788093_286"/> <zone
+				points="348,769 2026,760 2026,810 348,819" rendition="Line"
+				xml:id="facs_8_line_1678958794041_291"/> </zone>
+			<zone points="302,851 2011,856 2011,1893 302,1890 36,1181 36,957" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_8_TextRegion_1680601812983_114"> <zone
+				points="339,933 1805,877 1807,927 341,983" rendition="Line"
+				xml:id="facs_8_line_1678958798908_296"/> <zone
+				points="45,992 255,978 1802,959 1804,1009 393,1071 48,1042" rendition="Line"
+				xml:id="facs_8_line_1680601824914_123"/> <zone
+				points="63,1100 355,1078 1775,1044 1777,1094 390,1156 66,1150" rendition="Line"
+				xml:id="facs_8_line_1680601830971_127"/> <zone
+				points="382,1181 1757,1142 1758,1192 383,1231" rendition="Line"
+				xml:id="facs_8_line_1678958813162_311"/> <zone
+				points="379,1272 1783,1243 1784,1293 380,1322" rendition="Line"
+				xml:id="facs_8_line_1678958817889_316"/> <zone
+				points="388,1357 1697,1311 1699,1361 390,1407" rendition="Line"
+				xml:id="facs_8_line_1678958822778_321"/> <zone
+				points="369,1429 1976,1393 1977,1443 370,1479" rendition="Line"
+				xml:id="facs_8_line_1678958829202_326"/> </zone>
+		</surface>
+	</facsimile>
+	<facsimile xml:id="facs_9">
+		<surface ulx="0" uly="0" lrx="2129" lry="3000">
+			<graphic url="1398_completo_ordinato-0009.jpg" width="2129px" height="3000px"/>
+			<zone points="1783,69 1903,69 1903,161 1783,161" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_9_region_1680601936880_177"> <zone
+				points="1802,90 1891,103 1883,153 1794,140" rendition="Line"
+				xml:id="facs_9_line_1680601943747_180"/> </zone>
+			<zone points="498,-14 1729,9 1729,364 498,351" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_9_TextRegion_1678959008790_368"> <zone
+				points="960,51 1145,46 1146,96 961,101" rendition="Line"
+				xml:id="facs_9_line_1678959022518_371"/> <zone
+				points="782,174 1399,177 1399,227 782,224" rendition="Line"
+				xml:id="facs_9_line_1678959026090_376"/> <zone
+				points="773,259 1353,256 1353,306 773,309" rendition="Line"
+				xml:id="facs_9_line_1678959030963_381"/> </zone>
+			<zone points="210,351 2003,376 2003,829 210,801 104,694 104,517" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_9_TextRegion_1680601876666_138"> <zone
+				points="262,412 1476,415 1476,465 262,462" rendition="Line"
+				xml:id="facs_9_line_1678959046994_386"/> <zone
+				points="513,498 1650,532 1649,582 512,548" rendition="Line"
+				xml:id="facs_9_line_1678959050629_391"/> <zone
+				points="144,623 340,585 1673,611 1672,661 154,672" rendition="Line"
+				xml:id="facs_9_line_1680601885634_144"/> <zone
+				points="496,671 1840,694 1839,744 495,721" rendition="Line"
+				xml:id="facs_9_line_1678959059880_401"/> </zone>
+			<zone points="210,801 2003,829 2003,1356 210,1323 116,1157 116,996"
+				rendition="TextRegion" subtype="paragraph"
+				xml:id="facs_9_TextRegion_1680601895997_148"> <zone
+				points="429,890 1614,938 1612,988 427,940" rendition="Line"
+				xml:id="facs_9_line_1678959065113_406"/> <zone
+				points="511,981 1668,1032 1666,1082 509,1031" rendition="Line"
+				xml:id="facs_9_line_1678959069842_411"/> <zone
+				points="138,1072 396,1056 1730,1109 1729,1159 464,1136 141,1122" rendition="Line"
+				xml:id="facs_9_line_1680601900433_152"/> <zone
+				points="482,1174 1897,1214 1896,1264 481,1224" rendition="Line"
+				xml:id="facs_9_line_1678959079180_421"/> </zone>
+			<zone points="210,1323 2003,1356 2003,1686 210,1725" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_9_TextRegion_1678958989905_359"> <zone
+				points="232,1382 1636,1365 1637,1415 233,1432" rendition="Line"
+				xml:id="facs_9_line_1678959089733_426"/> <zone
+				points="469,1456 1623,1456 1623,1506 469,1506" rendition="Line"
+				xml:id="facs_9_line_1678959093311_431"/> <zone
+				points="459,1570 1602,1545 1603,1595 460,1620" rendition="Line"
+				xml:id="facs_9_line_1678959097128_436"/> <zone
+				points="462,1655 1764,1624 1765,1674 463,1705" rendition="Line"
+				xml:id="facs_9_line_1678959100679_441"/> </zone>
+			<zone points="210,1725 2003,1686 2003,1893 210,1908" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_9_TextRegion_1678958981906_355"> <zone
+				points="423,1758 2024,1772 2024,1822 423,1808" rendition="Line"
+				xml:id="facs_9_line_1678959105140_446"/> </zone>
+			<zone points="210,1908 2003,1893 2004,2171 211,2224" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_9_TextRegion_1678958972302_351"> <zone
+				points="212,1962 1670,1923 1671,1973 213,2012" rendition="Line"
+				xml:id="facs_9_line_1678959112139_451"/> <zone
+				points="421,2048 1703,1991 1705,2041 423,2098" rendition="Line"
+				xml:id="facs_9_line_1678959116221_456"/> <zone
+				points="455,2153 2021,2139 2021,2189 455,2203" rendition="Line"
+				xml:id="facs_9_line_1678959121454_461"/> </zone>
+			<zone points="211,2224 1990,2194 2005,2410 212,2418" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_9_TextRegion_1678958943836_345"> <zone
+				points="377,2235 1542,2204 1543,2254 378,2285" rendition="Line"
+				xml:id="facs_9_line_1678959125103_466"/> <zone
+				points="483,2338 2041,2335 2041,2385 483,2388" rendition="Line"
+				xml:id="facs_9_line_1678959129167_471"/> </zone>
+			<zone points="212,2418 2005,2410 2006,2651 213,2616" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_9_TextRegion_1678958932033_341"> <zone
+				points="435,2426 2018,2434 2018,2484 435,2476" rendition="Line"
+				xml:id="facs_9_line_1678959133676_476"/> </zone>
+		</surface>
+	</facsimile>
+	<facsimile xml:id="facs_10">
+		<surface ulx="0" uly="0" lrx="1966" lry="3000">
+			<graphic url="1398_completo_ordinato-0010.jpg" width="1966px" height="3000px"/>
+			<zone points="136,41 1918,41 1928,98 146,167" rendition="TextRegion" subtype="paragraph"
+				xml:id="facs_10_TextRegion_1678959301256_508"> <zone
+				points="583,92 1282,43 1285,93 586,142" rendition="Line"
+				xml:id="facs_10_line_1678959324294_512"/> </zone>
+			<zone points="136,149 1918,80 1918,491 136,491" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_10_TextRegion_1678959301256_507"> <zone
+				points="311,196 1587,145 1589,195 313,246" rendition="Line"
+				xml:id="facs_10_line_1678959894684_517"/> <zone
+				points="449,305 1421,216 1425,266 453,355" rendition="Line"
+				xml:id="facs_10_line_1678959902705_522"/> <zone
+				points="447,387 1861,362 1862,412 448,437" rendition="Line"
+				xml:id="facs_10_line_1678959906468_527"/> </zone>
+			<zone points="136,491 1918,491 1918,888 136,864" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_10_TextRegion_1678959279239_503"> <zone
+				points="275,505 1680,518 1680,568 275,555" rendition="Line"
+				xml:id="facs_10_line_1678959911196_532"/> <zone
+				points="267,593 1719,620 1718,670 266,643" rendition="Line"
+				xml:id="facs_10_line_1678959916151_537"/> <zone
+				points="253,689 1807,680 1807,730 253,739" rendition="Line"
+				xml:id="facs_10_line_1678959920635_542"/> <zone
+				points="256,764 1058,740 1910,842 1904,892 1056,790 257,814" rendition="Line"
+				xml:id="facs_10_line_1678959933358_547"/> </zone>
+			<zone points="136,864 1918,888 1918,1119 136,1061" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_10_TextRegion_1678959270828_499"> <zone
+				points="251,871 1462,864 1857,932 1848,981 1458,914 251,921" rendition="Line"
+				xml:id="facs_10_line_1678959941422_552"/> <zone
+				points="258,962 1276,938 1902,1017 1895,1067 1274,988 259,1012" rendition="Line"
+				xml:id="facs_10_line_1678959948848_557"/> </zone>
+			<zone points="136,1061 1918,1119 1918,1942 136,1961" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_10_TextRegion_1678959256664_495"> <zone
+				points="148,1176 1593,1196 1592,1246 147,1226" rendition="Line"
+				xml:id="facs_10_line_1678959955981_562"/> <zone
+				points="445,1298 1616,1311 1616,1361 445,1348" rendition="Line"
+				xml:id="facs_10_line_1678959959928_567"/> <zone
+				points="441,1420 1575,1430 1575,1480 441,1470" rendition="Line"
+				xml:id="facs_10_line_1678959963629_572"/> <zone
+				points="424,1538 1555,1535 1555,1585 424,1588" rendition="Line"
+				xml:id="facs_10_line_1678959967743_577"/> <zone
+				points="435,1645 1463,1631 1935,1737 1924,1786 1457,1681 436,1695" rendition="Line"
+				xml:id="facs_10_line_1678959979916_582"/> <zone
+				points="289,1831 1506,1817 1953,1903 1944,1952 1502,1867 290,1881" rendition="Line"
+				xml:id="facs_10_line_1678959986361_587"/> </zone>
+			<zone points="136,1961 1918,1942 1918,2561 136,2561" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_10_TextRegion_1678959222639_491"> <zone
+				points="303,1973 1582,1943 1583,1993 304,2023" rendition="Line"
+				xml:id="facs_10_line_1678959991776_592"/> <zone
+				points="317,2058 1863,2037 1864,2087 318,2108" rendition="Line"
+				xml:id="facs_10_line_1678959997069_597"/> <zone
+				points="338,2152 1834,2139 1834,2189 338,2202" rendition="Line"
+				xml:id="facs_10_line_1678960003878_602"/> <zone
+				points="338,2240 1867,2227 1867,2277 338,2290" rendition="Line"
+				xml:id="facs_10_line_1678960008655_607"/> <zone
+				points="348,2342 531,2328 534,2378 351,2392" rendition="Line"
+				xml:id="facs_10_line_1678960012408_612"/> </zone>
+		</surface>
+	</facsimile>
+	<facsimile xml:id="facs_11">
+		<surface ulx="0" uly="0" lrx="2029" lry="3000">
+			<graphic url="1398_completo_ordinato-0011.jpg" width="2029px" height="3000px"/>
+			<zone points="1596,51 1761,51 1761,183 1596,183" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_11_region_1680601982635_193"> <zone
+				points="1638,105 1751,112 1748,162 1635,155" rendition="Line"
+				xml:id="facs_11_line_1680601989140_196"/> </zone>
+			<zone points="156,26 1508,12 1508,186 156,173" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_11_TextRegion_1678960405192_650"> <zone
+				points="659,54 968,44 969,94 660,104" rendition="Line"
+				xml:id="facs_11_line_1678960442724_661"/> </zone>
+			<zone points="156,173 1975,200 1975,1148 156,1152" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_11_TextRegion_1678960405191_649"> <zone
+				points="254,210 1586,248 1585,298 253,260" rendition="Line"
+				xml:id="facs_11_line_1678960457737_666"/> <zone
+				points="401,292 1562,347 1560,397 399,342" rendition="Line"
+				xml:id="facs_11_line_1678960462871_671"/> <zone
+				points="387,399 1490,453 1488,503 385,449" rendition="Line"
+				xml:id="facs_11_line_1678960470597_676"/> <zone
+				points="409,493 1426,540 1424,590 407,543" rendition="Line"
+				xml:id="facs_11_line_1678960480110_681"/> <zone
+				points="413,595 1970,617 1969,667 412,645" rendition="Line"
+				xml:id="facs_11_line_1678960486664_686"/> <zone
+				points="349,736 1393,724 1394,774 350,786" rendition="Line"
+				xml:id="facs_11_line_1678960491286_691"/> <zone
+				points="395,823 2019,838 2019,888 395,873" rendition="Line"
+				xml:id="facs_11_line_1678960499154_696"/> </zone>
+			<zone points="156,1152 1975,1148 1975,1509 156,1483" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_11_TextRegion_1678960384853_645"> <zone
+				points="558,1280 1942,1246 1943,1296 559,1330" rendition="Line"
+				xml:id="facs_11_line_1678960513351_701"/> <zone
+				points="598,1397 1199,1362 1202,1412 601,1447" rendition="Line"
+				xml:id="facs_11_line_1678960516636_706"/> </zone>
+			<zone points="156,1483 1975,1509 1975,2119 1975,2260 156,2227 156,2123"
+				rendition="TextRegion" subtype="paragraph"
+				xml:id="facs_11_TextRegion_1678960424361_657"> <zone
+				points="231,1546 1679,1526 1680,1576 232,1596" rendition="Line"
+				xml:id="facs_11_line_1678960520408_711"/> <zone
+				points="231,1625 1662,1600 1663,1650 232,1675" rendition="Line"
+				xml:id="facs_11_line_1678960525792_716"/> <zone
+				points="246,1719 1558,1685 1559,1735 247,1769" rendition="Line"
+				xml:id="facs_11_line_1678960529987_721"/> <zone
+				points="257,1791 1891,1776 1891,1826 257,1841" rendition="Line"
+				xml:id="facs_11_line_1678960534404_726"/> <zone
+				points="257,1888 1498,1878 1884,1903 1881,1953 1497,1928 257,1938" rendition="Line"
+				xml:id="facs_11_line_1678960542832_731"/> <zone
+				points="263,1960 640,1955 641,2005 264,2010" rendition="Line"
+				xml:id="facs_11_line_1678960546411_736"/> <zone
+				points="248,2064 1922,2039 1923,2089 249,2114" rendition="Line"
+				xml:id="facs_11_line_1678960549957_741"/> <zone
+				points="224,2146 1990,2131 1990,2181 224,2196" rendition="Line"
+				xml:id="facs_11_line_1678960555979_746"/> </zone>
+			<zone points="156,2227 1022,2182 1975,2260 1975,2531 1206,2452 156,2518"
+				rendition="TextRegion" subtype="paragraph"
+				xml:id="facs_11_TextRegion_1678960106724_629"> <zone
+				points="234,2255 1576,2223 1577,2273 235,2305" rendition="Line"
+				xml:id="facs_11_line_1678960567286_751"/> <zone
+				points="271,2342 1967,2295 1968,2345 272,2392" rendition="Line"
+				xml:id="facs_11_line_1678960577126_756"/> <zone
+				points="235,2444 771,2419 1364,2389 1986,2436 1983,2486 1363,2439 773,2469 237,2494"
+				rendition="Line" xml:id="facs_11_line_1678960601515_769"/> </zone>
+			<zone points="156,2518 1206,2452 1975,2531 1975,2806 156,2806" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_11_TextRegion_1678960089102_625"> <zone
+				points="307,2541 1273,2501 1586,2501 1586,2551 1274,2551 309,2591" rendition="Line"
+				xml:id="facs_11_line_1678960607300_774"/> <zone
+				points="308,2618 1990,2580 1991,2630 309,2668" rendition="Line"
+				xml:id="facs_11_line_1678960613882_779"/> <zone
+				points="297,2694 1983,2702 1983,2752 297,2744" rendition="Line"
+				xml:id="facs_11_line_1678960619757_784"/> </zone>
+		</surface>
+	</facsimile>
+	<facsimile xml:id="facs_12">
+		<surface ulx="0" uly="0" lrx="1920" lry="3000">
+			<graphic url="1398_completo_ordinato-0012.jpg" width="1920px" height="3000px"/>
+			<zone points="283,24 1761,24 1761,272 283,329" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_12_TextRegion_1678960693112_809"> <zone
+				points="430,112 718,75 1261,80 1261,130 721,125 437,162" rendition="Line"
+				xml:id="facs_12_line_1678960768042_812"/> <zone
+				points="466,154 1222,125 1224,175 468,204" rendition="Line"
+				xml:id="facs_12_line_1678960774516_817"/> <zone
+				points="450,208 1062,181 1064,231 452,258" rendition="Line"
+				xml:id="facs_12_line_1678960777612_822"/> </zone>
+			<zone points="7,352 283,329 1761,272 1761,655 283,736 7,501" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_12_TextRegion_1680602013291_208"> <zone
+				points="28,415 453,338 1464,295 1466,345 178,496 58,496 37,464" rendition="Line"
+				xml:id="facs_12_line_1680602031479_216"/> <zone
+				points="441,436 1532,375 1535,425 444,486" rendition="Line"
+				xml:id="facs_12_line_1678960784716_832"/> <zone
+				points="440,514 1675,479 1676,529 441,564" rendition="Line"
+				xml:id="facs_12_line_1678960789646_837"/> <zone
+				points="466,612 1655,559 1657,609 468,662" rendition="Line"
+				xml:id="facs_12_line_1678960795524_842"/> </zone>
+			<zone points="0,784 283,736 1761,655 1761,1918 283,1954 0,942" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_12_TextRegion_1680602044219_220"> <zone
+				points="20,836 424,780 1499,692 1503,742 408,897 18,932 14,882" rendition="Line"
+				xml:id="facs_12_line_1680602053303_226"/> <zone
+				points="441,905 1103,817 1469,798 1471,848 1107,867 448,955" rendition="Line"
+				xml:id="facs_12_line_1678960816279_852"/> <zone
+				points="429,988 1087,883 1598,870 1599,920 1091,933 437,1037" rendition="Line"
+				xml:id="facs_12_line_1678960823158_857"/> <zone
+				points="426,1048 1487,918 1493,968 432,1098" rendition="Line"
+				xml:id="facs_12_line_1678961048037_862"/> <zone
+				points="423,1115 1139,1030 1568,990 1572,1040 1145,1080 429,1165" rendition="Line"
+				xml:id="facs_12_line_1678961053655_867"/> <zone
+				points="424,1206 976,1112 1539,1056 1543,1106 983,1162 432,1255" rendition="Line"
+				xml:id="facs_12_line_1678961064558_872"/> <zone
+				points="441,1272 1569,1110 1576,1160 448,1322" rendition="Line"
+				xml:id="facs_12_line_1678961069854_877"/> <zone
+				points="451,1356 1619,1199 1626,1249 458,1406" rendition="Line"
+				xml:id="facs_12_line_1678961091599_882"/> <zone
+				points="453,1425 1563,1260 1571,1310 461,1475" rendition="Line"
+				xml:id="facs_12_line_1678961096590_887"/> <zone
+				points="438,1502 1638,1351 1645,1401 445,1552" rendition="Line"
+				xml:id="facs_12_line_1678961102391_892"/> <zone
+				points="436,1580 1566,1433 1573,1483 443,1630" rendition="Line"
+				xml:id="facs_12_line_1678961106492_897"/> <zone
+				points="434,1646 1684,1505 1690,1555 440,1696" rendition="Line"
+				xml:id="facs_12_line_1678961111725_902"/> <zone
+				points="447,1731 1471,1611 1743,1609 1743,1659 1474,1661 453,1781" rendition="Line"
+				xml:id="facs_12_line_1678961121009_907"/> <zone
+				points="426,1838 1642,1707 1648,1757 432,1888" rendition="Line"
+				xml:id="facs_12_line_1678961127204_912"/> </zone>
+			<zone points="283,1954 1761,1918 1761,2353 283,2380" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_12_TextRegion_1678960669056_800"> <zone
+				points="401,1992 1474,1933 1476,1983 403,2042" rendition="Line"
+				xml:id="facs_12_line_1678961136292_917"/> <zone
+				points="471,2069 1445,2040 1446,2090 472,2119" rendition="Line"
+				xml:id="facs_12_line_1678961139862_922"/> <zone
+				points="477,2165 1478,2106 1481,2156 480,2215" rendition="Line"
+				xml:id="facs_12_line_1678961144226_927"/> <zone
+				points="481,2245 1716,2197 1718,2247 483,2295" rendition="Line"
+				xml:id="facs_12_line_1678961150573_932"/> </zone>
+			<zone points="283,2380 1761,2353 1761,2679 283,2679" rendition="TextRegion"
+				subtype="paragraph" xml:id="facs_12_TextRegion_1678960663644_796"> <zone
+				points="386,2396 1413,2362 1414,2412 387,2446" rendition="Line"
+				xml:id="facs_12_line_1678961155653_937"/> <zone
+				points="436,2476 1375,2439 1377,2489 438,2526" rendition="Line"
+				xml:id="facs_12_line_1678961159557_942"/> <zone
+				points="433,2556 1660,2500 1662,2550 435,2606" rendition="Line"
+				xml:id="facs_12_line_1678961165439_947"/> </zone>
+		</surface>
+	</facsimile>
+	<text>
+		<body>
+			<pb facs="#facs_3" n="0"/>
+			<p facs="#facs_3_region_1678810791942_502" ana="head">
+				<!-- CP: a line begining at the start of a paragraph seems to be redundant for me; a paragraph is defined by having a line beginning. -->
+				<lb facs="#facs_3_line_1678810815241_511" n="N001"/> <seg type="invocatio"
+				>Iesus</seg> </p>
+			<p facs="#facs_3_region_1678810804652_505"> <lb facs="#facs_3_line_1678810820924_516"
+				n="N001"/> <placeName>Ortus monasterii</placeName> <lb
+				facs="#facs_3_line_1678810824979_521" n="N002"/> <placeName>Sanctus
+				Nicandrus</placeName> <lb facs="#facs_3_line_1678810828150_526" n="N003"/>
+				<placeName>Sanctus Menatus</placeName> <lb facs="#facs_3_line_1678810832552_531"
+				n="N004"/> <placeName>Quartus</placeName> <lb facs="#facs_3_line_1678810835219_536"
+				n="N005"/> <placeName>Starsa Meleti</placeName> <lb
+				facs="#facs_3_line_1678810838793_541" n="N006"/> <placeName>Meletus</placeName> <lb
+				facs="#facs_3_line_1678810842968_546" n="N007"/> <placeName>Pissinula</placeName>
+				<lb facs="#facs_3_line_1678810846785_551" n="N008"/> <placeName>Piteolum: mare
+				mortum et pissina mirabilis</placeName> <lb facs="#facs_3_line_1678810863765_556"
+				n="N009"/> <placeName>Feregnanus parvulus</placeName> <lb
+				facs="#facs_3_line_1678810879248_561" n="N010"/> <placeName>Rasina</placeName> <lb
+				facs="#facs_3_line_1678810889340_566" n="N011"/> <placeName>Posilipus</placeName>
+				<lb facs="#facs_3_line_1678810894052_571" n="N012"/> <placeName>Pumiglianus de
+				Arco</placeName> <lb facs="#facs_3_line_1678810903236_576" n="N013"/>
+				<placeName>Crispanus</placeName> <lb facs="#facs_3_line_1678810908525_581" n="N014"
+				/> <placeName>Fistingnanus</placeName> <lb facs="#facs_3_line_1678810915299_586"
+				n="N015"/> <placeName>Arsanus</placeName> </p>
+			<p facs="#facs_3_region_1678810808275_508"> <lb facs="#facs_3_line_1678810919119_591"
+				n="N001"/> <seg type="invocatio">Iesus</seg> </p>
+			<pb facs="#facs_4" n="f.1r"/>
+			<p facs="#facs_4_region_1678957273907_12"> <lb facs="#facs_4_line_1678957282433_15"
+				n="N001"/>1 </p>
+			<p facs="#facs_4_TextRegion_1679394428891_12" ana="head"> <lb
+				facs="#facs_4_line_1678812432757_742" n="N001"/>Anno domini nostri Iesu Cristi <lb
+				facs="#facs_4_line_1678812437355_747" n="N002"/><date when-custom="1477"
+				from-custom="1476-09-01" to="1477-08-31">Anno 1477, X indictione</date>. <lb
+				facs="#facs_4_line_1678812441281_752" n="N003"/>Questo siene uno quaterno de lo
+				<date when-custom="1477" from-custom="1477-09-01" to="1478-08-31">anno domini 1477,
+				X indictione</date>, <lb facs="#facs_4_line_1678812445598_757" n="N004"/>de lo
+				venerabile monastero <orgName ref="#o1">Sanctorum Petri et Sebestiani </orgName>
+				<placeName type="city" key="Napoli" ref="https://www.wikidata.org/wiki/Q2634">de
+				Neapoli</placeName>, <lb facs="#facs_4_line_1678812449548_762" n="N005"/>de tucte
+				intrate che intrano, nello predicto <orgName ref="#o1">monastero</orgName>, in nelo
+				tempo de <lb facs="#facs_4_line_1678812454584_767" n="N006"/>la reverendissima et
+				illustrissima domina <persName key="Maria Francesca Orsini" ref="#p1">Maria
+				Francisca de Ursinis</persName>, humilis priorissa <lb
+				facs="#facs_4_line_1678812458620_772" n="N007"/>de lo predicto regale et venerabile
+				<orgName ref="#o1">monastero</orgName>. De tucti grani, orczii, <lb
+				facs="#facs_4_line_1678812488116_777" n="N008"/>fave, millio, ciceri, fasuli,
+				lupini, prato, fieni, pallia et <lb facs="#facs_4_line_1678812493519_782" n="N009"
+				/>mile, pere et omne altri ligumi et eccia li denari che <lb
+				facs="#facs_4_line_1678812505339_787" n="N010"/>se vendessero elli predicti ligumi.
+				<lb facs="#facs_4_line_1678812513325_792" n="N011"/>Similemente sonno scripte in
+				questo quaterno tucte intrate, <lb facs="#facs_4_line_1678812517671_797" n="N012"
+				/>de lo predicto venerabile <orgName ref="#o1">monastero</orgName>, de tucti vini
+				grechi, gurnacze et <lb facs="#facs_4_line_1678812521530_802" n="N013"/>maczacane et
+				li denari che si vendeno li predicti vini et in <lb
+				facs="#facs_4_line_1678812526893_807" n="N014"/>commesa questo quaterno de lo dì
+				<date when-custom="10 indizione" when="14770609">9 junii, X indictione, 1477</date>. </p>
+			<pb facs="#facs_5" n="f.2r"/>
+			<p facs="#facs_5_region_1680601725442_79"> <lb facs="#facs_5_line_1680601731161_82"
+				n="N001"/>2 </p>
+			<p facs="#facs_5_TextRegion_1678887634289_45" ana="head"> <lb
+				facs="#facs_5_line_1678809412608_256" n="N001"/><seg type="invocatio">Iesus
+				Cristus</seg> <lb facs="#facs_5_line_1678809426593_261" n="N002"/><placeName>Ortus
+				monasterii</placeName> <lb facs="#facs_5_line_1678809436823_266" n="N003"/>Questa
+				siene tucta la intrata che ave allo regale <lb facs="#facs_5_line_1678809447379_271"
+				n="N004"/>et venerabile <orgName ref="#o1">monastero sanctorum Petri et
+				Sebestiani</orgName> de <lb facs="#facs_5_line_1678809451960_276" n="N005"
+				/><placeName>Neapoli</placeName> de lo orto che sta dreto allo dormitorio, <lb
+				facs="#facs_5_line_1678809457446_281" n="N006"/>et dreto allo orto dele donne de lo
+				predicto <orgName ref="#o1">monastero</orgName>, <lb
+				facs="#facs_5_line_1678809463835_286" n="N007"/>che sta, el predicto orto, nello
+				contorno de ipso <orgName ref="#o1">monastero</orgName>. <lb
+				facs="#facs_5_line_1678809474120_291" n="N008"/>Et in primas ave renduto allo
+				monastero el predicto <lb facs="#facs_5_line_1678809483960_296" n="N009"/>orto,
+				videlicet. </p>
+			
+			<!-- On 1477-06-09 6 tr. and 10gr are transferred from the garden to the monastero?  -->
+			<p facs="#facs_5_region_1678809284103_232" ana="bk:entry"> <lb
+				facs="#facs_5_line_1678809502246_301" n="N001"/>
+				
+				<date ana="bk:when"
+				when-custom="10 indizione" when="1477-06-09">Die 9 mensis junii, X indictione,
+				1477</date>, ave ren <lb facs="#facs_5_line_1678809510217_306" n="N002"/>duto el
+				predicto 
+				<!-- defining an listPlace index that contains the information "type="garden"" seems to be a better idea.  -->
+				<placeName type="garden" ana="bk:from">orto</placeName> allo predicto
+				<orgName ref="#o1" ana="bk:to">monastero</orgName>, che ave <lb
+				facs="#facs_5_line_1678809561977_311" n="N003"/>venduto de le <term ana="commodity"
+				>fave novelle</term> <measure ana="bk:money" quantity="6" unitRef="#tr.">tr.
+				6</measure>, <measure ana="bk:money" quantity="10" unitRef="#gr.">gr. 10</measure> </p>
+			
+			<p facs="#facs_5_region_1678809349750_244" ana="bk:entry"> <lb
+				facs="#facs_5_line_1678809646018_316" n="N001"/><date ana="bk:when"
+				when-custom="10 indizione" when="1477-07-15">Die 15 mensis iulii, X
+				indictione</date>, ave renduto <lb facs="#facs_5_line_1678809650409_321" n="N002"
+				/>el predicto <placeName type="garden">orto</placeName> allo <orgName ref="#o1"
+				ana="bk:to">monastero</orgName>, che ave venduto <lb
+				facs="#facs_5_line_1678809663143_326" n="N003"/>lu <roleName key="ortolano"
+				ana="bk:from bk:individual" ref="#p2">ortolano</roleName> de <term ana="commodity"
+				key="cetrioli">cetruli</term> et de <term ana="commodity" key="zucche">cucuce</term>
+				<measure ana="bk:money" quantity="4" unitRef="#tr.">tr. 4</measure> </p>
+			<p facs="#facs_5_region_1678809376212_247" ana="bk:entry"> <lb
+				facs="#facs_5_line_1678809675673_331" n="N001"/><date ana="bk:when"
+				when="1477-07-16">Die 16 eiusdem</date>, ave renduto lo predicto <placeName
+				type="garden">orto</placeName> <lb facs="#facs_5_line_1678809680666_336" n="N002"
+				/>allo <orgName ref="#o1" ana="bk:to">monastero</orgName>, che ave venduto lo
+				<roleName key="ortolano" ana="bk:from bk:individual" ref="#p2">ortolano</roleName>
+				de <lb facs="#facs_5_line_1678809685721_341" n="N003"/>le <term ana="commodity"
+				key="fichi">fiche</term> et ave avuto, lo <orgName ref="#o1" ana="bk:to"
+				>monastero</orgName> per sua parte <lb facs="#facs_5_line_1678809692463_346"
+				n="N004"/>contingente <measure ana="bk:money" quantity="6" unitRef="#tr.">tr.
+				6</measure>, <measure ana="bk:money" quantity="18.5" unitRef="#gr.">gr.
+				18,5</measure> </p>
+			<p facs="#facs_5_region_1678809383922_250" ana="bk:entry"> <lb
+				facs="#facs_5_line_1678809697567_351" n="N001"/><date ana="bk:when"
+				when="1477-07-30">Die 30 eiusdem</date>, ave renduto lo predicto <placeName
+				type="garden"> orto </placeName> <lb facs="#facs_5_line_1678809702183_356" n="N002"
+				/>allo monastero, che ave venduto lo <roleName key="ortolano"
+				ana="bk:from bk:individual" ref="#p2">ortolano</roleName> dele <lb
+				facs="#facs_5_line_1678809712301_361" n="N003"/><term ana="commodity" key="fichi"
+				>fiche</term>, et ave avuto lo <orgName ref="#o1" ana="bk:to">monastero</orgName> in
+				sua parte <lb facs="#facs_5_line_1678809720504_366" n="N004"/>contingente <measure
+				ana="bk:money" quantity="4" unitRef="#tr.">tr. 4</measure> </p>
+			<p facs="#facs_5_region_1678809388527_253" ana="bk:entry"> <lb
+				facs="#facs_5_line_1678809727334_371" n="N001"/>et dele <term ana="commodity"
+				key="cavolo" ref="#DDT-16">follie</term> et <term ana="commodity" key="finocchi"
+				>fenuchi</term> che ave venduto, ave <lb facs="#facs_5_line_1678809733386_376"
+				n="N002"/>avuto lo <orgName ref="#o1" ana="bk:to">monastero</orgName> in sua parte
+				contingente <measure ana="bk:money" quantity="8.5" unitRef="#gr.">gr. 8,5</measure> </p>
+			<pb facs="#facs_6" n="f.2v"/>
+			<p facs="#facs_6_region_1678812884555_845" ana="head"> <lb
+				facs="#facs_6_line_1678965026795_86" n="N001"/><placeName>Ortus
+				monasterii</placeName>. <date when-custom="11 indizione" from="1477-09-01"
+				to="1478-08-31">Anni, XI indictione</date> </p>
+			<p facs="#facs_6_region_1678812919971_848" ana="bk:entry"> <lb
+				facs="#facs_6_line_1678965033058_91" n="N001"/><date ana="bk:when"
+				when-custom="11 indizione" when="1477-09-19">Die 19 mensis septembris, XI
+				indictione, 1477</date>, <lb facs="#facs_6_line_1678965037506_96" n="N002"/>ave
+				renduto lo predicto <placeName type="garden"> orto </placeName> allo monastero <lb
+				facs="#facs_6_line_1678965045069_101" n="N003"/>che aveno portato lo <roleName
+				key="mulettiere" ana="bk:from bk:individual" ref="#p4">molecteri</roleName> et lo
+				<roleName key="ortolano" ana="bk:from bk:individual" ref="#p2">ortolano</roleName>
+				<lb facs="#facs_6_line_1678965049150_106" n="N004"/>allo nostro <orgName ref="#o1"
+				ana="bk:to">monastero</orgName>, <term ana="commodity" key="vino greco">grecu</term>
+				<measure ana="bk:commodity" quantity="1" unitRef="#botte">vucte 1</measure> </p>
+			<p facs="#facs_6_region_1678812925888_851" ana="bk:entry"> <lb
+				facs="#facs_6_line_1678965055437_111" n="N001"/><date ana="bk:when"
+				when-custom="11 indizione" when="1477-11-18">Die 18 mensis novembris, XI
+				indictione</date>, ave por <lb facs="#facs_6_line_1678965059341_116" n="N002"
+				/>tato,lo <roleName key="ortolano" ana="bk:from bk:individual" ref="#p2"
+				>ortolano</roleName> supradicto allo nostro <orgName ref="#o1" ana="bk:to"
+				>monastero</orgName> deli <lb facs="#facs_6_line_1678965063866_121" n="N003"/><term
+				ana="commodity" key="cavolfiori">cauli</term>, che summano lo loro preczo <measure
+				ana="bk:money" quantity="9" unitRef="#gr.">gr. 9</measure> </p>
+			<p facs="#facs_6_region_1678812962734_854" ana="bk:entry"> <lb
+				facs="#facs_6_line_1678965068813_126" n="N001"/><date ana="bk:when"
+				when="1477-11-20">Die 20 eiusdem</date>, ave pilliato <persName ana="bk:from"
+				ref="#p3">Thomasi</persName> delo predicto <lb facs="#facs_6_line_1678965074047_131"
+				n="N002"/>orto perlo nostro <orgName ref="#o1" ana="bk:to">monastero</orgName> <term
+				ana="commodity" key="cavolfiori">cauli</term>, che summano <measure ana="bk:money"
+				quantity="4.5" unitRef="#gr.">gr. 4,5</measure> </p>
+			<p facs="#facs_6_region_1678812991055_858" ana="bk:entry"> <lb
+				facs="#facs_6_line_1678965078297_136" n="N001"/><date ana="bk:when"
+				when="1477-11-22">Die 22 eiusdem</date>, ave pilliato <persName ana="bk:from"
+				ref="#p3">Thomasi</persName> de lo <lb facs="#facs_6_line_1678965083241_141"
+				n="N002"/>predicto orto per lo <orgName ref="#o1" ana="bk:to">monastero</orgName>
+				<term ana="commodity" key="cavolfiori">cauli</term>, che summano <measure
+				ana="bk:money" quantity="3.5" unitRef="#gr.">gr. 3,5</measure> </p>
+			<p facs="#facs_6_region_1678813007110_862" ana="bk:entry"> <lb
+				facs="#facs_6_line_1678965089063_146" n="N001"/><date ana="bk:when"
+				when-custom="11 indizione" when="1477-12-02">Die 2 dicembris, XI indictione</date>,
+				ave pilliato <persName ana="bk:from" ref="#p3">Thomasi</persName> de lo <lb
+				facs="#facs_6_line_1678965095012_151" n="N002"/>predicto orto perlo <orgName
+				ref="#o1" ana="bk:to">monastero</orgName> <term ana="commodity" key="cavolfiori"
+				>cauli</term>, <measure ana="bk:money" quantity="2.5" unitRef="#gr.">gr.
+				2,5</measure> </p>
+			<p facs="#facs_6_TextRegion_1678966575140_388" ana="bk:entry"> <lb
+				facs="#facs_6_line_1678965107231_156" n="N001"/><date ana="bk:when"
+				when="1477-12-05">Die 5 eiusdem</date>, ave portato lo <roleName key="ortolano"
+				ana="bk:form bk:individual">ortolano</roleName> alla <lb
+				facs="#facs_6_line_1678965110865_161" n="N002"/>rota de lo <orgName ref="#o1"
+				ana="bk:to">monastero</orgName> presente <persName ref="#p3">Thomasi</persName>
+				<term ana="commodity" key="broccoli">brocculi</term>, <measure ana="bk:money"
+				quantity="6.5" unitRef="#gr.">gr. 6,5</measure> <lb
+				facs="#facs_6_line_1678965113994_166" n="N003"/>et de <term ana="commodity"
+				key="lattuga">lactuche</term> perlo <orgName ref="#o1" ana="bk:to"
+				>monastero</orgName>, <measure ana="bk:money" quantity="3.5" unitRef="#gr.">gr.
+				3,5</measure> <lb facs="#facs_6_line_1678965117363_171" n="N004"/>et de <term
+				ana="commodity">radici</term> per lo monastero, <measure ana="bk:money"
+				quantity="2.5" unitRef="#gr.">gr. 2,5</measure> </p>
+			<p facs="#facs_6_TextRegion_1678814026323_996" ana="bk:entry"> <lb
+				facs="#facs_6_line_1678965122465_176" n="N001"/><date ana="bk:when"
+				when="1477-12-07">Die 7 eiusdem</date>, ave portato lo <roleName key="ortolano"
+				ana="bk:from bk:individual" ref="#p2">ortulano</roleName> allo <lb
+				facs="#facs_6_line_1678965126107_181" n="N002"/>nostro <orgName ref="#o1"
+				ana="bk:to">monastero</orgName>, <term ana="commodity" key="spinaci">spenace</term>,
+				<term ana="commodity" key="finocchi">fenucchi</term>, <term ana="commodity"
+				key="borragine">gurragini</term> da lo supra <lb
+				facs="#facs_6_line_1678965130604_186" n="N003"/>dicto orto che somma lo loro preczo,
+				<measure ana="bk:money" quantity="15.5" unitRef="#gr.">gr. 15,5 </measure> </p>
+			<p facs="#facs_6_TextRegion_1678814026323_995" ana="bk:entry"> <lb
+				facs="#facs_6_line_1678965134656_191" n="N001"/><date ana="bk:when"
+				when="1477-12-14">Die 14 eiusdem</date>, ave portato lo <roleName key="ortolano"
+				ana="bk:from bk:individual" ref="#p2">ortulano</roleName> allo <orgName ref="#o1"
+				ana="bk:to">monastero</orgName> <lb facs="#facs_6_line_1678965139388_196" n="N002"
+				/><term ana="commodity">radici</term>, <term ana="commodity" key="lattuga"
+				>lactuche</term> et <term ana="commodity" key="spinaci">spenace</term> che summa al
+				preczo, <measure ana="bk:money" quantity="8.5" unitRef="#gr.">gr. 8,5</measure> </p>
+			<p facs="#facs_6_TextRegion_1678814017726_991" ana="bk:entry"> <lb
+				facs="#facs_6_line_1678965145373_201" n="N001"/><date ana="bk:when"
+				when="1477-12-20">Die 20 eiusdem</date>, ave portato lo <roleName key="ortolano"
+				ana="bk:from bk:individual" ref="#p2">ortulano</roleName> allo <orgName ref="#o1"
+				ana="bk:to">monastero</orgName> <lb facs="#facs_6_line_1678965151776_206" n="N002"
+				/><term ana="commodity" key="cavolfiorii">cauli</term>, <term ana="commodity"
+				key="spinaci">spenace</term>, <term ana="commodity" key="borragine">gurragini</term>
+				et <term ana="commodity">radici</term> che summa al preczo, <measure ana="bk:money"
+				quantity="16" unitRef="#gr.">gr. 16</measure> </p>
+			<p facs="#facs_6_TextRegion_1678814009372_987" ana="bk:entry"> <lb
+				facs="#facs_6_line_1678965156291_211" n="N001"/><date ana="bk:when"
+				when="1477-12-25">Die 25 esiudem</date>, ave portato lo <roleName key="ortolano"
+				ana="bk:from bk:individual" ref="#p2">ortolano</roleName> allo <orgName ref="#o1"
+				ana="bk:to">monastero</orgName> <lb facs="#facs_6_line_1678965161357_216" n="N002"
+				/><term ana="commodity" key="lattuga">lactuche</term> che sonno el loro prezzo,
+				<measure ana="bk:money" quantity="4" unitRef="#gr.">gr. 4</measure> </p>
+			<pb facs="#facs_7" n="f.3r"/>
+			<p facs="#facs_7_region_1680601767277_97"> <lb facs="#facs_7_line_1680601775411_100"
+				n="N001"/>3 </p>
+			<p facs="#facs_7_TextRegion_1678813960606_977" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958433293_61" n="N001"/><date ana="bk:when" when="1477-12-27"
+				>Die 27 eiusdem</date>, ave portato allo <orgName ref="#o1" ana="bk:to"
+				>monastero</orgName> lo predicto <roleName ana="bk:from bK:individual" ref="#p2"
+				>ortolano</roleName>, <lb facs="#facs_7_line_1678958438413_66" n="N002"/><term
+				ana="commodity">lactuche</term> che summa alloro preczo, <measure ana="bk:money"
+				quantity="4" unitRef="#gr.">gr. 4</measure> </p>
+			<p facs="#facs_7_TextRegion_1678813960606_976" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958443850_71" n="N001"/><date ana="bk:when"
+				when-custom="11 indizione" when="1478-01-01">Die 1 mensis ianuarii, XI indictione,
+				1478</date>, ave portato lo <lb facs="#facs_7_line_1678958448145_76" n="N002"
+				/><roleName ana="bk:to bk:individual" ref="#p2">ortolano</roleName> allo <orgName
+				ana="bk:to" ref="#o1">monastero</orgName>, <term ana="commodity">lactuche</term> et
+				<term ana="commodity">radici</term> che summa loro preczo, <measure ana="bk:money"
+				quantity="9" unitRef="#gr.">gr. 9</measure> </p>
+			<p facs="#facs_7_TextRegion_1678813950389_972" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958452503_81" n="N001"/><date ana="bk:when" when="1478-01-04"
+				>Die 4 eiusdem</date>, ave portato lo <roleName ana="bk:from bk:individual"
+				ref="#p2">ortolano</roleName> allo <placeName ana="bk:to" ref="#o1"
+				>monastero</placeName> dele <term ana="commodity">lac <lb
+				facs="#facs_7_line_1678958458027_86" n="N002"/>tuche</term> che summa lo loro
+				preczo, <measure ana="bk:money" quantity="4" unitRef="#gr.">gr. 4</measure> </p>
+			<p facs="#facs_7_TextRegion_1678813941642_968" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958462790_91" n="N001"/><date ana="bk:when" when="1478-01-08"
+				>Die 8 eiusdem</date>, ave portato lo <roleName ana="bk:from bk:individual"
+				ref="#p2">ortulano</roleName> predicto allo <orgName ana="bk:to" ref="#o1"
+				>monastero</orgName>, dele <lb facs="#facs_7_line_1678958467429_96" n="N002"/><term
+				ana="commodity">spenace</term> et dele <term ana="commodity">lactuche</term> che
+				summa loro preczo, <measure ana="bk:money" quantity="8" unitRef="#gr.">gr.
+				8</measure> </p>
+			<p facs="#facs_7_TextRegion_1678813932136_964" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958473298_101" n="N001"/><date when="1478-01-12">Die 12
+				eisudem</date>, ave portato lo <roleName ana="bk:from bk:individual" ref="#p2"
+				>ortolano</roleName> allo <orgName ana="bk:to" ref="#o1">monastero</orgName> dele
+				<term ana="commodity">lactuche</term> <lb facs="#facs_7_line_1678958477919_106"
+				n="N002"/>et deli <term ana="commodity">cauli</term> che summa alloro preczo.
+				<measure ana="bk:money" quantity="6" unitRef="#gr.">gr. 6</measure> </p>
+			<p facs="#facs_7_TextRegion_1678813923658_960" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958483263_111" n="N001"/><date ana="bk:when"
+				when="1478-01-15">Die 15 eisudem</date>, ave portato lo <roleName
+				ana="bk:from bk:individual" ref="#p2">ortolano</roleName> allo <orgName ana="bk:to"
+				ref="#o1">monastero</orgName> deli radici <lb facs="#facs_7_line_1678958489914_116"
+				n="N002"/>et dele <term ana="commodity">lactuche</term> et <term ana="commodity"
+				>brocculi</term> che summa alloro preczo, <measure ana="bk:money" quantity="10"
+				unitRef="#gr.">gr. 10</measure> </p>
+			<p facs="#facs_7_TextRegion_1678813907308_956" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958502745_121" n="N001"/><date ana="bk:when"
+				when="1478-01-22">Die 22 eisudem</date>, ave portato allo <orgName ana="bk:to"
+				ref="#o1">monastero</orgName> lo <roleName ana="bk:from bk:individual"
+				>ortulano</roleName> <lb facs="#facs_7_line_1678958507408_126" n="N002"/>dele <term
+				ana="commodity">lactuche</term> che summa lo loro prezo, <measure ana="bk:money"
+				quantity="2" unitRef="#gr.">gr. 2</measure> </p>
+			<p facs="#facs_7_TextRegion_1678813907308_955" ana="???"> <lb
+				facs="#facs_7_line_1678958511691_131" n="N001"/>Lo monastero ave facto finale
+				ragione cum lo ortolano che so' ro <lb facs="#facs_7_line_1678958516236_136"
+				n="N002"/>masi contenti una parte et l'altra. </p>
+			<p facs="#facs_7_TextRegion_1678813752277_942" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958521456_141" n="N001"/><date ana="bk:when"
+				when-custom="11 indizione" when="1478-01-29">Die 29 ianuarii, XI indictione</date>,
+				ave portato allo <orgName ana="bk:to" ref="#o1">monastero</orgName> lo <lb
+				facs="#facs_7_line_1678958526632_146" n="N002"/><roleName
+				ana="bk:from bk:individual" ref="#p2">ortolano</roleName> <term ana="commodity"
+				>lactuche</term> che summa al loro preczo, <measure ana="bk:money" quantity="7.5"
+				unitRef="#gr.">gr. 7,5</measure> </p>
+			<p facs="#facs_7_TextRegion_1678813731375_938" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958531415_151" n="N001"/><date ana="bk:when"
+				when="1478-01-30">Die 30 eisudem</date>, ave portato allo <orgName ana="bk:to"
+				ref="#o1">monastero</orgName> lo <roleName ana="bk:from bk:individual" ref="#p2"
+				>ortolano</roleName> deli <term ana="commodity">radici</term> <lb
+				facs="#facs_7_line_1678958536167_156" n="N002"/>che summa alloro preczo, <measure
+				ana="bk:money" quantity="3" unitRef="#gr.">gr. 3</measure> </p>
+			<p facs="#facs_7_TextRegion_1678813724856_934" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958541296_161" n="N001"/><date ana="bk:when"
+				when-custom="11 indizione" when="1478-02-04">Die 4 februarii, XI indictione</date>,
+				ave portato allo <orgName ana="bk:to" ref="#o1">monastero</orgName> lo <roleName
+				ana="bk:from bk:individual" ref="#p2">ortolano</roleName> <lb
+				facs="#facs_7_line_1678958548678_166" n="N002"/><term ana="commodity">follia</term>
+				che summa alloro preczo <measure ana="bk:money" quantity="8.5" unitRef="#gr.">gr.
+				8,5</measure> </p>
+			<p facs="#facs_7_TextRegion_1678813718128_930" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958561201_171" n="N001"/><date ana="bk:when"
+				when="1478-02-07">Die 7 eisudem</date>, ave portato allo <orgName ana="bk:to"
+				ref="#o1">monastero</orgName> lo <roleName ana="bk:from bk:individual" ref="#p2"
+				>ortolano</roleName> <term ana="commodity">spenace</term>, <measure ana="bk:money"
+				quantity="2.5" unitRef="#gr.">gr. 2,5</measure> </p>
+			<p facs="#facs_7_TextRegion_1678813586822_926" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958565755_176" n="N001"/><date ana="bk:when"
+				when="1478-02-13">Die 13 eisudem</date>, ave portato allo <orgName ana="bk:to"
+				ref="#o1">monastero</orgName> lo <roleName ana="bk:from bk:individual" ref="#p2"
+				>ortolano</roleName> <term ana="commodity">spenace</term> et <term ana="commodity"
+				>lactuche</term>, <measure ana="bk:money" quantity="13" unitRef="#gr.">gr.
+				13</measure> </p>
+			<p facs="#facs_7_TextRegion_1678813502527_912" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958580715_181" n="N001"/><date ana="bk:when"
+				when="1478-02-20">Die 20 eisudem</date>, ave portato allo <orgName ana="bk:to"
+				ref="#o1">monastero</orgName> lo <roleName ana="bk:from bk:individual" ref="#p2"
+				>ortolano</roleName> <term ana="commodity">lactuche</term> et <term ana="commodity"
+				>spenace</term>, <measure ana="bk:money" quantity="18" unitRef="#gr.">gr.
+				18</measure> </p>
+			<p facs="#facs_7_TextRegion_1678813473579_908" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958592786_186" n="N001"/><date ana="bk:when"
+				when="1478-02-23">Die 23 eisudem</date>, ave portato allo <orgName ana="bk:to"
+				ref="#o1">monastero</orgName> lo <roleName ana="bk:from bk:individual" ref="#p2"
+				>ortolano</roleName> <term ana="commodity">lactuche</term>, <measure ana="bk:money"
+				quantity="16" unitRef="#gr.">gr. 16</measure> </p>
+			<p facs="#facs_7_TextRegion_1678813463015_904" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958597412_191" n="N001"/><date ana="bk:when"
+				when-custom="11 indizione" when="1478-04-20">Die 20 aprelis, XI indictione,
+				1478</date>, lo supradicto <roleName ana="bk:from bk:individual" ref="#p2"
+				>ortolano</roleName> ave <lb facs="#facs_7_line_1678958607558_196" n="N002"/>portato
+				allo <orgName ana="bk:to" ref="#o1">monastero</orgName>, in più volte, <term
+				ana="commodity">lactuche</term>, <term ana="commodity">cauli</term>, <term
+				ana="commodity">spenace</term> et altre <lb facs="#facs_7_line_1678958613282_201"
+				n="N003"/><term ana="commodity">herbe</term> che summa loro preczo,
+				<measureGrp><measure ana="bk:money" quantity="6" unitRef="#tr.">tr. 6</measure>
+				<measure ana="bk:money" quantity="10" unitRef="#gr.">gr. 10</measure></measureGrp> </p>
+			<p facs="#facs_7_TextRegion_1678813454033_900" ana="bk:entry"> <lb
+				facs="#facs_7_line_1678958617869_206" n="N001"/><date ana="bk:when"
+				when="1478-04-20">Eodem die</date>, lo supradicto <roleName
+				ana="bk:from bk:individual" ref="#p2">ortolano</roleName> ave dato allo venerabile
+				<orgName ana="bk:to" ref="#o1">monastero</orgName>, per <lb
+				facs="#facs_7_line_1678958623042_211" n="N002"/>mano de lo reverendo <persName
+				ana="bk:from" ref="#p5">padre domno Iacobo</persName>, per la vendicione che ave
+				facto <lb facs="#facs_7_line_1678958628455_216" n="N003"/>de le <term
+				ana="commodity">herbe</term> de lo predicto orto de lo monastero,
+				<measureGrp><measure ana="bk:money" quantity="8" unitRef="#tr.">tr. 8</measure>,
+				<measure ana="bk:money" quantity="4" unitRef="#gr.">gr. 4</measure></measureGrp> </p>
+			<pb facs="#facs_8" n="8"/>
+			<p facs="#facs_8_TextRegion_1678958746107_253" ana="bk:entry"> <lb
+				facs="#facs_8_line_1678958756254_256" n="N001"/><date ana="bk:when"
+				when-custom="11 indizione" when="1478-05-13">Die 13 mensis madii, XI indictione,
+				1478</date>, ave receputo <lb facs="#facs_8_line_1678958760408_261" n="N002"/>lo
+				<orgName ana="bk:to" ref="#o1">monastero</orgName> da lo supradicto <roleName
+				ana="bk:from bk:individual" ref="#p2">ortolano</roleName> per mano de <persName
+				ana="bk:from" ref="#p5">domno <lb facs="#facs_8_line_1678958764434_266" n="N003"
+				/>Iacobo</persName>, in denari <measureGrp><measure ana="bk:money" quantity="3"
+				unitRef="#tr.">tr. 3</measure>, <measure ana="bk:money" quantity="10" unitRef="#gr."
+				>gr. 10</measure></measureGrp> </p>
+			<p facs="#facs_8_TextRegion_1678958746107_252" ana="bk:entry"> <lb
+				facs="#facs_8_line_1678958770080_271" n="N001"/><date ana="bk:when"
+				when="1478-05-13">Eodem die</date>, ave recevuto lo <orgName ana="bk:to" ref="#o1"
+				>monastero</orgName>, in più volte, da lo predicto <lb
+				facs="#facs_8_line_1678958776206_276" n="N002"/><roleName
+				ana="bk:from bk:individual" ref="#p2">ortolano</roleName> dele <term ana="commodity"
+				>lactuce</term> che summa lo preczo <measureGrp><measure ana="bk:money" quantity="1"
+				unitRef="#tr.">tr. 1</measure>, <measure ana="bk:money" quantity="10" unitRef="#gr."
+				>gr. 10</measure></measureGrp> </p>
+			<p facs="#facs_8_TextRegion_1678958735552_248" ana="bk:entry"> <lb
+				facs="#facs_8_line_1678958781900_281" n="N001"/><date ana="bk:when"
+				when-custom="11 indizione" when="1478-06-15">Die 15 iunii, XI</date>, lo <roleName
+				ana="bk:from bk:individual" ref="#p2">ortolano</roleName> ave in più volte date <lb
+				facs="#facs_8_line_1678958788093_286" n="N002"/>dentro, <term ana="commodity"
+				>folia</term>, <term ana="commodity">lactoche</term>, <term ana="commodity"
+				>cepolle</term>, <term ana="commodity">cetruli</term>, <term ana="commodity"
+				>cochocze</term>, <measureGrp><measure ana="bk:money" quantity="3" unitRef="#tr."
+				>tr. 3</measure>, <measure ana="bk:money" quantity="11" unitRef="#gr.">gr.
+				11</measure></measureGrp> <lb facs="#facs_8_line_1678958794041_291" n="N003"/>et per
+				denarii contanti, <measureGrp><measure ana="bk:money" quantity="5" unitRef="#tr."
+				>tr. 5</measure>, <measure ana="bk:money" quantity="12.5" unitRef="#gr.">gr.
+				12,5</measure></measureGrp> </p>
+			<p facs="#facs_8_TextRegion_1680601812983_114" ana="bk:entry"> <lb
+				facs="#facs_8_line_1678958798908_296" n="N001"/><date ana="bk:when"
+				when-custom="11 indizione" when="1478-07-11">Die 11 mensis iulii, XI
+				indictione</date>, have recevuto domno <lb facs="#facs_8_line_1680601824914_123"
+				n="N002"/><note n="1" place="margin" rend="left">orto:</note> <persName ana="bk:to"
+				ref="#p6">Iacobo de Larino</persName> da <persName ana="bk:from" ref="#p7">Fantino
+				ortolano</persName> del <lb facs="#facs_8_line_1680601830971_127" n="N003"/><note
+				n="2" place="margin" rend="left">denari per fico:</note> orto del <orgName ref="#o1"
+				>monasterio de sancto Sebastiano</orgName>, per <term ana="commodity">fico</term> ve
+				<lb facs="#facs_8_line_1678958813162_311" n="N004"/>ndute have tocchato inparte allo
+				<orgName ana="bk:to" ref="#o1">monasterio</orgName> <lb
+				facs="#facs_8_line_1678958817889_316" n="N005"/><measureGrp><measure quantity="6"
+				unitRef="#tr.">tari sei</measure> et <measure quantity="4" unitRef="#gr.">grana
+				quactro</measure> et <measure quantity="3" unitRef="#cav">cavalli
+				trea</measure></measureGrp>, li <lb facs="#facs_8_line_1678958822778_321" n="N006"
+				/>quali dinari li have consignati alla rota, <lb
+				facs="#facs_8_line_1678958829202_326" n="N007"/>dico <measureGrp><measure
+				ana="bk:money" quantity="6" unitRef="#tr.">tr. 6</measure>, <measure ana="bk:money"
+				quantity="4" unitRef="#gr.">gr. 4</measure></measureGrp> </p>
+			<pb facs="#facs_9" n="f.4r"/>
+			<p facs="#facs_9_region_1680601936880_177"> <lb facs="#facs_9_line_1680601943747_180"
+				n="N001"/>4 </p>
+			<p facs="#facs_9_TextRegion_1678959008790_368" ana="head"> <lb
+				facs="#facs_9_line_1678959022518_371" n="N001"/>Iesus <lb
+				facs="#facs_9_line_1678959026090_376" n="N002"/>Ortus monasterii. <lb
+				facs="#facs_9_line_1678959030963_381" n="N003"/>Anni XII indictione. </p>
+			<p facs="#facs_9_TextRegion_1680601876666_138" ana="bk:entry"> <lb
+				facs="#facs_9_line_1678959046994_386" n="N001"/><date ana="bk:when"
+				when-custom="12 indizione" when="1478-09-22">Die 22 mensis septembris, XII
+				indictione, 1478</date>, <lb facs="#facs_9_line_1678959050629_391" n="N002"/>have
+				receputo lo <orgName ana="bk:to" ref="#o1">monasterio</orgName> da <persName
+				ana="bk:from" ref="#p7">Fantino ortolano</persName>, <lb
+				facs="#facs_9_line_1680601885634_144" n="N003"/>greco: per mano de <persName
+				ref="#p8">Antonio de Messanello mastro massaro</persName>, <lb
+				facs="#facs_9_line_1678959059880_401" n="N004"/>de <term ana="commodity"
+				key="greek wine">greco</term> some quactro. Zo so <measure ana="bk:commodity"
+				quantity="4" unitRef="#soma">some 4</measure> </p>
+			<p facs="#facs_9_TextRegion_1680601895997_148" ana="bk:entry"> <lb
+				facs="#facs_9_line_1678959065113_406" n="N001"/><date ana="bk:when"
+				when-custom="12 indizione" when="1478-10-06">Die 6 mensis octobris, XII
+				indictione</date>, lu <orgName ana="bk:to" ref="#o1">monasaterio</orgName> <lb
+				facs="#facs_9_line_1678959069842_411" n="N002"/>ave receputo da <persName
+				ana="bk:from" ref="#p7">Fantino</persName> dall'ortu tene <lb
+				facs="#facs_9_line_1680601900433_152" n="N003"/>Fantino: dallo monasterio per mani
+				de <persName ref="#p6">dopno Iacobo</persName>, tra <lb
+				facs="#facs_9_line_1678959079180_421" n="N004"/>denarii et foglia <measure
+				ana="bk:money" quantity="16" unitRef="#tr.">tr. 16</measure> </p>
+			<p facs="#facs_9_TextRegion_1678958989905_359" ana="bk:entry"> <lb
+				facs="#facs_9_line_1678959089733_426" n="N001"/><date ana="bk:when"
+				when-custom="12 indizione" when="1479-02-28">Die ultimo febrarii, XII
+				indictione</date>, lo <orgName ana="bk:to" ref="#o1">monasterio</orgName> <lb
+				facs="#facs_9_line_1678959093311_431" n="N002"/>ave receputo da <persName
+				ana="bk:from" ref="#p7">Fantino</persName>, dall'orto che tene <lb
+				facs="#facs_9_line_1678959097128_436" n="N003"/>per nostro <persName ref="#p9"
+				>confrate Simono</persName> di <term ana="commodity">follie</term> che <lb
+				facs="#facs_9_line_1678959100679_441" n="N004"/>ave vendute et <term ana="commodity"
+				>lattuche</term> <measure ana="bk:money" quantity="1" unitRef="#duc.">duc.
+				1</measure> </p>
+			<p facs="#facs_9_TextRegion_1678958981906_355" ana="bk:entry"> <lb
+				facs="#facs_9_line_1678959105140_446" n="N001"/>et per <term ana="commodity"
+				>follia</term> che ave avuto lo <orgName ana="bk:to" ref="#o1">monasterio</orgName>
+				<measureGrp><measure ana="bk:money" quantity="0" unitRef="#duc.">duc.</measure>,
+				<measure ana="bk:money" quantity="1" unitRef="#tr.">tr. 1</measure>, <measure
+				ana="bk:money" quantity="10" unitRef="#gr.">gr. 10</measure></measureGrp> </p>
+			<p facs="#facs_9_TextRegion_1678958972302_351" ana="bk:entry"> <lb
+				facs="#facs_9_line_1678959112139_451" n="N001"/><date ana="bk:when"
+				when-custom="12 indizione" when="1479-03-25">Die 25 mensis marcii, XII
+				indictione</date>, lo <orgName ana="bk:to" ref="#o1">monasterio</orgName> <lb
+				facs="#facs_9_line_1678959116221_456" n="N002"/>ave receputo da <persName
+				ana="bk:from" ref="#p7">Fantino</persName> dall'orto che tene <lb
+				facs="#facs_9_line_1678959121454_461" n="N003"/>per mano delo presente <persName
+				ref="#p6">domno Iacobo</persName> <measureGrp><measure ana="bk:money" quantity="0"
+				unitRef="#duc.">duc.</measure>, <measure ana="bk:money" quantity="3" unitRef="#tr."
+				>tr. 3</measure>, <measure ana="bk:money" quantity="18" unitRef="#gr.">gr.
+				18</measure></measureGrp> </p>
+			<p facs="#facs_9_TextRegion_1678958943836_345" ana="bk:entry"> <lb
+				facs="#facs_9_line_1678959125103_466" n="N001"/>et per <term ana="commodity"
+				>follie</term> et <term ana="commodity">lactuche</term> che ave avuto lo <lb
+				facs="#facs_9_line_1678959129167_471" n="N002"/><orgName ana="bk:to" ref="#o1"
+				>monasterio</orgName> per uosu suo, <measureGrp><measure ana="bk:money" quantity="0"
+				unitRef="#duc.">duc.</measure>, <measure ana="bk:money" quantity="1" unitRef="#tr."
+				>tr. 1</measure>, <measure ana="bk:money" quantity="8" unitRef="#gr.">gr.
+				8</measure></measureGrp> </p>
+			<p facs="#facs_9_TextRegion_1678958932033_341" ana="bk:entry"> <lb
+				facs="#facs_9_line_1678959133676_476" n="N001"/>et per conzare la chiantina
+				dell'orto <measureGrp><measure ana="bk:money" quantity="0" unitRef="#duc."
+				>duc.</measure>, <measure ana="bk:money" quantity="0" unitRef="#tr."
+				>tr.</measure>,<measure ana="bk:money" quantity="3.5" unitRef="#gr.">gr.
+				3,5</measure></measureGrp> </p>
+			<pb facs="#facs_10" n="10"/>
+			<p facs="#facs_10_TextRegion_1678959301256_508" ana="head"> <lb
+				facs="#facs_10_line_1678959324294_512" n="N001"/>Napoli, XII indictione </p>
+			<p facs="#facs_10_TextRegion_1678959301256_507" ana="bk:entry"> <lb
+				facs="#facs_10_line_1678959894684_517" n="N001"/><date ana="bk:when"
+				when-custom="1479">A die ultimo</date>, lo <orgName ana="bk:to" ref="#o1"
+				>monasterio</orgName> ave receputo da <persName ana="bk:from" ref="#p10">In <lb
+				facs="#facs_10_line_1678959902705_522" n="N002"/>fantino</persName> per mano delo
+				<persName>priorus <lb facs="#facs_10_line_1678959906468_527" n="N003"/>domno
+				Iacobo</persName>, <measure ana="bk:money" quantity="18" unitRef="#tr.">tr.
+				18</measure> </p>
+			<p facs="#facs_10_TextRegion_1678959279239_503" ana="bk:entry"> <lb
+				facs="#facs_10_line_1678959911196_532" n="N001"/><date ana="bk:when"
+				when="1479-05-14">Die 14 mensis madii</date>, lo <orgName ana="bk:to" ref="#o1"
+				>monasterio de <lb facs="#facs_10_line_1678959916151_537" n="N002"/>sancto
+				Sebastiano</orgName> ave receputo da <persName ana="bk:from" ref="#p7"
+				>Fantino</persName>, <lb facs="#facs_10_line_1678959920635_542" n="N003"/>per mano
+				de <persName ana="bk:from" ref="#p6">dopno Icaobo de Larino</persName> de li <lb
+				facs="#facs_10_line_1678959933358_547" n="N004"/>denari facti da l'orto,
+				<measureGrp><measure ana="bk:money" quantity="8" unitRef="#tr.">tr. 8</measure>,
+				<measure ana="bk:money" quantity="8" unitRef="#gr.">gr. 8</measure></measureGrp> </p>
+			<p facs="#facs_10_TextRegion_1678959270828_499" ana="bk:entry"> <lb
+				facs="#facs_10_line_1678959941422_552" n="N001"/><date ana="bk:when"
+				when="1479-05-31">Die ultimo di maio</date>, <orgName ana="bk:to" ref="#o1">lo
+				monasterio</orgName> ave receputo da <persName ana="bk:from" ref="#p7"
+				>Fantino</persName> <lb facs="#facs_10_line_1678959948848_557" n="N002"/>per mano de
+				<persName ana="bk:from" ref="#p6">dopno Iacobo de Larino</persName>,
+				<measureGrp><measure ana="bk:money" quantity="3" unitRef="#tr.">tr. 3</measure>,
+				<measure ana="bk:money" quantity="0" unitRef="#gr.">gr.</measure></measureGrp> </p>
+			<p facs="#facs_10_TextRegion_1678959256664_495" ana="bk:entry"> <lb
+				facs="#facs_10_line_1678959955981_562" n="N001"/><date ana="bk:when"
+				when-custom="12 indizione" when="1479-08-14">Die 14 mensis agustii, XII
+				indictione</date>, <lb facs="#facs_10_line_1678959959928_567" n="N002"/><orgName
+				ana="bk:to" ref="#o1">lo monasterio</orgName> ave receputo da <persName
+				ana="bk:from" ref="#p10">In <lb facs="#facs_10_line_1678959963629_572" n="N003"
+				/>fantino</persName> perla parte delo fante <lb
+				facs="#facs_10_line_1678959967743_577" n="N004"/>dell'orto per mano dello predicto
+				<lb facs="#facs_10_line_1678959979916_582" n="N005"/><persName ana="bk:from"
+				ref="#p6">domno Iacobo</persName>, <measureGrp><measure ana="bk:money" quantity="0"
+				unitRef="#duc.">duc.</measure>, <measure ana="bk:money" quantity="2" unitRef="#tr."
+				>tr. 2</measure>, <measure ana="bk:money" quantity="2" unitRef="#gr.">gr.
+				2</measure></measureGrp> <lb facs="#facs_10_line_1678959986361_587" n="N006"/>Et per
+				<term ana="commodity">follia</term> perlo monasterio, <measureGrp><measure
+				ana="bk:money" quantity="0" unitRef="#duc.">duc.</measure>, <measure ana="bk:money"
+				quantity="0" unitRef="#tr.">tr.</measure>, <measure ana="bk:money" quantity="7.5"
+				unitRef="#gr.">gr. 7,5</measure></measureGrp> </p>
+			<p facs="#facs_10_TextRegion_1678959222639_491" ana="bk:entry"> <lb
+				facs="#facs_10_line_1678959991776_592" n="N001"/><date ana="bk:when"
+				when-custom="13 indizione" when="1479-12-19">Die 19 mensis septembris, XIII
+				indictione</date>, <lb facs="#facs_10_line_1678959997069_597" n="N002"/>avemo
+				receputo da <persName ana="bk:from" ref="#p7">Fantino</persName> per mano de <lb
+				facs="#facs_10_line_1678960003878_602" n="N003"/><persName ref="#p11"
+				>Caliso</persName> et <persName ref="#p12">Stasio</persName> de <term
+				ana="commodity">greco</term> <measureGrp><measure ana="bk:commodity" quantity="5"
+				unitRef="#soma">somme 5</measure> <measure quantity="7" unitRef="#quartarane"><lb
+				facs="#facs_10_line_1678960008655_607" n="N004"/>et quartarune
+				septe</measure></measureGrp> de l'orto delo nostro <lb
+				facs="#facs_10_line_1678960012408_612" n="N005"/>monasterio. </p>
+			<pb facs="#facs_11" n="f.5r"/>
+			<p facs="#facs_11_region_1680601982635_193"> <lb facs="#facs_11_line_1680601989140_196"
+				n="N001"/>5 </p>
+			<p facs="#facs_11_TextRegion_1678960405192_650" ana="head"> <lb
+				facs="#facs_11_line_1678960442724_661" n="N001"/>L'orto </p>
+			<p facs="#facs_11_TextRegion_1678960405191_649" ana="bk:entry"> <lb
+				facs="#facs_11_line_1678960457737_666" n="N001"/><date ana="bk:when"
+				when-custom="13 indizione" when="1480-01-31">Die ultimo mensis ianuarii, XIII
+				indictione,</date> <lb facs="#facs_11_line_1678960462871_671" n="N002"/>avemo avuto
+				da <persName ana="bk:from" ref="#p7">Fantino</persName> per <term ana="commodity"
+				>foglie</term> <lb facs="#facs_11_line_1678960470597_676" n="N003"/>che ave venduto
+				dall'orto delo nostro <lb facs="#facs_11_line_1678960480110_681" n="N004"
+				/>monasterio consignata a la rota per <lb facs="#facs_11_line_1678960486664_686"
+				n="N005"/>mano de <persName ref="#p6">dopno Iacobo de
+				Larino</persName><measureGrp><measure ana="bk:money" quantity="18" unitRef="#tr."
+				>tr.18,</measure><measure ana="bk:money" quantity="10" unitRef="#gr."
+				>gr.10</measure></measureGrp> <lb facs="#facs_11_line_1678960491286_691" n="N006"
+				/>Et per foglia che ave avute lo <lb facs="#facs_11_line_1678960499154_696" n="N007"
+				/>dicto <orgName ana="bk:to" ref="#o1">monastero</orgName><measureGrp><measure
+				ana="bk:money" quantity="2" unitRef="#tr.">tr.2</measure>,<measure ana="bk:money"
+				quantity="13" unitRef="#gr.">gr.13</measure></measureGrp> </p>
+			<p facs="#facs_11_TextRegion_1678960384853_645" ana="head"> <lb
+				facs="#facs_11_line_1678960513351_701" n="N001"/>Anno domini 1481 <lb
+				facs="#facs_11_line_1678960516636_706" n="N002"/>XIIII indictione </p>
+			<p facs="#facs_11_TextRegion_1678960424361_657" ana="bk:entry"> <lb
+				facs="#facs_11_line_1678960520408_711" n="N001"/>Dinari receputi da <persName
+				ana="bk:from" ref="#p7">Fantino ortolano</persName> da l'orto de <lb
+				facs="#facs_11_line_1678960525792_716" n="N002"/>lo monasterio per mano de <persName
+				ref="#p6">domno Iacobo de Larino</persName> <lb
+				facs="#facs_11_line_1678960529987_721" n="N003"/>de dicto <date ana="bk:when"
+				when-custom="14 indizione, 1482">anno XIIII indictione</date>, havemo receputo <lb
+				facs="#facs_11_line_1678960534404_726" n="N004"/>qua ala rota per mano de lo
+				predicto domno Iacobo <measure ana="bk:money" quantity="12" unitRef="#tr.">tarì
+				12</measure> <lb facs="#facs_11_line_1678960542832_731" n="N005"/>Et in alia mano
+				per foglia che have havuto <lb facs="#facs_11_line_1678960546411_736" n="N006"/>lo
+				<orgName ana="bk:to" ref="#o1">monasterio</orgName>, <measure ana="bk:money"
+				quantity="3" unitRef="#tr.">tarì 3</measure> <lb
+				facs="#facs_11_line_1678960549957_741" n="N007"/>Et in alia mano per mano de lo
+				predicto, <measure ana="bk:money" quantity="9" unitRef="#tr.">tari 9</measure> <lb
+				facs="#facs_11_line_1678960555979_746" n="N008"/>Et per foglia, <measureGrp><measure
+				ana="bk:money" quantity="1" unitRef="#tr.">tari 1</measure> <measure ana="bk:money"
+				quantity="3" unitRef="#gr.">gr. 3</measure></measureGrp> </p>
+			<p facs="#facs_11_TextRegion_1678960106724_629" ana="bk:entry"> <lb
+				facs="#facs_11_line_1678960567286_751" n="N001"/><date ana="bk:when"
+				when-custom="14 indizione" when="1481-05-27">Die 27 maii, XIIII indictione</date>,
+				havimo receputo <lb facs="#facs_11_line_1678960577126_756" n="N002"/>da <persName
+				ana="bk:from" ref="#p7">Fantino</persName> per mano de <persName ref="#p6">domno
+				Iacobo</persName>, <measureGrp><measure ana="bk:money" quantity="14" unitRef="#tr."
+				>tarì 14</measure>, <measure ana="bk:money" quantity="10" unitRef="#gr.">gr.
+				10</measure></measureGrp> <lb facs="#facs_11_line_1678960601515_769" n="N003"/>Et
+				per foglia, <measureGrp><measure ana="bk:money" quantity="1" unitRef="#tr.">tarì
+				1</measure>, <measure ana="bk:money" quantity="6.5" unitRef="#gr.">gr.
+				6,5</measure></measureGrp> </p>
+			<p facs="#facs_11_TextRegion_1678960089102_625" ana="bk:entry"> <lb
+				facs="#facs_11_line_1678960607300_774" n="N001"/><date ana="bk:when"
+				when-custom="14 indizione" when="1481-06-10">Die 10 iunii, XIIII</date>, havimo
+				receputo da <persName ana="bk:from" ref="#p7">Fantino</persName> <lb
+				facs="#facs_11_line_1678960613882_779" n="N002"/>per mano de <persName ref="#p6"
+				>domno Iacobo da Larino</persName>, <measureGrp><measure ana="bk:money"
+				quantity="10" unitRef="#tr.">tr. 10</measure>, <measure ana="bk:money"
+				quantity="17.5" unitRef="#gr.">gr. 17,5</measure></measureGrp> <lb
+				facs="#facs_11_line_1678960619757_784" n="N003"/>Et per zepolle,
+				<measureGrp><measure ana="bk:money" quantity="0" unitRef="#tr.">tr.</measure>,
+				<measure ana="bk:money" quantity="2.5" unitRef="#gr.">gr. 2,5</measure></measureGrp> </p>
+			<pb facs="#facs_12" n="12"/>
+			<p facs="#facs_12_TextRegion_1678960693112_809" ana="head"> <lb
+				facs="#facs_12_line_1678960768042_812" n="N001"/>Lo grecho de l'orto de lo monaste
+				<lb facs="#facs_12_line_1678960774516_817" n="N002"/>rio de sancto Sebastiano che
+				tene <lb facs="#facs_12_line_1678960777612_822" n="N003"/>ad fare Fantino, videlicet </p>
+			<p facs="#facs_12_TextRegion_1680602013291_208" ana="bk:entry"> <lb
+				facs="#facs_12_line_1680602031479_216" n="N001"/><note n="3" place="margin"
+				rend="left">greco de lo ortu:</note> <persName ana="bk:from" ref="#p7"
+				>Fantino</persName> have dato de <term ana="commodity">grecho</term> de lo orto, <lb
+				facs="#facs_12_line_1678960784716_832" n="N002"/>che tene ipso per lo anno de li
+				<date ana="bk:when" when-custom="14 indizione, 1481">1481, <lb
+				facs="#facs_12_line_1678960789646_837" n="N003"/>indictione XIIII</date>, sonno
+				state <measureGrp><measure ana="bk:commodity" quantity="5" unitRef="#salma">salme
+				5</measure> <measure quantity="4" unitRef="#quartarane"><lb
+				facs="#facs_12_line_1678960795524_842" n="N004"/>et quartaroni
+				4</measure></measureGrp> </p>
+			<p facs="#facs_12_TextRegion_1680602044219_220" ana="bk:entry"> <lb
+				facs="#facs_12_line_1680602053303_226" n="N001"/><note n="4" place="margin"
+				rend="left">de Sancto Eramo de la Massaria:</note> <said><date ana="bk:when"
+				when-custom="15 indizione" when="1481-10-16">Die 16 octubris, XV indictione,
+				1481</date></said>, <lb facs="#facs_12_line_1678960816279_852" n="N002"/><persName
+				ref="#p13">Francesscho</persName> et <persName ref="#p14">Grabreli</persName>
+				mulacteri <lb facs="#facs_12_line_1678960823158_857" n="N003"/>de lo monasterio de
+				sancto Sabastiano <lb facs="#facs_12_line_1678961048037_862" n="N004"/>de Napoli
+				haveno portato da la <lb facs="#facs_12_line_1678961053655_867" n="N005"/><orgName
+				ana="bk:from" ref="#o2">massaria</orgName> de lo predicto monasterio, <lb
+				facs="#facs_12_line_1678961064558_872" n="N006"/>la quale la ave tenuta pre tempore
+				de <lb facs="#facs_12_line_1678961069854_877" n="N007"/>Sancha et soi filglioli per
+				fine ad lo <lb facs="#facs_12_line_1678961091599_882" n="N008"/>presente die et mo
+				la dicta massa <lb facs="#facs_12_line_1678961096590_887" n="N009"/>ria che
+				pervenuta ad li mani de <lb facs="#facs_12_line_1678961102391_892" n="N010"/>lo
+				dicto <orgName ana="bk:to" ref="#o1">monasterio</orgName> et che ne have <lb
+				facs="#facs_12_line_1678961106492_897" n="N011"/>avuto in una volta che haveno <lb
+				facs="#facs_12_line_1678961111725_902" n="N012"/>ad ducto li dicti mulacteri de
+				<term ana="commodity">vino <lb facs="#facs_12_line_1678961121009_907" n="N013"
+				/>latino</term>, <measure ana="bk:commodity" quantity="4" unitRef="#salma">salme
+				4</measure> <lb facs="#facs_12_line_1678961127204_912" n="N014"/>lo quale vino che
+				de lo anno de la XIIII indictione. </p>
+			<p facs="#facs_12_TextRegion_1678960669056_800" ana="bk:entry"> <lb
+				facs="#facs_12_line_1678961136292_917" n="N001"/>Et haveno portato <persName
+				ref="#p13">Francischo</persName> <lb facs="#facs_12_line_1678961139862_922" n="N002"
+				/>et <persName ref="#p14">Grabreli</persName> mulacterii inseme co <lb
+				facs="#facs_12_line_1678961144226_927" n="N003"/>li mulacteri de sancta Chiara, da
+				la <lb facs="#facs_12_line_1678961150573_932" n="N004"/>dicta <orgName ana="bk:from"
+				ref="#o2">massaria</orgName>, de <term ana="commodity">vino</term> <measure
+				ana="bk:commodity" quantity="8" unitRef="#salma">salme 8</measure> </p>
+			<p facs="#facs_12_TextRegion_1678960663644_796" ana="bk:entry"> <lb
+				facs="#facs_12_line_1678961155653_937" n="N001"/>Et have portato <persName
+				ref="#p13">Francisscho</persName> <lb facs="#facs_12_line_1678961159557_942"
+				n="N002"/>e <persName ref="#p14">Grabreli</persName> da la dicta <orgName
+				ana="bk:from">massa <lb facs="#facs_12_line_1678961165439_947" n="N003"
+				/>ria</orgName> de <term ana="commodity">vino</term>, so state <measure
+				ana="bk:commodity" quantity="4" unitRef="#salma">salme 4</measure> </p>
+		</body>
+	</text>
+</TEI>
