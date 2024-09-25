@@ -1,0 +1,77 @@
+Bookkeeping Ontology
+│
+├── Transactions (Subclass of E7 Activity)
+│   │
+│   ├── Definition: A discrete, time-bound economic event involving the exchange of value between parties, characterized by specific terms and conditions.
+│   │
+│   ├── Attributes:
+│   │   ├── bk:entry - Documents the text of the transaction in the historical source.
+│   │   └── bk:status - Indicates the state of the transaction (e.g., completed, pending).
+│   │
+│   ├── Relationships:
+│   │   ├── bk:consistsOf - Connects transactions to their component transfers.
+│   │   └── bk:recordedIn - Links transactions to the account where they are recorded.
+│   │
+│   └── Examples: Tax collections, payments, transfers between accounts.
+│
+├── Transfers (Subclass of E7 Activity)
+│   │
+│   ├── Definition: The fundamental unit within a transaction, representing the directional movement of assets or value from one economic agent to another.
+│   │
+│   ├── Attributes:
+│   │   ├── bk:from - Specifies the sender (Economic Agent).
+│   │   └── bk:to - Specifies the recipient (Economic Agent).
+│   │
+│   ├── Relationships:
+│   │   └── bk:transfers - Links the transfer to the asset being moved (Transferables).
+│   │
+│   └── Examples: Moving currency, collecting taxes, transferring rights.
+│
+├── Economic Agents (bk:EconomicAgent, Subclass of E39 Actor)
+│   │
+│   ├── Definition: Individuals, groups, or entities that participate in economic activities by acting as senders or recipients in transfers.
+│   │
+│   ├── Roles:
+│   │   ├── Sender - Identified by bk:from in transfers.
+│   │   └── Recipient - Identified by bk:to in transfers.
+│   │
+│   └── Examples: Individuals (e.g., Christopher, Sepp), businesses, governments, organizations.
+│
+├── Accounts (Subclass of E72 Legal Object)
+│   │
+│   ├── Definition: Financial records that categorize and track transactions related to specific types of economic activities.
+│   │
+│   ├── Attributes:
+│   │   ├── bk:accountName - Specifies the name of the account (e.g., Wine Tax Account).
+│   │   ├── bk:accountType - Specifies the type of account (e.g., tax revenue, expenditure).
+│   │   └── bk:associatedAgent - Links the account to the economic agent responsible for it.
+│   │
+│   └── Examples: Wine Tax Account, Flour Tax Account, Bishop's Cattle Tax Account.
+│
+└── Transferables (Subclass of E72 Legal Object)
+    │
+    ├── Definition: Assets, values, or rights that are legally recognized and quantifiable, serving as the objects of transfer within transactions.
+    │
+    ├── Attributes:
+    │   ├── bk:quantity - Defines the amount of the transferable asset or service output.
+    │   └── bk:unit - Specifies the measurement unit of the transferable asset or service output (e.g., kilograms, hours).
+    │
+    ├── Categories:
+    │   │
+    │   ├── Tangible Assets
+    │   │   │
+    │   │   ├── Definition: Physical items with economic value that can be owned, controlled, and transferred.
+    │   │   └── Examples: Physical currency (coins, banknotes), commodities (wheat, iron, apples).
+    │   │
+    │   ├── Intangible Assets
+    │   │   │
+    │   │   ├── Definition: Non-physical items that hold economic value, such as rights and financial instruments.
+    │   │   ├── Subtypes:
+    │   │   │   ├── Financial Instruments - Includes specific types like stocks and bonds.
+    │   │   │   └── Legal Rights - Specifies different scopes or contexts (e.g., use rights).
+    │   │   └── Examples: Rights, financial instruments.
+    │   │
+    │   └── Service Outputs
+    │       │
+    │       ├── Definition: Intangible results or value derived from the performance of services and labor, providing utility consumed at the point of delivery or immediately after task completion.
+    │       └── Examples: Teaching services, medical care, manual labor.

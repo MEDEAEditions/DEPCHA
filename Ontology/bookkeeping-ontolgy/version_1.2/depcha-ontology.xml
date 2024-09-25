@@ -1,15 +1,18 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="https://gams.uni-graz.at/o:depcha.bookkeeping#"
-    xml:base="https://gams.uni-graz.at/o:depcha.bookkeeping" xmlns:t="http://www.tei-c.org/ns/1.0"
-    xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping"
-    xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-    xmlns:depcha="https://gams.uni-graz.at/o:depcha.bookkeeping#"
-    xmlns:cidoc-crm="http://www.cidoc-crm.org/cidoc-crm/">
+     xml:base="https://gams.uni-graz.at/o:depcha.bookkeeping"
+     xmlns:t="http://www.tei-c.org/ns/1.0"
+     xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:depcha="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+     xmlns:cidoc-crm="http://www.cidoc-crm.org/cidoc-crm/">
     <owl:Ontology rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping">
         <dc:creator xml:lang="en">Christopher Pollin</dc:creator>
         <dc:creator xml:lang="en">Georg Vogeler</dc:creator>
@@ -50,7 +53,7 @@
         <rdfs:label xml:lang="en">Bookkeeping Ontology</rdfs:label>
         <owl:versionInfo xml:lang="en">Version 1.2</owl:versionInfo>
     </owl:Ontology>
-
+    
 
 
     <!-- 
@@ -61,65 +64,65 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://purl.org/dc/elements/1.1/creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
-
+    
 
 
     <!-- http://purl.org/dc/elements/1.1/date -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
-
+    
 
 
     <!-- http://purl.org/dc/elements/1.1/description -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
-
+    
 
 
     <!-- http://purl.org/dc/elements/1.1/identifier -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/identifier"/>
-
+    
 
 
     <!-- http://purl.org/dc/elements/1.1/publisher -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/publisher"/>
-
+    
 
 
     <!-- http://purl.org/dc/elements/1.1/rights -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
-
+    
 
 
     <!-- http://purl.org/dc/elements/1.1/title -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
-
+    
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/P42_assigned -->
 
     <owl:AnnotationProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P42_assigned"/>
-
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#assigned -->
 
     <owl:AnnotationProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#assigned">
         <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P42_assigned"/>
+        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Context"/>
         <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#TypeAssignment"/>
     </owl:AnnotationProperty>
-
+    
 
 
     <!-- 
@@ -130,40 +133,35 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-
+    
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/P91_has_unit -->
 
     <owl:ObjectProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P91_has_unit"/>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#accountHolder -->
+
+    <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#accountHolder">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Account"/>
+        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicAgent"/>
+        <rdfs:comment xml:lang="en">An account is assigned to a economic agent.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Ein Konto ist einer wirtschaftlichen Einheit
+            zugeordnet.</rdfs:comment>
+        <rdfs:label xml:lang="en">has accountHolder</rdfs:label>
+        <rdfs:label xml:lang="de">wird gehalten von</rdfs:label>
+    </owl:ObjectProperty>
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#assigned -->
 
     <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#assigned">
         <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transaction"/>
-        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Context"/>
-        <rdfs:comment xml:lang="en">Assigns transactions to a specific context. This decision is
-            made by a scholar. This can be done in the course of a specific research
-            question.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Ordnet Transaktionen einem bestimmten Kontext zu. Diese
-            Entscheidung wird vom Fachwissenschaftler getroffen und kann im Zusammenhang mit einer
-            bestimmten Forschungsfrage stehen.</rdfs:comment>
-        <rdfs:label xml:lang="en">assigned</rdfs:label>
-        <rdfs:label xml:lang="de">zugeordnet</rdfs:label>
     </owl:ObjectProperty>
-
-    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#addUp -->
-
-    <!--<owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#addUp">
-        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#TotalTransaction"/>
-        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transaction"/>
-        <rdfs:comment xml:lang="en">Connects a transaction to a total.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Todo</rdfs:comment>
-        <rdfs:label xml:lang="en">add up</rdfs:label>
-        <rdfs:label xml:lang="de">aufsummiert</rdfs:label>
-    </owl:ObjectProperty>-->
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#by -->
@@ -177,7 +175,7 @@
         <rdfs:label xml:lang="de">bei</rdfs:label>
         <rdfs:label xml:lang="en">by</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#classified -->
@@ -185,20 +183,19 @@
     <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#classified">
         <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicGood"/>
         <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <rdfs:comment xml:lang="de">Ein Wirtschaftsgut wird einem Konzept zugeordnet.</rdfs:comment>
         <rdfs:comment xml:lang="en">An economic good is assigned to a concept.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Ein Wirtschaftsgut wird einem Konzept zugeordnet.</rdfs:comment>
         <rdfs:label xml:lang="en">classified</rdfs:label>
         <rdfs:label xml:lang="de">klassifiziert</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#comprises -->
 
     <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#comprises">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#SubtotalTransaction"/>
         <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#TotalTransaction"/>
-        <rdfs:domain
-            rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#SubtotalTransaction"/>
         <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Money"/>
         <rdfs:comment xml:lang="en">Connects a subtotal or a total transaction with a monetary
             value.</rdfs:comment>
@@ -207,36 +204,21 @@
         <rdfs:label xml:lang="en">comprises</rdfs:label>
         <rdfs:label xml:lang="de">umfasst</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#consistsOf -->
 
     <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#consistsOf">
+        <owl:inverseOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#isPartOf"/>
         <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transaction"/>
         <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transfer"/>
-        <rdfs:comment xml:lang="en">A transaction consists of at least one transfer.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Eine Transaktion besteht aus mindestens einem
-            Transfer.</rdfs:comment>
+        <rdfs:comment xml:lang="en">bk:consistsOf relates a Transaction to its constituent Transfers, indicating the composition of economic exchanges.</rdfs:comment>
+        <rdfs:comment xml:lang="de">bk:consistsOf verbindet eine Transaktion mit ihren zugehörigen Transfers und zeigt die Zusammensetzung wirtschaftlicher Austausche an.</rdfs:comment>
         <rdfs:label xml:lang="de">besteht aus</rdfs:label>
         <rdfs:label xml:lang="en">consists of</rdfs:label>
     </owl:ObjectProperty>
-
-
-
-    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#converts -->
-
-    <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#hasPrice">
-        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicGood"/>
-        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Price"/>
-        <rdfs:comment xml:lang="en">Connects an economic good with a price that is mention in the
-            source.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Verbindet ein Wirtschaftsgut mit einem Preis, der in der Quelle
-            genannt wird.</rdfs:comment>
-        <rdfs:label xml:lang="en">has price</rdfs:label>
-        <rdfs:label xml:lang="de">hat Preis</rdfs:label>
-    </owl:ObjectProperty>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#convertsFrom -->
@@ -249,7 +231,7 @@
         <rdfs:label xml:lang="en">converts from</rdfs:label>
         <rdfs:label xml:lang="de">umgerechnet von</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#convertsTo -->
@@ -262,7 +244,7 @@
         <rdfs:label xml:lang="en">converts to</rdfs:label>
         <rdfs:label xml:lang="de">umgerechnet to</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#credit -->
@@ -278,7 +260,7 @@
         <rdfs:label xml:lang="en">credit</rdfs:label>
         <rdfs:label xml:lang="de">haben</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#debit -->
@@ -294,7 +276,16 @@
         <rdfs:label xml:lang="en">debit</rdfs:label>
         <rdfs:label xml:lang="de">soll</rdfs:label>
     </owl:ObjectProperty>
+    
 
+
+    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#ends -->
+
+    <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#ends">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Date"/>
+        <rdfs:range rdf:resource="https://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:ObjectProperty>
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#from -->
@@ -302,13 +293,60 @@
     <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#from">
         <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transfer"/>
         <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicAgent"/>
-        <rdfs:comment xml:lang="de">Eine wirtschaftliche Einheit, die etwas in Form eines Wirtschaftsgutes leistet bzw. an eine andere wirtschaftliche Einheit abgibt.</rdfs:comment>
         <rdfs:comment xml:lang="en">An economic agent that provides/gives an economic asset to another economic agent.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine wirtschaftliche Einheit, die etwas in Form eines Wirtschaftsgutes leistet bzw. an eine andere wirtschaftliche Einheit abgibt.</rdfs:comment>
         <rdfs:label xml:lang="en">from</rdfs:label>
         <rdfs:label xml:lang="de">von</rdfs:label>
         <rdfs:seeAlso xml:lang="en">REA Business Ontology: from</rdfs:seeAlso>
     </owl:ObjectProperty>
+    
 
+
+    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#hasPrice -->
+
+    <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#hasPrice">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicGood"/>
+        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Price"/>
+        <rdfs:comment xml:lang="en">Connects an economic good with a price that is mention in the
+            source.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Verbindet ein Wirtschaftsgut mit einem Preis, der in der Quelle
+            genannt wird.</rdfs:comment>
+        <rdfs:label xml:lang="en">has price</rdfs:label>
+        <rdfs:label xml:lang="de">hat Preis</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#isPartOf">
+        <rdfs:comment xml:lang="de">bk:isPartOf verbindet einen Transfer mit seiner umfassenden Transaktion und ordnet einzelne wirtschaftliche Bewegungen in größere Austausche ein.</rdfs:comment>
+        <rdfs:comment xml:lang="en">bk:isPartOf relates a Transfer to its encompassing Transaction, situating individual economic movements within broader exchanges.</rdfs:comment>
+        <rdfs:label xml:lang="en">is part of</rdfs:label>
+        <rdfs:label xml:lang="de">ist Teil von</rdfs:label>
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transfer"/>
+        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transaction"/>
+        <owl:inverseOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#consistsOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#pointInTime -->
+
+    <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#pointInTime">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Date"/>
+        <rdfs:range rdf:resource="https://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#starts -->
+
+    <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#starts">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Date"/>
+        <rdfs:range rdf:resource="https://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:ObjectProperty>
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#to -->
@@ -322,20 +360,7 @@
         <rdfs:label xml:lang="en">to</rdfs:label>
         <rdfs:seeAlso xml:lang="en">REA Business Ontology: to</rdfs:seeAlso>
     </owl:ObjectProperty>
-
-
-    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#accountHolder -->
-
-    <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#accountHolder">
-        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Account"/>
-        <rdfs:range rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicAgent"/>
-        <rdfs:comment xml:lang="en">An account is assigned to a economic agent.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Ein Konto ist einer wirtschaftlichen Einheit
-            zugeordnet.</rdfs:comment>
-        <rdfs:label xml:lang="en">has accountHolder</rdfs:label>
-        <rdfs:label xml:lang="de">wird gehalten von</rdfs:label>
-    </owl:ObjectProperty>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#transfers -->
@@ -348,7 +373,7 @@
         <rdfs:label xml:lang="en">transfers</rdfs:label>
         <rdfs:label xml:lang="de">übermitteln</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#unit -->
@@ -362,7 +387,7 @@
         <rdfs:label xml:lang="de">hat Maßeinheit</rdfs:label>
         <rdfs:label xml:lang="en">unit</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#when -->
@@ -376,7 +401,7 @@
         <rdfs:label xml:lang="de">hat Zeitraum</rdfs:label>
         <rdfs:label xml:lang="en">when</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#where -->
@@ -390,7 +415,7 @@
         <rdfs:label xml:lang="de">hat Ort</rdfs:label>
         <rdfs:label xml:lang="en">where</rdfs:label>
     </owl:ObjectProperty>
-
+    
 
 
     <!-- 
@@ -401,7 +426,13 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
 
+
+    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#ends -->
+
+    <owl:DatatypeProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#ends"/>
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#entry -->
@@ -416,7 +447,7 @@
         <rdfs:label xml:lang="en">entry</rdfs:label>
         <rdfs:label xml:lang="de">hat Eintrag</rdfs:label>
     </owl:DatatypeProperty>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#formula -->
@@ -430,7 +461,13 @@
         <rdfs:label xml:lang="en">has formula</rdfs:label>
         <rdfs:label xml:lang="de">hat Umrechungsformel</rdfs:label>
     </owl:DatatypeProperty>
+    
 
+
+    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#pointInTime -->
+
+    <owl:DatatypeProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#pointInTime"/>
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#quantity -->
@@ -438,12 +475,18 @@
     <owl:DatatypeProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#quantity">
         <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicAsset"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="de">Ein Wirtschaftsobjekt ist abzählbar.</rdfs:comment>
         <rdfs:comment xml:lang="en">An economic asset is countable.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Ein Wirtschaftsobjekt ist abzählbar.</rdfs:comment>
         <rdfs:label xml:lang="de">hat Anzahl</rdfs:label>
         <rdfs:label xml:lang="en">quantity</rdfs:label>
     </owl:DatatypeProperty>
+    
 
+
+    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#starts -->
+
+    <owl:DatatypeProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#starts"/>
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#status -->
@@ -456,35 +499,7 @@
         <rdfs:label xml:lang="de">hat Status</rdfs:label>
         <rdfs:label xml:lang="en">status</rdfs:label>
     </owl:DatatypeProperty>
-
-
-
-    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#when -->
-
-
-    <owl:DatatypeProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#pointInTime">
-        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Date"/>
-        <rdfs:range rdf:resource="https://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:comment xml:lang="en">point in time</rdfs:comment>
-        <rdfs:comment xml:lang="de">Shat Zeitpunkt</rdfs:comment>
-        <rdfs:label xml:lang="de">hat Zeitraum</rdfs:label>
-        <rdfs:label xml:lang="en">point in time</rdfs:label>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#starts">
-        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Date"/>
-        <rdfs:range rdf:resource="https://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:label xml:lang="de">startet</rdfs:label>
-        <rdfs:label xml:lang="en">starts</rdfs:label>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#ends">
-        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Date"/>
-        <rdfs:range rdf:resource="https://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:label xml:lang="de">endet</rdfs:label>
-        <rdfs:label xml:lang="en">ends</rdfs:label>
-    </owl:DatatypeProperty>
-
+    
 
 
     <!-- 
@@ -495,118 +510,117 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
 
+
+    <!-- http://cidoc-crm.org/cidoc-crm/E61_Time_Primitive -->
+
+    <owl:Class rdf:about="http://cidoc-crm.org/cidoc-crm/E61_Time_Primitive"/>
+    
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E17_Type_Assignment -->
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E17_Type_Assignment"/>
-
+    
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object -->
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E19_Physical_Object"/>
-
+    
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E21_Person -->
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
-
+    
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object -->
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object"/>
-
+    
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E30_Right -->
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E30_Right"/>
-
+    
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E39_Actor -->
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
-
+    
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E53_Place -->
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
-
+    
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit -->
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit"/>
-
+    
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E61_Time_Primitive -->
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E61_Time_Primitive"/>
-
+    
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E71_Human-Made_Thing -->
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E71_Human-Made_Thing"/>
-
+    
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E74_Group -->
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
-
+    
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E7_Activity -->
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
-
+    
 
 
     <!-- http://www.cidoc-crm.org/cidoc-crm/E97_Monetary_Amount -->
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E97_Monetary_Amount"/>
+    
 
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E98_Currency -->
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E98_Currency"/>
+    
 
 
     <!-- http://www.w3.org/2004/02/skos/core#Concept -->
 
     <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept"/>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Account -->
 
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Account">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-        <rdfs:comment xml:lang="de">Gegenüberstellung und Abrechnung von Ein- und
-            Ausgängen.</rdfs:comment>
         <rdfs:comment xml:lang="en">Comparison and accounting of incoming and outgoing
             payments.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Gegenüberstellung und Abrechnung von Ein- und
+            Ausgängen.</rdfs:comment>
         <rdfs:label xml:lang="en">Account</rdfs:label>
         <rdfs:label xml:lang="de">Konto</rdfs:label>
     </owl:Class>
-
-
-
-    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Date -->
-
-    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Date">
-        <rdfs:subClassOf rdf:resource="http://cidoc-crm.org/cidoc-crm/E61_Time_Primitive"/>
-        <rdfs:comment xml:lang="de">Datum das mit einer Transaktion in Relation
-            steht.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Date that is related to a transaction.</rdfs:comment>
-        <rdfs:label xml:lang="en">Date</rdfs:label>
-        <rdfs:label xml:lang="de">Datum</rdfs:label>
-    </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Agent -->
@@ -618,19 +632,19 @@
         <rdfs:label xml:lang="en">Agent</rdfs:label>
         <rdfs:label xml:lang="de">Vermittler</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Booking -->
 
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Booking">
         <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object"/>
-        <rdfs:comment xml:lang="de">Verbuchung einer Transaktion.</rdfs:comment>
         <rdfs:comment xml:lang="en">Booking of a transaction.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Verbuchung einer Transaktion.</rdfs:comment>
         <rdfs:label xml:lang="en">Booking</rdfs:label>
         <rdfs:label xml:lang="de">Buchung</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Commodity -->
@@ -645,50 +659,48 @@
         <rdfs:label xml:lang="de">Ware</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q317088"/>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Context -->
 
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Context">
         <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object"/>
-        <rdfs:comment xml:lang="de">Transaktionen können einem oder mehreren Kontexten zugeordnet
-            werden.</rdfs:comment>
         <rdfs:comment xml:lang="en">Transactions can be assigned to one or more
             contexts.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Transaktionen können einem oder mehreren Kontexten zugeordnet
+            werden.</rdfs:comment>
         <rdfs:label xml:lang="en">Context</rdfs:label>
         <rdfs:label xml:lang="de">Kontext</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Conversion -->
 
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Conversion">
         <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object"/>
-        <rdfs:comment xml:lang="de">Definiert die Konversion von einer Maßeinheit zu einer
-            anderen.</rdfs:comment>
         <rdfs:comment xml:lang="en">Defines the conversion from one unit of measurement to
             another.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Definiert die Konversion von einer Maßeinheit zu einer
+            anderen.</rdfs:comment>
         <rdfs:label xml:lang="en">Conversion</rdfs:label>
         <rdfs:label xml:lang="de">Konversion</rdfs:label>
     </owl:Class>
+    
 
 
+    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Date -->
 
-    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#MonetaryUnit -->
-
-    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#MonetaryUnit">
-        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E98_Currency"/>
-        <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Unit"/>
-        <rdfs:comment xml:lang="de">Die Geldeinheit in diesem Kontext hat den Charakter einer
-            Maßeinheit.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The monetary unit has the character of a unit of
-            measurement.</rdfs:comment>
-        <rdfs:label xml:lang="en">Monetary Unit</rdfs:label>
-        <rdfs:label xml:lang="de">Geldeinheit</rdfs:label>
+    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Date">
+        <rdfs:subClassOf rdf:resource="http://cidoc-crm.org/cidoc-crm/E61_Time_Primitive"/>
+        <rdfs:comment xml:lang="en">Date that is related to a transaction.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Datum das mit einer Transaktion in Relation
+            steht.</rdfs:comment>
+        <rdfs:label xml:lang="en">Date</rdfs:label>
+        <rdfs:label xml:lang="de">Datum</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicAgent -->
@@ -705,7 +717,7 @@
         <rdfs:label xml:lang="de">Wirtschaftssubjekt</rdfs:label>
         <rdfs:seeAlso xml:lang="en">REA Business Ontology: Economic Agent</rdfs:seeAlso>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicAsset -->
@@ -718,7 +730,7 @@
         <rdfs:label xml:lang="en">Economic Asset</rdfs:label>
         <rdfs:label xml:lang="de">Wirtschaftsobjekt</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#EconomicGood -->
@@ -732,20 +744,7 @@
         <rdfs:label xml:lang="en">Economic Good</rdfs:label>
         <rdfs:label xml:lang="de">Wirtschaftsgut</rdfs:label>
     </owl:Class>
-
-
-
-    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#GovernmentTransfer -->
-
-    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#TransferPayment">
-        <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Money"/>
-        <rdfs:comment xml:lang="en">A transfer payment is a redistribution of income and wealth by
-            means of the government making a payment, without goods or services being received in
-            return.</rdfs:comment>
-        <rdfs:label xml:lang="de">Transferleistung</rdfs:label>
-        <rdfs:label xml:lang="en">Government Transfer</rdfs:label>
-    </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Group -->
@@ -760,7 +759,7 @@
         <rdfs:label xml:lang="en">Group</rdfs:label>
         <rdfs:label xml:lang="de">Gruppe</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Individual -->
@@ -774,7 +773,22 @@
         <rdfs:label xml:lang="de">Individuum</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q508295"/>
     </owl:Class>
+    
 
+
+    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#MonetaryUnit -->
+
+    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#MonetaryUnit">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E98_Currency"/>
+        <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Unit"/>
+        <rdfs:comment xml:lang="de">Die Geldeinheit in diesem Kontext hat den Charakter einer
+            Maßeinheit.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The monetary unit has the character of a unit of
+            measurement.</rdfs:comment>
+        <rdfs:label xml:lang="de">Geldeinheit</rdfs:label>
+        <rdfs:label xml:lang="en">Monetary Unit</rdfs:label>
+    </owl:Class>
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Money -->
@@ -791,7 +805,7 @@
         <rdfs:label xml:lang="en">Monetary Value</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q1499548"/>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Organisation -->
@@ -801,11 +815,11 @@
         <rdfs:comment xml:lang="en">An organisation acting in a transaction.</rdfs:comment>
         <rdfs:comment xml:lang="de">Eine Organisation, die eine Transaktion
             druchführt.</rdfs:comment>
-        <rdfs:label xml:lang="en">Organisation</rdfs:label>
         <rdfs:label xml:lang="de">Organisation</rdfs:label>
+        <rdfs:label xml:lang="en">Organisation</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q43229"/>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Place -->
@@ -818,21 +832,21 @@
         <rdfs:label xml:lang="de">Ort</rdfs:label>
         <rdfs:label xml:lang="en">Place</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Price -->
 
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Price">
         <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Money"/>
-        <rdfs:comment xml:lang="en">Price in this context refers to a price indication in the
-            historic source</rdfs:comment>
         <rdfs:comment xml:lang="de">Preis in diesem Kontext referenziert auf eine Preisangabe in der
             historischen Quelle</rdfs:comment>
+        <rdfs:comment xml:lang="en">Price in this context refers to a price indication in the
+            historic source</rdfs:comment>
         <rdfs:label xml:lang="de">Preis</rdfs:label>
         <rdfs:label xml:lang="en">Price</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Right -->
@@ -846,7 +860,7 @@
         <rdfs:label xml:lang="en">Right</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q7406919"/>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Service -->
@@ -862,21 +876,22 @@
         <rdfs:label xml:lang="en">Service</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q7406919"/>
     </owl:Class>
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#SubtotalTransaction -->
 
-
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#SubtotalTransaction">
         <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object"/>
         <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transaction"/>
-        <rdfs:comment xml:lang="de">Zwischensummentransaktion bezeichnet die Teiltransaktionen, die
-            zu einer Gesamttransaktion zusammengeführt werden können.</rdfs:comment>
         <rdfs:comment xml:lang="en">Subtotal Transactions are intermediate totals that add up to a
             Total Transaction.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Zwischensummentransaktion bezeichnet die Teiltransaktionen, die
+            zu einer Gesamttransaktion zusammengeführt werden können.</rdfs:comment>
         <rdfs:label xml:lang="en">Subtotal Transaction</rdfs:label>
         <rdfs:label xml:lang="de">Zwischensummentransaktion</rdfs:label>
     </owl:Class>
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Tax -->
@@ -890,7 +905,7 @@
         <rdfs:label xml:lang="en">Tax</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q8161"/>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#TotalTransaction -->
@@ -902,42 +917,49 @@
             die in einem bestimmten Zeitrahmen oder Kontext stattfinden.</rdfs:comment>
         <rdfs:comment xml:lang="en">Total Transaction means the total of transactions occurring in a
             time frame or context.</rdfs:comment>
-        <rdfs:label xml:lang="en">Total Transaction</rdfs:label>
         <rdfs:label xml:lang="de">Gesamttransaktion</rdfs:label>
+        <rdfs:label xml:lang="en">Total Transaction</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Transaction -->
 
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Transaction">
         <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
-        <rdfs:comment xml:lang="en">A transaction is an agreement, carried out between economic
-            agents to exchange an asset.</rdfs:comment>
-        <rdfs:comment xml:lang="de">Eine Transaktion ist eine Vereinbarung, die zwischen zwei
-            Wirtschaftssubjekten durchgeführt wird, um einen Vermögenswert oder ein Wirtschaftsgut
-            auszutauschen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A Transaction is a time-bound, contextualized economic event involving the exchange of Economic Assets between Economic Agents. It comprises one or more Transfers, has a definable status and source representation, and can be categorized within accounting systems. Transactions may aggregate into larger economic structures.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine Transaktion ist ein zeitlich gebundenes, kontextualisiertes Wirtschaftsereignis, das den Austausch von Wirtschaftsgütern zwischen Wirtschaftssubjekten umfasst. Sie besteht aus einem oder mehreren Transfers, hat einen definierbaren Status und Quellenrepräsentation und kann in Buchungssystemen kategorisiert werden. Transaktionen können zu größeren wirtschaftlichen Strukturen aggregiert werden.</rdfs:comment>
         <rdfs:label xml:lang="en">Transaction</rdfs:label>
         <rdfs:label xml:lang="de">Transaktion</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q1166072"/>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Transfer -->
 
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#Transfer">
         <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
-        <rdfs:comment xml:lang="de">Als Transfer versteht man die Aktivität, in der ein
-            Wirtschaftsobjekt von einem Wirtschaftssubjekt zum anderen übermittelt
-            wird.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Transfer is the activity in which an economic object is
-            transferred from one economic agent to another.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Transfer repräsentiert eine einzelne Bewegung eines Wirtschaftsguts zwischen Wirtschaftssubjekten innerhalb einer Transaktion. Er spezifiziert Quelle, Ziel und übertragenes Gut und kann einen Vermittler einbeziehen. Transfers setzen sich zu komplexen wirtschaftlichen Austauschen zusammen.</rdfs:comment>
+        <rdfs:comment xml:lang="en">bk:Transfer represents a singular movement of an Economic Asset between Economic Agents within a Transaction. It specifies the source, destination, and transferred asset, and may involve an intermediary. Transfers compose to form complex economic exchanges.</rdfs:comment>
         <rdfs:label xml:lang="de">Transfer</rdfs:label>
         <rdfs:label xml:lang="en">Transfer</rdfs:label>
         <rdfs:seeAlso xml:lang="en">REA Business Ontology: Economic Event</rdfs:seeAlso>
     </owl:Class>
+    
 
+
+    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#TransferPayment -->
+
+    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#TransferPayment">
+        <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Money"/>
+        <rdfs:comment xml:lang="en">A transfer payment is a redistribution of income and wealth by
+            means of the government making a payment, without goods or services being received in
+            return.</rdfs:comment>
+        <rdfs:label xml:lang="en">Government Transfer</rdfs:label>
+        <rdfs:label xml:lang="de">Transferleistung</rdfs:label>
+    </owl:Class>
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#Unit -->
@@ -949,9 +971,9 @@
         <rdfs:label xml:lang="de">Einheit</rdfs:label>
         <rdfs:label xml:lang="en">Unit</rdfs:label>
     </owl:Class>
+    
 
 
-   
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#UnitOfArea -->
 
     <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#UnitOfArea">
@@ -959,7 +981,7 @@
         <rdfs:label xml:lang="de">Flächenmaß</rdfs:label>
         <rdfs:label xml:lang="en">Unit of area</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#UnitOfLength -->
@@ -969,7 +991,7 @@
         <rdfs:label xml:lang="de">Längenmaß</rdfs:label>
         <rdfs:label xml:lang="en">Unit of length</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#UnitOfMass -->
@@ -979,7 +1001,7 @@
         <rdfs:label xml:lang="de">Gewichtsmaß</rdfs:label>
         <rdfs:label xml:lang="en">Unit of mass</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#UnitOfTime -->
@@ -989,7 +1011,7 @@
         <rdfs:label xml:lang="en">Unit of time</rdfs:label>
         <rdfs:label xml:lang="de">Zeitmaß</rdfs:label>
     </owl:Class>
-
+    
 
 
     <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#UnitOfVolume -->
@@ -999,6 +1021,50 @@
         <rdfs:label xml:lang="de">Raummaß</rdfs:label>
         <rdfs:label xml:lang="en">Unit of volume</rdfs:label>
     </owl:Class>
+    
 
 
+    <!-- https://www.w3.org/2001/XMLSchema#dateTime -->
+
+    <owl:Class rdf:about="https://www.w3.org/2001/XMLSchema#dateTime"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#assigned">
+        <rdfs:comment xml:lang="en">Assigns transactions to a specific context. This decision is
+            made by a scholar. This can be done in the course of a specific research
+            question.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Ordnet Transaktionen einem bestimmten Kontext zu. Diese
+            Entscheidung wird vom Fachwissenschaftler getroffen und kann im Zusammenhang mit einer
+            bestimmten Forschungsfrage stehen.</rdfs:comment>
+        <rdfs:label xml:lang="en">assigned</rdfs:label>
+        <rdfs:label xml:lang="de">zugeordnet</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#ends">
+        <rdfs:label xml:lang="de">endet</rdfs:label>
+        <rdfs:label xml:lang="en">ends</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#pointInTime">
+        <rdfs:comment xml:lang="de">Shat Zeitpunkt</rdfs:comment>
+        <rdfs:comment xml:lang="en">point in time</rdfs:comment>
+        <rdfs:label xml:lang="de">hat Zeitraum</rdfs:label>
+        <rdfs:label xml:lang="en">point in time</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#starts">
+        <rdfs:label xml:lang="de">startet</rdfs:label>
+        <rdfs:label xml:lang="en">starts</rdfs:label>
+    </rdf:Description>
 </rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

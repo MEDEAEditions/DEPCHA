@@ -1,0 +1,119 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bk: <https://gams.uni-graz.at/o:depcha.bookkeeping#> .
+@prefix : <https://gams.uni-graz.at/o:depcha.example#> .
+
+
+:transaction1352_rent a bk:Transaction ;
+    bk:when [ a bk:Date ; bk:pointInTime "1352-03-15"^^xsd:date ] ;
+    bk:where :manor_estate ;
+    bk:consistsOf :transfer1352_rent_land, :transfer1352_rent_payment .
+
+:transfer1352_rent_land a bk:Transfer ;
+    bk:from :manor ;
+    bk:to :tenant_john ;
+    bk:transfers [ a bk:Right ;
+        bk:quantity "5"^^xsd:decimal ;
+        bk:unit :acre ] .
+
+:transfer1352_rent_payment a bk:Transfer ;
+    bk:from :tenant_john ;
+    bk:to :manor ;
+    bk:transfers [ a bk:Money ;
+        bk:quantity "600"^^xsd:decimal ;
+        bk:unit :penny ] .
+
+:transaction1352_wheat_sale a bk:Transaction ;
+    bk:when [ a bk:Date ; bk:pointInTime "1352-05-01"^^xsd:date ] ;
+    bk:where :local_market ;
+    bk:consistsOf :transfer1352_wheat_sale, :transfer1352_wheat_payment .
+
+:transfer1352_wheat_sale a bk:Transfer ;
+    bk:from :manor ;
+    bk:to :market_buyers ;
+    bk:transfers [ a bk:Commodity ;
+        bk:quantity "10"^^xsd:decimal ;
+        bk:unit :bushel ;
+        bk:classified :wheat ] .
+
+:transfer1352_wheat_payment a bk:Transfer ;
+    bk:from :market_buyers ;
+    bk:to :manor ;
+    bk:transfers [ a bk:Money ;
+        bk:quantity "480"^^xsd:decimal ;
+        bk:unit :penny ] .
+
+:transaction1352_court_fines a bk:Transaction ;
+    bk:when [ a bk:Date ; bk:pointInTime "1352-06-10"^^xsd:date ] ;
+    bk:where :manor_court ;
+    bk:consistsOf :transfer1352_court_fines .
+
+:transfer1352_court_fines a bk:Transfer ;
+    bk:from :offenders ;
+    bk:to :manor ;
+    bk:transfers [ a bk:Money ;
+        bk:quantity "306"^^xsd:decimal ;
+        bk:unit :penny ] .
+
+# Transactions - Expenses
+:transaction1352_mill_repairs a bk:Transaction ;
+    bk:when [ a bk:Date ; bk:starts "1352-04-02"^^xsd:date ; bk:ends "1352-04-06"^^xsd:date ] ;
+    bk:where :manor_mill ;
+    bk:consistsOf :transfer1352_mill_repairs_service, :transfer1352_mill_repairs_payment .
+
+:transfer1352_mill_repairs_service a bk:Transfer ;
+    bk:from :miller_tom ;
+    bk:to :manor ;
+    bk:transfers [ a bk:Service ;
+        bk:quantity "5"^^xsd:decimal ;
+        bk:unit :day ] .
+
+:transfer1352_mill_repairs_payment a bk:Transfer ;
+    bk:from :manor ;
+    bk:to :miller_tom ;
+    bk:transfers [ a bk:Money ;
+        bk:quantity "120"^^xsd:decimal ;
+        bk:unit :penny ] .
+
+:transaction1352_wheat_harvest a bk:Transaction ;
+    bk:when [ a bk:Date ; bk:pointInTime "1352-07-15"^^xsd:date ] ;
+    bk:where :manor_fields ;
+    bk:consistsOf :transfer1352_wheat_harvest_service, :transfer1352_wheat_harvest_payment .
+
+:transfer1352_wheat_harvest_service a bk:Transfer ;
+    bk:from :harvester_group ;
+    bk:to :manor ;
+    bk:transfers [ a bk:Service ;
+        bk:quantity "20"^^xsd:decimal ;
+        bk:unit :acre ] .
+
+:transfer1352_wheat_harvest_payment a bk:Transfer ;
+    bk:from :manor ;
+    bk:to :harvester_group ;
+    bk:transfers [ a bk:Money ;
+        bk:quantity "240"^^xsd:decimal ;
+        bk:unit :penny ] .
+
+# Summary
+:summary1352 a bk:TotalTransaction ;
+    bk:when [ a bk:Date ; bk:starts "1352-03-15"^^xsd:date ; bk:ends "1352-07-15"^^xsd:date ] ;
+    bk:comprises 
+        [ a bk:Money ; bk:quantity "1386"^^xsd:decimal ; bk:unit :penny ] , # Total Income
+        [ a bk:Money ; bk:quantity "360"^^xsd:decimal ; bk:unit :penny ] ,  # Total Expenses
+        [ a bk:Money ; bk:quantity "1026"^^xsd:decimal ; bk:unit :penny ] . # Balance
+
+# Economic Agents
+:manor a bk:Organisation .
+:tenant_john a bk:Individual .
+:market_buyers a bk:Group .
+:offenders a bk:Group .
+:miller_tom a bk:Individual .
+:harvester_group a bk:Group .
+
+# Places
+:manor_estate a bk:Place .
+:local_market a bk:Place .
+:manor_court a bk:Place .
+:manor_mill a bk:Place .
+:manor_fields a bk:Place .
