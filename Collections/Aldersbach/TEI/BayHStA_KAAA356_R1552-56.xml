@@ -66,15 +66,989 @@
                 </unitDef>
             </unitDecl>
             <classDecl>
-                <taxonomy ana="bk:account">
+
+                <taxonomy xmlns="http://www.tei-c.org/ns/1.0" ana="bk:rubrics">
                     <category ana="depcha:accountHolder" xml:id="aldersbach">
-                        <catDesc><gloss>Aldersbach</gloss></catDesc>
+                        <catDesc>
+                            <gloss>Aldersbach</gloss>
+                        </catDesc>
                     </category>
                     <category ana="bk:from" xml:id="income">
-                        <catDesc><gloss>Einnahmev</gloss></catDesc>
+                        <catDesc>
+                            <gloss>Einnahme</gloss>
+                        </catDesc>
+                        <category xml:id="Einnahmen_EinnemenumbverkaufftGetreidabdemCasten">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbverkaufftGetreidabdemCasten</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbangeschlagenGetreid">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbangeschlagenGetreid</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbausgeschennckteweininderTaffern">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbausgeschennckteweininderTaffern</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbverkauffteweinunnderdenRaiffen">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbverkauffteweinunnderdenRaiffen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_Einnemenumbeintzigausgegebenpier">
+                            <catDesc>
+                                <gloss>Einnahmen_Einnemenumbeintzigausgegebenpier</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbSaltz">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbSaltz</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbOchsen">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbOchsen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbverkauffteSchwein">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbverkauffteSchwein</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbverkauffteSchaaff">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbverkauffteSchaaff</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbverkauffteSchaafwol">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbverkauffteSchaafwol</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_Einnemenumbheütunndfeell">
+                            <catDesc>
+                                <gloss>Einnahmen_Einnemenumbheütunndfeell</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbverkauffteKleiben">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbverkauffteKleiben</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbheuStroRubenunndKraut">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbheuStroRubenunndKraut</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenvondenKirchpröbsten">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenvondenKirchpröbsten</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbzustanndTodfellunndLeibgeding">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbzustanndTodfellunndLeibgeding</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenvonleibeigenenLeüthen">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenvonleibeigenenLeüthen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbverkauffteweinunndvomKelner">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbverkauffteweinunndvomKelner</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbeintzigausgegebenSaltz">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbeintzigausgegebenSaltz</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbverkauffteOchsen">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbverkauffteOchsen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_7fEinnemenumbverkauffteSchaaffwoll">
+                            <catDesc>
+                                <gloss>Einnahmen_7fEinnemenumbverkauffteSchaaffwoll</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_Einnemenumbheutunndfeell">
+                            <catDesc>
+                                <gloss>Einnahmen_Einnemenumbheutunndfeell</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbRoß">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbRoß</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbeintzigausgegebenKleiben">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbeintzigausgegebenKleiben</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbheuStrorubenunndKraut">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbheuStrorubenunndKraut</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenvondenKirchpröbstenetc">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenvondenKirchpröbstenetc</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbzustanndTodfeelunndLeibgeding">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbzustanndTodfeelunndLeibgeding</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemendesLeibgelts">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemendesLeibgelts</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenvonderPfarrSchönau">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenvonderPfarrSchönau</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenvonderPfarrKöstlarn">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenvonderPfarrKöstlarn</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbverkaufftgetreidabdemCasten">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbverkaufftgetreidabdemCasten</gloss>
+                            </catDesc>
+                        </category>
+                        <category
+                            xml:id="Einnahmen_EinnemenumbverkaufftweinsambtdemweingeltvomKelner">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbverkaufftweinsambtdemweingeltvomKelner</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbeintzigausgegebenPier">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbeintzigausgegebenPier</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbverkauffteSchaaffwol">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbverkauffteSchaaffwol</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemendesAusgelihenengelts">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemendesAusgelihenengelts</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbHeuStroRubenetc">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbHeuStroRubenetc</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbzustandTodfeellunndLeibgeding">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbzustandTodfeellunndLeibgeding</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenvonLeibeigenenLeüten">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenvonLeibeigenenLeüten</gloss>
+                            </catDesc>
+                        </category>
+                        <category
+                            xml:id="Einnahmen_EinnemenumbverkauffteweinauchvomKelnerdasweingelt">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbverkauffteweinauchvomKelnerdasweingelt</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbSchwein">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbSchwein</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbSchaaff">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbSchaaff</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbSchaaffwoll">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbSchaaffwoll</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbheuStroetc">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbheuStroetc</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenvonKirchpröbsten">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenvonKirchpröbsten</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbzustanndTodfelletc">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbzustanndTodfelletc</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenvonLeibeigenenLeüthen">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenvonLeibeigenenLeüthen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_Einnemenumbangeschlagengetreiddenunnderthanen">
+                            <catDesc>
+                                <gloss>Einnahmen_Einnemenumbangeschlagengetreiddenunnderthanen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbverkauffteSchaaffwoll">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbverkauffteSchaaffwoll</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbHeuStroetc">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbHeuStroetc</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbunndvondenKirchpröbsten">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbunndvondenKirchpröbsten</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Einnahmen_EinnemenumbzustanndTodfellunndLeibgedinng">
+                            <catDesc>
+                                <gloss>Einnahmen_EinnemenumbzustanndTodfellunndLeibgedinng</gloss>
+                            </catDesc>
+                        </category>
                     </category>
                     <category ana="bk:to" xml:id="expense">
-                        <catDesc><gloss>Ausgaben</gloss></catDesc>
+                        <catDesc>
+                            <gloss>Ausgaben</gloss>
+                        </catDesc>
+                        <category xml:id="Ausgaben_AusgabBuchvondem52bisufdas56Jar">
+                            <catDesc>
+                                <gloss>Ausgaben_AusgabBuchvondem52bisufdas56Jar</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Ausgabentgegen">
+                            <catDesc>
+                                <gloss>Ausgaben_Ausgabentgegen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_AusgabinderElection">
+                            <catDesc>
+                                <gloss>Ausgaben_AusgabinderElection</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_IndieApotecken">
+                            <catDesc>
+                                <gloss>Ausgaben_IndieApotecken</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Glaser">
+                            <catDesc>
+                                <gloss>Ausgaben_Glaser</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Zingiesser">
+                            <catDesc>
+                                <gloss>Ausgaben_Zingiesser</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Trechsler">
+                            <catDesc>
+                                <gloss>Ausgaben_Trechsler</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Haffner">
+                            <catDesc>
+                                <gloss>Ausgaben_Haffner</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Lederer">
+                            <catDesc>
+                                <gloss>Ausgaben_Lederer</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Schuster">
+                            <catDesc>
+                                <gloss>Ausgaben_Schuster</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Sayler">
+                            <catDesc>
+                                <gloss>Ausgaben_Sayler</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Wagner">
+                            <catDesc>
+                                <gloss>Ausgaben_Wagner</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Kurschner">
+                            <catDesc>
+                                <gloss>Ausgaben_Kurschner</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Tuchscherer">
+                            <catDesc>
+                                <gloss>Ausgaben_Tuchscherer</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Schlosser">
+                            <catDesc>
+                                <gloss>Ausgaben_Schlosser</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Schreiner">
+                            <catDesc>
+                                <gloss>Ausgaben_Schreiner</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Ziegler">
+                            <catDesc>
+                                <gloss>Ausgaben_Ziegler</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Maurer">
+                            <catDesc>
+                                <gloss>Ausgaben_Maurer</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Zimmerleüt">
+                            <catDesc>
+                                <gloss>Ausgaben_Zimmerleüt</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Tagwerckern">
+                            <catDesc>
+                                <gloss>Ausgaben_Tagwerckern</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Strohschnitern">
+                            <catDesc>
+                                <gloss>Ausgaben_Strohschnitern</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Holtzhackern">
+                            <catDesc>
+                                <gloss>Ausgaben_Holtzhackern</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Madernunndheigern">
+                            <catDesc>
+                                <gloss>Ausgaben_Madernunndheigern</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Schnider">
+                            <catDesc>
+                                <gloss>Ausgaben_Schnider</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_AusgabufArbeitern">
+                            <catDesc>
+                                <gloss>Ausgaben_AusgabufArbeitern</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Schaaffscheren">
+                            <catDesc>
+                                <gloss>Ausgaben_Schaaffscheren</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Aichelklauben">
+                            <catDesc>
+                                <gloss>Ausgaben_Aichelklauben</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_HofmaisterinOsterreich">
+                            <catDesc>
+                                <gloss>Ausgaben_HofmaisterinOsterreich</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Weinlesen">
+                            <catDesc>
+                                <gloss>Ausgaben_Weinlesen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Ufschleg">
+                            <catDesc>
+                                <gloss>Ausgaben_Ufschleg</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Scheffmut">
+                            <catDesc>
+                                <gloss>Ausgaben_Scheffmut</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Wein">
+                            <catDesc>
+                                <gloss>Ausgaben_Wein</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Semel">
+                            <catDesc>
+                                <gloss>Ausgaben_Semel</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Keß">
+                            <catDesc>
+                                <gloss>Ausgaben_Keß</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Ayr">
+                            <catDesc>
+                                <gloss>Ausgaben_Ayr</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Schmaltz">
+                            <catDesc>
+                                <gloss>Ausgaben_Schmaltz</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbJungeHünnervöglhasenCopaunenetc">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbJungeHünnervöglhasenCopaunenetc</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbFleisch">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbFleisch</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_VischunndKrebsen">
+                            <catDesc>
+                                <gloss>Ausgaben_VischunndKrebsen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_AusgabufsSaltzvomHellen">
+                            <catDesc>
+                                <gloss>Ausgaben_AusgabufsSaltzvomHellen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbGewürtz">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbGewürtz</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbZwibelErbeshabermeletc">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbZwibelErbeshabermeletc</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbBucher">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbBucher</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Papirunndperment">
+                            <catDesc>
+                                <gloss>Ausgaben_Papirunndperment</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbÖll">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbÖll</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Wachsunndhönig">
+                            <catDesc>
+                                <gloss>Ausgaben_Wachsunndhönig</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Kalck">
+                            <catDesc>
+                                <gloss>Ausgaben_Kalck</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbRoß">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbRoß</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Schintl">
+                            <catDesc>
+                                <gloss>Ausgaben_Schintl</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbNagl">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbNagl</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbLaden">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbLaden</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbVaßRaiffunndpannd">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbVaßRaiffunndpannd</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbEisen">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbEisen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbTuch">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbTuch</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_PrecoreyunndJerlichegülten">
+                            <catDesc>
+                                <gloss>Ausgaben_PrecoreyunndJerlichegülten</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Jegergelt">
+                            <catDesc>
+                                <gloss>Ausgaben_Jegergelt</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Steuren">
+                            <catDesc>
+                                <gloss>Ausgaben_Steuren</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_31f1s19dGedingunndOpffergelt">
+                            <catDesc>
+                                <gloss>Ausgaben_31f1s19dGedingunndOpffergelt</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_BesoldungderDienner">
+                            <catDesc>
+                                <gloss>Ausgaben_BesoldungderDienner</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Zerung">
+                            <catDesc>
+                                <gloss>Ausgaben_Zerung</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Potenlon">
+                            <catDesc>
+                                <gloss>Ausgaben_Potenlon</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_HoffirernunndSpilleuten">
+                            <catDesc>
+                                <gloss>Ausgaben_HoffirernunndSpilleuten</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_GemeineAusgab">
+                            <catDesc>
+                                <gloss>Ausgaben_GemeineAusgab</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Nachlassungderunnderthanen">
+                            <catDesc>
+                                <gloss>Ausgaben_Nachlassungderunnderthanen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_EinnehmenumbverkaufftGetreidabdemCasten">
+                            <catDesc>
+                                <gloss>Ausgaben_EinnehmenumbverkaufftGetreidabdemCasten</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Goldschmid">
+                            <catDesc>
+                                <gloss>Ausgaben_Goldschmid</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Kupfferschmid">
+                            <catDesc>
+                                <gloss>Ausgaben_Kupfferschmid</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Maler">
+                            <catDesc>
+                                <gloss>Ausgaben_Maler</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Riemer">
+                            <catDesc>
+                                <gloss>Ausgaben_Riemer</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Kürschner">
+                            <catDesc>
+                                <gloss>Ausgaben_Kürschner</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Zimerleüt">
+                            <catDesc>
+                                <gloss>Ausgaben_Zimerleüt</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbMarmelstein">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbMarmelstein</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Tagwercker">
+                            <catDesc>
+                                <gloss>Ausgaben_Tagwercker</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Strohschniter">
+                            <catDesc>
+                                <gloss>Ausgaben_Strohschniter</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Holtzhacker">
+                            <catDesc>
+                                <gloss>Ausgaben_Holtzhacker</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Schnitern">
+                            <catDesc>
+                                <gloss>Ausgaben_Schnitern</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Waitzserbern">
+                            <catDesc>
+                                <gloss>Ausgaben_Waitzserbern</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Treschern">
+                            <catDesc>
+                                <gloss>Ausgaben_Treschern</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Ufschlag">
+                            <catDesc>
+                                <gloss>Ausgaben_Ufschlag</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Schefmüt">
+                            <catDesc>
+                                <gloss>Ausgaben_Schefmüt</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Erkaufftenwein">
+                            <catDesc>
+                                <gloss>Ausgaben_Erkaufftenwein</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbJungehunneretc">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbJungehunneretc</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_FleischunndSchlachtviech">
+                            <catDesc>
+                                <gloss>Ausgaben_FleischunndSchlachtviech</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Fastenspeis">
+                            <catDesc>
+                                <gloss>Ausgaben_Fastenspeis</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_AusgabufsSaltz">
+                            <catDesc>
+                                <gloss>Ausgaben_AusgabufsSaltz</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Gewürtz">
+                            <catDesc>
+                                <gloss>Ausgaben_Gewürtz</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_ZwibelArbesunndhabermeletc">
+                            <catDesc>
+                                <gloss>Ausgaben_ZwibelArbesunndhabermeletc</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_2f5s8dUmbFaßRaiffunndpannd">
+                            <catDesc>
+                                <gloss>Ausgaben_2f5s8dUmbFaßRaiffunndpannd</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbStahelunndEysen">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbStahelunndEysen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbParchetMacheyunndArraß">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbParchetMacheyunndArraß</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Leinentuch">
+                            <catDesc>
+                                <gloss>Ausgaben_Leinentuch</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Wollentuch">
+                            <catDesc>
+                                <gloss>Ausgaben_Wollentuch</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_OsterreichischeSteur">
+                            <catDesc>
+                                <gloss>Ausgaben_OsterreichischeSteur</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_GedinngunndOpffergelt">
+                            <catDesc>
+                                <gloss>Ausgaben_GedinngunndOpffergelt</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Hoffirern">
+                            <catDesc>
+                                <gloss>Ausgaben_Hoffirern</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_AusgabinderBenediction">
+                            <catDesc>
+                                <gloss>Ausgaben_AusgabinderBenediction</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Schneider">
+                            <catDesc>
+                                <gloss>Ausgaben_Schneider</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Satler">
+                            <catDesc>
+                                <gloss>Ausgaben_Satler</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Kirschner">
+                            <catDesc>
+                                <gloss>Ausgaben_Kirschner</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Maderunndheiger">
+                            <catDesc>
+                                <gloss>Ausgaben_Maderunndheiger</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Waitzserben">
+                            <catDesc>
+                                <gloss>Ausgaben_Waitzserben</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Schafscheren">
+                            <catDesc>
+                                <gloss>Ausgaben_Schafscheren</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_AusgabeinSölden">
+                            <catDesc>
+                                <gloss>Ausgaben_AusgabeinSölden</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbWein">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbWein</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbAyr">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbAyr</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbJungeHünnervöglhasenunnddergleichen">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbJungeHünnervöglhasenunnddergleichen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbFleischunndSchlachtviech">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbFleischunndSchlachtviech</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbVischunndKrebsen">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbVischunndKrebsen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbZwibelErbeshaberunndErbesmel">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbZwibelErbeshaberunndErbesmel</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbBücher">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbBücher</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbFaßRaiffunndpannd">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbFaßRaiffunndpannd</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_GedingundOpffergelt">
+                            <catDesc>
+                                <gloss>Ausgaben_GedingundOpffergelt</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_AusgabindieApotecken">
+                            <catDesc>
+                                <gloss>Ausgaben_AusgabindieApotecken</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Zieglschlager">
+                            <catDesc>
+                                <gloss>Ausgaben_Zieglschlager</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_MadernunndHeigern">
+                            <catDesc>
+                                <gloss>Ausgaben_MadernunndHeigern</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Schniter">
+                            <catDesc>
+                                <gloss>Ausgaben_Schniter</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Trescher">
+                            <catDesc>
+                                <gloss>Ausgaben_Trescher</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Arbeiternimpreinetc">
+                            <catDesc>
+                                <gloss>Ausgaben_Arbeiternimpreinetc</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Schaafscheren">
+                            <catDesc>
+                                <gloss>Ausgaben_Schaafscheren</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_HoffmeisterinOsterreich">
+                            <catDesc>
+                                <gloss>Ausgaben_HoffmeisterinOsterreich</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Scheffmüt">
+                            <catDesc>
+                                <gloss>Ausgaben_Scheffmüt</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbJungehünner">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbJungehünner</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbVischunndKrepsen">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbVischunndKrepsen</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_SaltzvomHellein">
+                            <catDesc>
+                                <gloss>Ausgaben_SaltzvomHellein</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbZwibel">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbZwibel</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbPapir">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbPapir</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbWachsunndhönig">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbWachsunndhönig</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbLadenunndEschenholtz">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbLadenunndEschenholtz</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbParchetMacheyunndArroß">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbParchetMacheyunndArroß</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Schannckungetc">
+                            <catDesc>
+                                <gloss>Ausgaben_Schannckungetc</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Zimerleüth">
+                            <catDesc>
+                                <gloss>Ausgaben_Zimerleüth</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_ArbeiternimPreinetc">
+                            <catDesc>
+                                <gloss>Ausgaben_ArbeiternimPreinetc</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_HofmeisterinOsterreich">
+                            <catDesc>
+                                <gloss>Ausgaben_HofmeisterinOsterreich</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbJungehünneretc">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbJungehünneretc</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_AusgabufsSaltzvomHellein">
+                            <catDesc>
+                                <gloss>Ausgaben_AusgabufsSaltzvomHellein</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_UmbMaurpanncken">
+                            <catDesc>
+                                <gloss>Ausgaben_UmbMaurpanncken</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Leinwat">
+                            <catDesc>
+                                <gloss>Ausgaben_Leinwat</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Steur">
+                            <catDesc>
+                                <gloss>Ausgaben_Steur</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Cantoreygelt">
+                            <catDesc>
+                                <gloss>Ausgaben_Cantoreygelt</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_GedingunndOpffergelt">
+                            <catDesc>
+                                <gloss>Ausgaben_GedingunndOpffergelt</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_BesöldungderDienner">
+                            <catDesc>
+                                <gloss>Ausgaben_BesöldungderDienner</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Schannckung">
+                            <catDesc>
+                                <gloss>Ausgaben_Schannckung</gloss>
+                            </catDesc>
+                        </category>
+                        <category xml:id="Ausgaben_Nachlassung">
+                            <catDesc>
+                                <gloss>Ausgaben_Nachlassung</gloss>
+                            </catDesc>
+                        </category>
                     </category>
                 </taxonomy>
             </classDecl>
