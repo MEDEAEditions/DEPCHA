@@ -354,6 +354,19 @@
                     <label xml:lang="de">Woche</label>
                 </unitDef>
             </unitDecl>
+            <classDecl>
+                <taxonomy ana="bk:account">
+                    <category ana="depcha:accountHolder" xml:id="aldersbach">
+                        <catDesc><gloss>Aldersbach</gloss></catDesc>
+                    </category>
+                    <category ana="bk:from" xml:id="income">
+                        <catDesc><gloss>Einnahmev</gloss></catDesc>
+                    </category>
+                    <category ana="bk:to" xml:id="expense">
+                        <catDesc><gloss>Ausgaben</gloss></catDesc>
+                    </category>
+                </taxonomy>
+            </classDecl>
         </encodingDesc>
     </teiHeader>
     <facsimile>
@@ -3014,7 +3027,7 @@
                 <pb n="1" facs="IMG.1.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbverkaufftGetreidabdemCasten">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbverkaufftGetreidabdemCasten">
                 <head>Einnemen umb <lb/>verkaufft Getreid ab dem Casten</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-04-29">.29.
                         Aprilis</date>, dem Zinnsperger zu Braunau .60. <lb/>Schaff waitz zu
@@ -3080,7 +3093,7 @@
                     <measure ana="bk:money" quantity="19" unitRef="#d">19. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbangeschlagengetreid">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbangeschlagengetreid">
                 <head>Einnemen umb <lb/>angeschlagen getreid.</head>
                 <ab ana="bk:entry">Item Jacob Gerstl zu <placeName ana="bk:where" ref="#ort_0151"
                         >Gumperting</placeName> korn .4. Schaff <lb/>waitz .4. Schaff. p.
@@ -3105,7 +3118,7 @@
                 <pb n="5" facs="IMG.5.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbausgeschennckteweininderTaffern">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbausgeschennckteweininderTaffern">
                 <head>Einnemen umb <lb/>ausgeschennckte wein in der <lb/>Taffern.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-02-12">.12.
                         Februarii</date> hat wiert bezalt .17 1/4. <lb/>Emer zu <measure
@@ -3231,7 +3244,7 @@
                         <lb/><measure ana="bk:price" quantity="14" unitRef="#f">.14. f.</measure>
                     <measure ana="bk:price" quantity="24" unitRef="#d">24 d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbaintzigausgegebenwein">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbaintzigausgegebenwein">
                 <head>Einnemen umb <lb/>aintzig ausgegeben wein.</head>
                 <ab ana="bk:entry">Item weingelt vom Kelner. <fw ana="bk:total">thut. <lb/><measure
                             ana="bk:money" quantity="42" unitRef="#f">.42. f.</measure>
@@ -3333,7 +3346,7 @@
                     <measure ana="bk:price" quantity="1" unitRef="#s">1. s.</measure>
                     <measure ana="bk:price" quantity="26" unitRef="#d">26. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbPier">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbPier">
                 <head>Einnemen <lb/>umb Pier.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-05-17">.17. Maii</date>
                     vom Preuen empfanngen. <lb/><measure ana="bk:money" quantity="2" unitRef="#f"
@@ -3347,7 +3360,7 @@
                 <pb n="15" facs="IMG.15.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbSaltz">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbSaltz">
                 <head>Einnemen <lb/>umb Saltz.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-04-26">.26.
                         Aprilis</date> eingenommen. <lb/><measure ana="bk:money" quantity="1"
@@ -3370,7 +3383,7 @@
                 <pb n="16" facs="IMG.16.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbOchsen">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbOchsen">
                 <head>Einnemen <lb/>umb Ochsen.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-11-28">.28.
                         Novembris</date> dem Hofinger Metzger zu Braun<lb break="no"/>au drey
@@ -3379,7 +3392,7 @@
                     <measure ana="bk:price" quantity="3" unitRef="#s">3. s.</measure>
                     <measure ana="bk:price" quantity="15" unitRef="#d">15. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbSchwein">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbSchwein">
                 <head>Einnemen <lb/>umb Schwein</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-08-25">.25.
                         Augusti</date> .7. Schwein verkaufft p. <lb/><measure ana="bk:price"
@@ -3391,7 +3404,7 @@
                 <pb n="17" facs="IMG.17.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbSchaaffwol">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbSchaaffwol">
                 <head>Einnemen <lb/>umb Schaaffwol</head>
                 <ab ana="bk:entry">Item .195. lb. Schaffwol eines p. <measure ana="bk:price"
                         quantity="6" unitRef="#kr">6. kr.</measure> ver<lb break="no"/>kaufft <fw
@@ -3409,7 +3422,7 @@
                         <measure ana="bk:money" quantity="1" unitRef="#hr">1.
                     hr.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbheütunndfeel">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbheütunndfeel">
                 <head>Einnemen <lb/>umb heüt unnd feel.</head>
                 <pb n="18" facs="IMG.18.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
@@ -3420,7 +3433,7 @@
                         quantity="15" unitRef="#f">.15. f.</measure>
                     <measure ana="bk:price" quantity="4" unitRef="#s">4. s.</measure> d.</ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbKleib">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbKleib">
                 <head>Einnemen <lb/>umb Kleib.</head>
                 <ab ana="bk:entry">Item umb Kleib eingenommen. <lb/><measure ana="bk:money"
                         quantity="3" unitRef="#f">.3. f.</measure>
@@ -3433,14 +3446,14 @@
                 <pb n="19" facs="IMG.19.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbHeuStroRubenunndKraut">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbHeuStroRubenunndKraut">
                 <head>Einnemen <lb/>umb Heu, Stro, Ruben: <lb/>unnd Kraut</head>
                 <ab ana="bk:entry">Item umb Heu, Stro, Ruben, Kraut etc. eingenommen. <lb/><measure
                         ana="bk:money" quantity="5" unitRef="#f">.5. f.</measure>
                     <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
                     <measure ana="bk:money" quantity="5" unitRef="#d">5. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenvomZechpröbsten">
+            <div ana="bk:rubric #Einnahmen_EinnemenvomZechpröbsten">
                 <head>Einnemen <lb/>vom Zechpröbsten.</head>
                 <ab ana="bk:entry">Item von Zechpröbsten zu <placeName ana="bk:where"
                         ref="#ort_0488">Wenng</placeName>, unnd zu <lb/>Sannct Peter eingenommen.
@@ -3450,7 +3463,7 @@
                 <pb n="20" facs="IMG.20.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbzustenndTodfellunndLeibgeding">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbzustenndTodfellunndLeibgeding">
                 <head>Einnemen <lb/>umb zustennd, Tod<lb break="no"/>fell unnd Leibgeding.</head>
                 <ab ana="bk:entry">Item Westerskircher zu Walthoff zustannd. <lb/><measure
                         ana="bk:money" quantity="4" unitRef="#f">.4. f.</measure>
@@ -3501,7 +3514,7 @@
                 <pb n="23" facs="IMG.23.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenvonLeibeigenenLeüthen">
+            <div ana="bk:rubric #Einnahmen_EinnemenvonLeibeigenenLeüthen">
                 <head>Einnemen <lb/>von Leibeigenen Leüthen</head>
                 <ab ana="bk:entry">Item von Leibeigenen Leüthen eingenommen. <lb/><measure
                         ana="bk:money" quantity="1" unitRef="#f">.1. f.</measure>
@@ -3514,12 +3527,12 @@
                 <pb n="26" facs="IMG.26.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Ausgabentgegen">
+            <div ana="bk:rubric #Ausgaben_Ausgabentgegen">
                 <head>Ausgab entgegen</head>
                 <pb n="27" facs="IMG.27.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Goldschmid">
+            <div ana="bk:rubric #Ausgaben_Goldschmid">
                 <head>Goldschmid</head>
                 <ab ana="bk:entry">Item zu <placeName ana="bk:where" ref="#ort_0334"
                         >Passau</placeName> .12. Löffel beschlagen lassen. <lb/>geben darvon.
@@ -3527,7 +3540,7 @@
                     <measure ana="bk:money" quantity="2" unitRef="#s">2. s.</measure>
                     <measure ana="bk:money" quantity="4" unitRef="#d">4. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Kupfferschmid">
+            <div ana="bk:rubric #Ausgaben_Kupfferschmid">
                 <head>Kupfferschmid</head>
                 <ab ana="bk:entry">Item umb einen kessel, schissel, unnd annder <lb/><measure
                         ana="bk:service" commodity="work">Arbeit</measure> geben. <lb/><measure
@@ -3544,7 +3557,7 @@
                 <pb n="28" facs="IMG.28.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zingiesser">
+            <div ana="bk:rubric #Ausgaben_Zingiesser">
                 <head>Zingiesser</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-09-19">.19. 7bris</date>
                     einen kasten zum Prunnen ver<lb break="no"/>zin lassen hat gewegen .34 ½. lb.
@@ -3555,7 +3568,7 @@
                         <measure ana="bk:money" quantity="15" unitRef="#d">15.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Trechsler">
+            <div ana="bk:rubric #Ausgaben_Trechsler">
                 <head>Trechsler</head>
                 <ab ana="bk:entry">Item dem Trechszler zu <placeName ana="bk:where" ref="#ort_0334"
                         >Passau</placeName> umb allerley Ar<lb break="no"/>beit geben <lb/><measure
@@ -3571,7 +3584,7 @@
                 <pb n="29" facs="IMG.29.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Maler">
+            <div ana="bk:rubric #Ausgaben_Maler">
                 <head>Maler</head>
                 <ab ana="bk:entry">Item dem Anthoni Maler von zweyen kamern in dem <lb/>Neuenpau,
                     unnd sonnst etliche kleine <measure ana="bk:service" commodity="work"
@@ -3579,7 +3592,7 @@
                         quantity="13" unitRef="#f">.13. f.</measure>
                     <measure ana="bk:money" quantity="2" unitRef="#s">2. s.</measure> d.</ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schuster">
+            <div ana="bk:rubric #Ausgaben_Schuster">
                 <head>Schuster</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-06-13">.13. Junii</date>
                     Maister Hannsen von <placeName ana="bk:where" ref="#ort_0011">Aiten<lb
@@ -3609,7 +3622,7 @@
                 <pb n="31" facs="IMG.31.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Glaser">
+            <div ana="bk:rubric #Ausgaben_Glaser">
                 <head>Glaser</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-04-12">.12.
                         Aprilis</date> umb Venedigische Trinnck<lb break="no"/>glaß geben.
@@ -3641,7 +3654,7 @@
                     <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
                     <measure ana="bk:money" quantity="20" unitRef="#d">20. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schneider">
+            <div ana="bk:rubric #Ausgaben_Schneider">
                 <head>Schneider</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-04-09">.9.
                         Aprilis</date> Maister Asm Schneider zu <lb/><placeName ana="bk:where"
@@ -3657,7 +3670,7 @@
                 <pb n="33" facs="IMG.33.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Sayler">
+            <div ana="bk:rubric #Ausgaben_Sayler">
                 <head>Sayler</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-07-17">.17. Julii</date>
                     umb ein <placeName ana="bk:where" ref="#ort_0354">Prun</placeName> Sayl geben.
@@ -3677,7 +3690,7 @@
                 <pb n="34" facs="IMG.34.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Wagner">
+            <div ana="bk:rubric #Ausgaben_Wagner">
                 <head>Wagner</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-02-04">.4.
                         Februarii</date> dem Wagner zu <placeName ana="bk:where" ref="#ort_0225"
@@ -3685,7 +3698,7 @@
                     <lb/>seinen Lohen, unnd Bestallung Gelt geben. <lb/><measure ana="bk:money"
                         quantity="9" unitRef="#f">.9. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Satler">
+            <div ana="bk:rubric #Ausgaben_Satler">
                 <head>Satler</head>
                 <ab ana="bk:entry">Item mit dem Satler zu <placeName ana="bk:where" ref="#ort_0334"
                         >Passau</placeName> für allerley <lb/><measure ana="bk:service"
@@ -3695,7 +3708,7 @@
                 <pb n="35" facs="IMG.35.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Riemer">
+            <div ana="bk:rubric #Ausgaben_Riemer">
                 <head>Riemer</head>
                 <ab ana="bk:entry">Item mit dem Riemer zu <placeName ana="bk:where" ref="#ort_0468"
                         >Vilßhoven</placeName> abgerechnet <lb/>für allerley <measure
@@ -3704,7 +3717,7 @@
                     <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
                     <measure ana="bk:money" quantity="13" unitRef="#d">13. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Kirschner">
+            <div ana="bk:rubric #Ausgaben_Kirschner">
                 <head>Kirschner</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-02-17">.17.
                         Februarii</date> mit Maister Kilian <lb/>Kirschner abgerechnet für .20.
@@ -3722,7 +3735,7 @@
                         unitRef="#s">.1. s.</measure>
                     <measure ana="bk:money" quantity="17" unitRef="#d">17. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schlosser">
+            <div ana="bk:rubric #Ausgaben_Schlosser">
                 <head>Schlosser</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-03-17">.17.
                         Martii</date> mit Jacob Zimsen abgerechnet für <lb/>allerley <measure
@@ -3754,7 +3767,7 @@
                         unitRef="#f">.24. f.</measure>
                     <measure ana="bk:money" quantity="19" unitRef="#d">19. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Tuchscherer">
+            <div ana="bk:rubric #Ausgaben_Tuchscherer">
                 <head>Tuchscherer</head>
                 <pb n="38" facs="IMG.38.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
@@ -3766,7 +3779,7 @@
                         ana="bk:money" quantity="2" unitRef="#s">.2. s.</measure>
                     <measure ana="bk:money" quantity="24" unitRef="#d">24 d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schreiner">
+            <div ana="bk:rubric #Ausgaben_Schreiner">
                 <head>Schreiner</head>
                 <ab ana="bk:entry">Item mit dem Bartholomeen Schreiner abgerechnet <lb/>unnd <fw
                         ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="11" unitRef="#f"
@@ -3836,7 +3849,7 @@
                 <pb n="42" facs="IMG.42.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Ziegler">
+            <div ana="bk:rubric #Ausgaben_Ziegler">
                 <head>Ziegler</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-06-05">.5. Junii</date>
                     dem Asm Zieglschlager <measure ana="bk:service" quantity="35" commodity="work"
@@ -3890,7 +3903,7 @@
                 <pb n="44" facs="IMG.44.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Maurer">
+            <div ana="bk:rubric #Ausgaben_Maurer">
                 <head>Maurer</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-04-14">.14.
                         Aprilis</date> Maister Geörgen <measure ana="bk:service" quantity="16"
@@ -4036,7 +4049,7 @@
                         <measure ana="bk:money" quantity="19" unitRef="#d">19.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zimmerleüt">
+            <div ana="bk:rubric #Ausgaben_Zimmerleüt">
                 <head>Zimmerleüt</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-02-13">.13.
                         Februarii</date> dem Praitreüter von .72. <lb/>Panndholtz auszuhacken zu der
@@ -4194,7 +4207,7 @@
                 <pb n="55" facs="IMG.55.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Tagwercker">
+            <div ana="bk:rubric #Ausgaben_Tagwercker">
                 <head>Tagwercker</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-04-19">.19.
                         Aprilis</date> den Tagwergkern .488. <lb/>gemeine Taglon zu <measure
@@ -4282,13 +4295,13 @@
                 <pb n="58" facs="IMG.58.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Strohschnidern">
+            <div ana="bk:rubric #Ausgaben_Strohschnidern">
                 <head>Strohschnidern</head>
                 <ab ana="bk:entry">Item zweyen Stroschnidern, so das ganntz Jar <lb/>hindurch
                     Strogeschniden. geben. <lb/><measure ana="bk:money" quantity="14" unitRef="#f"
                         >.14. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Holtzhackern">
+            <div ana="bk:rubric #Ausgaben_Holtzhackern">
                 <head>Holtzhackern</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-04-08">.8.
                         Aprilis</date> von .72. Clafftern Zieglscheiter <lb/>geben von einer
@@ -4311,7 +4324,7 @@
                         <measure ana="bk:money" quantity="12" unitRef="#d">12.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_MadernunndHeigern">
+            <div ana="bk:rubric #Ausgaben_MadernunndHeigern">
                 <head>Madern unnd <lb/>Heigern.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-07-07">.7. Julii</date>
                     vom Altheu geben. <lb/><measure ana="bk:money" quantity="5" unitRef="#f">.5.
@@ -4334,7 +4347,7 @@
                         >.5. f.</measure>
                     <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure> d.</ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schnitern">
+            <div ana="bk:rubric #Ausgaben_Schnitern">
                 <head>Schnitern</head>
                 <ab ana="bk:entry">Item uf die Schniter ausgeben. <lb/><measure ana="bk:money"
                         quantity="25" unitRef="#f">.25. f.</measure>
@@ -4343,13 +4356,13 @@
                 <pb n="61" facs="IMG.61.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Waitzserberin">
+            <div ana="bk:rubric #Ausgaben_Waitzserberin">
                 <head>Waitzserberin</head>
                 <ab ana="bk:entry">Item ufs waitz serben ausgeben. <lb/><measure ana="bk:money"
                         quantity="5" unitRef="#s">.5. s.</measure>
                     <measure ana="bk:money" quantity="4" unitRef="#d">4. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Treschern">
+            <div ana="bk:rubric #Ausgaben_Treschern">
                 <head>Treschern</head>
                 <ab ana="bk:entry">Item die Trescher uf dem hinndern Dennt <lb/>.12. Schaff. eines
                     p. <measure ana="bk:price" quantity="12" unitRef="#kr">12. kr.</measure>
@@ -4361,13 +4374,13 @@
                 <pb n="62" facs="IMG.62.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_SchaaffscherenunndSauschneidern">
+            <div ana="bk:rubric #Ausgaben_SchaaffscherenunndSauschneidern">
                 <head>Schaaff<lb break="no"/>scheren unnd Sau<lb break="no"/>schneidern.</head>
                 <ab ana="bk:entry">Item den Schaaffscherern, unnd Sauschneidern. <lb/><measure
                         ana="bk:money" quantity="5" unitRef="#s">.5. s.</measure>
                     <measure ana="bk:money" quantity="24" unitRef="#d">24. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Aichelklaubern">
+            <div ana="bk:rubric #Ausgaben_Aichelklaubern">
                 <head>Aichelklau<lb break="no"/>bern.</head>
                 <ab ana="bk:entry">Item den Aichelkaubern geben. <lb/><measure ana="bk:money"
                         quantity="6" unitRef="#s">.6. s.</measure>
@@ -4376,7 +4389,7 @@
                 <pb n="63" facs="IMG.63.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_HoffmaisterinOsterreich">
+            <div ana="bk:rubric #Ausgaben_HoffmaisterinOsterreich">
                 <head>Hoffmais<lb break="no"/>ter in Osterreich.</head>
                 <ab ana="bk:entry">Item dem Hoffmaister uf Weingart Pau geschickt <lb/><measure
                         ana="bk:money" quantity="50" unitRef="#f">.50. f.</measure></ab>
@@ -4389,7 +4402,7 @@
                 <pb n="64" facs="IMG.64.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Weinlesen">
+            <div ana="bk:rubric #Ausgaben_Weinlesen">
                 <head>Weinlesen</head>
                 <ab ana="bk:entry">Item uf das Weinlesen ganngen. <lb/><measure ana="bk:money"
                         quantity="128" unitRef="#f">.128. f.</measure>
@@ -4397,7 +4410,7 @@
                     <measure ana="bk:money" quantity="29" unitRef="#d">29. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Ufschlag">
+            <div ana="bk:rubric #Ausgaben_Ufschlag">
                 <head>Ufschlag</head>
                 <ab ana="bk:entry">Item zu Ennglhartszell im ufschlag .17. drei<lb break="no"/>ling
                     .20. Emer beschauet. <fw ana="bk:total">thut. <lb/><measure ana="bk:money"
@@ -4411,7 +4424,7 @@
                         quantity="46" unitRef="#f">.46. f.</measure>
                     <measure ana="bk:money" quantity="5" unitRef="#s">5 s.</measure> d.</ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Scheffmüt">
+            <div ana="bk:rubric #Ausgaben_Scheffmüt">
                 <head>Scheffmüt</head>
                 <ab ana="bk:entry">Item mit Paulusen Reisinger Schiffman zu <lb/><placeName
                         ana="bk:where" ref="#ort_0468">Vilshoven</placeName> abgerechnet von .18.
@@ -4423,7 +4436,7 @@
                 <pb n="66" facs="IMG.66.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Wein">
+            <div ana="bk:rubric #Ausgaben_Wein">
                 <head>Wein</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-11-23">.23.
                         Novembris</date> umb .33. Emer Winntzerer <lb/>Maß einen p. <measure
@@ -4439,7 +4452,7 @@
                     <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure>
                     <measure ana="bk:money" quantity="11" unitRef="#d">11. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Semel">
+            <div ana="bk:rubric #Ausgaben_Semel">
                 <head>Semel</head>
                 <ab ana="bk:entry">Item umb Semel eintzig ausgeben. <lb/><measure ana="bk:money"
                         quantity="1" unitRef="#f">.1. f.</measure>
@@ -4447,7 +4460,7 @@
                 <pb n="67" facs="IMG.67.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Keß">
+            <div ana="bk:rubric #Ausgaben_Keß">
                 <head>Keß</head>
                 <ab ana="bk:entry">Item vom Weissen zu <placeName ana="bk:where" ref="#ort_0468"
                         >Vilßhoven</placeName> kaufft .4. <lb/>Creützkeß p. <lb/><measure
@@ -4458,7 +4471,7 @@
                         quantity="5" unitRef="#s">.5. s.</measure>
                     <measure ana="bk:money" quantity="8" unitRef="#d">8. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Ayr">
+            <div ana="bk:rubric #Ausgaben_Ayr">
                 <head>Ayr</head>
                 <ab ana="bk:entry">Item umb Ayr ausgeben. <lb/><measure ana="bk:money" quantity="5"
                         unitRef="#f">.5. f.</measure>
@@ -4467,7 +4480,7 @@
                 <pb n="68" facs="IMG.68.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schmaltz">
+            <div ana="bk:rubric #Ausgaben_Schmaltz">
                 <head>Schmaltz</head>
                 <ab ana="bk:entry">Item zu <placeName ana="bk:where" ref="#ort_0334"
                         >Passau</placeName> umb Schmaltz geben. <lb/><measure ana="bk:money"
@@ -4475,7 +4488,7 @@
                     <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
                     <measure ana="bk:money" quantity="28" unitRef="#d">28. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UmbJungeHünnerVoglHasenetc">
+            <div ana="bk:rubric #Ausgaben_UmbJungeHünnerVoglHasenetc">
                 <head>Umb Junge <lb/>Hünner, Vogl, Hasen etc.</head>
                 <ab ana="bk:entry">Item umb junge Hünner, Vögl, Hasen, Coppen. etc. <lb/>ausgeben.
                         <lb/><measure ana="bk:money" quantity="6" unitRef="#f">.6. f.</measure>
@@ -4484,7 +4497,7 @@
                 <pb n="69" facs="IMG.69.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UmbFleischunndSchlachtviech">
+            <div ana="bk:rubric #Ausgaben_UmbFleischunndSchlachtviech">
                 <head>Umb Fleisch <lb/>unnd Schlachtviech.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-04-15">.15.
                         Aprilis</date> umb .6. Rinnder geben. <lb/><measure ana="bk:money"
@@ -4616,7 +4629,7 @@
                         quantity="4" unitRef="#f">.4. f.</measure>
                     <measure ana="bk:price" quantity="21" unitRef="#d">21. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UmbVischunndKrebsen">
+            <div ana="bk:rubric #Ausgaben_UmbVischunndKrebsen">
                 <head>Umb Visch <lb/>unnd Krebsen.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-02-23">.23.
                         Februarii</date> dem vischer von <placeName ana="bk:where" ref="#ort_0405"
@@ -4849,7 +4862,7 @@
                 <pb n="87" facs="IMG.87.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Fastenspeis">
+            <div ana="bk:rubric #Ausgaben_Fastenspeis">
                 <head>Fastenspeis</head>
                 <ab ana="bk:entry">Item umb ein Thunnen <placeName ana="bk:where" ref="#ort_0209"
                         >Hering</placeName> geben. <lb/><measure ana="bk:money" quantity="12"
@@ -4910,13 +4923,13 @@
                 <pb n="90" facs="IMG.90.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Saltz">
+            <div ana="bk:rubric #Ausgaben_Saltz">
                 <head>Saltz</head>
                 <ab ana="bk:entry">Item das Saltz vom Hellen heraus Zubringen. <fw ana="bk:total"
                         >thut. <lb/><measure ana="bk:money" quantity="20" unitRef="#f">.20.
                             f.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Gwürtz">
+            <div ana="bk:rubric #Ausgaben_Gwürtz">
                 <head>Gwürtz</head>
                 <ab ana="bk:entry">Item umb .2. lb. Imber. <lb/><measure ana="bk:money"
                         quantity="1" unitRef="#f">.1. f.</measure>
@@ -4940,7 +4953,7 @@
                 <pb n="92" facs="IMG.92.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Bücher">
+            <div ana="bk:rubric #Ausgaben_Bücher">
                 <head>Bücher</head>
                 <ab ana="bk:entry">Item in die Stephani zu <placeName ana="bk:where"
                         ref="#ort_0334">Passau</placeName> umb Bücher <lb/>geben. <lb/><measure
@@ -4953,7 +4966,7 @@
                     <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
                     <measure ana="bk:money" quantity="9" unitRef="#d">9. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zwibel">
+            <div ana="bk:rubric #Ausgaben_Zwibel">
                 <head>Zwibel</head>
                 <ab ana="bk:entry">Item umb Zwibel. geben. <lb/><measure ana="bk:money"
                         quantity="4" unitRef="#f">.4. f.</measure>
@@ -4961,7 +4974,7 @@
                 <pb n="93" facs="IMG.93.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_PapirundPerment">
+            <div ana="bk:rubric #Ausgaben_PapirundPerment">
                 <head>Papir <lb/>und Perment</head>
                 <ab ana="bk:entry">Item zu <placeName ana="bk:where" ref="#ort_0524"
                         >Lanndshut</placeName> umb .2. Riß Papir geben <lb/><measure ana="bk:money"
@@ -4976,7 +4989,7 @@
                 <pb n="94" facs="IMG.94.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Öll">
+            <div ana="bk:rubric #Ausgaben_Öll">
                 <head>Öll.</head>
                 <ab ana="bk:entry">Item umb .339. lb. Leinöl eines p. <measure ana="bk:price"
                         quantity="3" unitRef="#kr">3. kr.</measure>
@@ -5002,7 +5015,7 @@
                     <measure ana="bk:price" quantity="26" unitRef="#d">26. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Kalck">
+            <div ana="bk:rubric #Ausgaben_Kalck">
                 <head>Kalck</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-04-03">.3.
                         Aprilis</date> umb .8. Dreiling kalck. <lb/>geen Osterreich füren lassen.
@@ -5017,7 +5030,7 @@
                     umb .8. Dreyling kalck <lb/>geben. <lb/><measure ana="bk:money" quantity="8"
                         unitRef="#f">.8. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Laten">
+            <div ana="bk:rubric #Ausgaben_Laten">
                 <head>Laten</head>
                 <ab ana="bk:entry">Item umb Laten zum <placeName ana="bk:where" ref="#ort_0426"
                         >Stadl</placeName>. dem Müller von <lb/>Grubhofen geben. <lb/><measure
@@ -5025,7 +5038,7 @@
                 <pb n="97" facs="IMG.97.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Nagl">
+            <div ana="bk:rubric #Ausgaben_Nagl">
                 <head>Nagl</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-06-13">.13. Junii</date>
                     umb .4000. Latnagl geben <lb/><measure ana="bk:money" quantity="5" unitRef="#f"
@@ -5034,7 +5047,7 @@
                         unitRef="#f">.1. f.</measure>
                     <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Laden">
+            <div ana="bk:rubric #Ausgaben_Laden">
                 <head>Laden.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-05-04">.4. Maii</date>
                     dem Müller von Eckelheim <lb/>umb .51. Laden geben. <lb/><measure ana="bk:money"
@@ -5050,7 +5063,7 @@
                     <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure>
                     <measure ana="bk:money" quantity="25" unitRef="#d">25. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_FaßRaiffunndpannd">
+            <div ana="bk:rubric #Ausgaben_FaßRaiffunndpannd">
                 <head>Faß Raiff <lb/>unnd pannd.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-03-03">.3. Martii</date>
                     umb .3. lb. <measure ana="bk:money" quantity="6" unitRef="#s">.6. s.</measure>
@@ -5074,7 +5087,7 @@
                 <pb n="100" facs="IMG.100.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_EysenunndStahel">
+            <div ana="bk:rubric #Ausgaben_EysenunndStahel">
                 <head>Eysen <lb/>unnd Stahel.</head>
                 <ab ana="bk:entry">Item umb Eisen geben. <lb/><measure ana="bk:money" quantity="10"
                         unitRef="#f">.10. f.</measure>
@@ -5094,7 +5107,7 @@
                     <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
                     <measure ana="bk:money" quantity="28" unitRef="#d">28. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UmbRoß">
+            <div ana="bk:rubric #Ausgaben_UmbRoß">
                 <head>Umb Roß</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-04-30">.30.
                         Aprilis</date> vom Passenhuber kaufft <lb/>ein Roß. p. <lb/><measure
@@ -5107,7 +5120,7 @@
                 <pb n="102" facs="IMG.102.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_MacheyParchetetc">
+            <div ana="bk:rubric #Ausgaben_MacheyParchetetc">
                 <head>Machey <lb/>Parchet. etc.</head>
                 <ab ana="bk:entry">Item umb .2. Stückel Schwartzen Parchet. <lb/><measure
                         ana="bk:money" quantity="5" unitRef="#f">.5. f.</measure></ab>
@@ -5128,7 +5141,7 @@
                     <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
                     <measure ana="bk:money" quantity="16" unitRef="#d">16. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Leinwat">
+            <div ana="bk:rubric #Ausgaben_Leinwat">
                 <head>Leinwat</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-04-09">.9.
                         Aprilis</date> umb ein Stückel Leinwat <lb/>geben. <lb/><measure
@@ -5149,7 +5162,7 @@
                 <pb n="105" facs="IMG.105.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Wollentuch">
+            <div ana="bk:rubric #Ausgaben_Wollentuch">
                 <head>Wollentuch</head>
                 <ab ana="bk:entry">Item ein Stuck weiß Tuch kaufft p. <lb/><measure ana="bk:price"
                         quantity="7" unitRef="#f">.7. f.</measure></ab>
@@ -5164,7 +5177,7 @@
                 <pb n="106" facs="IMG.106.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Precoreyunndjerlichegülten">
+            <div ana="bk:rubric #Ausgaben_Precoreyunndjerlichegülten">
                 <head>Precorey <lb/>unnd jerliche gülten.</head>
                 <ab ana="bk:entry">Item geen <placeName ana="bk:where" ref="#ort_0334"
                         >Passau</placeName>. <lb/><measure ana="bk:money" quantity="2" unitRef="#f"
@@ -5184,27 +5197,27 @@
                 <pb n="107" facs="IMG.107.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Jegergelt">
+            <div ana="bk:rubric #Ausgaben_Jegergelt">
                 <head>Jegergelt</head>
                 <ab ana="bk:entry">Item Jegergelt <lb/><measure ana="bk:money" quantity="17"
                         unitRef="#f">.17. f.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Cantoreygelt">
+            <div ana="bk:rubric #Ausgaben_Cantoreygelt">
                 <head>Cantorey <lb/>gelt</head>
                 <ab ana="bk:entry">Item Cantorey gelt. <lb/><measure ana="bk:money" quantity="45"
                         unitRef="#f">.45. f.</measure></ab>
                 <pb n="108" facs="IMG.108.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Steur">
+            <div ana="bk:rubric #Ausgaben_Steur">
                 <head>Steur</head>
                 <ab ana="bk:entry">Item Osterreichische Steur dis Jars. <lb/><measure
                         ana="bk:money" quantity="18" unitRef="#f">.18. f.</measure>
                     <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
                     <measure ana="bk:money" quantity="12" unitRef="#d">12. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_GedingunndOpffergelt">
+            <div ana="bk:rubric #Ausgaben_GedingunndOpffergelt">
                 <head>Geding unnd <lb/>Opffergelt</head>
                 <ab ana="bk:entry">Item gedinng, unnd Opffergelt. <fw ana="bk:total">thut.
                             <lb/><measure ana="bk:money" quantity="6" unitRef="#f">.6. f.</measure>
@@ -5214,13 +5227,13 @@
                 <pb n="109" facs="IMG.109.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Besöldung">
+            <div ana="bk:rubric #Ausgaben_Besöldung">
                 <head>Besöldung</head>
                 <ab ana="bk:entry">Item der Dienner Jerliche besoldung. <fw ana="bk:total">thut.
                             <lb/><measure ana="bk:money" quantity="204" unitRef="#f">.204.
                             f.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zerung">
+            <div ana="bk:rubric #Ausgaben_Zerung">
                 <head>Zerung</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-04-28">.28.
                         Aprilis</date> haben die knecht zu <placeName ana="bk:where" ref="#ort_0404"
@@ -5310,7 +5323,7 @@
                     <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure>
                     <measure ana="bk:money" quantity="17" unitRef="#d">17. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Potenlon">
+            <div ana="bk:rubric #Ausgaben_Potenlon">
                 <head>Potenlon</head>
                 <pb n="113" facs="IMG.113.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
@@ -5379,7 +5392,7 @@
                 <pb n="116" facs="IMG.116.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_HoffirernunndSpilleuten">
+            <div ana="bk:rubric #Ausgaben_HoffirernunndSpilleuten">
                 <head>Hoffirern <lb/>unnd Spilleuten.</head>
                 <ab ana="bk:entry">Item Hoffierern, unnd Spilleüthen geben. <lb/><measure
                         ana="bk:money" quantity="6" unitRef="#f">.6. f.</measure>
@@ -5387,7 +5400,7 @@
                     <measure ana="bk:money" quantity="13" unitRef="#d">13. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_GemeineAusgab">
+            <div ana="bk:rubric #Ausgaben_GemeineAusgab">
                 <head>Gemeine <lb/>Ausgab.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-03-17">.17.
                         Martii</date> einem Pauknecht geben, so er .3. <lb/>hufeisen hat ufschlagen
@@ -5487,7 +5500,7 @@
                 <pb n="122" facs="IMG.122.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbGetreid">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbGetreid">
                 <head>Einnemen <lb/>umb Getreid</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-04-24">.24.
                         Aprilis</date> vom Castenknecht empfann<lb break="no"/>geen umb Habern.
@@ -5534,7 +5547,7 @@
                     <lb/><fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="27"
                             unitRef="#f">.27. f.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbangeschlagengetreid">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbangeschlagengetreid">
                 <head>Einnemen <lb/>umb angeschlagen ge<lb break="no"/>treid.</head>
                 <ab ana="bk:entry">Item Anndreen Obermayr zu Grevendorff <lb/>Korn .1 ½. Schaff. p.
                         <lb/><measure ana="bk:price" quantity="6" unitRef="#f">.6. f.</measure></ab>
@@ -5549,7 +5562,7 @@
                     p. <lb/><measure ana="bk:price" quantity="2" unitRef="#f">.2. f.</measure>
                     <measure ana="bk:price" quantity="1" unitRef="#s">1. s.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbausgeschenncktwein">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbausgeschenncktwein">
                 <head>Einnemen <lb/>umb ausgeschennckt <lb/>wein</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-02-09">.9.
                         Februarii</date> hat wiert bezalt .10 ½. <lb/>Emer zu <measure
@@ -5648,7 +5661,7 @@
                 <pb n="130" facs="IMG.130.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemendesweingelts">
+            <div ana="bk:rubric #Einnahmen_Einnemendesweingelts">
                 <head>Einnemen <lb/>des weingelts.</head>
                 <ab ana="bk:entry">Item vom kelner weingelt empfanngen. <lb/><measure
                         ana="bk:money" quantity="83" unitRef="#f">.83. f.</measure>
@@ -5656,7 +5669,7 @@
                     <measure ana="bk:money" quantity="2" unitRef="#d">2. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbPier">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbPier">
                 <head>Einnemen <lb/>umb Pier.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-04-27">.27.
                         Aprilis</date> vom Preuen empfann<lb break="no"/>gen. <lb/><measure
@@ -5675,7 +5688,7 @@
                     <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
                     <measure ana="bk:money" quantity="19" unitRef="#d">19. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbSaltz">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbSaltz">
                 <head>Einnemen <lb/>umb Saltz.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-02-04">.4.
                         Februarii</date> eingenomen. <lb/><measure ana="bk:money" quantity="2"
@@ -5694,7 +5707,7 @@
                     <measure ana="bk:money" quantity="14" unitRef="#d">14. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbOchsen">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbOchsen">
                 <head>Einnemen <lb/>umb Ochsen.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-05-26">.26. Maii</date>
                     dem Stainiger zu Praunau .2. <lb/>unngerisch, unnd .4. Lanndochsen geben. p.
@@ -5707,7 +5720,7 @@
                     .2. unngerisch, unnd <lb/>.4. Lanndochsen. p. <lb/><measure ana="bk:price"
                         quantity="72" unitRef="#f">.72. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbSchwein">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbSchwein">
                 <head>Einnemen <lb/>umb Schwein.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-12-19">.19.
                         Decembris</date>, dem Stainiger, unnd Zinns<lb break="no"/>perger zu Praunau
@@ -5720,7 +5733,7 @@
                 <pb n="134" facs="IMG.134.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbSchaaffwol">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbSchaaffwol">
                 <head>Einnemen <lb/>umb Schaaffwol</head>
                 <ab ana="bk:entry">Item einem Tuchmacher von <placeName ana="bk:where"
                         ref="#ort_0380">Munster</placeName> zu Zweyen malen <lb/>geben .264. lb.
@@ -5732,7 +5745,7 @@
                         <measure ana="bk:money" quantity="27" unitRef="#d">27.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbheütunndfeel">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbheütunndfeel">
                 <head>Einnemen <lb/>umb heüt unnd feel.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-07-18">.18. Julii</date>
                     dem Lederer von <placeName ana="bk:where" ref="#ort_0225">Carling</placeName>
@@ -5746,13 +5759,13 @@
                         <lb/><measure ana="bk:price" quantity="17" unitRef="#f">.17. f.</measure>
                     <measure ana="bk:price" quantity="6" unitRef="#s">6. s.</measure> d.</ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbRoß">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbRoß">
                 <head>Einnemen <lb/>umb Roß</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-05-20">.20. Maii</date>
                     ein Stut fill verkaufft p. <lb/><measure ana="bk:price" quantity="16"
                         unitRef="#f">.16. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbKleib">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbKleib">
                 <head>Einnemen <lb/>umb Kleib.</head>
                 <pb n="136" facs="IMG.136.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
@@ -5765,7 +5778,7 @@
                         unitRef="#f">.2. f.</measure>
                     <measure ana="bk:money" quantity="10" unitRef="#d">10. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbHeuStroetc">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbHeuStroetc">
                 <head>Einnemen <lb/>umb Heu, Stro etc.</head>
                 <ab ana="bk:entry">Item umb Heu, Stro, Ruben, kraut etc. einge<lb break="no"
                     />nommen. <lb/><measure ana="bk:money" quantity="6" unitRef="#f">.6.
@@ -5775,7 +5788,7 @@
                 <pb n="137" facs="IMG.137.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenvonKirchpröbsten">
+            <div ana="bk:rubric #Einnahmen_EinnemenvonKirchpröbsten">
                 <head>Einnemen <lb/>von Kirchpröbsten.</head>
                 <ab ana="bk:entry">Item von den Kirchpröbsten zu <placeName ana="bk:where"
                         ref="#ort_0488">Wenng</placeName>, unnd zu <lb/>Sannct Peter eingenommen.
@@ -5787,12 +5800,12 @@
                 <pb n="139" facs="IMG.139.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Ausgabentgegen">
+            <div ana="bk:rubric #Ausgaben_Ausgabentgegen">
                 <head>Ausgab ent<lb break="no"/>gegen.</head>
                 <pb n="140" facs="IMG.140.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Apotecken">
+            <div ana="bk:rubric #Ausgaben_Apotecken">
                 <head>Apotecken</head>
                 <ab ana="bk:entry">Item umb Zeltel, unnd einen Trunnck geben. <lb/><measure
                         ana="bk:money" quantity="3" unitRef="#s">.3. s.</measure>
@@ -5801,7 +5814,7 @@
                         ana="bk:money" quantity="3" unitRef="#s">.3. s.</measure>
                     <measure ana="bk:money" quantity="5" unitRef="#d">5. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Kupfferschmid">
+            <div ana="bk:rubric #Ausgaben_Kupfferschmid">
                 <head>Kupfferschmid</head>
                 <ab ana="bk:entry">Item einem Kupfferschmid von <placeName ana="bk:where"
                         ref="#ort_0524">Lanndshut</placeName> umb <lb/>ein kupfferne wannen geben.
@@ -5828,7 +5841,7 @@
                     <measure ana="bk:money" quantity="2" unitRef="#s">2. s.</measure>
                     <measure ana="bk:money" quantity="2" unitRef="#d">2. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Glaser">
+            <div ana="bk:rubric #Ausgaben_Glaser">
                 <head>Glaser</head>
                 <pb n="142" facs="IMG.142.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
@@ -5853,7 +5866,7 @@
                 <pb n="143" facs="IMG.143.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zingiesser">
+            <div ana="bk:rubric #Ausgaben_Zingiesser">
                 <head>Zingiesser</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-03-26">.26.
                         Martii</date> umb ein Pipen, unnd darvon <lb/>ein zuletten geben.
@@ -5871,7 +5884,7 @@
                 <pb n="144" facs="IMG.144.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Trechsler">
+            <div ana="bk:rubric #Ausgaben_Trechsler">
                 <head>Trechsler</head>
                 <ab ana="bk:entry">Item umb .100. Teller. geben. <lb/><measure ana="bk:money"
                         quantity="5" unitRef="#s">.5. s.</measure>
@@ -5884,7 +5897,7 @@
                     <measure ana="bk:money" quantity="7" unitRef="#d">7. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Haffner">
+            <div ana="bk:rubric #Ausgaben_Haffner">
                 <head>Haffner</head>
                 <ab ana="bk:entry">Item umb glasirte Hefen, unnd knöpff ufn <lb/>Schnecken geben.
                         <lb/><measure ana="bk:money" quantity="3" unitRef="#f">.3. f.</measure></ab>
@@ -5898,7 +5911,7 @@
                         unitRef="#s">.3. s.</measure>
                     <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Lederer">
+            <div ana="bk:rubric #Ausgaben_Lederer">
                 <head>Lederer</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-10-11">.11.
                         Octobris</date> mit dem Lederer zu <placeName ana="bk:where" ref="#ort_0225"
@@ -5909,7 +5922,7 @@
                 <pb n="146" facs="IMG.146.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schuster">
+            <div ana="bk:rubric #Ausgaben_Schuster">
                 <head>Schuster</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-06-24">.24. Junii</date>
                     dreyen Puben uf der Schul umb <lb/>schuch geben. <lb/><measure ana="bk:money"
@@ -5938,7 +5951,7 @@
                     <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
                     <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Sailer">
+            <div ana="bk:rubric #Ausgaben_Sailer">
                 <head>Sailer</head>
                 <ab ana="bk:entry">Item dem Sayler von <placeName ana="bk:where" ref="#ort_0011"
                         >Aitenpach</placeName> umb Schnür <lb/>geben. <lb/><measure ana="bk:money"
@@ -5954,7 +5967,7 @@
                         >Aitenpach</placeName> vom Hannff zube<lb break="no"/>reiten geben.
                         <lb/><measure ana="bk:money" quantity="1" unitRef="#f">.1. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Wagner">
+            <div ana="bk:rubric #Ausgaben_Wagner">
                 <head>Wagner</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-02-11">.11.
                         Februarii</date> dem Wagner zu <placeName ana="bk:where" ref="#ort_0225"
@@ -5963,7 +5976,7 @@
                 <pb n="149" facs="IMG.149.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schlosser">
+            <div ana="bk:rubric #Ausgaben_Schlosser">
                 <head>Schlosser</head>
                 <ab ana="bk:entry">Item Maister Jacob Zimsen umb .2. Plel, unnd .4. <lb/>Rinng,
                     sambt einer sagrad geben. <lb/><measure ana="bk:money" quantity="3" unitRef="#f"
@@ -5993,7 +6006,7 @@
                     <measure ana="bk:money" quantity="2" unitRef="#s">2. s.</measure>
                     <measure ana="bk:money" quantity="24" unitRef="#d">24 d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Tuchscherer">
+            <div ana="bk:rubric #Ausgaben_Tuchscherer">
                 <head>Tuchscherer</head>
                 <ab ana="bk:entry">Item von zweyen Stuck tuch zuscheren geben. <lb/><measure
                         ana="bk:money" quantity="4" unitRef="#s">.4. s.</measure>
@@ -6001,7 +6014,7 @@
                 <pb n="151" facs="IMG.151.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schreiner">
+            <div ana="bk:rubric #Ausgaben_Schreiner">
                 <head>Schreiner</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-02-23">.23.
                         Februarii</date> hat Bartholome Schreiner <lb/>empfanngen <lb/><measure
@@ -6067,7 +6080,7 @@
                         <lb/><measure ana="bk:price" quantity="30" unitRef="#f">.30.
                     f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Ziegler">
+            <div ana="bk:rubric #Ausgaben_Ziegler">
                 <head>Ziegler</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-05-28">.28. Maii</date>
                     dem Asm bezalt <measure ana="bk:service" quantity="31" commodity="work"
@@ -6106,7 +6119,7 @@
                 <pb n="156" facs="IMG.156.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Maurer">
+            <div ana="bk:rubric #Ausgaben_Maurer">
                 <head>Maurer</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-04-06">.6.
                         Aprilis</date> Maister Geörgen bezalt <measure ana="bk:service"
@@ -6275,7 +6288,7 @@
                         <measure ana="bk:money" quantity="20" unitRef="#d">20.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zimerleüt">
+            <div ana="bk:rubric #Ausgaben_Zimerleüt">
                 <head>Zimerleüt</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-04-11">.11.
                         Aprilis</date> Maister Geörgen zimmerman <lb/><measure ana="bk:service"
@@ -6375,7 +6388,7 @@
                         <measure ana="bk:money" quantity="5" unitRef="#s">5. s.</measure>
                         <measure ana="bk:money" quantity="5" unitRef="#d">5. d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Tagwercker">
+            <div ana="bk:rubric #Ausgaben_Tagwercker">
                 <head>Tagwercker</head>
                 <pb n="165" facs="IMG.165.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
@@ -6429,14 +6442,14 @@
                         <measure ana="bk:money" quantity="10" unitRef="#d">10.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Strohschnitern">
+            <div ana="bk:rubric #Ausgaben_Strohschnitern">
                 <head>Strohschnitern</head>
                 <ab ana="bk:entry">Item mit zweyen Stroschnitern gedingt. p. <lb/><measure
                         ana="bk:price" quantity="14" unitRef="#f">.14. f.</measure></ab>
                 <pb n="167" facs="IMG.167.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Holtzhackern">
+            <div ana="bk:rubric #Ausgaben_Holtzhackern">
                 <head>Holtzhackern</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-04-30">.30.
                         Aprilis</date> von .90. Clafftern Ziegl<lb break="no"/>scheiter zuklieben
@@ -6452,7 +6465,7 @@
                 <pb n="168" facs="IMG.168.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Madernunndheigern">
+            <div ana="bk:rubric #Ausgaben_Madernunndheigern">
                 <head>Madern <lb/>unnd heigern.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-06-24">.24. Junii</date>
                     den Madern vom Altheu geben. <lb/><measure ana="bk:money" quantity="5"
@@ -6476,7 +6489,7 @@
                     <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
                     <measure ana="bk:money" quantity="28" unitRef="#d">28. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schnitern">
+            <div ana="bk:rubric #Ausgaben_Schnitern">
                 <head>Schnitern</head>
                 <ab ana="bk:entry">Item uf die Schniter dis Jars. <lb/><measure ana="bk:money"
                         quantity="27" unitRef="#f">.27. f.</measure>
@@ -6484,13 +6497,13 @@
                 <pb n="170" facs="IMG.170.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Waitzserbern">
+            <div ana="bk:rubric #Ausgaben_Waitzserbern">
                 <head>Waitzserbern</head>
                 <ab ana="bk:entry">Item uf das Waitzserben. <lb/><measure ana="bk:money"
                         quantity="4" unitRef="#s">.4. s.</measure>
                     <measure ana="bk:money" quantity="18" unitRef="#d">18. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Arbeitern">
+            <div ana="bk:rubric #Ausgaben_Arbeitern">
                 <head>Arbeitern</head>
                 <ab ana="bk:entry">Item den Arbeitern im Prein, hannff, hopffen, <lb/>kraut, unnd
                     Ruben. p. <lb/><measure ana="bk:price" quantity="4" unitRef="#f">.4.
@@ -6500,14 +6513,14 @@
                 <pb n="171" facs="IMG.171.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schaaffscherern">
+            <div ana="bk:rubric #Ausgaben_Schaaffscherern">
                 <head>Schaaff<lb break="no"/>scherern</head>
                 <ab ana="bk:entry">Item den Schaaffscherern, unnd Sauschneidern. <lb/><measure
                         ana="bk:money" quantity="5" unitRef="#s">.5. s.</measure>
                     <measure ana="bk:money" quantity="16" unitRef="#d">16. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Aichelklaubern">
+            <div ana="bk:rubric #Ausgaben_Aichelklaubern">
                 <head>Aichel<lb break="no"/>klaubern.</head>
                 <ab ana="bk:entry">Item ufs Aichelklauben. <lb/><measure ana="bk:money"
                         quantity="3" unitRef="#s">.3. s.</measure>
@@ -6515,7 +6528,7 @@
                 <pb n="172" facs="IMG.172.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_HoffmaisterinOsterreich">
+            <div ana="bk:rubric #Ausgaben_HoffmaisterinOsterreich">
                 <head>Hoffmaister <lb/>in Osterreich.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-03-16">.16.
                         Martii</date> dem Hofmaister geen Osterreich <lb/>uf Weinpau geschickt.
@@ -6532,14 +6545,14 @@
                 <pb n="173" facs="IMG.173.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Weinlesen">
+            <div ana="bk:rubric #Ausgaben_Weinlesen">
                 <head>Weinlesen</head>
                 <ab ana="bk:entry">Item uf das Weinlesen ganngen. <lb/><measure ana="bk:money"
                         quantity="79" unitRef="#f">.79. f.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure>
                     <measure ana="bk:money" quantity="29" unitRef="#d">29. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Uffschlag">
+            <div ana="bk:rubric #Ausgaben_Uffschlag">
                 <head>Uffschlag</head>
                 <ab ana="bk:entry">Item zu Ennglhartszell im ufschlag beschauet <lb/>.15. Dreiling
                     .20. Emer. <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="47"
@@ -6555,7 +6568,7 @@
                     <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
                     <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Scheffmüt">
+            <div ana="bk:rubric #Ausgaben_Scheffmüt">
                 <head>Scheffmüt</head>
                 <ab ana="bk:entry">Item mit Paulusen Reisinger Schiffman zu <lb/><placeName
                         ana="bk:where" ref="#ort_0468">Vilßhoven</placeName> abgerechnet .15.
@@ -6565,7 +6578,7 @@
                 <pb n="175" facs="IMG.175.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Wein">
+            <div ana="bk:rubric #Ausgaben_Wein">
                 <head>Wein</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-03-20">.20.
                         Martii</date> Wolffganngen <placeName ana="bk:where" ref="#ort_0487"
@@ -6593,7 +6606,7 @@
                         unitRef="#s">.4. s.</measure>
                     <measure ana="bk:money" quantity="4" unitRef="#d">4. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Semel">
+            <div ana="bk:rubric #Ausgaben_Semel">
                 <head>Semel</head>
                 <ab ana="bk:entry">Item umb Semel. <fw ana="bk:total">thut. <lb/><measure
                             ana="bk:money" quantity="3" unitRef="#f">.3. f.</measure>
@@ -6604,7 +6617,7 @@
                 <pb n="177" facs="IMG.177.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Keß">
+            <div ana="bk:rubric #Ausgaben_Keß">
                 <head>Keß</head>
                 <ab ana="bk:entry">Item umb Keß geben. <lb/><measure ana="bk:money" quantity="1"
                         unitRef="#f">.1. f.</measure>
@@ -6618,13 +6631,13 @@
                 <pb n="178" facs="IMG.178.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_JunngeHünner">
+            <div ana="bk:rubric #Ausgaben_JunngeHünner">
                 <head>Junnge <lb/>Hünner.</head>
                 <ab ana="bk:entry">Item umb junge Hünner, vögel, hasen, unnd <lb/>Coppen geben.
                         <lb/><measure ana="bk:money" quantity="5" unitRef="#f">5. f.</measure>
                     <measure ana="bk:money" quantity="26" unitRef="#d">26. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Fleisch">
+            <div ana="bk:rubric #Ausgaben_Fleisch">
                 <head>Fleisch</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-02-20">.20.
                         Februarii</date> vom Nidernöder ein Rinnd <lb/>kaufft. p. <lb/><measure
@@ -6742,7 +6755,7 @@
                         f.</measure>
                     <measure ana="bk:price" quantity="23" unitRef="#d">23. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UmbVischunndKrebsen">
+            <div ana="bk:rubric #Ausgaben_UmbVischunndKrebsen">
                 <head>Umb Visch <lb/>unnd Krebsen</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-02-07">.7.
                         Februarii</date> umb visch geben. <lb/><measure ana="bk:money" quantity="4"
@@ -6899,7 +6912,7 @@
                 <pb n="192" facs="IMG.192.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Fastenspeis">
+            <div ana="bk:rubric #Ausgaben_Fastenspeis">
                 <head>Fastenspeis</head>
                 <ab ana="bk:entry">Item umb ein Tunnen hering geben. <lb/><measure ana="bk:money"
                         quantity="12" unitRef="#f">.12. f.</measure></ab>
@@ -6926,7 +6939,7 @@
                         quantity="1" unitRef="#s">.1. s.</measure>
                     <measure ana="bk:money" quantity="3" unitRef="#d">3. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Saltz">
+            <div ana="bk:rubric #Ausgaben_Saltz">
                 <head>Saltz</head>
                 <ab ana="bk:entry">Item vom Saltz zum Hellen heraus zubringen. <lb/><measure
                         ana="bk:money" quantity="13" unitRef="#f">.13. f.</measure>
@@ -6935,7 +6948,7 @@
                 <pb n="194" facs="IMG.194.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Gewürtz">
+            <div ana="bk:rubric #Ausgaben_Gewürtz">
                 <head>Gewürtz</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-04-23">.23.
                         Aprilis</date> zu Gern kaufft .2. Pfund <lb/>Pfeffer p. <lb/><measure
@@ -6964,7 +6977,7 @@
                 <ab ana="bk:entry">Item umb zucker geben. <lb/><measure ana="bk:money" quantity="1"
                         unitRef="#f">.1. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zwibel">
+            <div ana="bk:rubric #Ausgaben_Zwibel">
                 <head>Zwibel</head>
                 <ab ana="bk:entry">Item umb Zwibel, Arbes, haber, unnd Arbesmel <lb/>geben.
                         <lb/><measure ana="bk:money" quantity="5" unitRef="#s">.5. s.</measure>
@@ -6972,7 +6985,7 @@
                 <pb n="196" facs="IMG.196.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Bücher">
+            <div ana="bk:rubric #Ausgaben_Bücher">
                 <head>Bücher</head>
                 <ab ana="bk:entry">Item zu <placeName ana="bk:where" ref="#ort_0524"
                         >Lanndshut</placeName> umb Bücher ausgeben. <lb/><measure ana="bk:money"
@@ -6986,7 +6999,7 @@
                     <measure ana="bk:money" quantity="1" unitRef="#s">1 s.</measure>
                     <measure ana="bk:money" quantity="20" unitRef="#d">20. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Öll">
+            <div ana="bk:rubric #Ausgaben_Öll">
                 <head>Öll</head>
                 <ab ana="bk:entry">Item zu <placeName ana="bk:where" ref="#ort_0334"
                         >Passau</placeName> umb .10. lb. Paumöl geben. <lb/><measure ana="bk:money"
@@ -7000,7 +7013,7 @@
                     <measure ana="bk:money" quantity="4" unitRef="#s">4 s.</measure>
                     <measure ana="bk:money" quantity="20" unitRef="#d">20 d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Kalck">
+            <div ana="bk:rubric #Ausgaben_Kalck">
                 <head>Kalck</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-05-04">.4. Maii</date>
                     vom Capitel zu <placeName ana="bk:where" ref="#ort_0468">Vilshoven</placeName>
@@ -7019,12 +7032,12 @@
                         unitRef="#f">.20. f.</measure>
                     <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure> d.</ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UmbRoß">
+            <div ana="bk:rubric #Ausgaben_UmbRoß">
                 <head>Umb Roß</head>
                 <ab ana="bk:entry">Item von Maister Jacoben kaufft ein Roß. <lb/>p. <lb/><measure
                         ana="bk:price" quantity="12" unitRef="#f">.12. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Nagl">
+            <div ana="bk:rubric #Ausgaben_Nagl">
                 <head>Nagl</head>
                 <pb n="199" facs="IMG.199.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
@@ -7033,7 +7046,7 @@
                         quantity="3" unitRef="#s">.3. s.</measure>
                     <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_FaßRaiffunndPannt">
+            <div ana="bk:rubric #Ausgaben_FaßRaiffunndPannt">
                 <head>Faß Raiff <lb/>unnd Pannt.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-03-17">.17.
                         Martii</date> ein lb. raiff kaufft p. <lb/><measure ana="bk:price"
@@ -7058,7 +7071,7 @@
                     <measure ana="bk:money" quantity="17" unitRef="#d">17. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_EysenunndStahel">
+            <div ana="bk:rubric #Ausgaben_EysenunndStahel">
                 <head>Eysen unnd <lb/>Stahel.</head>
                 <pb n="201" facs="IMG.201.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
@@ -7074,7 +7087,7 @@
                 <pb n="202" facs="IMG.202.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Leinentuch">
+            <div ana="bk:rubric #Ausgaben_Leinentuch">
                 <head>Leinen<lb break="no"/>tuch.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-02-08">.8.
                         Februarii</date> umb ein Stuck zwilch hat gehalten <lb/>.21. Elner zu
@@ -7143,7 +7156,7 @@
                 <pb n="205" facs="IMG.205.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Wollentuch">
+            <div ana="bk:rubric #Ausgaben_Wollentuch">
                 <head>Wollentuch</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-03-13">.13.
                         Martii</date> uf dem Marckt zu <placeName ana="bk:where" ref="#ort_0011"
@@ -7163,7 +7176,7 @@
                 <pb n="206" facs="IMG.206.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Precoreyunndjerlichegülten">
+            <div ana="bk:rubric #Ausgaben_Precoreyunndjerlichegülten">
                 <head>Precorey <lb/>unnd jerliche gül<lb break="no"/>ten.</head>
                 <ab ana="bk:entry">Item geen <placeName ana="bk:where" ref="#ort_0124"
                         >Fürstenzell</placeName>. <lb/><measure ana="bk:money" quantity="1"
@@ -7183,13 +7196,13 @@
                 <pb n="207" facs="IMG.207.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Jegergelt">
+            <div ana="bk:rubric #Ausgaben_Jegergelt">
                 <head>Jegergelt</head>
                 <ab ana="bk:entry">Item das Jegergelt. <lb/><measure ana="bk:money" quantity="17"
                         unitRef="#f">.17. f.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Steuren">
+            <div ana="bk:rubric #Ausgaben_Steuren">
                 <head>Steuren</head>
                 <ab ana="bk:entry">Item der bewilligten anlag, unnd Steur. <lb/><measure
                         ana="bk:money" quantity="990" unitRef="#f">.990. f.</measure></ab>
@@ -7202,12 +7215,12 @@
                         <measure ana="bk:money" quantity="19" unitRef="#d">19.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Cantoreygelt">
+            <div ana="bk:rubric #Ausgaben_Cantoreygelt">
                 <head>Cantorey <lb/>gelt.</head>
                 <ab ana="bk:entry">Item Cantorey gelt. <fw ana="bk:total">thut. <lb/><measure
                             ana="bk:money" quantity="45" unitRef="#f">.45. f.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_GedinngunndOpffergelt">
+            <div ana="bk:rubric #Ausgaben_GedinngunndOpffergelt">
                 <head>Gedinng <lb/>unnd Opffergelt</head>
                 <pb n="209" facs="IMG.209.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
@@ -7216,7 +7229,7 @@
                     <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
                     <measure ana="bk:money" quantity="14" unitRef="#d">14. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Besöldung">
+            <div ana="bk:rubric #Ausgaben_Besöldung">
                 <head>Besöldung</head>
                 <ab ana="bk:entry">Item der Dienner Jerliche besöldung. <fw ana="bk:total">thut.
                             <lb/><measure ana="bk:money" quantity="205" unitRef="#f">.205.
@@ -7224,7 +7237,7 @@
                         <measure ana="bk:money" quantity="9" unitRef="#d">9. d.</measure>
                         <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zerung">
+            <div ana="bk:rubric #Ausgaben_Zerung">
                 <head>Zerung</head>
                 <pb n="210" facs="IMG.210.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
@@ -7309,7 +7322,7 @@
                 <pb n="214" facs="IMG.214.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Potenlon">
+            <div ana="bk:rubric #Ausgaben_Potenlon">
                 <head>Potenlon</head>
                 <ab ana="bk:entry">Item einem Poten geen <placeName ana="bk:where" ref="#ort_0380"
                         >Munster</placeName> geben. <lb/><measure ana="bk:money" quantity="1"
@@ -7381,7 +7394,7 @@
                 <pb n="218" facs="IMG.218.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1558">Anno 1558</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Eerung">
+            <div ana="bk:rubric #Ausgaben_Eerung">
                 <head>Eerung.</head>
                 <ab ana="bk:entry">Item dem Schulmaister von <placeName ana="bk:where"
                         ref="#ort_0538">Nidernaltach</placeName> geben. <lb/><measure ana="bk:money"
@@ -7406,7 +7419,7 @@
                     <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
                     <measure ana="bk:money" quantity="5" unitRef="#d">5. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_GemeineAusgab">
+            <div ana="bk:rubric #Ausgaben_GemeineAusgab">
                 <head>Gemeine <lb/>Ausgab.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1558-03-20">.20.
                         Martii</date> umb Lezelten geben <lb/><measure ana="bk:money" quantity="2"
@@ -7479,7 +7492,7 @@
                         <measure ana="bk:money" quantity="15" unitRef="#d">15.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Nachlassung">
+            <div ana="bk:rubric #Ausgaben_Nachlassung">
                 <head>Nachlas<lb break="no"/>sung.</head>
                 <ab ana="bk:entry">Item dem Rumler von Tigendorff an einer <lb/>beschau nach
                     gelassen. <lb/><measure ana="bk:money" quantity="2" unitRef="#f">.2.
@@ -7491,7 +7504,7 @@
                 <pb n="225" facs="IMG.225.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbgetreid">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbgetreid">
                 <head>Einnemen <lb/>umb getreid.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-04-26">.26.
                         Aprilis</date> dem Schmidsöder geben .2. <lb/>Schaff Pranndigen waitz p.
@@ -7537,7 +7550,7 @@
                     <measure ana="bk:money" quantity="12" unitRef="#d">12. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbausgeschlagengetreid">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbausgeschlagengetreid">
                 <head>Einnemen <lb/>umb ausgeschlagen ge<lb break="no"/>treid.</head>
                 <ab ana="bk:entry">Item an heur das angeschlagen getreid. <fw ana="bk:total">thut.
                             <lb/><measure ana="bk:money" quantity="10" unitRef="#f">.10.
@@ -7545,7 +7558,7 @@
                         <measure ana="bk:money" quantity="15" unitRef="#d">15.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbwein">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbwein">
                 <head>Einnemen <lb/>umb wein</head>
                 <pb n="228" facs="IMG.228.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -7651,7 +7664,7 @@
                 <pb n="232" facs="IMG.232.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Weingelt">
+            <div ana="bk:rubric #Einnahmen_Weingelt">
                 <head>Weingelt</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-04-20">.20.
                         Aprilis</date> vom Kelner weingelt <lb/>empfanngen. <lb/><measure
@@ -7694,7 +7707,7 @@
                 <pb n="234" facs="IMG.234.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbverkaufftewein">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbverkaufftewein">
                 <head>Einnemen <lb/>umb verkauffte wein</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-02-22">.22.
                         Februarii</date> Martin Hasen von <lb/><placeName ana="bk:where"
@@ -7771,7 +7784,7 @@
                 <pb n="238" facs="IMG.238.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenunndPier">
+            <div ana="bk:rubric #Einnahmen_EinnemenunndPier">
                 <head>Einnemen <lb/>unnd Pier.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-04-14">.14.
                         Aprilis</date> Piergelt empfanngen. <lb/><measure ana="bk:money"
@@ -7793,7 +7806,7 @@
                 <pb n="239" facs="IMG.239.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbSaltz">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbSaltz">
                 <head>Einnemen <lb/>umb Saltz.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-05-10">.10. Maii</date>
                     umb Saltz empfanngen. <lb/><measure ana="bk:money" quantity="3" unitRef="#f">.3.
@@ -7806,7 +7819,7 @@
                         f.</measure>
                     <measure ana="bk:money" quantity="5" unitRef="#s">5. s.</measure> d.</ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbKleib">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbKleib">
                 <head>Einnemen <lb/>umb Kleib.</head>
                 <pb n="240" facs="IMG.240.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -7828,7 +7841,7 @@
                 <pb n="241" facs="IMG.241.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbOchsen">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbOchsen">
                 <head>Einnemen <lb/>umb Ochsen.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-04-09">.9.
                         Aprilis</date>. Wolff Copen zu Reispach <lb/>geben .2. Lanndochsen. p.
@@ -7844,7 +7857,7 @@
                 <pb n="242" facs="IMG.242.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbSchwein">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbSchwein">
                 <head>Einnemen <lb/>umb Schwein</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-04-09">.9.
                         Aprilis</date> Wolffen Cop. geben .15. <lb/>Schwein p. <lb/><measure
@@ -7859,7 +7872,7 @@
                 <pb n="243" facs="IMG.243.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbSchaaff">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbSchaaff">
                 <head>Einnemen <lb/>umb Schaaff.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-10-27">.27.
                         Octobris</date> .23. Schaaff hingeben. p. <lb/><measure ana="bk:price"
@@ -7868,7 +7881,7 @@
                         unitRef="#f">.3. f.</measure>
                     <measure ana="bk:price" quantity="3" unitRef="#s">3. s.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbSchaaffwol">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbSchaaffwol">
                 <head>Einnemen <lb/>umb Schaaffwol.</head>
                 <pb n="244" facs="IMG.244.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -7904,7 +7917,7 @@
                 <pb n="245" facs="IMG.245.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbheütunndfeel">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbheütunndfeel">
                 <head>Einnemen <lb/>umb heüt unnd feel.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-07-06">.6. Julii</date>
                     dem Lederer von <placeName ana="bk:where" ref="#ort_0225">Carling</placeName>
@@ -7916,7 +7929,7 @@
                     <measure ana="bk:price" quantity="2" unitRef="#s">2. s.</measure>
                     <measure ana="bk:price" quantity="15" unitRef="#d">15. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbRoß">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbRoß">
                 <head>Einnemen <lb/>umb Roß.</head>
                 <pb n="246" facs="IMG.246.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -7927,14 +7940,14 @@
                     <measure ana="bk:money" quantity="19" unitRef="#d">19. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbholtz">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbholtz">
                 <head>Einnemen <lb/>umb holtz.</head>
                 <ab ana="bk:entry">Item umb abgedort Holtz eingenommen. <lb/><measure
                         ana="bk:money" quantity="21" unitRef="#f">.21. f.</measure>
                     <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
                     <measure ana="bk:money" quantity="24" unitRef="#d">24. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbhewStroetc">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbhewStroetc">
                 <head>Einnemen <lb/>umb hew, Stro etc.</head>
                 <pb n="247" facs="IMG.247.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -7943,7 +7956,7 @@
                     <measure ana="bk:money" quantity="5" unitRef="#s">5. s.</measure>
                     <measure ana="bk:money" quantity="25" unitRef="#d">25. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenvonKirchpröbsten">
+            <div ana="bk:rubric #Einnahmen_EinnemenvonKirchpröbsten">
                 <head>Einnemen <lb/>von Kirchpröbsten.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-04-26">.26.
                         Aprilis</date> von Kirchpröbsten em<lb break="no"/>pfanngen. <lb/><measure
@@ -7959,7 +7972,7 @@
                     <measure ana="bk:money" quantity="24" unitRef="#d">24. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbzustänndTodfellunndLeibgedinng">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbzustänndTodfellunndLeibgedinng">
                 <head>Einnemen umb <lb/>zustännd, Todfell, unnd <lb/>Leibgedinng.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-03-03">.3. Martii</date>
                     hat Haffner zu <placeName ana="bk:where" ref="#ort_0132">Gerlasteten</placeName>
@@ -8005,7 +8018,7 @@
                         >Schnecking</placeName> zustannd. <lb/>.38. lb.</ab>
                 <ab ana="bk:entry">Item zustannd. geben. <lb/>.3 ½. lb.</ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenvonleibeignenLeüthen">
+            <div ana="bk:rubric #Einnahmen_EinnemenvonleibeignenLeüthen">
                 <head>Einnemen <lb/>von leibeignen Leüthen.</head>
                 <pb n="252" facs="IMG.252.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -8014,14 +8027,14 @@
                     <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure>
                     <measure ana="bk:money" quantity="24" unitRef="#d">24. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Geyrstal">
+            <div ana="bk:rubric #Einnahmen_Geyrstal">
                 <head>Geyrstal</head>
                 <ab ana="bk:entry">Item von der Pfarr Geyerstal <lb/><measure ana="bk:money"
                         quantity="24" unitRef="#f">.24. f.</measure></ab>
                 <pb n="253" facs="IMG.253.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Köstlarn">
+            <div ana="bk:rubric #Einnahmen_Köstlarn">
                 <head>Köstlarn</head>
                 <ab ana="bk:entry">Item von der Pfarr Cöstlar. <lb/><measure ana="bk:money"
                         quantity="2" unitRef="#f">.2. f.</measure>
@@ -8033,12 +8046,12 @@
                 <pb n="256" facs="IMG.256.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Ausgabentgegen">
+            <div ana="bk:rubric #Ausgaben_Ausgabentgegen">
                 <head>Ausgab ent<lb break="no"/>gegen</head>
                 <pb n="257" facs="IMG.257.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Apotecken">
+            <div ana="bk:rubric #Ausgaben_Apotecken">
                 <head>Apotecken</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-04-28">.28.
                         Aprilis</date> umb Alte Ee geben. <lb/><measure ana="bk:money" quantity="21"
@@ -8061,12 +8074,12 @@
                     <measure ana="bk:money" quantity="22" unitRef="#d">22. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Phisico">
+            <div ana="bk:rubric #Ausgaben_Phisico">
                 <head>Phisico</head>
                 <ab ana="bk:entry">Item dem Phisico geben. <lb/><measure ana="bk:money"
                         quantity="16" unitRef="#f">.16. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Goldschmid">
+            <div ana="bk:rubric #Ausgaben_Goldschmid">
                 <head>Goldschmid</head>
                 <pb n="259" facs="IMG.259.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -8078,7 +8091,7 @@
                         ana="bk:money" quantity="1" unitRef="#f">.1. f.</measure>
                     <measure ana="bk:money" quantity="10" unitRef="#kr">10. kr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Kupfferschmid">
+            <div ana="bk:rubric #Ausgaben_Kupfferschmid">
                 <head>Kupfferschmid</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-02-26">.26.
                         Februarii</date> umb etlich Pfannen geben. <lb/><measure ana="bk:money"
@@ -8093,7 +8106,7 @@
                     <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
                     <measure ana="bk:money" quantity="3" unitRef="#d">3. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Glaser">
+            <div ana="bk:rubric #Ausgaben_Glaser">
                 <head>Glaser</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-04-14">.14.
                         Aprilis</date> umb .3. trinnckglaß geben. <lb/><measure ana="bk:money"
@@ -8116,7 +8129,7 @@
                     <measure ana="bk:money" quantity="51" unitRef="#kr">51. kr.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#d">1. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zingiesser">
+            <div ana="bk:rubric #Ausgaben_Zingiesser">
                 <head>Zingiesser</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-08-03">.3.
                         Augusti</date> Maister Balthasar Zingiesser <lb/>zu <placeName
@@ -8141,7 +8154,7 @@
                         quantity="4" unitRef="#s">.4. s.</measure>
                     <measure ana="bk:money" quantity="13" unitRef="#d">13. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Trechsler">
+            <div ana="bk:rubric #Ausgaben_Trechsler">
                 <head>Trechsler</head>
                 <pb n="263" facs="IMG.263.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -8152,7 +8165,7 @@
                     <measure ana="bk:money" quantity="5" unitRef="#s">5. s.</measure>
                     <measure ana="bk:money" quantity="13" unitRef="#d">13. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Haffner">
+            <div ana="bk:rubric #Ausgaben_Haffner">
                 <head>Haffner</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-02-26">.26.
                         Februarii</date> umb .3. glasirte hefel. <lb/>geben. <lb/><measure
@@ -8170,7 +8183,7 @@
                     <measure ana="bk:money" quantity="22" unitRef="#d">22. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Maler">
+            <div ana="bk:rubric #Ausgaben_Maler">
                 <head>Maler</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-08-10">.10.
                         Augusti</date> einem Maler von <placeName ana="bk:where" ref="#ort_0334"
@@ -8189,7 +8202,7 @@
                     geben. <lb/><measure ana="bk:money" quantity="2" unitRef="#f">.2. f.</measure>
                     <measure ana="bk:money" quantity="2" unitRef="#s">2. s.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schuster">
+            <div ana="bk:rubric #Ausgaben_Schuster">
                 <head>Schuster</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-09-05">.5. 7bris</date>
                     mit Maister Hannsen Schuster <lb/>zu <placeName ana="bk:where" ref="#ort_0468"
@@ -8198,7 +8211,7 @@
                     <measure ana="bk:money" quantity="5" unitRef="#s">5. s.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#d">1. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schneider">
+            <div ana="bk:rubric #Ausgaben_Schneider">
                 <head>Schneider</head>
                 <pb n="266" facs="IMG.266.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -8229,7 +8242,7 @@
                     <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure>
                     <measure ana="bk:money" quantity="6" unitRef="#d">6. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Sayler">
+            <div ana="bk:rubric #Ausgaben_Sayler">
                 <head>Sayler</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-09-06">.6. 7bris</date>
                     dem Sayler von <placeName ana="bk:where" ref="#ort_0011">Aiten<lb break="no"
@@ -8259,7 +8272,7 @@
                     <measure ana="bk:price" quantity="7" unitRef="#d">7. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Prungraber">
+            <div ana="bk:rubric #Ausgaben_Prungraber">
                 <head>Prungraber</head>
                 <pb n="269" facs="IMG.269.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -8268,7 +8281,7 @@
                     Prunnen hat gegraben <lb/><measure ana="bk:money" quantity="6" unitRef="#f">.6.
                         f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Pley">
+            <div ana="bk:rubric #Ausgaben_Pley">
                 <head>Pley</head>
                 <ab ana="bk:entry">Item umb glaß Pley geben. <lb/><measure ana="bk:money"
                         quantity="15" unitRef="#f">.15. f.</measure>
@@ -8276,14 +8289,14 @@
                     <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Glaß">
+            <div ana="bk:rubric #Ausgaben_Glaß">
                 <head>Glaß</head>
                 <pb n="270" facs="IMG.270.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
                 <ab ana="bk:entry">Item umb drey Truhen mit glasscheiben geben. <lb/><measure
                         ana="bk:money" quantity="36" unitRef="#f">.36. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Prungeschöpff">
+            <div ana="bk:rubric #Ausgaben_Prungeschöpff">
                 <head>Prunge<lb break="no"/>schöpff.</head>
                 <ab ana="bk:entry">Item einem Müller geben von etlichen Prungeschöpf<lb break="no"
                     />fen, unnd annderer arbeit. <lb/><measure ana="bk:money" quantity="8"
@@ -8291,7 +8304,7 @@
                     <measure ana="bk:money" quantity="2" unitRef="#s">2. s.</measure>
                     <measure ana="bk:money" quantity="10" unitRef="#d">10. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Wagner">
+            <div ana="bk:rubric #Ausgaben_Wagner">
                 <head>Wagner</head>
                 <pb n="271" facs="IMG.271.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -8337,7 +8350,7 @@
                         ana="bk:money" quantity="10" unitRef="#d">.10. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Satler">
+            <div ana="bk:rubric #Ausgaben_Satler">
                 <head>Satler</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-05-11">.11. Maii</date>
                     mit Maister Hannsen Satler <lb/>zu <placeName ana="bk:where" ref="#ort_0334"
@@ -8350,7 +8363,7 @@
                 <pb n="274" facs="IMG.274.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Riemer">
+            <div ana="bk:rubric #Ausgaben_Riemer">
                 <head>Riemer</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-02-05">.5.
                         Februarii</date> umb ein Halsbannd, unnd <lb/>zwen wayer zu einem schlitten
@@ -8377,7 +8390,7 @@
                     <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
                     <measure ana="bk:money" quantity="24" unitRef="#d">24. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schlosser">
+            <div ana="bk:rubric #Ausgaben_Schlosser">
                 <head>Schlosser</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-02-05">.5.
                         Februarii</date> von einer wagenwinnden <lb/>zumachen geben. <lb/><measure
@@ -8469,7 +8482,7 @@
                 <pb n="280" facs="IMG.280.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schreiner">
+            <div ana="bk:rubric #Ausgaben_Schreiner">
                 <head>Schreiner</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-08-31">Letzten
                         Augusti</date> mit Maister Bartholo<lb break="no"/>meen abgerechnet <measure
@@ -8504,7 +8517,7 @@
                     <lb/>kaufft p. <lb/><measure ana="bk:price" quantity="20" unitRef="#f">.20.
                         f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Maurer">
+            <div ana="bk:rubric #Ausgaben_Maurer">
                 <head>Maurer</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-03-22">.22.
                         Martii</date> Maister Geörgen bezalt <measure ana="bk:service" quantity="24"
@@ -8683,7 +8696,7 @@
                         <measure ana="bk:money" quantity="20" unitRef="#d">20.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zimerleüt">
+            <div ana="bk:rubric #Ausgaben_Zimerleüt">
                 <head>Zimerleüt</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-03-22">.22.
                         Martii</date> Maister Wolffganngen <lb/>bezalt <measure ana="bk:service"
@@ -8986,7 +8999,7 @@
                 <pb n="299" facs="IMG.299.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Tuchscherer">
+            <div ana="bk:rubric #Ausgaben_Tuchscherer">
                 <head>Tuchscherer</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-05-13">.13. Maii</date>
                     dem Tuchscherer zu <placeName ana="bk:where" ref="#ort_0011"
@@ -9005,7 +9018,7 @@
                 <pb n="300" facs="IMG.300.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Procuratorn">
+            <div ana="bk:rubric #Ausgaben_Procuratorn">
                 <head>Procuratorn</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-05-29">.29. Maii</date>
                     dem Rieger zu <placeName ana="bk:where" ref="#ort_0524">Lanndshut</placeName>
@@ -9026,13 +9039,13 @@
                         ana="bk:money" quantity="2" unitRef="#f">.2. f.</measure>
                     <measure ana="bk:money" quantity="2" unitRef="#s">2. s.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Rosartzt">
+            <div ana="bk:rubric #Ausgaben_Rosartzt">
                 <head>Rosartzt</head>
                 <ab ana="bk:entry">Item einem Rosartzt geben. <lb/><measure ana="bk:money"
                         quantity="4" unitRef="#f">.4. f.</measure>
                     <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Tagwerckern">
+            <div ana="bk:rubric #Ausgaben_Tagwerckern">
                 <head>Tagwerckern</head>
                 <pb n="302" facs="IMG.302.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -9095,7 +9108,7 @@
                             quantity="5" unitRef="#f">.5. f.</measure>
                         <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Strohschnitern">
+            <div ana="bk:rubric #Ausgaben_Strohschnitern">
                 <head>Strohschnitern</head>
                 <pb n="305" facs="IMG.305.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -9145,7 +9158,7 @@
                         <measure ana="bk:money" quantity="18" unitRef="#d">18.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Holtzhackern">
+            <div ana="bk:rubric #Ausgaben_Holtzhackern">
                 <head>Holtzhackern</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-02-18">.18.
                         Februarii</date> vom Kuchen holtz uf<lb break="no"/>zuhacken geben.
@@ -9194,7 +9207,7 @@
                         <lb/><measure ana="bk:money" quantity="6" unitRef="#s">.6. s.</measure>
                     <measure ana="bk:money" quantity="16" unitRef="#d">16. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Madernunndheigern">
+            <div ana="bk:rubric #Ausgaben_Madernunndheigern">
                 <head>Madern <lb/>unnd heigern.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-06-23">.23. Junii</date>
                     den Madern rin besoldung. <lb/>geben. <lb/><measure ana="bk:money" quantity="5"
@@ -9231,7 +9244,7 @@
                     <measure ana="bk:money" quantity="2" unitRef="#s">2. s.</measure>
                     <measure ana="bk:money" quantity="18" unitRef="#d">18. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schnitern">
+            <div ana="bk:rubric #Ausgaben_Schnitern">
                 <head>Schnitern</head>
                 <ab ana="bk:entry">Item uf die Schniter <fw ana="bk:total">thut dis Jars.
                             <lb/><measure ana="bk:money" quantity="18" unitRef="#f">.18.
@@ -9242,7 +9255,7 @@
                 <pb n="312" facs="IMG.312.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Waitzserbern">
+            <div ana="bk:rubric #Ausgaben_Waitzserbern">
                 <head>Waitzserbern</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-05-02">.2. Maii</date>
                     <measure ana="bk:service" quantity="51" commodity="work" unitRef="#tag">.51.
@@ -9252,7 +9265,7 @@
                             >.6. s.</measure>
                         <measure ana="bk:money" quantity="24" unitRef="#d">24 d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Treschern">
+            <div ana="bk:rubric #Ausgaben_Treschern">
                 <head>Treschern</head>
                 <ab ana="bk:entry">Item uf das Treschen. <lb/><measure ana="bk:money" quantity="26"
                         unitRef="#f">.26. f.</measure>
@@ -9261,14 +9274,14 @@
                 <pb n="313" facs="IMG.313.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Arbeitern">
+            <div ana="bk:rubric #Ausgaben_Arbeitern">
                 <head>Arbeitern</head>
                 <ab ana="bk:entry">Item den Arbeitern im hannff, Prein, ruben, <lb/>unnd kraut.
                         <lb/><measure ana="bk:money" quantity="8" unitRef="#f">.8. f.</measure>
                     <measure ana="bk:money" quantity="2" unitRef="#s">2. s.</measure>
                     <measure ana="bk:money" quantity="17" unitRef="#d">17. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schaaffscherern">
+            <div ana="bk:rubric #Ausgaben_Schaaffscherern">
                 <head>Schaaff<lb break="no"/>scherern</head>
                 <ab ana="bk:entry">Item von den Schaaffen zuscheren, unnd Schweinen
                     <lb/>zucastriren. geben. <lb/><measure ana="bk:money" quantity="1" unitRef="#f"
@@ -9278,7 +9291,7 @@
                 <pb n="314" facs="IMG.314.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_HoffmeisterinOsterreich">
+            <div ana="bk:rubric #Ausgaben_HoffmeisterinOsterreich">
                 <head>Hoffmeister <lb/>in Osterreich</head>
                 <ab ana="bk:entry">Item dem Hoffmeister bey Oswalden Wiert <lb/>zu <placeName
                         ana="bk:where" ref="#ort_0468">Vilßhoven</placeName> geschickt <lb/><measure
@@ -9304,14 +9317,14 @@
                 <pb n="316" facs="IMG.316.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Weinlesen">
+            <div ana="bk:rubric #Ausgaben_Weinlesen">
                 <head>Weinlesen</head>
                 <ab ana="bk:entry">Item uber das Weinlesen ganngen. <lb/><measure ana="bk:money"
                         quantity="61" unitRef="#f">.61. f.</measure>
                     <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure>
                     <measure ana="bk:money" quantity="19" unitRef="#d">19. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Ufschlag">
+            <div ana="bk:rubric #Ausgaben_Ufschlag">
                 <head>Ufschlag</head>
                 <ab ana="bk:entry">Item zu Ennglhartszell im ufschlag be<lb break="no"/>schauet
                     worden .10. Dreyling .18. Emer. p. <lb/><measure ana="bk:price" quantity="32"
@@ -9327,7 +9340,7 @@
                             unitRef="#f">.27. f.</measure>
                         <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Scheffmüt">
+            <div ana="bk:rubric #Ausgaben_Scheffmüt">
                 <head>Scheffmüt</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-11-19">.19.
                         Novembris</date> mit Paulusen Schiff<lb break="no"/>man abgerechnet .10.
@@ -9338,7 +9351,7 @@
                 <pb n="318" facs="IMG.318.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Wein">
+            <div ana="bk:rubric #Ausgaben_Wein">
                 <head>Wein</head>
                 <ab ana="bk:entry">Item umb erkaufften wein zu Ulm. <fw ana="bk:total">thut. dis
                         <lb/>Jars. <lb/><measure ana="bk:money" quantity="284" unitRef="#f">.284.
@@ -9365,14 +9378,14 @@
                     <lb/>gefürt. <fw ana="bk:total">thut Scheffmut. <lb/><measure ana="bk:money"
                             quantity="28" unitRef="#f">.28. f.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Semel">
+            <div ana="bk:rubric #Ausgaben_Semel">
                 <head>Semel</head>
                 <ab ana="bk:entry">Item umb Semel geben. <lb/><measure ana="bk:money" quantity="3"
                         unitRef="#f">.3. f.</measure>
                     <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
                     <measure ana="bk:money" quantity="21" unitRef="#d">21. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Keß">
+            <div ana="bk:rubric #Ausgaben_Keß">
                 <head>Keß</head>
                 <pb n="320" facs="IMG.320.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -9381,7 +9394,7 @@
                     <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
                     <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schmaltz">
+            <div ana="bk:rubric #Ausgaben_Schmaltz">
                 <head>Schmaltz</head>
                 <ab ana="bk:entry">Item umb Schmaltz ausgeben. <lb/><measure ana="bk:money"
                         quantity="14" unitRef="#f">.14. f.</measure>
@@ -9389,7 +9402,7 @@
                     <measure ana="bk:money" quantity="5" unitRef="#d">5. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Ayr">
+            <div ana="bk:rubric #Ausgaben_Ayr">
                 <head>Ayr</head>
                 <pb n="321" facs="IMG.321.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -9398,7 +9411,7 @@
                     <measure ana="bk:money" quantity="5" unitRef="#s">5. s.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#d">1. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_JunngeHünner">
+            <div ana="bk:rubric #Ausgaben_JunngeHünner">
                 <head>Junnge <lb/>Hünner.</head>
                 <ab ana="bk:entry">Item umb Junge Hünner, Vögel, hasen, <lb/>unnd dergleichen
                     geben. <lb/><measure ana="bk:money" quantity="16" unitRef="#f">.16. f.</measure>
@@ -9407,7 +9420,7 @@
                 <pb n="322" facs="IMG.322.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UmbFleischunndSchlachtviech">
+            <div ana="bk:rubric #Ausgaben_UmbFleischunndSchlachtviech">
                 <head>Umb Fleisch <lb/>unnd Schlachtviech</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-02-03">.3.
                         Februarii</date> vom Kecken zu Wif<lb break="no"/>fling einen Stier kaufft.
@@ -9542,7 +9555,7 @@
                         Januarii</date> umb .3. kelber geben. <lb/><measure ana="bk:money"
                         quantity="2" unitRef="#f">.2. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UmbVischunndKrebsen">
+            <div ana="bk:rubric #Ausgaben_UmbVischunndKrebsen">
                 <head>Umb Visch <lb/>unnd Krebsen</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-02-18">.18.
                         Februarii</date> dem vischer von <placeName ana="bk:where" ref="#ort_0405"
@@ -9670,7 +9683,7 @@
                         unitRef="#f">.2. f.</measure>
                     <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure> d.</ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Fastenspeis">
+            <div ana="bk:rubric #Ausgaben_Fastenspeis">
                 <head>Fastenspeis</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-02-11">.11.
                         Februarii</date> zu <placeName ana="bk:where" ref="#ort_0334"
@@ -9716,13 +9729,13 @@
                 <pb n="338" facs="IMG.338.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Saltz">
+            <div ana="bk:rubric #Ausgaben_Saltz">
                 <head>Saltz</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-05-14">.14. Maii</date>
                     vom Saltz heraus zufüren <lb/>geben. <lb/><measure ana="bk:money" quantity="14"
                         unitRef="#f">.14. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Gewürtz">
+            <div ana="bk:rubric #Ausgaben_Gewürtz">
                 <head>Gewürtz</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-05-12">.12. Maii</date>
                     dem Bonifatio Apotecker <lb/>umb ein lb. Zimetrören geben. <lb/><measure
@@ -9759,7 +9772,7 @@
                     <measure ana="bk:price" quantity="2" unitRef="#s">2. s.</measure>
                     <measure ana="bk:price" quantity="10" unitRef="#d">10. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zwibelhabermeletc">
+            <div ana="bk:rubric #Ausgaben_Zwibelhabermeletc">
                 <head>Zwibel, habermel etc.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-02-11">.11.
                         Februarii</date> zu <placeName ana="bk:where" ref="#ort_0334"
@@ -9772,7 +9785,7 @@
                         >Passau</placeName> ausgeben. <lb/><measure ana="bk:money" quantity="4"
                         unitRef="#s">.4. s.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Bucher">
+            <div ana="bk:rubric #Ausgaben_Bucher">
                 <head>Bucher</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-05-10">.10. Maii</date>
                     dem Jacob Buchfierer zu <lb/><placeName ana="bk:where" ref="#ort_0334"
@@ -9787,7 +9800,7 @@
                 <pb n="342" facs="IMG.342.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UmbPapierunndPerment">
+            <div ana="bk:rubric #Ausgaben_UmbPapierunndPerment">
                 <head>Umb Papier <lb/>unnd Perment.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-02-11">.11.
                         Februarii</date> zu <placeName ana="bk:where" ref="#ort_0334"
@@ -9804,7 +9817,7 @@
                 <pb n="343" facs="IMG.343.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Öll">
+            <div ana="bk:rubric #Ausgaben_Öll">
                 <head>Öll</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-10-19">.19.
                         Octobris</date> dem Föckler zu <placeName ana="bk:where" ref="#ort_0371"
@@ -9821,14 +9834,14 @@
                 <pb n="344" facs="IMG.344.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Aichel">
+            <div ana="bk:rubric #Ausgaben_Aichel">
                 <head>Aichel</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-10-21">.21.
                         Octobris</date> zu Winntzer kaufft <lb/>.5. Schaff Aichel. p. <lb/><measure
                         ana="bk:price" quantity="11" unitRef="#f">.11. f.</measure>
                     <measure ana="bk:price" quantity="3" unitRef="#s">3. s.</measure> d.</ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Kalck">
+            <div ana="bk:rubric #Ausgaben_Kalck">
                 <head>Kalck</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-05-25">.25. Maii</date>
                     geben umb .22 ½. Dreiling <lb/>kalck. <lb/><measure ana="bk:money" quantity="22"
@@ -9849,7 +9862,7 @@
                         unitRef="#f">.18. f.</measure>
                     <measure ana="bk:price" quantity="2" unitRef="#s">2. s.</measure> d.</ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Roß">
+            <div ana="bk:rubric #Ausgaben_Roß">
                 <head>Roß</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-04-09">.9.
                         Aprilis</date> vom Lehner zu <placeName ana="bk:where" ref="#ort_0416"
@@ -9875,7 +9888,7 @@
                 <pb n="347" facs="IMG.347.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_FaßRaiffunndPannd">
+            <div ana="bk:rubric #Ausgaben_FaßRaiffunndPannd">
                 <head>Faß Raiff <lb/>unnd Pannd.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-04-05">.5.
                         Aprilis</date> umb .3. lb. Stanngen <lb/>geben. <lb/><measure ana="bk:money"
@@ -9899,7 +9912,7 @@
                         quantity="4" unitRef="#s">.4. s.</measure>
                     <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_StahelunndEysen">
+            <div ana="bk:rubric #Ausgaben_StahelunndEysen">
                 <head>Stahel unnd <lb/>Eysen.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-04-28">.28.
                         Aprilis</date> zu <placeName ana="bk:where" ref="#ort_0334"
@@ -9922,7 +9935,7 @@
                         >Vilshoven</placeName> Stanngeisen kaufft <lb/>p. <lb/><measure
                         ana="bk:price" quantity="4" unitRef="#f">.4. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UmbArraßMacheyetc">
+            <div ana="bk:rubric #Ausgaben_UmbArraßMacheyetc">
                 <head>Umb Arraß, <lb/>Machey etc.</head>
                 <pb n="350" facs="IMG.350.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -9950,7 +9963,7 @@
                     <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure>
                     <measure ana="bk:money" quantity="2" unitRef="#d">2. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Leinwat">
+            <div ana="bk:rubric #Ausgaben_Leinwat">
                 <head>Leinwat</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-03-03">.3. Martii</date>
                     ein Stückel Leinwat p. <lb/><measure ana="bk:price" quantity="2" unitRef="#f"
@@ -10003,7 +10016,7 @@
                 <pb n="354" facs="IMG.354.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Wollentuch">
+            <div ana="bk:rubric #Ausgaben_Wollentuch">
                 <head>Wollentuch</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-02-05">.5.
                         Februarii</date> dem Marstaller .5. Eln <lb/>tuch kaufft eine p. <measure
@@ -10022,7 +10035,7 @@
                         Novembris</date> umb zwey Stuck <lb/>tuch Pfarrkircher geben. <lb/><measure
                         ana="bk:money" quantity="14" unitRef="#f">.14. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_PrecoreyunndJerlichegülten">
+            <div ana="bk:rubric #Ausgaben_PrecoreyunndJerlichegülten">
                 <head>Precorey <lb/>unnd Jerliche gül<lb break="no"/>ten.</head>
                 <pb n="355" facs="IMG.355.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -10047,27 +10060,27 @@
                 <pb n="356" facs="IMG.356.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Jegergelt">
+            <div ana="bk:rubric #Ausgaben_Jegergelt">
                 <head>Jegergelt</head>
                 <ab ana="bk:entry">Item Jegergelt <lb/><measure ana="bk:money" quantity="17"
                         unitRef="#f">.17. f.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Steur">
+            <div ana="bk:rubric #Ausgaben_Steur">
                 <head>Steur</head>
                 <ab ana="bk:entry">Item die Osterreichische Steur. <lb/><measure ana="bk:money"
                         quantity="33" unitRef="#f">.33. f.</measure>
                     <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
                     <measure ana="bk:money" quantity="27" unitRef="#d">27. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Cantoreygelt">
+            <div ana="bk:rubric #Ausgaben_Cantoreygelt">
                 <head>Cantorey <lb/>gelt.</head>
                 <pb n="357" facs="IMG.357.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
                 <ab ana="bk:entry">Item das Cantorey gelt. <lb/><measure ana="bk:money"
                         quantity="45" unitRef="#f">.45. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_GedingunndOpffergelt">
+            <div ana="bk:rubric #Ausgaben_GedingunndOpffergelt">
                 <head>Geding unnd <lb/>Opffergelt.</head>
                 <ab ana="bk:entry">Item uf geding, unnd Opffergelt. <lb/><measure ana="bk:money"
                         quantity="9" unitRef="#f">.9. f.</measure>
@@ -10077,14 +10090,14 @@
                 <pb n="358" facs="IMG.358.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Besoldung">
+            <div ana="bk:rubric #Ausgaben_Besoldung">
                 <head>Besoldung</head>
                 <ab ana="bk:entry">Item der Dienner besöldung <lb/><measure ana="bk:money"
                         quantity="244" unitRef="#f">.244. f.</measure>
                     <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure>
                     <measure ana="bk:money" quantity="7" unitRef="#d">7. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zerung">
+            <div ana="bk:rubric #Ausgaben_Zerung">
                 <head>Zerung</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-02-05">.5.
                         Februarii</date> hat Cammerer zu <lb/><placeName ana="bk:where"
@@ -10346,7 +10359,7 @@
                         unitRef="#d">.10. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Pottenlon">
+            <div ana="bk:rubric #Ausgaben_Pottenlon">
                 <head>Pottenlon</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1559-04-05">.5.
                         Aprilis</date> dem Pußler Pottenlon <lb/>geben. <lb/><measure ana="bk:money"
@@ -10412,7 +10425,7 @@
                         <measure ana="bk:money" quantity="1" unitRef="#hr">1.
                     hr.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_HoffirernunndSpilleuten">
+            <div ana="bk:rubric #Ausgaben_HoffirernunndSpilleuten">
                 <head>Hoffirern <lb/>unnd Spilleuten</head>
                 <ab ana="bk:entry">Item dem hoffierern. unnd Spilleüthen geben. <lb/><measure
                         ana="bk:money" quantity="4" unitRef="#f">.4. f.</measure>
@@ -10431,7 +10444,7 @@
                     <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure>
                     <measure ana="bk:money" quantity="25" unitRef="#d">25. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_GemeineAusgab">
+            <div ana="bk:rubric #Ausgaben_GemeineAusgab">
                 <head>Gemeine <lb/>Ausgab.</head>
                 <pb n="375" facs="IMG.375.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1559">Anno 1559</date></fw>
@@ -10546,7 +10559,7 @@
                 <pb n="382" facs="IMG.382.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbgetreid">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbgetreid">
                 <head>Einnemen <lb/>umb getreid</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-03-02">.2. Martii</date>
                     dem Staininger unnd Zinnsperger <lb/>zu Braunau geben .106. Schaff waitz
@@ -10575,7 +10588,7 @@
                     <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbwein">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbwein">
                 <head>Einnemen <lb/>umb wein.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-02-11">.11.
                         Februarii</date> hat wiert bezalt .8. Emer <lb/>Oberlennder. den Emer p.
@@ -10697,7 +10710,7 @@
                 <pb n="389" facs="IMG.389.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbverkaufftwein">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbverkaufftwein">
                 <head>Einnemen <lb/>umb verkaufft wein</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-02-19">.19.
                         Februarii</date> dem hasen von <placeName ana="bk:where" ref="#ort_0011"
@@ -10774,7 +10787,7 @@
                         <measure ana="bk:money" quantity="15" unitRef="#d">15.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemendesweingelts">
+            <div ana="bk:rubric #Einnahmen_Einnemendesweingelts">
                 <head>Einnemen <lb/>des weingelts.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-03-03">.3. Martii</date>
                     weingelt empfanngen. <lb/><measure ana="bk:money" quantity="6" unitRef="#f">.6.
@@ -10797,7 +10810,7 @@
                     <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
                     <measure ana="bk:money" quantity="16" unitRef="#d">16. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbPier">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbPier">
                 <head>Einnemen <lb/>umb Pier.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-05-01">ersten
                         Maii</date> vom Preuen empfanngen <lb/><measure ana="bk:money" quantity="1"
@@ -10812,7 +10825,7 @@
                     <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
                     <measure ana="bk:money" quantity="6" unitRef="#d">6. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbSaltz">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbSaltz">
                 <head>Einnemen <lb/>umb Saltz.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-03-09">.9. Martii</date>
                     empfanngen. <lb/><measure ana="bk:money" quantity="5" unitRef="#s">.5.
@@ -10843,7 +10856,7 @@
                 <pb n="396" facs="IMG.396.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbKleib">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbKleib">
                 <head>Einnemen <lb/>umb Kleib.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-11-10">.10.
                         Novembris</date> umb Kleib <lb/>empfanngen. <lb/><measure ana="bk:money"
@@ -10851,7 +10864,7 @@
                     <measure ana="bk:money" quantity="2" unitRef="#s">2. s.</measure>
                     <measure ana="bk:money" quantity="24" unitRef="#d">24. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbOchsen">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbOchsen">
                 <head>Einnemen <lb/>umb Ochsen.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-06-07">.7. Junii</date>
                     dem hasen von <placeName ana="bk:where" ref="#ort_0011">Aitenpach</placeName>.
@@ -10863,7 +10876,7 @@
                         >Aitenpach</placeName> geben .5. <lb/>unngerisch Ochsen. p. <lb/><measure
                         ana="bk:price" quantity="111" unitRef="#f">.111. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbSchwein">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbSchwein">
                 <head>Einnemen <lb/>umb Schwein.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-02-21">.21.
                         Februarii</date> dem Hasen zu <placeName ana="bk:where" ref="#ort_0011"
@@ -10879,7 +10892,7 @@
                     <measure ana="bk:price" quantity="27" unitRef="#d">27. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbSchaaffwol">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbSchaaffwol">
                 <head>Einnemen <lb/>umb Schaaffwol.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-11-10">.10.
                         Novembris</date> dem Gilg Mayr <lb/>zu <placeName ana="bk:where"
@@ -10889,7 +10902,7 @@
                 <pb n="399" facs="IMG.399.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_Einnemenumbheutunndfeel">
+            <div ana="bk:rubric #Einnahmen_Einnemenumbheutunndfeel">
                 <head>Einnemen <lb/>umb heut unnd feel.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-03-04">.4.
                     Martii</date>. dem Lederer von <placeName ana="bk:where" ref="#ort_0225">Car<lb
@@ -10906,7 +10919,7 @@
                 <pb n="400" facs="IMG.400.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbRoß">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbRoß">
                 <head>Einnemen <lb/>umb Roß.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-04-23">.23.
                         Aprilis</date> umb ein Roß eingenommen <lb/><measure ana="bk:money"
@@ -10915,7 +10928,7 @@
                     ein Roß verkaufft p. <lb/><measure ana="bk:price" quantity="31" unitRef="#f"
                         >.31. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbHeuStro">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbHeuStro">
                 <head>Einnemen <lb/>umb Heu, Stro.</head>
                 <ab ana="bk:entry">Item umb Heu, Stro, Ruben, unnd kraut <lb/>eingenommen.
                         <lb/><measure ana="bk:money" quantity="7" unitRef="#f">.7. f.</measure>
@@ -10924,7 +10937,7 @@
                 <pb n="401" facs="IMG.401.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenvomKirchpröbsten">
+            <div ana="bk:rubric #Einnahmen_EinnemenvomKirchpröbsten">
                 <head>Einnemen <lb/>vom Kirchpröbsten</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-04-25">.25.
                         Aprilis</date>. <lb/><measure ana="bk:money" quantity="1" unitRef="#s">.1.
@@ -10935,7 +10948,7 @@
                     <measure ana="bk:money" quantity="22" unitRef="#d">22. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenumbzustenndTodfellunndLeibgeding">
+            <div ana="bk:rubric #Einnahmen_EinnemenumbzustenndTodfellunndLeibgeding">
                 <head>Einnemen umb <lb/>zustennd, Todfell, unnd Leib<lb break="no"/>geding.</head>
                 <pb n="402" facs="IMG.402.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
@@ -11012,14 +11025,14 @@
                 <pb n="406" facs="IMG.406.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Einnahmen_EinnemenvonLeibeignenLeüthen">
+            <div ana="bk:rubric #Einnahmen_EinnemenvonLeibeignenLeüthen">
                 <head>Einnemen <lb/>von Leibeignen Leü<lb break="no"/>then.</head>
                 <ab ana="bk:entry">Item von Leibeigenen Leüthen. <lb/><measure ana="bk:money"
                         quantity="1" unitRef="#f">.1. f.</measure>
                     <measure ana="bk:money" quantity="5" unitRef="#s">5. s.</measure>
                     <measure ana="bk:money" quantity="25" unitRef="#d">25. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Einnahmen_KöstlarnGeyerstal">
+            <div ana="bk:rubric #Einnahmen_KöstlarnGeyerstal">
                 <head>Köstlarn <lb/>Geyerstal.</head>
                 <ab ana="bk:entry">Item von der Pfarr <placeName ana="bk:where" ref="#ort_0530"
                         >Geyerstall</placeName>. <lb/><measure ana="bk:money" quantity="24"
@@ -11031,12 +11044,12 @@
                 <pb n="409" facs="IMG.409.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Ausgabentgegen">
+            <div ana="bk:rubric #Ausgaben_Ausgabentgegen">
                 <head>Ausgab ent<lb break="no"/>gegen</head>
                 <pb n="410" facs="IMG.410.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Apotecken">
+            <div ana="bk:rubric #Ausgaben_Apotecken">
                 <head>Apotecken</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-06-13">.13. Junii</date>
                     umb ein Meer Zwibel geben <lb/><measure ana="bk:money" quantity="4" unitRef="#s"
@@ -11046,7 +11059,7 @@
                     <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure>
                     <measure ana="bk:money" quantity="2" unitRef="#d">2. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Goldschmid">
+            <div ana="bk:rubric #Ausgaben_Goldschmid">
                 <head>Goldschmid</head>
                 <ab ana="bk:entry">Item von einem Trinckgeschir, unnd annder <lb/><measure
                         ana="bk:service" commodity="work">Arbeit</measure> mer zumachen geben.
@@ -11056,7 +11069,7 @@
                 <pb n="411" facs="IMG.411.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Kupfferschmid">
+            <div ana="bk:rubric #Ausgaben_Kupfferschmid">
                 <head>Kupfferschmid</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-10-01">ersten
                         Octobris</date> mit dem Kupffer<lb break="no"/>schmid zu <placeName
@@ -11097,7 +11110,7 @@
                 <pb n="413" facs="IMG.413.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Glaser">
+            <div ana="bk:rubric #Ausgaben_Glaser">
                 <head>Glaser</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-03-23">.23.
                         Martii</date> dem Glaser bezalt <measure ana="bk:service" quantity="18"
@@ -11138,7 +11151,7 @@
                         commodity="work">Arbeit</measure> bezalt. <lb/><measure ana="bk:money"
                         quantity="1" unitRef="#f">.1. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zingiesser">
+            <div ana="bk:rubric #Ausgaben_Zingiesser">
                 <head>Zingiesser</head>
                 <pb n="415" facs="IMG.415.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
@@ -11150,7 +11163,7 @@
                     <measure ana="bk:money" quantity="13" unitRef="#d">13. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Prungraber">
+            <div ana="bk:rubric #Ausgaben_Prungraber">
                 <head>Prungraber</head>
                 <ab ana="bk:entry">Item dem Prungraber von <placeName ana="bk:where"
                         ref="#ort_0011">Aitenpach</placeName> von <lb/>einem <placeName
@@ -11160,13 +11173,13 @@
                 <pb n="416" facs="IMG.416.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Pley">
+            <div ana="bk:rubric #Ausgaben_Pley">
                 <head>Pley</head>
                 <ab ana="bk:entry">Item umb Pley geben. <lb/><measure ana="bk:money" quantity="5"
                         unitRef="#f">.5. f.</measure>
                     <measure ana="bk:money" quantity="5" unitRef="#s">5. s.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Haffner">
+            <div ana="bk:rubric #Ausgaben_Haffner">
                 <head>Haffner</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-10-15">.15.
                         Octobris</date> dem Haffner vom Ge<lb break="no"/>schaid für drey grien
@@ -11177,7 +11190,7 @@
                 <pb n="417" facs="IMG.417.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Trechsler">
+            <div ana="bk:rubric #Ausgaben_Trechsler">
                 <head>Trechsler</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-05-01">ersten
                         Maii</date>, umb einen Pecher, etliche <lb/>Scheibel, unnd schachtl. geben.
@@ -11185,7 +11198,7 @@
                     <measure ana="bk:money" quantity="17" unitRef="#d">17. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schuster">
+            <div ana="bk:rubric #Ausgaben_Schuster">
                 <head>Schuster</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-07-20">.20. Julii</date>
                     Maister Hannsen von <placeName ana="bk:where" ref="#ort_0468">Vils<lb break="no"
@@ -11201,7 +11214,7 @@
                     <measure ana="bk:money" quantity="22" unitRef="#d">22. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schneider">
+            <div ana="bk:rubric #Ausgaben_Schneider">
                 <head>Schneider</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-05-07">.7. Maii</date>
                     Sigmunden Schneider zu <placeName ana="bk:where" ref="#ort_0011">Ai<lb
@@ -11220,7 +11233,7 @@
                 <pb n="419" facs="IMG.419.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Sayler">
+            <div ana="bk:rubric #Ausgaben_Sayler">
                 <head>Sayler</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-04-03">.3.
                         Aprilis</date> dem Sayler von <placeName ana="bk:where" ref="#ort_0468"
@@ -11243,7 +11256,7 @@
                 <pb n="420" facs="IMG.420.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Lederer">
+            <div ana="bk:rubric #Ausgaben_Lederer">
                 <head>Lederer</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-07-12">.12. Julii</date>
                     von drey grossen heüten <lb/>zuwirken geben. <lb/><measure ana="bk:money"
@@ -11263,7 +11276,7 @@
                         Novembris</date> von etlichen heuten <lb/>zuwirken geben. <lb/><measure
                         ana="bk:money" quantity="1" unitRef="#f">.1. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Rotschmid">
+            <div ana="bk:rubric #Ausgaben_Rotschmid">
                 <head>Rotschmid</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-02-23">.23.
                         Februarii</date> umb .2. Pipen, unnd <lb/>von .3. Leichtern zubessern geben.
@@ -11279,7 +11292,7 @@
                     <measure ana="bk:money" quantity="28" unitRef="#d">28. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Wagner">
+            <div ana="bk:rubric #Ausgaben_Wagner">
                 <head>Wagner</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-02-23">.23.
                         Februarii</date> dem wagner von <lb/>einem wagen zubessern geben.
@@ -11316,7 +11329,7 @@
                         Augusti</date> umb .4. Pflieg geben. <lb/><measure ana="bk:money"
                         quantity="1" unitRef="#f">.1. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Satler">
+            <div ana="bk:rubric #Ausgaben_Satler">
                 <head>Satler</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-02-26">.26.
                         Februarii</date> mit Maister hann<lb break="no"/>sen umb <measure
@@ -11338,7 +11351,7 @@
                     <measure ana="bk:money" quantity="21" unitRef="#d">21. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Riemer">
+            <div ana="bk:rubric #Ausgaben_Riemer">
                 <head>Riemer</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-05-07">.7. Maii</date>
                     mit dem Riemer zu <lb/><placeName ana="bk:where" ref="#ort_0468"
@@ -11347,7 +11360,7 @@
                     <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
                     <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Sporer">
+            <div ana="bk:rubric #Ausgaben_Sporer">
                 <head>Sporer</head>
                 <pb n="426" facs="IMG.426.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
@@ -11357,7 +11370,7 @@
                         s.</measure>
                     <measure ana="bk:money" quantity="25" unitRef="#d">25. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schlosser">
+            <div ana="bk:rubric #Ausgaben_Schlosser">
                 <head>Schlosser</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-02-23">.23.
                         Februarii</date> umb etlich Eisern <lb/>schinnagl geben. <lb/><measure
@@ -11410,7 +11423,7 @@
                 <pb n="429" facs="IMG.429.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schreiner">
+            <div ana="bk:rubric #Ausgaben_Schreiner">
                 <head>Schreiner</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-09-20">.20. 7bris</date>
                     mit Maister Bartholomeen <lb/>abgerechnet <measure ana="bk:service"
@@ -11445,7 +11458,7 @@
                         <measure ana="bk:money" quantity="28" unitRef="#d">28.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Maurer">
+            <div ana="bk:rubric #Ausgaben_Maurer">
                 <head>Maurer</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-05-18">.18. Maii</date>
                     Maister Geörgen bezalt <measure ana="bk:service" quantity="20" commodity="work"
@@ -11504,7 +11517,7 @@
                         <measure ana="bk:money" quantity="24" unitRef="#d">24.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zimerleüt">
+            <div ana="bk:rubric #Ausgaben_Zimerleüt">
                 <head>Zimerleüt</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-04-10">.10.
                         Aprilis</date> Maister Wolffganng be<lb break="no"/>zalt <measure
@@ -11697,7 +11710,7 @@
                     <measure ana="bk:money" quantity="10" unitRef="#d">10. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Tuchscherer">
+            <div ana="bk:rubric #Ausgaben_Tuchscherer">
                 <head>Tuchscherer</head>
                 <ab ana="bk:entry">Item dem Tuchscherer zu <placeName ana="bk:where"
                         ref="#ort_0011">Aitenpach</placeName> von .2. <lb/>stucken tuch zuscheren
@@ -11706,13 +11719,13 @@
                 <pb n="440" facs="IMG.440.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Procuratoribus">
+            <div ana="bk:rubric #Ausgaben_Procuratoribus">
                 <head>Procurato<lb break="no"/>ribus.</head>
                 <ab ana="bk:entry">Item einem Procurator geben. <lb/><measure ana="bk:money"
                         quantity="3" unitRef="#f">.3. f.</measure>
                     <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure> d.</ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Tagwerckern">
+            <div ana="bk:rubric #Ausgaben_Tagwerckern">
                 <head>Tagwerckern</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-03-17">.17.
                         Martii</date> den Tagwerckern bezalt <lb/><measure ana="bk:service"
@@ -11760,7 +11773,7 @@
                             quantity="5" unitRef="#f">.5. f.</measure>
                         <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Strohschnitern">
+            <div ana="bk:rubric #Ausgaben_Strohschnitern">
                 <head>Strohschnitern</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-06-23">.23. Junii</date>
                     den Stroschnitern <measure ana="bk:service" quantity="31" commodity="work"
@@ -11791,7 +11804,7 @@
                             quantity="3" unitRef="#f">.3. f.</measure>
                         <measure ana="bk:money" quantity="6" unitRef="#d">6. d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Holtzhackern">
+            <div ana="bk:rubric #Ausgaben_Holtzhackern">
                 <head>Holtzhackern</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-03-09">.9. Martii</date>
                     den Holtzhackern geben. <lb/><measure ana="bk:money" quantity="1" unitRef="#s"
@@ -11816,7 +11829,7 @@
                 <pb n="445" facs="IMG.445.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_MadernunndHeigern">
+            <div ana="bk:rubric #Ausgaben_MadernunndHeigern">
                 <head>Madern unnd <lb/>Heigern.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-06-20">.20. Junii</date>
                     den Madern geben. <lb/><measure ana="bk:money" quantity="5" unitRef="#f">.5.
@@ -11844,7 +11857,7 @@
                     <measure ana="bk:money" quantity="13" unitRef="#d">13. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Ziegler">
+            <div ana="bk:rubric #Ausgaben_Ziegler">
                 <head>Ziegler</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-06-01">ersten
                         Junii</date> dem Asm Zieglschlager <lb/>bezalt <measure ana="bk:service"
@@ -11908,14 +11921,14 @@
                         <measure ana="bk:money" quantity="26" unitRef="#d">26.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schnitern">
+            <div ana="bk:rubric #Ausgaben_Schnitern">
                 <head>Schnitern</head>
                 <ab ana="bk:entry">Item den Schnitern geben. <lb/><measure ana="bk:money"
                         quantity="18" unitRef="#f">.18. f.</measure>
                     <measure ana="bk:money" quantity="2" unitRef="#s">2. s.</measure>
                     <measure ana="bk:money" quantity="26" unitRef="#d">26. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Treschern">
+            <div ana="bk:rubric #Ausgaben_Treschern">
                 <head>Treschern</head>
                 <pb n="450" facs="IMG.450.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
@@ -11923,14 +11936,14 @@
                         unitRef="#f">.27. f.</measure>
                     <measure ana="bk:money" quantity="20" unitRef="#d">20. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Arbeitern">
+            <div ana="bk:rubric #Ausgaben_Arbeitern">
                 <head>Arbeitern</head>
                 <ab ana="bk:entry">Item den Arbeitern im hannff, Prein, etc. <lb/>geben.
                         <lb/><measure ana="bk:money" quantity="9" unitRef="#f">.9. f.</measure>
                     <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure>
                     <measure ana="bk:money" quantity="17" unitRef="#d">17. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Aichelklaubern">
+            <div ana="bk:rubric #Ausgaben_Aichelklaubern">
                 <head>Aichelklau<lb break="no"/>bern.</head>
                 <pb n="451" facs="IMG.451.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
@@ -11939,7 +11952,7 @@
                     <measure ana="bk:money" quantity="7" unitRef="#d">7. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schaaffscherern">
+            <div ana="bk:rubric #Ausgaben_Schaaffscherern">
                 <head>Schaaff<lb break="no"/>scherern.</head>
                 <ab ana="bk:entry">Item von Schaaffen zuscheren, unnd Schweinen <lb/>zu Castriren
                     geben. <lb/><measure ana="bk:money" quantity="2" unitRef="#f">.2. f.</measure>
@@ -11948,7 +11961,7 @@
                 <pb n="452" facs="IMG.452.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_HoffmeisterinOsterreich">
+            <div ana="bk:rubric #Ausgaben_HoffmeisterinOsterreich">
                 <head>Hoffmeister <lb/>in Osterreich.</head>
                 <ab ana="bk:entry">Item dem Hoffmaister beim Cammerer ge<lb break="no"/>schickt.
                         <lb/><measure ana="bk:money" quantity="100" unitRef="#f">.100.
@@ -11971,7 +11984,7 @@
                     <measure ana="bk:money" quantity="22" unitRef="#d">22. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Weinlesen">
+            <div ana="bk:rubric #Ausgaben_Weinlesen">
                 <head>Weinlesen</head>
                 <pb n="454" facs="IMG.454.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
@@ -11981,7 +11994,7 @@
                     <measure ana="bk:money" quantity="22" unitRef="#d">22. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Ufschlag">
+            <div ana="bk:rubric #Ausgaben_Ufschlag">
                 <head>Ufschlag</head>
                 <ab ana="bk:entry">Item im ufschlag zu Ennglhartszell .6. <lb/>Dreiling beschaut.
                         <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="18"
@@ -11996,7 +12009,7 @@
                 <pb n="455" facs="IMG.455.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schefmüt">
+            <div ana="bk:rubric #Ausgaben_Schefmüt">
                 <head>Schefmüt</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-12-07">.7.
                         Decembris</date> mit Paulsen Reis<lb break="no"/>inger Schiffman zu
@@ -12011,7 +12024,7 @@
                     <measure ana="bk:money" quantity="26" unitRef="#d">26. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Wein">
+            <div ana="bk:rubric #Ausgaben_Wein">
                 <head>Wein</head>
                 <pb n="456" facs="IMG.456.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
@@ -12042,7 +12055,7 @@
                     <measure ana="bk:money" quantity="5" unitRef="#s">5. s.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#d">1. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Semel">
+            <div ana="bk:rubric #Ausgaben_Semel">
                 <head>Semel</head>
                 <ab ana="bk:entry">Item umb Semel geben. <lb/><measure ana="bk:money" quantity="2"
                         unitRef="#f">.2. f.</measure>
@@ -12050,7 +12063,7 @@
                     <measure ana="bk:money" quantity="10" unitRef="#d">10. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Keß">
+            <div ana="bk:rubric #Ausgaben_Keß">
                 <head>Keß</head>
                 <pb n="458" facs="IMG.458.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
@@ -12059,7 +12072,7 @@
                     <measure ana="bk:money" quantity="5" unitRef="#s">5. s.</measure>
                     <measure ana="bk:money" quantity="25" unitRef="#d">25. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Fastenspeiß">
+            <div ana="bk:rubric #Ausgaben_Fastenspeiß">
                 <head>Fastenspeiß</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-02-13">.13.
                         Februarii</date> zu <placeName ana="bk:where" ref="#ort_0334"
@@ -12103,12 +12116,12 @@
                     <measure ana="bk:money" quantity="7" unitRef="#d">7. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Saltz">
+            <div ana="bk:rubric #Ausgaben_Saltz">
                 <head>Saltz</head>
                 <ab ana="bk:entry">Item vom Saltz zufieren geben. <lb/><measure ana="bk:money"
                         quantity="14" unitRef="#f">.14. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Gewürtz">
+            <div ana="bk:rubric #Ausgaben_Gewürtz">
                 <head>Gewürtz</head>
                 <pb n="462" facs="IMG.462.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
@@ -12137,7 +12150,7 @@
                         unitRef="#s">.1. s.</measure>
                     <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zwibel">
+            <div ana="bk:rubric #Ausgaben_Zwibel">
                 <head>Zwibel</head>
                 <pb n="464" facs="IMG.464.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
@@ -12151,7 +12164,7 @@
                     <measure ana="bk:money" quantity="22" unitRef="#d">22. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Bücher">
+            <div ana="bk:rubric #Ausgaben_Bücher">
                 <head>Bücher</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-08-12">.12.
                         Augusti</date> umb Bücher geben. <lb/><measure ana="bk:money" quantity="3"
@@ -12171,7 +12184,7 @@
                     <measure ana="bk:price" quantity="5" unitRef="#s">5. s.</measure>
                     <measure ana="bk:price" quantity="25" unitRef="#d">25. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UmbPapierunndPerment">
+            <div ana="bk:rubric #Ausgaben_UmbPapierunndPerment">
                 <head>Umb Papier <lb/>unnd Perment</head>
                 <pb n="466" facs="IMG.466.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
@@ -12193,7 +12206,7 @@
                 <pb n="467" facs="IMG.467.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Ayr">
+            <div ana="bk:rubric #Ausgaben_Ayr">
                 <head>Ayr</head>
                 <ab ana="bk:entry">Item umb Ayr geben. <lb/><measure ana="bk:money" quantity="2"
                         unitRef="#f">.2. f.</measure>
@@ -12201,7 +12214,7 @@
                     <measure ana="bk:money" quantity="21" unitRef="#d">21. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schmaltz">
+            <div ana="bk:rubric #Ausgaben_Schmaltz">
                 <head>Schmaltz</head>
                 <ab ana="bk:entry">Item umb Schmaltz geben. <lb/><measure ana="bk:money"
                         quantity="1" unitRef="#f">.1. f.</measure>
@@ -12210,7 +12223,7 @@
                 <pb n="468" facs="IMG.468.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_JunngeHünner">
+            <div ana="bk:rubric #Ausgaben_JunngeHünner">
                 <head>Junnge <lb/>Hünner</head>
                 <ab ana="bk:entry">Item umb junge Hünner, Vögl, hasen, unnd <lb/>dergleichen.
                     geben. <lb/><measure ana="bk:money" quantity="8" unitRef="#f">.8. f.</measure>
@@ -12218,7 +12231,7 @@
                     <measure ana="bk:money" quantity="7" unitRef="#d">7. d.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#hr">1 hr.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UmbFleischunndSchlachtviech">
+            <div ana="bk:rubric #Ausgaben_UmbFleischunndSchlachtviech">
                 <head>Umb Fleisch <lb/>unnd Schlachtviech.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-02-10">.10.
                         Februarii</date> von der Pfeilmayrin <lb/>zu walchsing einen Stier kaufft p.
@@ -12420,7 +12433,7 @@
                     <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
                     <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UmbVischunndkrebsen">
+            <div ana="bk:rubric #Ausgaben_UmbVischunndkrebsen">
                 <head>Umb Visch <lb/>unnd krebsen</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-02-09">.9.
                         Februarii</date> dem von <placeName ana="bk:where" ref="#ort_0405"
@@ -12549,7 +12562,7 @@
                 <pb n="485" facs="IMG.485.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Öll">
+            <div ana="bk:rubric #Ausgaben_Öll">
                 <head>Öll</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-02-23">.23.
                         Februarii</date> kaufft .17 ½. lb. <lb/>Paumöl. p. <lb/><measure
@@ -12560,7 +12573,7 @@
                         unitRef="#f">.8. f.</measure>
                     <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure> d.</ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_WachsunndHönig">
+            <div ana="bk:rubric #Ausgaben_WachsunndHönig">
                 <head>Wachs <lb/>unnd Hönig.</head>
                 <ab ana="bk:entry">Item umb wachß, unnd hönig geben. <lb/><measure ana="bk:money"
                         quantity="4" unitRef="#f">.4. f.</measure>
@@ -12569,7 +12582,7 @@
                 <pb n="486" facs="IMG.486.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Kalck">
+            <div ana="bk:rubric #Ausgaben_Kalck">
                 <head>Kalck</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-04-30">Letzten
                         Aprilis</date> zu <placeName ana="bk:where" ref="#ort_0468"
@@ -12593,7 +12606,7 @@
                         >Pleinting</placeName> kaufft <lb/>.20. Dreyling p. <lb/><measure
                         ana="bk:price" quantity="20" unitRef="#f">.20. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Roß">
+            <div ana="bk:rubric #Ausgaben_Roß">
                 <head>Roß</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-03-31">Letzten
                         Martii</date> zu wien ein Gaul <lb/>kaufft, sambt aller Rüstung p.
@@ -12612,7 +12625,7 @@
                     <measure ana="bk:price" quantity="3" unitRef="#s">3. s.</measure>
                     <measure ana="bk:price" quantity="15" unitRef="#d">15. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_FaßRaiffunndpannd">
+            <div ana="bk:rubric #Ausgaben_FaßRaiffunndpannd">
                 <head>Faß Raiff <lb/>unnd pannd.</head>
                 <pb n="489" facs="IMG.489.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
@@ -12644,7 +12657,7 @@
                         <measure ana="bk:money" quantity="10" unitRef="#d">10.
                     d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Nagl">
+            <div ana="bk:rubric #Ausgaben_Nagl">
                 <head>Nagl</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-10-05">.5.
                         Octobris</date> zu <placeName ana="bk:where" ref="#ort_0468"
@@ -12663,7 +12676,7 @@
                     <measure ana="bk:price" quantity="4" unitRef="#s">4. s.</measure>
                     <measure ana="bk:price" quantity="29" unitRef="#d">29. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UmbStahelunndEysen">
+            <div ana="bk:rubric #Ausgaben_UmbStahelunndEysen">
                 <head>Umb Stahel <lb/>unnd Eysen.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-03-04">.4. Martii</date>
                     zu <placeName ana="bk:where" ref="#ort_0334">Passau</placeName> kaufft
@@ -12702,7 +12715,7 @@
                 <pb n="493" facs="IMG.493.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UmbMacheyparchetunndArraß">
+            <div ana="bk:rubric #Ausgaben_UmbMacheyparchetunndArraß">
                 <head>Umb Machey <lb/>parchet unnd Arraß.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-04-19">.19.
                         Aprilis</date> kaufft .8. Stückel <lb/>Parchet. p. <lb/><measure
@@ -12724,7 +12737,7 @@
                     <measure ana="bk:money" quantity="2" unitRef="#s">2 s.</measure>
                     <measure ana="bk:money" quantity="10" unitRef="#d">10. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Schintl">
+            <div ana="bk:rubric #Ausgaben_Schintl">
                 <head>Schintl</head>
                 <ab ana="bk:entry">Item von Schintlen zuklieben geben. <lb/><measure ana="bk:money"
                         quantity="3" unitRef="#f">.3. f.</measure>
@@ -12732,7 +12745,7 @@
                 <pb n="495" facs="IMG.495.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Leinwat">
+            <div ana="bk:rubric #Ausgaben_Leinwat">
                 <head>Leinwat</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-04-03">.3.
                         Aprilis</date> umb ein Stuck Leinwat. <lb/>geben. hat gehalten .30. Eln zu
@@ -12775,7 +12788,7 @@
                 <pb n="497" facs="IMG.497.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Wollentuch">
+            <div ana="bk:rubric #Ausgaben_Wollentuch">
                 <head>Wollentuch</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-03-17">.17.
                         Martii</date> dem Tuchmacher von <lb/><placeName ana="bk:where"
@@ -12792,14 +12805,14 @@
                 <pb n="498" facs="IMG.498.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_PrecoreyundJerlichegülten">
+            <div ana="bk:rubric #Ausgaben_PrecoreyundJerlichegülten">
                 <head>Precorey und <lb/>Jerliche gülten</head>
                 <ab ana="bk:entry">Item uf Precorey, unnd Jerlich gülten. <lb/><measure
                         ana="bk:money" quantity="17" unitRef="#f">.17. f.</measure>
                     <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure>
                     <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Laden">
+            <div ana="bk:rubric #Ausgaben_Laden">
                 <head>Laden</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-08-25">.25.
                         Augusti</date> in der Zell kaufft .½. lb. <lb/>Teffel Laden. p.
@@ -12840,13 +12853,13 @@
                 <pb n="501" facs="IMG.501.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Jegergelt">
+            <div ana="bk:rubric #Ausgaben_Jegergelt">
                 <head>Jegergelt</head>
                 <ab ana="bk:entry">Item das Jegergelt. <lb/><measure ana="bk:money" quantity="17"
                         unitRef="#f">.17. f.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Steur">
+            <div ana="bk:rubric #Ausgaben_Steur">
                 <head>Steur</head>
                 <ab ana="bk:entry">Item Osterreichische Steur. geben. <lb/><measure ana="bk:money"
                         quantity="33" unitRef="#f">.33. f.</measure>
@@ -12856,12 +12869,12 @@
                 <pb n="502" facs="IMG.502.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Cantoreygelt">
+            <div ana="bk:rubric #Ausgaben_Cantoreygelt">
                 <head>Cantorey<lb break="no"/>gelt.</head>
                 <ab ana="bk:entry">Item das Cantoreygelt. <lb/><measure ana="bk:money"
                         quantity="45" unitRef="#f">.45. f.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_GedinngunndOpffergelt">
+            <div ana="bk:rubric #Ausgaben_GedinngunndOpffergelt">
                 <head>Gedinng <lb/>unnd Opffergelt</head>
                 <ab ana="bk:entry">Item uf geding, unnd Opffergelt geben. <lb/><measure
                         ana="bk:money" quantity="11" unitRef="#f">.11. f.</measure>
@@ -12870,14 +12883,14 @@
                 <pb n="503" facs="IMG.503.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Besoldung">
+            <div ana="bk:rubric #Ausgaben_Besoldung">
                 <head>Besoldung</head>
                 <ab ana="bk:entry">Item uf der Dienner Besoldung geben. <lb/><measure
                         ana="bk:money" quantity="227" unitRef="#f">.227. f.</measure>
                     <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure>
                     <measure ana="bk:money" quantity="5" unitRef="#d">5. d.</measure></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Potenlon">
+            <div ana="bk:rubric #Ausgaben_Potenlon">
                 <head>Potenlon</head>
                 <ab ana="bk:entry">Item uf aintzige Potenlon geben. <lb/><measure ana="bk:money"
                         quantity="16" unitRef="#f">.16. f.</measure>
@@ -12886,7 +12899,7 @@
                 <pb n="504" facs="IMG.504.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Eerung">
+            <div ana="bk:rubric #Ausgaben_Eerung">
                 <head>Eerung.</head>
                 <ab ana="bk:entry">Item uf Hoffierer, unnd Spilleüth. <lb/><measure ana="bk:money"
                         quantity="3" unitRef="#f">.3. f.</measure>
@@ -12904,7 +12917,7 @@
                 <pb n="505" facs="IMG.505.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_Zerung">
+            <div ana="bk:rubric #Ausgaben_Zerung">
                 <head>Zerung</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-02-23">.23.
                         Februarii</date> zu <placeName ana="bk:where" ref="#ort_0334"
@@ -13114,7 +13127,7 @@
                 <pb n="515" facs="IMG.515.jpg"/>
                 <fw type="year"><date ana="bk:when" when="1560">Anno 1560</date></fw>
             </div>
-            <div ana="bk:rubrik #Ausgaben_GemeineAusgab">
+            <div ana="bk:rubric #Ausgaben_GemeineAusgab">
                 <head>Gemeine <lb/>Ausgab.</head>
                 <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-02-23">.23.
                         Februarii</date> umb .2. Lot Zi<lb break="no"/>nober geben. <lb/><measure
@@ -13402,7 +13415,7 @@
                         <measure ana="bk:money" quantity="5" unitRef="#s">5. s.</measure>
                         <measure ana="bk:money" quantity="7" unitRef="#d">7. d.</measure></fw></ab>
             </div>
-            <div ana="bk:rubrik #Ausgaben_UfArbeiter">
+            <div ana="bk:rubric #Ausgaben_UfArbeiter">
                 <head>Uf Arbeiter</head>
                 <ab ana="bk:entry">Item den Arbeitern im Prein, hannff, hopffen, <lb/>Kraut, unnd
                     ruben. <lb/><measure ana="bk:money" quantity="7" unitRef="#f">.7. f.</measure>
