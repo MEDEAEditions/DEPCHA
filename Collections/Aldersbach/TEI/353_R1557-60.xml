@@ -1,0 +1,1024 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BayHStA_KAAA353_R1557-60</title>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Institut für Digitale Geisteswissenschaften</publisher>
+            <idno type="PID">o:depcha.aldersbach.100</idno>
+            <ref type="context" target="context:depcha.aldersbach"/>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Bayerisches Staatsarchiv in München</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+               <p>Analytical descriptors are considered to represent concepts from the DEPCHA
+                  bookkeeping ontology and can be extended to respective URIs.</p>
+            </prefixDef>
+            <prefixDef ident="depcha" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="https://gams.uni-graz.at/o:depcha.ontology#$1">
+               <p>Analytical descriptors are considered to represent concepts from the
+                  project-specific DEPCHA ontology and can be extended to respective URIs.</p>
+            </prefixDef>
+            <prefixDef ident="huc" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="https://gams.uni-graz.at/o:depcha.huc#$1">
+               <p>Analytical descriptors are considered to represent concepts from the historical
+                  units and currencies ontology and can be extended to respective URIs.</p>
+            </prefixDef>
+            <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="http://www.wikidata.org/entity/$1">
+               <p><ref target="https://www.wikidata.org/wiki/Help:Namespaces"/></p>
+            </prefixDef>
+         </listPrefixDef>
+         <unitDecl>
+            <unitDef type="currency" xml:id="f" ana="depcha:mainCurrency">
+               <!--Vorerst auf main currency gesetzt-->
+               <label xml:lang="de">Gulden</label>
+               <label xml:lang="la">Florin</label>
+               <label type="abbr">f</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="kr">
+               <label xml:lang="de">Kreuzer</label>
+               <label type="abbr">kr</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="d">
+               <label xml:lang="de">Pfennig</label>
+               <label xml:lang="la">Denarius</label>
+               <label type="abbr">d</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="s">
+               <label xml:lang="de">Schilling</label>
+               <label type="abbr">s</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="hr">
+               <label xml:lang="de">Heller</label>
+               <label type="abbr">hr</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="lbd">
+               <label xml:lang="de">Pfund Pfennige</label>
+               <label xml:lang="la">Libra Denarum</label>
+               <label type="abbr">lbd</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="sd">
+               <label xml:lang="de">Schilling Pfennige</label>
+               <label type="abbr">sd</label>
+            </unitDef>
+            <unitDef type="weight" xml:id="schaff">
+               <label xml:lang="de">Schaff</label>
+            </unitDef>
+            <unitDef type="weight" xml:id="landauermaß">
+               <label xml:lang="de">Landauer Maß</label>
+            </unitDef>
+            <unitDef type="weight" xml:id="lot">
+               <label xml:lang="de">Lot</label>
+            </unitDef>
+            <unitDef type="volume" xml:id="kibel">
+               <label xml:lang="de">Kübel</label>
+            </unitDef>
+            <unitDef type="volume" xml:id="eimer">
+               <!--gleiche wie Kübel oder nicht?-->
+               <label xml:lang="de">Eimer</label>
+            </unitDef>
+            <unitDef type="volume" xml:id="fass">
+               <label xml:lang="de">Fass</label>
+            </unitDef>
+            <unitDef type="time" xml:id="tag">
+               <label xml:lang="de">Tag</label>
+            </unitDef>
+            <unitDef type="time" xml:id="woche">
+               <label xml:lang="de">Woche</label>
+            </unitDef>
+            <unitDef type="capacity" xml:id="seych">
+               <!--keine Ahnung, ob capacity hier richtig ist-->
+               <label xml:lang="de">Seych</label>
+            </unitDef>
+         </unitDecl>
+         <classDecl>
+            <taxonomy ana="bk:rubrics">
+               <desc>Rubriken des Rechnungsbuchs BayHStA_KAAA353_R1557-60 des Klosters <name
+                     ana="depcha:accountHolder" xml:id="aldersbach">Aldersbach</name></desc>
+               <category ana="bk:from" xml:id="income">
+                  <catDesc>
+                     <gloss>Einnahmen</gloss>
+                  </catDesc>
+                  <category xml:id="Einnahmen_EinnemenumbverkaufftGetreidabdemCasten">
+                     <catDesc>
+                        <gloss>Einnahmen_EinnemenumbverkaufftGetreidabdemCasten</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="Einnahmen_EinnemenumbOchsen">
+                     <catDesc>
+                        <gloss>Einnahmen_EinnemenumbOchsen</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="Einnahmen_EinnemenumbSchwein">
+                     <catDesc>
+                        <gloss>Einnahmen_EinnemenumbSchwein</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="Einnahmen_EinnemenumbzustänndTodfellunndLeibgedinng">
+                     <catDesc>
+                        <gloss>Einnahmen_EinnemenumbzustänndTodfellunndLeibgedinng</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="Einnahmen_EinnemenumbSaltz">
+                     <catDesc>
+                        <gloss>Einnahmen_EinnemenumbSaltz</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="Einnahmen_Einnemenumbangeschlagengetreid">
+                     <catDesc>
+                        <gloss>Einnahmen_Einnemenumbangeschlagengetreid</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="Einnahmen_Einnemenumbaintzigausgegebenwein">
+                     <catDesc>
+                        <gloss>Einnahmen_Einnemenumbaintzigausgegebenwein</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="Einnahmen_EinnemenumbausgeschennckteweininderTaffern">
+                     <catDesc>
+                        <gloss>Einnahmen_EinnemenumbausgeschennckteweininderTaffern</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="Einnahmen_EinnemenumbPier">
+                     <catDesc>
+                        <gloss>Einnahmen_EinnemenumbPier</gloss>
+                     </catDesc>
+                  </category>
+               </category>
+               <category ana="bk:to" xml:id="expense">
+                  <catDesc>
+                     <gloss>Ausgaben</gloss>
+                  </catDesc>
+                  <category xml:id="Ausgaben_Ziegler">
+                     <catDesc>
+                        <gloss>Ausgaben_Ziegler</gloss>
+                     </catDesc>
+                  </category>
+               </category>
+            </taxonomy>
+            <taxonomy ana="depcha:index">
+               <desc>Liste der Waren des Rechnungsbuchs BayHStA_KAAA353_R1557-60 des Klosters
+                  Aldersbach</desc>
+               <gloss>Commodities</gloss>
+               <category xml:id="work">
+                  <catDesc>
+                     <term xml:lang="de">Arbeit</term>
+                  </catDesc>
+               </category>
+               <category xml:id="pfanne">
+                  <catDesc>
+                     <term xml:lang="de">Pfanne</term>
+                  </catDesc>
+               </category>
+               <category xml:id="tiriack">
+                  <catDesc>
+                     <term xml:lang="de">Tiriack</term>
+                  </catDesc>
+               </category>
+               <category xml:id="büchse">
+                  <catDesc>
+                     <term xml:lang="de">Büchse</term>
+                  </catDesc>
+               </category>
+               <category xml:id="wein">
+                  <catDesc>
+                     <term xml:lang="de">Wein</term>
+                  </catDesc>
+               </category>
+               <category xml:id="bier">
+                  <catDesc>
+                     <term xml:lang="de">Bier</term>
+                  </catDesc>
+               </category>
+               <category xml:id="salz">
+                  <catDesc>
+                     <term xml:lang="de">Salz</term>
+                  </catDesc>
+               </category>
+               <category xml:id="getreide">
+                  <catDesc>
+                     <term xml:lang="de">Getreide</term>
+                  </catDesc>
+                  <category xml:id="weitzen">
+                     <catDesc>
+                        <term xml:lang="de">Weitzen</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="hafer">
+                     <catDesc>
+                        <term xml:lang="de">Hafer</term>
+                     </catDesc>
+                  </category>
+               </category>
+               <category xml:id="zinober">
+                  <catDesc>
+                     <term xml:lang="de">Zinober</term>
+                  </catDesc>
+               </category>
+               <category xml:id="animal">
+                  <catDesc>
+                     <term xml:lang="de">Tier</term>
+                  </catDesc>
+                  <category xml:id="ochse">
+                     <catDesc>
+                        <term xml:lang="de">Ochse</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="schwein">
+                     <catDesc>
+                        <term xml:lang="de">Schwein</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="fisch">
+                     <catDesc>
+                        <term xml:lang="de">Fisch</term>
+                     </catDesc>
+                     <category xml:id="krebs">
+                        <catDesc>
+                           <term xml:lang="de">Krebs</term>
+                        </catDesc>
+                     </category>
+                  </category>
+               </category>
+            </taxonomy>
+         </classDecl>
+      </encodingDesc>
+   </teiHeader>
+   <standOff>
+      <listPerson ana="depcha:index">
+         <head>Prosopography</head>
+         <desc>Personen, welche im Rechnungsbuch BayHStA_KAAA353_R1557-60 des Klosters Aldersbach, genannt sind.</desc>
+         <person xml:id="zinnsperger">
+            <persName>
+               <name>Zinnsperger zu Braunau</name>
+            </persName>
+         </person>
+         <person xml:id="wirtperndorff">
+            <persName>
+               <name>Wirt zu Perndorff</name>
+            </persName>
+            <occupation>
+               <roleName>Wirt</roleName>
+            </occupation>
+         </person>
+         <person xml:id="wirtpaumgarten">
+            <persName>
+               <name>Wirt zu Paumgarten</name>
+            </persName>
+            <occupation>
+               <roleName>Wirt</roleName>
+            </occupation>
+         </person>
+         <person xml:id="wirtliessing">
+            <persName>
+               <name>Wirt von Liessing</name>
+            </persName>
+            <occupation>
+               <roleName>Wirt</roleName>
+            </occupation>
+         </person>
+         <person xml:id="brauer">
+            <persName>
+               <name>Preuer</name>
+            </persName>
+            <occupation>
+               <roleName>Bierbrauer</roleName>
+            </occupation>
+         </person>
+         <person xml:id="martinöder">
+            <persName>
+               <name>Martin Öder</name>
+            </persName>
+         </person>
+         <person xml:id="conradzelhuber">
+            <persName>
+               <name>Conrad Zelhuber</name>
+            </persName>
+         </person>
+         <person xml:id="georgsechßl">
+            <persName>
+               <name>Georg Sechßl</name>
+            </persName>
+         </person>
+         <person xml:id="jacobgerstl">
+            <persName>
+               <name>Jacob Gerstl</name>
+            </persName>
+         </person>
+         <person xml:id="pranndhubergopping">
+            <persName>
+               <name>Pranndhuber zu Gopping</name>
+            </persName>
+         </person>
+         <person xml:id="hannsenfrund">
+            <persName>
+               <name>Hannsen Frunnd</name>
+            </persName>
+         </person>
+         <person xml:id="haseaitenpach">
+            <persName>
+               <name>Hase von Aitenpach</name>
+            </persName>
+         </person>
+         <person xml:id="vischerschönhering">
+            <persName>
+               <name>Fischer von Schönhering</name>
+            </persName>
+            <occupation>
+               <roleName>Fischer</roleName>
+            </occupation>
+         </person>
+         <person xml:id="vischergalckweiß">
+            <persName>
+               <name>Fischer von Galckweiß</name>
+            </persName>
+            <occupation>
+               <roleName>Fischer</roleName>
+            </occupation>
+         </person>
+         <person xml:id="hofingermetzger">
+            <persName>
+               <name>Hofinger, Metzger zu Braunau</name>
+            </persName>
+            <occupation>
+               <roleName>Metzger</roleName>
+            </occupation>
+         </person>
+         <person xml:id="Ziegelschlager">
+            <persName>
+               <name>Ziegelschlager</name>
+            </persName>
+            <occupation>
+               <roleName>Ziegler</roleName>
+            </occupation>
+         </person>
+         <personGrp xml:id="pecken">
+            <name>Pecken</name>
+         </personGrp>
+         <personGrp xml:id="tagwerker">
+            <name>Tagwerker</name>
+         </personGrp>
+      </listPerson>
+      <listPlace ana="depcha:index">
+         <desc>Orte, welche im Rechnungsbuch BayHStA_KAAA353_R1557-60 des Klosters Aldersbach, genannt sind.</desc>
+         <place xml:id="ort_0011">
+            <placeName>Aidenbach</placeName>
+            <settlement>Aidenbach</settlement>
+            <geogName><geo>48.5682482,13.0854639</geo></geogName>
+         </place>
+         <place xml:id="ort_0046">
+            <placeName>Baumgarten</placeName>
+            <settlement>Dietersburg (Baumgarten)</settlement>
+            <geogName><geo>48.4951981,12.991355</geo></geogName>
+         </place>
+         <place xml:id="ort_0553">
+            <placeName xml:lang="de">Braunau</placeName>
+            <settlement>Braunau</settlement>
+         </place>
+         <place xml:id="ort_0126">
+            <placeName>Galgweis</placeName>
+            <settlement>Osterhofen</settlement>
+            <geogName><geo>48.612789012267285,13.006468613557479</geo></geogName>
+         </place>
+         <place xml:id="ort_0524">
+            <placeName>Landshut</placeName>
+            <settlement>Landshut</settlement>
+         </place>
+         <place xml:id="ort_0554">
+            <placeName xml:lang="de">Perndorf</placeName>
+         </place>
+         <place xml:id="ort_0405">
+            <placeName>Schönerting</placeName>
+            <settlement>Vilshofen (Aunkirchen)</settlement>
+            <geogName><geo>48.60725,13.11258</geo></geogName>
+         </place>
+         <place xml:id="ort_0468">
+            <placeName>Vilshofen</placeName>
+            <settlement>Vilshofen</settlement>
+            <geogName><geo>48.63634, 13.18705</geo></geogName>
+         </place>
+      </listPlace>
+   </standOff>
+   <facsimile>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///1.jpg" xml:id="IMG.1">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///2.jpg" xml:id="IMG.2">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///3.jpg" xml:id="IMG.3">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///4.jpg" xml:id="IMG.4">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///5.jpg" xml:id="IMG.5">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///6.jpg" xml:id="IMG.6">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///7.jpg" xml:id="IMG.7">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///8.jpg" xml:id="IMG.8">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///9.jpg" xml:id="IMG.9">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///10.jpg" xml:id="IMG.10">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///11.jpg" xml:id="IMG.11">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///12.jpg" xml:id="IMG.12">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///13.jpg" xml:id="IMG.13">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///14.jpg" xml:id="IMG.14">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///15.jpg" xml:id="IMG.15">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///76.jpg" xml:id="IMG.76">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///478.jpg" xml:id="IMG.478">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+      <surface>
+         <graphic mimeType="image/jpeg" url="file:///515.jpg" xml:id="IMG.515">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+      </surface>
+   </facsimile>
+   <text>
+      <body>
+         <div ana="bk:rubric" corresp="#Einnahmen_EinnemenumbverkaufftGetreidabdemCasten">
+            <pb n="1" facs="IMG.1.jpg"/>
+            <head>Einnemen umb <lb/>verkaufft <measure ana="bk:commodity" commodity="getreide"
+                  >Getreid</measure> ab dem Casten</head>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-04-29">.29. Aprilis</date>,
+               dem <name ana="bk:from bk:individual" ref="#zinnsperger">Zinnsperger</name> zu
+                  <placeName ana="bk:where" ref="#ort_0553">Braunau</placeName>
+               <measure ana="bk:commodity" quantity="60" commodity="weitzen" unitRef="#schaff">.60.
+                  <lb/>Schaff waitz zu <measure ana="bk:price" quantity="6" unitRef="#f">.6.
+                     f.</measure></measure>
+               <!--Depcha verschachtelt bk:price in bk:commodity die measures, das machts nicht einfacher...-->
+               geben. <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="360"
+                     unitRef="#f">.360. f.</measure></fw></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-05-05">.5. Maii</date> dem
+                  <name ana="bk:from bk:individual" ref="#wirtperndorff">Wiert</name> von <placeName
+                  ana="bk:where" ref="#ort_0554">Perndorff</placeName>
+               <measure ana="bk:commodity" commodity="weitzen" quantity="5" unitRef="#landauermaß"
+                  >.5. Schaff <lb/>waitz Lanndauer Maß geben Je eines p. <measure ana="bk:price"
+                     quantity="4" unitRef="#f">4. f.</measure>
+                  <measure ana="bk:price" quantity="3" unitRef="#s">3. s.</measure>
+                  <measure ana="bk:price" quantity="15" unitRef="#d">15. d.</measure></measure>
+               <!--Hier wieder Verschachtelung mit mehreren price-values, wird noch öfter vorkommen-->
+               <lb/><fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="22" unitRef="#f"
+                     >.22. f.</measure>
+                  <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
+                  <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></fw></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-05-28">.28. Maii</date>,
+                  <name ana="bk:from bk:individual" ref="#martinöder">Martin Öder</name> von
+                  <placeName ana="bk:where" ref="#ort_0011">Aitenpach</placeName> geben
+                  <lb/><measure ana="bk:commodity" quantity="4" commodity="weitzen"
+                  unitRef="#schaff">.4. Schaff waitz p. <measure ana="bk:price" quantity="4.5"
+                     unitRef="#f">4 ½. f.</measure></measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="18" unitRef="#f">.18.
+                     f.</measure></fw></ab>
+            <ab ana="bk:entry">Item mer dem <name ana="bk:from bk:individual" ref="#martinöder"
+                  >Öder</name> geben <measure ana="bk:commodity" quantity="4" commodity="weitzen"
+                  unitRef="#schaff"
+                  ><!--Weizen hier nicht genannt, aber implizit durch vorhergehenden Eintrag, siehe TK Seite 1, unten -->.4.
+                  Schaff p. <lb/><measure ana="bk:price" quantity="18" unitRef="#f">.18.
+                     f.</measure></measure></ab>
+            <pb n="2" facs="IMG.2.jpg"/>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-08-25">.25. Augusti</date>
+               <name ana="bk:from bk:group" ref="#pecken">zweyen Pecken</name> zu <placeName
+                  ana="bk:where" ref="#ort_0468">Vilßhoven</placeName> geben <lb/><measure
+                  ana="bk:commodity" quantity="30" commodity="weitzen" unitRef="#schaff">.30. Schaff
+                  waitz zu <measure ana="bk:price" quantity="4.5" unitRef="#f">.4 ½.
+                  f.</measure></measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="135" unitRef="#f"
+                     >.135. f.</measure></fw></ab>
+            <ab ana="bk:entry">Item dem <name ana="bk:from bk:individual" ref="#wirtpaumgarten"
+                  >Wiert</name> zu <placeName ana="bk:where" ref="#ort_0046">Paumgarten</placeName>
+               geben <measure ana="bk:commodity" commodity="weitzen" quantity="4" unitRef="#schaff"
+                  >.4. Schaff waitz. p. <lb/><measure ana="bk:price" quantity="18" unitRef="#f">.18.
+                     f.</measure></measure></ab>
+            <ab ana="bk:entry">Item dem <name ana="bk:from bk:individual" ref="#haseaitenpach"
+                  >Hasen</name> von <placeName ana="bk:where" ref="#ort_0011">Aitenpach</placeName>
+               geben <measure ana="bk:commodity" quantity="4" commodity="weitzen" unitRef="#schaff"
+                  >.4. Schaff waitz <lb/>zu <measure ana="bk:price" quantity="4.5" unitRef="#f">.4
+                     ½. f.</measure></measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="18" unitRef="#f">.18.
+                     f.</measure></fw></ab>
+            <ab ana="bk:entry">Item <name ana="bk:from bk:individual" ref="#martinöder">Martin
+                  Öder</name> zu <placeName ana="bk:where" ref="#ort_0011">Aitenpach</placeName>
+               geben <measure ana="bk:commodity" quantity="5" unitRef="#schaff" commodity="weitzen">
+                  <!--auch hier wieder commodity nicht im Text genannt, ich gehe davon aus, dass es Weitzen ist-->.5.
+                  Schaff. eines <lb/>p. <measure ana="bk:price" quantity="4.5" unitRef="#f">4 ½.
+                     f.</measure></measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="22" unitRef="#f">.22.
+                     f.</measure>
+                  <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
+                  <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></fw></ab>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+            <ab ana="bk:entry">Item dem <name ana="bk:from bk:individual" ref="#wirtpaumgarten"
+                  >Wiert</name> zu <placeName ana="bk:where" ref="#ort_0046">Paungarten</placeName>
+               geben <measure ana="bk:commodity" quantity="5" commodity="weitzen" unitRef="#schaff"
+                  >.5. Schaff waitz <lb/>zu <measure ana="bk:price" quantity="4.5" unitRef="#f">.4
+                     ½. f.</measure></measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="22" unitRef="#f">.22.
+                     f.</measure>
+                  <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
+                  <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></fw></ab>
+            <ab ana="bk:entry">Item eingenomen umb eintzige Kibelweiß, so den <lb/><name
+                  ana="bk:from bk:group" ref="#tagwerker">Tagwerckern</name>, unnd anndern geben <!--(Wie) soll ich "unnd anndern" kodieren?-->
+               <lb/><measure ana="bk:money" quantity="13" unitRef="#f">.13. f.</measure>
+               <measure ana="bk:money" quantity="5" unitRef="#s">5. s.</measure>
+               <measure ana="bk:money" quantity="19" unitRef="#d">19. d.</measure>
+               <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
+         </div>
+         <div ana="bk:rubric" corresp="#Einnahmen_Einnemenumbangeschlagengetreid">
+            <head>Einnemen umb <lb/>angeschlagen <measure ana="bk:commodity" commodity="getreide"
+                  >getreid</measure>.</head>
+            <ab ana="bk:entry">Item <name ana="bk:from bk:individual" ref="#jacobgerstl">Jacob
+                  Gerstl</name> zu <placeName ana="bk:where" ref="#ort_0151">Gumperting</placeName>
+               <measure ana="bk:commodity" commodity="weitzen" quantity="4" unitRef="#schaff">korn
+                  .4. Schaff <lb/>waitz .4. Schaff. p. <lb/><measure ana="bk:price" quantity="20"
+                     unitRef="#f">.20. f.</measure></measure></ab>
+            <!--Schwieriger Fall: Weil nicht 1 Einheit per Preis sondern alle 4 Schaff per Preis-->
+            <pb n="3" facs="IMG.3.jpg"/>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+            <ab ana="bk:entry">Item <name ana="bk:from bk:individual" ref="#pranndhubergopping"
+                  >Pranndhuber</name> zu <placeName ana="bk:where" ref="#ort_0138"
+                  >Gopping</placeName>
+               <measure ana="bk:commodity" quantity="6" commodity="weitzen" unitRef="#kibel">korn
+                  .6. kibel waitz</measure>
+               <lb/><measure ana="bk:commodity" quantity="1" commodity="hafer" unitRef="#schaff">.1.
+                  Schaff.</measure>
+               <measure ana="bk:commodity" quantity="12" commodity="hafer" unitRef="#kibel">12 kibel
+                  Habern</measure>.
+               <!--Schwieriger Fall: Wie soll ich das oben kodieren? mehrere measures mit bk:commodity?-->
+               1 Schaff .6. kibel p. <!--Schwieriger Fall: Wie kodieren?? Bezieht sich der Preis außerdem auf Weitzen und Hafer oder nur Hafer? Und wie soll man das verschachteln? -->
+               <lb/><measure ana="bk:price" quantity="12" unitRef="#f">.12. f.</measure>
+               <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
+               <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></ab>
+            <ab ana="bk:entry">Item <name ana="bk:from bk:individual" ref="#georgsechßl">Geörg
+                  Sechßl</name> zu <placeName ana="bk:where" ref="#ort_0138">Gopping</placeName>
+               <measure ana="bk:commmodity" quantity="1" commodity="weitzen" unitRef="#schaff">waitz
+                  .1. Schaff <lb/>p. <lb/><measure ana="bk:price" quantity="4" unitRef="#f">.4.
+                     f.</measure>
+                  <measure ana="bk:price" quantity="3" unitRef="#s">3. s.</measure>
+                  <measure ana="bk:price" quantity="15" unitRef="#d">15. d.</measure></measure></ab>
+            <ab ana="bk:entry">Item <name ana="bk:from bk:individual" ref="#conradzelhuber">Conrad
+                  Zelhuber</name>
+               <measure ana="bk:commodity" quantity="5.5" commodity="weitzen" unitRef="#schaff">korn
+                  .5 1/2. Schaff waitz <lb/>.1. Schaff p. <lb/><measure ana="bk:price" quantity="24"
+                     unitRef="#f">.24. f.</measure></measure></ab>
+            <pb n="4" facs="IMG.4.jpg"/>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+         </div>
+
+         <div ana="bk:rubric" corresp="#Einnahmen_EinnemenumbausgeschennckteweininderTaffern">
+            <head>Einnemen umb <lb/>ausgeschennckte <measure ana="bk:commodity" commodity="wein"
+                  >wein</measure> in der <lb/>Taffern.</head>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-02-12">.12. Februarii</date>
+               hat <name ana="bk:from bk:individual">wiert</name><!--nicht klar, welcher Wirt-->
+               bezalt <measure ana="bk:commodity" quantity="17.25" commodity="wein" unitRef="#eimer"
+                  >.17 1/4.
+                  <!--Schwieriger Fall: Wein wieder implizit und im <head>--><lb/>Emer<!--Eimer hier gleiche Einheit wie Kübel? Whs nicht-->zu
+                     <measure ana="bk:price" quantity="2" unitRef="#f">.2. f.</measure></measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="34" unitRef="#f">.34.
+                     f.</measure>
+                  <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
+                  <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></fw></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-02-28">.28. Februarii</date>
+               bezalt <measure ana="bk:commodity" quantity="17.25" commodity="wein" unitRef="#eimer"
+                  >.17 1/4. Emer<!--Wein wieder implizit-->
+                  <lb/>p. <measure ana="bk:price" quantity="2" unitRef="#f">2.
+                  f.</measure></measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="34" unitRef="#f">.34.
+                     f.</measure>
+                  <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
+                  <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></fw></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-03-24">.24. Martii</date>,
+               hat <name ana="bk:from bk:to">wiert</name> bezalt <measure ana="bk:commodity"
+                  quantity="16" commodity="wein" unitRef="#eimer">.16. Emer <lb/>wein zu <measure
+                     ana="bk:price" quantity="2" unitRef="#f">.2. f.</measure></measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="32" unitRef="#f">.32.
+                     f.</measure></fw></ab>
+            <pb n="5" facs="IMG.5.jpg"/>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-04-25">.25. Aprilis</date>
+               hat <name ana="bk:from bk:individual">wiert</name> bezalt <measure ana="bk:commodity"
+                  quantity="3.25" commodity="wein" unitRef="#eimer">3 1/4. Emer<!--Wein wieder implizit-->
+                  <lb/>zu <measure ana="bk:price" quantity="2" unitRef="#f">.2.
+                  f.</measure></measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="6" unitRef="#f">.6.
+                     f.</measure>
+                  <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
+                  <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></fw></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-05-01">ersten Maii</date>
+               <measure ana="bk:commodity" quantity="6" commodity="wein" unitRef="#eimer">.6.
+                  Emer.<!--Wein und Wirt wieder implizit--> p. <measure ana="bk:price" quantity="2"
+                     unitRef="#f">2. f.</measure></measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="12" unitRef="#f">.12.
+                     f.</measure></fw></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-05-16">.16. Maii</date>
+               <measure ana="bk:commodity" quantity="8.5" commodity="wein" unitRef="#eimer">.8 ½.
+                  Emer.</measure><!--Wein und Wirt wieder implizit-->
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="17" unitRef="#f">.17.
+                     f.</measure></fw></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-05-31">Letzten Maii</date>
+               <measure ana="bk:commodity" quantity="4.3" commodity="wein" unitRef="#eimer">.4 1/3.
+                  Emer</measure><!--Wein und Wirt wieder implizit-->
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="9" unitRef="#f">.9.
+                     f.</measure>
+                  <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
+                  <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></fw></ab>
+            <pb n="6" facs="IMG.6.jpg"/>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-06-13">.13. Junii</date> hat
+                  <name ana="bk:from bk:individual">Wiert</name> bezalt .6. Emer.
+               <!--Wein wieder implizit--><lb/>p. <lb/><measure ana="bk:price" quantity="12"
+                  unitRef="#f">.12. f.</measure></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-06-24">.24. Junii</date> mer
+                  <measure ana="bk:commodity" quantity="6" commodity="wein" unitRef="#eimer">.6.
+                  Emer</measure> bezalt.<!--Wein und Wirt wieder implizit-->
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="12" unitRef="#f">.12.
+                     f.</measure></fw></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-06-30">Letzten Junii</date>
+               <measure ana="bk:commodity" quantity="7" commodity="wein" unitRef="#eimer">.7.
+                  Emer<!--Wein und Wirt wieder implizit--> einen p. <measure ana="bk:price"
+                     quantity="2" unitRef="#f">2. f.</measure></measure>
+               <lb/><fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="14" unitRef="#f"
+                     >.14. f.</measure></fw></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-07-13">.13. Julii</date> hat
+                  <name ana="bk:from bk:individual">wiert</name> bezalt <measure ana="bk:commodity"
+                  quantity="17" commodity="wein" unitRef="#eimer">.17. Emer<!--Wein wieder implizit-->
+                  <lb/>p. <measure ana="bk:price" quantity="2" unitRef="#f">2.
+                  f.</measure></measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="34" unitRef="#f">.34.
+                     f.</measure></fw></ab>
+            <pb n="7" facs="IMG.7.jpg"/>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-07-24">.24. Julii</date>
+               <measure ana="bk:commodity" quantity="14.5" commodity="wein" unitRef="#eimer">.14 ½.
+                  Emer</measure>. <fw ana="bk:total">thut. <lb/><measure ana="bk:money"
+                     quantity="29" unitRef="#f">.29. f.</measure></fw></ab>
+            <!--...-->
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-11-25">.25. Novembris</date>
+               vom <name ana="bk:from bk:individual">wirt</name> umb <measure ana="bk:commodity"
+                  quantity="1" commodity="wein" unitRef="#fass">ein faß <lb/>wein</measure>
+               eingenommen. <lb/><measure ana="bk:money" quantity="25" unitRef="#f">.25.
+                  f.</measure>
+               <measure ana="bk:money" quantity="5" unitRef="#s">5. s.</measure>
+               <measure ana="bk:money" quantity="13" unitRef="#d">13. d.</measure>
+               <measure ana="bk:money" quantity="1" unitRef="#hr">1. hr.</measure></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-12-11">.11. Decembris</date>
+               <measure ana="bk:commodity" quantity="4.5" commodity="wein" unitRef="#eimer">.4 ¾.
+                  Emer<!--Wein und Wirt wieder implizit--> zu <measure ana="bk:price" quantity="2"
+                     unitRef="#f">.2. f.</measure></measure>
+               <lb/><fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="9" unitRef="#f"
+                     >.9. f.</measure>
+                  <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
+                  <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></fw></ab>
+            <pb n="8" facs="IMG.8.jpg"/>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-12-26">.26. Decembris</date>
+               <measure ana="bk:commodity" quantity="6.75" commodity="wein" unitRef="#eimer">.6 ¾.
+                  Emer<!--Wein und Wirt wieder implizit--> zu <measure ana="bk:price" quantity="2"
+                     unitRef="#f">.2. f.</measure></measure>
+               <lb/><fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="13" unitRef="#f"
+                     >.13. f.</measure>
+                  <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
+                  <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></fw></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-01-07">.7. Januarii</date>
+               hat <name ana="bk:from bk:individual">wiert</name> bezalt <measure ana="bk:commodity"
+                  quantity="1" commodity="wein" unitRef="#fass">ein feßl <lb/>wein lauttern abzug.
+                  <!--ist "lauttern abzug" irgendwie zu kodieren?--> p. <lb/><measure ana="bk:price"
+                     quantity="14" unitRef="#f">.14. f.</measure>
+                  <measure ana="bk:money" quantity="24" unitRef="#d">24 d.</measure></measure></ab>
+         </div>
+
+         <div ana="bk:rubric" corresp="#Einnahmen_Einnemenumbaintzigausgegebenwein">
+            <head>Einnemen umb <lb/>aintzig ausgegeben <measure ana="bk:commodity" commodity="wein"
+                  >wein</measure>.</head>
+            <ab ana="bk:entry">Item <measure ana="bk:commodity" commodity="wein"
+               >weingelt</measure><!--Wie kodieren?--> vom <name ana="bk:from bk:individual"
+                  >Kelner</name><!--Kellner nicht näher definiert-->. <fw ana="bk:total">thut.
+                     <lb/><measure ana="bk:money" quantity="42" unitRef="#f">.42. f.</measure>
+                  <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure>
+                  <measure ana="bk:money" quantity="13" unitRef="#d">13. d.</measure></fw></ab>
+            <pb n="9" facs="IMG.9.jpg"/>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-06-16">.16. Junii</date> dem
+                  <name ana="bk:from bk:individual" ref="#wirtliessing">wiert</name> von <placeName
+                  ana="bk:where" ref="#ort_0268">Liessing</placeName> geben <lb/>.<measure
+                  ana="bk:commodity" quantity="40" commodity="wein" unitRef="#kanne">40. kanndl wein
+                  zu <measure ana="bk:price" quantity="14" unitRef="#d">.14. d.</measure></measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="2" unitRef="#f">.2.
+                     f.</measure>
+                  <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
+                  <measure ana="bk:money" quantity="20" unitRef="#d">20. d.</measure></fw></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-06-26">.26. Junii</date> dem
+                  <name ana="bk:from bk:individual" ref="#wirtliessing">wiert</name> von <placeName
+                  ana="bk:where" ref="#ort_0268">Liessing</placeName> mer <measure
+                  ana="bk:commodity" quantity="40" commodity="wein" unitRef="#kanne">40. <lb/>kanndl
+                  wein geben. p. <lb/><measure ana="bk:price" quantity="2" unitRef="#f">.2.
+                     f.</measure>
+                  <measure ana="bk:price" quantity="4" unitRef="#s">4. s.</measure>
+                  <measure ana="bk:price" quantity="20" unitRef="#d">20. d.</measure></measure></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-06-29">.29. Junii</date> dem
+                  <name ana="bk:from bk:individual" ref="#wirtliessing">Wiert</name> von <placeName
+                  ana="bk:where" ref="#ort_0268">Liessing</placeName>
+               <measure ana="bk:commodity" quantity="40" commodity="wein" unitRef="#kanne">.40.
+                  <lb/>kanndl Wein</measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="2" unitRef="#f">.2.
+                     f.</measure>
+                  <measure ana="bk:money" quantity="4" unitRef="#s">4 s.</measure>
+                  <measure ana="bk:money" quantity="20" unitRef="#d">20 d.</measure></fw></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-07-03">.3. Julii</date>
+               <name ana="bk:from bk:individual" ref="#wirtliessing">Wiert</name> von <placeName
+                  ana="bk:where" ref="#ort_0268">Liessing</placeName> bezalt. <lb/><measure
+                  ana="bk:commodity" quantity="18" commodity="wein" unitRef="#kanne">.18. kanndl
+                  Wein zu <measure ana="bk:price" quantity="14" unitRef="#d">.14.
+                  d.</measure></measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="1" unitRef="#f">.1.
+                     f.</measure>
+                  <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure>
+                  <measure ana="bk:money" quantity="12" unitRef="#d">12. d.</measure></fw></ab>
+            <pb n="10" facs="IMG.10.jpg"/>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-07-05">.5. Julii</date>
+               <name ana="bk:from bk:individual" ref="#wirtliessing">Wiert</name> von <placeName
+                  ana="bk:where" ref="#ort_0268">Liessing</placeName> bezalt <measure
+                  ana="bk:commodity" commodity="wein" quantity="18" unitRef="#kanne">.18.
+                  <lb/>Kanndl. p. <lb/><!--Wein implizit--><measure ana="bk:price" quantity="1"
+                     unitRef="#f">.1. f.</measure></measure>
+               <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure>
+               <measure ana="bk:money" quantity="12" unitRef="#d">12. d.</measure></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-07-08">.8. Julii</date>
+               <measure ana="bk:commodity" commodity="wein" quantity="18" unitRef="#kanne">.18.
+                  Kanndl. p. <lb/><!--Wein und Wirt implizit--><measure ana="bk:price" quantity="1"
+                     unitRef="#f">.1. f.</measure></measure>
+               <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure>
+               <measure ana="bk:money" quantity="12" unitRef="#d">12. d.</measure></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-07-10">.10. Julii</date> der
+                  <name ana="bk:from bk:individual" ref="#wirtliessing">Wiert</name> von <placeName
+                  ana="bk:where" ref="#ort_0268">Liessing</placeName> bezalt <lb/><measure
+                  ana="bk:commodity" quantity="40" commodity="wein" unitRef="#kanne">.40. Kanndl
+                  Wein p. <lb/><measure ana="bk:price" quantity="2" unitRef="#f">.2.
+                  f.</measure></measure>
+               <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
+               <measure ana="bk:money" quantity="20" unitRef="#d">20 d.</measure></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-07-13">.13. Julii</date> hat
+                  <name ana="bk:from bk:individual" ref="#wirtliessings">Wiert</name> von <placeName
+                  ana="bk:where" ref="#ort_0268">Liessing</placeName> bezalt <lb/>58. Kanndl Wein p.
+                  <lb/><measure ana="bk:price" quantity="3" unitRef="#f">.3. f.</measure>
+               <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure>
+               <measure ana="bk:money" quantity="2" unitRef="#d">2. d.</measure></ab>
+            <pb n="11" facs="IMG.11.jpg"/>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-07-22">.22. Julii</date> hat
+                  <name ana="bk:from bk:individual" ref="#wirtliessing">Wirt</name> zu <placeName
+                  ana="bk:where" ref="#ort_0268">Liessing</placeName> bezalt <lb/><measure
+                  ana="bk:commodity" quantity="18" commodity="wein" unitRef="#kanne">.18. Kanndl
+                  wein</measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="1" unitRef="#f">.1.
+                     f.</measure>
+                  <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure>
+                  <measure ana="bk:money" quantity="12" unitRef="#d">12. d.</measure></fw></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-07-25">.25. Julii</date>,
+                  <name ana="bk:from bk:individual" ref="#wirtliessing">Wirt</name> von <placeName
+                  ana="bk:where" ref="#ort_0268">Liessing</placeName>
+               <measure ana="bk:commodity" quantity="18" commodity="wein" unitRef="#kanne">.18.
+                  Kanndl <lb/>Wein</measure>. <fw ana="bk:total">thut. <lb/><measure ana="bk:money"
+                     quantity="1" unitRef="#f">.1. f.</measure>
+                  <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure>
+                  <measure ana="bk:money" quantity="12" unitRef="#d">12. d.</measure></fw></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-08-15">.15. Augusti</date>
+               <measure ana="bk:commodity" quantity="18" commodity="wein" unitRef="#kanne">.18.
+                  Kanndl Wein p. <lb/><!--Wirt implizit--><measure ana="bk:price" quantity="1"
+                     unitRef="#f">.1. f.</measure></measure>
+               <measure ana="bk:price" quantity="1" unitRef="#s">1. s.</measure>
+               <measure ana="bk:price" quantity="12" unitRef="#d">12. d.</measure></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-08-22">.22. Augusti</date>
+               dem <name ana="bk:from bk:individual" ref="#wirtliessing">Wiert</name> von <placeName
+                  ana="bk:where" ref="#ort_0268">Liessing</placeName>
+               <lb/><measure ana="bk:commodity" quantity="40" commodity="wein" unitRef="#kanne">.40.
+                  Kanndl Wein</measure> geben. <fw ana="bk:total">thut. <lb/><measure ana="bk:money"
+                     quantity="2" unitRef="#f">.2. f.</measure>
+                  <measure ana="bk:money" quantity="4" unitRef="#s">4. s.</measure>
+                  <measure ana="bk:money" quantity="20" unitRef="#d">20. d.</measure></fw></ab>
+            <pb n="12" facs="IMG.12.jpg"/>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-09-03">.3. 7bris</date> hat
+                  <name ana="bk:from bk:individual" ref="#wirtliessing">Wiert</name> zu <placeName
+                  ana="bk:where" ref="#ort_0268">Liessing</placeName> bezalt <lb/><measure
+                  ana="bk:commodity" quantity="94" commodity="wein" unitRef="#kanne">.94. Kanndl
+                  Wein p. <lb/><measure ana="bk:price" quantity="6" unitRef="#f">.6.
+                  f.</measure></measure>
+               <measure ana="bk:price" quantity="1" unitRef="#s">1. s.</measure>
+               <measure ana="bk:price" quantity="26" unitRef="#d">26. d.</measure></ab>
+         </div>
+
+         <div ana="bk:rubric" corresp="#Einnahmen_EinnemenumbPier">
+            <head>Einnemen <lb/>umb <measure ana="bk:commodity" commodity="bier"
+               >Pier</measure>.</head>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-05-17">.17. Maii</date> vom
+                  <name ana="bk:from bk:individual" ref="#brauer">Preuen</name> empfanngen.
+                  <lb/><measure ana="bk:money" quantity="2" unitRef="#f">.2. f.</measure><!--Schwieriger Fall: Wo soll ich commodity kodieren? Wird hier nicht genannt, nur im head-->
+               <measure ana="bk:money" quantity="8" unitRef="#d">8. d.</measure></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-10-27">.27. Octobris</date>
+               empfanngen. <!--Wo soll ich den Geldfluss kodieren?-->
+               <lb/><measure ana="bk:money" quantity="3" unitRef="#f">.3. f.</measure><!--Schwieriger Fall: Wo soll ich commodity kodieren? Wird hier nicht genannt, nur im head-->
+               <measure ana="bk:money" quantity="6" unitRef="#s">6. s.</measure>
+               <measure ana="bk:money" quantity="25" unitRef="#d">25. d.</measure></ab>
+            <pb n="13" facs="IMG.13.jpg"/>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+         </div>
+
+         <div ana="bk:rubric" corresp="#Einnahmen_EinnemenumbSaltz">
+            <head>Einnemen <lb/>umb <measure ana="bk:commodity" commodity="salz"
+               >Saltz</measure>.</head>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-04-26">.26. Aprilis</date> eingenommen.<!--Wo soll ich den Geldfluss kodieren?-->
+               <lb/><measure ana="bk:money" quantity="1" unitRef="#f">.1. f.</measure><!--Wieder wie oben: Wo soll ich commodity kodieren? Wird hier nicht genannt, nur im head-->
+               <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure>
+               <measure ana="bk:money" quantity="20" unitRef="#d">20. d.</measure></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-07-25">.25. Julii</date> für
+                  <measure ana="bk:commodity" commodity="salz">Saltz</measure>
+               <!--hier keine quantity und unit-->eingenommen. <lb/><measure ana="bk:money"
+                  quantity="1" unitRef="#f">.1. f.</measure>
+               <measure ana="bk:money" quantity="1" unitRef="#s">1. s.</measure>
+               <measure ana="bk:money" quantity="5" unitRef="#d">5. d.</measure></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-11-07">.7. Novembris</date>.
+                  <lb/><measure ana="bk:money" quantity="3" unitRef="#f">.3. f.</measure>
+               <measure ana="bk:money" quantity="5" unitRef="#s">5. s.</measure></ab>
+            <!--Geldfluss und Commodity sind implizit und können nirgends direkt kodiert werden-->
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-01-18">.18. Januarii</date>.
+                  <lb/><measure ana="bk:money" quantity="3" unitRef="#s">.3. s.</measure><!--Geldfluss und Commodity sind implizit und können nirgends direkt kodiert werden-->
+               <measure ana="bk:money" quantity="17" unitRef="#d">17. d.</measure></ab>
+            <pb n="14" facs="IMG.14.jpg"/>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+         </div>
+
+         <div ana="bk:rubric" corresp="#Einnahmen_EinnemenumbOchsen">
+            <head>Einnemen <lb/>umb <measure ana="bk:commodity" commodity="ochse"
+               >Ochsen</measure>.</head>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-11-28">.28. Novembris</date>
+               dem <name ana="bk:from bk:individual" ref="#hofingermetzger">Hofinger Metzger</name>
+               zu <placeName ana="bk:where" ref="#ort_0553">Braun<lb break="no"/>au</placeName>
+               <measure ana="bk:commodity" quantity="3" commodity="ochse">drey Lanndochsen geben
+                  <!--Zahl (drey) ausgeschrieben--> p. <lb/><measure ana="bk:price" quantity="35"
+                     unitRef="#f">.35. f.</measure>
+                  <measure ana="bk:price" quantity="3" unitRef="#s">3. s.</measure>
+                  <measure ana="bk:price" quantity="15" unitRef="#d">15. d.</measure></measure></ab>
+         </div>
+         <div ana="bk:rubric" corresp="#Einnahmen_EinnemenumbSchwein">
+            <head>Einnemen <lb/>umb <measure ana="bk:commodity" commodity="schwein"
+                  >Schwein</measure></head>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-08-25">.25. Augusti</date>
+               <measure ana="bk:commodity" quantity="7" commodity="schwein">.7. Schwein verkaufft p.
+                     <lb/><measure ana="bk:price" quantity="26" unitRef="#f">.26.
+                  f.</measure></measure></ab>
+            <!--Wie soll ich Geldfluss kodieren?-->
+            <ab ana="bk:entry">Item mer umb Schwein eingenommen. <lb/><measure ana="bk:money"
+                  quantity="11" unitRef="#f">.11. f.</measure><!--Wie soll ich Geldfluss kodieren?-->
+               <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
+               <measure ana="bk:money" quantity="10" unitRef="#d">10. d.</measure></ab>
+            <pb n="15" facs="IMG.15.jpg"/>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+         </div>
+
+         <div ana="bk:rubric" corresp="#Einnahmen_EinnemenumbzustänndTodfellunndLeibgedinng">
+            <head>Einnemen umb <lb/>zustännd, Todfell, unnd <lb/>Leibgedinng.</head>
+            <!--...-->
+            <ab ana="bk:entry">Item . <name ana="bk:from bk:individual">Paur zu Spitzmeising</name>.
+               zustannd. <lb/><measure ana="bk:money" quantity="4" unitRef="#lbd">.4. lb.
+                  d.</measure></ab>
+         </div>
+
+         <div ana="bk:rubric" corresp="#Ausgaben_Ziegler">
+            <head><name ana="bk:to bk:individual" ref="#Ziegelschlager">Ziegler</name>.</head>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-06-05">.5. Junii</date> dem
+                  <name ana="bk:to bk:individual" ref="#Ziegelschlager">Asm Zieglschlager</name>
+               <measure ana="bk:service" commodity="work" quantity="35" unitRef="#tag">.35. tag
+                  <lb/>zu <measure ana="bk:price" quantity="15" unitRef="#d">.15.
+                  d.</measure></measure>
+               <span ana="bk:debit">gelennt</span>. <fw ana="bk:total">thut. <lb/><measure
+                     ana="bk:money" quantity="2" unitRef="#f">.2. f.</measure>
+                  <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure>
+                  <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></fw></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-07-16">.16. Julii</date>
+               <measure ana="bk:service" quantity="20" commodity="work" unitRef="#tag">.20.
+                  tag.</measure>
+               <fw ana="bk:total">thut. <lb/><measure ana="bk:money" quantity="1" unitRef="#f">.1.
+                     f.</measure>
+                  <measure ana="bk:money" quantity="3" unitRef="#s">3. s.</measure></fw></ab>
+         </div>
+         <pb n="478" facs="IMG.478.jpg"/>
+         <!--...-->
+         <div ana="bk:rubric" corresp="#Ausgaben_UmbVischunndKrebsen">
+            <head>Umb <measure ana="bk:commodity" commodity="fisch">Visch</measure>
+               <lb/>unnd <measure ana="bk:commodity" commodity="krebs">Krebsen</measure>.</head>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-02-23">.23. Februarii</date>
+               dem <name ana="bk:to bk:individual" ref="#vischerschönhering">vischer</name> von
+                  <placeName ana="bk:where" ref="#ort_0405">Schönher<lb break="no"/>ing</placeName>
+               umb <measure ana="bk:commodity" commodity="fisch"
+               >visch</measure><!--#hier keine Anzahl oder unit--> geben. <lb/><measure
+                  ana="bk:money" quantity="1" unitRef="#f">.1. f.</measure></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-02-26">.26. Februarii</date>
+               <name ana="bk:to bk:individual" ref="#vischerschönhering">dem</name> von <placeName
+                  ana="bk:where" ref="#ort_0405"
+               >Schönhering</placeName><!--dem von Schönhering, dem = Fischer--> umb <lb/><measure
+                  ana="bk:commodity" commodity="fisch">visch</measure> geben. <lb/><measure
+                  ana="bk:money" quantity="3" unitRef="#sd">.3. s. d.</measure></ab>
+
+            <pb n="76" facs="IMG.76.jpg"/>
+            <fw type="year"><date ana="bk:when" when="1557">Anno 1557</date></fw>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-03-11">.11. Martii</date> mer
+               Ime <!--was heißt das?--> umb <measure ana="bk:commodity" commodity="fisch"
+                  >visch</measure> geben. <lb/><measure ana="bk:money" quantity="2" unitRef="#f">.2.
+                  f.</measure></ab>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1557-03-15">.15. Martii</date>
+               <name ana="bk:to bk:individual" ref="#vischergalckweiß">dem von <placeName
+                     ana="bk:where" ref="#ort_0126">Galckweiß</placeName></name> für <lb/><measure
+                  ana="bk:commodity" commodity="fisch">visch</measure> geben. <lb/><measure
+                  ana="bk:money" quantity="3" unitRef="#f">.3. f.</measure></ab>
+         </div>
+
+         <pb n="515" facs="IMG.515.jpg"/>
+         <!--...-->
+         <div ana="bk:rubric" corresp="#Ausgaben_GemeineAusgab">
+            <head>Gemeine <lb/>Ausgab.</head>
+            <ab ana="bk:entry">Item den <date ana="bk:when" when="1560-02-23">.23. Februarii</date>
+               umb <measure ana="bk:commodity" commodity="zinober" quantity="2" unitRef="#lot">.2.
+                  Lot Zi<lb break="no"/>nober</measure><!--Hier kein economic agent genannt-->
+               geben. <lb/><measure ana="bk:money" quantity="21" unitRef="#d">.21. d.</measure></ab>
+            <ab ana="bk:entry">Item umb <measure ana="bk:commodity" quantity="1" commodity="pfanne"
+                  unitRef="#seych">ein seych Pfannen</measure>, unnd <measure ana="bk:commodity"
+                  commodity="tiriack">Tiriack</measure>
+               <lb/><measure ana="bk:commodity" commodity="büchse">Püchsen</measure> geben. <!--hier commodity im Plural ohne Angabe der Anzahl. Ist das ein Problem für die Kodierung?-->
+               <lb/><measure ana="bk:money" quantity="3" unitRef="#s">.3. s.</measure>
+               <measure ana="bk:money" quantity="15" unitRef="#d">15. d.</measure></ab>
+         </div>
+
+      </body>
+   </text>
+</TEI>
