@@ -1,0 +1,3247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:bk="https://gams.uni-graz.at/o:depcha.bookkeeping#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:depcha="https://gams.uni-graz.at/o:depcha.ontology#" xmlns:functx="http://www.functx.com"
+	xmlns:gams="https://gams.uni-graz.at/o:gams-ontology#"
+	xmlns:gn="http://www.geonames.org/ontology#"
+	xmlns:huc="https://gams.uni-graz.at/o:depcha.huc-ontology#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:schema="https://schema.org/"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:t="http://www.tei-c.org/ns/1.0"
+	xmlns:time="http://www.w3.org/2006/time#" xmlns:void="http://rdfs.org/ns/void#">
+	<depcha:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100.dataset">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<depcha:numberOfTransactions>62</depcha:numberOfTransactions>
+		<depcha:numberOfTransfers>114</depcha:numberOfTransfers>
+		<depcha:numberOfEconomicAgents>18</depcha:numberOfEconomicAgents>
+		<depcha:numberOfMonetaryValues>131</depcha:numberOfMonetaryValues>
+		<depcha:numberOfEconomicGoods>58</depcha:numberOfEconomicGoods>
+		<depcha:numberOfPlaces>10</depcha:numberOfPlaces>
+		<depcha:numberOfAccounts>14</depcha:numberOfAccounts>
+		<depcha:accountHolder
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"/>
+		<depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+		<depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kr"/>
+		<depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+		<depcha:isMainCurrency rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+		<depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+		<depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#hr"/>
+		<depcha:currency rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#lb"/>
+		<depcha:aggregates>
+			<depcha:Aggregation
+				rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100.dataset.aggre#1557">
+				<depcha:date>1557</depcha:date>
+				<bk:unit>Pfennig</bk:unit>
+				<depcha:revenue>421</depcha:revenue>
+				<depcha:expenses>0</depcha:expenses>
+			</depcha:Aggregation>
+		</depcha:aggregates>
+		<depcha:aggregates>
+			<depcha:Aggregation
+				rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100.dataset.aggre#1560">
+				<depcha:date>1560</depcha:date>
+				<bk:unit>Pfennig</bk:unit>
+				<depcha:revenue>0</depcha:revenue>
+				<depcha:expenses>21</depcha:expenses>
+			</depcha:Aggregation>
+		</depcha:aggregates>
+	</depcha:Dataset>
+	<void:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100">
+		<dc:rights>https://creativecommons.org/licenses/by/4.0/</dc:rights>
+		<dc:publisher>Department of Digital Humanities, University of Graz</dc:publisher>
+	</void:Dataset>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T1">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .29. Aprilis , dem Zinnsperger zu Braunau .60. Schaff waitz zu .6. f.
+			geben. thut. .360. f.</bk:entry>
+		<bk:when>1557-04-29</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T1T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T1T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#schaff"/>
+						<bk:quantity>60</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#weitzen"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T1T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T1T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>360</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0553"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T2">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .5. Maii dem Wiert von Perndorff .5. Schaff waitz Lanndauer Maß geben Je
+			eines p. 4. f. 3. s. 15. d. thut. .22. f. 3. s. 15. d.</bk:entry>
+		<bk:when>1557-05-05</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T2T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T2T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#landauermaß"/>
+						<bk:quantity>5</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#weitzen"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T2T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T2T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>22</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T2T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T2T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>15</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0554"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T3">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .28. Maii , Martin Öder von Aitenpach geben .4. Schaff waitz p. 4 ½. f.
+			thut. .18. f.</bk:entry>
+		<bk:when>1557-05-28</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T3T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T3T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#schaff"/>
+						<bk:quantity>4</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#weitzen"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T3T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T3T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>18</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0011"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T4">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item mer dem Öder geben .4. Schaff p. .18. f.</bk:entry>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T4T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T4T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#schaff"/>
+						<bk:quantity>4</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#weitzen"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T4T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T4T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>18</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T5">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .25. Augusti zweyen Pecken zu Vilßhoven geben .30. Schaff waitz zu .4 ½.
+			f. thut. .135. f.</bk:entry>
+		<bk:when>1557-08-25</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T5T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T5T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#schaff"/>
+						<bk:quantity>30</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#weitzen"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T5T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T5T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>135</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0468"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T6">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item dem Wiert zu Paumgarten geben .4. Schaff waitz. p. .18. f.</bk:entry>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T6T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T6T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#schaff"/>
+						<bk:quantity>4</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#weitzen"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T6T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T6T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>18</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0046"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T7">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item dem Hasen von Aitenpach geben .4. Schaff waitz zu .4 ½. f. thut. .18.
+			f.</bk:entry>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T7T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T7T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#schaff"/>
+						<bk:quantity>4</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#weitzen"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T7T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T7T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>18</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0011"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T8">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item Martin Öder zu Aitenpach geben .5. Schaff. eines p. 4 ½. f. thut. .22. f. 3.
+			s. 15. d.</bk:entry>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T8T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T8T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#schaff"/>
+						<bk:quantity>5</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#weitzen"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T8T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T8T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>22</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T8T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T8T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>15</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0011"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T9">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item dem Wiert zu Paungarten geben .5. Schaff waitz zu .4 ½. f. thut. .22. f. 3.
+			s. 15. d.</bk:entry>
+		<bk:when>1557</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T9T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T9T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#schaff"/>
+						<bk:quantity>5</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#weitzen"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T9T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T9T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>22</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T9T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T9T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>15</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0046"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T10">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item eingenomen umb eintzige Kibelweiß, so den Tagwerckern , unnd anndern geben
+			.13. f. 5. s. 19. d. 1. hr.</bk:entry>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T10T1">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T10T1EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>13</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T10T1EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>5</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T10T1EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>19</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T10T1EA4">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#hr"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftGetreidabdemcasten"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T11">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item Jacob Gerstl zu Gumperting korn .4. Schaff waitz .4. Schaff. p. .20.
+			f.</bk:entry>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T11T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T11T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#schaff"/>
+						<bk:quantity>4</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#weitzen"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbangeschlagengetreid"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T11T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T11T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>20</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbangeschlagengetreid"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0151"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T12">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item Pranndhuber zu Gopping korn .6. kibel waitz .1. Schaff. 12 kibel Habern . 1
+			Schaff .6. kibel p. .12. f. 3. s. 15. d.</bk:entry>
+		<bk:when>1557</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T12T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T12T1EA1">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kibel"/>
+						<bk:quantity>6</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#weitzen"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T12T1EA2">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#schaff"/>
+						<bk:quantity>1</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#hafer"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T12T1EA3">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kibel"/>
+						<bk:quantity>12</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#hafer"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbangeschlagengetreid"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T12T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T12T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>12</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T12T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T12T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>15</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbangeschlagengetreid"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0138"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T13">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item Geörg Sechßl zu Gopping waitz .1. Schaff p. .4. f. 3. s. 15. d.</bk:entry>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T13T1">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T13T1EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>4</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T13T1EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T13T1EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>15</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbangeschlagengetreid"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0138"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T14">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item Conrad Zelhuber korn .5 1\/2. Schaff waitz .1. Schaff p. .24. f.</bk:entry>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T14T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T14T1EA1">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#schaff"/>
+						<bk:quantity>5.5</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#getreide"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T14T1EA2">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#schaff"/>
+						<bk:quantity>1</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#weitzen"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbangeschlagengetreid"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T14T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T14T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>24</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbangeschlagengetreid"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T15">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .12. Februarii hat wiert bezalt .17 1\/4. Emer zu .2. f. thut. .34. f. 3.
+			s. 15. d.</bk:entry>
+		<bk:when>1557-02-12</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T15T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T15T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#eimer"/>
+						<bk:quantity>17.25</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T15T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T15T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>34</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T15T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T15T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>15</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T16">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .28. Februarii bezalt .17 1\/4. Emer p. 2. f. thut. .34. f. 3. s. 15.
+			d.</bk:entry>
+		<bk:when>1557-02-28</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T16T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T16T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#eimer"/>
+						<bk:quantity>17.25</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T16T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T16T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>34</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T16T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T16T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>15</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T17">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .24. Martii , hat wiert bezalt .16. Emer wein zu .2. f. thut. .32.
+			f.</bk:entry>
+		<bk:when>1557-03-24</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T17T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T17T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#eimer"/>
+						<bk:quantity>16</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wiert"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T17T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T17T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>32</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wiert"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T18">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .25. Aprilis hat wiert bezalt 3 1\/4. Emer zu .2. f. thut. .6. f. 3. s.
+			15. d.</bk:entry>
+		<bk:when>1557-04-25</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T18T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T18T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#eimer"/>
+						<bk:quantity>3.25</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T18T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T18T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>6</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T18T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T18T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>15</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T19">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den ersten Maii .6. Emer. p. 2. f. thut. .12. f.</bk:entry>
+		<bk:when>1557-05-01</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T19T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T19T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#eimer"/>
+						<bk:quantity>6</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T19T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T19T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>12</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T20">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .16. Maii .8 ½. Emer. thut. .17. f.</bk:entry>
+		<bk:when>1557-05-16</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T20T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T20T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#eimer"/>
+						<bk:quantity>8.5</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T20T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T20T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>17</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T21">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den Letzten Maii .4 1\/3. Emer thut. .9. f. 3. s. 15. d.</bk:entry>
+		<bk:when>1557-05-31</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T21T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T21T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#eimer"/>
+						<bk:quantity>4.3</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T21T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T21T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>9</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T21T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T21T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>15</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T22">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .13. Junii hat Wiert bezalt .6. Emer. p. .12. f.</bk:entry>
+		<bk:when>1557-06-13</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T22T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T22T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#eimer"/>
+						<bk:quantity>6</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T22T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T22T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>12</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T23">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .24. Junii mer .6. Emer bezalt. thut. .12. f.</bk:entry>
+		<bk:when>1557-06-24</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T23T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T23T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#eimer"/>
+						<bk:quantity>6</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T23T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T23T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>12</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T24">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den Letzten Junii .7. Emer einen p. 2. f. thut. .14. f.</bk:entry>
+		<bk:when>1557-06-30</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T24T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T24T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#eimer"/>
+						<bk:quantity>7</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T24T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T24T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>14</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T25">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .13. Julii hat wiert bezalt .17. Emer p. 2. f. thut. .34. f.</bk:entry>
+		<bk:when>1557-07-13</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T25T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T25T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#eimer"/>
+						<bk:quantity>17</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T25T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T25T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>34</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T26">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .24. Julii .14 ½. Emer . thut. .29. f.</bk:entry>
+		<bk:when>1557-07-24</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T26T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T26T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#eimer"/>
+						<bk:quantity>14.5</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T26T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T26T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>29</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T27">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .25. Novembris vom wirt umb ein faß wein eingenommen. .25. f. 5. s. 13.
+			d. 1. hr.</bk:entry>
+		<bk:when>1557-11-25</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T27T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T27T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#fass"/>
+						<bk:quantity>1</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T27T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T27T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>25</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T27T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>5</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T27T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>13</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T27T2EA4">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#hr"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T28">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .11. Decembris .4 ¾. Emer zu .2. f. thut. .9. f. 3. s. 15. d.</bk:entry>
+		<bk:when>1557-12-11</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T28T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T28T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#eimer"/>
+						<bk:quantity>4.5</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T28T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T28T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>9</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T28T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T28T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>15</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T29">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .26. Decembris .6 ¾. Emer zu .2. f. thut. .13. f. 3. s. 15. d.</bk:entry>
+		<bk:when>1557-12-26</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T29T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T29T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#eimer"/>
+						<bk:quantity>6.75</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T29T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T29T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>13</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T29T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T29T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>15</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T30">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .7. Januarii hat wiert bezalt ein feßl wein lauttern abzug. p. .14. f. 24
+			d.</bk:entry>
+		<bk:when>1557-01-07</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T30T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T30T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#fass"/>
+						<bk:quantity>1</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T30T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T30T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>14</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T30T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>24</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T31">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item weingelt vom Kelner . thut. .42. f. 1. s. 13. d.</bk:entry>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T31T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T31T1EA">
+						<bk:unit>piece</bk:unit>
+						<bk:quantity>1</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T31T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T31T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>42</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T31T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T31T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>13</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T32">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .16. Junii dem wiert von Liessing geben . 40. kanndl wein zu .14. d.
+			thut. .2. f. 4. s. 20. d.</bk:entry>
+		<bk:when>1557-06-16</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T32T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T32T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kanne"/>
+						<bk:quantity>40</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T32T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T32T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>2</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T32T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>4</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T32T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>20</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0268"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T33">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .26. Junii dem wiert von Liessing mer 40. kanndl wein geben. p. .2. f. 4.
+			s. 20. d.</bk:entry>
+		<bk:when>1557-06-26</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T33T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T33T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kanne"/>
+						<bk:quantity>40</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T33T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T33T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>2</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T33T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>4</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T33T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>20</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0268"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T34">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .29. Junii dem Wiert von Liessing .40. kanndl Wein thut. .2. f. 4 s. 20
+			d.</bk:entry>
+		<bk:when>1557-06-29</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T34T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T34T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kanne"/>
+						<bk:quantity>40</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T34T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T34T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>2</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T34T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>4</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T34T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>20</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0268"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T35">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .3. Julii Wiert von Liessing bezalt. .18. kanndl Wein zu .14. d. thut.
+			.1. f. 1. s. 12. d.</bk:entry>
+		<bk:when>1557-07-03</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T35T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T35T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kanne"/>
+						<bk:quantity>18</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T35T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T35T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T35T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T35T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>12</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0268"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T36">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .5. Julii Wiert von Liessing bezalt .18. Kanndl. p. .1. f. 1. s. 12.
+			d.</bk:entry>
+		<bk:when>1557-07-05</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T36T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T36T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kanne"/>
+						<bk:quantity>18</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T36T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T36T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T36T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T36T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>12</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0268"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T37">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .8. Julii .18. Kanndl. p. .1. f. 1. s. 12. d.</bk:entry>
+		<bk:when>1557-07-08</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T37T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T37T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kanne"/>
+						<bk:quantity>18</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T37T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T37T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T37T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T37T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>12</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T38">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .10. Julii der Wiert von Liessing bezalt .40. Kanndl Wein p. .2. f. 4. s.
+			20 d.</bk:entry>
+		<bk:when>1557-07-10</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T38T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T38T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kanne"/>
+						<bk:quantity>40</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T38T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T38T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>2</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T38T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>4</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T38T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>20</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0268"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T39">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .13. Julii hat Wiert von Liessing bezalt 58. Kanndl Wein p. .3. f. 6. s.
+			2. d.</bk:entry>
+		<bk:when>1557-07-13</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T39T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T39T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kanne"/>
+						<bk:quantity>58</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T39T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T39T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T39T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>6</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T39T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>2</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0268"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T40">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .22. Julii hat Wirt zu Liessing bezalt .18. Kanndl wein thut. .1. f. 1.
+			s. 12. d.</bk:entry>
+		<bk:when>1557-07-22</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T40T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T40T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kanne"/>
+						<bk:quantity>18</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T40T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T40T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T40T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T40T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>12</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0268"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T41">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .25. Julii , Wirt von Liessing .18. Kanndl Wein . thut. .1. f. 1. s. 12.
+			d.</bk:entry>
+		<bk:when>1557-07-25</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T41T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T41T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kanne"/>
+						<bk:quantity>18</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T41T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T41T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T41T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T41T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>12</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0268"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T42">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .15. Augusti .18. Kanndl Wein p. .1. f. 1. s. 12. d.</bk:entry>
+		<bk:when>1557-08-15</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T42T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T42T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kanne"/>
+						<bk:quantity>18</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T42T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T42T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T42T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T42T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>12</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T43">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .22. Augusti dem Wiert von Liessing .40. Kanndl Wein geben. thut. .2. f.
+			4. s. 20. d.</bk:entry>
+		<bk:when>1557-08-22</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T43T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T43T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kanne"/>
+						<bk:quantity>40</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T43T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T43T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>2</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T43T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>4</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T43T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>20</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0268"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T44">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .3. 7bris hat Wiert zu Liessing bezalt .94. Kanndl Wein p. .6. f. 1. s.
+			26. d.</bk:entry>
+		<bk:when>1557-09-03</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T44T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T44T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#kanne"/>
+						<bk:quantity>94</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T44T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T44T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>6</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0268"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T45">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .17. Maii vom Preuen empfanngen. .2. f. 8. d.</bk:entry>
+		<bk:when>1557-05-17</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T45T1">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T45T1EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>2</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T45T1EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>8</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbpier"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T46">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .27. Octobris empfanngen. .3. f. 6. s. 25. d.</bk:entry>
+		<bk:when>1557-10-27</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T46T1">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T46T1EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T46T1EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>6</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T46T1EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>25</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbpier"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T47">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .26. Aprilis eingenommen. .1. f. 1. s. 20. d.</bk:entry>
+		<bk:when>1557-04-26</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T47T1">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T47T1EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T47T1EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T47T1EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>20</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbsaltz"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T48">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .25. Julii für Saltz eingenommen. .1. f. 1. s. 5. d.</bk:entry>
+		<bk:when>1557-07-25</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T48T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T48T1EA">
+						<bk:unit>piece</bk:unit>
+						<bk:quantity>1</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#salz"/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbsaltz"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T48T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T48T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T48T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T48T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>5</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbsaltz"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T49">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .7. Novembris . .3. f. 5. s.</bk:entry>
+		<bk:when>1557-11-07</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T49T1">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T49T1EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T49T1EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>5</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbsaltz"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T50">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .18. Januarii . .3. s. 17. d.</bk:entry>
+		<bk:when>1557-01-18</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T50T1">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T50T1EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T50T1EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>17</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbsaltz"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T51">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .28. Novembris dem Hofinger Metzger zu Braun au drey Lanndochsen geben p.
+			.35. f. 3. s. 15. d.</bk:entry>
+		<bk:when>1557-11-28</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T51T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T51T1EA">
+						<bk:unit>piece</bk:unit>
+						<bk:quantity>3</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ochse"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbochsen"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T51T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T51T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>35</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbochsen"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0553"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T52">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .25. Augusti .7. Schwein verkaufft p. .26. f.</bk:entry>
+		<bk:when>1557-08-25</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T52T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T52T1EA">
+						<bk:unit>piece</bk:unit>
+						<bk:quantity>7</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#schwein"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbschwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T53">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item mer umb Schwein eingenommen. .11. f. 3. s. 10. d.</bk:entry>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T53T1">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T53T1EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>11</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T53T1EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T53T1EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>10</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbschwein"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T54">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item . Paur zu Spitzmeising . zustannd. .4. lb. d.</bk:entry>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T54T1">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T54T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#lb"/>
+						<bk:quantity>4</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbzustänndtodfellunndleibgedinng"/>
+				<bk:to rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"
+				/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T55">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .5. Junii dem Asm Zieglschlager .35. tag zu .15. d. gelennt . thut. .2.
+			f. 3. s. 15. d.</bk:entry>
+		<bk:when>1557-06-05</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T55T1">
+				<bk:transfers>
+					<bk:Service rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T55T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#tag"/>
+						<bk:quantity>35</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#work"/>
+					</bk:Service>
+				</bk:transfers>
+				<!--Error in rubric-in-taxonomy-->
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T55T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T55T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>2</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T55T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T55T2EA3">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>15</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<!--Error in rubric-in-taxonomy-->
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:debit rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Booking"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T56">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .16. Julii .20. tag. thut. .1. f. 3. s.</bk:entry>
+		<bk:when>1557-07-16</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T56T1">
+				<bk:transfers>
+					<bk:Service rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T56T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#tag"/>
+						<bk:quantity>20</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#work"/>
+					</bk:Service>
+				</bk:transfers>
+				<!--Error in rubric-in-taxonomy-->
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T56T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T56T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T56T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<!--Error in rubric-in-taxonomy-->
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T57">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .23. Februarii dem vischer von Schönher ing umb visch geben. .1.
+			f.</bk:entry>
+		<bk:when>1557-02-23</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T57T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T57T1EA">
+						<bk:unit>piece</bk:unit>
+						<bk:quantity>1</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#fisch"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:to
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#vischerschönhering"/>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T57T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T57T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>1</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:to
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#vischerschönhering"/>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0405"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T58">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .26. Februarii dem von Schönhering umb visch geben. .3. s. d.</bk:entry>
+		<bk:when>1557-02-26</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T58T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T58T1EA">
+						<bk:unit>piece</bk:unit>
+						<bk:quantity>1</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#fisch"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:to
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#vischerschönhering"/>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T58T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T58T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:to
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#vischerschönhering"/>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0405"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T59">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .11. Martii mer Ime umb visch geben. .2. f.</bk:entry>
+		<bk:when>1557-03-11</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T59T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T59T1EA">
+						<bk:unit>piece</bk:unit>
+						<bk:quantity>1</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#fisch"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:to
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ausgaben_umbvischunndkrebsen"/>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T59T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T59T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>2</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:to
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ausgaben_umbvischunndkrebsen"/>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T60">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .15. Martii dem von Galckweiß für visch geben. .3. f.</bk:entry>
+		<bk:when>1557-03-15</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T60T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T60T1EA">
+						<bk:unit>piece</bk:unit>
+						<bk:quantity>1</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#fisch"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:to
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#vischergalckweiß"/>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T60T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T60T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#f"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:to
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#vischergalckweiß"/>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:where rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0126"/>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T61">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item den .23. Februarii umb .2. Lot Zi nober geben. .21. d.</bk:entry>
+		<bk:when>1560-02-23</bk:when>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T61T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T61T1EA">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#lot"/>
+						<bk:quantity>2</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#zinober"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:to
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ausgaben_gemeineausgab"/>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T61T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T61T2EA">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>21</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:to
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ausgaben_gemeineausgab"/>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:Transaction rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T62">
+		<gams:isMemberOfCollection rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<gams:isPartOf rdf:resource="https://gams.uni-graz.at/o:depcha.aldersbach.100"/>
+		<bk:entry>Item umb ein seych Pfannen , unnd Tiriack Püchsen geben. .3. s. 15. d.</bk:entry>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T62T1">
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T62T1EA1">
+						<bk:unit
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#seych"/>
+						<bk:quantity>1</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#pfanne"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T62T1EA2">
+						<bk:unit>piece</bk:unit>
+						<bk:quantity>1</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#tiriack"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Commodity
+						rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T62T1EA3">
+						<bk:unit>piece</bk:unit>
+						<bk:quantity>1</bk:quantity>
+						<bk:classified
+							rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#b%C3%BCchse"
+						/>
+					</bk:Commodity>
+				</bk:transfers>
+				<bk:to
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ausgaben_gemeineausgab"/>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"/>
+			</bk:Transfer>
+		</bk:consistsOf>
+		<bk:consistsOf>
+			<bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T62T2">
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T62T2EA1">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#s"/>
+						<bk:quantity>3</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:transfers>
+					<bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.aldersbach.100#T62T2EA2">
+						<bk:unit rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#d"/>
+						<bk:quantity>15</bk:quantity>
+					</bk:Money>
+				</bk:transfers>
+				<bk:to
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ausgaben_gemeineausgab"/>
+				<bk:from
+					rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#aldersbach"/>
+			</bk:Transfer>
+		</bk:consistsOf>
+	</bk:Transaction>
+	<bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#zinnsperger">
+		<rdfs:label>ZinnspergerzuBraunau</rdfs:label>
+		<schema:name>ZinnspergerzuBraunau</schema:name>
+	</bk:EconomicAgent>
+	<bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#wirtperndorff">
+		<rdfs:label>WirtzuPerndorff</rdfs:label>
+		<schema:name>WirtzuPerndorff</schema:name>
+		<schema:hasOccupation>Wirt</schema:hasOccupation>
+	</bk:EconomicAgent>
+	<bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#wirtpaumgarten">
+		<rdfs:label>WirtzuPaumgarten</rdfs:label>
+		<schema:name>WirtzuPaumgarten</schema:name>
+		<schema:hasOccupation>Wirt</schema:hasOccupation>
+	</bk:EconomicAgent>
+	<bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#wirtliessing">
+		<rdfs:label>WirtvonLiessing</rdfs:label>
+		<schema:name>WirtvonLiessing</schema:name>
+		<schema:hasOccupation>Wirt</schema:hasOccupation>
+	</bk:EconomicAgent>
+	<bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#brauer">
+		<rdfs:label>Preuer</rdfs:label>
+		<schema:name>Preuer</schema:name>
+		<schema:hasOccupation>Bierbrauer</schema:hasOccupation>
+	</bk:EconomicAgent>
+	<bk:EconomicAgent
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#martinöderaidenbach">
+		<rdfs:label>Martin ÖdervonAidenbach</rdfs:label>
+		<schema:name>Martin ÖdervonAidenbach</schema:name>
+	</bk:EconomicAgent>
+	<bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#conradzelhuber">
+		<rdfs:label>Conrad Zelhuber</rdfs:label>
+		<schema:name>Conrad Zelhuber</schema:name>
+	</bk:EconomicAgent>
+	<bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#georgsechßl">
+		<rdfs:label>Georg Sechßl</rdfs:label>
+		<schema:name>Georg Sechßl</schema:name>
+	</bk:EconomicAgent>
+	<bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#jacobgerstl">
+		<rdfs:label>Jacob Gerstl</rdfs:label>
+		<schema:name>Jacob Gerstl</schema:name>
+	</bk:EconomicAgent>
+	<bk:EconomicAgent
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#pranndhubergopping">
+		<rdfs:label>PranndhuberzuGopping</rdfs:label>
+		<schema:name>PranndhuberzuGopping</schema:name>
+	</bk:EconomicAgent>
+	<bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#hannsenfrund">
+		<rdfs:label>Hannsen Frunnd</rdfs:label>
+		<schema:name>Hannsen Frunnd</schema:name>
+	</bk:EconomicAgent>
+	<bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#haseaitenpach">
+		<rdfs:label>HasevonAitenpach</rdfs:label>
+		<schema:name>HasevonAitenpach</schema:name>
+	</bk:EconomicAgent>
+	<bk:EconomicAgent
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#vischerschönhering">
+		<rdfs:label>FischervonSchönhering</rdfs:label>
+		<schema:name>FischervonSchönhering</schema:name>
+		<schema:hasOccupation>Fischer</schema:hasOccupation>
+	</bk:EconomicAgent>
+	<bk:EconomicAgent
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#vischergalckweiß">
+		<rdfs:label>FischervonGalckweiß</rdfs:label>
+		<schema:name>FischervonGalckweiß</schema:name>
+		<schema:hasOccupation>Fischer</schema:hasOccupation>
+	</bk:EconomicAgent>
+	<bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#hofingermetzger">
+		<rdfs:label>HofingerMetzgerzuBraunau</rdfs:label>
+		<schema:name>HofingerMetzgerzuBraunau</schema:name>
+		<schema:hasOccupation>Metzger</schema:hasOccupation>
+	</bk:EconomicAgent>
+	<bk:EconomicAgent rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#Ziegelschlager">
+		<rdfs:label>Ziegelschlager</rdfs:label>
+		<schema:name>Ziegelschlager</schema:name>
+		<schema:hasOccupation>Ziegler</schema:hasOccupation>
+	</bk:EconomicAgent>
+	<bk:Group rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#pecken">
+		<rdfs:label>PeckenzuVilshoven</rdfs:label>
+		<schema:name>PeckenzuVilshoven</schema:name>
+		<depcha:placeName>Vilshoven</depcha:placeName>
+	</bk:Group>
+	<bk:Group rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#tagwerker">
+		<rdfs:label>Tagwerker</rdfs:label>
+		<schema:name>Tagwerker</schema:name>
+	</bk:Group>
+	<skos:ConceptScheme rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#Taxonomy">
+		<rdfs:label>Commodities</rdfs:label>
+		<dc:description>Liste der Waren des Rechnungsbuchs BayHStA_KAAA353_R1557-60 des Klosters
+			Aldersbach</dc:description>
+		<skos:hasTopConcept rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#work"/>
+		<skos:hasTopConcept rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#pfanne"/>
+		<skos:hasTopConcept
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#tiriack"/>
+		<skos:hasTopConcept
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#b%C3%BCchse"/>
+		<skos:hasTopConcept rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#wein"/>
+		<skos:hasTopConcept rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#bier"/>
+		<skos:hasTopConcept rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#salz"/>
+		<skos:hasTopConcept
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#getreide"/>
+		<skos:hasTopConcept
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#zinober"/>
+		<skos:hasTopConcept rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#animal"
+		/>
+	</skos:ConceptScheme>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#work">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:prefLabel xml:lang="de">Arbeit</skos:prefLabel>
+		<rdfs:label>Arbeit</rdfs:label>
+	</skos:Concept>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#pfanne">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:prefLabel xml:lang="de">Pfanne</skos:prefLabel>
+		<rdfs:label>Pfanne</rdfs:label>
+	</skos:Concept>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#tiriack">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:prefLabel xml:lang="de">Tiriack</skos:prefLabel>
+		<rdfs:label>Tiriack</rdfs:label>
+	</skos:Concept>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#b%C3%BCchse">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:prefLabel xml:lang="de">Büchse</skos:prefLabel>
+		<rdfs:label>Büchse</rdfs:label>
+	</skos:Concept>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#wein">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:prefLabel xml:lang="de">Wein</skos:prefLabel>
+		<rdfs:label>Wein</rdfs:label>
+	</skos:Concept>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#bier">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:prefLabel xml:lang="de">Bier</skos:prefLabel>
+		<rdfs:label>Bier</rdfs:label>
+	</skos:Concept>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#salz">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:prefLabel xml:lang="de">Salz</skos:prefLabel>
+		<rdfs:label>Salz</rdfs:label>
+	</skos:Concept>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#getreide">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:narrower rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#weitzen"/>
+		<skos:narrower rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#hafer"/>
+		<skos:prefLabel xml:lang="de">Getreide</skos:prefLabel>
+		<rdfs:label>Getreide</rdfs:label>
+	</skos:Concept>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#weitzen">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#getreide"/>
+		<skos:prefLabel xml:lang="de">Weitzen</skos:prefLabel>
+		<rdfs:label>Weitzen</rdfs:label>
+	</skos:Concept>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#hafer">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#getreide"/>
+		<skos:prefLabel xml:lang="de">Hafer</skos:prefLabel>
+		<rdfs:label>Hafer</rdfs:label>
+	</skos:Concept>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#zinober">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:prefLabel xml:lang="de">Zinober</skos:prefLabel>
+		<rdfs:label>Zinober</rdfs:label>
+	</skos:Concept>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#animal">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:narrower rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ochse"/>
+		<skos:narrower rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#schwein"/>
+		<skos:narrower rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#fisch"/>
+		<skos:prefLabel xml:lang="de">Tier</skos:prefLabel>
+		<rdfs:label>Tier</rdfs:label>
+	</skos:Concept>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#ochse">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#animal"/>
+		<skos:prefLabel xml:lang="de">Ochse</skos:prefLabel>
+		<rdfs:label>Ochse</rdfs:label>
+	</skos:Concept>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#schwein">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#animal"/>
+		<skos:prefLabel xml:lang="de">Schwein</skos:prefLabel>
+		<rdfs:label>Schwein</rdfs:label>
+	</skos:Concept>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#fisch">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:narrower rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#krebs"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#animal"/>
+		<skos:prefLabel xml:lang="de">Fisch</skos:prefLabel>
+		<rdfs:label>Fisch</rdfs:label>
+	</skos:Concept>
+	<skos:Concept rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#krebs">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#fisch"/>
+		<skos:prefLabel xml:lang="de">Krebs</skos:prefLabel>
+		<rdfs:label>Krebs</rdfs:label>
+	</skos:Concept>
+	<dc:description>
+		<rdfs:label>Aldersbach</rdfs:label>
+		<schema:name>Aldersbach</schema:name>
+	</dc:description>
+	<bk:Account rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#income">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:narrower
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftgetreidabdemcasten"/>
+		<skos:narrower
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbochsen"/>
+		<skos:narrower
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbschwein"/>
+		<skos:narrower
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbzust%C3%A4nndtodfellunndleibgedinng"/>
+		<skos:narrower
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbsaltz"/>
+		<skos:narrower
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbangeschlagengetreid"/>
+		<skos:narrower
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein"/>
+		<skos:narrower
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern"/>
+		<skos:narrower
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbpier"/>
+		<rdfs:label>Einnahmen</rdfs:label>
+	</bk:Account>
+	<bk:Account
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbverkaufftgetreidabdemcasten">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#income"/>
+		<rdfs:label>Einnahmen_EinnemenumbverkaufftGetreidabdemCasten</rdfs:label>
+	</bk:Account>
+	<bk:Account
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbochsen">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#income"/>
+		<rdfs:label>einnahmen_einnemenumbochsen</rdfs:label>
+	</bk:Account>
+	<bk:Account
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbschwein">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#income"/>
+		<rdfs:label>einnahmen_einnemenumbschwein</rdfs:label>
+	</bk:Account>
+	<bk:Account
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbzust%C3%A4nndtodfellunndleibgedinng">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#income"/>
+		<rdfs:label>einnahmen_einnemenumbzustänndtodfellunndleibgedinng</rdfs:label>
+	</bk:Account>
+	<bk:Account
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbsaltz">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#income"/>
+		<rdfs:label>einnahmen_einnemenumbsaltz</rdfs:label>
+	</bk:Account>
+	<bk:Account
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbangeschlagengetreid">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#income"/>
+		<rdfs:label>einnahmen_einnemenumbangeschlagengetreid</rdfs:label>
+	</bk:Account>
+	<bk:Account
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbaintzigausgegebenwein">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#income"/>
+		<rdfs:label>einnahmen_einnemenumbaintzigausgegebenwein</rdfs:label>
+	</bk:Account>
+	<bk:Account
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbausgeschennckteweinindertaffern">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#income"/>
+		<rdfs:label>einnahmen_einnemenumbausgeschennckteweinindertaffern</rdfs:label>
+	</bk:Account>
+	<bk:Account
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#einnahmen_einnemenumbpier">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#income"/>
+		<rdfs:label>einnahmen_einnemenumbpier</rdfs:label>
+	</bk:Account>
+	<bk:Account rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#expense">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:narrower
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ausgaben_ziegler"/>
+		<skos:narrower
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ausgaben_umbvischunndkrebsen"/>
+		<skos:narrower
+			rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#ausgaben_gemeineausgab"/>
+		<rdfs:label>Ausgaben</rdfs:label>
+	</bk:Account>
+	<bk:Account rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#ausgaben_ziegler">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#expense"/>
+		<rdfs:label>ausgaben_ziegler</rdfs:label>
+	</bk:Account>
+	<bk:Account
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#ausgaben_umbvischunndkrebsen">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#expense"/>
+		<rdfs:label>ausgaben_umbvischunndkrebsen</rdfs:label>
+	</bk:Account>
+	<bk:Account
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#ausgaben_gemeineausgab">
+		<skos:inScheme rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach"/>
+		<skos:broader rdf:resource="https://gams.uni-graz.at/context:depcha.aldersbach#expense"/>
+		<rdfs:label>ausgaben_gemeineausgab</rdfs:label>
+	</bk:Account>
+	<schema:Place rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0011">
+		<rdfs:label>Aidenbach</rdfs:label>
+		<schema:name>Aidenbach</schema:name>
+	</schema:Place>
+	<schema:Place rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0046">
+		<rdfs:label>Baumgarten</rdfs:label>
+		<schema:name>Baumgarten</schema:name>
+	</schema:Place>
+	<schema:Place rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0553">
+		<rdfs:label>Braunau</rdfs:label>
+		<schema:name>Braunau</schema:name>
+	</schema:Place>
+	<schema:Place rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0126">
+		<rdfs:label>Galgweis</rdfs:label>
+		<schema:name>Galgweis</schema:name>
+	</schema:Place>
+	<schema:Place rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0138">
+		<rdfs:label>Gopping</rdfs:label>
+		<schema:name>Gopping</schema:name>
+	</schema:Place>
+	<schema:Place rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0524">
+		<rdfs:label>Landshut</rdfs:label>
+		<schema:name>Landshut</schema:name>
+	</schema:Place>
+	<schema:Place rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0268">
+		<rdfs:label>Liessing</rdfs:label>
+		<schema:name>Liessing</schema:name>
+	</schema:Place>
+	<schema:Place rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0554">
+		<rdfs:label>Perndorf</rdfs:label>
+		<schema:name>Perndorf</schema:name>
+	</schema:Place>
+	<schema:Place rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0405">
+		<rdfs:label>Schönerting</rdfs:label>
+		<schema:name>Schönerting</schema:name>
+	</schema:Place>
+	<schema:Place rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#ort_0468">
+		<rdfs:label>Vilshofen</rdfs:label>
+		<schema:name>Vilshofen</schema:name>
+	</schema:Place>
+	<huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#f">
+		<rdfs:label>Gulden</rdfs:label>
+		<huc:definedBy>
+			<huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#f.context">
+				<rdfs:label>Context of the historical unit Gulden</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q8142"/>
+	</huc:HistoricalUnit>
+	<huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#kr">
+		<rdfs:label>Kreuzer</rdfs:label>
+		<huc:definedBy>
+			<huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#kr.context">
+				<rdfs:label>Context of the historical unit Kreuzer</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q8142"/>
+	</huc:HistoricalUnit>
+	<huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#d">
+		<rdfs:label>Pfennig</rdfs:label>
+		<huc:definedBy>
+			<huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#d.context">
+				<rdfs:label>Context of the historical unit Pfennig</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q8142"/>
+	</huc:HistoricalUnit>
+	<huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#s">
+		<rdfs:label>Schilling</rdfs:label>
+		<huc:definedBy>
+			<huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#s.context">
+				<rdfs:label>Context of the historical unit Schilling</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q8142"/>
+	</huc:HistoricalUnit>
+	<huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#hr">
+		<rdfs:label>Heller</rdfs:label>
+		<huc:definedBy>
+			<huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#hr.context">
+				<rdfs:label>Context of the historical unit Heller</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q8142"/>
+	</huc:HistoricalUnit>
+	<huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#lb">
+		<rdfs:label>Pfund</rdfs:label>
+		<huc:definedBy>
+			<huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#lb.context">
+				<rdfs:label>Context of the historical unit Pfund</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q8142"/>
+	</huc:HistoricalUnit>
+	<huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#schaff">
+		<rdfs:label>Schaff</rdfs:label>
+		<huc:definedBy>
+			<huc:Context
+				rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#schaff.context">
+				<rdfs:label>Context of the historical unit Schaff</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q3647172"/>
+	</huc:HistoricalUnit>
+	<huc:HistoricalUnit
+		rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#landauerma%C3%9F">
+		<rdfs:label>Landauer Maß</rdfs:label>
+		<huc:definedBy>
+			<huc:Context
+				rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#landauerma%C3%9F.context">
+				<rdfs:label>Context of the historical unit Landauer Maß</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q3647172"/>
+	</huc:HistoricalUnit>
+	<huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#lot">
+		<rdfs:label>Lot</rdfs:label>
+		<huc:definedBy>
+			<huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#lot.context">
+				<rdfs:label>Context of the historical unit Lot</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q3647172"/>
+	</huc:HistoricalUnit>
+	<huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#kibel">
+		<rdfs:label>Kübel</rdfs:label>
+		<huc:definedBy>
+			<huc:Context
+				rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#kibel.context">
+				<rdfs:label>Context of the historical unit Kübel</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q1302471"/>
+	</huc:HistoricalUnit>
+	<huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#eimer">
+		<rdfs:label>Eimer</rdfs:label>
+		<huc:definedBy>
+			<huc:Context
+				rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#eimer.context">
+				<rdfs:label>Context of the historical unit Eimer</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q1302471"/>
+	</huc:HistoricalUnit>
+	<huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#fass">
+		<rdfs:label>Fass</rdfs:label>
+		<huc:definedBy>
+			<huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#fass.context">
+				<rdfs:label>Context of the historical unit Fass</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q1302471"/>
+	</huc:HistoricalUnit>
+	<huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#kanne">
+		<rdfs:label>Kanndl</rdfs:label>
+		<huc:definedBy>
+			<huc:Context
+				rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#kanne.context">
+				<rdfs:label>Context of the historical unit Kanndl</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q1302471"/>
+	</huc:HistoricalUnit>
+	<huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#tag">
+		<rdfs:label>Tag</rdfs:label>
+		<huc:definedBy>
+			<huc:Context rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#tag.context">
+				<rdfs:label>Context of the historical unit Tag</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q1790144"/>
+	</huc:HistoricalUnit>
+	<huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#woche">
+		<rdfs:label>Woche</rdfs:label>
+		<huc:definedBy>
+			<huc:Context
+				rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#woche.context">
+				<rdfs:label>Context of the historical unit Woche</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q1790144"/>
+	</huc:HistoricalUnit>
+	<huc:HistoricalUnit rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#seych">
+		<rdfs:label>Seych</rdfs:label>
+		<huc:definedBy>
+			<huc:Context
+				rdf:about="https://gams.uni-graz.at/context:depcha.aldersbach#seych.context">
+				<rdfs:label>Context of the historical unit Seych</rdfs:label>
+			</huc:Context>
+		</huc:definedBy>
+		<huc:type rdf:resource="https://www.wikidata.org/entity/Q1302471"/>
+	</huc:HistoricalUnit>
+</rdf:RDF>
