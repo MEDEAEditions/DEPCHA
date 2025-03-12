@@ -6,7 +6,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>BayHStA_KAAA_343_R1455-57</title>
+            <title>BayHStA_KAAA_343_R1455-57 (Testkodierung)</title>
          </titleStmt>
          <publicationStmt>
             <publisher>Institut für Digitale Geisteswissenschaften</publisher>
@@ -48,9 +48,18 @@
                <label xml:lang="de">Schilling</label>
                <label type="abbr">s.</label>
             </unitDef>
-            <unitDef type="currency" xml:id="lb">
-               <label xml:lang="de">Pfund</label>
+            <unitDef type="currency" xml:id="lbdwien">
+               <label xml:lang="de">Pfund (Wien)</label>
                <label type="abbr">lb.</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="gr">
+               <label xml:lang="de">Groschen</label>
+               <label type="abbr">gr.</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="ort">
+               <label xml:lang="de">Ort</label>
+               <!--1/4 eines Gulden-->
+               <label type="abbr">ort</label>
             </unitDef>
             <unitDef type="currency" xml:id="hr">
                <label xml:lang="de">Heller</label>
@@ -88,6 +97,18 @@
             <unitDef type="volume" xml:id="krug">
                <label xml:lang="de">Krug</label>
             </unitDef>
+            <unitDef type="weight" xml:id="centenarius">
+               <label xml:lang="de">Zentner</label>
+            </unitDef>
+            <unitDef type="weight" xml:id="librum">
+               <label xml:lang="de">Pfund</label>
+            </unitDef>
+            <unitDef type="volume" xml:id="ulna">
+               <label xml:lang="de">Ulna</label>
+            </unitDef>
+            <unitDef type="length" xml:id="elle">
+               <label xml:lang="de">Elle</label>
+            </unitDef>
          </unitDecl>
          <classDecl>
             <taxonomy ana="bk:rubrics">
@@ -106,6 +127,36 @@
                         <gloss>einnahmen_heu_althey</gloss>
                      </catDesc>
                   </category>
+                  <category xml:id="einnahmen_schweine">
+                     <catDesc>
+                        <gloss>einnahmen_schweine</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="einnahmen_eier">
+                     <catDesc>
+                        <gloss>einnahmen_eier</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="einnahmen_holz">
+                     <catDesc>
+                        <gloss>einnahmen_holz</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="einnahmen_salz">
+                     <catDesc>
+                        <gloss>einnahmen_salz</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="einnahmen_stiftung_diverses">
+                     <catDesc>
+                        <gloss>einnahmen_stiftung_diverses</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="einnahmen_divers_wandel_tod_abgaben">
+                     <catDesc>
+                        <gloss>einnahmen_divers_wandel_tod_abgaben</gloss>
+                     </catDesc>
+                  </category>
                </category>
                <category ana="bk:to bk:rubric" xml:id="expense">
                   <catDesc>
@@ -114,6 +165,26 @@
                   <category xml:id="ausgaben_drescher">
                      <catDesc>
                         <gloss>ausgaben_drescher</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="ausgaben_küsterdienst">
+                     <catDesc>
+                        <gloss>ausgaben_küsterdienst</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="ausgaben_boten_spielleute">
+                     <catDesc>
+                        <gloss>ausgaben_boten_spielleute</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="ausgaben_sättel_zäume_ketten_seile_schnüre_divers">
+                     <catDesc>
+                        <gloss>ausgaben_sättel_zäume_ketten_seile_schnüre_divers</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="ausgaben_messer_gürtel_garn_divers">
+                     <catDesc>
+                        <gloss>ausgaben_messer_gürtel_garn_divers</gloss>
                      </catDesc>
                   </category>
                   <category xml:id="ausgaben_wein">
@@ -133,12 +204,42 @@
                   </category>
                   <category xml:id="ausgaben_vereinbarung_kircheweng">
                      <catDesc>
-                        <gloss>ausgaben_goldschmied</gloss>
+                        <gloss>ausgaben_vereinbarung_kircheweng</gloss>
                      </catDesc>
                   </category>
                   <category xml:id="ausgaben_vereinbarung_steinmetz_petrus_kircheweng">
                      <catDesc>
-                        <gloss>ausgaben_goldschmied</gloss>
+                        <gloss>ausgaben_vereinbarung_steinmetz_petrus_kircheweng</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="ausgaben_eier">
+                     <catDesc>
+                        <gloss>ausgaben_eier</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="ausgaben_butter">
+                     <catDesc>
+                        <gloss>ausgaben_butter</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="ausgaben_holz">
+                     <catDesc>
+                        <gloss>ausgaben_holz</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="ausgaben_salz">
+                     <catDesc>
+                        <gloss>ausgaben_salz</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="ausgaben_stiftung_diverses">
+                     <catDesc>
+                        <gloss>ausgaben_stiftung_diverses</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="ausgaben_divers_wandel_tod_abgaben">
+                     <catDesc>
+                        <gloss>ausgaben_divers_wandel_tod_abgaben</gloss>
                      </catDesc>
                   </category>
                </category>
@@ -155,14 +256,24 @@
                      <term xml:lang="de">Käse</term>
                   </catDesc>
                </category>
+               <category xml:id="eier">
+                  <catDesc>
+                     <term xml:lang="de">Eier</term>
+                  </catDesc>
+               </category>
+               <category xml:id="butter">
+                  <catDesc>
+                     <term xml:lang="de">Butter</term>
+                  </catDesc>
+               </category>
                <category xml:id="heu">
                   <catDesc>
                      <term xml:lang="de">Heu</term>
                   </catDesc>
                </category>
-               <category xml:id="getränk">
+               <category xml:id="trinkgeld">
                   <catDesc>
-                     <term xml:lang="de">Getränk</term>
+                     <term xml:lang="de">Trinkgeld</term>
                   </catDesc>
                </category>
                <category xml:id="wein">
@@ -200,6 +311,11 @@
                      </catDesc>
                   </category>
                </category>
+               <category xml:id="erbsen">
+                  <catDesc>
+                     <term xml:lang="de">Erbsen</term>
+                  </catDesc>
+               </category>
                <category xml:id="edelstein">
                   <catDesc>
                      <term xml:lang="de">Edelstein</term>
@@ -225,6 +341,21 @@
                      <term xml:lang="de">Kelch</term>
                   </catDesc>
                </category>
+               <category xml:id="kasel">
+                  <catDesc>
+                     <term xml:lang="de">Kasel</term>
+                  </catDesc>
+               </category>
+               <category xml:id="kreuz">
+                  <catDesc>
+                     <term xml:lang="de">Kreuz</term>
+                  </catDesc>
+               </category>
+               <category xml:id="hostie">
+                  <catDesc>
+                     <term xml:lang="de">Hostie</term>
+                  </catDesc>
+               </category>
                <category xml:id="material">
                   <catDesc>
                      <term xml:lang="de">Material</term>
@@ -240,9 +371,39 @@
                      <term xml:lang="de">Gabe</term>
                   </catDesc>
                </category>
+               <category xml:id="lampe">
+                  <catDesc>
+                     <term xml:lang="de">Lampe</term>
+                  </catDesc>
+               </category>
+               <category xml:id="oel">
+                  <catDesc>
+                     <term xml:lang="de">Öl</term>
+                  </catDesc>
+               </category>
                <category xml:id="stiefel">
                   <catDesc>
                      <term xml:lang="de">Stiefel</term>
+                  </catDesc>
+               </category>
+               <category xml:id="stoff">
+                  <catDesc>
+                     <term xml:lang="de">Stoff</term>
+                  </catDesc>
+                  <category xml:id="leinenstoff">
+                     <catDesc>
+                        <term xml:lang="de">Leinenstoff</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="seide">
+                     <catDesc>
+                        <term xml:lang="de">Seide</term>
+                     </catDesc>
+                  </category>
+               </category>
+               <category xml:id="kerze">
+                  <catDesc>
+                     <term xml:lang="de">Kerze</term>
                   </catDesc>
                </category>
                <category xml:id="todfallundzuständ">
@@ -259,6 +420,71 @@
                         <term xml:lang="de">Schwein</term>
                      </catDesc>
                   </category>
+                  <category xml:id="pferd">
+                     <catDesc>
+                        <term xml:lang="de">Pferd</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="maultier">
+                     <catDesc>
+                        <term xml:lang="de">Maultier</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="tierhaut">
+                     <catDesc>
+                        <term xml:lang="de">Tierhaut</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="schaffell">
+                     <catDesc>
+                        <term xml:lang="de">Schaffell</term>
+                     </catDesc>
+                  </category>
+               </category>
+               <category xml:id="sattel">
+                  <catDesc>
+                     <term xml:lang="de">Sattel</term>
+                  </catDesc>
+               </category>
+               <category xml:id="zaum">
+                  <catDesc>
+                     <term xml:lang="de">Zaum</term>
+                  </catDesc>
+               </category>
+               <category xml:id="handschuhe">
+                  <catDesc>
+                     <term xml:lang="de">Handschuhe</term>
+                  </catDesc>
+               </category>
+               <category xml:id="faden">
+                  <catDesc>
+                     <term xml:lang="de">Faden</term>
+                  </catDesc>
+               </category>
+               <category xml:id="messer">
+                  <catDesc>
+                     <term xml:lang="de">Messer</term>
+                  </catDesc>
+               </category>
+               <category xml:id="guertel">
+                  <catDesc>
+                     <term xml:lang="de">Gürtel</term>
+                  </catDesc>
+               </category>
+               <category xml:id="beutel">
+                  <catDesc>
+                     <term xml:lang="de">Beutel</term>
+                  </catDesc>
+               </category>
+               <category xml:id="sporen">
+                  <catDesc>
+                     <term xml:lang="de">Sporen</term>
+                  </catDesc>
+               </category>
+               <category xml:id="biretti">
+                  <catDesc>
+                     <term xml:lang="de">Biretti</term>
+                  </catDesc>
                </category>
                <category xml:id="work">
                   <catDesc>
@@ -274,6 +500,21 @@
                         <term xml:lang="de">Transport</term>
                      </catDesc>
                   </category>
+                  <category xml:id="baden">
+                     <catDesc>
+                        <term xml:lang="de">baden</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="zähneziehen">
+                     <catDesc>
+                        <term xml:lang="de">Zähne ziehen</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="leutkauf">
+                     <catDesc>
+                        <term xml:lang="de">Leutkauf</term>
+                     </catDesc>
+                  </category>
                </category>
             </taxonomy>
          </classDecl>
@@ -284,6 +525,14 @@
          <head>Prosopography</head>
          <desc>Personen, welche im Rechnungsbuch BayHStA_KAAA343_R1455-57 des Klosters Aldersbach,
             genannt sind.</desc>
+         <person xml:id="alhartinger">
+            <persName>
+               <name>Alhartinger</name>
+            </persName>
+            <occupation>
+               <roleName>Wirt</roleName>
+            </occupation>
+         </person>
          <person xml:id="petropistori">
             <persName>
                <name>Petro Pistori</name>
@@ -308,14 +557,47 @@
                <placeName ref="#ort_0011">Aidenbach</placeName>
             </occupation>
          </person>
+         <person xml:id="nicolarymervilshoven">
+            <persName>
+               <name>Nicolao Rymer de <placeName ref="#ort_0468">Vilshoven</placeName></name>
+            </persName>
+         </person>
+         <person xml:id="christianchadling">
+            <persName>
+               <name>Christian de <placeName ref="#ort_0225">Chadling</placeName></name>
+            </persName>
+         </person>
          <person xml:id="georioweyshueber">
             <persName>
                <name>Georio Weyshueber</name>
             </persName>
          </person>
+         <person xml:id="christianpraxator">
+            <persName>
+               <name>Christian <roleName>Praxator</roleName></name>
+            </persName>
+            <occupation>
+               <roleName>Brauer</roleName>
+            </occupation>
+         </person>
          <person xml:id="georioodär">
             <persName>
                <name>Georio Odär</name>
+            </persName>
+         </person>
+         <person xml:id="eischiel">
+            <persName>
+               <name>Eischiel</name>
+            </persName>
+         </person>
+         <person xml:id="seyss">
+            <persName>
+               <name>Seyss</name>
+            </persName>
+         </person>
+         <person xml:id="peterampman">
+            <persName>
+               <name>Peter Ampman de<placeName ref="#ort_0254">Chünczen</placeName></name>
             </persName>
          </person>
          <person xml:id="jeronimostättner">
@@ -356,6 +638,11 @@
                <name>Chunrado Gunczkover</name>
             </persName>
          </person>
+         <person xml:id="rudolflandfarer">
+            <persName>
+               <name>Rudolf Landfarer de <placeName ref="#ort_0564">Innsbruck</placeName></name>
+            </persName>
+         </person>
          <person xml:id="hanspachsmid">
             <persName>
                <name>Hanns Pachsmid</name>
@@ -364,12 +651,21 @@
                <roleName>Richter</roleName>
             </occupation>
          </person>
+         <person xml:id="johanngeyer">
+            <persName>
+               <name>Johann Geyer</name>
+            </persName>
+            <occupation>
+               <roleName>Richter</roleName>
+            </occupation>
+         </person>
          <person xml:id="praefectusvilshofen">
             <persName>
-               <name>Präfekt</name>
-               <nameLink>von</nameLink>
-               <placeName ref="#ort_0468">Vilshofen</placeName>
+               <roleName>Präfekt von <placeName ref="#ort_0468">Vilshofen</placeName></roleName>
             </persName>
+            <occupation>
+               <roleName>Präfekt</roleName>
+            </occupation>
          </person>
          <person xml:id="johannleonis">
             <persName>
@@ -409,24 +705,30 @@
             </persName>
          </person>
          <person xml:id="kaufmann">
+            <name>
+               <roleName>Kaufman</roleName>
+            </name>
+         </person>
+         <person xml:id="müllerchrugelmulner">
             <persName>
-               <name>Kaufman</name>
+               <roleName>Müller</roleName>
+               <name>Chrugelmulner</name>
             </persName>
-            <occupation>
-               <roleName>Kaufmann</roleName>
-            </occupation>
          </person>
          <person xml:id="johannesstallmeister">
             <persName>
                <name>Johannes</name>
-            </persName>
-            <occupation>
                <roleName>Stallmeister</roleName>
-            </occupation>
+            </persName>
          </person>
          <person xml:id="ryneri">
             <persName>
                <name>Ryneri</name>
+            </persName>
+         </person>
+         <person xml:id="johannesunverdorben">
+            <persName>
+               <name>Johannes Unverdorben</name>
             </persName>
          </person>
          <person xml:id="schamperger">
@@ -444,14 +746,30 @@
                <name>Stepffanus</name>
             </persName>
          </person>
-         <person xml:id="kellermeister">
+         <person xml:id="sattlerpassau">
             <persName>
-               <name>Kellermeister</name>
+               <roleName>Sellatori</roleName>
+               <placeName ref="#ort_0334">Patavia</placeName>
             </persName>
+         </person>
+         <person xml:id="sattlerpfarrkirchen">
+            <name>
+               <roleName>Sellatori de <placeName ref="#ort_0558">pfarkirchen</placeName></roleName>
+            </name>
+         </person>
+         <person xml:id="kellermeister">
+            <name>
+               <roleName>Kellermeister</roleName>
+            </name>
+         </person>
+         <person xml:id="koch_unbekannt">
+            <name>
+               <roleName>Koch</roleName>
+            </name>
          </person>
          <person xml:id="probstwien">
             <persName>
-               <name>Probst der heiligen Dorothea</name>
+               <roleName>Probst der heiligen Dorothea</roleName>
             </persName>
             <occupation>
                <roleName>Probst</roleName>
@@ -467,18 +785,19 @@
                <name>Aspekchen</name>
             </persName>
          </person>
+         <person xml:id="johannwalneator">
+            <persName>
+               <name>Johann Walneator de <placeName ref="#ort_0468">Vilshofen</placeName></name>
+            </persName>
+         </person>
          <person xml:id="linhardohueber">
             <persName>
-               <name>Linhardo Hueber</name>
-               <nameLink>de</nameLink>
-               <placeName ref="#ort_0249">Kröhstorf</placeName>
+               <name>Linhardo Hueber de <placeName ref="#ort_0249">Kröhstorf</placeName></name>
             </persName>
          </person>
          <person xml:id="linhardotolfüss">
             <persName>
-               <name>Linhardo Tolfüss</name>
-               <nameLink>de</nameLink>
-               <placeName ref="#ort_0011">Aidenbach</placeName>
+               <name>Linhardo Tolfüss de <placeName ref="#ort_0011">Aidenbach</placeName></name>
             </persName>
          </person>
          <person xml:id="linhardprukner">
@@ -486,23 +805,47 @@
                <name>Linhardo Prukner</name>
             </persName>
          </person>
-         <person xml:id="vikar">
+         <person xml:id="linhardhorndel">
             <persName>
-               <name>Vikar</name>
-               <nameLink>in</nameLink>
-               <placeName>Münster</placeName>
+               <name>Linhard Horndel</name>
             </persName>
+         </person>
+         <person xml:id="linhardhollerbeck">
+            <persName>
+               <name>Linhard Hollerbeck</name>
+            </persName>
+            <occupation>
+               <roleName>Diener</roleName>
+            </occupation>
+         </person>
+         <person xml:id="vikar">
+            <name>
+               <roleName>Vikar´in <placeName>Münster</placeName></roleName>
+            </name>
          </person>
          <person xml:id="georiohaberkover">
             <persName>
-               <name>Georio Haberkover</name>
-               <nameLink>de</nameLink>
-               <placeName ref="#ort_0560">Straubing</placeName>
+               <name>Georio Haberkover de <placeName ref="#ort_0560">Straubing</placeName></name>
             </persName>
          </person>
          <person xml:id="petrooder">
             <persName>
                <name>Petro Oder</name>
+            </persName>
+         </person>
+         <person xml:id="pangratius">
+            <persName>
+               <name>Pangratius</name>
+            </persName>
+         </person>
+         <person xml:id="struner">
+            <persName>
+               <name>Struner</name>
+            </persName>
+         </person>
+         <person xml:id="hellenöder">
+            <persName>
+               <name>Hellenöder</name>
             </persName>
          </person>
          <person xml:id="wysmaier">
@@ -515,6 +858,11 @@
                <name>Johanni hon</name>
             </persName>
          </person>
+         <person xml:id="friedrichlandfarer">
+            <persName>
+               <name>Friedrich Landfarer de <placeName ref="#ort_0534">Augusta</placeName></name>
+            </persName>
+         </person>
          <person xml:id="peterhengel">
             <persName>
                <name>Peter Hengel</name>
@@ -522,13 +870,30 @@
          </person>
          <person xml:id="aygnerin">
             <persName>
+               <roleName>Witwe</roleName>
                <name>Aygnerin</name>
             </persName>
-            <socecStatus>Witwe</socecStatus>
          </person>
          <person xml:id="valentino">
             <persName>
                <name>Valentino</name>
+            </persName>
+         </person>
+         <person xml:id="friedrichunverdorben">
+            <persName>
+               <name>Friedrich Unverdorben de <placeName ref="#ort_0567">Nidrenod</placeName></name>
+            </persName>
+         </person>
+         <person xml:id="patensohnvonwilhelmvonfrauenberg">
+            <name>
+               <roleName>paterno nostro filio <name ref="#wilhelmfrauenberg">Stremui militis
+                     wilhelmi de frauenberkch</name></roleName>
+            </name>
+         </person>
+         <person xml:id="wilhelmfrauenberg">
+            <persName>
+               <name><roleName>Stremui militis</roleName> Wilhelm de <placeName ref="#ort_0565"
+                     >Frauenberg</placeName></name>
             </persName>
          </person>
          <person xml:id="andreeczwanrid">
@@ -539,17 +904,17 @@
                <roleName>Klosterbruder</roleName>
             </occupation>
          </person>
-         <person xml:id="cappelano">
-            <persName>
+         <person xml:id="kaplanaldersbach">
+            <name>
                <roleName>Kaplan</roleName>
-            </persName>
+            </name>
             <occupation>
                <roleName>Kaplan</roleName>
             </occupation>
          </person>
          <person xml:id="wirtaldersbach">
             <persName>
-               <roleName>Wirt von Aldersbach</roleName>
+               <roleName>Wirt von <placeName>Aldersbach</placeName></roleName>
             </persName>
             <occupation>
                <roleName>Wirt</roleName>
@@ -557,19 +922,52 @@
          </person>
          <person xml:id="michaelpinter">
             <persName>
-               <roleName>Michael</roleName>
+               <name>Michael</name>
             </persName>
             <occupation>
                <roleName>Pinter</roleName>
             </occupation>
          </person>
          <person xml:id="küster">
-            <persName>
+            <name>
                <roleName>Küster</roleName>
-            </persName>
+            </name>
             <occupation>
                <roleName>Küster</roleName>
             </occupation>
+         </person>
+         <person xml:id="zahnzieher">
+            <name>uni</name>
+         </person>
+         <person xml:id="beamter">
+            <name>
+               <roleName>Official</roleName>
+            </name>
+            <occupation>
+               <roleName>Beamter</roleName>
+            </occupation>
+         </person>
+         <person xml:id="armerpriester">
+            <name>
+               <roleName>armer Priester</roleName>
+            </name>
+            <occupation>
+               <roleName>Priester</roleName>
+            </occupation>
+         </person>
+         <person xml:id="boteherrcaesarea">
+            <name>
+               <roleName>Bote des <roleName ref="#herrcaesarea">Herren von
+                  Cäsarea</roleName></roleName>
+            </name>
+            <occupation>
+               <roleName>Bote</roleName>
+            </occupation>
+         </person>
+         <person xml:id="herrcaesarea">
+            <name>
+               <roleName>Herr von Cäsarea</roleName>
+            </name>
          </person>
          <person xml:id="magistrothomeaurifabri">
             <persName>
@@ -580,52 +978,127 @@
                <roleName>Goldschmied</roleName>
             </occupation>
          </person>
-         <person xml:id="diener_magistrothomeaurifabri">
+         <person xml:id="dominusalthahensis">
+            <name>
+               <roleName>Herr von Althaha</roleName>
+            </name>
+         </person>
+         <person xml:id="herzogludwigvilshoven">
             <persName>
-               <roleName>Diener von Thomas Aurifabri</roleName>
+               <name><roleName>Herzog</roleName> Ludwig de <placeName ref="#ort_0468"
+                     >Vilshofen</placeName></name>
             </persName>
+         </person>
+         <person xml:id="diener_magistrothomeaurifabri">
+            <name>
+               <roleName>Diener von <persName ref="#magistrothomeaurifabri">Thomas
+                     Aurifabri</persName></roleName>
+            </name>
             <occupation>
                <roleName>Diener</roleName>
             </occupation>
          </person>
          <person xml:id="schreiber">
-            <persName>
+            <name>
                <roleName>Schreiber</roleName>
-            </persName>
+            </name>
             <occupation>
                <roleName>Schreiber</roleName>
             </occupation>
          </person>
+         <person xml:id="abtcampiprincipe">
+            <name>
+               <roleName>domino abbatte de Campiprincipe</roleName>
+            </name>
+         </person>
+         <person xml:id="dienerabtcampoprincipe">
+            <name>
+               <roleName>famulo domini abbatte de Campiprincipe</roleName>
+            </name>
+            <occupation>
+               <roleName>Diener</roleName>
+            </occupation>
+         </person>
          <personGrp xml:id="drescher">
-            <persName>Drescher</persName>
+            <name>
+               <roleName>Drescher</roleName>
+            </name>
+         </personGrp>
+         <personGrp xml:id="dienerdesherrenalthaha">
+            <name>
+               <roleName>Diener des <name ref="#dominusalthahensis">Herren von
+                  Althaha</name></roleName>
+            </name>
          </personGrp>
          <personGrp xml:id="johannihonsocii">
-            <persName>Begleiter von Johanni Hon</persName>
+            <name><roleName>Begleiter von Johanni Hon</roleName></name>
          </personGrp>
          <personGrp xml:id="valentinosocii">
-            <persName>Begleiter von Valentino</persName>
+            <name><roleName>Begleiter von Valentino</roleName></name>
          </personGrp>
          <personGrp xml:id="propriishominibus">
-            <persName>Propriis hominibus</persName>
+            <name>Propriis hominibus</name>
          </personGrp>
          <personGrp xml:id="diener">
-            <persName>Diener</persName>
+            <name>
+               <roleName>Diener</roleName>
+            </name>
          </personGrp>
          <personGrp xml:id="fassbinder">
-            <persName>Fassbinder</persName>
+            <name>
+               <roleName>Fassbinder</roleName>
+            </name>
+         </personGrp>
+         <personGrp xml:id="trompeter">
+            <name>
+               <roleName>Trompeter von <name ref="#herzogludwigvilshoven"
+                        ><roleName>Herzog</roleName> Ludwig von <placeName ref="#ort_0468"
+                        >Vilshofen</placeName></name></roleName>
+            </name>
+         </personGrp>
+         <personGrp xml:id="kaplanealdersbach">
+            <name>
+               <roleName>Kaplane</roleName>
+            </name>
+         </personGrp>
+         <personGrp xml:id="hebammekinder">
+            <name>
+               <roleName>Hebamme und Kinder</roleName>
+            </name>
+         </personGrp>
+         <personGrp xml:id="arme_unbekannt">
+            <name>
+               <roleName>Arme</roleName>
+            </name>
          </personGrp>
       </listPerson>
       <listPlace ana="depcha:index">
          <desc>Orte, welche im Rechnungsbuch BayHStA_KAAA343_R1455-57 des Klosters Aldersbach,
             genannt sind.</desc>
          <place xml:id="ort_0011">
-            <placeName xml:lang="de">Aidenbach</placeName>
+            <placeName>Aidenbach</placeName>
+            <settlement>Aidenbach</settlement>
+            <geogName><geo>48.5682482,13.0854639</geo></geogName>
+         </place>
+         <place xml:id="ort_0016">
+            <placeName xml:lang="de">Aldersbach</placeName>
+         </place>
+         <place xml:id="ort_0028">
+            <placeName xml:lang="de">Anham</placeName>
          </place>
          <place xml:id="ort_0119">
             <placeName xml:lang="de">Freundorf</placeName>
          </place>
-         <place xml:id="ort_0556">
-            <placeName xml:lang="de">Hinterkirch</placeName>
+         <place xml:id="ort_0139">
+            <placeName xml:lang="de">Gotteszell</placeName>
+         </place>
+         <place xml:id="ort_0225">
+            <placeName xml:lang="de">Karling</placeName>
+         </place>
+         <place xml:id="ort_0254">
+            <placeName>Künzing (Lang-)</placeName>
+            <settlement>Künzing</settlement>
+            <geogName><geo>48.68079,13.07804</geo></geogName>
          </place>
          <place xml:id="ort_0468">
             <placeName xml:lang="de">Vilshofen</placeName>
@@ -639,11 +1112,20 @@
          <place xml:id="ort_0334">
             <placeName>Passau</placeName>
          </place>
+         <place xml:id="ort_0304">
+            <placeName>Neustift</placeName>
+         </place>
          <place xml:id="ort_0346">
             <placeName xml:lang="de">Pleinting</placeName>
          </place>
+         <place xml:id="ort_0534">
+            <placeName xml:lang="de">Augsburg</placeName>
+         </place>
          <place xml:id="ort_0553">
             <placeName xml:lang="de">Braunau</placeName>
+         </place>
+         <place xml:id="ort_0556">
+            <placeName xml:lang="de">Hinterkirch</placeName>
          </place>
          <place xml:id="ort_0557">
             <placeName xml:lang="de">Eggenfelden</placeName>
@@ -665,6 +1147,21 @@
          </place>
          <place xml:id="ort_0563">
             <placeName>Neunkirchen</placeName>
+         </place>
+         <place xml:id="ort_0564">
+            <placeName>Innsbruck</placeName>
+         </place>
+         <place xml:id="ort_0565">
+            <placeName>Frauenberg</placeName>
+         </place>
+         <place xml:id="ort_0566">
+            <placeName>Griesbach</placeName>
+         </place>
+         <place xml:id="ort_0567">
+            <placeName>Niedernod</placeName>
+         </place>
+         <place xml:id="ort_0568">
+            <placeName>Zwettel</placeName>
          </place>
       </listPlace>
       <listOrg ana="depcha:index">
@@ -724,7 +1221,7 @@
       <body>
          <!--Notizen (bezieht sich nur auf RB 343):-->
          <!--Es gibt Rechnungen wie Betrag A minus Betrag B-->
-         <!--Es gibt Angaben über Schulden und den Status der Rückzahlung: tenetur, tenetur dedit, <span ana="bk:status">solvit totum</span>, soluti sunt totaliter eadem die, etc.-->
+         <!--Es gibt Angaben über Schulden und den Status der Rückzahlung: tenetur, tenetur dedit, <seg ana="bk:status">solvit totum</seg>, soluti sunt totaliter eadem die, etc.-->
          <!--Item postea, Item nota-->
          <!--recepimus a oder recepimus ab = bk:from; vendidimus = bk:from-->
          <!--dedimus = bk:to-->
@@ -734,20 +1231,23 @@
          <!--Datumsangaben in unterschiedlicher Form-->
          <!--Es gibt auch dedit item oder tenetur item oder tenetur dedit item-->
          <!--Es scheint so zu sein, dass C für Zahl 100 und für Gewichtseinheit (vmtl. Zentner) stehen kann (z.b.  S. 4 von KAAA343 "iiiC tritici" oder "viiiC avene"). Kann also zweideutig sein.-->
+         <!--Das Gleiche mit Pfund als Gewicht und als Währung (lb.)-->
          <!--Rubriken in unterschiedlicher Form-->
          <!--computavimus sibi, coputatum est sibi, quittat-->
          <!--Summa facit, Summa totalis-->
-         <!--Zahl + "diebus" für geleistete Arbeit, hier gibt es sicherlich mehrere Varianten-->
+         <!--Zahl + "diebus" oder "dies" für geleistete Arbeit-->
+         <!--bk:price: Wir brauchen eine Möglichkeit von Ausdruck von Preis für andere Einheit als angegeben oder für Preis pro mehr als eine Einheit-->
 
 
-         <pb n="1" facs="#IMG.1.jpg"/>
+
+         <pb n="1" facs="#facs_1" xml:id="IMG.1"/>
          <head><supplied><gap/>Regis</supplied>tr<supplied><gap/>um</supplied> Receptorum et
             <lb/>expensarum lv<hi rend="superscript">to</hi> anno</head>
-         <pb n="2" facs="#IMG.2.jpg"/>
+         <pb n="2" facs="#facs_2" xml:id="IMG.2"/>
          <div n="1455">
             <div ana="bk:rubric" corresp="#einnahmen">
                <div ana="bk:rubric" corresp="#einnahmen_getreide">
-                  <ab ana="bk:entry">Item <measure ana="bk:commodity" quantity="13"
+                  <ab ana="sonstiges">Item <measure ana="bk:commodity" quantity="13"
                         unitRef="#schaff">xiii schaf.</measure> faciunt in precio <measure
                         ana="bk:money" quantity="234" unitRef="#d">i lb. minus vi d.</measure>
                      <!--Subtraktion Betrag A minus Betrag B--> computandum schaf. pro <measure
@@ -757,55 +1257,56 @@
                 Außerdem keine commodity angegeben-->
                   <lb/>
                   <ab ana="bk:entry">Item nota vendidimus <name ana="bk:individual bk:from"
-                        ref="#petropistori">petro pistori in <placeName ana="bk:where"
-                           ref="#ort_0468">vilshoven</placeName></name>
+                        ref="#petropistori">petro pistori in <placeName ref="#ort_0468"
+                           >vilshoven</placeName></name>
                      <measure ana="bk:commodity" quantity="2" commodity="weitzen" unitRef="#schaff"
-                        >ii schaf. tritici pro <measure ana="bk:price" quantity="5" unitRef="#lb">v
-                           lb. d.</measure></measure>
-                     <date ana="bk:when" when="1455-04-30" xml:id="date_002">feria quarta post
-                        dominicam Iubilate</date>
-                     <lb/><date ana="bk:when" when="1456" xml:id="date_003">Anno lvi<hi
-                           rend="superscript">o</hi></date> In hoc defalcavimus sibi pro <measure
-                        ana="bk:commodity" commodity="brot">albis panibus</measure> tempore
-                     quadragesimali <!--Fastenzeit-->
+                        >ii schaf. tritici</measure> pro <measure ana="bk:money" quantity="5"
+                        unitRef="#lbdwien">v lb. d.</measure>
+                     <date ana="bk:when" when="1456-04-21">feria quarta post dominicam Iubilate
+                        <lb/>Anno lvi<hi rend="superscript">o</hi></date> In hoc defalcavimus sibi
+                     pro <measure ana="bk:commodity" commodity="brot">albis panibus</measure>
+                     tempore quadragesimali <!--Fastenzeit-->
                      <measure ana="bk:money" quantity="12" unitRef="#s">xii s. d.</measure>
                      <measure ana="bk:money" quantity="840" unitRef="#d">Reliquam
                         <lb/>Summam</measure>
-                     <!--Kann man das so kodieren?--> pecunie <span ana="bk:status">exsolvit
-                        totaliter</span>
+                     <!--Kann man das so kodieren?--> pecunie <seg ana="bk:status">exsolvit
+                        totaliter</seg>
                      <!--Angabe über Schuld und Rückzahlung (Der restliche Geldbetrag, also 5 Pfund Pfennige minus 12 Schillinge, wurde vollständig beglichen)--></ab>
 
                   <ab ana="bk:entry">Item
                      postea<!--Hier die Frage, ob man postea kodieren sollte?--> recepimus a <name
                         ana="bk:individual bk:from" ref="#michaelallerlay">michahele allerlay
-                        pistore de <placeName ana="bk:where" ref="#ort_0011"
-                        >Ayttenpach</placeName></name> pro <measure ana="bk:commodity"
+                           <roleName>pistore</roleName> de <placeName ref="#ort_0011"
+                           >Ayttenpach</placeName></name> pro <measure ana="bk:commodity"
                         quantity="0.5" commodity="weitzen" unitRef="#schaff">j̸ schaf.
                         tritici</measure>
                      <measure ana="bk:money" quantity="10" unitRef="#s">x s. d.</measure>
                      <date ana="bk:when" when="1455-05-08" xml:id="date_004">feria quinta ante <lb/>
-                        dominicam Vocem <lb/> Iocunditatis</date><lb/></ab>
+                        dominicam Vocem <lb/> Iocunditatis</date></ab>
+                  <lb/>
 
                   <ab ana="bk:entry">Item postea recepimus a <name ana="bk:individual bk:from"
-                        ref="#georioweyshueber">Georio weyshueber zü <placeName ana="bk:where"
-                           ref="#ort_0556">hintterkirch</placeName></name> pro <measure
-                        ana="bk:commodity" quantity="2" commodity="weitzen" unitRef="#schaff">ii
-                        schaf. tritici</measure>
-                     <measure ana="bk:money" quantity="5" unitRef="#lb">v lb. d.</measure> In <date
-                        ana="bk:when" when="1455-05-03" xml:id="date_005">die Invencionis sancte
-                        crucis</date></ab>
+                        ref="#georioweyshueber">Georio weyshueber zü <placeName ref="#ort_0556"
+                           >hintterkirch</placeName></name> pro <measure ana="bk:commodity"
+                        quantity="2" commodity="weitzen" unitRef="#schaff">ii schaf.
+                        tritici</measure>
+                     <measure ana="bk:money" quantity="5" unitRef="#lbdwien">v lb. d.</measure> In
+                        <date ana="bk:when" when="1455-05-03" xml:id="date_005">die Invencionis
+                        sancte crucis</date></ab>
 
                   <ab ana="bk:entry">Item <lb/>recepimus <date ana="bk:when" when="1455-05-03"
                         corresp="#date_005">eadem
                      <lb/>die</date><!--Verweis auf selbes Datum wie zuvor--> a <name
-                        ana="bk:individual bk:from">martino maister de <placeName ana="bk:where"
-                           ref="#ort_0286">tettling</placeName></name>
+                        ana="bk:individual bk:from">martino <roleName>maister</roleName> de
+                           <placeName ref="#ort_0286">tettling</placeName></name>
                      <measure ana="bk:money" quantity="20" unitRef="#s">xx s. d.</measure> pro
                         <measure ana="bk:money" quantity="1" commodity="weitzen" unitRef="#schaff">i
-                        schaf. tritici</measure><lb/></ab>
+                        schaf. tritici</measure></ab>
+                  <lb/>
 
                   <ab ana="bk:entry">Item recepimus ab <name ana="bk:individual bk:from"
-                        ref="#ulricodeanhaim">ulrico de Anhaim</name>
+                        ref="#ulricodeanhaim">ulrico de <placeName ref="#ort_0028"
+                           >Anhaim</placeName></name>
                      <measure ana="bk:money" quantity="14" unitRef="#s">xiiii s. d.</measure> pro
                         <measure ana="bk:money" quantity="1" commodity="roggen" unitRef="#schaff">i
                         schaf. Siliginis</measure><lb/>
@@ -817,58 +1318,64 @@
 
                   <ab ana="bk:entry">Item recepimus ab <name ana="bk:individual bk:from"
                         ref="#chunradowinterstain">Chunrado wintterstain de <placeName
-                           ana="bk:where" ref="#ort_0557">Ekkenfelden</placeName></name>
+                           ref="#ort_0557">Ekkenfelden</placeName></name>
                      <measure ana="bk:commodity" quantity="8" unitRef="#schaff" commodity="hafer"
                         >pro viii schaf. avene</measure>
-                     <measure ana="bk:money" quantity="10" unitRef="#lb">x lb. d.</measure>
+                     <measure ana="bk:money" quantity="10" unitRef="#lbdwien">x lb. d.</measure>
                      <date ana="bk:when" when="1455-05-21" xml:id="date_006">feria quarta ante
                         festum <lb/> penthecostes</date>
-                     <span ana="bk:status">solvit totum</span>
+                     <seg ana="bk:status">solvit totum</seg>
                      <!--Angabe über Bezahlstatus--></ab>
                </div>
-               <pb n="5" facs="IMG.5.jpg"/>
+               <pb n="5" facs="#facs_5" xml:id="IMG.5"/>
                <fw type="year"><date ana="bk:when" when="1455">Anno lv<hi rend="superscript"
                      >o</hi></date></fw>
-               <!--...-->
+               <gap/>
                <div ana="bk:rubric" corresp="#einnahmen_heu_althey">
                   <head>Recepimus de <measure ana="bk:commodity" commodity="heu">feno</measure>
                      vendito videlicet althey</head>
-                  <ab ana="bk:entry"><add>tenetur</add> Item <name
+                  <ab ana="bk:entry"><add>tenetur</add> Item <roleName
                         ana="bk:from bk:individual bk:debit" ref="#praefectusvilshofen">prefectus de
-                        vilshoven</name> tenetur de <measure ana="bk:commodity" quantity="2"
+                        vilshoven</roleName> tenetur de <measure ana="bk:commodity" quantity="2"
                         commodity="heu" unitRef="#wagenladung">ii plaustris feni</measure>
-                     <measure ana="bk:money" quantity="2" unitRef="#lb">ii lb.d. Wien</measure>.
-                     <lb/></ab>
+                     <measure ana="bk:money" quantity="2" unitRef="#lbdwien">ii lb.d.
+                     Wien</measure>. </ab>
+                  <lb/>
                   <!--tenetur vor Item (wahrscheinlich) hinzugefügt.-->
                   <!--Wagenladung als Maßeinheit-->
                   <!--bk:debit hier und in folgenden Bsplen richtig?-->
 
                   <ab ana="bk:entry"><add>tenetur</add> Item <name
-                        ana="bk:from bk:individual bk:dedit" ref="#puczner">mautarius ibidem
-                        puczner</name> tenetur pro <measure ana="bk:commodity" quantity="1"
-                        commodity="heu" unitRef="#wagenladung">i plaustro</measure>
-                     <measure ana="bk:money" quantity="1" unitRef="#lb">i lb.d.</measure>
-                     <lb/></ab>
+                        ana="bk:from bk:individual bk:dedit" ref="#puczner"
+                           ><roleName>mautarius</roleName> ibidem puczner</name> tenetur pro
+                        <measure ana="bk:commodity" quantity="1" commodity="heu"
+                        unitRef="#wagenladung">i plaustro</measure>
+                     <measure ana="bk:money" quantity="1" unitRef="#lbdwien">i lb.d.</measure>
+                  </ab>
+                  <lb/>
                   <!--Auf was genau bezieht sich ibidem?-->
                   <!--Heu als Ware implizit und nicht genannt-->
                   <!--tenetur vor Item (wahrscheinlich) hinzugefügt-->
 
                   <ab ana="bk:entry"><add><del>tenetur </del>dedit</add>Item <name
-                        ana="bk:from bk:individual bk:debit" ref="#fridelgressing">fridel
-                        Gressing</name> de <placeName ana="bk:where" ref="#ort_0468"
-                        >vilshoven</placeName> tenetur pro <measure ana="bk:commodity" quantity="1"
-                        commodity="heu" unitRef="#wagenladung">i plaustro</measure>
-                     <measure ana="bk:money" quantity="1" unitRef="#lb">i lb.d.</measure>
-                     <span ana="bk:status">solvit totum</span>
-                     <lb/></ab>
+                        ana="bk:from bk:individual bk:debit" ref="#fridelgressing">fridel Gressing
+                        de <placeName ref="#ort_0468">vilshoven</placeName></name> tenetur pro
+                        <measure ana="bk:commodity" quantity="1" commodity="heu"
+                        unitRef="#wagenladung">i plaustro</measure>
+                     <measure ana="bk:money" quantity="1" unitRef="#lbdwien">i lb.d.</measure>
+                     <seg ana="bk:status">solvit totum</seg>
+                  </ab>
+                  <lb/>
                   <!--del in add bei tenetur dedit, so auch in folgenden Einträgen-->
-                  <!--<span ana="bk:status">solvit totum</span>-->
+                  <!--<seg ana="bk:status">solvit totum</seg>-->
 
-                  <ab ana="bk:entry"><add><del>tenetur </del>dedit</add>Item <name
-                        ana="bk:from bk:individual bk:debit" ref="#kaufmann">kaufman ibidem</name>
-                     tenetur <measure ana="bk:money" quantity="6" unitRef="#s">vi s.d.</measure>
-                     <span ana="bk:status">computavimus sibi</span>
-                     <lb/></ab>
+                  <ab ana="bk:entry"><add><del>tenetur </del>dedit</add>Item <roleName
+                        ana="bk:from bk:individual bk:debit" ref="#kaufmann">kaufman
+                        ibidem</roleName> tenetur <measure ana="bk:money" quantity="6" unitRef="#s"
+                        >vi s.d.</measure>
+                     <seg ana="bk:status">computavimus sibi</seg>
+                  </ab>
+                  <lb/>
                   <!--ibidem-->
                   <!--commodity implizit (Heu)-->
                   <!--Betrag wurde angerechnet? = computavimus sibi-->
@@ -879,8 +1386,9 @@
                      tenetur pro <measure ana="bk:commodity" quantity="1" commodity="heu"
                         unitRef="#wagenladung">i plaustro</measure>
                      <measure ana="bk:money" quantity="6" unitRef="#s">vi s.d.</measure>
-                     <span ana="bk:status">computatum est sibi</span>
-                     <lb/></ab>
+                     <seg ana="bk:status">computatum est sibi</seg>
+                  </ab>
+                  <lb/>
                   <!--ibidem-->
                   <!--Commodity ist implizit-->
                   <!--coputatum est sibi-->
@@ -899,16 +1407,17 @@
                   <ab ana="bk:entry"><del>Item <name ana="bk:from bk:individual bk:debit"
                            >Stepffanus</name> ibidem tenetur pro <measure ana="bk:commodity"
                            commodity="heu" unitRef="#wagenladung">i plaustro</measure>
-                        <measure ana="bk:money" quantity="1" unitRef="#lb">i lb.d.</measure>
+                        <measure ana="bk:money" quantity="1" unitRef="#lbdwien">i lb.d.</measure>
                         <add><measure ana="bk:money" quantity="7" unitRef="#s">vii
                            s.</measure></add>
-                        <span ana="bk:status">solvit totum</span></del><lb/></ab>
+                        <seg ana="bk:status">solvit totum</seg></del></ab>
+                  <lb/>
                   <!--Ganze Zeile ist durchgestrichen-->
                   <!--Keine quantity bei commodity, commodity ist implizit-->
 
                   <ab ana="bk:total">Summa totalis quam recepimus de feno vendito prescriptis et
                      aliis externeis hic non numeratis facit totum <measure ana="bk:money"
-                        quantity="12" unitRef="#lb">xii lb.</measure>
+                        quantity="12" unitRef="#lbdwien">xii lb.</measure>
                      <measure ana="bk:money" quantity="7" unitRef="#s">vii s.</measure>
                      <lb/><measure ana="bk:money" quantity="22" unitRef="#d">xxii d.</measure>
                      Wien.</ab>
@@ -917,58 +1426,491 @@
                </div>
             </div>
 
+            <!--neu kodiert-->
+            <div ana="bk:rubric" corresp="#ausgaben">
+               <gap/>
+               <pb n="20" facs="#facs_20" xml:id="IMG.20"/>
+               <fw type="year">lv<hi rend="superscript">o</hi></fw>
+               <div ana="bk:rubric" corresp="#ausgaben_küsterdienst">
+                  <head>Pro cera oleo hostiis ac aliis diversis pro officio custodis</head>
+                  <ab ana="bk:entry">Item primo dedimus <name ana="bk:to bk:individual"
+                           ><roleName>molitori</roleName> chrugelmulner</name> pro <measure
+                        ana="bk:commodity" quantity="1" commodity="öl" unitRef="#centenarius">i
+                        centenario <del>x</del> et xiiiij̸ libris olei</measure>
+                     <!--2 Mengenangaben, ich weiß noch immer nicht, wie ich das kodieren soll. Muss man whs zusammenrechnen so wie bei Geldbeträgen-->
+                     qui faciunt in peccunia <measure ana="bk:money" quantity="3.5"
+                        unitRef="#lbdwien">iiij̸ lb.</measure>
+                     <lb/><measure ana="bk:money" quantity="7" unitRef="#s">vii s. d.</measure><date
+                        ana="bk:when" when="1455-06-06">feria sexta post festum corporis
+                        Christi</date></ab>
+                  <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity" quantity="1"
+                        commodity="leinenstoff" unitRef="#librum">i libra lane</measure>
+                     <measure ana="bk:money" quantity="30" unitRef="#d">xxx d.</measure></ab>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="16" unitRef="#d">xvi
+                        d.</measure> pro <measure ana="bk:commodity" commodity="hostie"
+                        >hostiis</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity" quantity="1"
+                        commodity="kerze" unitRef="#ulna">i ulna czendel</measure><!--Czendel? Ulna?-->
+                     <measure ana="bk:money" quantity="40" unitRef="#d">xl d.</measure> in die <date
+                        ana="bk:when" when="1455-08-02">sancti Stepfani</date></ab>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="40" unitRef="#d">xl
+                        d.</measure> pro <measure ana="bk:commodity" commodity="hostie"
+                        >hostiis</measure> ante <date ana="bk:when" when="1455-03-02"
+                        >Reminiscere</date>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item <del>dedimus</del> emimus a <name
+                        ana="bk:to bk:individual" ref="#rudolflandfarer">Rudolfo Landfarer de
+                           <placeName ref="#ort_0564">Ispruk</placeName></name>
+                     <measure ana="bk:commodity" quantity="4" commodity="stoff">iiii pannos satis
+                        preciosos</measure> in die <date ana="bk:when" when="1455-08-02">sancti
+                        Stepfani <lb/>patavie</date> primo <measure ana="bk:commodity"
+                        quantity="11.75" commodity="samtstoff" unitRef="#ulna">xii ulnas minus i
+                        quartali wlgariter ein rotten Sammat nomine germansin <lb/><add>ulnam
+                           </add><del>i</del> pro <measure ana="bk:price" quantity="3"
+                           unitRef="#lbdwien">iii lb.</measure></measure>
+                     <measure ana="bk:money" quantity="60" unitRef="#d">lx d. Wien.</measure> facit
+                        <measure ana="bk:money" quantity="38" unitRef="#lbdwien">xxxviii lb. d.
+                        Wien.</measure></ab>
+                  <ab ana="bk:entry">Item emimus ab <rs ana="bk:to bk:individual"
+                        corresp="#rudolflandfarer">eodem</rs>
+                     <measure ana="bk:commodity" quantity="16" commodity="samtstoff" unitRef="#ulna"
+                        >xvi ulnas <del>Sr </del>wlgariter <lb/>ein Swarczen gemüstertten Sammat
+                        ulnam pro <measure ana="bk:price" quantity="2" unitRef="#lbdwien">ii
+                           lb.</measure></measure>
+                     <measure ana="bk:money" quantity="3" unitRef="#s">iii s. d.</measure> facit
+                        <measure ana="bk:money" quantity="38" unitRef="#lbdwien">xxxviii lb. d.
+                        Wien.</measure></ab>
+                  <ab ana="bk:entry">Item <lb/>emimus ab <rs ana="bk:to bk:individual"
+                        corresp="#rudolflandfarer">eodem</rs>
+                     <measure ana="bk:commodity" quantity="25.3" commodity="samtstoff"
+                        unitRef="#ulna">xxv ulnas und ii drittail einer ellen wlgariter ein graben
+                        gemustertten <lb/>Sammat ulnam pro <measure ana="bk:price" quantity="2"
+                           unitRef="#lbdwien">ii lb.</measure></measure>
+                     <measure ana="bk:money" quantity="3" unitRef="#s">iii s. d. Wien.</measure>
+                     facit <measure ana="bk:money" quantity="61" unitRef="#lbdwien">lxi lb.
+                        d.</measure></ab>
+                  <ab ana="bk:entry">Item postea emimus ab <rs ana="bk:to bk:individual"
+                        corresp="#rudolflandfarer">eodem</rs>
+                     <measure ana="bk:commodity" quantity="21" commodity="samtstoff" unitRef="#elle"
+                        >xxi ellen <lb/>wlgariter ein grüen Sammat gemüstertten ulnam pro <measure
+                           ana="bk:price" quantity="17" unitRef="#s">xvii s. d.</measure></measure>
+                     facit <measure ana="bk:money" quantity="44.5" unitRef="#lbdwien">xliiiij̸ lb.
+                        d. Wien.</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity" commodity="hostie"
+                        >hostiis</measure>
+                     <measure ana="bk:money" quantity="40" unitRef="#d">xl d.</measure></ab>
+                  <ab ana="bk:entry">Item pro <measure ana="bk:commodity" commodity="hostie"
+                        >hostiis</measure>
+                     <measure ana="bk:money" quantity="43" unitRef="#d">xliii d.</measure>
+                     <date ana="bk:when" when="1455-06-13">in octava corporis Christi</date></ab>
+                  <ab ana="bk:total">Summa totalis omnium prescriptorum que procuravimus a <name
+                        ref="#rudolflandfarer">Rudolfo</name> in pannis Sericis <lb/>facit <measure
+                        ana="bk:money" quantity="181.5" unitRef="#lbdwien">i<hi rend="superscript"
+                           >C</hi> lxxxij̸ lb. d. Wien.</measure>
+                     <!--Summe für die oben genannten Ausgaben, unten geht es weiter mit anderen Dingen, jedoch in der selben Rubrik-->
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item primo dedimus <rs ana="bk:to bk:individual"
+                        corresp="#rudolflandfarer">sibi in <placeName ref="#ort_0334"
+                           >patavia</placeName></rs>
+                     <measure ana="bk:money" quantity="2" unitRef="#lbdwien">ii lb.</measure> super
+                     computacionem</ab>
+                  <ab ana="bk:entry">Item postea <name ana="bk:by bk:from bk:individual"
+                        ref="#alhartinger"><roleName>hospes noster</roleName> Alhartinger</name>
+                     dedit <rs ana="bk:to bk:individual" corresp="#rudolflandfarer">sibi</rs>
+                     <measure ana="bk:money" quantity="30" unitRef="#lbdwien">xxx lb. d.
+                        Wien.</measure>
+                     <lb/>eum a monetario pataviensi</ab>
+                  <!--Was heißt das genau?-->
+                  <ab ana="bk:entry">Item postea dedimus <rs ana="bk:to bk:individual"
+                        corresp="#rudolflandfarer">sibi</rs> in <placeName ana="bk:where"
+                        ref="#ort_0016">monasterio nostro</placeName> in presencia <name
+                        ref="#kellermeister">domini de <placeName ref="#ort_0139">cella
+                           dei</placeName></name>
+                     <lb/>et <name ref="#stepffanus">fratris Stepfani prioris nostri</name>
+                     <measure quantity="100" unitRef="#frhen">i<hi rend="superscript">C</hi> f.
+                        Rhen.</measure> qui faciunt in peccunia <measure ana="bk:money"
+                        quantity="75" unitRef="#lbdwien">lxxv lb. Wien.d.</measure>
+                     <!--Hier Umrechnung, beide Geldbeträge sind die gleichen, habe in ersterm Fall kein bk:money gesetzt-->
+                  </ab>
+                  <ab ana="bk:total">et sic <name ana="bk:debit" ref="#aldersbach">obligamur</name>
+                     <lb/><rs ana="bk:to bk:individual" corresp="#rudolflandfarer">sibi</rs> pro
+                     finali solucione <measure ana="bk:money" unitRef="#frhen">i<hi
+                           rend="superscript">C</hi> f. Rhen. minus j̸ lb.
+                     Wien.d.</measure><!--Keine Ahnung, wie viel das ist, quantity vorerst ausgelassen-->
+                     terminus solucionis <date when="1456-11-11">martini proxime futuri</date> Acta
+                     <lb/>sunt hec <date when="1455-08-05">feria 3<hi rend="superscript">a</hi> post
+                        Invencionis sancti Stepfani Anno etc. lv<hi rend="superscript">o</hi></date>
+                     litteram munitam <del>cum </del>Secreto nostro dedimus <lb/>sibi quam restituet
+                     tempore solucionis solucionem fecimus loco suo domino Johanni kreuch vicario
+                     Ecclesie <lb/>pataviensis <date ana="bk:when" when="1456-03-07">dominica letare
+                        Anno etc. lvi<hi rend="superscript">o</hi></date> littere desuper confecte
+                     habentur in truhula in camera </ab>
+                  <lb/>
+                  <ab ana="bk:total">Summa olei facit <measure ana="bk:money" quantity="21"
+                        unitRef="#lbdwien">xxi lb.</measure>
+                     <measure ana="bk:money" quantity="16" unitRef="#d">xvi d.</measure> pro vi<hi
+                        rend="superscript">C</hi>
+                     <measure ana="bk:commodity" quantity="5" commodity="öl" unitRef="#librum">v
+                        libra olei</measure>
+                  </ab>
+                  <lb/>
+                  <!--Hier 2 Summen für verschiedene Waren, die hier in dieser Rubrik aufgeführt werden.-->
+                  <ab ana="bk:total">Summa pro lampadibus <measure ana="bk:money" quantity="55"
+                        unitRef="#d">lv d.</measure>
+                  </ab>
+                  <lb/>
+                  <!--Summa pro lampadibus wirkt nachträglich oben eingefügt.-->
+                  <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual" ref="#peterampman"
+                        >petro Ampman de <placeName ref="#ort_0254">chünczen</placeName></name> pro
+                        <measure ana="bk:commodity" quantity="95" commodity="öl" unitRef="#librum"
+                        >lxxxxv libris olei </measure>
+                     <measure ana="bk:money" quantity="3" unitRef="#lbdwien">iii lb.</measure>
+                     <measure ana="bk:money" quantity="40" unitRef="#d">xl d.</measure> in <date
+                        ana="bk:when" when="1455-11-29">vigilia Andree</date> libra <lb/>pro
+                        <measure ana="bk:money" quantity="8" unitRef="#d">viii d.</measure>
+                     <seg ana="bk:status">solvimus sibi totum</seg> in presencia <name
+                        ana="bk:individual" ref="#linhardprukner">linhardi prukner</name> et
+                        <roleName ana="bk:individual" ref="#beamter">officialis</roleName></ab>
+                  <ab ana="bk:entry">Item postea dedimus <rs ana="bk:to bk:individual"
+                        corresp="#peterampman">eidem</rs> pro <measure ana="bk:commodity"
+                        quantity="390" commodity="öl" unitRef="#librum">iii<hi rend="superscript"
+                           >C</hi> lxxxx <lb/>libris olei</measure> facit <measure ana="bk:money"
+                        quantity="13" unitRef="#lbdwien">xiii lb. d. Wien.</measure>
+                     <seg ana="bk:status">solvimus sibi totum</seg>
+                     <date ana="bk:when" when="1455-12-11">feria quinta ante lucie virginis</date>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity" quantity="24"
+                        commodity="seide" unitRef="#elle">xxiiii ulnis de Serico</measure> in
+                        <placeName ana="bk:where" ref="#ort_0334">patavia</placeName>
+                     <add>diversi coloris</add> pro vexillis ac aliis ornamentis
+                        <!--Seide für Fahnen und Ornamente--><measure ana="bk:money" quantity="5.5"
+                        unitRef="#lbdwien">vj̸ lb. d.</measure>
+                     <del>diversi</del>
+                     <lb/><del>coloris</del></ab>
+                  <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity" quantity="19"
+                        commodity="lampe">xix lampadibus</measure>
+                     <measure ana="bk:money" quantity="55" unitRef="#d">lv d.</measure>
+                     <date ana="bk:when" when="1455-12-16">feria 3<hi rend="superscript">a</hi> post
+                        lucie virginis</date></ab>
+                  <ab ana="bk:entry">Item postea dedimus <lb/>pro <measure ana="bk:commodity"
+                        quantity="2" commodity="kasel">ii casulis viridi et rubei coloris</measure>
+                     et pro <measure ana="bk:commodity" quantity="1" commodity="kreuz">i
+                        cruce</measure>
+                     <name ana="bk:to bk:individual" ref="#friedrichlandfarer">friderico Lanndfarer
+                        de <placeName ref="#ort_0534">augusta</placeName></name>
+                     <!--kein bk:money, weil unten Umrechnung--><measure quantity="13.5"
+                        unitRef="#frhen">xiiij̸ <lb/>f. Rhen.</measure>
+                     <date ana="bk:when" when="1455-03-07">feria sexta ante dominicam oculi</date>
+                     facit in peccunia <measure ana="bk:money" quantity="10" unitRef="#lbdwien">x
+                        lb.</measure>
+                     <measure ana="bk:money" quantity="30" unitRef="#d">xxx d.</measure> In hoc
+                        <unclear>recepit</unclear>
+                     <!--Achtung: Hier bleibt die Schuld offen, es ist eigentlich kein bk:money. Depcha hat hier keine Lösung.-->
+                     <lb/><measure ana="bk:money" quantity="5" unitRef="#frhen">v f. Rhen.</measure>
+                     qui faciunt in pecunia <measure ana="bk:money" quantity="3" unitRef="#lbdwien"
+                        >iii lb.</measure>
+                     <!--qui facit in pecunia-->
+                     <measure ana="bk:money" quantity="6" unitRef="#s">vi s. d.</measure> Et sic
+                        <del>ex </del>remanent <measure ana="bk:money" quantity="6"
+                        unitRef="#lbdwien">vi lb.</measure>
+                     <measure ana="bk:money" quantity="3" unitRef="#s">iii s. d.</measure></ab>
+               </div>
+               <gap/>
+               <pb n="25" facs="#facs_25" xml:id="IMG.25"/>
+               <fw type="year">lv<hi rend="superscript">o</hi></fw>
+               <div ana="bk:rubric" corresp="#ausgaben_boten_spielleute">
+                  <head>Dedimus diversis cursoribus ioculatoribus etc</head>
+                  <ab ana="bk:entry">Item primo dedimus uni <name ana="bk:to bk:individual"
+                        ref="#koch_unbekannt">coco</name>
+                     <measure ana="bk:money" quantity="30" unitRef="#d">xxx d.</measure> pro
+                        <measure ana="bk:commodity" commodity="trinkgeld">bibalibus</measure>
+                     <date ana="bk:when" when="1455-04-30">feria 4<hi rend="superscript">a</hi> ante
+                        philippi et Jacobi</date></ab>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="8" unitRef="#d">viii
+                        d.</measure></ab>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="36" unitRef="#d">xxxvi
+                        d.</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="15" unitRef="#d">xv
+                        d.</measure></ab>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="24" unitRef="#d">xxiiii
+                        d.</measure></ab>
+                  <ab ana="bk:entry">Item xxiiii</ab>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="15" unitRef="#d">xv
+                        d.</measure></ab>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="10" unitRef="#d">x
+                        d.</measure></ab>
+                  <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual">uni</name> qui
+                        <measure ana="bk:service" commodity="zähneziehen">extraxit dentes aliquibus
+                        <lb/>fratribus</measure>
+                     <!--Person nicht näher definiert-->
+                     <measure ana="bk:money" quantity="20" unitRef="#d">xx d.</measure>
+                     <date ana="bk:when" when="1455-05-11">feria 2<hi rend="superscript">a</hi>
+                        Rogacionum</date></ab>
+                  <ab ana="bk:entry">Item <name ana="bk:to bk:individual" ref="#kellermeister"
+                        >cellerarius</name> dedit <measure ana="bk:money" quantity="30" unitRef="#d"
+                        >xxx d. Wien.</measure></ab>
+                  <ab ana="bk:entry">Item dedimus uni <name ana="bk:to bk:individual"
+                        ref="#armerpriester">pauperi <lb/>sacerdoti</name>
+                     <measure ana="bk:money" quantity="12" unitRef="#d">xii d.</measure></ab>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="44" unitRef="#d">xliiii
+                        d.</measure></ab>
+                  <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:group"
+                        ref="#dienerdesherrenalthaha">famulis <name ana="bk:individual"
+                           ref="#dominusalthahensis">domini Althahensis</name></name> pro <measure
+                        ana="bk:commodity" commodity="trinkgeld">bibalibus</measure>
+                     <lb/><measure ana="bk:money" quantity="15" unitRef="#d">xv d.</measure>
+                     <date ana="bk:when" when="1455-10-07">feria 3<hi rend="superscript">a</hi> ante
+                        dionisi</date></ab>
+                  <ab ana="bk:entry">Item postea dedimus <measure ana="bk:money" quantity="1"
+                        unitRef="#frhen">i f. Rhen.</measure> den <name ana="bk:to bk:group"
+                        ref="#trompeter"><roleName>trumetteren</roleName>
+                        <name ana="bk:individual"><roleName>domini ducis</roleName>
+                           <lb/>ludwici</name></name> in <placeName ana="bk:where" ref="#ort_0468"
+                        >vilshoven</placeName>
+                     <date ana="bk:when" when="1455-12-10">feria quarta ante lucie
+                     virginis</date></ab>
+                  <ab ana="bk:entry">Item postea dedimus <measure ana="bk:money" quantity="36"
+                        unitRef="#d">xxxvi d.</measure></ab>
+                  <ab ana="bk:entry">Item dedimus <lb/>pro <measure ana="bk:commodity"
+                        commodity="gabe">offertorio</measure> et pro <unclear><measure
+                           ana="bk:service" commodity="leutkauf">mercipite</measure>
+                     </unclear><measure ana="bk:money" quantity="2" unitRef="#lbdwien">ii
+                        lb.</measure>
+                     <measure ana="bk:money" quantity="5" unitRef="#d">v d.</measure> circa festum
+                        <date ana="bk:when" when="1455-12-25">Natalis Christi</date></ab>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="15" unitRef="#d">xv d.
+                        Wien.</measure></ab>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="6" unitRef="#d">vi
+                        d.</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item postea dedimus <measure ana="bk:money" quantity="38"
+                        unitRef="#d">xxxviii d.</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item dedimus <roleName ana="bk:to bk:individual"
+                        ref="#patensohnvonwilhelmvonfrauenberg">paterno nostro filio <name
+                           ana="bk:individual" ref="#wilhelmfrauenberg"><roleName>Stremui
+                              militis</roleName> wilhelmi de <placeName ref="#ort_0565"
+                              >frauenberkch</placeName></name></roleName>
+                     <!--bisschen verwirrend zum Kodieren--> quem levavimus
+                     <!--was genau heißt levavimus?--> de <lb/><del>fonte</del> sacro fonte in
+                        <placeName ref="#ort_0566">Griespach</placeName><date when="1455-11-03"
+                        >feria 2<hi rend="superscript">a</hi> post festum omnium sanctorum</date>
+                     <measure ana="bk:money" quantity="3" unitRef="#frhen">iii f.
+                     Rhen.</measure></ab>
+                  <ab ana="bk:entry">Et <lb/><name ana="bk:to bk:group" ref="#hebammekinder"
+                        >obstatrice et pueris</name>
+                     <measure ana="bk:money" quantity="40" unitRef="#d">xl d.</measure></ab>
+                  <ab ana="bk:entry">Item postea dedimus in <date ana="bk:when" when="1457-04-14"
+                        >cena domini</date>
+                     <name ana="bk:to bk:group" ref="#arme_unbekannt">pauperibus</name>
+                     <measure ana="bk:money" quantity="5" unitRef="#s">v s. d. Wien.</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item postea dedimus <name ana="bk:to bk:individual"
+                        ref="#linhardhollerbeck"><roleName>famulo</roleName> linhardi
+                        hollerbekchen</name> et <name ana="bk:to bk:individual"
+                        ref="#johannwalneator">magistro Johanni walneatori de <placeName
+                           ref="#ort_0468">vilshoven</placeName></name>
+                     <lb/>pro <measure ana="bk:commodity" commodity="trinkgeld">bibalibus</measure>
+                     <measure ana="bk:money" quantity="31" unitRef="#d">xxxi d.</measure> in die
+                        <date ana="bk:when" when="1455-04-24">Geori martyris</date></ab>
+                  <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual" ref="#pangratius"
+                        >pangracio</name>
+                     <unclear>proprina </unclear><measure ana="bk:money" quantity="25" unitRef="#d"
+                        >xxv d.</measure></ab>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="10" unitRef="#d">x
+                        d.</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="5" unitRef="#d">v
+                        d.</measure></ab>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="39" unitRef="#d">xxxix
+                        d.</measure></ab>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="22" unitRef="#d">xxii
+                        d.</measure></ab>
+                  <ab ana="bk:entry">Item dedimus <roleName ana="bk:to bk:individual"
+                        ref="#boteherrcaesarea">nunccio <roleName ana="bk:individual"
+                           ref="#herrcaesarea">domini Cesariensis</roleName></roleName>
+                     <measure ana="bk:money" quantity="28" unitRef="#d">xxviii d.</measure>
+                     <lb/>in die <date ana="bk:when" when="1455-07-20">margrethe virginis</date>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:total">Summa facit <measure ana="bk:money" quantity="8"
+                        unitRef="#lbdwien">viii lb.</measure>
+                     <lb/><measure ana="bk:money" quantity="13" unitRef="#d">xiii d.</measure></ab>
+               </div>
+               <div ana="bk:rubric" corresp="#ausgaben_sättel_zäume_ketten_seile_schnüre_divers">
+                  <head>pro Sellis frenis chatenis kummat funis et funiculis etc</head>
+                  <ab ana="bk:entry">Item primo dedimus <roleName ana="bk:to bk:individual"
+                        ref="#sattlerpassau">Sellatori in <placeName ref="#ort_0334"
+                           >patavia</placeName></roleName> pro <measure ana="bk:service"
+                        commodity="work">omnibus laboribus</measure> nobis factis pro finali
+                     solucione <measure ana="bk:money" quantity="6" unitRef="#s">vi s. d.
+                        Wien.</measure>d. Wien. <lb/><date ana="bk:when" when="1455-08-16">Sabbato
+                        post festum <del>purifici</del> Assumpcionis virginis gloriose</date>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry"><add><note>pro equo et mula emptis <lb/>+</note></add> Item
+                     dedimus pro <measure ana="bk:commodity" quantity="1" commodity="pferd">griseo
+                        equo</measure> empto a <roleName ana="bk:to bk:individual"
+                        ref="#abtcampiprincipe">domino abbatte de Campiprincipe</roleName>
+                     <del>x</del>
+                     <date>tempore capituli generalis </date><!--nicht näher identifizierbar-->
+                     <lb/><measure ana="bk:money" quantity="16" unitRef="#frhen">xvi f.
+                        Rhen.</measure> et <measure ana="bk:money" quantity="2" unitRef="#gr">ii
+                        gr.</measure>
+                     <name ana="bk:to bk:individual" ref="#dienerabtcampoprincipe">famulo</name> pro
+                        <measure ana="bk:commodity" commodity="trinkgeld">bibalibus</measure></ab>
+                  <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity"
+                        commodity="maultier">mula</measure> empta in <placeName>diviana</placeName>
+                     <!--Ort?-->
+                     <lb/><measure ana="bk:money" quantity="6" unitRef="#frhen">vi f.
+                        Rhen.</measure></ab>
+                  <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual" ref="#">Nicolao
+                        Rymer de <placeName ref="#ort_0468">vilshoven</placeName></name> pro
+                        <measure ana="bk:commodity" commodity="zaum">frenis</measure> et v <measure
+                        ana="bk:commodity" commodity="tierhaut">cuttibus bovinis et
+                        <lb/>cervinis</measure>
+                     <!--Wie kann ich beide Hautarten am besten kodieren?--> ac <measure
+                        ana="bk:service" commodity="work">aliis suis laboribus</measure>
+                     <measure ana="bk:money" quantity="2" unitRef="#lbdwien">ii lb.</measure>
+                     <measure ana="bk:money" quantity="6" unitRef="#d">vi d.</measure>
+                     <date ana="bk:when" when="1456-03-01">feria 2<hi rend="superscript">a</hi> post
+                        dominicam oculi Anno lvi<hi rend="superscript">o</hi></date>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item dedimus <measure ana="bk:money" quantity="3" unitRef="#s"
+                        >iii s. d.</measure> pro <measure ana="bk:commodity" quantity="2"
+                        commodity="sattel">ii Sellis</measure></ab>
+                  <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual"
+                        ref="#sattlerpfarrkirchen">Sellatori de <placeName ref="#ort_0558"
+                           >pfarkirchen</placeName></name> de <measure ana="bk:commodity"
+                        quantity="6" commodity="riemen">vi panir semper pro <measure ana="bk:price"
+                           quantity="8" unitRef="#d">i vii d.</measure></measure>
+                     <lb/><measure ana="bk:money" quantity="40" unitRef="#d">xl d.</measure> et
+                        <measure ana="bk:money" quantity="2" unitRef="#d">ii d.</measure> pro
+                        <measure ana="bk:commodity" commodity="trinkgeld">bibalibus</measure>
+                     <date ana="bk:when" when="1455-05-21">feria quarta ante
+                     penthecostes</date></ab>
+                  <ab ana="bk:entry">Item dedimus <rs ana="bk:to bk:individual"
+                        corresp="#sattlerpfarrkirchen">eidem</rs>
+                     <measure ana="bk:money" quantity="15" unitRef="#d">xv d.</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:total">Summa facit <measure ana="bk:money" quantity="3"
+                        unitRef="#lbdwien">iii lb.</measure>
+                     <measure ana="bk:money" quantity="3" unitRef="#s">iii s.</measure>
+                     <measure ana="bk:money" quantity="3" unitRef="#d">iii d.</measure> et pro equo <!--Hier evtl subtotal kodieren?-->
+                     <unclear>g...</unclear>
+                     <lb/>empto <del>in cani</del>
+                     <measure ana="bk:money" quantity="16" unitRef="#frhen">xvi f. Rhen.</measure>
+                     facit <measure ana="bk:money" quantity="12" unitRef="#lbdwien">xii
+                        lb.</measure></ab>
+               </div>
+               <div ana="bk:rubric" corresp="#ausgaben_messer_gürtel_garn_divers">
+                  <head>pro cultellis cingulis filo ac aliis diversis</head>
+                  <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity" commodity="messer"
+                        >cultellis</measure>
+                     <date ana="bk:when" when="1455-04-02">feria 4<hi rend="superscript">a</hi> ante
+                        cenam domini</date>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity" commodity="gürtel"
+                        >cingulis sericis</measure>
+                     <measure ana="bk:commodity" commodity="sporen">calcaribus</measure>
+                     <measure ana="bk:commodity" commodity="beutel">bursis</measure>
+                     <measure ana="bk:commodity" commodity="biretti">birettis</measure>
+                     <measure ana="bk:commodity" commodity="messer">cultellis</measure> et <measure
+                        ana="bk:commodity" commodity="schaffell">pellibus ovinis</measure> pro
+                     subduccione <lb/>tunice omnibus insimul computatis tempore capituli generalis
+                     procuratis et emptis <measure ana="bk:money" quantity="7" unitRef="#frhen">vii
+                        f. Rhen.</measure>
+                     <lb/>et <measure ana="bk:money" quantity="1" unitRef="#ort">i
+                     ort</measure></ab>
+                  <ab ana="bk:entry">Item postea dedimus pro <measure ana="bk:commodity"
+                        commodity="messer">cultellis</measure>
+                     <measure ana="bk:money" quantity="6" unitRef="#s">vi s. d.</measure> in die
+                        <date ana="bk:when" when="1456-12-28">Innocentum</date></ab>
+                  <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity" commodity="messer"
+                        >cultellis</measure>
+                     <measure ana="bk:money" quantity="83" unitRef="#d">lxxxiii d.</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity"
+                        commodity="handschuhe">cerothecis</measure>
+                     <!--nicht sicher-->
+                     <measure ana="bk:money" quantity="25" unitRef="#d">xxv d.</measure></ab>
+                  <ab ana="bk:entry">Item <measure ana="bk:money" quantity="3" unitRef="#d">iii
+                        d.</measure> pro <measure ana="bk:commodity" commodity="faden"
+                        >filo</measure>
+                     <!--nicht sicher-->
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:total">Summa facit <measure ana="bk:money" quantity="6"
+                        unitRef="#lbdwien">vi lb.</measure>
+                     <measure ana="bk:money" quantity="7" unitRef="#s">vii s.</measure>
+                     <lb/><measure ana="bk:money" quantity="26" unitRef="#d">xxvi d.</measure></ab>
+               </div>
+            </div>
+
+            <gap/>
 
             <div ana="bk:rubric" corresp="#ausgaben">
-               <!--...-->
-               <pb n="36" facs="#IMG.36"/>
+               <gap/>
+               <pb n="36" facs="#facs_36" xml:id="IMG.36"/>
                <fw type="year"><date ana="bk:when" when="1455" xml:id="date_007">lv<hi
                         rend="superscript">o</hi></date></fw>
                <div ana="bk:rubric" corresp="#ausgaben_drescher">
-
-                  <head><name ana="bk:to" ref="#drescher">Trituratoribus</name> pro precio</head>
-
+                  <head><name ana="bk:to bk:group" ref="#drescher">Trituratoribus</name> pro
+                     precio</head>
                   <ab ana="bk:entry">Item primo dedimus de <measure ana="bk:commodity" quantity="12"
                         commodity="gerste" unitRef="#schaff">xii schaf. ordei</measure>
-                     <measure ana="bk:money" quantity="1" unitRef="#lb">i lb.d. Wien.</measure>
+                     <measure ana="bk:money" quantity="1" unitRef="#lbdwien">i lb.d. Wien.</measure>
                      <date ana="bk:when" when="1455-08-09" xml:id="date_008">feria quinta ante
                         Laurencii martyris</date></ab>
                   <!--economic agents nur im head, nicht explizit genannt. Gilt auch für folgende Einträge. Wo bk:to kodieren?-->
-
-                  <ab ana="bk:entry">Item postea <name ana="bk:individual" ref="#kellermeister"
-                        >cellerarius</name>
-                     <lb/>dedit eis pro <span ana="bk:status">finali solucione</span>
+                  <ab ana="bk:entry">Item postea <roleName ana="bk:individual bk:by bk:from"
+                        ref="#kellermeister">cellerarius</roleName>
+                     <lb/>dedit <rs ana="bk:to bk:group" ref="#drescher">eis</rs> pro <seg
+                        ana="bk:status">finali solucione</seg>
                      <measure ana="bk:money" quantity="593" unitRef="#d">iij̸ lb. minus vii
                         d.</measure>
                      <date ana="bk:when" when="1455-09-22" xml:id="date_009">Sabbato ante
                         michahelis</date>
-                     <lb/></ab>
-                  <!--Hier hat der Kellermeister den Dreschern Geld gegeben, zur finalen Abrechnung-->
-                  <!--bk:to oder bk:from passt hier eigentlich nicht wirklich beim cellerarius oder?-->
-                  <!--Hier wieder eine Rechnung (Betrag XY minus Betrag XY)-->
-
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual"
                         ref="#georiorintloer">Georio Rintloer</name> de <measure ana="bk:service"
                         quantity="35" commodity="work" unitRef="#tag">xxxv diebus</measure>
-                     <measure ana="bk:money" quantity="6" unitRef="#s">vi s.</measure> minus
-                        <measure ana="bk:money" quantity="5" unitRef="#d">v d.</measure> pro finali
-                     solucione <span ana="bk:status">solvimus sibi totum</span>
+                     <measure ana="bk:money" quantity="715" unitRef="#d">vi s. minus v d.</measure>
+                     pro finali solucione <seg ana="bk:status">solvimus sibi totum</seg>
                      <date ana="bk:when" when="1455-11-02" xml:id="date_010">in die
                         <lb/>animarum</date></ab>
                   <!--Hier wieder Rechnung (Betrag A minus Betrag B)-->
                   <!--Zahl + "diebus" für bk:service-->
                   <!--pro finali solucione solvimus sibi totum-->
-
                   <ab ana="bk:entry">Item dedimus <date ana="bk:when" when="1455-11-02"
                         corresp="#date_010">eadem die</date>
                      <name ana="bk:to bk:individual" ref="#linhardohueber">linhardo hueber</name>
                      <del>et i</del> de <measure ana="bk:service" quantity="35" commodity="work"
                         unitRef="#tag">xxxv diebus</measure>
                      <measure ana="bk:money" quantity="175" unitRef="#d">vi s. minus v d.</measure>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <!--Hier wieder Rechnung (Betrag A minus Betrag B)-->
                   <!--Zahl + "diebus" für bk:service-->
                   <!--eadem die-->
-
                   <ab ana="bk:entry">Item dedimus <date ana="bk:when" when="1455-11-02"
                         corresp="#date_010">eadem die</date>
                      <name ana="bk:to bk:individual" ref="#petrooder">petro oder</name> de <measure
@@ -976,49 +1918,43 @@
                         diebus</measure>
                      <measure ana="bk:money" quantity="6" unitRef="#s">vi s.</measure> minus
                         <measure ana="bk:money" quantity="5" unitRef="#d">v d.</measure>
-                     <span ana="bk:status">soluti sunt totaliter</span>
+                     <seg ana="bk:status">soluti sunt totaliter</seg>
                      <date ana="bk:when" when="1455-11-02" corresp="#date_010">eadem die</date>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <!--Hier wieder Rechnung (Betrag A minus Betrag B)-->
                   <!--Zahl + "diebus" für bk:service-->
                   <!--eadem die-->
                   <!--soluti sunt totaliter eadem die-->
-
                   <ab ana="bk:entry">Item postea dedimus <name ana="bk:to bk:group" ref="#drescher"
                         >diversis trituratoribus</name>
                      <measure ana="bk:money" quantity="14" unitRef="#s">xiiii s.</measure>
                      <measure ana="bk:money" quantity="9" unitRef="#d">ix d.</measure> in <date
                         ana="bk:when" when="1455-12-21" xml:id="date_011">die sancti thome
                         apostoli</date></ab>
-
                   <ab ana="bk:entry">Item postea dedimus <rs ana="bk:to bk:group"
                         corresp="#drescher">ipsis</rs>
                      <lb/><measure ana="bk:money" quantity="3" unitRef="#s">iii s.</measure>
                      <measure ana="bk:money" quantity="2" unitRef="#d">ii d.</measure>
                      <date ana="bk:when" when="1455-12-21" corresp="#date_011">eadem die</date></ab>
-                  <!--Bezug mit "ipsis" auf die diversen Drescher, habe es vorerst mit <rs> kodiert-->
-                  <!--eadem die-->
-
                   <ab ana="bk:entry">Item <del>s </del>dedimus <measure ana="bk:money" quantity="84"
                         unitRef="#d">iii s. minus vi d.</measure>
-                     <lb/></ab>
-                  <!--Hier wieder Rechnung (Betrag A minus Betrag B)-->
+                  </ab>
+                  <lb/>
                   <!--Economic agents implizit: Wahrscheinlich sind wieder die Drescher gemeint, aber nicht genannt, also im head? Wo bk:to kodieren?-->
-
                   <ab ana="bk:entry">Item postea dedimus <name ana="bk:to bk:individual"
                         ref="#johannihon">Johanni hon</name> et <name ana="bk:to bk:group"
                         ref="#johannihonsocii">sociis suis</name>
                      <add>pro precio</add> de <measure ana="bk:commodity" quantity="13.5"
                         commodity="weitzen" unitRef="#schaff">xiiij̸ schaf. tritici</measure> facit
-                        <measure ana="bk:money" quantity="1" unitRef="#lb">i lb.</measure>
+                        <measure ana="bk:money" quantity="1" unitRef="#lbdwien">i lb.</measure>
                      <measure ana="bk:money" quantity="3" unitRef="#d">iii d.</measure>
-                     <span ana="bk:status">solvimus ipsis totum</span>
+                     <seg ana="bk:status">solvimus ipsis totum</seg>
                      <lb/><date ana="bk:when" when="1455-12-24" xml:id="date_012">feria 2<hi
                            rend="superscript">a</hi> ante Natalis Christi</date></ab>
-                  <!--solvimus ipsis totum-->
                   <ab ana="bk:entry">Item postea dedimus <name ana="bk:to bk:individual"
-                        ref="#valentino">valentino</name> et <name ana="bk:to bk:group"
-                        ref="#valentinosocii">sociis suis</name> de <measure ana="bk:money"
+                        ref="#valentino">valentino</name> et <roleName ana="bk:to bk:group"
+                        ref="#valentinosocii">sociis suis</roleName> de <measure ana="bk:money"
                         quantity="20.5" commodity="hafer" unitRef="#schaff">xxj̸ schaf.
                         avene</measure>
                      <lb/>pro precio <measure ana="bk:money" quantity="12" unitRef="#s">xii
@@ -1026,17 +1962,15 @@
                      <del>minus ix</del>
                      <add>xviii </add>d. Wien. in <date ana="bk:when" when="1455-12-24"
                         xml:id="date_013">Vigilia Nativitatis Christi</date>
-                     <span ana="bk:status">solvimus ipsis totum</span>
+                     <seg ana="bk:status">solvimus ipsis totum</seg>
                      <date ana="bk:when" when="1455-12-24" corresp="#date_013">eadem die</date>
-                     <lb/></ab>
-                  <!--Eigentlich eine Rechnung (Betrag A minus B) aber "minus ix" ist durchgestrichen-->
-                  <!--eadem die-->
-                  <!--solvimus ipsis totum-->
+                  </ab>
+                  <lb/>
                </div>
             </div>
          </div>
          <div n="1456">
-            <pb n="50" facs="IMG.50.jpg"/>
+            <pb n="50" facs="#facs_50" xml:id="IMG.50"/>
             <div ana="bk:rubric" corresp="#ausgaben_goldschmied">
                <head>Tyttulus <name ana="bk:individual" ref="#magistrothomeaurifabri">magistri Thome
                      Aurifabri</name> in <placeName ana="bk:where" ref="#ort_0558"
@@ -1049,19 +1983,20 @@
                      ana="bk:commodity" quantity="2" commodity="becher_silbern">ii piccariis
                      parvis</measure> argenteis auro decoratis qui habent in pondere<lb/> i Marcas
                   iij̸ uncias et pro precio et de auracione omnibus insimul computatis <measure
-                     ana="bk:money" quantity="10" unitRef="lb">x lb. d. Wien.</measure>
+                     ana="bk:money" quantity="10" unitRef="#lbdwien">x lb. d. Wien.</measure>
                   <del>et xl d.</del><lb/> et xl d. Wien. <date ana="bk:when" when="1455-05-26"
                      xml:id="date_015">feria 2<hi rend="superscript">a</hi> penthecostes</date>
-                  <span ana="bk:status">solvimus sibi totum</span>
-                  <date ana="bk:when" when="1455-05-26" corresp="#date_015">eadem
-                  die</date><lb/></ab>
+                  <seg ana="bk:status">solvimus sibi totum</seg>
+                  <date ana="bk:when" when="1455-05-26" corresp="#date_015">eadem die</date></ab>
+               <lb/>
                <!--Gewichtsangabe 1 Mark 2,5 Unzen. Wie kodieren?-->
 
                <ab ana="bk:entry">Item dedimus <rs ana="bk:to bk:individual"
                      corresp="#magistrothomeaurifabri">sibi</rs>
                   <measure ana="bk:commodity" quantity="1" commodity="vergoldeterengel">angelum
                      deauratum</measure> habentem in pondere v lot ij̸ <del>uncias</del>
-                  <span ana="bk:status">quittat</span><lb/></ab>
+                  <seg ana="bk:status">quittat</seg></ab>
+               <lb/>
                <!--Wieder Gewichtsangabe, Maßeinheit durchgestrichen. Wie soll ich das kodieren?-->
                <!--quittat-->
 
@@ -1070,39 +2005,41 @@
                      quantity="2" commodity="perle">ii parillas</measure> et <measure
                      ana="bk:commodity" quantity="1" commodity="edelstein">i lapidem</measure> et
                      <measure ana="bk:commodity" quantity="2" commodity="glasstein">ii
-                     ocularia</measure> habentes in pondere viii lot minus j̸ <span ana="bk:status"
-                     >quitten</span> et <measure ana="bk:commodity" quantity="1"
+                     ocularia</measure> habentes in pondere viii lot minus j̸ <seg ana="bk:status"
+                     >quitten</seg> et <measure ana="bk:commodity" quantity="1"
                      commodity="edelstein">i lapidem</measure><lb/>parvum <del>pro an</del> pro i
-                  annulo apto faciendum<lb/></ab>
+                  annulo apto faciendum</ab>
+               <lb/>
                <!--Wieder Gewichtsangabe. Wie soll ich das kodieren? Alle 3 commodities zusammen wiegen 8 minus 0,5, also 7,5 lot -->
                <!--Dann noch Hinzufügung, dass ihm noch ein kleiner Stein dazugegeben wurde, um einen Ring anzupassen-->
                <!--i annulo kann hier nicht mit commodity kodiert werden-->
 
-               <ab ana="bk:entry">Item <rs ana="bk:to bk:individual" ref="#magistrothomeaurifabri"
-                     >idem</rs> recepit a <name ana="bk:from bk:by bk:individual"
-                     ref="#kellermeister">cellerario</name> in absencia nostra <measure
-                     ana="bk:commodity" quantity="200" commodity="weitzen" unitRef="#schaff">ii<hi
-                        rend="superscript">C</hi> tritici</measure>
-                  <span ana="bk:status">super computacionem</span> propinavimus sibi<lb/></ab>
+               <ab ana="bk:entry">Item <rs ana="bk:to bk:individual"
+                     corresp="#magistrothomeaurifabri">idem</rs> recepit a <name
+                     ana="bk:from bk:by bk:individual" ref="#kellermeister">cellerario</name> in
+                  absencia nostra <measure ana="bk:commodity" quantity="200" commodity="weitzen"
+                     unitRef="#schaff">ii<hi rend="superscript">C</hi> tritici</measure>
+                  <seg ana="bk:status">super computacionem</seg> propinavimus sibi</ab>
+               <lb/>
                <!--Schaff als Einheit implizit-->
                <!--Schwieriger Fall, weil Transaktion Kellermeister an Goldschmied, In Abwesenheit der Rechnungsbuchführer. Habe hier bk:by verwendet-->
 
                <ab ana="bk:entry"> Item calix habet in pondere puri argenti xxvii lot i quittet
                      <del>pro quo sibi dedimus</del> In hoc <rs ana="bk:to bk:individual"
                      corresp="#magistrothomeaurifabri">sibi</rs> defalcavimus v<lb/> angelum ubi
-                  supra qui habuit in pondere v uncias ij̸ <span ana="bk:status">quittet</span> et
-                  sic <del>exso</del> remanserunt xxii uncie<lb/> minus j̸ <span ana="bk:status"
-                     >quittet</span> puri argenti qui faciunt in peccunia <measure ana="bk:money"
-                     quantity="7" unitRef="#lb">vii lb.</measure>
+                  supra qui habuit in pondere v uncias ij̸ <seg ana="bk:status">quittet</seg> et sic
+                     <del>exso</del> remanserunt xxii uncie<lb/> minus j̸ <seg ana="bk:status"
+                     >quittet</seg> puri argenti qui faciunt in peccunia <measure ana="bk:money"
+                     quantity="7" unitRef="#lbdwien">vii lb.</measure>
                   <measure ana="bk:money" quantity="60" unitRef="#d">lx d.</measure>
                   <measure ana="bk:money" quantity="10" unitRef="#d">x d.</measure> et pro precio et
                   de auracione<lb/>
                   <rs ana="bk:to bk:individual" corresp="#magistrothomeaurifabri">sibi</rs> dedimus
-                     <measure ana="bk:money" quantity="6" unitRef="#lb">vi lb.</measure>
+                     <measure ana="bk:money" quantity="6" unitRef="#lbdwien">vi lb.</measure>
                   <measure ana="bk:money" quantity="5" unitRef="#s">v s.</measure>
                   <measure ana="bk:money" quantity="10" unitRef="#d">x d.</measure>
-                  <ab ana="bk:total">facit totum <measure ana="bk:money" quantity="2930"
-                        unitRef="#d">xiiii lb. minus x d.</measure></ab><lb/>
+                  <seg ana="bk:total">facit totum <measure ana="bk:money" quantity="2930"
+                        unitRef="#d">xiiii lb. minus x d.</measure></seg><lb/>
                </ab>
                <!-- Ich habe KEINE Ahnung, wie ich das kodieren soll ... -->
                <!--"Der Kelch hat ein Gewicht von 27 Lot und 1 Quentlein reinen Silbers. Davon haben wir ihm 5 Engel abgezogen, wie oben erwähnt, die ein Gewicht von 5 Unzen und 2 Quentlein hatten, sodass noch 22 Unzen minus 1 Quentlein reines Silber übrigblieben, was in Geld 7 Pfund, 60 Denare und 10 Denare ergibt. Für den Preis und die Vergoldung haben wir ihm 6 Pfund, 5 Schilling und 10 Denare gegeben, was insgesamt 14 Pfund minus 10 Denare ausmacht."-->
@@ -1111,13 +2048,13 @@
                      commodity="broschemitring">fibule cum annulo sine lapidibus</measure> habent in
                   pondere xviii uncias puri argenti pro quibus <rs ana="bk:to bk:individual"
                      corresp="#magistrothomeaurifabri">sibi</rs> dedimus<lb/>
-                  <del>et</del> cum deauracione <measure ana="bk:money" quantity="9" unitRef="#lb"
-                     >ix lb. d.</measure></ab>
+                  <del>et</del> cum deauracione <measure ana="bk:money" quantity="9"
+                     unitRef="#lbdwien">ix lb. d.</measure></ab>
                <ab ana="bk:entry">Item dedimus <rs ana="bk:to bk:individual"
                      corresp="#magistrothomeaurifabri">sibi</rs> pro precio <measure ana="bk:money"
                      quantity="10" unitRef="#d">x s. d.</measure>
-                  <ab ana="bk:total">Summa facit <measure ana="bk:money" quantity="10" unitRef="#lb"
-                        >x lb.</measure>
+                  <ab ana="bk:total">Summa facit <measure ana="bk:money" quantity="10"
+                        unitRef="#lbdwien">x lb.</measure>
                      <measure ana="bk:money" quantity="60" unitRef="#d">lx d.
                   Wien.</measure></ab><lb/>
                </ab>
@@ -1130,27 +2067,28 @@
                      wlgariter pükkellein puri argentii</measure>
                   <!--2 Gewichsteinheiten bei einer commodity-->
                   <!--"umgangssprachlich pükkelein", dh. man könnte pükkelein als Einheit nehmen?-->
-                  <measure ana="bk:money" quantity="6" unitRef="#s">vi s. d.</measure><lb/></ab>
+                  <measure ana="bk:money" quantity="6" unitRef="#s">vi s. d.</measure></ab>
+               <lb/>
                <ab ana="bk:entry">Item dedimus <rs ana="bk:to bk:individual"
                      corresp="#magistrothomeaurifabri">sibi</rs> pro <measure ana="bk:service"
                      commodity="work">laboribus</measure>
                   <lb/>
                   <del>i</del>
-                  <measure ana="bk:money" quantity="60" unitRef="#d">lx d.</measure> facit totum <ab
-                     ana="bk:total"><measure ana="bk:money" quantity="1" unitRef="#lb">i lb.
-                        d.</measure></ab><!--facit totum hier auch bk:total? Wie kodieren?-->
-                  <span ana="bk:status">solutum est totaliter</span>
+                  <measure ana="bk:money" quantity="60" unitRef="#d">lx d.</measure> facit totum
+                     <seg ana="bk:total"><measure ana="bk:money" quantity="1" unitRef="#lbdwien">i
+                        lb. d.</measure></seg><!--facit totum hier auch bk:total? Wie kodieren?-->
+                  <seg ana="bk:status">solutum est totaliter</seg>
                   <lb/>
-                  <ab ana="bk:total">Summa totalis omnium prescriptorum facit <lb/>
-                     <measure ana="bk:money" quantity="25" unitRef="#lb">xxv lb.</measure>
+                  <seg ana="bk:total">Summa totalis omnium prescriptorum facit <lb/>
+                     <measure ana="bk:money" quantity="25" unitRef="#lbdwien">xxv lb.</measure>
                      <measure ana="bk:money" quantity="50" unitRef="#d">.l. d. Wien.</measure> et
-                        <measure ana="bk:money" quantity="13" unitRef="#d">xiii d.</measure></ab>
+                        <measure ana="bk:money" quantity="13" unitRef="#d">xiii d.</measure></seg>
                   <lb/>
                </ab>
                <!--Zwischensumme und Totalsumme-->
                <ab ana="bk:entry">Item <name ana="bk:to bk:individual" ref="#diener_goldschmied"
-                     >masculo suo</name> dedimus pro <measure ana="bk:commodity" commodity="getränk"
-                     >bibalibus</measure><lb/>
+                     >masculo suo</name> dedimus pro <measure ana="bk:commodity"
+                     commodity="trinkgeld">bibalibus</measure><lb/>
                   <measure ana="bk:money" quantity="23" unitRef="#d">xiii d.</measure><lb/>
                </ab>
                <ab ana="bk:entry">Item dedimus <rs ana="bk:to bk:individual"
@@ -1159,8 +2097,8 @@
                   <measure ana="bk:commodity" quantity="1" commodity="kelch">i calicem pro
                      reparacione <add>et renovacione</add> qui habet in pondere xix uncias minus i
                      quittet</measure> in <date ana="bk:when" when="1455-07-20">die margrethe<lb/>
-                     Anno etc. lvi<hi rend="superscript">o</hi></date> ad futurum
-                  computabitur<lb/></ab>
+                     Anno etc. lvi<hi rend="superscript">o</hi></date> ad futurum computabitur</ab>
+               <lb/>
                <!--Für Reparation und Renovierung-->
                <!--Wieder Gewichtsangaben: Wie soll ich Anzahl des Kelchs (1) und Gewicht in einem measure kodieren?-->
                <!--ad futurum computabitur-->
@@ -1181,10 +2119,341 @@
             </div>
          </div>
 
+         <!--hier neu kodiert-->
+         <div n="1456">
+            <div ana="bk:rubric" corresp="#einnahmen">
+               <gap/>
+               <pb n="60" facs="#facs_60" xml:id="IMG.60"/>
+               <fw type="year">Anno etc. lvi<hi rend="superscript">o</hi></fw>
+               <div ana="bk:rubric" corresp="#einnahmen_schweine">
+                  <head>Recepimus de porcis venditis</head>
+                  <ab ana="bk:entry">Item recepimus a <name ana="bk:from bk:individual"
+                        ref="#linhardhollerbeck">linhardo hollerenbekch</name> pro <measure
+                        ana="bk:commodity" quantity="6" commodity="schwein">vi porcis <measure
+                           ana="bk:price" quantity="7" unitRef="#frhen">vii f.
+                        Rhen.</measure></measure>
+                     <!--todo: ist das ein price?--> qui faciunt in peccunia <lb/><measure
+                        ana="bk:money" quantity="5" unitRef="#lbdwien">v lb.</measure>
+                     <measure ana="bk:money" quantity="60" unitRef="#d">lx d. Wien.</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry"><note>+</note> Item dedimus <name ana="bk:to bk:individual"
+                        ref="#linhardhollerbeck">linhardo hollerbekch</name>
+                     <measure ana="bk:commodity" quantity="24" commodity="schwein">xxiiii porcos
+                           <measure ana="bk:price" quantity="13" unitRef="#gr">i porcum pro xiii
+                           gr.</measure></measure> facit <measure ana="bk:money" quantity="9"
+                        unitRef="#lbdwien">ix lb.</measure>
+                     <measure ana="bk:money" quantity="6" unitRef="#s">vi s. d.</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item dedimus <rs ana="bk:to bk:individual"
+                        corresp="#linhardhollerbeck">sibi</rs>
+                     <!--Achtung: Hier eine Ausgabe-->
+                     <measure ana="bk:commodity" quantity="6" commodity="schwein">vi porcos pro
+                           <measure ana="bk:price" quantity="3.5" unitRef="#lbdwien">iiij̸ lb.
+                           d.</measure></measure>
+                     <date ana="bk:when" when="1457-04-19">feria 3<hi rend="superscript">a</hi>
+                        pasche Anno etc. lvii<hi rend="superscript">o</hi></date>
+                     <del>tenetur totum</del>
+                     <lb/><seg ana="bk:status">solvit totum</seg>
+                     <date ana="bk:when" when="1456-04-23">feria 6<hi rend="superscript">a</hi> ante
+                        Geori martyris</date></ab>
+                  <ab ana="bk:total">Summa facit <measure ana="bk:money" quantity="18.5"
+                        unitRef="#lbdwien">xviiij̸ lb. d.</measure></ab>
+               </div>
+               <div ana="bk:rubric" corresp="#einnahmen_eier">
+                  <head>Recepimus de ovis venditis</head>
+                  <ab ana="bk:entry"><note>+</note> Item recepimus a <name
+                        ana="bk:from bk:individual" ref="#linhardhollerbeck">linhardo
+                        hollerbekch</name> de <measure ana="bk:commodity" commodity="schafe">lxxx
+                        ovibus sibi venditis <del>pro </del>i pro <measure ana="bk:price"
+                           quantity="65" unitRef="#d">lxv d. Wien.</measure></measure>
+                     <lb/>facit in peccunia <measure ana="bk:money" quantity="20" unitRef="#lbdwien"
+                        >xx lb.</measure>
+                     <measure ana="bk:money" quantity="6" unitRef="#s">vi s.</measure>
+                     <measure ana="bk:money" quantity="25" unitRef="#d">xxv d. Wien.</measure> Sed
+                        <measure ana="bk:commodity" quantity="3" commodity="schafe">iii oves sibi
+                        propinavimus in prescripta</measure>
+                     <!--3 Schafe waren ein Geschenk-->
+                     <lb/>Summa que non sunt taxata Acta sunt hec in die <date ana="bk:when"
+                        when="1456-08-28">sancti Augustini Anno lvi<hi rend="superscript"
+                        >o</hi></date></ab>
+                  <ab ana="bk:total">Summa xx lb <measure ana="bk:money" quantity="6" unitRef="#s"
+                        >vi s.</measure>
+                     <measure ana="bk:money" quantity="25" unitRef="#d">xxv d.</measure></ab>
+               </div>
+               <div ana="bk:rubric" corresp="#einnahmen_holz">
+                  <head>Recepimus de lingnis venditis</head>
+                  <ab ana="bk:entry"><note>+</note> Item primo recepimus a <name
+                        ana="bk:from bk:individual" ref="#johannesunverdorben">Johanne
+                        unverdorben</name>
+                     <measure ana="bk:money" quantity="3" unitRef="#s">iii s. d.</measure>
+                     <date ana="bk:when" when="1456-06-13">dominica ante Anthoni confessoris</date>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item <rs ana="bk:from bk:individual"
+                        corresp="#johannesunverdorben">idem</rs> postea dedit <measure
+                        ana="bk:money" quantity="102" unitRef="#d">j̸ lb. minus xviii d.</measure>
+                     <date ana="bk:when" when="1456-02-08">dominica post Agathe virginis</date>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item <rs ana="bk:from bk:individual"
+                        corresp="#johannesunverdorben">idem</rs> dedit <measure ana="bk:money"
+                        quantity="239" unitRef="#lbdwien">i lb. minus i d.</measure>
+                     <date ana="bk:when" when="1456-02-11">in die cinerum</date></ab>
+                  <ab ana="bk:total">Summa facit <measure ana="bk:money" quantity="14" unitRef="#s"
+                        >xiiii s.</measure>
+                     <measure ana="bk:money" quantity="11" unitRef="#d">xi d.</measure></ab>
+               </div>
+            </div>
+            <gap/>
+            <div ana="bk:rubric" corresp="#ausgaben">
+               <gap/>
+               <pb n="69" facs="#facs_69" xml:id="IMG.69"/>
+               <fw type="year">Anno etc. lvi<hi rend="superscript">o</hi></fw>
+               <div ana="bk:rubric" corresp="#ausgaben_eier">
+                  <!--Ich glaube, hier dürften diesmal Eier und nicht Schafe gemeint sein, siehe Kellermeister und keine Nennung der Anzahl und Butter als nächste Rubrik-->
+                  <head>Pro Ovis</head>
+                  <ab ana="bk:entry">Item primo <name ana="bk:by bk:from bk:individual"
+                        ref="#kellermeister"
+                     >cellerarius</name><!--Kellermeister kauft für Kloster Aldersbach ein. Im Folgenden wieder häufiger keine Verkäufer angegeben-->
+                     dedit <measure ana="bk:money" quantity="2" unitRef="#lbdwien">ii lb.</measure>
+                     <measure ana="bk:money" quantity="5" unitRef="#s">v s.</measure>
+                     <del>d.</del>
+                     <measure ana="bk:money" quantity="10" unitRef="#d">x d. Wien.</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item <rs ana="bk:to bk:individual" corresp="#kellermeister"
+                        >idem</rs> dedit pro <measure ana="bk:commodity" commodity="eier"
+                        >ovis</measure>
+                     <measure ana="bk:money" quantity="953" unitRef="#d">iiii lb. minus vii
+                        d.</measure></ab>
+                  <ab ana="bk:entry">Item postea dedimus <measure ana="bk:money" quantity="1"
+                        unitRef="#lbdwien">i lb. d.</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item postea in <date ana="bk:when" when="1456-02-05"
+                        >agathe</date>
+                     <measure ana="bk:money" quantity="82" unitRef="#d">lxxxii d.</measure></ab>
+                  <ab ana="bk:entry">Item postea <name ana="bk:by bk:from bk:individual"
+                        ref="#kellermeister">cellerarius</name> dedit <measure ana="bk:money"
+                        quantity="4.5" unitRef="#lbdwien">iiiij̸ lb.</measure>
+                     <lb/><measure ana="bk:money" quantity="25" unitRef="#d">xxv d.</measure></ab>
+                  <ab ana="bk:total">Summa facit <measure ana="bk:money" quantity="12.5"
+                        unitRef="#lbdwien">xiij̸ lb.</measure>
+                     <lb/><del><measure ana="bk:money" quantity="20" unitRef="#d">xx
+                        d.</measure></del>
+                     <measure ana="bk:money" quantity="20" unitRef="#d">xx d.</measure></ab>
+               </div>
+               <div ana="bk:rubric" corresp="#ausgaben_butter">
+                  <head>Pro buttiro</head>
+                  <ab ana="bk:entry">Item primo <name ana="bk:by bk:from bk:individual"
+                        ref="#kellermeister">cellerarius</name> dedit pro <measure
+                        ana="bk:commodity" quantity="22" commodity="butter" unitRef="#librum">xxii
+                        libris buttiri</measure> <measure ana="bk:money" quantity="110" unitRef="#d"
+                        >j̸ lb. minus x d.</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual"
+                        ref="#friedrichunverdorben">fridrico unverdorben de <placeName
+                           ref="#ort_0567">nidrenod</placeName></name> pro <measure
+                        ana="bk:commodity" quantity="36" commodity="butter" unitRef="#librum">xxxvi
+                        libris buttiri</measure>
+                     <measure ana="bk:money" quantity="6" unitRef="#s">vi s. d. Wien.</measure>
+                     <lb/><date ana="bk:when" when="1456-12-07">feria 3<hi rend="superscript">a</hi>
+                        post Nicolai episcopi</date></ab>
+                  <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual"
+                        ref="#christianpraxator">christanno praxatori</name> pro <measure
+                        ana="bk:commodity" commodity="butter">buttiro</measure>
+                     <measure ana="bk:money" quantity="7" unitRef="#s">vii s.</measure>
+                     <measure ana="bk:money" quantity="5" unitRef="#d">v d.</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity" quantity="42"
+                        commodity="butter" unitRef="#librum">xlii libris buttiri</measure> in die
+                        <date ana="bk:when" when="1456-02-05">agathe</date>
+                     <measure ana="bk:money" quantity="10" unitRef="#s">x s.</measure>
+                     <measure ana="bk:money" quantity="12" unitRef="#d">xii d.</measure></ab>
+                  <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity" quantity="1.5"
+                        commodity="butter" unitRef="#centenarius">ij̸ centenariis <lb/>et xx libris
+                        buttiri</measure>
+                     <!--Hier wieder 2 Einheiten für 1 commodity--> emptis in <placeName
+                        ref="#ort_0334">patavia</placeName>
+                     <measure ana="bk:money" quantity="1196" unitRef="#d">v lb. minus iiii
+                        d.</measure></ab>
+                  <ab ana="bk:total">Summa facit <measure ana="bk:money" quantity="8"
+                        unitRef="#lbdwien">viii lb.</measure>
+                     <measure ana="bk:money" quantity="3" unitRef="#s">iii s.</measure>
+                     <measure ana="bk:money" quantity="3" unitRef="#d">iii d.</measure></ab>
+               </div>
+            </div>
+
+            <!--hier neu kodiert-->
+            <pb n="93" facs="#facs_93" xml:id="IMG.93"/>
+            <fw type="year">Anno etc. lvi<hi rend="superscript">o</hi></fw>
+            <div ana="bk:rubric" corresp="#ausgaben_drescher">
+               <head>Trituratoribus pro precio etc.</head>
+               <ab ana="bk:entry"><note>+</note> Item primo dedimus <name ana="bk:to bk:individual"
+                     ref="#valentino">Valentino</name> et <name ana="bk:to bk:individual"
+                     ref="#christianpraxator">christanno</name> de <del>vi </del><measure
+                     ana="bk:commodity" quantity="6.5" commodity="gerste" unitRef="#schaff"
+                        ><add>vij̸ </add>sch. ordei</measure> <measure ana="bk:money" quantity="117"
+                     unitRef="#lbdwien">j̸ lb. minus iii d.</measure> et <measure ana="bk:money"
+                     quantity="7" unitRef="#d">vii d.</measure>
+                  <lb/>pro <measure ana="bk:service" commodity="baden">walneo</measure>
+                  <!--Ich lese das so, dass das Kloster den beiden Dreschern Geld gegeben haben, damit sie ins Badehaus gehen können-->
+                  <date ana="bk:when" when="1456-08-07">Sabbato ante laurencii martyris</date></ab>
+               <ab ana="bk:entry">Item postea dedimus <name ana="bk:to bk:group" ref="#drescher"
+                     >diversis trituratoribus</name>
+                  <measure ana="bk:money" quantity="10" unitRef="#s">x s.</measure>
+                  <lb/><measure ana="bk:money" quantity="18" unitRef="#d">xviii d.</measure> in die
+                     <date ana="bk:when" when="1456-08-13">ypoliti</date>.</ab>
+               <ab ana="bk:entry">Item postea dedimus <name ana="bk:to bk:group" ref="#valentino"
+                     >Valentino et <name ref="#valentinosocii">sociis suis</name></name> de <measure
+                     ana="bk:commodity" quantity="8.5" commodity="gerste" unitRef="#schaff">viiij̸
+                     <lb/>sch.</measure>
+                  <!--Gerste implizit aus vorhergehenden Einträgen-->
+                  <measure ana="bk:money" quantity="5" unitRef="#s"> s.</measure>
+                  <measure ana="bk:money" quantity="3" unitRef="#d">iii d.</measure> in die <date
+                     ana="bk:when" when="1456-10-11">Augustini Episcopi</date> /</ab>
+               <ab ana="bk:entry">Item dedimus de <measure ana="bk:commodity" quantity="10"
+                     commodity="roggen" unitRef="roggen">x sch. Siliginis</measure>
+                  <measure ana="bk:money" quantity="6" unitRef="#s">vi s. d.</measure>
+                  <lb/><date ana="bk:when" when="1456-09-04" xml:id="date_016">Sabbato ante festum
+                     Nativitatis virginis gloriose</date></ab>
+               <ab ana="bk:entry">Item dedimus <date ana="bk:when" when="1456-09-04"
+                     corresp="#date_016">eadem die</date>
+                  <name ana="bk:to bk:individual" ref="#christianchadling">christanno de
+                        <lb/><placeName ref="#ort_0225">chadling</placeName></name>
+                  <measure ana="bk:money" quantity="35" unitRef="#d">xxxv d. Wien.</measure></ab>
+               <ab ana="bk:entry">Item dedimus de <measure ana="bk:commodity" quantity="4.5"
+                     commodity="weitzen" unitRef="#schaff">iiiij̸ sch. tritici</measure>
+                  <measure ana="bk:money" quantity="81" unitRef="#d">lxxxi d.</measure>
+                  <date ana="bk:when" when="1456-10-24">dominica <lb/>post xicim milium
+                     virginum</date>
+               </ab>
+               <lb/>
+               <ab ana="bk:entry">Item postea dedimus de <measure ana="bk:commodity" quantity="9"
+                     commodity="hafer" unitRef="#schaff">ix sch. avene</measure>
+                  <name ana="bk:to bk:group" ref="#valentino">Valentino et <name
+                        ref="#valentinosocii">sociis suis</name></name>
+                  <measure ana="bk:money" quantity="5" unitRef="#s">v s.</measure>
+                  <measure ana="bk:money" quantity="12" unitRef="#d">xii d.</measure><lb/><date
+                     ana="bk:when" when="1456-11-24">feria quarta ante Katherine
+                  virginis</date></ab>
+               <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:group" ref="#drescher"
+                     >trituratoribus</name> in <placeName ana="bk:where" ref="#ort_0304"
+                     >newstifft</placeName>
+                  <lb/>de <unclear>tota </unclear>annona <del><measure ana="bk:money" quantity="6"
+                        unitRef="#s">vi s.</measure> xx</del>
+                  <add><measure ana="bk:money" quantity="20" unitRef="#s">xx s.</measure></add> d.
+                     <date ana="bk:when" when="1456-12-05" xml:id="date_017">dominica ante Nicolai
+                     episcopi</date> pro finali solucione </ab>
+               <lb/>
+               <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual" ref="#eischiel"
+                     >Eischiel</name> de <measure ana="bk:service" quantity="13" commodity="work"
+                     unitRef="#tag">xiii diebus</measure>
+                  <date ana="bk:when" when="1456-12-05" corresp="#date_017">eadem die</date>
+                  <measure ana="bk:money" quantity="52" unitRef="#d">lii d.</measure></ab>
+               <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:group" ref="#valentino">Valentino
+                     <lb/>et <name ref="#valentinosocii">sociis suis</name></name> de <measure
+                     ana="bk:commodity" quantity="19" commodity="getreide" unitRef="#schaff">xix
+                     sch. utriusque grani</measure>
+                  <!--Es geht hier um selbe Anzahl und selbe Einheit zweier Getreidearten. Vmtl. Weizen und Roggen? Oder Hafer?-->
+                  <measure ana="bk:money" quantity="1422" unitRef="#d">xii s. minus xviii
+                     d.</measure>
+                  <lb/><date ana="bk:when" when="1456-12-24" xml:id="date_018">in vigilia
+                     Nativitatis Christi</date> /</ab>
+               <ab ana="bk:entry">Item dedimus de <measure ana="bk:commodity" quantity="11"
+                     commodity="hafer" unitRef="#schaff">xi sch. avene</measure>
+                  <name ana="bk:to bk:group" ref="#johannihon">Johanni hon et <lb/><name
+                        ref="#johannihonsocii">sociis suis</name></name>
+                  <date ana="bk:when" when="1456-12-24" corresp="#date_018">eadem die</date>
+                  <measure ana="bk:money" quantity="6" unitRef="#s">vi s.</measure>
+                  <measure ana="bk:money" quantity="18" unitRef="#d">xviii d.</measure></ab>
+               <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual" ref="#johannihon"
+                     >Johanni hon</name> de <measure ana="bk:service" quantity="17" commodity="work"
+                     unitRef="#tag">xvii diebus</measure>
+                  <lb/><measure ana="bk:money" quantity="51" unitRef="#d">li d.</measure>
+                  <date ana="bk:when" when="1456-12-24" corresp="#date_018">eadem die</date></ab>
+               <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual" ref="#seyss"
+                     >Seyss</name> de <measure ana="bk:service" quantity="18" commodity="work"
+                     unitRef="#tag">xviii diebus</measure>
+                  <measure ana="bk:money" quantity="54" unitRef="#d">liiii d.</measure>
+                  <date ana="bk:when" when="1456-12-24" corresp="#date_018">eadem die</date></ab>
+               <lb/>
+               <ab ana="bk:entry">Item <del>lm</del> postea dedimus <name ana="bk:to bk:group"
+                     ref="#valentino">Valentino et <name ref="#valentinosocii">sociis
+                     suis</name></name> de <measure ana="bk:commodity" quantity="3.5"
+                     commodity="roggen" unitRef="#schaff">iiij̸ sch. Siliginis</measure>
+                  <measure ana="bk:commodity" quantity="5" commodity="weitzen" unitRef="#schaff">v
+                     sch. tritici</measure>
+                  <lb/><measure ana="bk:commodity" quantity="1.5" commodity="erbsen"
+                     unitRef="#schaff">ij̸ sch. pisorum</measure>
+                  <measure ana="bk:money" quantity="6" unitRef="#s">vi s. d.</measure>
+                  <date ana="bk:when" when="1456-01-17" xml:id="date_019">Sabbato post octavam
+                     Epiphanie domini</date> /</ab>
+               <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:group" ref="#johannihon">Johanni
+                     hon et <lb/><name ref="#johannihonsocii">sociis suis</name></name> de <measure
+                     ana="bk:commodity" quantity="14" commodity="hafer" unitRef="#schaff">xiiii sch.
+                     avene</measure>
+                  <measure ana="bk:money" quantity="1" unitRef="#lbdwien">i lb.</measure>
+                  <measure ana="bk:money" quantity="12" unitRef="#d">xii d.</measure>
+                  <date ana="bk:when" when="1456-01-17" corresp="#date_019">eadem die</date></ab>
+               <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual" ref="#johannihon"
+                     >Johanni hon</name>
+                  <lb/>de <measure ana="bk:commodity" quantity="9.5" commodity="hafer"
+                     unitRef="#schaff">viiiij̸ sch.</measure>
+                  <!--Hafer implizit-->
+                  <del>/ /</del>
+                  <measure ana="bk:money" quantity="5" unitRef="#s">v s.</measure>
+                  <measure ana="bk:money" quantity="21" unitRef="#d">xxi d.</measure> in die <date
+                     ana="bk:when" when="1456-02-05" xml:id="date_020">Agathe</date></ab>
+               <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:group" ref="#valentino">Valentino
+                     et <name ref="#valentinosocii">sociis <lb/>suis</name></name> de <measure
+                     ana="bk:commodity" quantity="10" commodity="hafer" unitRef="#schaff">x
+                     sch.</measure>
+                  <!--Hafer implizit--><measure ana="bk:money" quantity="6" unitRef="#s">vi s.
+                     d.</measure>
+                  <date ana="bk:when" when="1456-02-05" corresp="#date_020">eadem die</date></ab>
+               <ab ana="bk:entry">Item dedimus <date ana="bk:when" when="1456-02-05"
+                     corresp="#date_020">eadem die</date>
+                  <measure ana="bk:money" quantity="1" unitRef="#lbdwien">i lb.</measure>
+                  <measure ana="bk:money" quantity="6" unitRef="#d">vi d.</measure></ab>
+               <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:group" ref="#johannihon">Johanni
+                     <lb/>Hon et <name ref="#johannihonsocii">sociis suis</name></name> de <measure
+                     ana="bk:commodity" quantity="13.5" commodity="getreide" unitRef="#schaff"
+                     >xiiij̸ sch. utriusque grani</measure>
+                  <!--Hier wieder beide vorher genannten Getreidearten gemeint-->
+                  <measure ana="bk:money" quantity="1" unitRef="#lbdwien">i lb.</measure>
+                  <measure ana="bk:money" quantity="3" unitRef="#d">iii d.</measure>
+                  <date ana="bk:when" when="1456-02-09">feria 2<hi rend="superscript">a</hi> post
+                     dominicam <lb/>l<hi rend="superscript">me</hi></date></ab>
+               <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:group" ref="#valentino">valentino
+                     et <name ref="#valentinosocii">sociis suis</name></name> de <measure
+                     ana="bk:commodity" quantity="28.5" commodity="roggen" unitRef="#schaff">xviiij̸
+                     sch. Siliginis et tritici</measure>
+                  <!--Hier wieder 2 commodities in einer Angabe-->
+                  <lb/><measure ana="bk:money" quantity="11" unitRef="#s">xi s.</measure>
+                  <measure ana="bk:money" quantity="3" unitRef="#d">iii d.</measure><date
+                     ana="bk:when" when="1456-02-14">Sabbato ante dominicam Invocavit</date></ab>
+               <ab ana="bk:total">Summa facit <measure ana="bk:money" quantity="16"
+                     unitRef="#lbdwien">xvi lb.</measure>
+                  <lb/><measure ana="bk:money" quantity="3" unitRef="#s">iii s.</measure>
+                  <measure ana="bk:money" quantity="24" unitRef="#d">xxiiii d.</measure></ab>
+               <pb n="94" facs="#facs_94" xml:id="IMG.94"/>
+               <fw type="year">Anno etc. lvi<hi rend="superscript">o</hi></fw>
+               <fw type="head">Trituratoribus pro precio etc.</fw>
+            </div>
+
+
+         </div>
+
+
          <div n="1457">
             <div ana="bk:rubric" corresp="#einnahmen">
-               <!--...-->
-               <pb n="117" facs="#IMG.117.jpg"/>
+               <gap/>
+               <pb n="117" facs="#facs_117" xml:id="IMG.117"/>
                <fw type="year"><date ana="bk:when" when="1457">Anno lvii<hi rend="superscript"
                         >o</hi></date></fw>
                <div ana="bk:rubric" corresp="#einnahmen_salz">
@@ -1200,28 +2469,31 @@
                      <lb/>parrochialibus de offertorio custodis et de propriis hominibus <lb/>in die
                         <date ana="bk:when" when="1457-06-29">petri et pauli
                      apostolorum</date></head>
-                  <ab ana="bk:subtotal">Summa de primiciis fratrum <measure ana="bk:money"
-                        quantity="4" unitRef="#lb">iiii lb.</measure>
-                     <!--primicii hier auch als commodity kodieren?-->
+                  <ab ana="bk:entry">Summa de primiciis fratrum <measure ana="bk:money" quantity="4"
+                        unitRef="#lbdwien">iiii lb.</measure>
+                     <!--primicii hier auch als commodity kodieren? was genau sind primicii?-->
                      <measure ana="bk:money" quantity="7" unitRef="#s">vii s.</measure>
                      <measure ana="bk:money" quantity="3" unitRef="#d">iii d.</measure>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item primo recepimus de <measure ana="bk:commodity"
-                        commodity="gabe">offertorio in primiciis</measure> fratris <name
-                        ana="bk:from bk:individual" ref="#johannesstallmeister">Johannis
-                        Stabularii</name>
-                     <measure ana="bk:money" quantity="2" unitRef="#lb">ii lb.</measure>
+                        commodity="gabe">offertorio in primiciis</measure>
+                     <name ana="bk:from bk:individual" ref="#johannesstallmeister"
+                           ><roleName>fratris</roleName> Johannis
+                        <roleName>Stabularii</roleName></name>
+                     <measure ana="bk:money" quantity="2" unitRef="#lbdwien">ii lb.</measure>
                      <measure ana="bk:money" quantity="13" unitRef="#d">xiii d.</measure>
                      <date ana="bk:when" when="1457-06-21">feria 3<hi rend="superscript">a</hi> ante
                         festum sancti <lb/>Johannis waptiste</date></ab>
                   <ab ana="bk:entry">Item recepimus de <measure ana="bk:commodity" commodity="gabe"
                         >primiciis</measure> fratris <name ana="bk:from bk:individual"
                         ref="#andreeczwanrid">Andree czawnrid</name>
-                     <del><measure ana="bk:money" quantity="6" unitRef="#lb">vi lb.</measure>
+                     <del><measure ana="bk:money" quantity="6" unitRef="#lbdwien">vi lb.</measure>
                         <measure ana="bk:money" quantity="2" unitRef="#s">ii s.</measure>
                         <measure ana="bk:money" quantity="20" unitRef="#d">xx d.</measure>
                         <measure ana="bk:money" quantity="1" unitRef="#hr">i hall</measure></del>.
-                           <add><measure ana="bk:money" quantity="2" unitRef="#lb">ii lb.</measure>
+                           <add><measure ana="bk:money" quantity="2" unitRef="#lbdwien">ii
+                           lb.</measure>
                         <measure ana="bk:money" quantity="6" unitRef="#s">vi s.</measure>
                         <measure ana="bk:money" quantity="20" unitRef="#d">xx d.</measure></add>
                      dominica <lb/>ante <date ana="bk:when" when="1457-06-29">petri et pauli
@@ -1231,133 +2503,155 @@
                      <measure ana="bk:money" quantity="12" unitRef="#s">xii s. d.</measure> in die
                         <date ana="bk:when" when="1457-06-29">petri et pauli</date>
                      <!--Kein Agent angegeben, sondern "Wir erhielten aus den Sammlungen der Pfarrkirchen...". Man könnte hier mit listOrg im Header arbeiten, aber es ist ja nicht eine spezifische Pfarrkirche-->
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item recepimus de <name ana="bk:from bk:group"
                         ref="#propriishominibus">propriis hominibus</name> in die <date
                         ana="bk:when" when="1457-06-29">petri et pauli</date>
                      <!--generische agent-gruppe-->
                      <measure ana="bk:money" quantity="12" unitRef="#s">xii s.</measure>
                      <measure ana="bk:money" quantity="15" unitRef="#d">xv d.</measure>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item recepimus de <name ana="bk:from bk:organisation"
                         ref="#cipposanctilinhardi">cippo sancti Linhardi</name>
                      <!--Organisation-->
-                     <measure ana="bk:money" quantity="1" unitRef="#lb">i lb.</measure> minus
+                     <measure ana="bk:money" quantity="1" unitRef="#lbdwien">i lb.</measure> minus
                         <measure ana="bk:money" quantity="1" unitRef="#d">i d.</measure> in die
                         <date ana="bk:when" when="1457-07-02">visitacionis virginis gloriose</date>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item postea recepimus tempore Stifte <measure ana="bk:money"
-                        quantity="6.5" unitRef="#lb">vij̸ lb. d.</measure></ab>
+                        quantity="6.5" unitRef="#lbdwien">vij̸ lb. d.</measure></ab>
                   <!--Was bedeutet tempore Stifte hier genau?-->
-                  <ab ana="bk:entry">Item recepimus a <name ana="bk:from bk:individual"
-                        ref="#cappelano">cappelano nostro</name>
+                  <ab ana="bk:entry">Item recepimus a <roleName ana="bk:from bk:individual"
+                        ref="#kaplanaldersbach">cappelano nostro</roleName>
                      <measure ana="bk:money" quantity="143" unitRef="#d">v s. minus viii
-                        d.</measure> tempore Stifte <lb/></ab>
+                        d.</measure> tempore Stifte </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item recepimus de collecta in <date ana="bk:when"
                         when="1457-11-06">die sancti Linhardi</date>
                      <measure ana="bk:money" quantity="22.5" unitRef="#d">xxiij̸ d.</measure>
-                     <lb/></ab>
-                  <ab ana="bk:entry">Item recepimus de <name ana="bk:from"
-                     >collecta</name><!--aus einer Sammlung: wie kodieren?--> in die <date
-                        ana="bk:when" when="1457-11-25">sancte Katherine</date>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item recepimus de
+                     collecta<!--collecta: wie kodieren? Ist eine Art und Weise, wie man Geld einnimmt-->
+                     in die <date ana="bk:when" when="1457-11-25">sancte Katherine</date>
                      <measure ana="bk:money" quantity="61" unitRef="#d">lxi d. Wien.</measure>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item recepimus de <measure ana="bk:commodity" commodity="gabe"
                         >offertorio</measure>
-                     <name ana="bk:from bk:individual" ref="#küster">custodis</name>
+                     <roleName ana="bk:from bk:individual" ref="#küster">custodis</roleName>
+                     <!--Könnte auch ein Typus von Abgabe sein (offertorio custodis)-->
                      <measure ana="bk:money" quantity="148.5" unitRef="#d">v s. minus iii
                         hall.</measure> in die <date ana="bk:when" when="1457-12-27">sancti Johannis
                         apostoli</date>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item postea recepimus ab <rs ana="bk:from bk:individual"
                         corresp="#küster">eodem</rs>
                      <measure ana="bk:money" quantity="46" unitRef="#d">xlvi d.</measure> feria 2<hi
                         rend="superscript">a</hi>
                      <date ana="bk:when" when="1457-04-17">pasche</date>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item postea recepimus de <name ana="bk:from bk:organisation"
                         ref="#cipposanctilinhardi">cippo sancti Linhardi</name>
                      <measure ana="bk:money" quantity="10" unitRef="#s">x s.</measure>
                      <measure ana="bk:money" quantity="8" unitRef="#d">viii d.</measure>
                      <date ana="bk:when" when="1457-04-22">feria 6<hi rend="superscript">a</hi> ante
                         Georii martyris</date>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item recepimus de <name ana="bk:from"
-                     >collecta</name><!--Wieder aus Sammlung--> in <placeName ref="ort_0346"
-                        >pleinting</placeName> in die <date ana="bk:when" when="1457-04-25">marci
-                        Ewangeliste</date>
+                     >collecta</name><!--Wieder aus Sammlung, todo: wie kodieren?--> in <placeName
+                        ref="ort_0346">pleinting</placeName> in die <date ana="bk:when"
+                        when="1457-04-25">marci Ewangeliste</date>
                      <measure ana="bk:money" quantity="38" unitRef="#d">xxxviii d.</measure>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item recepimus feria 3<hi rend="superscript">a</hi>
                      <date ana="bk:when" when="1457-05-22">Rogacionum</date>
                      <measure ana="bk:money" quantity="14" unitRef="#s">xiiii s.</measure>
                      <del><measure ana="bk:money" quantity="11" unitRef="#d">xi d.</measure></del>
                      <measure ana="bk:money" quantity="14.5" unitRef="#d">xv d. minus i
                         hall.</measure>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item recepimus de <measure ana="bk:commodity" commodity="gabe"
                         >offertorio</measure>
-                     <name ana="bk:from bk:individual" ref="#küster">custodis</name>
+                     <roleName ana="bk:from bk:individual" ref="#küster">custodis</roleName>
                      <measure ana="bk:money" quantity="22" unitRef="#d">xxii d.</measure> feria 3<hi
                         rend="superscript">a</hi>
                      <date ana="bk:when" when="1457-06-05">penthecostes</date>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="nota">Nota prescripta in specie computavimus et omnia continentur seorsum
                      in cedula hic inclusa</ab>
-                  <!--"Die oben genannten Posten haben wir einzeln berechnet, und alles ist in einem separat beigefügten Zettel enthalten, der hier inkludiert ist.“ Ist damit S.174 gemeint?-->
+                  <!--"Die oben genannten Posten haben wir einzeln berechnet, und alles ist in einem separat beigefügten Zettel enthalten, der hier inkludiert ist.“ Dieser Zettel ist nicht bekannt-->
                </div>
 
-               <pb n="118" facs="#IMG.118.jpg"/>
+               <pb n="118" facs="#facs_118" xml:id="IMG.118"/>
                <fw type="year">Anno lvii<hi rend="superscript">o</hi></fw>
                <div ana="bk:rubric" corresp="#einnahmen_divers_wandel_tod_abgaben">
                   <head>Recepimus de diversis obvencionibus videlicet wandel <lb/>todfell und
                      züstent</head>
                   <ab ana="bk:entry"><note>dedit </note> Item primo recepimus ab <name
                         ana="bk:from bk:individual" ref="#linhardohueber">Linhardo hueber de
-                           <placeName ana="bk:where" ref="ort_0249">chreusdorff</placeName></name>
+                           <placeName ref="ort_0249">chreusdorff</placeName></name>
                      <measure ana="bk:money" quantity="2" unitRef="#frhen">ii f. Rhen.</measure>
-                     <span ana="bk:status">solvit totum</span>
-                     <lb/></ab>
-                  <ab ana="bk:entry"><note>dedit </note> Item recepimus ab <name
-                        ana="bk:from bk:individual" ref="#georioodär">Georio odär</name>
+                     <seg ana="bk:status">solvit totum</seg>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry"><note><seg ana="bk:status">dedit</seg>
+                     </note> Item recepimus ab <name ana="bk:from bk:individual" ref="#georioodär"
+                        >Georio odär</name>
                      <measure ana="bk:money" quantity="3" unitRef="#frhen">iii f. Rhen.</measure>
-                     <span ana="bk:status">solvit totum</span>
-                     <lb/></ab>
-                  <ab ana="bk:entry"><note>dedit </note> Item recepimus a <name
-                        ana="bk:from bk:individual" ref="#schamperger">Schammperger</name>
+                     <seg ana="bk:status">solvit totum</seg>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry"><note><seg ana="bk:status">dedit</seg></note> Item recepimus a
+                        <name ana="bk:from bk:individual" ref="#schamperger">Schammperger</name>
                      <measure ana="bk:money" quantity="2" unitRef="#frhen">ii f.
                      Rhen.</measure></ab>
-                  <ab ana="bk:entry">Item recepimus a Struner <measure ana="bk:money" quantity="3"
-                        unitRef="#s">iii s. d.</measure> pro 3<hi rend="superscript">a</hi> parte
-                     annone <lb/><span ana="bk:status">solvit totum</span></ab>
+                  <ab ana="bk:entry">Item recepimus a <name ana="bk:from" ref="#struner"
+                        >Struner</name>
+                     <measure ana="bk:money" quantity="3" unitRef="#s">iii s. d.</measure> pro 3<hi
+                        rend="superscript">a</hi> parte annone <lb/><seg ana="bk:status">solvit
+                        totum</seg></ab>
                   <ab ana="bk:entry">Item recepimus <measure ana="bk:money" quantity="10"
-                        unitRef="#s">x s. d.</measure> a linhardo Horndel</ab>
+                        unitRef="#s">x s. d.</measure> a <name ana="bk:from bk:individual"
+                        ref="#linhardhorndel">linhardo Horndel</name></ab>
                   <ab ana="bk:entry">Item recepimus ab huber in <placeName ana="bk:where"
                         ref="#ort_0097">Egendorff</placeName>
                      <lb/><measure ana="bk:money" quantity="2" unitRef="#frhen">ii f.
                         Rhen.</measure>
-                     <lb/></ab>
-                  <ab ana="bk:entry">Item recepimus a vidua <name ana="bk:from bk:individual"
-                        ref="#aygnerin">aygnerin</name> in Iudicio <placeName ana="bk:where"
-                        ref="#ort_0558">pfarkirchen</placeName>
-                     <measure ana="bk:commodity" commodity="todfallundzuständ">todfal und
-                        züstand</measure><!--kann man das als commodity kodieren?-->
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item recepimus a <name ana="bk:from bk:individual"
+                        ref="#aygnerin"><roleName>vidua</roleName> aygnerin <placeName
+                           ref="#ort_0558">in Iudicio pfarkirchen</placeName></name>
+                     <measure ana="bk:right" commodity="todfallundzuständ">todfal und
+                        züstand</measure>
+                     <!--bk:right-->
                      <measure ana="bk:money" quantity="6" unitRef="#s">vi s.</measure>
-                     <measure ana="bk:money" quantity="6" unitRef="#d">vi d.</measure> per
-                     hellenöder <lb/></ab>
-                  <!--Was ist per hellenöder?-->
+                     <measure ana="bk:money" quantity="6" unitRef="#d">vi d.</measure> per <name
+                        ana="bk:by bk:from bk:individual" ref="#hellenöder">hellenöder</name>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item recepimus a vidua <name ana="bk:from bk:individual"
-                        ref="#goschelhueberin">Goschelhueberin de <placeName ana="bk:where"
-                           ref="#ort_0119">freindorff</placeName></name>
-                     <measure ana="bk:money" quantity="1" unitRef="#lb">i lb. d.</measure>
+                        ref="#goschelhueberin">Goschelhueberin de <placeName ref="#ort_0119"
+                           >freindorff</placeName></name>
+                     <measure ana="bk:money" quantity="1" unitRef="#lbdwien">i lb. d.</measure>
                      <date ana="bk:when" when="1457-05-22">dominica vocem
                      <lb/>Iocunditatis</date></ab>
                   <ab ana="bk:total">Summa omnium prescriptorum facit <measure ana="bk:money"
-                        quantity="10" unitRef="#lb">x lb.</measure>
+                        quantity="10" unitRef="#lbdwien">x lb.</measure>
                      <measure ana="bk:money" quantity="30" unitRef="#d">xxx d.</measure></ab>
                </div>
             </div>
-            <pb n="119" facs="#IMG.119.jpg"/>
+            <pb n="119" facs="#facs_119" xml:id="IMG.119"/>
             <div ana="bk:rubric" corresp="#ausgaben">
                <fw type="year">Anno domini etc. lvii<hi rend="superscript">o</hi></fw>
                <head>Secuntur expense etc.</head>
@@ -1365,173 +2659,189 @@
                   <head>Primo dedimus pro Cultura vinearum etc.</head>
                   <ab ana="bk:entry">Item dedimus pro <measure ana="bk:service"
                         commodity="bewirtschaftung_weinberge">cultura vinearum</measure>
-                     <measure ana="bk:money" quantity="127.5" unitRef="#lb">i<hi rend="superscript"
-                           >C</hi> xxviij̸ lb.</measure>
+                     <measure ana="bk:money" quantity="127.5" unitRef="#lbdwien">i<hi
+                           rend="superscript">C</hi> xxviij̸ lb.</measure>
                      <measure ana="bk:money" quantity="14" unitRef="#d">xiiii d.</measure></ab>
                   <ab ana="bk:total">Summa facit <measure ana="bk:money" quantity="127.5"
-                        unitRef="#lb">i<hi rend="superscript">C</hi> xxviij̸ lb.</measure>
+                        unitRef="#lbdwien">i<hi rend="superscript">C</hi> xxviij̸ lb.</measure>
                      <measure ana="bk:money" quantity="14" unitRef="#d">xiiii d.</measure></ab>
                </div>
 
-               <pb n="120" facs="#IMG.120.jpg"/>
+               <pb n="120" facs="#facs_120" xml:id="IMG.120"/>
                <fw type="year">Anno lvii<hi rend="superscript">o</hi></fw>
                <div ana="bk:rubric" corresp="#ausgaben_wein">
                   <head>Pro vino empto tempore Awtumpni</head>
                   <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual" ref="#aspekchen"
-                        >Aspekchen</name> in <placeName ana="bk:where" ref="#ort_0334"
-                        >patavia</placeName> in <measure ana="bk:commodity" quantity="1"
-                        commodity="wein" unitRef="#flasche">lagena vini ytalico</measure> ab eo
-                     empta super compu<unclear>-</unclear>
+                        >Aspekchen in <placeName ref="#ort_0334">patavia</placeName></name> in
+                        <measure ana="bk:commodity" quantity="1" commodity="wein" unitRef="#flasche"
+                        >lagena vini ytalico</measure> ab eo empta super compu<unclear>-</unclear>
                      <lb/>tacionem <measure ana="bk:money" quantity="4" unitRef="#fung">iiii f.
                         Ung.</measure><date ana="bk:when" when="1457-07-20">feria quarta ante marie
                         magdalene</date>
                   </ab>
                   <ab ana="bk:entry"><del>Item dedimus pro <measure ana="bk:commodity"
                            commodity="wein">vino</measure></del>
-                     <lb/><span ana="bk:status">solutum est totaliter</span>
-                     <lb/></ab>
+                     <lb/><seg ana="bk:status">solutum est totaliter</seg>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual"
-                        ref="#georiohaberkover">Georio Haberkover de <placeName ana="bk:where"
-                           ref="#ort_0560">Straubingna</placeName></name>
-                     <del><measure ana="bk:money" quantity="6" unitRef="#lb">vi lb.</measure>
-                        Wien.d.</del>
+                        ref="#georiohaberkover">Georio Haberkover de <placeName ref="#ort_0560"
+                           >Straubingna</placeName></name>
+                     <del><measure ana="bk:money" quantity="6" unitRef="#lbdwien">vi lb.
+                           Wien.d.</measure>
+                     </del>
                      <add><measure ana="bk:money" quantity="3110" unitRef="#d">xiii lb. minus x
-                           d.</measure></add> in vino francaneo <lb/>ab <rs
-                        ana="bk:to bk:individual" ref="#georiohaberkover">eo</rs> empto <del>per
-                        linhardum Hollerbekch in die sancti Laurencii martyris</del>
-                     <span ana="bk:status">solvimus sibi totum</span></ab>
+                           d.</measure></add> in <measure ana="bk:commodity" commodity="wein">vino
+                        francaneo</measure>
+                     <lb/>ab <rs ana="bk:to bk:individual" corresp="#georiohaberkover">eo</rs> empto
+                        <del>per <name ana="bk:by bk:from bk:individual" ref="#linhardhollerbeck"
+                           >linhardum Hollerbekch</name> in <date when="1457-08-10">die sancti
+                           Laurencii martyris</date></del>
+                     <seg ana="bk:status">solvimus sibi totum</seg></ab>
                   <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity" commodity="wein"
-                        >vino empto</measure> in <placeName ana="bk:where" ref="#ort_0553"
-                        >prawnaw</placeName> per <name ana="bk:by bk:individual" ref="#vikar"
-                        >vicarium nostrum in <placeName ana="bk:where" ref="#ort_0561"
-                           >münster</placeName></name>
+                        >vino</measure> empto in <placeName ana="bk:where" ref="#ort_0553"
+                        >prawnaw</placeName> per <roleName ana="bk:by bk:from bk:individual"
+                        ref="#vikar">vicarium nostrum in <placeName ref="#ort_0561"
+                           >münster</placeName></roleName>
                      <measure ana="bk:money" quantity="328.5" unitRef="#d">xi s. minus iii
                         hall.</measure>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity" quantity="4"
                         commodity="stiefel" unitRef="#paar">iiii paribus botorum</measure> <measure
-                        ana="bk:money" quantity="0.5" unitRef="#lb">j̸ lb. d.</measure> in <date
-                        ana="bk:when" when="1457-08-28">octava sanctissimi patris nostri
+                        ana="bk:money" quantity="0.5" unitRef="#lbdwien">j̸ lb. d.</measure> in
+                        <date ana="bk:when" when="1457-08-28">octava sanctissimi patris nostri
                         bernhardi</date>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity" quantity="12"
-                        commodity="käse" unitRef="#laib">xii casis</measure> ad mutas <measure
-                        ana="bk:money" quantity="4" unitRef="#lb">iiii lb.</measure>
+                        commodity="käse" unitRef="#laib">xii caseis</measure> ad mutas <measure
+                        ana="bk:money" quantity="4" unitRef="#lbdwien">iiii lb.</measure>
                      <measure ana="bk:money" quantity="60" unitRef="#d">lx d. Wien.</measure>
                      <date ana="bk:when" when="1457-09-15">feria quinta post Exaltacionis sancti
                         crucis</date></ab>
-                  <ab ana="bk:entry">Item emimus a <name ana="bk:to bk:individual">domino de
-                        czwettel</name>
-                     <measure ana="bk:commodity" quantity="60" commodity="wein" unitRef="#krug">v
-                        ternarios vini urnam pro <!-- v ternario = 5 Dutzend Weinkrüge? -->
-                        <measure ana="bk:price" quantity="1" unitRef="#lb">i lb. d .
-                        Wien.</measure></measure><ab ana="bk:total">Summa totaliter facit
-                           <lb/><measure ana="bk:money" quantity="123" unitRef="#lb">i<hi
-                              rend="superscript">C</hi> xxiii lb. d. Wien.</measure></ab></ab>
+                  <ab ana="bk:entry">Item emimus a <roleName ana="bk:to bk:individual">domino de
+                           <placeName ref="#ort_0568">czwettel</placeName></roleName>
+                     <measure ana="bk:commodity" quantity="5" commodity="wein" unitRef="#ternarius"
+                        >v ternarios vini urnam pro <measure ana="bk:price" quantity="1"
+                           unitRef="#lbdwien">i lb. d . Wien.</measure></measure>
+                     <!--Hier das Problem, dass sich Preis auf andere Einheit bezieht, nämlich auf Urna. Diese Fälle kommen meines Wissens nicht häufig vor-->
+                     Summa totaliter facit <lb/><measure ana="bk:money" quantity="123"
+                        unitRef="#lbdwien">i<hi rend="superscript">C</hi> xxiii lb. d.
+                        Wien.</measure></ab>
                   <!--Summe dürfte sich nur auf die 5 ternarios Wein beziehen?? -->
                   <ab ana="bk:entry">Item dedimus pro <measure ana="bk:commodity" quantity="4"
                         commodity="wein" unitRef="#krug">iiii urnis vini</measure> pro replecione
                      vasorum <measure ana="bk:money" quantity="20" unitRef="#s">xx s. d.</measure>
-                     <!--für die Auffüllung der Gefäße-->
-                     <lb/></ab>
-                  <ab ana="bk:entry">Item de propria cultura <date ana="bk:when" when="1457">huius
-                        anni</date> non plus habuimus nisi <measure ana="bk:commodity" quantity="24"
+                     <!--für die Auffüllung der Gefäße, wollen wir kodieren aber müssen noch schauen, wie-->
+                  </ab>
+                  <lb/>
+                  <ab ana="sonstiges">Item de propria cultura <date ana="bk:when" when="1457">huius
+                        anni</date> non plus habuimus nisi <measure ana="bk:commodity" quantity="6"
                         commodity="wein" unitRef="#krug">ii ternarios vini</measure> et <measure
                         ana="bk:commodity" quantity="3" commodity="rotwein" unitRef="#krug">iii
-                        urnas <lb/>rubei vini</measure> pro offertorio</ab>
-                  <!--pro offertorio-->
-                  <!--Ich denke mit 2 ternarios vini ist wieder 2 Dutzend Weinkrüge gemeint?-->
-                  <ab ana="bk:entry">Item dedimus den <name ana="bk:to bk:group">vasczicheren</name>
-                     in partibus inferioribus <!--unspezifische Ortsangabe--> et in <placeName
-                        ana="bk:where" ref="#ort_0468">vilshoven</placeName>
+                        urnas <lb/>rubei vini</measure> pro <measure ana="bk:commodity"
+                        commodity="gabe">offertorio</measure></ab>
+                  <!--Ist eigentlich eine Information über Ernte-->
+                  <!--pro offertorio, was ist offertorio?-->
+                  <ab ana="bk:entry">Item dedimus den <roleName ana="bk:to bk:group"
+                        ref="#fassbinder">vasczicheren</roleName> in partibus inferioribus
+                     <!--unspezifische Ortsangabe--> et in <placeName ana="bk:where" ref="#ort_0468"
+                        >vilshoven</placeName>
                      <measure ana="bk:money" quantity="13" unitRef="#s">xiii s.</measure>
                      <measure ana="bk:money" quantity="10" unitRef="#d">x d.</measure>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item pro expensis <name ana="bk:to bk:individual"
-                        ref="#linhardprukner">linhardo prukner</name> descendendo et ascendendo
-                           <del><measure ana="bk:money" quantity="11" unitRef="#s">xi s.</measure>
-                        <!--ist bk:to hier richtig? es ist ja genau genommen für die diversen Reiseausgaben-->
-                        vi. d.</del>
+                        ref="#linhardprukner">linhardo prukner</name>
+                     <measure ana="bk:service" commodity="transport">descendendo et
+                        ascendendo</measure>
+                     <!--Für die Reisekosten von Prukner-->
+                     <del><measure ana="bk:money" quantity="11" unitRef="#s">xi s.</measure> vi.
+                        d.</del>
                      <measure ana="bk:money" quantity="10" unitRef="#s">x s.</measure>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual"
-                        ref="#linhardotolfüss">Linhardo tolfüss de <placeName ana="bk:where"
-                           ref="#ort_0011">ayttenpach</placeName></name> pro <measure
-                        ana="bk:commodity" quantity="0.5" commodity="wein" unitRef="#wagenladung">j̸
-                        plaustro vini</measure>
-                     <measure ana="bk:money" quantity="14" unitRef="#lb">xiiii lb. d.</measure> et
-                     pro <lb/><measure ana="bk:service" commodity="anfertigung">fectura</measure>
-                     <!--kann man bezahlte Arbeiten so kodieren?-->
+                        ref="#linhardotolfüss">Linhardo tolfüss de <placeName ref="#ort_0011"
+                           >ayttenpach</placeName></name> pro <measure ana="bk:commodity"
+                        quantity="0.5" commodity="wein" unitRef="#wagenladung">j̸ plaustro
+                        vini</measure>
+                     <measure ana="bk:money" quantity="14" unitRef="#lbdwien">xiiii lb. d.</measure>
+                     et pro <lb/><measure ana="bk:service" commodity="anfertigung">fectura</measure>
                      <measure ana="bk:money" quantity="60" unitRef="#d">lx d.</measure>
-                     <span ana="bk:status">solutum est totaliter</span>
-                     <lb/></ab>
+                     <seg ana="bk:status">solutum est totaliter</seg>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual"
-                        ref="#johannleonis">Johanni leoni nautte</name> in <placeName ana="bk:where"
-                        ref="#ort_0468">vilshoven</placeName> pro <measure ana="bk:commodity"
-                        quantity="2" commodity="wein" unitRef="#flasche">ii lagenis</measure>
-                     wlgariter Ruminir <measure ana="bk:money" quantity="8" unitRef="#lb">viii lb.
-                        d.</measure>
-                     <!--Wein implizit aus Rubrik-->
-                     <!--wlgariter Ruminir-->
+                        ref="#johannleonis">Johanni leoni <roleName>nautte</roleName> in <placeName
+                           ref="#ort_0468">vilshoven</placeName></name> pro <measure
+                        ana="bk:commodity" quantity="2" commodity="wein" unitRef="#flasche">ii
+                        lagenis wlgariter Ruminir</measure><measure ana="bk:money" quantity="8"
+                        unitRef="#lbdwien">viii lb. d.</measure>
                      <lb/><date ana="bk:when" when="1457-12-22">feria quinta post thome
                         apostoli</date>
-                     <span ana="bk:status">solvimus sibi totum</span>
-                     <lb/></ab>
+                     <seg ana="bk:status">solvimus sibi totum</seg>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual"
                         ref="#jeronimostättner">Jeronimo Stättner</name> pro <measure
                         ana="bk:commodity" quantity="3" commodity="wein" unitRef="#krug">iii urnis
                         vini</measure> ab eo emptis <measure ana="bk:money" quantity="18"
                         unitRef="#s">xviii s. d.</measure></ab>
-                  <ab ana="bk:entry">Nota <name ana="bk:by bk:individual">frater
-                     Stepfanus</name><!--kauft für Aldersbach--> emit nobis <measure
+                  <ab ana="bk:entry">Nota <name ana="bk:by bk:from bk:individual">frater
+                        Stepfanus</name><!--kauft für Aldersbach--> emit nobis <measure
                         ana="bk:commodity" quantity="66" commodity="wein">vj̸ ternarios
                         vini</measure><!--66, wenn ternario ein Dutzend ist--> pro <measure
-                        ana="bk:money" quantity="106" unitRef="#lb">i<hi rend="superscript">C</hi>
-                        et vi lb. d.</measure> a <name ana="bk:to bk:individual" ref="#probstwien"
-                        >domino preposito <lb/>sancte dorothe</name> in <placeName ana="bk:where"
-                        ref="#ort_0562">wyenna</placeName> In hoc <span ana="bk:status">exsolvimus
-                        sibi</span> per fratrem Stepfanum et Leonem nautte <lb/>lx <del>d.</del> lb.
-                     d. ante festum sancti Geori Anno etc. lviii<hi rend="superscript">o</hi> et sic
-                        <span ana="bk:debit" corresp="#aldersbach">obligamur</span> sibi <measure
-                        ana="bk:money" quantity="40" unitRef="#lb">xl lb. d.</measure>
+                        ana="bk:money" quantity="106" unitRef="#lbdwien">i<hi rend="superscript"
+                           >C</hi> et vi lb. d.</measure> a <roleName ana="bk:to bk:individual"
+                        ref="#probstwien">domino preposito <lb/>sancte dorothe in <placeName
+                           ref="#ort_0562">wyenna</placeName></roleName> In hoc <seg ana="bk:status"
+                        >exsolvimus sibi</seg> per fratrem Stepfanum et Leonem nautte <lb/>lx
+                        <del>d.</del> lb. d. ante festum sancti Geori Anno etc. lviii<hi
+                        rend="superscript">o</hi> et sic <seg ana="bk:debit bk:from"
+                        corresp="#aldersbach">obligamur</seg> sibi <measure ana="bk:money"
+                        quantity="40" unitRef="#lbdwien">xl lb. d.</measure>
                      <lb/>terminus <date ana="bk:when" when="1457-10-13">solucionis
                      Cholmanni</date></ab>
                   <!--Hier eine Teilzahlung durch Vertreter und Schuldangabe einer Teilzahlung von Aldersbach + Angabe des Termins, an dem die Zahlung fällig wird-->
                   <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual"
                         ref="#linhardprukner">linhardo prukner</name> pro expensis ad <placeName
                         ref="#ort_0562">wyennam</placeName>
-                     <lb/>pro adduccione <measure ana="bk:commodity" commodity="wein">vini</measure>
+                     <lb/>pro <measure ana="bk:service" commodity="weintransport">adduccione
+                        vini</measure>
                      <!--Sollte man hier Transport extra kodieren? evtl ineinander verschachteln?-->
                      in die <date ana="bk:when" when="1457-04-25">Marci Ewangeliste</date>
                      <measure ana="bk:money" quantity="10.5" unitRef="#s">xj̸ s. d.</measure>
                      <note>+ </note>Verte folium et invenies plus <lb/><note>+ Nota solutum
                         est</note><!--Hinweis auf nächste Seite-->
-                     <lb/><note>totaliter litteram</note>
-                     <lb/><note>obligatoriam</note>
-                     <lb/><del><note>de ba<unclear>...</unclear></note></del>
-                     <lb/><note>habe<unclear>mus</unclear> in</note>
-                     <lb/><note>ma<del><unclear>...</unclear></del>bus nostris</note></ab>
-                  <pb n="121" facs="#IMG.121.jpg"/>
+                     <lb/><note>totaliter litteram <lb/>obligatoriam <lb/><del>de
+                              ba<unclear>...</unclear></del>
+                        <lb/>habe<unclear>mus</unclear> in
+                        <lb/>ma<del><unclear>...</unclear></del>bus nostris</note></ab>
+                  <pb n="121" facs="#facs_121" xml:id="IMG.121"/>
                   <fw type="year">Anno lvii<hi rend="superscript">o</hi></fw>
                   <fw type="head">Pro vino empto tempore Awtumpni</fw>
                   <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual"
-                        ref="#andreasleoni">Andrea leoni nautte</name> de <measure
-                        ana="bk:commodity" quantity="84" commodity="wein">vii ternariis</measure>
-                     nobis adductis <measure ana="bk:money" quantity="14" unitRef="#lb">xiiii lb. d.
-                        Wien.</measure>
-                     <lb/></ab>
-                  <ab ana="bk:entry">Item dedimus <measure ana="bk:commodity" commodity="abgabe">pro
+                        ref="#andreasleoni">Andrea leoni <roleName>nautte</roleName></name> de
+                        <measure ana="bk:commodity" quantity="84" commodity="wein">vii
+                        ternariis</measure> nobis adductis <measure ana="bk:money" quantity="14"
+                        unitRef="#lbdwien">xiiii lb. d. Wien.</measure>
+                  </ab>
+                  <lb/>
+                  <ab ana="bk:entry">Item dedimus <measure ana="bk:right" commodity="abgabe">pro
                         muta</measure> in <placeName ana="bk:where" ref="#ort_0334"
                         >patavia</placeName> de <date ana="bk:when" when="1456">anno
                         preterito</date> et de <date ana="bk:when" when="1457">presenti anno</date>
-                     <measure ana="bk:money" quantity="2" unitRef="#lb">ii lb.</measure>
+                     <measure ana="bk:money" quantity="2" unitRef="#lbdwien">ii lb.</measure>
                      <measure ana="bk:money" quantity="34" unitRef="#d">xxxiiii d. Wien.</measure>
-                     <lb/>et sic <span ana="bk:debit" corresp="#aldersbach">tenemur</span><!--Diese Kodierung sinnvoll?-->
+                     <lb/>et sic <seg ana="bk:debit" corresp="#aldersbach">tenemur</seg><!--Diese Kodierung sinnvoll?-->
                      <!--tenemur-->
                      <rs ana="bk:to bk:individual" corresp="#andreasleoni">sibi</rs> pro finali
-                     solucione <measure ana="bk:money" quantity="11" unitRef="#lb">xi lb.</measure>
+                     solucione <measure ana="bk:money" quantity="11" unitRef="#lbdwien">xi
+                        lb.</measure>
                      <measure ana="bk:money" quantity="34" unitRef="#d">xxxiiii d. Wien.</measure>
-                     In hoc dedimus sibi <measure ana="bk:money" quantity="6" unitRef="#lb">vi
+                     In hoc dedimus sibi <measure ana="bk:money" quantity="6" unitRef="#lbdwien">vi
                         lb.</measure>
                      <measure ana="bk:money" quantity="34" unitRef="#d">xxxiiii d.</measure>
                      <lb/><date ana="bk:when" when="1457-11-27">dominica prima adventus
@@ -1539,36 +2849,40 @@
                   <!--Hier Teilrückzahlungen einer Schuld von Aldersbach an Andrea Leoni-->
                   <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:group" ref="#diener"
                         >famulis</name>
-                     <measure ana="bk:money" quantity="30" unitRef="#d">xxx d.</measure> et sic
-                        <span ana="bk:debit" corresp="#aldersbach">obligamur</span>
+                     <measure ana="bk:money" quantity="30" unitRef="#d">xxx d.</measure> et sic <seg
+                        ana="bk:debit" corresp="#aldersbach">obligamur</seg>
                      <rs ana="bk:to bk:individual" corresp="#andreasleoni">sibi</rs> pro finali
-                     solucione <measure ana="bk:money" quantity="5" unitRef="#lb">v lb. d.</measure>
-                     <lb/></ab>
+                     solucione <measure ana="bk:money" quantity="5" unitRef="#lbdwien">v lb.
+                        d.</measure>
+                  </ab>
+                  <lb/>
                   <!--ganzer unterer Eintrag durchgestrichen-->
                   <ab ana="bk:entry"><del>Item primo <name ana="bk:to bk:individual"
                            ref="#linhardprukner">Linhardus prukner</name> dedit eidem partibus
-                        inferioribus <measure ana="bk:money" quantity="5" unitRef="#lb">v lb.
-                           d.</measure> super computacion</del>em <lb/></ab>
+                        inferioribus <measure ana="bk:money" quantity="5" unitRef="#lbdwien">v lb.
+                           d.</measure> super computacion</del>em </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item <name ana="bk:to bk:individual" ref="#linhardprukner"
                         >linhardus</name> expedivit in <measure ana="bk:commodity"
                         commodity="abgabe">mutis</measure> <measure ana="bk:money" quantity="108"
                         unitRef="#d">j̸ lb. minus xii d.</measure> preter in <placeName
                         ana="bk:where" ref="#ort_0334">patavia</placeName>
-                     <lb/></ab>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item postea dedimus pro <measure ana="bk:commodity"
                         quantity="3" commodity="wein" unitRef="#wagenladung">iii plaustris
                            <del>vet</del> veteris vini</measure>
-                     <measure ana="bk:money" quantity="57" unitRef="#lb">lvii lb. d.</measure></ab>
+                     <measure ana="bk:money" quantity="57" unitRef="#lbdwien">lvii lb.
+                     d.</measure></ab>
                   <ab ana="bk:entry">Item dedimus <name ana="bk:to bk:individual" ref="#peterhengel"
                         >petro hengel</name>
-                     <lb/>in precio suo <!--Lohn mit bk:service kodieren?-->
+                     <lb/>in <measure ana="bk:service" commodity="work">precio suo</measure>
+                     <!--Lohn mit bk:service kodieren?-->
                      <measure ana="bk:money" quantity="24" unitRef="#d">xxiiii d.</measure></ab>
-                  <ab ana="bk:entry">Item dedimus den <name ana="bk:to bk:individual"
-                        ref="#fassbinder">vasczeheren</name>
-                     <del>und</del> et doleatori <!--ist das nicht auch Fassbinder?--> in <placeName
-                        ana="bk:where" ref="#ort_0334">patavia</placeName>
-                     <lb/><measure ana="bk:money" quantity="297" unitRef="#d">x s minus iii
-                        d.</measure></ab>
+                  <ab ana="bk:entry">Item dedimus den <roleName ana="bk:to bk:group"
+                        ref="#fassbinder">vasczeheren <del>und</del> et doleatori <placeName
+                           ref="#ort_0334">patavia</placeName></roleName> in <lb/><measure
+                        ana="bk:money" quantity="297" unitRef="#d">x s minus iii d.</measure></ab>
                   <ab ana="bk:entry">Item dedimus <measure ana="bk:money" quantity="3" unitRef="#s"
                         >iii s.</measure>
                      <measure ana="bk:money" quantity="10" unitRef="#d">x d.</measure> pro <measure
@@ -1581,59 +2895,56 @@
                         <add>pro viiij̸</add> urnis <unclear>N...</unclear>
                            men<unclear>sur...</unclear>
                         <lb/>urnam pro <measure ana="bk:price" quantity="18" unitRef="#s">xviii s.
-                           d.</measure></measure> facit <del><measure ana="bk:money" quantity="20"
-                           unitRef="#lb">xx lb.</measure>
-                        <measure ana="bk:money" quantity="2" unitRef="#s">ii s. d.</measure></del>
-                     <add><measure ana="bk:money" quantity="19" unitRef="#lb">xix lb.</measure>
+                           d.</measure></measure> facit <del>xx lb. ii s. d.</del>
+                     <add><measure ana="bk:money" quantity="19" unitRef="#lbdwien">xix lb.</measure>
                         <measure ana="bk:money" quantity="30" unitRef="#d">xxx d.</measure></add>
                      Wien. et si plus continetur tunc plus dabimus <lb/>sibi si minus tunc
                      defalcabimus sibi in prescripta Summa
                            <!--Falls mehr in den Gefäßen ist, zahlt Aldersbach mehr und sonst weniger--><lb/><del><rs
                            ana="bk:debit bk:individual" corresp="#andreasleoni">Idem</rs> tenetur in
                            <measure ana="bk:commodity" commodity="weitzen">tritico</measure> sibi
-                        vendito <measure ana="bk:money" quantity="21" unitRef="#lb">xxi lb. d.
+                        vendito <measure ana="bk:money" quantity="21" unitRef="#lbdwien">xxi lb. d.
                            Wien.</measure>
                         <measure ana="bk:money" quantity="3" unitRef="#s">iii s. d.</measure></del>
-                     Et sic obligatur nobis pro finali <lb/>solucione ut infra <lb/></ab>
-                  <ab ana="bk:nota">Nota wir haben das vesslein <measure ana="bk:service"
-                        commodity="work">geheint</measure><!--?--> und hat xiii oster Emer und ii
+                     Et sic obligatur nobis pro finali <lb/>solucione ut infra </ab>
+                  <lb/>
+                  <ab ana="nota">Nota wir haben das vesslein geheint und hat xiii oster Emer und ii
                      kandel <lb/>und das gleger hat einen halben oster Emer <del>dabey</del> und
                      machet albeg ii <lb/>gross Emer <del><unclear>...ri</unclear></del> iii oster
-                     Emer / bey der hein sind gewesen <name ana="bk:individual"
-                        ref="#chunradogunczkover">chunrad <lb/>Gunczkover</name> unser <name
-                        ana="bk:individual" ref="#hanspachsmid">Richter Hanns pachsmid</name> unßer
-                        <name ana="bk:individual" ref="#wirtaldersbach">wirt</name> und <name
-                        ana="bk:individual" ref="#michaelpinter">michel</name> unser pinter
-                     <lb/>Acta sunt hec<date ana="bk:when" when="1458-03-28">feria 3<hi
-                           rend="superscript">a</hi> post festum palmarum Anno etc. lviii<hi
-                           rend="superscript">o</hi></date></ab>
+                     Emer / bey der hein sind gewesen <name ref="#chunradogunczkover">chunrad
+                        <lb/>Gunczkover</name> unser <roleName ref="#hanspachsmid">Richter Hanns
+                        pachsmid</roleName> unßer <roleName ref="#wirtaldersbach">wirt</roleName>
+                     und <name ref="#michaelpinter">michel <roleName>unser pinter</roleName></name>
+                     <lb/>Acta sunt hec<date when="1458-03-28">feria 3<hi rend="superscript">a</hi>
+                        post festum palmarum Anno etc. lviii<hi rend="superscript"
+                     >o</hi></date></ab>
                   <!--Fass wurde überprüft von mehreren Personen. Die Frage ist, was hier zu kodieren wäre-->
                   <!--Vielleicht könnte man eine Kodierung einführen für "in Anwesenheit"?-->
-                  <ab ana="bk:entry">Nota <del>tenetur </del><name ana="bk:debit bk:individual"
-                        ref="#leonautajr">Leo Nauta Iunior</name> cum socio suo tenentur nobis adhuc
-                     pro finali solucione <lb/><measure ana="bk:money" quantity="17.5" unitRef="#lb"
-                        >xviij̸ lb.</measure>
+                  <ab ana="bk:entry">Nota <del>tenetur </del><name ana="bk:debit bk:group"
+                        ref="#leonautajr">Leo Nauta Iunior cum <name ana="bk:debit"
+                        >socio</name></name> suo tenentur nobis adhuc pro finali solucione
+                        <lb/><measure ana="bk:money" quantity="17.5" unitRef="#lbdwien">xviij̸
+                        lb.</measure>
                      <measure ana="bk:money" quantity="30" unitRef="#d">xxx d.</measure> omnibus in
                      simul computatis <rs ana="bk:debit bk:individual" corresp="#leonautajr"
                         >Idem</rs> tenetur pro <measure ana="bk:commodity" quantity="1"
                         commodity="roggen" unitRef="#schaff">i sch. Siliginis</measure>
-                     <measure ana="bk:money" quantity="2" unitRef="#lb">ii lb. d.</measure>
+                     <measure ana="bk:money" quantity="2" unitRef="#lbdwien">ii lb. d.</measure>
                      <lb/>et sic tenetur pro finali solucione <measure ana="bk:money"
-                        quantity="20.5" unitRef="#lb">xxj̸ lb. d.</measure>
+                        quantity="20.5" unitRef="#lbdwien">xxj̸ lb. d.</measure>
                      <!--Hier eine Schuldsumme--> una cum Siligine Acta sunt hec in
                         patavia<lb/><date ana="bk:when" when="1459-02-12">feria 2<hi
                            rend="superscript">a</hi> post dominicam Invocavit Anno etc. lix<hi
-                           rend="superscript">o</hi></date> in presencia Iudicis nostris <name
-                        ana="bk:individual" ref="#hanspachsmid">Johannis <lb/>Geyer</name>
-                     <!--gleichee Richter wie oben? versteh ich nicht ganz--> et <name
-                        ana="bk:individual" ref="#johannleonis">Johannis leonis</name> fratris
-                     sui</ab>
+                           rend="superscript">o</hi></date> in presencia <name ana="bk:individual"
+                        ref="#johanngeyer"><roleName>Iudicis nostris</roleName> Johannis
+                        <lb/>Geyer</name> et <name ana="bk:individual" ref="#johannleonis">Johannis
+                        leonis fratris sui</name></ab>
                </div>
             </div>
 
             <div n="bk:rubric" corresp="#ausgaben">
-               <!--...-->
-               <pb n="176" facs="#IMG.176.jpg"/>
+               <gap/>
+               <pb n="176" facs="#facs_176" xml:id="IMG.176"/>
                <div ana="bk:rubric" corresp="#ausgaben_vereinbarung_kircheweng">
                   <head>Concordia ex parte ecclesie in wenng Anno etc. lvii<hi rend="superscript"
                         >o</hi></head>
@@ -1659,17 +2970,19 @@
                      zu gehort das sullen Sy nach <lb/>aller notdurfft machen und ausrichten, umb dy
                      der obgeschriben <measure ana="bk:service" commodity="work">arbait</measure>
                      <lb/>sullen wir Im bezalen und ausrichtten <measure ana="bk:money"
-                        quantity="31" unitRef="#lb">xxxi lb. d. Wien.</measure>, Darumbe si uns
+                        quantity="31" unitRef="#lbdwien">xxxi lb. d. Wien.</measure>, Darumbe si uns
                      <lb/>dann quittiren sullen was wir In geben an der Summ gelts das habent Si uns
                      <lb/>versprochen und verlubtt mit Hantgelubtten trewn alles das oben
                      verschriben ist <lb/>getreulich zuvolfuren und nachkomen angende Acta sunt hec
-                     feria secunda post <lb/><date ana="bk:when" when="1457-03-20">dominica oculi
-                        Anno etc. lvii<hi rend="superscript">o</hi></date> in presencia Cappellani
-                     nostri et linhardi prukner <!--in presencia--><lb/>Si sullen auch das machen
-                     bey Ir kost und allen lon ausrichten und das dy <lb/><del>arb</del>
-                     obverschriben arbait alle verpracht werde vor michahel angende.</ab>
+                        <date when="1457-03-21">feria secunda post <lb/>dominica oculi Anno etc.
+                           lvii<hi rend="superscript">o</hi></date> in presencia <roleName
+                        ana="bk:group" ref="#kaplanealdersbach">Cappellani nostri</roleName> et
+                        <name ana="bk:individual" ref="#linhardprukner">linhardi prukner</name>
+                     <lb/>Si sullen auch das machen bey Ir kost und allen lon ausrichten und das dy
+                        <lb/><del>arb</del> obverschriben arbait alle verpracht werde vor michahel
+                     angende.</ab>
                </div>
-               <pb n="177" facs="#IMG.177.jpg"/>
+               <pb n="177" facs="#facs_177" xml:id="IMG.177"/>
                <div ana="bk:rubric" corresp="#ausgaben_vereinbarung_steinmetz_petrus_kircheweng">
                   <head>Concordia magistri petri lapicide ex parte <lb/>Ecclesie in wenng Anno etc.
                         lvii<hi rend="superscript">o</hi></head>
@@ -1691,7 +3004,7 @@
                      verpollen und verwerssen <del>w</del> und was der <lb/>chellen zugehort angende
                      Das alles sol er machen und verpringen bei sein chostt <del>an</del>
                      <lb/>und lon an allen abgankch angende Darumb sullen wir Im geben beczalen und
-                     ausrichten <lb/><measure ana="bk:money" quantity="18" unitRef="#lb">xviii
+                     ausrichten <lb/><measure ana="bk:money" quantity="18" unitRef="#lbdwien">xviii
                         lb.</measure> wn. d. i schaf. melbs <del>i?</del> i kubel gersten i kubel
                      arbais i kubel salcz i kubel waicz <lb/>kraut und ruben <del>w</del> ein
                      notdurft angende, Und also ist di <del>czal</del> tayding der bezalung?
@@ -1700,29 +3013,30 @@
                      kirchen dach und di czway fenster mit Ir arbait so vor ge<lb break="no"
                      />schriben stet gancz ferttigen Darczu sullen wir Im zustatten kommen alle
                      wochen mit <lb/>einem pfundt wn. pfennig damit er sovil enpfangen hab alle
-                        <measure ana="bk:money" quantity="4" unitRef="#lb">iiii lb. wn. d.</measure>
-                     di sullen <lb/>Im dann an den obgenannten xviii pfuntten furan abgen Und
-                     darnach sol er an das <lb/>rauch steinberch sten und daz den wintter hauen
-                        <del>und</del> zu dem gewelb nach aller <lb/>notdurft. Und auf di kunftigen
-                        <del>machen</del> vasten so doch tag sind zemauern den pau <lb/>dann allen
-                     verrekchen? in aller maß alls vorgeschriben ist ornlich und ungeverlich
+                        <measure ana="bk:money" quantity="4" unitRef="#lbdwien">iiii lb. wn.
+                        d.</measure> di sullen <lb/>Im dann an den obgenannten xviii pfuntten furan
+                     abgen Und darnach sol er an das <lb/>rauch steinberch sten und daz den wintter
+                     hauen <del>und</del> zu dem gewelb nach aller <lb/>notdurft. Und auf di
+                     kunftigen <del>machen</del> vasten so doch tag sind zemauern den pau <lb/>dann
+                     allen verrekchen? in aller maß alls vorgeschriben ist ornlich und ungeverlich
                      <lb/>und so der paw ganncz volprachtt und verrekhcht? ist alls dem so sein wir
-                     Im der obgenannten <lb/><measure ana="bk:money" quantity="14" unitRef="#lb"
-                        >xiiii lb. d.</measure> schuldig ausczerichten an allen abgankch und vor
-                     verrekchnus? des paws <lb/>sein wir Im nichcz schuldig zegeben dem ausgenomen
-                     das wir unß gutter wille Dann <lb/>umb das <del>me</del> schaf melbs und di
-                     andern klain speiß sullen wir Im geben wann er sein <lb/>notdurft ist ob der
-                     obgenannten arbeit alls lanng das <del>ne</del> mel und dy klain speiß wert
-                     <lb/>Der sach sind Spruchleut und taiding gewesen Chunrad Gunczhofer unser
-                     Richter Hanns <lb/>Pachsendunser wirt martein, mulner zu walxing und ander leut
-                     gegen. Acta sunt hec feria <lb/>quinta post festum sancti Mathei apostoli et
-                     Evangliste. Anno etc. lvii<hi rend="superscript">o</hi>
-                     <lb/></ab>
+                     Im der obgenannten <lb/><measure ana="bk:money" quantity="14"
+                        unitRef="#lbdwien">xiiii lb. d.</measure> schuldig ausczerichten an allen
+                     abgankch und vor verrekchnus? des paws <lb/>sein wir Im nichcz schuldig zegeben
+                     dem ausgenomen das wir unß gutter wille Dann <lb/>umb das <del>me</del> schaf
+                     melbs und di andern klain speiß sullen wir Im geben wann er sein <lb/>notdurft
+                     ist ob der obgenannten arbeit alls lanng das <del>ne</del> mel und dy klain
+                     speiß wert <lb/>Der sach sind Spruchleut und taiding gewesen Chunrad Gunczhofer
+                     unser Richter Hanns <lb/>Pachsendunser wirt martein, mulner zu walxing und
+                     ander leut gegen. Acta sunt hec feria <lb/>quinta post festum sancti Mathei
+                     apostoli et Evangliste. Anno etc. lvii<hi rend="superscript">o</hi>
+                  </ab>
+                  <lb/>
                   <ab ana="bk:entry">Item primo dedimus <name ana="bk:to bk:individual"
                         ref="#wysmaier">wysmaier</name> ex iussione sua <measure ana="bk:money"
                         quantity="60" unitRef="#d">lx d.</measure>
                      <date ana="bk:when">feria quarta ante Michahel</date>.</ab>
-                  <!--...-->
+                  <gap/>
                   <ab ana="bk:entry">Item emimus <measure ana="bk:commodity" quantity="1"
                         commodity="fenster">i fenestram</measure> ab <rs ana="bk:to bk:individual"
                         corresp="#peterpogen">eo</rs>
@@ -1734,7 +3048,7 @@
                         et <lb/>nativitatem Christi</date>
                      <!--Hier Zeitraum angegeben, nicht klar welcher Advent gemeint ist-->
                      <del>satisfeci</del>
-                     <span ana="bk:status">satisfecimus sibi in porcum</span>.</ab>
+                     <seg ana="bk:status">satisfecimus sibi in porcum</seg>.</ab>
                   <!--Hier eine Ware als Bezahlung, als Gegenleistung für ein Fenster-->
 
                </div>
