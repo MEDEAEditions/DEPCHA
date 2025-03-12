@@ -1,0 +1,2341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>BayHStA_KAAA_341_R1291-1362 (Testkodierung)</title>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Institut für Digitale Geisteswissenschaften</publisher>
+            <idno type="PID">o:depcha.aldersbach.L104</idno>
+            <ref type="context" target="context:depcha.aldersbach"/>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Bayerisches Staatsarchiv in München</p>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <listPrefixDef>
+            <prefixDef ident="bk" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="https://gams.uni-graz.at/o:depcha.bookkeeping#$1">
+               <p>Analytical descriptors are considered to represent concepts from the DEPCHA
+                  bookkeeping ontology and can be extended to respective URIs.</p>
+            </prefixDef>
+            <prefixDef ident="depcha" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="https://gams.uni-graz.at/o:depcha.ontology#$1">
+               <p>Analytical descriptors are considered to represent concepts from the
+                  project-specific DEPCHA ontology and can be extended to respective URIs.</p>
+            </prefixDef>
+            <prefixDef ident="huc" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="https://gams.uni-graz.at/o:depcha.huc#$1">
+               <p>Analytical descriptors are considered to represent concepts from the historical
+                  units and currencies ontology and can be extended to respective URIs.</p>
+            </prefixDef>
+            <prefixDef ident="wd" matchPattern="([(a-z)|(A-Z)]+)"
+               replacementPattern="http://www.wikidata.org/entity/$1">
+               <p><ref target="https://www.wikidata.org/wiki/Help:Namespaces"/></p>
+            </prefixDef>
+         </listPrefixDef>
+         <unitDecl>
+            <unitDef type="currency" xml:id="d">
+               <label xml:lang="de">Wiener Pfennig</label>
+               <label type="abbr">d</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="dpat">
+               <label xml:lang="de">Passauer Pfennig</label>
+               <label type="abbr">dpat</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="drat">
+               <label xml:lang="de">Regensburger Pfennig</label>
+               <label type="abbr">drat</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="fl">
+               <label xml:lang="de">Gulden</label>
+               <label type="abbr">fl</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="hr">
+               <label xml:lang="de">Heller</label>
+               <label type="abbr">hr</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="lbdpat">
+               <label xml:lang="de">Regensburger Pfund Pfennig</label>
+               <label type="abbr">lbdrat</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="lbdrat">
+               <label xml:lang="de">Regensburger Pfund Pfennig</label>
+               <label type="abbr">lbdrat</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="lbdwien">
+               <label xml:lang="de">Wiener Pfund Pfennig</label>
+               <label type="abbr">lbdwien</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="s">
+               <label xml:lang="de">Schilling</label>
+               <label type="abbr">s</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="spat">
+               <label xml:lang="de">Rät. Schilling</label>
+               <label type="abbr">srat</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="srat">
+               <label xml:lang="de">Rät. Schilling</label>
+               <label type="abbr">srat</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="t">
+               <label xml:lang="de">Talent</label>
+               <label type="abbr">t</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="tpat">
+               <label xml:lang="de">Passauer Talent</label>
+               <label type="abbr">tpat</label>
+            </unitDef>
+            <unitDef type="currency" xml:id="trat">
+               <label xml:lang="de">Regensburger Talent</label>
+               <label type="abbr">trat</label>
+            </unitDef>
+            <unitDef type="weight" xml:id="marca">
+               <label xml:lang="de">Mark</label>
+               <label type="abbr">m</label>
+            </unitDef>
+            <unitDef type="weight" xml:id="lot">
+               <label xml:lang="de">Lot</label>
+               <label type="abbr">lot</label>
+            </unitDef>
+            <unitDef type="weight" xml:id="tonne">
+               <label xml:lang="de">Tonne</label>
+               <label type="abbr">t</label>
+            </unitDef>
+            <unitDef type="time" xml:id="tag">
+               <label xml:lang="de">Tag</label>
+               <label type="abbr">tag</label>
+            </unitDef>
+            <unitDef type="time" xml:id="jahr">
+               <label xml:lang="de">Jahr</label>
+               <label type="abbr">jahr</label>
+            </unitDef>
+         </unitDecl>
+         <classDecl>
+            <taxonomy ana="bk:rubrics">
+               <desc><name ana="depcha:accountHolder" xml:id="aldersbach">Aldersbach</name></desc>
+               <category ana="bk:from bk:rubric" xml:id="income">
+                  <catDesc>
+                     <gloss>Einnahmen</gloss>
+                  </catDesc>
+                  <category xml:id="einnahmen_1291_scolaticevirginis">
+                     <catDesc>
+                        <gloss>einnahmen_1291_scolaticevirginis</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="einnahmen_1292-1293">
+                     <catDesc>
+                        <gloss>einnahmen_1292-1293</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="einnahmen_1315-1316">
+                     <catDesc>
+                        <gloss>einnahmen_1315-1316</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="einnahmen_1355-1356">
+                     <catDesc>
+                        <gloss>einnahmen_1355-1356</gloss>
+                     </catDesc>
+                  </category>
+               </category>
+               <category ana="bk:to bk:rubric" xml:id="expense">
+                  <catDesc>
+                     <gloss>Ausgaben</gloss>
+                  </catDesc>
+                  <category xml:id="ausgaben_1291scolasticevirginis-1292Pfingsten">
+                     <catDesc>
+                        <gloss>ausgaben_1291scolasticevirginis-1292Pfingsten</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="ausgaben_1315-1316">
+                     <catDesc>
+                        <gloss>ausgaben_1315-1316</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="ausgaben_1353-1354">
+                     <catDesc>
+                        <gloss>ausgaben_1353-1354</gloss>
+                     </catDesc>
+                  </category>
+                  <category xml:id="ausgaben_1355-1356">
+                     <catDesc>
+                        <gloss>ausgaben_1355-1356</gloss>
+                     </catDesc>
+                  </category>
+               </category>
+            </taxonomy>
+            <taxonomy ana="depcha:index">
+               <gloss>Commodities</gloss>
+               <category xml:id="getreide">
+                  <catDesc>
+                     <term xml:lang="de">Getreide</term>
+                  </catDesc>
+                  <category xml:id="hafer">
+                     <catDesc>
+                        <term xml:lang="de">Hafer</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="weizen">
+                     <catDesc>
+                        <term xml:lang="de">Weizen</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="gerste">
+                     <catDesc>
+                        <term xml:lang="de">Gerste</term>
+                     </catDesc>
+                  </category>
+               </category>
+               <category xml:id="brot">
+                  <catDesc>
+                     <term xml:lang="de">Brot</term>
+                  </catDesc>
+               </category>
+               <category xml:id="butter">
+                  <catDesc>
+                     <term xml:lang="de">Butter</term>
+                  </catDesc>
+               </category>
+               <category xml:id="käse">
+                  <catDesc>
+                     <term xml:lang="de">Käse</term>
+                  </catDesc>
+               </category>
+               <category xml:id="fastenspeise">
+                  <catDesc>
+                     <term xml:lang="de">Fastenspeise</term>
+                  </catDesc>
+               </category>
+               <category xml:id="obst">
+                  <catDesc>
+                     <term xml:lang="de">Obst</term>
+                  </catDesc>
+               </category>
+               <category xml:id="silber">
+                  <catDesc>
+                     <term xml:lang="de">Silber</term>
+                  </catDesc>
+               </category>
+               <category xml:id="eisen">
+                  <catDesc>
+                     <term xml:lang="de">Eisen</term>
+                  </catDesc>
+               </category>
+               <category xml:id="vase">
+                  <catDesc>
+                     <term xml:lang="de">Vase</term>
+                  </catDesc>
+               </category>
+               <category xml:id="wein">
+                  <catDesc>
+                     <term xml:lang="de">Wein</term>
+                  </catDesc>
+               </category>
+               <category xml:id="öl">
+                  <catDesc>
+                     <term xml:lang="de">Öl</term>
+                  </catDesc>
+                  <category xml:id="olivenöl">
+                     <catDesc>
+                        <term xml:lang="de">Olivenöl</term>
+                     </catDesc>
+                  </category>
+               </category>
+               <category xml:id="fischbrühe">
+                  <catDesc>
+                     <term xml:lang="de">Fischbrühe</term>
+                  </catDesc>
+               </category>
+               <category xml:id="heu">
+                  <catDesc>
+                     <term xml:lang="de">Heu</term>
+                  </catDesc>
+               </category>
+               <category xml:id="gewürz">
+                  <catDesc>
+                     <term xml:lang="de">Gewürz</term>
+                  </catDesc>
+                  <category xml:id="salz">
+                     <catDesc>
+                        <term xml:lang="de">Salz</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="safran">
+                     <catDesc>
+                        <term xml:lang="de">Safran</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="pfeffer">
+                     <catDesc>
+                        <term xml:lang="de">Pfeffer</term>
+                     </catDesc>
+                  </category>
+               </category>
+               <category xml:id="holzbrett">
+                  <catDesc>
+                     <term xml:lang="de">Holzbrett</term>
+                  </catDesc>
+               </category>
+               <category xml:id="topf">
+                  <catDesc>
+                     <term xml:lang="de">Topf</term>
+                  </catDesc>
+               </category>
+               <category xml:id="schüssel">
+                  <catDesc>
+                     <term xml:lang="de">Schüssel</term>
+                  </catDesc>
+               </category>
+               <category xml:id="glas">
+                  <catDesc>
+                     <term xml:lang="de">Glas</term>
+                  </catDesc>
+               </category>
+               <category xml:id="fass">
+                  <catDesc>
+                     <term xml:lang="de">Fass</term>
+                  </catDesc>
+               </category>
+               <category xml:id="pergament">
+                  <catDesc>
+                     <term xml:lang="de">Pergament</term>
+                  </catDesc>
+               </category>
+               <category xml:id="tier">
+                  <catDesc>
+                     <term xml:lang="de">Tier</term>
+                  </catDesc>
+                  <category xml:id="schwein">
+                     <catDesc>
+                        <term xml:lang="de">Schwein</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="vogel">
+                     <catDesc>
+                        <term xml:lang="de">Vogel</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="fisch">
+                     <catDesc>
+                        <term xml:lang="de">Fisch</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="schaf">
+                     <catDesc>
+                        <term xml:lang="de">Schaf</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="pferd">
+                     <catDesc>
+                        <term xml:lang="de">Pferd</term>
+                     </catDesc>
+                     <category xml:id="sattel">
+                        <catDesc>
+                           <term xml:lang="de">Sattel</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="riemen">
+                        <catDesc>
+                           <term xml:lang="de">Riemen</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="pferdezubehör">
+                        <catDesc>
+                           <term xml:lang="de">Pferdezubehör</term>
+                        </catDesc>
+                     </category>
+                  </category>
+                  <category xml:id="tierhaut">
+                     <catDesc>
+                        <term xml:lang="de">Tierhaut</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="Fleisch">
+                     <catDesc>
+                        <term xml:lang="de">Fleisch</term>
+                     </catDesc>
+                     <category xml:id="wildfleisch">
+                        <catDesc>
+                           <term xml:lang="de">Wildfleisch</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="hühnerfleisch">
+                        <catDesc>
+                           <term xml:lang="de">Hühnerfleisch</term>
+                        </catDesc>
+                     </category>
+                  </category>
+               </category>
+               <category xml:id="stoff">
+                  <catDesc>
+                     <term xml:lang="de">Stoff</term>
+                  </catDesc>
+                  <category xml:id="leinen">
+                     <catDesc>
+                        <term xml:lang="de">Leinen</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="leintuch">
+                     <catDesc>
+                        <term xml:lang="de">Leintuch</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="hose">
+                     <catDesc>
+                        <term xml:lang="de">Hose</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="wolle">
+                     <catDesc>
+                        <term xml:lang="de">Wolle</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="filz">
+                     <catDesc>
+                        <term xml:lang="de">Filz</term>
+                     </catDesc>
+                  </category>
+               </category>
+               <category xml:id="kleidung">
+                  <catDesc>
+                     <term xml:lang="de">Kleidung</term>
+                  </catDesc>
+               </category>
+               <category xml:id="schuh">
+                  <catDesc>
+                     <term xml:lang="de">Schuh</term>
+                  </catDesc>
+               </category>
+               <category xml:id="seil">
+                  <catDesc>
+                     <term xml:lang="de">Seil</term>
+                  </catDesc>
+               </category>
+               <category xml:id="ziegel">
+                  <catDesc>
+                     <term xml:lang="de">Ziegel</term>
+                  </catDesc>
+               </category>
+               <category xml:id="rasiermesser">
+                  <catDesc>
+                     <term xml:lang="de">Rasiermesser</term>
+                  </catDesc>
+               </category>
+               <category xml:id="wasserleitung">
+                  <catDesc>
+                     <term xml:lang="de">Wasserleitung</term>
+                  </catDesc>
+               </category>
+               <category xml:id="steuer">
+                  <catDesc>
+                     <term xml:lang="de">Steuer</term>
+                  </catDesc>
+               </category>
+               <category xml:id="ehrengeschenk">
+                  <catDesc>
+                     <term xml:lang="de">Ehrengeschenk</term>
+                  </catDesc>
+               </category>
+               <category xml:id="hof">
+                  <catDesc>
+                     <term xml:lang="de">Hof</term>
+                  </catDesc>
+               </category>
+               <category xml:id="work">
+                  <catDesc>
+                     <term xml:lang="de">Arbeit</term>
+                  </catDesc>
+                  <category xml:id="gebäudearbeiten">
+                     <catDesc>
+                        <term xml:lang="de">Gebäudearbeiten</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="hausrestaurierung">
+                     <catDesc>
+                        <term xml:lang="de">Hausrestaurierung</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="bau_lagerhalle">
+                     <catDesc>
+                        <term xml:lang="de">Bau einer Lagerhalle</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="transport">
+                     <catDesc>
+                        <term xml:lang="de">Transport</term>
+                     </catDesc>
+                     <category xml:id="transport_salz">
+                        <catDesc>
+                           <term xml:lang="de">Salztransport</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="transport_vase">
+                        <catDesc>
+                           <term xml:lang="de">Transport von Vasen</term>
+                        </catDesc>
+                     </category>
+                     <category xml:id="transport_wein">
+                        <catDesc>
+                           <term xml:lang="de">Weintransport</term>
+                        </catDesc>
+                     </category>
+                  </category>
+                  <category xml:id="weinbau">
+                     <catDesc>
+                        <term xml:lang="de">Weinbau</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="heumähen">
+                     <catDesc>
+                        <term xml:lang="de">Heumähen</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="recepcio">
+                     <catDesc>
+                        <term xml:lang="de">Recepcio</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="einschmelzen">
+                     <catDesc>
+                        <term xml:lang="de">Einschmelzen</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="weben">
+                     <catDesc>
+                        <term xml:lang="de">Webarbeit</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="consolacione">
+                     <catDesc>
+                        <term xml:lang="de">Unterstützung</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="curia">
+                     <catDesc>
+                        <term xml:lang="de">Hofhaltung</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="erntearbeit">
+                     <catDesc>
+                        <term xml:lang="de">Erntearbeit</term>
+                     </catDesc>
+                  </category>
+                  <category xml:id="verbesserung_gerste">
+                     <catDesc>
+                        <term xml:lang="de">Melioracione ordei</term>
+                     </catDesc>
+                  </category>
+               </category>
+               <category xml:id="abgabe">
+                  <catDesc>
+                     <term xml:lang="de">Abgabe</term>
+                  </catDesc>
+               </category>
+               <category xml:id="decima">
+                  <catDesc>
+                     <term xml:lang="de">Zehnt</term>
+                  </catDesc>
+               </category>
+               <category xml:id="vermietung">
+                  <catDesc>
+                     <term xml:lang="de">Vermietung</term>
+                  </catDesc>
+               </category>
+               <category xml:id="verpachtung_landgut">
+                  <catDesc>
+                     <term xml:lang="de">Verpachtung eines Landguts</term>
+                  </catDesc>
+               </category>
+               <category xml:id="schulden">
+                  <catDesc>
+                     <term xml:lang="de">Schulden</term>
+                  </catDesc>
+               </category>
+               <category xml:id="zins">
+                  <catDesc>
+                     <term xml:lang="de">Zins</term>
+                  </catDesc>
+               </category>
+               <category xml:id="verpfändeterbesitz">
+                  <catDesc>
+                     <term xml:lang="de">Verpfändeter Besitz</term>
+                  </catDesc>
+               </category>
+               <category xml:id="salzprivileg">
+                  <catDesc>
+                     <term xml:lang="de">Salzprivileg</term>
+                  </catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+      </encodingDesc>
+   </teiHeader>
+   <standOff>
+      <listPerson ana="depcha:index">
+         <head>Prosopography</head>
+         <desc>Personen, welche im Rechnungsbuch BayHStA_KAAA_344_R1458-62 des Klosters Aldersbach,
+            genannt sind.</desc>
+         <person xml:id="abt_raidenhasel">
+            <persName>
+               <roleName>Abt von <placeName ref="#ort_0571">Raidenhasel</placeName></roleName>
+            </persName>
+         </person>
+         <person xml:id="agnes_schlesien">
+            <persName>Agnes von Schlesien-Glogau</persName>
+         </person>
+         <!--vgl. Lübbers S.339-->
+         <person xml:id="bruder_heinrich">
+            <persName>
+               <roleName>Bruder</roleName> Heinrich </persName>
+            <occupation>
+               <roleName>Gastmeister</roleName>
+            </occupation>
+         </person>
+         <person xml:id="defensor_aldersbach">
+            <persName>
+               <roleName>defensor noster</roleName>
+            </persName>
+         </person>
+         <person xml:id="dominusvisitator">
+            <persName>
+               <roleName>Dominus Visitator</roleName>
+            </persName>
+         </person>
+         <person xml:id="ludwig_zieglermeister">
+            <name><roleName>Magistro</roleName> Ludwico <roleName>laterario</roleName></name>
+         </person>
+         <person xml:id="eglolfzhaimar">
+            <persName>Eglolfzhaimar</persName>
+         </person>
+         <person xml:id="elisabeth_trüdingen">
+            <persName>Elisabeth von Trüdingen</persName>
+            <occupation>
+               <roleName>domina de Halzs</roleName>
+               <!--Kontext aus Lübbers, S. 9-->
+            </occupation>
+         </person>
+         <person xml:id="friedrichchraegel_heft">
+            <persName>Friedrich Chraegel von <placeName ref="#ort_0185">Heft</placeName></persName>
+         </person>
+         <person xml:id="abt_friedrich_ebrach">
+            <persName>
+               <roleName>Friedrich von Leuchtenberg</roleName>
+            </persName>
+            <occupation>
+               <roleName>Abt von Ebrach</roleName>
+            </occupation>
+            <!--vgl. Lübbers, S. 156-->
+         </person>
+         <person xml:id="unterkellermeister_aldersbach">
+            <persName>
+               <roleName>Subcellerarius noster</roleName>
+            </persName>
+         </person>
+         <person xml:id="kellermeister_unbekannt">
+            <persName>
+               <roleName>Cellerarius dominorum</roleName>
+            </persName>
+         </person>
+         <person xml:id="kellermeister_schwendt">
+            <persName>
+               <roleName>Cellerario</roleName> in <placeName ref="#ort_0547">Spenthof</placeName>
+            </persName>
+         </person>
+         <person xml:id="kustos_timo">
+            <persName>Timo</persName>
+            <occupation>
+               <roleName>Kustos</roleName>
+               <!--Kontext aus Lübbers, S. 7-->
+            </occupation>
+         </person>
+         <person xml:id="coter_gastwirt_passau">
+            <persName>
+               <name>Coter <roleName>hospiti nostri</roleName> de <placeName ref="#ort_0334"
+                     >Pata</placeName></name>
+            </persName>
+         </person>
+         <person xml:id="goldschmied_aldersbach">
+            <name>
+               <roleName>Aurifaber</roleName>
+            </name>
+         </person>
+         <person xml:id="gottfried_bischofweißeneck">
+            <persName> Gottfried <roleName>Bischof von Weißeneck</roleName></persName>
+            <occupation>
+               <roleName>Bischof</roleName>
+            </occupation>
+         </person>
+         <person xml:id="gundaker">
+            <persName>
+               <roleName>Magister</roleName> Gundacker</persName>
+            <occupation>
+               <roleName>herzoglicher Protonotar</roleName>
+               <!--vgl. Lübbers, S.8-->
+            </occupation>
+         </person>
+         <person xml:id="hartzcherchar">
+            <persName>Hartzcherchario</persName>
+            <occupation>
+               <roleName>Untervogt</roleName>
+               <!--vgl. Lübbers, S.8-->
+            </occupation>
+         </person>
+         <person xml:id="herzogfriedrich_bayern">
+            <persName>Friedrich von Bayern</persName>
+            <occupation>
+               <roleName>Herzog von Bayern</roleName>
+            </occupation>
+         </person>
+         <!--vgl. Lübbers S.339-->
+         <person xml:id="herzogludwig">
+            <persName>Ludwig</persName>
+            <occupation>
+               <roleName>Herzog</roleName>
+            </occupation>
+         </person>
+         <person xml:id="herzogstephan">
+            <persName>Stephan</persName>
+            <occupation>
+               <roleName>Herzog</roleName>
+            </occupation>
+         </person>
+         <!--vgl. Lübbers S.339-->
+         <person xml:id="königludwig">
+            <persName>Ludwig von Bayern</persName>
+            <occupation>
+               <roleName>König</roleName>
+            </occupation>
+         </person>
+         <person xml:id="hofmeisteraldersbach">
+            <persName>
+               <roleName>Magister Curie</roleName>
+            </persName>
+            <occupation>
+               <roleName>Hofmeister</roleName>
+            </occupation>
+         </person>
+         <person xml:id="hofmeister_heinrichamann_aldersbach">
+            <persName>
+               <roleName>Magister Curie</roleName> Heinrich Amann </persName>
+            <!--vgl. Lübbers 337-->
+            <occupation>
+               <roleName>Hofmeister</roleName>
+            </occupation>
+         </person>
+         <person xml:id="nachtwächter_aldersbach">
+            <name>
+               <roleName>Nachtwächter des Klosters Aldersbach</roleName>
+            </name>
+         </person>
+         <person xml:id="schüler_unbekannt">
+            <name>
+               <roleName>Schüler</roleName>
+            </name>
+         </person>
+         <person xml:id="simon_bäckermeister">
+            <persName>
+               <roleName>Bäckermeister</roleName> Simon </persName>
+         </person>
+         <person xml:id="abt_fürstenzell">
+            <persName>
+               <roleName>Domino abbati de <placeName ref="#ort_124">Cella
+                  Principis</placeName></roleName></persName>
+         </person>
+         <person xml:id="abt_heinrich_aldersbach">
+            <name>Heinrich, <roleName>Abt von Aldersbach</roleName></name>
+         </person>
+         <person xml:id="abt_konrad_aldersbach">
+            <name>Konrad, <roleName>Abt von Aldersbach</roleName></name>
+         </person>
+         <person xml:id="abt_otto_ebrach">
+            <persName><name><roleName>domino</roleName> Ottone <roleName>abbate <placeName
+                        ref="#ort">Ebracense</placeName></roleName></name></persName>
+            <occupation>
+               <roleName>Abt von Ebrach</roleName>
+            </occupation>
+         </person>
+         <person xml:id="abt_unbekannt">
+            <name>Heinrich, <roleName>Domino nostro de Cella</roleName></name>
+         </person>
+         <person xml:id="organist_aldersbach">
+            <name><roleName>Organist</roleName></name>
+         </person>
+         <person xml:id="prior_aldersbach">
+            <name><roleName>Prior von Aldersbach</roleName></name>
+         </person>
+         <person xml:id="prior_gunther">
+            <name>
+               <roleName>Prior</roleName> Gunther </name>
+         </person>
+         <person xml:id="ulrich_braxator">
+            <persName>
+               <roleName>Bruder</roleName> Ulrich </persName>
+            <occupation>
+               <roleName>Brauer</roleName>
+            </occupation>
+         </person>
+         <person xml:id="konrad_klosterbruder">
+            <persName>
+               <roleName>Bruder</roleName> Konrad </persName>
+         </person>
+         <person xml:id="schuster_unbekannt">
+            <name>
+               <roleName>Schuster</roleName></name>
+            <occupation>
+               <roleName>Schuster</roleName>
+            </occupation>
+         </person>
+         <person xml:id="werner_vicedominus">
+            <persName>
+               <roleName>Vicedominus</roleName> Wernher </persName>
+            <occupation>
+               <roleName>Vicedominus</roleName>
+            </occupation>
+         </person>
+         <person xml:id="vilicus_weng">
+            <persName>
+               <roleName>Vilicus</roleName> in <placeName ref="#ort_0488">Weng</placeName>
+            </persName>
+            <occupation>
+               <roleName>Verwalter</roleName>
+            </occupation>
+         </person>
+         <personGrp xml:id="äbte_unbekannt">
+            <name><roleName>Abbatibus</roleName>a capitulo generali redeuntibus</name>
+         </personGrp>
+         <personGrp xml:id="amsträger_divers">
+            <name><roleName>Amsträger</roleName></name>
+         </personGrp>
+         <personGrp xml:id="arbeiter">
+            <name><roleName>Operariis</roleName></name>
+         </personGrp>
+         <personGrp xml:id="bedienstete">
+            <name><roleName>famuli</roleName></name>
+         </personGrp>
+         <personGrp xml:id="bedienstete_simon_bäckermeister">
+            <name><roleName>Bedienstete von <name ref="#simon_bäckermeister">Bäckermeister
+                     Simon</name></roleName></name>
+         </personGrp>
+         <personGrp xml:id="boten_divers">
+            <name><roleName>Boten</roleName></name>
+         </personGrp>
+         <personGrp xml:id="söhne_herrvonbaumgarten">
+            <name><roleName>Filiis</roleName> domini de Paumgarten</name>
+         </personGrp>
+         <personGrp xml:id="familiedomvis">
+            <name><roleName>Familie des <name ref="#dominusvisitator">Dominus
+                  Visitator</name></roleName></name>
+         </personGrp>
+         <personGrp xml:id="familieschwendt">
+            <name><roleName>familie in <placeName ref="#ort_0547"
+               >Spenthof</placeName></roleName></name>
+         </personGrp>
+         <personGrp xml:id="diener_abt_aldersbach">
+            <name>
+               <roleName>Diener des <name ref="#abt_aldersbach">Abtes von
+                  Aldersbach</name></roleName></name>
+         </personGrp>
+         <personGrp xml:id="dominicanonici">
+            <name>
+               <roleName>domini canonici</roleName></name>
+            <occupation>
+               <roleName>Kanoniker</roleName>
+            </occupation>
+         </personGrp>
+         <personGrp xml:id="canonici_passau">
+            <name>
+               <roleName>Canonici</roleName> Pataviensibus</name>
+            <occupation>
+               <roleName>Kanoniker</roleName>
+            </occupation>
+         </personGrp>
+         <personGrp xml:id="drescher">
+            <name>
+               <roleName>Drescher</roleName>
+            </name>
+         </personGrp>
+         <personGrp xml:id="gäste_aldersbach_divers">
+            <name><roleName>Gäste des Klosters Aldersbach</roleName></name>
+         </personGrp>
+         <personGrp xml:id="gläubiger_unbekannt">
+            <name>
+               <roleName>Creditori nostri</roleName></name>
+         </personGrp>
+         <personGrp xml:id="coquina_abt_konrad_aldersbach">
+            <name><roleName>Küche von <name ref="#abt_konrad_aldersbach">Abt
+                  Konrad</name></roleName></name>
+         </personGrp>
+         <personGrp xml:id="klosterbrüder_aldersbach_divers">
+            <name><roleName>Brüder des Klosters Aldersbach</roleName></name>
+         </personGrp>
+         <personGrp xml:id="koäbte_unbekannt">
+            <name><roleName>Ko-Äbte</roleName></name>
+         </personGrp>
+         <personGrp xml:id="begleiter_hartzcherchar">
+            <name><roleName>socius von <name ref="#hartzcherchar"
+               >hartzcherchar</name></roleName></name>
+         </personGrp>
+         <personGrp xml:id="maurer">
+            <name>
+               <roleName>Maurer</roleName>
+            </name>
+         </personGrp>
+         <personGrp xml:id="pfänder">
+            <name><roleName>Pfänder</roleName></name>
+         </personGrp>
+         <personGrp xml:id="zimmerleute">
+            <name><roleName>Carpentariis</roleName></name>
+         </personGrp>
+         <personGrp xml:id="ziegler">
+            <name>
+               <roleName>Ziegler</roleName>
+            </name>
+         </personGrp>
+      </listPerson>
+      <listPlace ana="depcha:index">
+         <desc>Orte, welche im Rechnungsbuch D-MBayHStA_KAAA_341_R1291-1362 des Klosters Aldersbach
+            genannt sind.</desc>
+         <place xml:id="ort_0004">
+            <placeName xml:lang="de">Adldorf</placeName>
+            <settlement>Eichendorf</settlement>
+            <geogName><geo>48.6329733,12.8340941</geo></geogName>
+         </place>
+         <place xml:id="ort_0046">
+            <placeName>Baumgarten</placeName>
+            <settlement>Dietersburg (Baumgarten)</settlement>
+            <geogName><geo>48.4951981,12.991355</geo></geogName>
+         </place>
+         <place xml:id="ort_0116">
+            <placeName xml:lang="de">Fränkendorf</placeName>
+            <settlement>Simbach b.L.</settlement>
+            <geogName><geo>48.5392105,12.6632542</geo></geogName>
+         </place>
+         <place xml:id="ort_0124">
+            <placeName xml:lang="de">Fürstenzell</placeName>
+         </place>
+         <place xml:id="ort_0185">
+            <placeName xml:lang="de">Heft</placeName>
+            <settlement>Aidenbach</settlement>
+            <geogName><geo>48.5608509,13.0784592</geo></geogName>
+         </place>
+         <place xml:id="ort_0189">
+            <placeName>Henzing</placeName>
+            <settlement>Sieghartskirchen</settlement>
+            <geogName><geo>48.27062476704679,16.01110577526914</geo></geogName>
+         </place>
+         <place xml:id="ort_0254">
+            <placeName>Künzing (Lang-)</placeName>
+            <settlement>Künzing</settlement>
+            <geogName><geo>48.68079,13.07804</geo></geogName>
+         </place>
+         <place xml:id="ort_0303">
+            <placeName xml:lang="de">Neusiedel</placeName>
+            <settlement>Zwentendorf</settlement>
+            <geogName><geo>48.3238315,15.9674189</geo></geogName>
+         </place>
+         <place xml:id="ort_0317">
+            <placeName xml:lang="de">Oberndorf</placeName>
+            <settlement>Osterhofen (Galgweis)</settlement>
+            <geogName><geo>48.62152,13.00920</geo></geogName>
+         </place>
+         <place xml:id="ort_0334">
+            <placeName>Passau</placeName>
+            <settlement>Passau</settlement>
+            <geogName><geo>48.57451,13.46392</geo></geogName>
+         </place>
+         <place xml:id="ort_0449">
+            <placeName>Thaya</placeName>
+            <settlement>Thaya</settlement>
+            <geogName><geo>48.85531258872057, 15.286424987060572</geo></geogName>
+         </place>
+         <place xml:id="ort_0468">
+            <placeName>Vilshofen</placeName>
+            <settlement>Vilshofen</settlement>
+            <geogName><geo>48.63634, 13.18705</geo></geogName>
+         </place>
+         <place xml:id="ort_0488">
+            <placeName>Weng</placeName>
+            <settlement>Aldersbach</settlement>
+            <geogName><geo>48.59541510679172, 13.053533818777536</geo></geogName>
+         </place>
+         <place xml:id="ort_0505">
+            <placeName xml:lang="de">Wolferkoven</placeName>
+            <settlement>Oberschneiding</settlement>
+         </place>
+         <place xml:id="ort_0524">
+            <placeName xml:lang="de">Landshut</placeName>
+            <settlement>Landshut</settlement>
+         </place>
+         <place xml:id="ort_0530">
+            <placeName xml:lang="de">Geyerstal</placeName>
+         </place>
+         <place xml:id="ort_0534">
+            <placeName>Augsburg</placeName>
+            <settlement>Augsburg</settlement>
+         </place>
+         <place xml:id="ort_0536">
+            <placeName xml:lang="de">Regensburg</placeName>
+         </place>
+         <place xml:id="ort_0547">
+            <placeName xml:lang="de">Schwendt</placeName>
+            <settlement>Waldzell</settlement>
+            <geogName><geo>48.11767161034817, 13.39504467379886</geo></geogName>
+         </place>
+         <place xml:id="ort_0560">
+            <placeName xml:lang="de">Straubing</placeName>
+         </place>
+         <place xml:id="ort_0561">
+            <placeName xml:lang="de">Münster</placeName>
+         </place>
+         <place xml:id="ort_0569">
+            <placeName xml:lang="de">Schärding</placeName>
+         </place>
+         <place xml:id="ort_0570">
+            <placeName xml:lang="de">Nepomuk</placeName>
+         </place>
+         <place xml:id="ort_0571">
+            <placeName xml:lang="de">Raidenhasel</placeName>
+         </place>
+         <place xml:id="ort_0572">
+            <placeName xml:lang="de">Würzburg</placeName>
+         </place>
+         <place xml:id="ort_0573">
+            <placeName xml:lang="de">Deggendorf</placeName>
+         </place>
+      </listPlace>
+      <listOrg ana="depcha:index">
+         <org xml:id="convent">
+            <orgName>Konvent</orgName>
+         </org>
+         <org xml:id="brauerei_aldersbach">
+            <orgName>Brauerei des Klosters Aldersbach</orgName>
+         </org>
+         <org xml:id="klosterverwaltung_aldersbach">
+            <orgName>Kapitel des Klosters Aldersbach</orgName>
+         </org>
+         <org xml:id="kirchethaya">
+            <orgName>Ecclesia in <placeName ref="#ort_0449">Teia</placeName></orgName>
+         </org>
+         <org xml:id="kirchegeyerstal">
+            <orgName>Ecclesia in <placeName ref="#ort_0530">Geyerstal</placeName></orgName>
+         </org>
+         <org xml:id="kirchemünster">
+            <orgName>Ecclesia in <placeName ref="#ort_0561">Münster</placeName></orgName>
+         </org>
+         <org xml:id="kirchesanctijohannis">
+            <orgName>Ecclesia sancti Johannis</orgName>
+         </org>
+         <org xml:id="ländereiensanctijohannis">
+            <orgName>predii sancti Johannis</orgName>
+         </org>
+         <org xml:id="forum_ruesmarsuelden">
+            <orgName>Forum in Ruesmarsuelden</orgName>
+         </org>
+         <org xml:id="hube_adldorf">
+            <orgName>Huba in <placeName ref="#ort_0004">Arelndorf</placeName></orgName>
+         </org>
+      </listOrg>
+   </standOff>
+   <facsimile>
+      <surface start="#IMG.3" ulx="0" uly="0" lrx="2000" lry="2596">
+         <graphic mimeType="image/jpeg" url="file:///3.jpg" width="2000px" height="2596px"
+            xml:id="IMAGE.3">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+         <zone points="68,231 1712,227 1710,422 66,426" rendition="TextRegion"/>
+         <zone points="70,428 19,4010 467,4028 558,4037 692,4022 1791,4006 1842,424"
+            rendition="TextRegion"/>
+         <zone
+            points="33,4162 158,4170 180,4105 569,4118 1160,4129 1439,4138 1668,4162 1668,4026 774,4028 536,4046 393,4031 208,4027 107,3997 33,4026"
+            rendition="TextRegion"/>
+         <zone points="40,4799 1830,4801 1830,4172 1216,4130 920,4128 176,4103 153,4170 40,4170"
+            rendition="TextRegion"/>
+      </surface>
+      <surface start="#IMG.33" ulx="0" uly="0" lrx="2000" lry="2596">
+         <graphic mimeType="image/jpeg" url="file:///33.jpg" width="2000px" height="2596px"
+            xml:id="IMAGE.33">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+         <zone points="33,167 29,4411 1772,4411 1776,167" rendition="TextRegion"/>
+         <zone points="31,4421 1663,4421 1663,4544 46,4589" rendition="TextRegion"/>
+         <zone points="1738,5068 57,5072 57,4595 1737,4546" rendition="TextRegion"/>
+      </surface>
+      <surface start="#IMG.34" ulx="0" uly="0" lrx="2000" lry="2596">
+         <graphic mimeType="image/jpeg" url="file:///34.jpg" width="2000px" height="2596px"
+            xml:id="IMAGE.34">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+         <zone points="316,290 316,4466 1967,4466 1967,290" rendition="TextRegion"/>
+      </surface>
+      <surface start="#IMG.81" ulx="0" uly="0" lrx="2000" lry="2596">
+         <graphic mimeType="image/jpeg" url="file:///81.jpg" width="2000px" height="2596px"
+            xml:id="IMAGE.81">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+         <zone points="44,196 1721,196 1721,914 1293,967 1035,1030 75,1010 44,914"
+            rendition="Posting"><zone
+               points="84,347 226,394 368,350 764,401 834,338 1009,394 1396,356 1514,403 1666,354 1666,231 1528,296 1349,231 1132,247 1072,254 972,287 748,235 566,242 517,289 289,240 84,270"
+               rendition="TextLine" xml:id="facs_81_line_1"/><zone
+               points="103,457 226,506 350,438 433,478 475,440 694,478 881,452 962,492 1237,438 1335,489 1445,450 1535,485 1715,464 1715,359 1673,347 1542,403 1400,356 1011,389 836,340 767,401 543,356 103,394"
+               rendition="TextLine" xml:id="facs_81_line_2"/><zone
+               points="100,571 203,524 338,559 580,515 890,517 944,566 1165,517 1314,522 1368,566 1659,550 1636,452 1535,485 1445,450 1308,439 1247,438 961,466 603,438 436,478 312,447 200,492 100,471"
+               rendition="TextLine" xml:id="facs_81_line_3"/><zone
+               points="98,608 1640,617 1624,534 1368,564 1316,524 990,524 944,566 890,517 673,555 580,515 520,555 436,524 98,559"
+               rendition="TextLine" xml:id="facs_81_line_4"/><zone
+               points="110,713 727,673 857,722 899,678 1023,676 1333,685 1438,746 1715,701 1715,599 1387,619 1111,596 110,615"
+               rendition="TextLine" xml:id="facs_81_line_5"/><zone
+               points="103,797 326,769 638,816 697,771 883,829 1090,781 1305,825 1305,699 1268,685 937,676 850,720 727,671 657,713 405,676 103,729"
+               rendition="TextLine" xml:id="facs_81_line_6"/><zone
+               points="123,958 673,941 797,1007 1016,965 1090,1016 1309,962 1307,825 242,834 123,902"
+               rendition="TextLine" xml:id="facs_81_line_7"/></zone>
+         <zone points="-1,1048 976,1047 1112,1009 1279,975 1743,948 1750,1048 1750,1153 2,1212"
+            rendition="Headline"><zone
+               points="107,1067 257,1060 967,1041 1110,1099 1141,1112 1251,1088 1635,1055 1622,1126 1583,1143 1521,1174 1291,1163 96,1212"
+               rendition="TextLine" xml:id="facs_81_line_8"/><zone
+               points="1107,1107 1144,1118 1193,1074 1421,1055 1477,1088 1533,1053 1713,1109 1717,1011 1556,993 1519,958 1261,974 1186,1023 1111,1007"
+               rendition="TextLine" xml:id="facs_81_line_9"/></zone>
+         <zone points="3,1214 20,5072 1883,5072 1878,1158" rendition="Posting"><zone
+               points="98,1323 175,1286 769,1288 1179,1235 1405,1284 1482,1230 1673,1226 1675,1160 1184,1207 1060,1167 981,1200 492,1174 100,1244"
+               rendition="TextLine" xml:id="facs_81_line_10"/><zone
+               points="116,1358 343,1382 1083,1316 1440,1377 1535,1314 1717,1330 1720,1244 1552,1219 1389,1286 1188,1233 783,1293 652,1261 513,1305 398,1270 116,1305"
+               rendition="TextLine" xml:id="facs_81_line_11"/><zone
+               points="70,1463 715,1405 918,1400 974,1447 1067,1398 1699,1414 1699,1335 1624,1312 1377,1384 1090,1314 569,1375 70,1356"
+               rendition="TextLine" xml:id="facs_81_line_12"/><zone
+               points="77,1512 1121,1470 1519,1510 1654,1477 1657,1407 1121,1405 974,1445 876,1403 557,1449 329,1417 77,1466"
+               rendition="TextLine" xml:id="facs_81_line_13"/><zone
+               points="84,1584 1671,1559 1673,1477 1631,1470 1521,1501 1240,1470 1116,1473 878,1477 412,1526 336,1484 268,1528 86,1508"
+               rendition="TextLine" xml:id="facs_81_line_14"/><zone
+               points="93,1661 494,1626 599,1682 885,1626 1664,1652 1664,1559 1498,1591 1442,1549 1305,1552 1172,1594 988,1549 834,1598 93,1575"
+               rendition="TextLine" xml:id="facs_81_line_15"/><zone
+               points="110,1717 1645,1713 1645,1638 1528,1657 1482,1622 885,1626 599,1682 520,1626 110,1659"
+               rendition="TextLine" xml:id="facs_81_line_16"/><zone
+               points="98,1801 1542,1771 1696,1808 1675,1689 1433,1736 1272,1694 934,1736 396,1701 284,1748 98,1713"
+               rendition="TextLine" xml:id="facs_81_line_17"/><zone
+               points="107,1866 930,1843 1009,1880 1211,1835 1300,1884 1326,1843 1626,1848 1626,1803 1524,1768 1307,1787 913,1775 809,1813 615,1768 184,1773 110,1822"
+               rendition="TextLine" xml:id="facs_81_line_18"/><zone
+               points="98,1939 864,1915 1114,1962 1167,1918 1657,1922 1622,1841 1002,1880 918,1843 799,1883 746,1850 98,1862"
+               rendition="TextLine" xml:id="facs_81_line_19"/><zone
+               points="98,2036 240,1992 454,2020 1104,1983 1312,2032 1391,1992 1710,1990 1710,1920 1633,1915 1195,1918 1114,1964 864,1915 100,1941"
+               rendition="TextLine" xml:id="facs_81_line_20"/><zone
+               points="110,2071 266,2097 454,2062 494,2102 548,2069 615,2113 776,2062 841,2102 997,2057 1699,2069 1699,1987 1514,1978 1308,1985 1009,1983 110,2036"
+               rendition="TextLine" xml:id="facs_81_line_21"/><zone
+               points="107,2146 217,2169 340,2127 527,2174 599,2127 755,2130 942,2150 1014,2127 1661,2123 1661,2055 1594,2048 689,2075 548,2064 494,2102 450,2064 259,2099 107,2069"
+               rendition="TextLine" xml:id="facs_81_line_22"/><zone
+               points="86,2214 298,2204 361,2246 482,2195 522,2227 659,2193 818,2230 965,2190 1684,2211 1684,2120 86,2160"
+               rendition="TextLine" xml:id="facs_81_line_23"/><zone
+               points="100,2300 336,2267 492,2309 687,2260 774,2318 846,2269 1186,2267 1282,2309 1389,2253 1701,2260 1703,2174 822,2227 655,2188 113,2226"
+               rendition="TextLine" xml:id="facs_81_line_24"/><zone
+               points="103,2386 757,2337 809,2372 855,2337 1035,2384 1146,2339 1298,2374 1678,2335 1680,2288 1603,2251 1433,2286 1391,2253 1288,2307 1188,2267 897,2272 774,2321 557,2262 492,2307 315,2265 105,2302"
+               rendition="TextLine" xml:id="facs_81_line_25"/><zone
+               points="107,2467 289,2470 391,2421 503,2472 825,2486 890,2437 1158,2414 1298,2486 1393,2453 1549,2498 1678,2442 1678,2332 1619,2330 1298,2374 1151,2339 1037,2384 871,2337 804,2354 352,2342 107,2391"
+               rendition="TextLine" xml:id="facs_81_line_26"/><zone
+               points="291,2659 748,2635 860,2675 1021,2612 1188,2675 1377,2596 1382,2507 1172,2528 1046,2477 976,2514 869,2458 687,2519 298,2530"
+               rendition="TextLine" xml:id="facs_81_line_27"/><zone
+               points="1610,2880 1640,2859 1659,2871 1687,2857 1706,2866 1778,2850 1796,2864 1813,2851 1845,2872 1883,2867 1881,2792 1806,2801 1780,2784 1750,2805 1710,2780 1682,2808 1608,2803"
+               rendition="TextLine" xml:id="facs_81_line_28"/><zone
+               points="1709,2905 1715,2901 1743,2908 1775,2936 1794,2936 1834,2910 1852,2919 1897,2918 1895,2869 1848,2866 1827,2847 1796,2864 1778,2852 1741,2854 1731,2864 1705,2856"
+               rendition="TextLine" xml:id="facs_81_line_29"/><zone
+               points="1692,2900 1897,2926 1886,2992 1677,2970" rendition="TextLine"
+               xml:id="facs_81_line_30"/><zone points="1706,2962 1788,2962 1788,3030 1706,3030"
+               rendition="TextLine" xml:id="facs_81_line_31"/><zone
+               points="13,2856 92,2856 92,2917 13,2917" rendition="TextLine"
+               xml:id="facs_81_line_32"/><zone points="12,2919 109,2923 109,2996 12,2992"
+               rendition="TextLine" xml:id="facs_81_line_33"/><zone
+               points="79,2787 718,2742 867,2784 932,2735 1130,2780 1323,2719 1449,2791 1699,2717 1701,2645 1298,2624 1074,2684 976,2621 734,2703 589,2638 210,2684 84,2659"
+               rendition="TextLine" xml:id="facs_81_line_34"/><zone
+               points="98,2859 436,2817 741,2866 860,2815 1689,2805 1689,2740 1647,2731 1452,2787 1293,2726 1114,2780 965,2733 871,2784 720,2742 100,2789"
+               rendition="TextLine" xml:id="facs_81_line_35"/><zone
+               points="91,2927 224,2903 294,2945 396,2896 867,2919 1249,2868 1368,2915 1424,2878 1540,2875 1596,2894 1598,2808 1235,2798 1028,2845 916,2812 748,2864 557,2822 130,2861 94,2865"
+               rendition="TextLine" xml:id="facs_81_line_36"/><zone
+               points="113,2996 424,2965 1561,2939 1674,2942 1686,2878 1577,2872 1423,2881 1368,2912 1288,2871 1091,2895 916,2892 871,2931 820,2892 543,2926 487,2889 294,2945 238,2906 115,2919"
+               rendition="TextLine" xml:id="facs_81_line_37"/><zone
+               points="87,3035 489,3022 589,3073 764,3017 1627,3005 1611,2940 1384,2933 87,2986"
+               rendition="TextLine" xml:id="facs_81_line_38"/><zone
+               points="86,3113 818,3092 1030,3111 1046,3097 1128,3136 1279,3087 1675,3108 1678,3010 1598,3001 1249,3041 767,3017 594,3071 492,3027 89,3034"
+               rendition="TextLine" xml:id="facs_81_line_39"/><zone
+               points="103,3169 280,3197 522,3150 713,3211 806,3164 1549,3185 1685,3176 1682,3106 1282,3087 1128,3134 1046,3094 988,3148 813,3090 100,3113"
+               rendition="TextLine" xml:id="facs_81_line_40"/><zone
+               points="107,3250 610,3220 802,3236 908,3250 948,3227 1074,3260 1633,3239 1633,3173 1589,3164 1037,3194 827,3162 748,3197 524,3150 233,3199 107,3166"
+               rendition="TextLine" xml:id="facs_81_line_41"/><zone
+               points="98,3311 417,3295 489,3341 536,3295 1039,3295 1100,3339 1172,3292 1368,3323 1566,3292 1685,3337 1685,3241 1640,3227 1529,3250 955,3227 908,3246 608,3222 100,3229"
+               rendition="TextLine" xml:id="facs_81_line_42"/><zone
+               points="91,3388 1372,3372 1466,3418 1650,3381 1650,3327 1568,3292 1300,3327 1174,3292 1095,3341 1042,3295 91,3334"
+               rendition="TextLine" xml:id="facs_81_line_43"/><zone
+               points="107,3467 310,3446 366,3481 585,3437 641,3479 736,3439 788,3483 918,3446 1125,3493 1695,3435 1695,3374 1463,3416 1368,3369 1230,3411 1135,3376 757,3402 711,3365 103,3388"
+               rendition="TextLine" xml:id="facs_81_line_44"/><zone
+               points="112,3542 750,3511 913,3558 1235,3514 1326,3560 1426,3514 1701,3546 1703,3425 1414,3483 1302,3441 1221,3493 925,3446 790,3483 741,3439 634,3476 582,3432 114,3481"
+               rendition="TextLine" xml:id="facs_81_line_45"/><zone
+               points="103,3625 343,3586 450,3588 569,3584 1633,3598 1600,3518 1368,3521 1326,3560 1263,3516 1088,3514 937,3560 755,3511 529,3528 347,3511 181,3554 103,3516"
+               rendition="TextLine" xml:id="facs_81_line_46"/><zone
+               points="121,3673 429,3661 478,3693 1144,3649 1214,3707 1372,3658 1703,3660 1671,3535 1561,3602 736,3581 470,3594 343,3586 121,3630"
+               rendition="TextLine" xml:id="facs_81_line_47"/><zone
+               points="114,3737 289,3721 412,3765 659,3723 732,3765 1556,3726 1542,3660 1214,3707 1135,3646 997,3698 725,3653 114,3677"
+               rendition="TextLine" xml:id="facs_81_line_48"/><zone
+               points="103,3793 662,3798 814,3818 962,3803 1724,3814 1724,3698 1568,3761 1512,3721 729,3765 673,3723 459,3726 382,3768 289,3721 103,3728"
+               rendition="TextLine" xml:id="facs_81_line_49"/><zone
+               points="84,3884 972,3870 1191,3917 1466,3872 1684,3879 1685,3814 962,3803 826,3819 84,3782"
+               rendition="TextLine" xml:id="facs_81_line_50"/><zone
+               points="114,3940 718,3935 799,3984 927,3940 1690,3956 1687,3884 1268,3879 1158,3917 1081,3875 641,3900 408,3856 114,3896"
+               rendition="TextLine" xml:id="facs_81_line_51"/><zone
+               points="93,3994 1626,4033 1624,3982 1496,3949 1113,3953 930,3940 804,3984 718,3935 93,3928"
+               rendition="TextLine" xml:id="facs_81_line_52"/><zone
+               points="93,4080 641,4054 904,4096 967,4066 1014,4110 1657,4096 1640,4008 1363,4043 1298,4010 926,4018 91,3991"
+               rendition="TextLine" xml:id="facs_81_line_53"/><zone
+               points="110,4159 172,4129 312,4182 694,4133 940,4163 1156,4147 1316,4201 1675,4154 1759,4199 1771,4087 1430,4101 1265,4075 1137,4112 643,4052 352,4098 107,4066"
+               rendition="TextLine" xml:id="facs_81_line_54"/><zone
+               points="98,4201 373,4238 438,4201 818,4201 981,4255 1065,4215 1647,4234 1645,4173 1577,4192 1524,4152 1314,4181 1153,4147 962,4185 918,4145 694,4133 214,4180 98,4138"
+               rendition="TextLine" xml:id="facs_81_line_55"/><zone
+               points="110,4287 729,4310 797,4276 888,4324 990,4299 1044,4293 1214,4285 1640,4315 1638,4231 1568,4222 1074,4224 976,4264 876,4206 641,4194 589,4229 538,4196 375,4238 277,4196 110,4234"
+               rendition="TextLine" xml:id="facs_81_line_56"/><zone
+               points="110,4357 1086,4357 1158,4399 1286,4357 1501,4394 1633,4364 1633,4315 1540,4292 1214,4287 1052,4291 990,4299 911,4329 536,4273 110,4287"
+               rendition="TextLine" xml:id="facs_81_line_57"/><zone
+               points="86,4446 331,4457 468,4406 1513,4450 1633,4435 1632,4359 1405,4362 1316,4373 1258,4362 1158,4399 1060,4357 84,4343"
+               rendition="TextLine" xml:id="facs_81_line_58"/><zone
+               points="70,4513 848,4488 967,4527 1639,4488 1634,4425 1503,4441 1347,4422 1207,4471 1102,4427 937,4462 685,4408 315,4435 72,4432"
+               rendition="TextLine" xml:id="facs_81_line_59"/><zone
+               points="79,4567 1617,4564 1603,4481 960,4534 848,4490 128,4527 82,4497"
+               rendition="TextLine" xml:id="facs_81_line_60"/><zone
+               points="84,4634 638,4630 678,4662 797,4623 897,4676 976,4625 1092,4631 1715,4625 1685,4548 1249,4595 1177,4555 1069,4585 610,4548 531,4588 84,4555"
+               rendition="TextLine" xml:id="facs_81_line_61"/><zone
+               points="98,4704 1130,4723 1261,4690 1400,4719 1727,4683 1699,4620 1111,4662 979,4625 895,4679 799,4625 676,4662 629,4630 98,4651"
+               rendition="TextLine" xml:id="facs_81_line_62"/><zone
+               points="93,4774 499,4774 638,4816 708,4776 918,4804 1007,4760 1734,4765 1734,4697 1687,4686 1614,4701 1412,4705 1351,4695 93,4700"
+               rendition="TextLine" xml:id="facs_81_line_63"/><zone
+               points="91,4839 268,4832 331,4877 510,4835 571,4884 755,4839 1265,4860 1466,4825 1590,4848 1718,4848 1716,4779 1403,4758 1059,4780 720,4776 624,4787 468,4767 382,4800 91,4767"
+               rendition="TextLine" xml:id="facs_81_line_64"/><zone
+               points="98,4949 423,4915 759,4913 843,4956 1102,4902 1193,4947 1300,4909 1624,4916 1624,4851 1463,4825 1265,4860 725,4839 569,4886 506,4835 333,4872 266,4830 98,4844"
+               rendition="TextLine" xml:id="facs_81_line_65"/><zone
+               points="79,5033 363,4979 562,5030 713,4989 1680,4996 1666,4900 1195,4947 1102,4902 850,4956 760,4907 303,4944 79,4916"
+               rendition="TextLine" xml:id="facs_81_line_66"/><zone
+               points="110,5070 205,5105 343,5058 415,5114 902,5112 1051,5058 1160,5110 1687,5072 1687,5000 1566,4972 1480,5019 1440,4984 1370,5023 1153,4984 547,4994 361,4982 134,4986"
+               rendition="TextLine" xml:id="facs_81_line_67"/></zone>
+      </surface>
+      <surface start="#IMG.82" ulx="0" uly="0" lrx="2000" lry="2596">
+         <graphic mimeType="image/jpeg" url="file:///82.jpg" width="2000px" height="2596px"
+            xml:id="IMAGE.82">
+            <desc>Bayrisches Staatsarchiv München</desc>
+         </graphic>
+         <zone points="1956,138 151,138 145,2190 1950,2190" rendition="Posting"><zone
+               points="151,958 171,965 191,956 212,971 252,942 293,932 334,944 352,842 313,840 224,875 171,851"
+               rendition="TextLine" xml:id="facs_82_line_1"/><zone
+               points="138,1024 169,1024 181,1015 212,1028 246,1018 283,1026 295,950 277,948 269,938 246,944 197,979 187,965 159,983 144,981"
+               rendition="TextLine" xml:id="facs_82_line_2"/><zone
+               points="147,1087 171,1093 199,1068 216,1062 226,1072 252,1072 277,1054 315,1060 319,1026 307,1026 297,1011 291,1018 279,1015 250,1026 232,1022 224,1030 212,1020 191,1022 181,1015 171,1024 155,1024"
+               rendition="TextLine" xml:id="facs_82_line_3"/><zone
+               points="338,1110 154,1140 150,1067 338,1053" rendition="TextLine"
+               xml:id="facs_82_line_4"/><zone
+               points="352,330 757,383 932,291 1040,328 1174,295 1249,346 1355,287 1508,326 1622,277 1832,277 1836,159 1534,206 1412,175 1278,218 1195,177 987,206 615,178 358,187"
+               rendition="TextLine" xml:id="facs_82_line_5"/><zone
+               points="366,433 556,415 624,432 1215,368 1327,407 1380,360 1805,385 1829,305 1620,279 1481,326 1355,289 1237,305 1205,313 1091,348 914,311 739,365 533,350 395,341"
+               rendition="TextLine" xml:id="facs_82_line_6"/><zone
+               points="381,431 764,415 1379,370 1921,390 1919,449 556,487 379,490"
+               rendition="TextLine" xml:id="facs_82_line_7"/><zone
+               points="374,562 513,590 566,541 814,533 910,564 971,519 1249,499 1414,539 1870,521 1872,448 1610,429 1307,458 1133,433 733,488 376,490"
+               rendition="TextLine" xml:id="facs_82_line_8"/><zone
+               points="344,633 635,613 743,647 1245,570 1787,610 1823,606 1827,523 1414,539 1247,501 973,519 897,566 564,543 511,590 348,545"
+               rendition="TextLine" xml:id="facs_82_line_9"/><zone
+               points="379,714 790,678 834,724 1013,672 1176,704 1286,645 1887,667 1884,582 1680,593 1258,568 1144,617 1018,582 751,616 623,613 381,639"
+               rendition="TextLine" xml:id="facs_82_line_10"/><zone
+               points="336,771 637,755 686,790 1488,712 1661,730 1852,733 1827,659 1512,645 835,707 688,680 338,710"
+               rendition="TextLine" xml:id="facs_82_line_11"/><zone
+               points="352,828 425,857 950,816 1060,861 1313,802 1793,822 1852,796 1854,735 1630,765 1514,710 1416,759 1231,722 704,794 637,757 352,761"
+               rendition="TextLine" xml:id="facs_82_line_12"/><zone
+               points="362,904 737,897 838,942 912,893 1583,906 1673,859 1827,911 1829,801 1309,802 1105,863 977,820 362,863"
+               rendition="TextLine" xml:id="facs_82_line_13"/><zone
+               points="347,974 990,959 1223,1001 1526,930 1622,950 1745,931 1750,867 1585,890 1447,873 972,914 912,893 840,940 718,897 350,914"
+               rendition="TextLine" xml:id="facs_82_line_14"/><zone
+               points="352,1036 863,1034 912,1070 1013,1018 1178,1064 1227,1024 1410,1050 1518,1003 1619,1018 1842,991 1844,918 1791,908 1666,948 1351,944 1227,1001 1146,948 354,967"
+               rendition="TextLine" xml:id="facs_82_line_15"/><zone
+               points="341,1126 574,1099 1337,1119 1526,1081 1632,1111 1824,1064 1827,1007 1514,1005 1412,1050 1274,1022 1178,1066 1001,1018 912,1068 747,1038 505,1070 359,1038 343,1051"
+               rendition="TextLine" xml:id="facs_82_line_16"/><zone
+               points="332,1188 554,1174 621,1215 724,1172 1036,1197 1359,1160 1433,1199 1733,1156 1869,1217 1876,1066 1738,1068 1616,1097 1392,1089 334,1125"
+               rendition="TextLine" xml:id="facs_82_line_17"/><zone
+               points="330,1274 586,1243 678,1280 958,1233 1109,1266 1213,1223 1309,1239 1311,1168 1072,1166 1030,1199 918,1166 621,1215 576,1180 332,1186"
+               rendition="TextLine" xml:id="facs_82_line_18"/><zone
+               points="319,1341 1832,1320 1832,1246 1484,1268 1368,1209 843,1266 588,1245 319,1274"
+               rendition="TextLine" xml:id="facs_82_line_19"/><zone
+               points="311,1398 672,1384 798,1427 910,1376 1272,1410 1345,1374 1634,1445 1764,1400 1764,1335 1713,1315 1125,1331 1056,1296 311,1339"
+               rendition="TextLine" xml:id="facs_82_line_20"/><zone
+               points="322,1500 480,1461 946,1481 1119,1445 1620,1488 1827,1453 1813,1370 1642,1443 1343,1374 1254,1410 873,1380 804,1422 655,1384 566,1427 322,1400"
+               rendition="TextLine" xml:id="facs_82_line_21"/><zone
+               points="311,1563 792,1538 881,1571 1011,1522 1811,1543 1797,1451 1602,1492 1068,1447 808,1498 686,1461 313,1484"
+               rendition="TextLine" xml:id="facs_82_line_22"/><zone
+               points="315,1654 1211,1600 1604,1597 1683,1640 1811,1616 1813,1534 1705,1569 1547,1524 1349,1569 1007,1524 904,1575 792,1536 315,1571"
+               rendition="TextLine" xml:id="facs_82_line_23"/><zone
+               points="330,1695 383,1730 515,1685 718,1716 873,1679 944,1722 1182,1665 1795,1695 1797,1626 1085,1602 330,1654"
+               rendition="TextLine" xml:id="facs_82_line_24"/><zone
+               points="324,1789 554,1756 678,1811 720,1770 936,1750 1101,1805 1349,1815 1471,1762 1567,1801 1703,1736 1811,1742 1813,1667 1184,1667 944,1722 885,1679 718,1716 326,1701"
+               rendition="TextLine" xml:id="facs_82_line_25"/><zone
+               points="313,1840 462,1825 490,1850 700,1821 751,1846 845,1819 888,1820 975,1814 983,1750 895,1777 739,1770 680,1809 600,1760 431,1785 315,1764"
+               rendition="TextLine" xml:id="facs_82_line_26"/><zone
+               points="311,1927 1738,1882 1789,1872 1791,1805 1486,1772 958,1842 910,1807 311,1840"
+               rendition="TextLine" xml:id="facs_82_line_27"/><zone
+               points="330,1968 1644,1966 1758,1935 1760,1882 335,1908" rendition="TextLine"
+               xml:id="facs_82_line_28"/><zone
+               points="315,2055 710,2088 798,2033 1087,2033 1516,2068 1732,2019 1732,1964 1569,1939 1343,1982 1280,1943 989,1978 482,1956 315,1998"
+               rendition="TextLine" xml:id="facs_82_line_29"/><zone
+               points="330,2165 1716,2198 1718,2047 1648,2039 1262,2092 1207,2047 828,2033 676,2114 332,2061"
+               rendition="TextLine" xml:id="facs_82_line_30"/></zone>
+         <zone points="261,2195 1794,2195 1794,2330 261,2330" rendition="Headline"><zone
+               points="291,2328 631,2283 757,2324 1109,2314 1176,2363 1276,2308 1335,2357 1429,2312 1583,2357 1766,2338 1764,2249 1195,2214 1054,2224 816,2222 627,2204 289,2206"
+               rendition="TextLine" xml:id="facs_82_line_31"/></zone>
+         <zone points="132,2329 150,4718 1896,4718 1878,2329" rendition="Posting"><zone
+               points="311,2381 562,2365 645,2405 722,2371 924,2436 1040,2371 1471,2432 1806,2419 1803,2345 1223,2318 1178,2363 965,2295 759,2350 641,2289 311,2334"
+               rendition="TextLine" xml:id="facs_82_line_32"/><zone
+               points="301,2454 513,2446 720,2503 786,2458 1007,2523 1136,2468 1396,2468 1591,2532 1946,2528 1944,2431 1683,2409 1278,2387 1119,2426 1032,2383 926,2436 724,2373 299,2389"
+               rendition="TextLine" xml:id="facs_82_line_33"/><zone
+               points="295,2558 775,2542 1003,2619 1081,2568 1451,2603 1431,2464 1188,2505 1136,2466 1007,2521 786,2456 716,2493 293,2456"
+               rendition="TextLine" xml:id="facs_82_line_34"/><zone
+               points="295,2625 773,2619 1227,2678 1587,2652 1583,2544 1376,2603 1099,2568 1005,2617 771,2542 647,2576 568,2540 293,2554"
+               rendition="TextLine" xml:id="facs_82_line_35"/><zone
+               points="277,2768 763,2698 1034,2759 1274,2731 1333,2780 1386,2727 1540,2739 1540,2656 987,2668 682,2615 444,2664 273,2629"
+               rendition="TextLine" xml:id="facs_82_line_36"/><zone
+               points="289,2843 454,2792 641,2802 696,2853 981,2796 1207,2867 1392,2818 1463,2863 1530,2814 1933,2850 1931,2750 1673,2692 1543,2743 1382,2729 1333,2780 1264,2733 1036,2759 914,2713 828,2761 529,2705 289,2766"
+               rendition="TextLine" xml:id="facs_82_line_37"/><zone
+               points="279,2932 590,2890 777,2945 1032,2896 1113,2955 1268,2900 1384,2904 1484,2975 1595,2975 1687,2918 1844,2971 1842,2827 1716,2884 1526,2823 1469,2865 1313,2825 1182,2832 983,2796 826,2853 594,2792 277,2845"
+               rendition="TextLine" xml:id="facs_82_line_38"/><zone
+               points="301,3030 513,2971 722,3014 1034,2989 1133,3028 1306,2981 1306,2916 1266,2900 1125,2953 944,2898 800,2947 529,2888 370,2919 301,2932"
+               rendition="TextLine" xml:id="facs_82_line_39"/><zone
+               points="280,3086 845,3069 1056,3124 1129,3075 1323,3126 1388,3087 1530,3144 1606,3099 1705,3138 1738,3103 1936,3124 1934,2998 1744,3040 1646,2981 1333,2975 1064,3018 983,3000 808,2983 690,2991 278,2998"
+               rendition="TextLine" xml:id="facs_82_line_40"/><zone
+               points="285,3181 631,3144 902,3183 1060,3154 1154,3207 1201,3162 1669,3205 1804,3199 1813,3128 1656,3103 1528,3144 1386,3085 1321,3126 1131,3073 1060,3128 794,3061 623,3099 397,3065 283,3126"
+               rendition="TextLine" xml:id="facs_82_line_41"/><zone
+               points="289,3255 898,3274 995,3244 1066,3291 1133,3246 1268,3252 1351,3305 1443,3256 1659,3247 1657,3188 1510,3201 1321,3215 1205,3164 1158,3207 1062,3154 881,3203 757,3150 286,3171"
+               rendition="TextLine" xml:id="facs_82_line_42"/><zone
+               points="287,3341 551,3323 647,3366 794,3327 881,3380 1058,3354 1144,3376 1182,3368 1180,3254 1117,3246 1072,3266 781,3251 751,3301 615,3236 285,3259"
+               rendition="TextLine" xml:id="facs_82_line_43"/><zone
+               points="293,3433 470,3394 783,3474 897,3421 1447,3433 1524,3470 1630,3451 1883,3479 1890,3412 1626,3354 1441,3384 1315,3346 1229,3400 1022,3346 879,3380 794,3325 647,3366 584,3325 289,3341"
+               rendition="TextLine" xml:id="facs_82_line_44"/><zone
+               points="275,3506 399,3472 954,3488 1414,3584 1522,3519 1742,3539 1736,3443 271,3423"
+               rendition="TextLine" xml:id="facs_82_line_45"/><zone
+               points="277,3580 421,3537 773,3569 832,3616 997,3567 1813,3632 1809,3559 1618,3525 1524,3519 1422,3584 1072,3496 509,3510 399,3472 275,3506"
+               rendition="TextLine" xml:id="facs_82_line_46"/><zone
+               points="275,3622 513,3655 759,3628 1211,3716 1370,3677 1665,3744 1728,3706 1823,3726 1817,3626 1612,3602 1467,3630 991,3569 832,3614 423,3539 273,3584"
+               rendition="TextLine" xml:id="facs_82_line_47"/><zone
+               points="265,3728 568,3702 700,3763 938,3720 1193,3744 1272,3799 1437,3769 1433,3681 1198,3683 891,3641 735,3667 256,3618"
+               rendition="TextLine" xml:id="facs_82_line_48"/><zone
+               points="265,3810 771,3793 1174,3847 1347,3838 1799,3887 1858,3871 1854,3787 1694,3775 1581,3765 1270,3799 1195,3746 999,3755 942,3718 698,3763 621,3716 340,3696 260,3740"
+               rendition="TextLine" xml:id="facs_82_line_49"/><zone
+               points="289,3913 401,3858 747,3948 969,3893 1081,3958 1146,3899 1443,3982 1612,3980 1866,3945 1862,3878 1349,3838 1163,3844 588,3785 283,3820"
+               rendition="TextLine" xml:id="facs_82_line_50"/><zone
+               points="354,3974 645,3960 818,4017 961,3989 1164,4103 1306,4117 1878,4072 1868,3998 1701,3982 1441,3982 1280,3913 1168,3907 1062,3964 875,3897 745,3946 346,3871"
+               rendition="TextLine" xml:id="facs_82_line_51"/><zone
+               points="216,4141 468,4176 726,4127 885,4170 999,4137 1268,4158 1233,4096 983,4078 904,4035 376,4007 214,4066"
+               rendition="TextLine" xml:id="facs_82_line_52"/><zone
+               points="256,4229 851,4239 985,4296 1304,4243 1758,4335 1886,4282 1882,4204 1693,4229 1270,4149 1011,4141 938,4182 788,4145 741,4186 645,4139 472,4176 252,4139"
+               rendition="TextLine" xml:id="facs_82_line_53"/><zone
+               points="248,4310 602,4308 991,4400 1105,4339 1166,4377 1524,4355 1528,4278 1097,4302 558,4210 244,4227"
+               rendition="TextLine" xml:id="facs_82_line_54"/><zone
+               points="248,4402 519,4383 869,4461 1125,4428 1195,4489 1337,4428 1488,4451 1484,4357 1422,4349 1347,4408 1099,4349 993,4402 505,4300 248,4320"
+               rendition="TextLine" xml:id="facs_82_line_55"/><zone
+               points="234,4491 686,4479 948,4548 1093,4510 1758,4546 1754,4463 1652,4451 1591,4489 1534,4442 1341,4428 1195,4491 1050,4430 869,4461 519,4381 232,4422"
+               rendition="TextLine" xml:id="facs_82_line_56"/><zone
+               points="258,4613 578,4567 661,4626 745,4573 1111,4628 1309,4603 1516,4709 1870,4672 1864,4554 1225,4514 1042,4554 810,4491 539,4522 250,4485"
+               rendition="TextLine" xml:id="facs_82_line_57"/><zone
+               points="249,4699 450,4764 623,4695 726,4746 869,4721 948,4772 1193,4721 1249,4762 1331,4699 1457,4750 1463,4642 1099,4593 902,4624 786,4583 661,4628 602,4579 242,4587"
+               rendition="TextLine" xml:id="facs_82_line_58"/></zone>
+      </surface>
+   </facsimile>
+   <text>
+      <body>
+         <gap/>
+         <pb n="3" facs="#IMAGE.3" xml:id="IMG.3"/>
+         <!--RB 341 tanzt aus der Reihe, ist das RB von Lübbers!-->
+         <!--Die meisten Einträge fangen nicht mit Item an, eine automatische Strukturierung ist hier kaum möglich. Ich habe also die bk:entries meistens händisch vergeben-->
+         <!--Datumsangaben, Geldbeträge, Abkürzungen sind meistens anders-->
+         <!--Viele der Einträge enthalten nur eine Gesamtinformation zu Commodity und Betrag, ohne Nennung von ecomonic agents etc. Sind also eher Sammelabrechnungen-->
+         <!--Information über Einnahme oder Ausgabe ist im Einzeleintrag oft nicht angegeben, kein bk:to oder bk:from möglich-->
+         <div ana="bk:rubric" corresp="#einnahmen_1291_scolaticevirginis">
+            <!--Sortierungsvorschlag: Struktur scheint sich eher nach Datum und Zeiträumen zu orientieren, als nach Waren oder Einnahmen und Ausgaben-->
+            <head><date ana="bk:when" when="1291-02-10">Anno Domini M.CCXC.I Scolastice</date>,
+               virginis post computacionem recepimus subscripta</head>
+            <ab ana="bk:entry">De <measure ana="bk:commodity" commodity="steuer">steura</measure>
+               <measure ana="bk:money" quantity="17" unitRef="#t">.XVII. t.</measure>
+               <lb/>De <measure ana="bk:service" commodity="work">servicio antiquo</measure>
+               <measure ana="bk:money" quantity="3" unitRef="#t">.III. t.</measure>
+            </ab>
+            <lb/>
+            <ab ana="bk:entry">De <measure ana="bk:service" commodity="work">servicio novo</measure>
+               <measure ana="bk:money" quantity="82" unitRef="#t">.LXXX.II. t.</measure></ab>
+            <lb/>
+            <ab ana="bk:entry">De <measure ana="bk:commodity" commodity="getreide">annona</measure>
+               <measure ana="bk:money" quantity="94" unitRef="#t">.XC.IIIIor. t.</measure> et
+                  <measure ana="bk:money" quantity="3" unitRef="#s">.III. s.</measure>
+            </ab>
+            <lb/>
+            <ab ana="bk:entry">Item de <placeName ana="bk:where" ref="#ort_0560"
+                  >Strauwingen</placeName>
+               <measure ana="bk:money" quantity="3" unitRef="#t">.III. t.</measure>
+            </ab>
+            <lb/>
+            <ab ana="bk:entry">De <measure ana="bk:commodity" commodity="wein">vino de debitis et de
+                  promptis</measure>
+               <!--Aus Schulden und lagernd?-->
+               <measure ana="bk:money" quantity="116" unitRef="#t">.CXVI. t. et LXX. d.</measure>
+               <!--todo: Summe-->
+               <lb/>De <measure ana="bk:commodity" commodity="hopfen">humulo</measure>, <measure
+                  ana="bk:money" quantity="20" unitRef="#t">.XX. t.</measure> exceptis minutis
+               receptis. <!--"bis auf kleinere Einnahmen"-->
+            </ab>
+            <lb/>
+         </div>
+         <div ana="bk:rubric" corresp="#ausgaben_1291scolasticevirginis-1292Pfingsten">
+            <head>Distributum a
+                  <!--"Verteilt wurde vom oben genannten Tag bis Pfingsten des folgenden Jahres, das heißt über einen Zeitraum von einem Jahr und fünf Monaten":--><date
+                  ana="bk:when" from="1291-02-10" to="1292-05-25">supradicto die usque in
+                  Pentecosten sequentis, anni hoc est per unum annum <lb/> et .V.
+               menses</date>:</head>
+            <ab ana="bk:entry">Ad <placeName ana="bk:where">Austriam</placeName>
+               <measure ana="bk:money" quantity="57" unitRef="#t">.LVII. t.</measure> exceptis hiis
+               que in Austria <lb/> habebantur.</ab>
+            <ab ana="bk:entry">In <measure ana="bk:serbice" commodity="recepcione">dupla
+                  recepcione</measure>
+               <name ana="bk:to bk:individual" ref="#dominusvisitator">domini visitatoris</name>, et
+               educcione ipsius <lb/>et <name ana="bk:to bk:group" ref="#familiedomvis">familie
+                  sue</name> et <name ana="bk:to bk:individual" ref="#koäbte_unbekannt">aliorum
+                  coabbatum suorum</name>, expendimus <measure ana="bk:money" quantity="10"
+                  unitRef="#t">.X. t.</measure></ab>
+            <lb/>
+            <ab ana="bk:entry">
+               <roleName ana="bk:to bk:individual" ref="#unterkellermeister_aldersbach"
+                  >Subcellerario nostro</roleName>
+               <measure ana="bk:service" commodity="versorgung_paltram">de remedio
+                  Paltrami</measure> pie memorie <measure ana="bk:money" quantity="3" unitRef="#t"
+                  >.III. t.</measure></ab>
+            <lb/>
+            <!--für die Versorgung einer bereits verstorbenen Person?-->
+            <ab ana="bk:entry">
+               <name ana="bk:to bk:group" ref="#diener_abt_aldersbach">Famulis domini nostri
+                  abbatis</name>
+               <measure ana="bk:money" quantity="3" unitRef="#t">.III. t.</measure></ab>
+            <ab ana="bk:entry">Pro <measure ana="bk:commodity" commodity="hose">caligis
+                  Prukzhosen</measure>
+               <measure ana="bk:money" quantity="1" unitRef="#t">.I. t.</measure></ab>
+            <lb/>
+            <ab ana="bk:entry"><measure ana="bk:commodity" commodity="salz">Pro sale</measure>
+               <measure ana="bk:money" quantity="9" unitRef="#s">.IX. s.</measure> et <measure
+                  ana="bk:money" quantity="12" unitRef="#d">XII. d.</measure></ab>
+            <ab ana="bk:entry">.<name ana="bk:to bk:individual" ref="#hofmeisteraldersbach">Magistro
+                  curie</name>
+               <measure ana="bk:money" quantity="28" unitRef="#t">.XXVIII. t.</measure>
+               <lb/><roleName ana="bk:to bk:individual" ref="#kellermeister_schwendt">Cellerario in
+                     <placeName ref="#ort_0547">Spenthof</placeName></roleName>
+               <measure ana="bk:money" quantity="11" unitRef="#t">.XI. t.</measure> et <measure
+                  ana="bk:money" quantity="3" unitRef="#s">.III. s.</measure></ab>
+            <ab ana="bk:entry">.<roleName ana="bk:to bk:group" ref="#drescher"
+                  >Trituratoribus</roleName>
+               <measure ana="bk:money" quantity="2" unitRef="#t">.II. t.</measure>
+               <lb/>Pro <measure ana="bk:commodity" commodity="pferd">equo de <placeName
+                     ref="#ort_0569">Scherding</placeName></measure>
+               <measure ana="bk:money" quantity="13" unitRef="#s">.XIII. s.</measure></ab>
+            <ab ana="bk:entry">.<roleName ana="bk:to bk:individual" ref="#abt_heinrich_aldersbach"
+                  >Domino nostro abbati</roleName> eunti ad visi<lb break="no"/>tandum in <placeName
+                  ref="#ort_0570">Pomuk</placeName> et <placeName ref="#ort_0536"
+                  >Ratispone</placeName> decumbenti <measure ana="bk:money" quantity="20"
+                  unitRef="#s">.XX. s.</measure></ab>
+            <ab ana="bk:entry">.et <measure ana="bk:money" quantity="10" unitRef="#s">.X.</measure><!--Keine Währungsangabe: ich nehme an, dass hier 10 Schillinge gemeint sind?-->
+               <name ana="bk:to bk:indiviual" ref="#goldschmied_aldersbach">Aurifabro</name>
+               <lb/>ad <measure ana="bk:service" commodity="einschmelzen">conflandum <measure
+                     quantity="94" unitRef="#t">.IIIIor. t. et .III. s.
+                  antiquorum.</measure></measure></ab>
+            <ab ana="bk:entry">.Pro <measure ana="bk:commodity" commodity="holzbrett"
+                  >asseribus</measure>
+               <measure ana="bk:money" quantity="1" unitRef="#t">.I. t.</measure></ab>
+            <ab ana="bk:entry">
+               <lb/><roleName ana="bk:to bk:individual" ref="#abt_fürstenzell">Domino abbati de
+                     <placeName ref="#ort_124">Cella Principis</placeName></roleName> eunti ad
+               capitulum generale <!--Geld für eine Tätigkeit-->
+               <measure ana="bk:money" quantity="680" unitRef="#d">.III. t. minus .XL.</measure> et
+                  <measure ana="bk:commodity" quantity="1" commodity="silber" unitRef="#marca">.I.
+                  <lb/> m. argenti</measure>, et <measure ana="bk:commodity" quantity="3.5"
+                  commodity="silber" unitRef="#lot">IIIƗ. lot.</measure></ab>
+            <!--Bezahlung mit Geld + Silber in Gewichtseinheit-->
+            <ab ana="bk:entry">.Pro <measure ana="bk:commodity" commodity="safran">croco</measure>
+               <measure ana="bk:money" quantity="9" unitRef="#s">.IX. s.</measure></ab>
+            <ab ana="bk:entry">.<roleName ana="bk:to bk:individual" ref="#abt_heinrich_aldersbach"
+                  >Domino nostro</roleName> et <lb/><name ana="bk:to bk:individual"
+                  ref="#prior_gunther"><roleName>priori</roleName> Gunther</name> in assumpcione
+               euntibus ad ducem in <placeName ref="#ort_0524">Lantzhut</placeName>
+               <measure ana="bk:money" quantity="2073" unitRef="#d">.IX. t. <lb/>minus ,LXXXVII.
+                  d.</measure></ab>
+            <ab ana="bk:entry">. <name ana="bk:to bk:organisation" ref="#convent">Conventui</name>
+               pro <measure ana="bk:commodity" commodity="kleidung">vestibus</measure>
+               <measure ana="bk:commodity" commodity="wolle">lana</measure> et <measure
+                  ana="bk:commodity" commodity="filz">filtris</measure> et <measure ana="bk:service"
+                  commodity="weben">lanifici</measure>
+               <lb/><measure ana="bk:money" quantity="3240" unitRef="#d">.VIIIIor. t. et .LXXX.
+                  d.</measure></ab>
+            <ab ana="bk:entry">.<name ana="bk:to bk:individual" ref="#eglolfzhaimar"
+                  >Eglolfzhaimario</name> pro <measure ana="bk:commodity" quantity="1"
+                  commodity="pferd">equo</measure>
+               <measure ana="bk:money" quantity="1" unitRef="#t">.I. t.</measure></ab>
+            <ab ana="bk:entry">. <name ana="bk:to bk:group" ref="#äbte_unbekannt"
+                     ><roleName>Abbatibus</roleName>
+                  <lb/>a capitulo generali redeuntibus</name> et <roleName ana="bk:to bk:individual"
+                  ref="#abt_raidenhasel">domino abbati de <placeName ref="#ort_0571"
+                     >Raidenhasel</placeName></roleName>, pro <measure ana="bk:service"
+                  commodity="consolacione">consolacione</measure>
+               <measure ana="bk:money" quantity="10" unitRef="#s">.X. s.</measure></ab>
+            <lb/>
+            <ab ana="bk:entry">Pro <measure ana="bk:commodity" commodity="eisen">ferro</measure>
+               <measure ana="bk:commodity" commodity="seil">funibus</measure> et <measure
+                  ana="bk:commodity" commodity="hose">caligis</measure>
+               <measure ana="bk:money" quantity="19" unitRef="#s">.XIX. s.</measure></ab>
+            <ab ana="bk:entry"> . <roleName ana="bk:to bk:individual" ref="#abt_unbekannt">Domino
+                  nostro de Cella</roleName> et <roleName ana="bk:to bk:individual"
+                  ref="#prior_aldersbach">priori <lb/>nostro</roleName> post exitum fratris,
+               Chunradi predicatoris euntibus ad ducem .<measure ana="bk:money" quantity="1"
+                  unitRef="#t">I. t.</measure></ab>
+            <ab ana="bk:entry"> .Pro <measure ana="bk:service" commodity="curia">curiat.</measure>
+               <lb/> in <placeName ana="bk:where" ref="#ort_0505">Wolferchouen</placeName>
+               <measure ana="bk:commodity">.XXXII. t.</measure> et pro expensis <measure
+                  ana="bk:money" quantity="80" unitRef="#d">.LXXX. d.</measure></ab>
+            <ab ana="bk:entry"> . <roleName ana="bk:to bk:group" ref="#zimmerleute">Carpen
+                  <lb/>tariis</roleName> et <name ana="bk:to bk:group" ref="#arbeiter">aliis
+                  operariis</name>
+               <measure ana="bk:money" quantity="6" unitRef="#t">.VI. t.</measure> et <measure
+                  ana="bk:money" quantity="30" unitRef="#d">.XXX. d.</measure></ab>
+            <ab ana="bk:entry"> . <name ana="bk:to bk:individual" ref="#ludwig_zieglermeister"
+                     ><roleName>Magistro</roleName> Ludwico <lb/>
+                  <roleName>laterario</roleName></name>
+               <measure ana="bk:money" quantity="8" unitRef="#t">.VIII t.</measure></ab>
+            <ab ana="bk:entry"> Pro <measure ana="bk:commodity" commodity="fischbrühe"
+                  >allecibus</measure>
+               <measure ana="bk:commodity" commodity="öl">oleo</measure>
+               <measure ana="bk:commodity" commodity="wein">latino vino</measure>
+               <name ana="bk:to bk:individual" ref="#kustos_timo">Timo</name>
+               <measure ana="bk:money" quantity="7.5" unitRef="#t">.VIIƗ. t.</measure>
+               <lb/><roleName ana="bk:to bk:individual" ref="#abt_heinrich_aldersbach">Domino
+                  nostro</roleName> eunti ad <placeName>concilium Salzpurgensem</placeName>
+               <measure ana="bk:money" quantity="1" unitRef="#t">.I. t.</measure></ab>
+            <ab ana="bk:entry"> .<date ana="bk:when" when="1292-02-10">Exurge</date> misimus
+               <lb/>per <name ana="bk:to bk:individual" ref="#herzogludwig"><roleName>priorem
+                     duci</roleName> Ludwico</name>
+               <measure ana="bk:money" quantity="2" unitRef="#t">.II. t.</measure></ab>
+            <ab ana="bk:entry"> .<name ana="bk:to bk:individual" ref="#gundaker"
+                     ><roleName>Magistro</roleName> Gundachero</name>
+               <measure ana="bk:money" quantity="3" unitRef="#t">.III. t.</measure></ab>
+            <lb/>
+            <ab ana="bk:entry"><name ana="bk:to bk:individual" ref="#werner_vicedominus">Wernhero
+                     <roleName>vicedomino</roleName></name>
+               <measure ana="bk:money" quantity="1" unitRef="#t">.I. t.</measure></ab>
+            <ab ana="bk:entry"> .<name ana="bk:to bk:individual" ref="#hartzcherchar"
+                     ><roleName>Defensoribus nostris</roleName>, Hartzcherchario</name> et
+                  <lb/><name ana="bk:to bk:group" ref="#begleiter_hartzcherchar">socio suo</name>
+               <measure ana="bk:money" quantity="1" unitRef="#t">.I. t.</measure> et <measure
+                  ana="bk:money" quantity="19" unitRef="#d">.XIX. d.</measure></ab>
+            <ab ana="bk:entry"> . <name ana="bk:to bk:group" ref="#söhne_herrvonbaumgarten">Filiis
+                  domini de <placeName ref="#ort_0046">Paumgarten</placeName></name> qui abre
+               <lb/>nunciaverunt iuri suo in bonis nostris de <placeName ref="#ort_0189"
+                  >Henzing</placeName>, et <placeName ref="#ort_0303">Neunsidel</placeName>
+               <measure ana="bk:money" quantity="4" unitRef="#t">.IIIIor. t.</measure>
+            </ab>
+            <lb/>
+            <ab ana="bk:entry"><name ana="bk:to bk:individual" ref="#abt_heinrich_aldersbach">Domino
+                  nostro abbati</name> eunti <placeName ref="#ort_0572">Erbipolim</placeName> ad
+               physicos <measure ana="bk:money" quantity="6" unitRef="#t">.VI. t.</measure> .et per
+                  <name ana="bk:by bk:from bk:individual" ref="#kustos_timo"
+                     ><roleName>dominum</roleName>
+                  <lb/>Tymonem</name> misi <rs ana="bk:to bk:individual"
+                  ref="#abt_heinrich_aldersbach">sibi</rs>
+               <measure ana="bk:money" quantity="10" unitRef="#t">.X. t</measure> quorum pars est
+               data pro <measure quantity="9" commodity="silber" unitRef="#marca">.IX. m.
+                  argenti</measure>.<!--ein Teil wurde als Silber verwendet--></ab>
+            <ab ana="bk:entry">
+               <lb/><roleName ana="bk:to bk:individual" ref="#dominicanonici">Dominis canonicis
+                     <placeName ref="#ort_0334">Pataviensibus</placeName></roleName> de <measure
+                  ana="bk:commodity" commodity="work" unitRef="#jahr">duobus annis</measure>
+               <measure ana="bk:money" quantity="4" unitRef="#t">.IIIIor. t.</measure> minus
+                  <measure ana="bk:money" quantity="12" unitRef="#trat">.XII. Rat.</measure>
+               <!--keine Ahnung, wie viel das dann ist-->
+            </ab>
+            <lb/>
+            <ab ana="bk:entry"><name ana="bk:to bk:individual" ref="#vilicus_weng">Villico in
+                     <placeName ana="bk:where" ref="#ort_0488">Weng</placeName></name>, pro <measure
+                  ana="bk:commodity" commodity="pferd">equo</measure>
+               <measure ana="bk:money" quantity="2" unitRef="#t">.II. t.</measure></ab>
+            <ab ana="bk:entry"> . <roleName ana="bk:to bk:individual" ref="#elisabeth_trüdingen"
+                  >Domine de Halzs</roleName>
+               <measure ana="bk:money" quantity="1" unitRef="#t">.I. t.</measure></ab>
+            <ab ana="bk:entry"> . Pro <measure ana="bk:commodity" commodity="pferd">equo de <lb/>
+                  <placeName ref="#ort_0254">Chunzen</placeName></measure>
+               <measure ana="bk:money" quantity="9" unitRef="#s">.IX. s.</measure></ab>
+            <ab ana="bk:entry"> .Precium <roleName ana="bk:to bk:group" ref="#familieschwendt"
+                  >familie in <placeName ref="#ort_0547">Spenthof</placeName></roleName>
+               <measure ana="bk:money" quantity="17" unitRef="#t">.X.VII. t.</measure> et <measure
+                  ana="bk:money" quantity="70" unitRef="#d">LXX. d.</measure>
+            </ab>
+            <lb/>
+            <ab ana="bk:entry">Pro <name ana="bk:to bk:organisation" ref="#kirchethaya">ecclesia in
+                     <placeName ana="bk:where" ref="#ort_0449">Teia</placeName></name> expendimus
+               ipso tempore <measure ana="bk:money" quantity="25" unitRef="#t">.XXV.
+               t.</measure></ab>
+            <ab ana="bk:entry"> . Pro <measure ana="bk:commodity" commodity="fisch"
+                  >piscibus</measure>
+               <measure ana="bk:money" quantity="15" unitRef="#s">.XV. s.</measure>
+            </ab>
+            <lb/>
+            <ab ana="bk:entry">Pro <measure ana="bk:commodity" commodity="getreide">annona</measure>
+               <measure ana="bk:money" quantity="6" unitRef="#t">.VI. t.</measure> et <measure
+                  ana="bk:money" quantity="3" unitRef="#s">III. s.</measure></ab>
+            <ab ana="bk:entry"> .<roleName>Iudici de <placeName ref="#ort_0468"
+                     >Uuilshouen</placeName></roleName> Lew. <measure ana="bk:money" quantity="1"
+                  unitRef="#t">I. t.</measure>
+            </ab>
+            <lb/>
+            <ab><name ana="bk:to bk:individual" ref="#eglolfzhaimar"><roleName>Domino</roleName>
+                  Eglolfo</name> pro <measure ana="bk:service" commodity="transport">naulo</measure>
+               <measure ana="bk:commodity" commodity="getreide">annone de Austria</measure>
+               <measure ana="bk:money" quantity="23" unitRef="#s">.XX.III. s.</measure> minus
+                  <measure ana="bk:money" quantity="7" unitRef="#srat">.VII. Rat.</measure>
+            </ab>
+            <lb/>
+            <ab ana="bk:total">Summa minutorum <measure ana="bk:money" quantity="32" unitRef="#t"
+                  >.XXX.II t.</measure> et <measure ana="bk:money" quantity="80" unitRef="#d">LXXX.
+                  d.</measure></ab>
+            <ab ana="bk:total"> .Summa universalis <lb/>distributi .CCC.XXX<measure ana="bk:money"
+                  quantity="1" unitRef="#t">.I. t.</measure></ab>
+         </div>
+         <div ana="bk:rubric" corresp="#einnahmen_1292-1293">
+            <head><!--Zeitraum--><date from="1292-05-25" to="1293-07-15">Anno Domini, M.CCXC.II.
+                  post computacionem factam cum fratre S. a festo beati Vrbani, usque ad idus
+                  Iulii</date>, sequentis anni receptum:</head>
+            <lb/>
+            <ab ana="bk:entry">Inprimis de <measure ana="bk:commodity" commodity="getreide"
+                  >annona</measure>
+               <measure ana="bk:money" quantity="147.5" unitRef="#t">.CXLVIIƗ. t.</measure> et ante
+               computatum, et <measure ana="bk:money" quantity="4" unitRef="#t">IIIIor. t.</measure>
+               et <measure ana="bk:money" quantity="6" unitRef="#s">VI. s.</measure></ab>
+            <lb/>
+            <ab ana="bk:entry">De <measure ana="bk:commodity" commodity="hafer">avena allata ab
+                  Austria</measure>
+               <measure ana="bk:money" quantity="8" unitRef="#t">.VIII. t.</measure> et <measure
+                  ana="bk:money" quantity="33" unitRef="#d">XXX.III. d.</measure></ab>
+            <ab ana="bk:entry"> .De <measure ana="bk:commodity" commodity="work">servicio</measure>
+               <lb/><measure ana="bk:money" quantity="79.5" unitRef="#t">LXXIXƗ. t.</measure> . et
+               de <measure ana="bk:commodity" commodity="work">novo servicio</measure>
+               <measure ana="bk:money" quantity="10" unitRef="#t">.X. t.</measure></ab>
+            <ab ana="bk:entry"> .De <name ana="bk:from bk:organisation" ref="#hube_adldorf">huba in
+                     <placeName ref="#ort_0004">Arelndorf</placeName></name>
+               <lb/><measure ana="bk:money" quantity="11" unitRef="#s">XI. s.</measure></ab>
+            <ab ana="bk:entry"> .De <measure ana="bk:commodity" commodity="obst">pomis</measure>
+               <measure ana="bk:money" quantity="3" unitRef="#t">.III. t.</measure></ab>
+            <ab ana="bk:entry"> . De <placeName ana="bk:where" ref="#ort_0317">Oberndorf</placeName>
+               <measure ana="bk:money" quantity="117" unitRef="#d">.Ɨ. t. minus .III. d.</measure>
+            </ab>
+            <lb/>
+            <ab ana="bk:entry">De <measure ana="bk:commodity" commodity="pferd">equo</measure>
+               quodam quem vendidit <name ana="bk:by bk:from bk:individual" ref="#eglolfzhaimar"
+                     ><roleName>dominus</roleName> Eglolfus</name>
+               <placeName ana="bk:where" ref="#ort_0536">Ratispone</placeName>
+               <measure ana="bk:money" quantity="20" unitRef="#s">.XX. s.</measure></ab>
+            <ab ana="bk:entry"> .De <measure ana="bk:commodity" commodity="wein">vino <lb/>promptis
+                  et solutis</measure>
+               <measure ana="bk:money" quantity="71" unitRef="#t">.LXX.I. t.</measure></ab>
+            <ab ana="bk:entry"> .De <measure ana="bk:right" commodity="decima">decima in <placeName
+                     ref="#ort_0573">Tekk.</placeName></measure>
+               <measure ana="bk:money" quantity="86" unitRef="#d">LXXXVI. d.</measure>
+            </ab>
+            <lb/>
+            <ab ana="bk:entry">De <measure ana="bk:commodity" commodity="getreide">annona Patauie
+                  vendita</measure> de domo et ab Austria illuc deducta <measure ana="bk:money"
+                     quantity="66" unitRef="#tpat">.LXVI t.<pb n="4" facs="#IMAGE.4" xml:id="IMG.4"
+                     /><note>abbas</note><lb/>Pat.</measure> .et <measure ana="bk:commodity"
+                  quantity="28" commodity="silber" unitRef="#marca">XXVIII. m. nigri
+                  argenti.</measure> .et <measure ana="bk:commodity" quantity="13"
+                  commodity="silber" unitRef="#marca">XIII. m. puri, argenti</measure>.</ab>
+            <!--Schwarzes und reines Silber als Bezahlung für Getreide-->
+            <gap/>
+         </div>
+         <gap/>
+         <pb n="33" facs="#IMAGE.33" xml:id="IMG.33"/>
+         <gap/>
+         <div ana="bk:rubric" corresp="#einnahmen_1315-1316">
+            <!--Visitation durch Abt-->
+            <head><name ana="bk:individual" ref="#abt_friedrich_ebrach"><roleName>Nos
+                     frater</roleName> Fridericus. <roleName>dictus abbas in
+                        <placeName>Ebera</placeName></roleName></name>, <date when="1316">anno
+                  Domini .Mo.CCCo. <lb/>.XVIo.</date> proxima <date ana="bk:when" when="1317-06-17"
+                  >dominica Trinitatis</date>, abbaciam in <placeName ref="#ort_0016"
+                  >Alderspach</placeName> fili <lb/>am nostram visitantes, submissum invenimus et
+               reliquimus statum domus:</head>
+            <ab ana="nota">
+               <lb/>Receperant a visitacione preterita, que facta fuerat, <date when="1315-07-04"
+                  >anno Domini <lb/>Mo.CCCo.XVo. in die translacionis beati Martini episcopi</date>
+               <lb/>usque in presens, quingenta et <measure ana="bk:money" quantity="32"
+                  unitRef="#trat">XXXII. t. d. Rat.</measure><!--t. d. Rat.-->
+               <pb n="34" facs="#IMAGE.34" xml:id="IMG.34"/>Cuius accepti summam seu numerum
+               expensorum per idem tempus in <measure quantity="4" unitRef="#t">quatuor
+                  <lb/>t.</measure> et <measure ana="bk:money" quantity="6" unitRef="#s">.VI.
+                  s.</measure> supercrescit. Debita domus <measure quantity="200" unitRef="#t"
+                  >ducenta t. d.</measure>
+               <lb/>Habebant pre manibus <measure commodity="brot">panis</measure> et <measure
+                  commodity="wein">vini</measure> sufficienciam usque ad nova, <lb/><measure
+                  commodity="tier">animalia</measure> sicut anno preterito. Subscripta autem in
+               accepto et ex <lb/>penso acceperant et distribuerant ut inferius est notatum:</ab>
+            <lb/>
+            <ab ana="bk:entry">De <measure ana="bk:service" commodity="work">servicio</measure>
+               <measure ana="bk:money" quantity="86" unitRef="#t">.LXXXVI. t.</measure></ab>
+            <ab ana="bk:entry"> De <measure ana="bk:service" commodity="vermietung"
+                  >locacionibus</measure>
+               <measure ana="bk:money" quantity="38" unitRef="#t">.XXXVIII. <lb/>t.</measure></ab>
+            <ab ana="bk:entry"> De <measure ana="bk:commodity" commodity="wein">vino</measure>
+               <measure ana="bk:money" quantity="230" unitRef="#t">ducenta .XXX. t.</measure></ab>
+            <ab ana="bk:entry"> De <measure ana="bk:commodity" commodity="getreide">annona</measure>
+               <measure ana="bk:money" quantity="10" unitRef="#t">.X. t.</measure>
+               <lb/>In <measure ana="bk:right" commodity="schulden">debitis</measure>
+               <measure ana="bk:money" quantity="8" unitRef="#t">.VIII. t.</measure></ab>
+            <ab ana="bk:entry"> De <measure ana="bk:commodity" commodity="verpfändeterbesitz"
+                  >obligatis quibusdam possessionibus a <lb/>nobis redemptis</measure>
+               <measure ana="bk:money" quantity="14" unitRef="#t">.XIIII. t.</measure></ab>
+            <ab ana="bk:entry"> De <measure ana="bk:right" commodity="salzprivileg">libertate
+                  salium</measure>
+               <measure ana="bk:money" quantity="17" unitRef="#t">.XVII. t.</measure></ab>
+            <lb/>
+            <ab ana="bk:entry">A <name ana="bk:from bk:individual" ref="#ulrich_braxator">quodam
+                  familiari, scilicet fratre Vlrico braxatore</name>
+               <measure ana="bk:money" quantity="23" unitRef="#t">.XXIII. t.</measure></ab>
+            <lb/>
+            <ab ana="bk:entry">Item a quodam <name ana="bk:to bk:individual">alio familiari</name><!--unbekannte Person-->
+               <measure ana="bk:money" quantity="5" unitRef="#t">.V. t.</measure></ab>
+            <ab ana="bk:entry"> Receperant a <name ana="bk:from bk:individual" ref="#königludwig"
+                     ><roleName>domino <lb/>Rege</roleName> Lvd.</name> in <measure ana="bk:right"
+                  commodity="schulden">debitis baronum suorum</measure>
+               <measure ana="bk:money" quantity="49" unitRef="#t">.XLIX. t.</measure>
+            </ab>
+            <lb/>
+            <ab ana="bk:entry"><del>Expendimus <measure quantity="10" unitRef="#t">X.
+                  t.</measure></del> Vendidimus <measure ana="bk:commodity" commodity="pferd"
+                  >equum</measure> pro <measure ana="bk:money" quantity="20" unitRef="#s">XX.
+                  s.</measure></ab>
+            <lb/>
+            <ab ana="bk:entry">De <roleName ana="bk:from bk:group" ref="#pfänder">pignoribus
+                  ducum</roleName>
+               <measure ana="bk:money" quantity="4" unitRef="#t">IIIIor. t.</measure></ab>
+            <ab ana="bk:entry"> De <placeName ana="bk:where bk:from" ref="#ort_0176">nemore, quod
+                  <lb/>dicitur Hard</placeName><!--todo: wie kodieren?-->
+               <measure ana="bk:money" quantity="19" unitRef="#s">.XIX. s.</measure></ab>
+            <ab ana="bk:entry"> Mutuavimus hoc anno <measure ana="bk:money" quantity="8"
+                  unitRef="#t">.VIII. <lb/>t.
+               Gross.</measure><!--todo: was ist das für eine Währung? Konnte auf die Schnelle nichts dazu finden-->
+               et <measure ana="bk:money" quantity="5" unitRef="#trat">.V. t. Rat.</measure> et
+                  <measure ana="bk:money" quantity="8.5" unitRef="#tpat">VIIIƗ. t.
+               Pat.</measure></ab>
+            <lb/>
+            <ab ana="bk:total">Summa quingenta, t. minus .<measure ana="bk:money" quantity="18"
+                  unitRef="#t">XVIII. t.</measure></ab>
+            <lb/>
+            <ab ana="bk:entry">Subscripta extra computacionem acceperant: De <name ana="bk:from">Rvd
+                  <lb/>marsfelden</name><!--todo: was ist rvd?--> .<measure ana="bk:money"
+                  quantity="40" unitRef="#t">XL. t.</measure></ab>
+            <lb/>
+         </div>
+         <div ana="bk:rubric" corresp="#ausgaben_1315-1316">
+            <ab ana="nota">Distributum per idem tempus: </ab>
+            <ab ana="bk:entry">Solvimus <date ana="bk:when" from="1315" to="1316" xml:id="date_001"
+                  >eodem anno</date>
+               <lb/><measure ana="bk:money" quantity="111" unitRef="#t">centum et .XI.
+               t.</measure></ab>
+            <ab ana="bk:entry">
+               <name ana="bk:to bk:organisation" ref="#convent">Conventui</name> pro <measure
+                  ana="bk:commodity" commodity="kleidung">vestitu</measure>
+               <measure ana="bk:money" quantity="26" unitRef="#t">.XXVI. <lb/>t.</measure></ab>
+            <ab ana="bk:entry"><roleName ana="bk:to bk:individual" ref="#hofmeisteraldersbach"
+                  >Magistro curie</roleName> pro <measure ana="bk:service" commodity="erntearbeit"
+                  >fenacione et messione</measure>, <lb/><measure ana="bk:money" quantity="24"
+                  unitRef="#t">XXIIII. t.</measure></ab>
+            <ab ana="bk:entry">
+               <roleName ana="bk:to bk:individual" ref="#kellermeister_schwendt">Cellerario in
+                     <placeName ana="bk:where" ref="#ort_0547">Spenthof</placeName></roleName>
+               <measure ana="bk:money" quantity="33" unitRef="#t">XXXIII. t.</measure></ab>
+            <lb/>
+            <ab ana="bk:entry">Precium <roleName ana="bk:to bk:group" ref="#bedienstete"
+                  >famulorum</roleName>
+               <measure ana="bk:money" quantity="22" unitRef="#t">.XXII. t.</measure></ab>
+            <ab ana="bk:entry"> Pro <measure ana="bk:service" commodity="weintransport">naulo
+                  vini</measure> de <lb/><placeName>Austria</placeName> usque <placeName
+                  ref="#ort_0334">Pat.</placeName>
+               <measure ana="bk:money" quantity="191" unitRef="#t">CC. t. minus .IX.
+               t.</measure></ab>
+            <ab ana="bk:entry"> Pro ex <lb/>pensis <roleName ana="bk:to bk:individual"
+                  ref="#abt_konrad_aldersbach">domini abbatis</roleName>, quas habuit tam pro se
+               quam pro domino <lb/>de Hals, et civibus de Pat <!--todo: kodieren?--><measure
+                  ana="bk:money" quantity="50" unitRef="#trat">.L. t. Rat.</measure></ab>
+            <ab ana="bk:entry"> Pro <measure ana="bk:commodity" commodity="fastenspeise">quadra
+                  <lb/>gesimalibus</measure>
+               <measure ana="bk:money" quantity="10" unitRef="#t">.X. t.</measure></ab>
+            <ab ana="bk:entry">
+               <roleName ana="bk:to bk:group" ref="#maurer">Muratoribus</roleName>
+               <measure ana="bk:money" quantity="8" unitRef="#t">.VIII. t.</measure> et, <measure
+                  ana="bk:money" quantity="3" unitRef="#s">III. s.</measure></ab>
+            <lb/>
+            <ab ana="bk:entry"><roleName ana="bk:to bk:group" ref="#zimmerleute"
+                  >Carpentariis</roleName> et <roleName ana="bk:to bk:group" ref="#arbeiter"
+                  >operariis diversis</roleName> in claustro <measure ana="bk:money" quantity="5.5"
+                  unitRef="#t">.VƗ. t.</measure>
+            </ab>
+            <lb/>
+            <ab ana="bk:entry"><roleName ana="bk:to bk:group" ref="#ziegler">Coquentibus lateres et
+                  cooperatoribus eorundem</roleName>
+               <measure ana="bk:money" quantity="6" unitRef="#t">.VI. t.</measure> et <lb/><measure
+                  ana="bk:money" quantity="5" unitRef="#d">.V. d.</measure></ab>
+            <ab ana="bk:entry">
+               <roleName ana="bk:to bk:group" ref="#drescher">Trituratoribus</roleName> extra
+               claustrum <measure ana="bk:money" quantity="13" unitRef="#s">.XIII. s.</measure></ab>
+            <lb/>
+            <ab ana="bk:entry">Pro comparacione <measure ana="bk:commodity" commodity="vase"
+                  >antiquorum vasorum</measure> et precio <measure ana="bk:money" quantity="5"
+                  unitRef="#t">.V. t.</measure> et <measure ana="bk:money" quantity="60"
+                  unitRef="#d">LX. d.</measure></ab>
+            <lb/>
+            <ab ana="bk:entry">Pro <measure ana="bk:service" quantity="0.5" commodity="salz"
+                  unitRef="#tonne">vectura dimidii, t. salis de salina</measure>, et expensis
+                  <lb/><measure ana="bk:money" quantity="4" unitRef="#t">IIII. t.</measure>
+               <measure ana="bk:money" quantity="3" unitRef="#s">III. s.</measure></ab>
+            <ab ana="bk:entry"> Pro <measure ana="bk:commodity" commodity="heu">feno
+                  comparato</measure>
+               <measure ana="bk:money" quantity="5" unitRef="#t">.V. t.</measure></ab>
+            <ab ana="bk:entry">
+               <roleName ana="bk:to bk:individual" ref="#kellermeister_unbekannt">Cellerario
+                  <lb/>dominorum</roleName> pro <measure ana="bk:service"
+                  commodity="verbesserung_gerste">melioracione ordei</measure>
+               <measure ana="bk:money" quantity="3" unitRef="#t">.III. t.</measure></ab>
+            <ab ana="bk:entry"> Tempore gwerre <lb/><roleName ana="bk:to bk:individual"
+                  ref="#defensor_aldersbach">deffensori nostro</roleName> in claustro aliisque
+               diversis diversimo <lb/>de datis <measure ana="bk:money" quantity="15" unitRef="#t"
+                  >.XV. t.</measure> et <measure ana="bk:money" quantity="54" unitRef="#d">LIIII.
+                  d.</measure></ab>
+            <ab ana="bk:entry"> Comparavimus <measure ana="bk:commodity" quantity="2"
+                  commodity="hof">duas <lb/>curias</measure>, in <placeName ana="bk:where"
+                  ref="#ort_0116">Frenchendorf</placeName>, pro <measure ana="bk:money"
+                  quantity="64" unitRef="#t">.LXIIII. t.</measure></ab>
+            <lb/>
+            <!--Kauf zweier Höfe in Fränkendorf-->
+            <ab ana="bk:total">Summa minorum <measure ana="bk:money" quantity="40" unitRef="#t">.XL.
+                  t.</measure></ab>
+            <ab ana="bk:total"> Summa universalis distributi <lb/>quingenta, t. et <measure
+                  ana="bk:money" quantity="61" unitRef="#t">LXI. t.</measure></ab>
+            <ab ana="bk:nota">
+               <date from="1315" to="1316" corresp="#date_001">Eodem anno</date> extra compu
+               <lb/>tacionem subscripta distributi:</ab>
+            <ab ana="bk:entry"> Visitacio nostra <date ana="bk:when" from="1315" to="1316"
+                  corresp="#date_001">eoisdem <lb/>anni</date>, per <roleName ana="bk:individual"
+                  ref="#abt_friedrich_ebrach">venerabilem, dominum Ebracensem</roleName> facta
+               <!--bk:to beim Ebracher Abt wäre nicht richtig, weil er das Geld ja nicht bekommen hat, es wurde für ihn ausgegeben-->,
+               constabat in uni <lb/>verso <measure ana="bk:money" quantity="22" unitRef="#t">.XXII.
+                  t.</measure></ab>
+            <ab ana="bk:to">
+               <roleName ana="bk:to bk:group" ref="#canonici_passau">Canonicis
+                  Pataviensibus</roleName> pro <measure ana="bk:commodity" commodity="tier"
+                  >hedis</measure>
+               <measure ana="bk:money" quantity="7" unitRef="#s">.VII. s.</measure></ab>
+         </div>
+         <gap/>
+         <div ana="bk:rubric" corresp="#ausgaben_1353-1354">
+            <gap/>
+            <lb facs="#facs_80_line_57"/>
+            <pb n="81" facs="#IMAGE.81" xml:id="IMG.81"/>
+            <ab ana="bk:entry">Item ad <measure ana="bk:service" commodity="weinbau">culturam
+                  vinearum</measure> in Austria <measure ana="bk:money" quantity="25"
+                  unitRef="#lbdwien">LVII lb. minus XXXII</measure>
+               <lb facs="#facs_81_line_1"/></ab>
+            <ab ana="bk:entry">Item pro redditibus <measure ana="bk:money" quantity="1" unitRef="#t"
+                  >unius t.</measure>, scilicet datz den <placeName ana="bk:where" ref="#ort_0014"
+                  >Aychen</placeName>
+               <measure ana="bk:money" quantity="10" unitRef="#lbdwien">.X. lb.</measure>
+               <lb facs="#facs_81_line_2"/></ab>
+            <ab ana="bk:entry">Item de <measure ana="bk:service" commodity="heumähen">falcacione
+                  feni anni presentis</measure>
+               <measure ana="bk:money" quantity="7" unitRef="#lbdwien">VII lb.</measure>
+               <measure ana="bk:money" quantity="5" unitRef="#s">V. s.</measure>
+               <measure ana="bk:money" quantity="13" unitRef="#d">XIII.</measure>
+               <lb facs="#facs_81_line_3"/></ab>
+            <ab ana="bk:entry">Item <seg ana="bk:status">solvimus</seg>
+               <roleName ana="bk:to bk:group" ref="#gläubiger_unbekannt">creditoribus
+                  nostris</roleName>
+               <!--todo: Sollte man hier auch zusätzlich bk:credit kodieren?-->
+               <measure ana="bk:money" quantity="52" unitRef="#lbdwien">LII lb.</measure></ab>
+            <ab ana="bk:entry">Item de nova <lb facs="#facs_81_line_4"/>bursaria, <roleName
+                  ana="bk:to bk:group" ref="#maurer">muratoribus</roleName> et <roleName
+                  ana="bk:to bk:group" ref="#arbeiter">famulis laborantibus</roleName>
+               <measure ana="bk:money" quantity="4" unitRef="#lbdwien">IIIIor lb.</measure>
+               <measure ana="bk:money" quantity="70" unitRef="#d">LXX.</measure>
+               <lb facs="#facs_81_line_5"/></ab>
+            <ab ana="bk:entry">Item <roleName ana="bk:to bk:individual" ref="#organist_aldersbach"
+                  >organiste</roleName>
+               <measure ana="bk:money" quantity="1" unitRef="#lbdwien">I lb.</measure>
+               <measure ana="bk:money" quantity="5" unitRef="#s">V s.</measure>
+               <measure ana="bk:money" quantity="24" unitRef="#d">XXIIII. d.</measure></ab>
+            <ab ana="bk:total">
+               <lb facs="#facs_81_line_6"/>Summa Quingente <measure ana="bk:money" quantity="6"
+                  unitRef="#lbdwien">VI lb.</measure>
+               <measure ana="bk:money" quantity="4" unitRef="#s">IIII s.</measure>
+               <measure ana="bk:money" quantity="2" unitRef="#d">II d.</measure></ab>
+         </div>
+         <div ana="bk:rubric" corresp="#einnahmen_1355-1356">
+            <lb facs="#facs_81_line_7"/>
+            <head><date ana="bk:when" from="1355" to="1356">Anno Domini Mo.CCC.moLoSexto</date>
+               visitacione facta <lb facs="#facs_81_line_8"/><date when="1355-08-06">in die sancti
+                  Sixti martiris</date> a venerabile <name ana="bk:individual"
+                  ref="#abt_otto_ebrach"><roleName>domino</roleName> Ottone <roleName>abbate
+                     Ebracense</roleName></name>.</head>
+            <lb facs="#facs_81_line_9"/>
+            <ab ana="nota"> Recepimus sub<lb facs="#facs_81_line_10" break="no"/>notata:</ab>
+            <ab ana="bk:entry">Primo de <name ana="bk:from bk:organisation"
+                  ref="#forum_ruesmarsuelden">foro Ruͤdmarsuelden</name>
+               <measure ana="bk:money" quantity="35.5" unitRef="#lbdrat">.XXXVƗ lb. Rat.</measure>
+               <lb facs="#facs_81_line_11"/></ab>
+            <ab ana="bk:entry">Item de <name ana="bk:from bk:organisation" ref="#kirchegeyerstal"
+                  >ecclesia <placeName ref="#ort_0530">Geyrstal</placeName></name>
+               <measure ana="bk:money" quantity="19" unitRef="#lbdwien">.XIX. lb.</measure></ab>
+            <ab ana="bk:entry">Item de <name ana="bk:from bk:organisation"
+                  ref="#kirchesanctijohannis">ecclesia <lb facs="#facs_81_line_12"/>sancti
+                  Johannis</name>
+               <measure ana="bk:money" quantity="25" unitRef="#lbdwien">XXV lb.</measure></ab>
+            <ab ana="bk:entry">Item de <name ana="bk:from bk:organisation"
+                  ref="#ländereiensanctijohannis">prediis ibidem</name>, <measure ana="bk:money"
+                  quantity="3" unitRef="#lbdwien">III lb.</measure>
+               <lb facs="#facs_81_line_13"/></ab>
+            <ab ana="bk:entry">Item de <name ana="bk:from bk:organisation" ref="#kirchemünster"
+                  >ecclesia <placeName ref="#ort_0561">Muͤnstew<hi rend="superscript"
+                     >e</hi>r</placeName></name>
+               <measure ana="bk:money" quantity="34" unitRef="#lbdwien">XXIIIIor lb.</measure></ab>
+            <ab ana="bk:entry">Item vendi<lb facs="#facs_81_line_14" break="no"/>dimus <measure
+                  ana="bk:commodity" commodity="haus">domum unam</measure> in <placeName
+                  ref="#ort_0334">Patauia</placeName>
+               <name ana="bk:from bk:individual" ref="#friedrichchraegel_heft">Chreglino de
+                     <placeName ana="bk:where" ref="#ort_0185">Heft</placeName></name> pro <lb
+                  facs="#facs_81_line_15"/><measure ana="bk:money" quantity="30" unitRef="#lbdpat"
+                  >XXX. lb. Pat.</measure> id est <measure quantity="16" unitRef="#lbdwien">XVI
+                  lb.</measure>
+               <measure quantity="5" unitRef="#s">V s.</measure>
+               <measure quantity="10" unitRef="#d">X. d.</measure> Rat.</ab>
+            <!--Hier Umrechnungskurs angegeben-->
+            <ab ana="bk:entry">Item <lb facs="#facs_81_line_16"/>idem <name
+                  ana="bk:from bk:individual" ref="#friedrichchraegel_heft">Chreglinus</name> dedit
+               nobis de <measure ana="bk:commodity" commodity="haus">alia domo</measure> in
+                  <placeName ref="#ort_0334">Pat.</placeName>
+               <!--"Pat." als Ort und Währungsabkürzung im Text-->
+               <measure ana="bk:money" quantity="1" unitRef="#lbdwien">I lb.</measure>
+               <lb facs="#facs_81_line_17"/><measure ana="bk:money" quantity="40" unitRef="#d">XL.
+                  d.</measure></ab>
+            <ab ana="bk:entry">Item de <measure ana="bk:right" commodity="salzprivileg">libertate
+                  salium</measure>
+               <measure ana="bk:money" quantity="12" unitRef="#lbdwien">XII lb.</measure>
+               <measure ana="bk:money" quantity="24" unitRef="#d">XXIIIIor d.</measure></ab>
+            <ab ana="bk:entry">Item <lb facs="#facs_81_line_18"/>de <measure ana="bk:right"
+                  commodity="zehnt">decima</measure> in <placeName ref="#ort_0573"
+                  >Tekkendorf</placeName>
+               <measure ana="bk:money" quantity="15" unitRef="#fl">XV fl.</measure>
+               <measure ana="bk:money" quantity="70" unitRef="#d">LXX d. Rat.</measure></ab>
+            <lb facs="#facs_81_line_19"/>
+            <ab ana="bk:entry">Item de <measure ana="bk:commodity" quantity="3" commodity="pferd"
+                  >tribus equis venditis</measure>
+               <measure ana="bk:money" quantity="12" unitRef="#lbdwien">.XII lb.</measure></ab>
+            <ab ana="bk:entry">Item de <measure ana="bk:commodity" commodity="weizen">triti<lb
+                     facs="#facs_81_line_20" break="no"/>co vendito</measure>
+               <measure ana="bk:money" quantity="48" unitRef="#lbdwien">XLVIII lb.</measure>
+               <measure ana="bk:money" quantity="45" unitRef="#d">XLV. d.</measure></ab>
+            <ab ana="bk:entry">Item de <measure ana="bk:right" commodity="verpachtung_landgut"
+                  >locacione cuius<lb facs="#facs_81_line_21" break="no"/>dam predii</measure>
+               <placeName>ultra Enum</placeName>
+               <!--keine genaue Ortsangabe-->
+               <measure ana="bk:money" quantity="4" unitRef="#lbdwien">IIIIor. lb.</measure></ab>
+            <ab ana="bk:entry">Item de <measure ana="bk:right" commodity="zins">censu <lb
+                     facs="#facs_81_line_22"/>novo</measure>
+               <measure ana="bk:money" quantity="88" unitRef="#lbdwien">LXXXVIII lb.</measure>
+               <measure ana="bk:money" quantity="3" unitRef="#s">III s.</measure>
+               <measure ana="bk:money" quantity="10" unitRef="#d">X d.</measure></ab>
+            <ab ana="bk:entry">Item de <measure ana="bk:right" commodity="zins">censu
+                  antiquo</measure>
+               <lb facs="#facs_81_line_23"/><measure ana="bk:money" quantity="20" unitRef="#lbdwien"
+                  >XX lb.</measure>
+               <measure ana="bk:money" quantity="6" unitRef="#s">VI s.</measure>
+               <measure ana="bk:money" quantity="5" unitRef="#d">V d.</measure></ab>
+            <ab ana="bk:entry">Item de <measure ana="bk:right" commodity="abgabe">stifta</measure>
+               <measure ana="bk:money" quantity="4790" unitRef="#d">.XX lb. minus X d.</measure>
+            </ab>
+            <lb facs="#facs_81_line_24"/>
+            <ab ana="bk:entry">Item de <measure ana="bk:commodity" commodity="zins">censu <date
+                     ana="bk:when" when="1355">anni presentis</date></measure>
+               <measure ana="bk:money" quantity="11" unitRef="#lbdwien">XI. lb.</measure>
+               <measure ana="bk:money" quantity="62" unitRef="#d">LXII d.</measure></ab>
+            <ab ana="bk:entry">Item de <lb facs="#facs_81_line_25"/><measure ana="bk:commodity"
+                  commodity="wein">vino</measure>
+               <measure ana="bk:money" quantity="46" unitRef="#lbdwien">XLVI lb.</measure></ab>
+            <ab ana="bk:entry">Item de <measure ana="bk:right" commodity="schulden"
+                  >mutuatis</measure>
+               <measure ana="bk:money" quantity="12" unitRef="#lbdwien">d. LXXII lb. minus
+                  LX</measure></ab>
+            <lb facs="#facs_81_line_26"/>
+            <ab ana="bk:total">Summa <measure ana="bk:money" quantity="472" unitRef="#lbdwien"
+                  >CCCCte. lb. LXIIa lb.</measure>
+               <measure ana="bk:money" quantity="16" unitRef="#d">XVI. d.</measure>
+               <lb facs="#facs_81_line_27"/><note><measure ana="bk:commodity" commodity="heu"
+                     >secundum fenum</measure>
+                  <measure ana="bk:money" quantity="10" unitRef="#lbdwien">X <lb
+                        facs="#facs_81_line_28"/>lb.</measure>
+                  <measure ana="bk:money" quantity="7" unitRef="#s">VII <lb facs="#facs_81_line_29"
+                     />s</measure>. <measure ana="bk:money" quantity="7" unitRef="#d">VII <lb
+                        facs="#facs_81_line_30"/>d.</measure></note></ab>
+         </div>
+         <div ana="bk:rubric" corresp="#ausgaben_1355-1356">
+            <lb facs="#facs_81_line_31"/>
+            <ab ana="bk:nota"><note>Item</note>
+               <lb facs="#facs_81_line_32"/><note>ad I</note>
+               <lb facs="#facs_81_line_33"/>Distributum:</ab>
+            <ab ana="bk:entry">Visitacio constabat <measure ana="bk:money" quantity="22"
+                  unitRef="#lbdwien">XXII lb.</measure>
+               <measure ana="bk:money" quantity="5" unitRef="#s">V. s.</measure>
+               <measure ana="bk:money" quantity="12" unitRef="#d">XII d.</measure>
+            </ab>
+            <lb facs="#facs_81_line_34"/>
+            <ab ana="bk:entry">Item <roleName ana="bk:to bk:individual"
+                  ref="#hofmeister_heinrichamann_aldersbach">magistro curie</roleName> pro <measure
+                  ana="bk:commodity" commodity="eisen">ferro</measure>, <measure ana="bk:commodity"
+                  commodity="butter">butiro</measure>, <measure ana="bk:commodity" commodity="käse"
+                  >caseis</measure> et ceteris <measure ana="bk:money" quantity="30"
+                  unitRef="#lbdwien">XXX. lb.</measure>
+            </ab>
+            <lb facs="#facs_81_line_35"/>
+            <ab ana="bk:entry">Item <roleName ana="bk:to bk:group" ref="#bedienstete">famulis in
+                  curia</roleName> pro <measure ana="bk:service" commodity="work">precio</measure><!--todo: ist precio als service sinnvoll?-->
+               <measure ana="bk:money" quantity="24" unitRef="#lbdwien">XXIIIIor lb.</measure></ab>
+            <ab ana="bk:entry">Item ad <lb facs="#facs_81_line_36"/><measure ana="bk:commodity"
+                  commodity="heu">fenum</measure>
+               <measure ana="bk:money" quantity="2370" unitRef="#d">X. lb. minus XXX
+               d.</measure></ab>
+            <ab ana="bk:entry">Item ad <measure ana="bk:service" commodity="erntearbeit"
+                  >messem</measure>
+               <measure ana="bk:money" quantity="24" unitRef="#lbdwien">XXIIIIor lb.</measure>
+               <lb facs="#facs_81_line_37"/><measure ana="bk:money" quantity="5" unitRef="#s">V
+                  s.</measure>
+               <measure ana="bk:money" quantity="20" unitRef="#d">XX d.</measure></ab>
+            <ab ana="bk:entry">Item <name ana="bk:to bk:group" ref="#drescher">trituratoribus</name>
+               <measure ana="bk:money" quantity="2397" unitRef="#d">X. lb. minus III d.</measure>
+               <lb facs="#facs_81_line_38"/></ab>
+            <ab ana="bk:entry">Item ad <measure ana="bk:commodity" commodity="getreidelager"
+                  >granarium</measure>
+               <measure ana="bk:money" quantity="1" unitRef="#lbdwien">I lb.</measure>
+               <measure ana="bk:money" quantity="11" unitRef="#d">XI d.</measure></ab>
+            <ab ana="bk:entry">Item pro <measure ana="bk:right" commodity="abgabe"
+                  >contribucione</measure>
+               <lb facs="#facs_81_line_39"/><name ana="bk:to bk:organisation"
+                  ref="#klosterverwaltung_aldersbach">capituli</name>
+               <measure ana="bk:money" quantity="2" unitRef="#lbdwien">II lb.</measure></ab>
+            <ab ana="bk:entry">Item pro <measure ana="bk:right" commodity="abgabe"
+                  >honoracionibus</measure>
+               <roleName ana="bk:to bk:grup" ref="amtsträger_divers">baronum, iudicum, pre<lb
+                     facs="#facs_81_line_40" break="no"/>conum, et ceterorum</roleName>
+               <measure ana="bk:money" quantity="13" unitRef="#lbdwien">XIII lb.</measure>
+               <measure ana="bk:money" quantity="5" unitRef="#s">V s.</measure>
+               <measure ana="bk:money" quantity="26" unitRef="#d">XXVI d.</measure></ab>
+            <ab ana="bk:entry">Item <roleName ana="bk:to bk:individual" ref="#abt_konrad_aldersbach"
+                  >domino <lb facs="#facs_81_line_41"/>abbati</roleName> pro expensis ad diversa
+               loca pro negociis monasterii <!--todo: wie kodieren? als service?-->
+               <lb facs="#facs_81_line_42"/><measure ana="bk:money" quantity="2094" unitRef="#d">IX
+                  lb. minus XLVI. d.</measure></ab>
+            <ab ana="bk:entry">Item <measure ana="bk:service" commodity="transport_salz">vectura
+                  salis</measure> constabat <lb facs="#facs_81_line_43"/><measure ana="bk:money"
+                  quantity="4" unitRef="#lbdwien">IIIIor lb.</measure>
+               <measure ana="bk:money" quantity="25" unitRef="#d">XXV d.</measure></ab>
+            <ab ana="bk:entry">Item <roleName ana="bk:to bk:group"
+                  ref="#klosterbrüder_aldersbach_divers">fratribus</roleName>
+               <measure ana="bk:service" commodity="work"
+                  ><!--kann man noch ausdifferenzieren-->missis pro diversis nego<lb
+                     facs="#facs_81_line_44" break="no"/>ciis domus</measure> et <roleName
+                  ana="bk:to bk:group" ref="#gäste_aldersbach_divers">hospitibus</roleName> emissis
+               et per nos transeuntibus <measure ana="bk:money" quantity="5.5" unitRef="#lbdwien">Ꝟ
+                  lb.</measure><!--Schwierig zu kodieren. Die Verpflegungskosten von Gästen (emissis et per nos transeuntibus) kann ich m.E. weder als bk:service noch als bk:right kodieren -->
+               <lb facs="#facs_81_line_45"/></ab>
+            <ab ana="bk:entry">Item <roleName ana="bk:to bk:group" ref="#boten_divers">diversis
+                  cursoribus et portantibus</roleName>
+               <measure ana="bk:service" commodity="benachrichtigung_todesfall">litteras
+                  defunctorum</measure>
+               <lb facs="#facs_81_line_46"/><measure ana="bk:money" quantity="3.5"
+                  unitRef="#lbdwien">IIIƗ lb.</measure>
+               <measure ana="bk:money" quantity="4" unitRef="#d">IIIIor d.</measure></ab>
+
+
+            <ab ana="bk:entry">Item ad <name ana="bk:to bk:organisation" ref="#brauerei_aldersbach"
+                  >praxatorium</name> pro <measure ana="bk:service" commodity="work">precio
+                  laboratoribus</measure><!--todo: ist precio als service sinnvoll?-->
+               <lb facs="#facs_81_line_47"/><measure ana="bk:money" quantity="2" unitRef="#lbdwien"
+                  >II lb.</measure>
+               <measure ana="bk:money" quantity="3" unitRef="#s">III s.</measure>
+               <measure ana="bk:money" quantity="16" unitRef="#d">XVI d.</measure></ab>
+            <ab ana="bk:entry"><rs ana="bk:to bk:organisation" ref="#brauerei_aldersbach"
+                  >Ibidem</rs> pro <measure ana="bk:commodity" commodity="gerste">ordeo</measure>
+               <measure ana="bk:money" quantity="16" unitRef="#lbdwien">XVI lb.</measure>
+            </ab>
+            <lb facs="#facs_81_line_48"/>
+            <ab ana="bk:entry">Item <measure ana="bk:service" commodity="transport"
+                  >portantibus</measure>
+               <measure ana="bk:commodity" commodity="wildfleisch">ferinas</measure> et <measure
+                  ana="bk:commodity" commodity="ehrengeschenk">alias honoraciones</measure>
+               <measure ana="bk:money" quantity="1" unitRef="#lbdwien">I. lb.</measure>
+               <measure ana="bk:money" quantity="30" unitRef="#d">XXX d.</measure>
+            </ab>
+            <lb facs="#facs_81_line_49"/>
+            <ab ana="bk:entry">Item <measure ana="bk:commodity" commodity="rasiermesser"
+                  >rasori</measure>
+               <measure ana="bk:money" quantity="0.5" unitRef="#lbdwien">Ɨ. lb.</measure>
+               <measure ana="bk:money" quantity="34" unitRef="#d">XXXIIIIor d.</measure></ab>
+            <ab ana="bk:entry">Item pro <measure ana="bk:commodity" commodity="sattel"
+                  >sellis</measure>, <measure ana="bk:commodity" commodity="riemen">corri<lb
+                     facs="#facs_81_line_50" break="no"/>giis</measure> et <measure
+                  ana="bk:commodity" commodity="pferdezubehör">aliis neccessariis ad stabulum
+                  equorum</measure>
+               <measure ana="bk:money" quantity="1" unitRef="#lbdwien">I. lb.</measure>
+               <measure ana="bk:money" quantity="26" unitRef="#d">XXVI d.</measure>
+            </ab>
+            <lb facs="#facs_81_line_51"/>
+            <ab ana="bk:entry">Item <roleName ana="bk:to bk:individual"
+                  ref="#nachtwächter_aldersbach">custodibus in nocte</roleName>
+               <measure ana="bk:money" quantity="6" unitRef="#s">VI s.</measure>
+               <measure ana="bk:money" quantity="9" unitRef="#d">IX d.</measure></ab>
+            <ab ana="bk:entry">Item ad <name ana="bk:to bk:individual" ref="#simon_bäckermeister"
+                     ><roleName>pistrinum <lb facs="#facs_81_line_52"/> primo fratri</roleName>
+                  Symoni de <placeName>Rota</placeName></name>
+               <measure ana="bk:money" quantity="0.5" unitRef="#lbdwien">.Ɨ. lb.</measure>
+               <measure ana="bk:money" quantity="10" unitRef="#d">X d.</measure> et <roleName
+                  ana="bk:to bk:group" ref="#bedienstete_simon_bäckermeister">famulis <lb
+                     facs="#facs_81_line_53"/>suis</roleName> pro <measure ana="bk:service"
+                  commodity="work">precio</measure>
+               <measure ana="bk:money" quantity="14" unitRef="#s">XIIIIor s.</measure></ab>
+            <ab ana="bk:entry"><name ana="bk:to bk:individual" ref="#konrad_klosterbruder"
+                     ><roleName>Fratri</roleName> Chunrado</name>
+               <measure ana="bk:money" quantity="14" unitRef="#s">XIIIIor s.</measure></ab>
+            <ab ana="bk:total"> Summa IIIIor lb. X. </ab>
+            <lb facs="#facs_81_line_54"/>
+            <ab ana="bk:entry">Item <roleName ana="bk:to bk:group" ref="#diener_abt_aldersbach"
+                  >servitoribus <roleName ref="#abt_konrad_aldersbach">domini
+                  abbatis</roleName></roleName> pro <measure ana="bk:commodity" commodity="kleidung"
+                  >vestitu hyemali et <lb facs="#facs_81_line_55"/>estivali</measure>
+               <measure ana="bk:money" quantity="1" unitRef="#lbdwien">I lb.</measure>
+               <measure ana="bk:money" quantity="68" unitRef="#d">LXVIII d.</measure></ab>
+            <ab ana="bk:entry">Item ad <date>quadragesimam</date>
+               <lb facs="#facs_81_line_56"/>pro <measure ana="bk:commodity" commodity="olivenöl"
+                  >oleo olive</measure> et <measure ana="bk:commodity" commodity="fastenspeise"
+                  >ceteris quadragesimalibus</measure>
+               <measure ana="bk:money" quantity="11" unitRef="#lbdwien">XI lb.</measure>
+               <measure ana="bk:money" quantity="5" unitRef="#s">V. s.</measure>
+               <measure ana="bk:money" quantity="20" unitRef="#d">XX. d.</measure>
+            </ab>
+            <lb facs="#facs_81_line_57"/>
+            <ab ana="bk:entry">Item pro <measure ana="bk:commodity" commodity="pfeffer"
+                  >pipere</measure>, <measure ana="bk:commodity" commodity="safran">croco</measure>
+               et <measure ana="bk:commodity" commodity="gewürze">aliis speciebus</measure>
+               <measure ana="bk:money" quantity="7" unitRef="#lbdwien">VII lb.</measure>
+               <measure ana="bk:money" quantity="72" unitRef="#d">LXXII d.</measure>
+            </ab>
+            <lb facs="#facs_81_line_58"/>
+            <ab ana="bk:entry">Item ad <roleName ana="bk:to bk:group"
+                  ref="#coquina_abt_konrad_aldersbach">coquinam domini abbatis</roleName> pro
+                  <measure ana="bk:commodity" commodity="butter">butiro</measure>, <measure
+                  ana="bk:commodity" commodity="käse">caseis</measure>, <measure ana="bk:commodity"
+                  commodity="fisch">piscibus</measure>
+               <lb facs="#facs_81_line_59"/><measure ana="bk:money" quantity="7.5"
+                  unitRef="#lbdwien">VIIƗ lb.</measure>
+               <measure ana="bk:money" quantity="16" unitRef="#d">XVI d.</measure></ab>
+            <ab ana="bk:entry">Item <name ana="bk:to bk:organisation" ref="#convent"
+                  >conventui</name> pro <measure ana="bk:commodity" commodity="fisch"
+                  >piscibus</measure>
+               <measure ana="bk:money" quantity="5.5" unitRef="#lbdwien">Ꝟ lb.</measure>
+            </ab>
+            <lb facs="#facs_81_line_60"/>
+            <ab ana="bk:entry">Item ad <roleName ana="bk:to bk:group"
+                  ref="#coquina_abt_konrad_aldersbach">coquinam domini abbatis</roleName> pro
+                  <measure ana="bk:commodity" commodity="fleisch">carnibus</measure> et <measure
+                  ana="bk:commodity" commodity="hühnerfleisch">pullis</measure> et <measure
+                  ana="bk:commodity" commodity="wildfleisch">ferinis</measure>
+               <lb facs="#facs_81_line_61"/>in consolacione patrum abbatum et fratrum <measure
+                  ana="bk:money" quantity="10" unitRef="#lbdwien">X. lb.</measure>
+               <measure ana="bk:money" quantity="6" unitRef="#s">VI. s.</measure>
+               <measure ana="bk:money" quantity="19" unitRef="#d">XIX d.</measure>
+            </ab>
+            <lb facs="#facs_81_line_62"/>
+            <ab ana="bk:entry">Item magistro hospitum dedi, <measure ana="bk:money" quantity="3"
+                  unitRef="#lbdwien">III lb.</measure>
+               <measure ana="bk:money" quantity="5" unitRef="#s">V s.</measure>
+               <measure ana="bk:money" quantity="13" unitRef="#d">XIII d.</measure>
+               <name ana="bk:to bk:individual" ref="#bruder_heinrich"><roleName>fratri</roleName>
+                  Heinrico</name>. </ab>
+            <lb facs="#facs_81_line_63"/>
+            <ab ana="bk:entry">Item hospitibus
+               <!--Bezahlung nicht an die Gäste, sondern für Fisch für die Gäste? Insofern kein economic agent-->
+               pro <measure ana="bk:commodity" commodity="fisch">piscibus</measure>
+               <measure ana="bk:money" quantity="146" unitRef="#d">V s. minus IIIIor
+               d.</measure></ab>
+            <ab ana="bk:entry">Item <roleName ana="bk:to bk:individual"
+                  ref="#gottfried_bischofweißeneck">episcopo Pat.</roleName>
+               <lb facs="#facs_81_line_64"/>pro <measure ana="bk:commodity" commodity="steuer"
+                  >steura de <placeName>ecclesia sancti Johannis</placeName></measure>
+               <measure ana="bk:money" quantity="2" unitRef="#lbdwien">II lb.</measure>
+               <measure ana="bk:money" quantity="50" unitRef="#d">L. d.</measure>
+            </ab>
+            <lb facs="#facs_81_line_65"/>
+            <ab ana="bk:entry">Item pro <measure ana="bk:commodity" commodity="fass"
+                  >cyffis</measure>, <measure ana="bk:commodity" commodity="glas">vitris</measure>,
+                  <measure ana="bk:commodity" commodity="schüssel">scutellis</measure>, <measure
+                  ana="bk:commodity" commodity="topf">ollis</measure>, <measure ana="bk:commodity"
+                  commodity="pergament">pergameno</measure> et <lb facs="#facs_81_line_66"
+               />consimilibus <measure ana="bk:money" quantity="4" unitRef="#lbdwien">IIIIor
+                  lb.</measure></ab>
+            <ab ana="bk:entry">Item ad <roleName ana="bk:to bk:individual" ref="#schuster_unbekannt"
+                  >officium sutoris</roleName>
+               <pb n="82" facs="#IMAGE.82" xml:id="IMG.82"/>
+               <lb facs="#facs_81_line_67"/>
+               <add>+ <name ana="bk:to bk:group" ref="#maurer">murato<lb facs="#facs_82_line_1"
+                     />ri</name> de<lb facs="#facs_82_line_2"/>domo</add>
+               <lb facs="#facs_82_line_3"/><add>in <placeName ana="bk:where" ref="#ort_0334"
+                     >Patavia</placeName></add>
+               <lb facs="#facs_82_line_4"/>pro <measure ana="bk:commodity" commodity="bett"
+                  >lectisterniis</measure>
+               <!--todo: Was ist lectisterniis? Betten?-->
+               <measure ana="bk:money" quantity="1.5" unitRef="#lbdwien">IƗ lb.</measure>
+               <measure ana="bk:money" quantity="30" unitRef="#d">XXX d.</measure></ab>
+            <ab ana="bk:entry">Item <roleName ana="bk:to bk:group" ref="#arbeiter"
+                  >laboratoribus</roleName>
+               <measure ana="bk:service" commodity="gebäudearbeiten">ad <lb facs="#facs_82_line_5"
+                  />lavatorium, ad piscariam, in claustro et in tectis</measure>
+               <measure ana="bk:money" quantity="3.5" unitRef="#lbdwien">IIIƗ <lb
+                     facs="#facs_82_line_6"/>lb.</measure>
+               <measure ana="bk:money" quantity="4" unitRef="#d">IIIIor d.</measure></ab>
+            <ab ana="bk:entry">Item pro <measure ana="bk:commodity" commodity="stoff">panno
+                  rudi</measure> et <measure ana="bk:commodity" commodity="leinen">lineo</measure>
+               <measure ana="bk:money" quantity="704" unitRef="#d">III lb. minus XVI.</measure></ab>
+            <lb facs="#facs_82_line_7"/>
+            <ab ana="bk:entry">Item pro <name ana="bk:to bk:individual" ref="#coter_gastwirt_passau"
+                  >Coter <roleName>hospiti nostri</roleName> de <placeName ref="#ort_0334"
+                     >Pata</placeName></name>
+               <measure ana="bk:money" quantity="1" unitRef="#lbdwien">I lb.</measure></ab>
+            <ab ana="bk:entry">Item iincen <lb facs="#facs_82_line_8"/>diario et <name
+                  ana="bk:group">Tvsslonibus de rusticis de <placeName ana="bk:where"
+                     ref="#ort_0151">Gvmprechting</placeName></name>
+               <!--nicht ganz klar, was dieser Satz bedeutet. ich glaube, es geht um Brandstiftung. Wie könnte man das kodieren?-->
+               <lb facs="#facs_82_line_9"/><measure ana="bk:money" quantity="18" unitRef="#lbdwien"
+                  >XVIII lb.</measure>
+               <measure ana="bk:money" quantity="4" unitRef="#s">IIIIor s.</measure></ab>
+            <ab ana="bk:entry">Item expedimus cum <name ana="bk:to bk:individual"
+                  ref="#herzogstephan"><roleName>duce</roleName> Stephano</name>
+               <lb facs="#facs_82_line_10"/>et <name ana="bk:to bk:individual"
+                  ref="#herzogfriedrich_bayern"><roleName>filio</roleName> Friderico</name> et
+                  <roleName ana="bk:to bk:individual" ref="#herzogludwig">Marggrafio</roleName> et
+                  <name ana="bk:to bk:individual" ref="#agnes_schlesien">Regina Vngarie</name>
+               <lb facs="#facs_82_line_11"/>apud nos pernoctantibus pro <measure ana="bk:commodity"
+                  commodity="fisch">piscibus</measure>, <measure ana="bk:commodity"
+                  commodity="fastenspeise">quadragesimalibus</measure> et pro <lb
+                  facs="#facs_82_line_12"/><measure ana="bk:commodity" commodity="ehrengeschenk"
+                  >honoracionibus eorum et familie</measure>
+               <measure ana="bk:money" quantity="15" unitRef="#lbdwien">XV lb.</measure>
+               <measure ana="bk:money" quantity="32" unitRef="#d">XXXII d.</measure> ex<lb
+                  facs="#facs_82_line_13" break="no"/>clusis, que in domo habuimus.</ab>
+            <ab ana="bk:entry">Item pro uno <measure ana="bk:commodity" commodity="pferd"
+                  >equo</measure>
+               <measure ana="bk:money" quantity="2" unitRef="#lbdwien">II lb.</measure>
+            </ab>
+            <lb facs="#facs_82_line_14"/>
+            <ab ana="bk:entry">Item <roleName ana="bk:to bk:individual" ref="#schüler_unbekannt"
+                  >scolari</roleName>
+               <measure ana="bk:money" quantity="12" unitRef="#s">XII s.</measure></ab>
+            <ab ana="bk:entry">Item + item <measure ana="bk:money" quantity="6" unitRef="#lbdwien"
+                  >VI lb.</measure>
+               <!--Vorsicht: hier fehlt in TK ein seitlich angefügtes Item, das in Lübbers schon vorhanden ist.-->
+               <measure ana="bk:money" quantity="48" unitRef="#d">XLVIII d.</measure></ab>
+            <ab ana="bk:entry">Item <lb facs="#facs_82_line_15"/>de <measure ana="bk:service"
+                  commodity="hausrestaurierung">nova restauracione domus</measure> in <placeName
+                  ana="bk:where" ref="#ort_0334">Pat.</placeName>
+               <measure ana="bk:money" quantity="22" unitRef="#lbdwien">XXII lb.</measure>
+               <measure ana="bk:money" quantity="6" unitRef="#spat">VI. s. Pat.</measure>
+               <lb facs="#facs_82_line_16"/>et <measure ana="bk:money" quantity="12"
+                  unitRef="#lbdwien">XII lb.</measure>
+               <measure ana="bk:money" quantity="60" unitRef="#drat">LX d. Rat.</measure>
+            </ab>
+            <ab ana="bk:entry">Item <roleName ana="bk:to bk:group" ref="#zimmerleute"
+                  >carpentariis</roleName> et <roleName ana="bk:to bk:group" ref="#arbeiter">aliis
+                  laboratoribus</roleName>
+               <lb facs="#facs_82_line_17"/>de <measure ana="bk:service" commodity="gebäudearbeiten"
+                  >domo</measure> in <placeName ana="bk:where" ref="#ort_0334">Pata.</placeName>
+               <measure ana="bk:money" quantity="2" unitRef="#lbdwien">II lb.</measure>
+               <measure ana="bk:money" quantity="58" unitRef="#d">LVIII d.</measure>
+            </ab>
+            <lb facs="#facs_82_line_18"/>
+            <ab ana="bk:entry">Item pro <measure ana="bk:commodity" commodity="vase">vasis novis et
+                  antiquis et ligaminibus et ligatura eorum</measure>
+               <lb facs="#facs_82_line_19"/>et <measure ana="bk:service" commodity="transport_vase"
+                  >deductione vasorum <placeName>Austriam</placeName></measure>
+               <measure ana="bk:money" quantity="4" unitRef="#lbdwien">IIIIor lb.</measure>
+               <measure ana="bk:money" quantity="3" unitRef="#s">III s.</measure>
+               <measure ana="bk:money" quantity="16" unitRef="#d">XVI d.</measure>
+            </ab>
+            <lb facs="#facs_82_line_20"/>
+            <ab ana="bk:entry">Item pro <measure ana="bk:service" commodity="transport_wein">vectura
+                  vini de <placeName>Austria</placeName></measure>
+               <measure ana="bk:money" quantity="5032" unitRef="#drat">XXI. lb. Rat. minus VIII
+                  d.</measure>
+            </ab>
+            <lb facs="#facs_82_line_21"/>
+            <ab ana="bk:entry">Item ad <measure ana="bk:service" commodity="weinbau">culturam
+                  vinearum</measure>
+               <placeName ana="bk:where">Austriam</placeName>
+               <measure ana="bk:money" quantity="43" unitRef="#lbdwien">XLIII lb.</measure>
+               <measure ana="bk:money" quantity="73" unitRef="#d">LXXIII d.</measure>
+            </ab>
+            <lb facs="#facs_82_line_22"/>
+            <ab ana="bk:entry">Item de <measure ana="bk:service" commodity="bau_lagerhalle"
+                  >constructione bursarie et custodie nove</measure>
+               <!--Grenzen zwischen service und commodity verschwimmen-->
+               <lb facs="#facs_82_line_23"/><measure ana="bk:money" quantity="3" unitRef="#lbdwien"
+                  >III lb.</measure>
+               <measure ana="bk:money" quantity="3" unitRef="#s">III s.</measure>
+               <measure ana="bk:money" quantity="10" unitRef="#d">X d.</measure></ab>
+            <ab ana="bk:entry">Item de <measure ana="bk:commodity" commodity="wasserleitung"
+                  >aqueductu ad cameram <lb facs="#facs_82_line_24"/>secretam </measure>
+               <measure ana="bk:money" quantity="10" unitRef="#s">X s.</measure></ab>
+            <ab ana="bk:entry">Item de <name ana="bk:to bk:organisation">capella Chlosnaerii in ambi
+                     <lb facs="#facs_82_line_25"/>tu</name>
+               <!--todo: name bk:organisation oder lieber commodity?-->
+               <measure ana="bk:money" quantity="3" unitRef="#lbdwien">III lb.</measure>
+               <measure ana="bk:money" quantity="28" unitRef="#d">XXVIII d.</measure>
+            </ab>
+            <lb facs="#facs_82_line_26"/>
+            <ab ana="bk:entry">Item ad <measure ana="bk:commodity" commodity="ziegel">fiendos
+                  lateres</measure>
+               <!--todo: eigentlich Ziegelerzeugung, also service?-->
+               <measure ana="bk:money" quantity="1" unitRef="#lbdwien">I lb.</measure>
+               <measure ana="bk:money" quantity="2" unitRef="#d">II d.</measure></ab>
+            <ab ana="bk:entry">Item <roleName ana="bk:to bk:individual" ref="#organist_aldersbach"
+                  >organiste</roleName>
+               <lb facs="#facs_82_line_27"/><measure quantity="8" unitRef="#fl">VIII fl.</measure>
+               id est <measure ana="bk:money" quantity="1.5" unitRef="#lbdwien">IƗ. lb.</measure>
+               <measure ana="bk:money" quantity="24" unitRef="#d">XXIIII
+               d.</measure><!--Hier Umrechnungskurs angegeben, habe bei den Gulden kein bk:money gemacht--></ab>
+            <ab ana="bk:entry">Item de <measure ana="bk:right" commodity="nutzungsrecht">duabus
+                  precariis</measure>
+               <!--todo: ist hier ein Nutzungsrecht gemeint? Der genaue Kontext ist nicht klar-->
+               <lb facs="#facs_82_line_28"/><measure ana="bk:money" quantity="9" unitRef="#lbdwien"
+                  >IX lb.</measure></ab>
+            <ab ana="bk:entry">Item <seg ana="bk:status">solvimus</seg>
+               <roleName ana="bk:to bk:group" ref="#gläubiger_unbekannt">creditoribus</roleName>
+               <!--todo: Sollte man hier auch zusätzlich bk:credit kodieren?-->
+               <measure ana="bk:money" quantity="76" unitRef="#lbdwien">LXXVI lb.</measure>
+               <measure ana="bk:money" quantity="60" unitRef="#d">LX d.</measure>
+            </ab>
+            <lb facs="#facs_82_line_29"/>
+            <ab ana="bk:total">Summa <measure ana="bk:money" quantity="480" unitRef="#lbdwien"
+                  >CCCCte. l. LXXX lb.</measure>
+               <measure ana="bk:money" quantity="4" unitRef="#s">IIIIor s.</measure>
+               <measure ana="bk:money" quantity="14" unitRef="#d">XIIIIor d.</measure></ab>
+         </div>
+         <gap/>
+      </body>
+   </text>
+</TEI>
