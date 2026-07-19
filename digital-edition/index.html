@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jahrrechnungen der Stadt Basel 1535–1610 · digitale Edition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>Jahrrechnungen der Stadt Basel</h1>
+      <p class="subtitle">1535–1610 · digitale Edition der DEPCHA-Daten · Text-Data-Synopse der Bookkeeping-Ontologie</p>
+    </div>
+    <button id="legendToggle" class="legend-toggle" type="button" aria-expanded="false">Legende</button>
+  </header>
+
+  <section id="legend" class="legend" hidden>
+    <p>Jeder Buchungssatz steht in zwei Spalten. Links die <strong>Transkription</strong> wie überliefert, mit der historischen Zahlschreibweise. Rechts die <strong>Lesart nach der Bookkeeping-Ontologie</strong>.</p>
+    <ul>
+      <li><span class="chip money">1083 lb</span> Betrag, <code>bk:money</code> mit errechneter Menge und Einheit. Im Original danebenstehend, etwa <em>jm lxxxiij lb</em>.</li>
+      <li><span class="flow"><span class="agent">Quelle</span> → <span class="agent">Ziel</span></span> Transferrichtung, <code>bk:from</code> und <code>bk:to</code>.</li>
+      <li><span class="badge total">Summe</span> markiert eine Summenzeile, <code>bk:total</code>.</li>
+      <li>Sektionen <span class="badge income">Einnahmen</span> <span class="badge expense">Ausgaben</span> <span class="badge balance">Saldo</span> entsprechen den Buchabschnitten Empfangen, Dargegen uszgeben und Remanet.</li>
+    </ul>
+  </section>
+
+  <main class="layout">
+    <nav id="yearList" class="sidebar" aria-label="Jahrgänge">
+      <input id="filter" type="search" placeholder="Jahrgang filtern…" autocomplete="off">
+      <ul id="years"></ul>
+    </nav>
+    <article id="content" class="content">
+      <p class="placeholder">Jahrgang wählen.</p>
+    </article>
+  </main>
+
+  <footer class="foot">
+    Quelle: DEPCHA, Digital Edition Publishing Cooperative for Historical Accounts. Transkription Sonia Calvi u. a., Projekt Susanna Burghartz, Universität Basel. Erschließung Zentrum für Informationsmodellierung, Universität Graz.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
