@@ -1,7 +1,7 @@
 {
-  "FILENAME":"GWFP_Ledger_C_1790_1799.csv",  
-  "CONTEXT":"context:depcha.gwfp",
-  "PID":"o:depcha.gwfp.3",
+  "FILENAME": "GWFP_Ledger_C_1790_1799.csv",
+  "CONTEXT": "context:depcha.gwfp",
+  "PID": "o:depcha.gwfp.3",
   "BK_CURRENCY": {
     "currency": [
       {
@@ -11,19 +11,17 @@
       {
         "id": "1",
         "unit": "shilling",
-        "conversion": 
-        {
-          "hasBaseUnit": "pound",
-          "formular": "$BaseUnit / 20"
+        "conversion": {
+          "convertsTo": "pound",
+          "formula": "$BaseUnit / 20"
         }
       },
       {
         "id": "2",
         "unit": "pence",
-        "conversion": 
-        {
-          "hasBaseUnit": "pound",
-          "formular": "$BaseUnit / 240"
+        "conversion": {
+          "convertsTo": "pound",
+          "formula": "$BaseUnit / 240"
         }
       },
       {
@@ -33,15 +31,19 @@
       {
         "id": "4",
         "unit": "cent",
-        "conversion": 
-        {
-          "hasBaseUnit": "dollar",
-          "formular": "$BaseUnit / 100"
+        "conversion": {
+          "convertsTo": "dollar",
+          "formula": "$BaseUnit / 100"
         }
       }
     ]
   },
-  "BK_MAIN_BETWEEN_NAME":"George Washington",
-  "BK_MAIN_BETWEEN_ID":"GeorgeWashington",
-  "OUTPUT-FILE-NAME":"depcha-washington.3"
+  "depcha_accountHolder_label": "George Washington",
+  "depcha_accountHolder_id": "GeorgeWashington",
+  "TOTAL_MARKER": "[Total]",
+  "SKIP_ENTRY_MARKERS": [
+    "Carried to",
+    "Amount brought over"
+  ],
+  "OUTPUT-FILE-NAME": "depcha-washington.3"
 }

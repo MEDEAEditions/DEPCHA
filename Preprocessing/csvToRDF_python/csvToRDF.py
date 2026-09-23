@@ -1,677 +1,802 @@
-#import csv
-from rdflib import Graph, Literal, Namespace, URIRef
-from rdflib.namespace import DCTERMS, RDF, RDFS, SKOS, XSD
-import re
-import pandas as pd
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["rdflib>=7,<8", "python-dateutil>=2.8"]
+# ///
+"""Convert a tabulated account book (CSV) into DEPCHA RDF, Bookkeeping Ontology model 1.2.
+
+Purpose
+    Sources for which TEI encoding is impractical enter DEPCHA as CSV plus a JSON
+    configuration. The RDF produced here has the model 1.2 shape that
+    depcha-TORDF.xsl produces for TEI objects (bk:Transaction, bk:Transfer,
+    bk:Money, bk:EconomicAgent, depcha:Dataset with yearly depcha:Aggregation,
+    huc:HistoricalUnit), so the same queries and checks apply to both paths.
+
+Data flow
+    JSON config (+ command-line overrides) -> CSV rows -> rdflib graph -> RDF/XML
+    file. Each row becomes a bk:Transaction or bk:TotalTransaction, or is skipped.
+    Problems in single cells are collected, reported at the end and signalled by
+    exit code 1; the RDF is written regardless, without the faulty statements.
+
+Usage
+    uv run csvToRDF.py gwfp/csvToRDF_config__Ledger_A.json --out-dir build
+    uv run csvToRDF.py gwfp/*.json --out-dir build --report build/report.json
+    uv run csvToRDF.py mvdb/mvdb_config.json --output build/mvdb.xml --pid o:depcha.mvdb.1
+
+Design decisions
+    - Column roles come from normalised header names (bk_entry, bk_id, bk_when,
+      bk_debit_credit, bk_economic_unit, bk_money*, bk_what*, bk_quantity). The
+      n-th bk_money column holds the currency whose config id is "n".
+    - Resource IRIs of transactions, transfers, amounts, dataset and aggregations
+      are kept from the 2022 script, so a re-ingest keeps their identity. Agent
+      IRIs are <PID>#<fragment>; the 2022 script omitted the "#".
+    - Literal escaping (quotes in entries and labels) is kept as in the 2022
+      script, because removing it is an open decision for model 1.2
+      (ZIMLAB depcha knowledge/specification.md, Open decisions).
+    - The void:Dataset header states the model version with dcterms:conformsTo.
+      A dcterms:source is not written, because the GAMS objects of CSV datasets
+      hold no datastream with the CSV to point to.
+    - Revenue and expenses follow depcha-TORDF.xsl: only dated bk:Transaction
+      resources whose transfer goes to (revenue) or from (expenses) the account
+      holder count, with amounts in the main currency or in a unit that converts
+      directly to it.
+"""
+
+from __future__ import annotations
+
+import argparse
+import csv
 import json
-import hashlib
-import glob
+import os
 import re
-from locale import atof, setlocale, LC_NUMERIC
-import math
-from datetime import datetime, date
-import numpy as np
+import sys
+import tempfile
+from collections import Counter, defaultdict
+from dataclasses import dataclass, field
+from datetime import UTC, datetime
+from pathlib import Path
+from typing import Any
+
 import dateutil.parser
+from rdflib import FOAF, RDF, RDFS, Graph, Literal, Namespace, URIRef
+from rdflib.namespace import DC, DCTERMS
 
-# https://stackoverflow.com/questions/6633523/how-can-i-convert-a-string-with-dot-and-comma-into-a-float-in-python
-# . and , in float numbers depending on default locale
-setlocale(LC_NUMERIC, '') 
+BK = Namespace("https://gams.uni-graz.at/o:depcha.bookkeeping#")
+DEPCHA = Namespace("https://gams.uni-graz.at/o:depcha.ontology#")
+GAMS = Namespace("https://gams.uni-graz.at/o:gams-ontology#")
+HUC = Namespace("https://gams.uni-graz.at/o:depcha.huc-ontology#")
+SCHEMA = Namespace("https://schema.org/")
+VOID = Namespace("http://rdfs.org/ns/void#")
+
+MODEL_VERSION_IRI = URIRef("https://gams.uni-graz.at/o:depcha.bookkeeping-1.2")
+DEFAULT_BASE_URL = "https://gams.uni-graz.at/"
+DC_METADATA_KEYS = (
+    "title",
+    "creator",
+    "date",
+    "contributor",
+    "language",
+    "source",
+    "subject",
+)
+# Project-level statements every DEPCHA CSV dataset carried since 2021.
+STATIC_DC = (
+    (DC.relation, "Digital Edition Publishing Cooperative for Historical Accounts"),
+    (DC.relation, "http://gams.uni-graz.at/depcha"),
+    (DC.publisher, "Institute Centre for Information Modelling, University of Graz"),
+    (DC.rights, "Creative Commons BY 4.0"),
+    (DC.rights, "https://creativecommons.org/licenses/by/4.0"),
+)
+
+# Characters that may not appear in an IRI fragment, plus separators of the name.
+_FRAGMENT_DROP = re.compile(r'[\s,()\[\]<>"{}|\\^`#%]')
+_IRI_TOKEN = re.compile(r'^[^\s#<>"{}|\\^`]+$')
+_FORMULA = re.compile(r"^\$BaseUnit\s*/\s*(\d+(?:\.\d+)?)$")
+_FRACTION = re.compile(r"(?:(\d+)\s+)?(\d+)\s*/\s*(\d+)")
+_DECIMAL = re.compile(r"\d+(?:\.\d*)?|\.\d+")
+_FOUR_DIGITS = re.compile(r"\d{4}")
+# Fragments the script mints itself inside <PID>#: transactions, totals, their
+# transfers and amounts, the dataset node and the yearly aggregations.
+_RESERVED_FRAGMENT = re.compile(r"(?:To?\d+(?:TM|M\d+)?|Dataset|\d{4})")
 
 
-########################################################################################
-# VARIABLES
-count_transactions = 0
-count_totals = 0
-count_transfers = 0
-count_moneys = 0
-count_commodities = 0
-count_services = 0
-count_rights = 0
-count_EconomicAgents = 0
-count_accounts = 0
+@dataclass(frozen=True)
+class Currency:
+    id: str
+    unit: str
+    converts_to: str | None = None
+    formula: str | None = None
+    divisor: float | None = None
 
-########################################################################################
-# FUNCTIONS
 
-########################################################################################
-# substring before " ("; remove ", " and  " " so its a valid URI
-def normalizeStringforURI(string):
-     if(str(name).count(",") <= 1):
-        if(" (" in string):
-            return ((string.split(" (")[0]).replace(", ", "")).replace(" ", "")  
-        else:
-            return (string.replace(", ", "")).replace(" ", "")  
-     else:
-            return "anonym"
+@dataclass(frozen=True)
+class Config:
+    source: Path
+    csv_path: Path
+    output_path: Path
+    base_url: str
+    context: str
+    pid: str
+    holder_id: str
+    holder_label: str
+    currencies: tuple[Currency, ...]
+    dc_metadata: dict[str, str]
+    total_marker: str | None
+    skip_markers: tuple[str, ...]
 
-########################################################################################
-# 
-def normalizeStringforJSON(string):
-    string = string.replace('"', '\\"')
-    string = " ".join(string.split())
-    return string 
-        
-########################################################################################
-# creates a bk:Money and add bk:unit (uri) and bk:quantity (literal)
-# param: getBKMoney(URIRef(), double, string)
-# <bk:Transfer> <bk:transfers> <bk:Money rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#T220M1">
-def get_Money(Measurable_Money, bk_quantity, HUC_Unit_index, Transfer): 
+
+@dataclass
+class Report:
+    config: str
+    output: str = ""
+    counts: Counter[str] = field(default_factory=Counter)
+    skipped: Counter[str] = field(default_factory=Counter)
+    errors: list[dict[str, Any]] = field(default_factory=list)
+
+    def error(
+        self, kind: str, row: int | None, line: int | None, column: str, value: str
+    ) -> None:
+        self.errors.append(
+            {"kind": kind, "row": row, "line": line, "column": column, "value": value}
+        )
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "config": self.config,
+            "output": self.output,
+            "counts": dict(self.counts),
+            "skipped": dict(self.skipped),
+            "errors": self.errors,
+        }
+
+
+@dataclass
+class Table:
+    """CSV content with normalised column names; duplicated names keep their positions."""
+
+    columns: list[str]
+    rows: list[tuple[int, int, list[str]]]  # (row index, source line, cells)
+
+    def first(self, name: str) -> int | None:
+        return self.columns.index(name) if name in self.columns else None
+
+    def containing(self, part: str) -> list[int]:
+        return [i for i, c in enumerate(self.columns) if part in c]
+
+
+# Configuration and input (trust boundary: fail fast)
+
+
+def _require(data: dict[str, Any], key: str, where: Path) -> Any:
+    value = data.get(key)
+    if value in (None, "", [], {}):
+        raise SystemExit(
+            f"ERROR: {where}: required config field '{key}' is missing or empty"
+        )
+    return value
+
+
+def _iri_token(value: str, key: str, where: Path) -> str:
+    if not _IRI_TOKEN.match(value):
+        raise SystemExit(
+            f"ERROR: {where}: '{key}' = {value!r} cannot be used inside an IRI"
+        )
+    return value
+
+
+def _load_currencies(data: dict[str, Any], where: Path) -> tuple[Currency, ...]:
+    entries = _require(_require(data, "BK_CURRENCY", where), "currency", where)
+    currencies = []
+    for entry in entries:
+        unit = _iri_token(str(_require(entry, "unit", where)), "unit", where)
+        conversion = entry.get("conversion")
+        if not conversion:
+            currencies.append(Currency(id=str(_require(entry, "id", where)), unit=unit))
+            continue
+        formula = str(_require(conversion, "formula", where))
+        match = _FORMULA.match(formula.strip())
+        if not match:
+            raise SystemExit(
+                f"ERROR: {where}: formula {formula!r} of '{unit}' is not of the form '$BaseUnit / <number>'"
+            )
+        currencies.append(
+            Currency(
+                id=str(_require(entry, "id", where)),
+                unit=unit,
+                converts_to=str(_require(conversion, "convertsTo", where)),
+                formula=formula,
+                divisor=float(match.group(1)),
+            )
+        )
+    ids = [c.id for c in currencies]
+    units = {c.unit for c in currencies}
+    if len(set(ids)) != len(ids):
+        raise SystemExit(f"ERROR: {where}: currency ids are not unique: {ids}")
+    for c in currencies:
+        if c.converts_to is not None and c.converts_to not in units:
+            raise SystemExit(
+                f"ERROR: {where}: '{c.unit}' converts to unknown unit '{c.converts_to}'"
+            )
+    return tuple(currencies)
+
+
+def load_config(path: Path, overrides: argparse.Namespace | None = None) -> Config:
+    """Read a JSON config; command-line values replace the corresponding fields."""
+    if not path.is_file():
+        raise SystemExit(f"ERROR: config file not found: {path}")
     try:
-        if(pd.notnull(bk_quantity)):
-            output_graph.add((Measurable_Money, RDF.type,  BK.Money))
-            output_graph.add((Transfer, BK.transfers, Measurable_Money))
-            global count_moneys
-            count_moneys += 1
-            # <bk:quantity>
-            # make some string operators to fix ","  and whitspaces to make valid floats
-            output_graph.add((Measurable_Money, BK.quantity, Literal(float(str(bk_quantity).replace(' ','').replace(',','.')))))
-            for currency in config_data["BK_CURRENCY"]["currency"]:
-                if(currency.get("id") == HUC_Unit_index):
-                    HUC_Unit = currency.get("unit")        
-            output_graph.add((Measurable_Money, BK.unit, URIRef(BASE_URL + CONTEXT + "#" + HUC_Unit) ))
-            
-            if(pd.notnull(row["bk_when"]) and pd.notnull(row["bk_debit_credit"])):
-                try:
-                    normalized_date = dateutil.parser.parse(row["bk_when"], default=datetime(1000, 1, 1))
-                    if(normalized_date.date().year != 1000):
-                        year = normalized_date.date().strftime("%Y")
-                        
-                        # select the income_db|expense_db via year as key and depending on bk:debit|bk:credit 
-                        # add {HUC_Unit : bk_quantity} to the list; from this list the sum for every year can be calculated
-                        debitOrCredit = row['bk_debit_credit']
-                        if re.search('debit', debitOrCredit, re.IGNORECASE):
-                            income_db[year].append({HUC_Unit : bk_quantity} )
-                        elif re.search('credit', debitOrCredit, re.IGNORECASE):
-                            expense_db[year].append({HUC_Unit : bk_quantity} )
-                        else:
-                            False
-            #Debug_DebitCreditEmptyCell += 1     
-                except:
-                    print(f"Exception: failed to add money and unit to key YYYY-MM: {bk_quantity} {HUC_Unit}")
-    except:
-        print(f"Exception: no valid number in BK_MONEY: Currencies must not contain commas, spaces, or characters: {bk_quantity}")
-    # <bk:unit>  https://gams.uni-graz.at/context:depcha.gwfp#pence
-                                                    
-########################################################################################
-# this function add bk:entry, gams:isMemberOfCollection to the output_graph
-# param: URIRef() of the bk:Transaction
-def getBKCoreElements(Class):
-    # replace " with ' as the JSON output in DEPCHA has problems with it; replace "VT" in CSV with " "
-    # in the csv are VT (vertical tabs; \u000B) String newString = oldString.replace('\u000B', ' ');
-    
-    if('bk_entry' in df.columns):
-        # " --> ' ;  tab --> " "  ; newline --> " ", vertical tabs; \u000B --> " "; normalize whitespaces with strip
-        normalizedEntry = row["bk_entry"].replace('"',"'").replace('\n', ' ').replace('\t', ' ').replace('\u000B', ' ').strip()
-        output_graph.add((Class, BK.entry, Literal(normalizedEntry) )) 
-    output_graph.add((Class, GAMS.isMemberOfCollection, URIRef(BASE_URL + CONTEXT) )) 
-    output_graph.add((Class, GAMS.isPartOf, URIRef(BASE_URL + PID) )) 
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise SystemExit(f"ERROR: {path}: invalid JSON: {exc}") from exc
+    o = overrides or argparse.Namespace()
+    csv_path = Path(
+        getattr(o, "csv", None) or path.parent / _require(data, "FILENAME", path)
+    )
+    if not csv_path.is_file():
+        raise SystemExit(f"ERROR: {path}: CSV file not found: {csv_path}")
+    if getattr(o, "output", None):
+        output_path = Path(o.output)
+    else:
+        out_dir = Path(getattr(o, "out_dir", None) or ".")
+        output_path = out_dir / f"{_require(data, 'OUTPUT-FILE-NAME', path)}.xml"
+    base_url = getattr(o, "base_url", None) or data.get("BASE_URL") or DEFAULT_BASE_URL
+    if not base_url.endswith("/"):
+        raise SystemExit(f"ERROR: {path}: base URL must end with '/': {base_url}")
+    metadata = data.get("DEPCHA_DATASET_DC_METADATA") or {}
+    return Config(
+        source=path,
+        csv_path=csv_path,
+        output_path=output_path,
+        base_url=base_url,
+        context=_iri_token(
+            getattr(o, "context", None) or _require(data, "CONTEXT", path),
+            "CONTEXT",
+            path,
+        ),
+        pid=_iri_token(
+            getattr(o, "pid", None) or _require(data, "PID", path), "PID", path
+        ),
+        holder_id=_iri_token(
+            _require(data, "depcha_accountHolder_id", path),
+            "depcha_accountHolder_id",
+            path,
+        ),
+        holder_label=_require(data, "depcha_accountHolder_label", path),
+        currencies=_load_currencies(data, path),
+        dc_metadata={k: str(metadata[k]) for k in DC_METADATA_KEYS if metadata.get(k)},
+        total_marker=data.get("TOTAL_MARKER") or None,
+        skip_markers=tuple(data.get("SKIP_ENTRY_MARKERS") or ()),
+    )
 
 
-########################################################################################
-# creats <bk:debit> or <bk:credit> marking a transfer as debit or credit; contains string that identifies transfer as debit or credit in the source
-# todo: bk_debit column, bk:credit column
-def getCreditOrDebit(Transfer):
-    if(pd.notnull(row["bk_debit_credit"])):
-        debitOrCredit = row['bk_debit_credit']
-        if re.search('debit', debitOrCredit, re.IGNORECASE):
-            output_graph.add((Transfer, BK.debit,  Literal(debitOrCredit) ))
-        elif re.search('credit', debitOrCredit, re.IGNORECASE):
-            output_graph.add((Transfer, BK.credit,  Literal(debitOrCredit) ))
+def _normalise_column(name: str) -> str:
+    return name.strip().lower().replace(" ", "_").replace("(", "").replace(")", "")
+
+
+def read_table(path: Path) -> Table:
+    """Read the CSV as UTF-8.
+
+    Completely blank lines are skipped without taking a row index, as pandas
+    did in the 2022 script, because the index forms the transaction IRIs.
+    """
+    try:
+        with path.open(encoding="utf-8-sig", newline="") as handle:
+            reader = csv.reader(handle)
+            header = next(reader, None)
+            if header is None:
+                raise SystemExit(f"ERROR: {path}: empty CSV file")
+            rows = []
+            for cells in reader:
+                if not cells:
+                    continue
+                rows.append((len(rows), reader.line_num, cells))
+    except UnicodeDecodeError as exc:
+        raise SystemExit(
+            f"ERROR: {path}: not UTF-8 ({exc}); convert the file to UTF-8"
+        ) from exc
+    return Table([_normalise_column(c) for c in header], rows)
+
+
+# Cell-level parsing (per-row: skip, log, collect)
+
+
+def parse_quantity(raw: str) -> float | None:
+    """Parse an amount; a comma is a decimal separator, "1 1/2" a vulgar fraction."""
+    text = raw.strip()
+    fraction = _FRACTION.fullmatch(text)
+    if fraction:
+        whole, numerator, denominator = fraction.groups()
+        if int(denominator) == 0:
+            return None
+        return int(whole or 0) + int(numerator) / int(denominator)
+    text = text.replace(" ", "").replace(",", ".")
+    return float(text) if _DECIMAL.fullmatch(text) else None
+
+
+def parse_when(raw: str) -> str | None:
+    """Return the date at the precision the source gives (YYYY, YYYY-MM or YYYY-MM-DD).
+
+    Parsing twice with different defaults shows which parts the text supplies,
+    so a missing month or day is never filled with the date of the run. A text
+    without an explicit four-digit year yields None.
+    """
+    text = " ".join(raw.split())
+    try:
+        a = dateutil.parser.parse(text, default=datetime(1, 1, 1, tzinfo=UTC))
+        b = dateutil.parser.parse(text, default=datetime(2, 2, 2, tzinfo=UTC))
+    except (ValueError, OverflowError):
+        return None
+    if a.year != b.year or f"{a.year:04d}" not in _FOUR_DIGITS.findall(text):
+        return None
+    if a.month != b.month:
+        return f"{a.year:04d}"
+    if a.day != b.day:
+        return f"{a.year:04d}-{a.month:02d}"
+    return a.date().isoformat()
+
+
+def agent_fragment(name: str) -> str:
+    """Fragment of an agent IRI: the name without whitespace, commas, brackets and IRI-illegal characters."""
+    return _FRAGMENT_DROP.sub("", name)
+
+
+def _label(text: str) -> str:
+    # Kept from the 2022 script: JSON-style quote escaping (open decision for model 1.2).
+    return " ".join(text.replace('"', '\\"').split())
+
+
+def _entry(text: str) -> str:
+    # Kept from the 2022 script: double quotes become single quotes (open decision for
+    # model 1.2). A line break inside the cell ("\r\n", "\r" or "\n") becomes one space.
+    text = text.replace('"', "'")
+    for control in ("\r\n", "\r", "\n", "\t", "\u000b"):
+        text = text.replace(control, " ")
+    return text.strip()
+
+
+def _direction(raw: str | None) -> str | None:
+    if raw is None:
+        return None
+    if re.search("debit", raw, re.IGNORECASE):
+        return "debit"
+    if re.search("credit", raw, re.IGNORECASE):
+        return "credit"
+    return None
+
+
+# Graph construction
+
+
+@dataclass
+class _Columns:
+    entry: int | None
+    id: int | None
+    when: int | None
+    debit_credit: int | None
+    agent: int | None
+    quantity: int | None
+    money: list[int]
+    what: list[int]
+
+
+def _columns(table: Table, config: Config) -> _Columns:
+    cols = _Columns(
+        entry=table.first("bk_entry"),
+        id=table.first("bk_id"),
+        when=table.first("bk_when"),
+        debit_credit=table.first("bk_debit_credit"),
+        agent=table.first("bk_economic_unit"),
+        quantity=table.first("bk_quantity"),
+        money=table.containing("bk_money"),
+        what=table.containing("bk_what"),
+    )
+    if cols.entry is None and cols.id is None:
+        raise SystemExit(
+            f"ERROR: {config.csv_path}: needs a BK_ENTRY or a BK_ID column to identify transactions"
+        )
+    ids = {c.id for c in config.currencies}
+    missing = [str(n) for n in range(len(cols.money)) if str(n) not in ids]
+    if missing:
+        raise SystemExit(
+            f"ERROR: {config.source}: the CSV has {len(cols.money)} BK_MONEY columns, "
+            f"but no currency with id {', '.join(missing)}"
+        )
+    return cols
+
+
+def _cell(cells: list[str], index: int | None) -> str | None:
+    # An empty cell is missing, as pandas treated it in the 2022 script.
+    if index is None or index >= len(cells) or cells[index] == "":
+        return None
+    return cells[index]
+
+
+def _add_header(g: Graph, config: Config, dataset: URIRef) -> None:
+    g.add((dataset, RDF.type, VOID.Dataset))
+    g.add((dataset, DCTERMS.conformsTo, MODEL_VERSION_IRI))
+    g.add((dataset, FOAF.homepage, dataset))
+    g.add((dataset, DCTERMS.modified, Literal(datetime.now(tz=UTC).date())))
+    g.add((dataset, VOID.feature, URIRef("http://www.w3.org/ns/formats/RDF_XML")))
+    # RDF-only GAMS objects keep their RDF in the ONTOLOGY datastream.
+    g.add((dataset, VOID.dataDump, URIRef(f"{dataset}/ONTOLOGY")))
+    for vocabulary in (
+        "https://gams.uni-graz.at/o:depcha.bookkeeping#",
+        "https://gams.uni-graz.at/o:gams-ontology#",
+        "http://purl.org/dc/terms/",
+        "http://www.ontology-of-units-of-measure.org/resource/om-2/",
+    ):
+        g.add((dataset, VOID.vocabulary, URIRef(vocabulary)))
+    if config.dc_metadata:
+        for key, value in config.dc_metadata.items():
+            g.add((dataset, DC[key], Literal(value)))
+        for predicate, value in STATIC_DC:
+            g.add((dataset, predicate, Literal(value)))
+
+
+def _add_agents(
+    g: Graph, table: Table, cols: _Columns, config: Config, report: Report
+) -> dict[str, URIRef]:
+    """Create one bk:EconomicAgent per distinct name; report names that share an IRI."""
+    agents: dict[str, URIRef] = {}
+    labels_by_iri: dict[URIRef, set[str]] = defaultdict(set)
+    seen: set[str] = set()
+    for row, line, cells in table.rows:
+        name = _cell(cells, cols.agent)
+        if name is None or name in seen:
+            continue
+        seen.add(name)
+        fragment = agent_fragment(name)
+        if not fragment or _RESERVED_FRAGMENT.fullmatch(fragment):
+            report.error("agent_without_iri", row, line, "bk_economic_unit", name)
+            continue
+        iri = URIRef(f"{config.base_url}{config.pid}#{fragment}")
+        agents[name] = iri
+        label = _label(name)
+        if labels_by_iri[iri] and label not in labels_by_iri[iri]:
+            report.error(
+                "agent_iri_shared", row, line, "bk_economic_unit", f"{name} -> {iri}"
+            )
+        labels_by_iri[iri].add(label)
+        g.add((iri, RDF.type, BK.EconomicAgent))
+        g.add((iri, RDFS.label, Literal(label)))
+        g.add((iri, SCHEMA.name, Literal(label)))
+    report.counts["bk:EconomicAgent"] = len(labels_by_iri)
+    return agents
+
+
+def _convert(unit: Currency, quantity: float, main: Currency) -> float | None:
+    if unit.unit == main.unit:
+        return quantity
+    if unit.converts_to == main.unit and unit.divisor:
+        return quantity / unit.divisor
+    return None
+
+
+def build_graph(config: Config, table: Table, report: Report) -> Graph:
+    """Map every row to RDF; cell problems go to the report, the row continues without them."""
+    cols = _columns(table, config)
+    g = Graph()
+    for prefix, namespace in (
+        ("bk", BK),
+        ("gams", GAMS),
+        ("void", VOID),
+        ("foaf", FOAF),
+        ("dcterms", DCTERMS),
+        ("dc", DC),
+        ("depcha", DEPCHA),
+        ("huc", HUC),
+        ("schema", SCHEMA),
+    ):
+        g.bind(prefix, namespace)
+
+    base, pid = config.base_url, config.pid
+    dataset = URIRef(base + pid)
+    collection = URIRef(base + config.context)
+    holder = URIRef(f"{base}{config.context}#{config.holder_id}")
+    unit_iri = {
+        c.id: URIRef(f"{base}{config.context}#{c.unit}") for c in config.currencies
+    }
+    currency_by_id = {c.id: c for c in config.currencies}
+    main = config.currencies[0]
+
+    _add_header(g, config, dataset)
+    g.add((holder, RDF.type, BK.EconomicAgent))
+    g.add((holder, RDFS.label, Literal(_label(config.holder_label))))
+    agents = (
+        _add_agents(g, table, cols, config, report) if cols.agent is not None else {}
+    )
+
+    revenue: dict[str, float] = defaultdict(float)
+    expenses: dict[str, float] = defaultdict(float)
+    years: set[str] = set()
+
+    for row, line, cells in table.rows:
+        entry = _cell(cells, cols.entry)
+        if cols.id is not None:
+            key = _cell(cells, cols.id)
+            if key is None:
+                report.error("missing_id", row, line, "bk_id", "")
+                continue
         else:
-            False
-            #Debug_DebitCreditEmptyCell += 1
+            key = str(row)
+        is_total = False
+        if cols.entry is not None:
+            if entry is None:
+                report.skipped["empty bk_entry"] += 1
+                continue
+            is_total = bool(config.total_marker) and config.total_marker in entry
+            if not is_total and any(marker in entry for marker in config.skip_markers):
+                report.skipped["skip marker in bk_entry"] += 1
+                continue
 
-########################################################################################
-'''
-def createTransferOfMoney(Transaction_URI, Transaction):
-    #<bk:Transfer> <bk:transfers> <bk:Money>
-    if('bk_money' in df.columns):
-        if(pd.notnull(row["bk_money"])):
-            # selects all coumns bk_money, bk_money1 ... it is assumed that the first bk_money is the main currency
-            monetaryValues = row.filter(like='bk_money')
-            # <bk:Transfer>
-            Transfer = URIRef(Transaction_URI + "TM")
-            output_graph.add((Transaction, BK.consistsOf,  Transfer))
-            output_graph.add((Transfer, RDF.type, BK.Transfer))
-            global count_transfers
-            count_transfers = count_transfers + 1
-            
-            ### for all cells with content in columns name bk_money
-            for count, bk_quantity in enumerate(monetaryValues):
-                global count_moneys
-                count_moneys = count_moneys + 1
-                get_Money(URIRef(Transaction_URI + "M" + str(count)), bk_quantity, str(count), Transfer)
+        subject = URIRef(f"{base}{pid}#{'To' if is_total else 'T'}{key}")
+        g.add((subject, RDF.type, BK.TotalTransaction if is_total else BK.Transaction))
+        if entry is not None:
+            g.add((subject, BK.entry, Literal(_entry(entry))))
+        g.add((subject, GAMS.isMemberOfCollection, collection))
+        g.add((subject, GAMS.isPartOf, dataset))
 
-            ### <bk:debit>, <bk:credit>
-            getCreditOrDebit(Transfer) 
-            ##################
-            ### bk:from, bk:to
-            getFromOrTo(Transfer)
-'''               
-########################################################################################
-#
-# 
-def getFromOrTo(Transfer):
-    if(pd.notnull(row["bk_economic_unit"])):
-        #EconomicAgent_URI = BASE_URL + PID + str(normalized_name)
-        EconomicAgent_URI = BASE_URL + PID + normalizeStringforURI(row["bk_economic_unit"])
-        EconomicAgent = URIRef(EconomicAgent_URI)
-        # check the already graph pattern if the current transfer has bk:debit or bk:credit
-        # if bk:debit than Washington is getting money
-        # A debit entry in an account represents a transfer of value to that account
-        if (Transfer, BK.debit, None) in output_graph:
-            output_graph.add((Transfer, BK.to, depcha_accountHolder))
-            output_graph.add((Transfer, BK_from_property, EconomicAgent)) 
-        # if bk:credit than Washington is spending money
-        # and a credit entry represents a transfer from the account.
-        elif (Transfer, BK.credit, None) in output_graph:
-            output_graph.add((Transfer, BK.to,  EconomicAgent))
-            output_graph.add((Transfer, BK_from_property, depcha_accountHolder ))  
-        else:
-            False
-            #Debug_FromToEmpty += 1
-    
-########################################################################################
-# returns conversion according to main currency depending on conversion info in confic file
-#  * checks is quantitiy is 0 or invalid or transforms "2,5" to valid float "2.5"
-def convert_Money_to_MainCurrency(quantity, unit):
-    
-    # TODO: skip second currency for now: add a second bk:IncomeStmt with its bk:unit and bk:
-    # !!!
-    if(unit == "pound" or unit == "shilling" or unit == "pence"):
-        BK_MAIN_CURRENCY = config_data["BK_CURRENCY"]["currency"][0]
-        # catch if quantity is not castable as float --> return 0
-        converted_quantity = ""
-        try:
-            converted_quantity = quantity.replace(" ", "")
-            if("," in converted_quantity):
-                converted_quantity = converted_quantity.replace(",", ".")
-                
-            # catch if quantity = 0
-            if(float(converted_quantity) > 0):
-                for currency in config_data["BK_CURRENCY"]["currency"]:
-                    if(unit == currency["unit"]):
-                        try:
-                            # $BaseUnit / 20; $BaseUnit / 240
-                            conversionDivisor = (currency["conversion"]["formular"]).split("/ ", 1)[1]
-                            return float(converted_quantity) / float(conversionDivisor)
-                        except:
-                            #print(f"Exception: {currency['unit']}")
-                            return float(converted_quantity)
+        when = None
+        raw_when = _cell(cells, cols.when)
+        if raw_when is not None:
+            when = parse_when(raw_when)
+            if when is None:
+                report.error("invalid_date", row, line, "bk_when", raw_when)
             else:
-                return 0.0
-        except:
-            #print(f"Exception: invalid quantitiy '{converted_quantity}' in converting to main currency")
-            return 0.0
-    else:
-        return 0.0
-########################################################################################
-#
-#     
-def add_Quantity_To_Sum(sum_, quantity, ConversionValue):
+                g.add((subject, BK.when, Literal(when)))
+                if not is_total:
+                    years.add(when[:4])
+
+        transfer = URIRef(f"{subject}TM")
+        g.add((subject, BK.consistsOf, transfer))
+        g.add((transfer, RDF.type, BK.Transfer))
+
+        if cols.what and cols.quantity is not None:
+            raw_quantity = _cell(cells, cols.quantity)
+            quantity = None if raw_quantity is None else parse_quantity(raw_quantity)
+            if raw_quantity is not None and quantity is None:
+                report.error("invalid_amount", row, line, "bk_quantity", raw_quantity)
+            elif quantity is not None and quantity.is_integer():
+                # Whole counts stay xsd:integer, as pandas typed them in the 2022 script.
+                quantity = int(quantity)
+            for n, column in enumerate(cols.what):
+                measurable = URIRef(f"{subject}M{n}")
+                g.add((measurable, RDF.type, BK.Measurable))
+                g.add((transfer, BK.transfers, measurable))
+                what = _cell(cells, column)
+                if what is not None:
+                    g.add((measurable, BK.what, Literal(what)))
+                if quantity is not None:
+                    g.add((measurable, BK.quantity, Literal(quantity)))
+
+        if not cols.money:
+            continue
+        amounts: list[tuple[Currency, float]] = []
+        for n, column in enumerate(cols.money):
+            raw = _cell(cells, column)
+            if raw is None:
+                continue
+            value = parse_quantity(raw)
+            if value is None:
+                report.error("invalid_amount", row, line, table.columns[column], raw)
+                continue
+            currency = currency_by_id[str(n)]
+            money = URIRef(f"{subject}M{n}")
+            g.add((money, RDF.type, BK.Money))
+            g.add((transfer, BK.transfers, money))
+            g.add((money, BK.quantity, Literal(value)))
+            g.add((money, BK.unit, unit_iri[currency.id]))
+            amounts.append((currency, value))
+
+        raw_direction = _cell(cells, cols.debit_credit)
+        direction = _direction(raw_direction)
+        if direction == "debit":
+            g.add((transfer, BK.debit, Literal(raw_direction)))
+        elif direction == "credit":
+            g.add((transfer, BK.credit, Literal(raw_direction)))
+        agent_name = _cell(cells, cols.agent)
+        agent = agents.get(agent_name) if agent_name is not None else None
+        if agent is not None and direction == "debit":
+            g.add((transfer, BK.to, holder))
+            g.add((transfer, BK["from"], agent))
+        elif agent is not None and direction == "credit":
+            g.add((transfer, BK.to, agent))
+            g.add((transfer, BK["from"], holder))
+
+        # As in depcha-TORDF.xsl, a transfer to the account holder is revenue and one
+        # from the account holder an expense; totals and undated transactions do not count.
+        if is_total or when is None or agent is None or direction is None:
+            continue
+        sums = revenue if direction == "debit" else expenses
+        for currency, value in amounts:
+            converted = _convert(currency, value, main)
+            if converted is not None:
+                sums[when[:4]] += converted
+
+    _count(g, report)
+    _add_dataset(g, config, report, holder, unit_iri, years, revenue, expenses)
+    # void:triples counts the graph including this statement itself.
+    g.add((dataset, VOID.triples, Literal(len(g) + 1)))
+    return g
+
+
+def _count(g: Graph, report: Report) -> None:
+    """Count distinct resources as depcha-TORDF.xsl does; rows sharing a BK_ID form one transaction."""
+    transactions = set(g.subjects(RDF.type, BK.Transaction))
+    transfers = {t for s in transactions for t in g.objects(s, BK.consistsOf)}
+    money = set(g.subjects(RDF.type, BK.Money))
+    report.counts["bk:Transaction"] = len(transactions)
+    report.counts["bk:TotalTransaction"] = len(
+        set(g.subjects(RDF.type, BK.TotalTransaction))
+    )
+    report.counts["bk:Transfer of bk:Transaction"] = len(transfers)
+    report.counts["bk:Transfer of bk:Transaction with bk:Money"] = sum(
+        1 for t in transfers if any(m in money for m in g.objects(t, BK.transfers))
+    )
+    report.counts["bk:Money"] = len(money)
+
+
+def _add_dataset(
+    g: Graph,
+    config: Config,
+    report: Report,
+    holder: URIRef,
+    unit_iri: dict[str, URIRef],
+    years: set[str],
+    revenue: dict[str, float],
+    expenses: dict[str, float],
+) -> None:
+    """depcha:Dataset with the counters and yearly aggregations depcha-TORDF.xsl defines."""
+    base, pid, context = config.base_url, config.pid, config.context
+    node = URIRef(f"{base}{pid}#Dataset")
+    main = config.currencies[0]
+    counts = report.counts
+    g.add((node, RDF.type, DEPCHA.Dataset))
+    g.add((node, GAMS.isMemberOfCollection, URIRef(base + context)))
+    g.add((node, GAMS.isPartOf, URIRef(base + pid)))
+    g.add((node, DEPCHA.accountHolder, holder))
+    for predicate, value in (
+        (DEPCHA.numberOfTransactions, counts["bk:Transaction"]),
+        (DEPCHA.numberOfTransfers, counts["bk:Transfer of bk:Transaction"]),
+        (DEPCHA.numberOfEconomicAgents, counts["bk:EconomicAgent"] + 1),
+        (DEPCHA.numberOfEconomicGoods, 0),
+        (
+            DEPCHA.numberOfMonetaryValues,
+            counts["bk:Transfer of bk:Transaction with bk:Money"],
+        ),
+        (DEPCHA.numberOfServices, 0),
+        (DEPCHA.numberOfCommodities, 0),
+        (DEPCHA.numberOfRights, 0),
+        (DEPCHA.numberOfTotals, counts["bk:TotalTransaction"]),
+        (DEPCHA.numberOfPlaces, 0),
+        (DEPCHA.numberOfAccounts, 0),
+    ):
+        g.add((node, predicate, Literal(value)))
+    g.add((node, DEPCHA.isMainCurrency, unit_iri[main.id]))
+
+    for year in sorted(years):
+        aggregation = URIRef(f"{base}{pid}#{year}")
+        g.add((aggregation, RDF.type, DEPCHA.Aggregation))
+        g.add((node, DEPCHA.aggregates, aggregation))
+        g.add((aggregation, DEPCHA.date, Literal(year)))
+        g.add((aggregation, BK.unit, Literal(main.unit)))
+        g.add((aggregation, DEPCHA.revenue, Literal(float(revenue[year]))))
+        g.add((aggregation, DEPCHA.expenses, Literal(float(expenses[year]))))
+
+    for currency in config.currencies:
+        unit = unit_iri[currency.id]
+        g.add((unit, RDF.type, HUC.HistoricalUnit))
+        g.add((unit, RDFS.label, Literal(_label(currency.unit))))
+        g.add((node, DEPCHA.currency, unit))
+        if currency.converts_to is not None:
+            conversion = URIRef(f"{base}{context}#{currency.unit}Conversion")
+            g.add((conversion, RDF.type, HUC.Conversion))
+            g.add((conversion, HUC.convertsFrom, unit))
+            g.add(
+                (
+                    conversion,
+                    HUC.convertsTo,
+                    URIRef(f"{base}{context}#{currency.converts_to}"),
+                )
+            )
+            g.add((conversion, HUC.formula, Literal(_label(currency.formula or ""))))
+
+
+def _write(g: Graph, path: Path) -> None:
+    # Write next to the target and replace, so a failed run never leaves a half-written file.
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(dir=path.parent, prefix=f".{path.name}.", suffix=".tmp")
+    os.close(fd)
     try:
-        sum_ += atof(quantity)/ConversionValue
-        return sum_
-    except:
-        print("Exception: Not a valid number in add_Quantity_To_Sum function")
+        g.serialize(destination=tmp, format="pretty-xml")
+        Path(tmp).replace(path)
+    except BaseException:
+        Path(tmp).unlink(missing_ok=True)
+        raise
 
 
-########################################################################################
-# This function checks which kind of measurable is going to be created.
-# case 1: there is a BK_WHAT and BK_QUANTITY
-# case 2: there is a BK_MONEY
-# case 3: there is a BK_COMMODITY|BK_SERVICE
-def createTransferOfMeasurable(Transaction_URI, Transaction):
-    # <bk:Transfer rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#T891TM">
-    Transfer = URIRef(Transaction_URI + "TM")
-    output_graph.add((Transaction, BK.consistsOf,  Transfer))
-    output_graph.add((Transfer, RDF.type, BK.Transfer))
-    
-    global count_transfers
-    count_transfers = count_transfers + 1    
-    
-    # case 1: there is a BK_WHAT and BK_QUANTITY
-    if('bk_what' in df.columns and 'bk_quantity' in df.columns):
-        # selects all columns bk_what
-        all_bk_what = row.filter(like='bk_what')
-        # create a bk:Measurable with a bk:quantity
-        for count, bk_what in enumerate(all_bk_what):
-            Measurable = URIRef(Transaction_URI + "M" + str(count))
-            output_graph.add((Measurable, RDF.type, BK.Measurable))
-            output_graph.add((Transfer, BK.transfers, Measurable))
-            output_graph.add((Measurable, BK.what, Literal(str(row["bk_what"]))))
-            if(pd.notnull(row["bk_quantity"])):
-                output_graph.add((Measurable, BK.quantity, Literal(row["bk_quantity"])))
-          
-    # case 2: there is a BK_MONE   
-    # removed this "and pd.notnull(row["bk_money"]" ist that a problem? 
-    if('bk_money' in df.columns):
-        # selects all columns bk_money, bk_money1 ... it is assumed that the first bk_money is the main currency
-        monetaryValues = row.filter(like='bk_money')
-        # <bk:Transfer>
-        #Transfer = URIRef(Transaction_URI + "TM")
-        #output_graph.add((Transaction, BK.consistsOf,  Transfer))
-        #output_graph.add((Transfer, RDF.type, BK.Transfer))
-
-        ### for all cells with content in columns name bk_money
-        for count, bk_quantity in enumerate(monetaryValues):
-            get_Money(URIRef(Transaction_URI + "M" + str(count)), bk_quantity, str(count), Transfer)
-
-        ### <bk:debit>, <bk:credit>
-        getCreditOrDebit(Transfer) 
-        ##################
-        ### bk:from, bk:to
-        getFromOrTo(Transfer)  
-
-########################################################################################
+def convert(config: Config) -> tuple[Graph, Report]:
+    report = Report(config=str(config.source), output=str(config.output_path))
+    graph = build_graph(config, read_table(config.csv_path), report)
+    return graph, report
 
 
+def _print_report(report: Report) -> None:
+    counts = ", ".join(f"{v} {k}" for k, v in sorted(report.counts.items()))
+    print(f"OK {report.config} -> {report.output}: {counts}")
+    for reason, n in sorted(report.skipped.items()):
+        print(f"SKIP {n} rows: {reason}")
+    by_kind = Counter(e["kind"] for e in report.errors)
+    for kind, n in sorted(by_kind.items()):
+        examples = [e for e in report.errors if e["kind"] == kind][:5]
+        shown = "; ".join(
+            f"line {e['line']} {e['column']}={e['value']!r}" for e in examples
+        )
+        print(f"ERROR {n} x {kind}, e.g. {shown}", file=sys.stderr)
 
 
+def _arguments(argv: list[str] | None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Convert CSV account books to DEPCHA RDF (model 1.2)."
+    )
+    parser.add_argument("configs", nargs="+", type=Path, help="JSON config file(s)")
+    parser.add_argument(
+        "--out-dir",
+        type=Path,
+        help="directory for <OUTPUT-FILE-NAME>.xml (default: current directory)",
+    )
+    parser.add_argument("--output", type=Path, help="output file, single config only")
+    parser.add_argument(
+        "--csv", type=Path, help="input CSV instead of FILENAME, single config only"
+    )
+    parser.add_argument("--pid", help="object PID instead of PID, single config only")
+    parser.add_argument(
+        "--context", help="collection PID instead of CONTEXT, single config only"
+    )
+    parser.add_argument(
+        "--base-url", help=f"base URL instead of BASE_URL (default {DEFAULT_BASE_URL})"
+    )
+    parser.add_argument(
+        "--report", type=Path, help="write the collected counts and errors as JSON"
+    )
+    args = parser.parse_args(argv)
+    single = [f"--{n}" for n in ("output", "csv", "pid", "context") if getattr(args, n)]
+    if single and len(args.configs) > 1:
+        parser.error(f"{', '.join(single)} apply to a single config only")
+    return args
 
 
+def main(argv: list[str] | None = None) -> int:
+    # Line buffering keeps OK/SKIP (stdout) and ERROR (stderr) lines in order.
+    sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
+    sys.stderr.reconfigure(encoding="utf-8")
+    args = _arguments(argv)
+    configs = [load_config(path, args) for path in args.configs]
+    outputs = [c.output_path.resolve() for c in configs]
+    if len(set(outputs)) != len(outputs):
+        raise SystemExit(
+            "ERROR: several configs write the same output file; use separate --out-dir runs"
+        )
+    reports = []
+    for config in configs:
+        graph, report = convert(config)
+        _write(graph, config.output_path)
+        _print_report(report)
+        reports.append(report)
+    if args.report:
+        args.report.parent.mkdir(parents=True, exist_ok=True)
+        args.report.write_text(
+            json.dumps([r.to_dict() for r in reports], ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+    failed = sum(len(r.errors) for r in reports)
+    if failed:
+        print(
+            f"ERROR: {failed} cell errors collected; the RDF was written without those statements",
+            file=sys.stderr,
+        )
+        return 1
+    return 0
 
 
-
-
-
-
-
-
-
-########################################################################################
-### MAIN
-########################################################################################
-# VARIABLES
-Debug_CountEmptyRow = 0
-Debug_DebitCreditEmptyCell = 0
-Debug_FromToEmpty = 0
-Debug_missedTotal = 0
-Debug_CurrencyInformation = "BK_CURRENCY: check"
-Debug_Count_No_BK_ENTRY = 0
-
-# this programm iterate over all .json (=confic files) in a folder --> getting info like filename of the.csv
-# the .csv is loaded and every row is mapped to a RDF-Serialization pf a bk:Transaction.
-
-folder = "gwfp"
-file_extension = ".json"
-# csvToRDF_config__Ledger_C
-config_json_filename = "csvToRDF_config__Ledger_minimal"
-
-###
-# get all JSON confic files in a folder
-# for a single file: 
-#all_JSON_filenames = [i for i in glob.glob(f"{folder}/{config_json_filename}{file_extension}")]
-all_JSON_filenames = [i for i in glob.glob(f"{folder}/*{file_extension}")]
-########################################################################################
-for json_file in all_JSON_filenames:
-    # open confic file
-    with open(json_file) as json_config_file:
-        config_data = json.load(json_config_file)
-
-    df = pd.read_csv(open(folder + "/" + config_data["FILENAME"], encoding="utf8"))
-    
-    # normalize all colum names to bk_entry etc. [for JSON query result in DEPCHA needed!]
-    df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_').str.replace('(', '').str.replace(')', '')
-
-
-    ##############################
-    ### define variables for RDF graph
-    BK = Namespace("https://gams.uni-graz.at/o:depcha.bookkeeping#")
-    GAMS = Namespace("https://gams.uni-graz.at/o:gams-ontology#")
-    VOID = Namespace("http://rdfs.org/ns/void#")
-    FOAF = Namespace("http://xmlns.com/foaf/spec/")
-    DCTERMS = Namespace("http://purl.org/dc/terms/")
-    DEPCHA = Namespace("https://gams.uni-graz.at/o:depcha.ontology#")
-    BASE_URL = "https://gams.uni-graz.at/"
-    DC = Namespace("http://purl.org/dc/elements/1.1/")
-    HUC = Namespace("https://gams.uni-graz.at/o:depcha.huc-ontology#")
-    SCHEMA = Namespace("https://schema.org/")
-    
-    # make a graph
-    output_graph = Graph()
-    # define namespace in output file
-    output_graph.bind("bk", BK)
-    output_graph.bind("gams", GAMS)
-    output_graph.bind("void", VOID)
-    output_graph.bind("foaf", FOAF)
-    output_graph.bind("dcterms", DCTERMS)
-    output_graph.bind("dc", DC)
-    output_graph.bind("depcha", DEPCHA)
-    output_graph.bind("huc", HUC)
-    output_graph.bind("schema", SCHEMA)
-
-    #############################
-    ### load data from confic file
-    CONTEXT = config_data["CONTEXT"]
-    PID = config_data["PID"]
-    depcha_accountHolder_label = config_data["depcha_accountHolder_label"]
-    depcha_accountHolder = URIRef(BASE_URL + CONTEXT + "#" + config_data["depcha_accountHolder_id"])
-    # the first currency ist the main currency
-    BK_MAIN_CURRENCY = config_data["BK_CURRENCY"]["currency"][0]
-
-    # from is reserved term in python
-    BK_from_property = URIRef("https://gams.uni-graz.at/o:depcha.bookkeeping#from")
-
-    #
-    count_transactions = 0
-    count_totals = 0
-    count_transfers = 0
-    count_moneys = 0
-    count_commodities = 0
-    count_services = 0
-    count_economic_units = 0
-    count_monetary_values = 0
-    count_places = 0
-
-    ########################################################################################
-    ### https://www.w3.org/TR/void/
-    ########################################################################################
-    VOID_Dataset = URIRef(BASE_URL + PID)
-    output_graph.add((VOID_Dataset, RDF.type, VOID.Dataset ))
-    # foaf
-    output_graph.add((VOID_Dataset, FOAF.homepage, URIRef(BASE_URL + PID)))
-    # generated
-    output_graph.add((VOID_Dataset, DCTERMS.modified, Literal(date.today())))
-    # void 
-    output_graph.add((VOID_Dataset, VOID.feature, URIRef("http://www.w3.org/ns/formats/RDF_XML")))
-    output_graph.add((VOID_Dataset, VOID.dataDump, URIRef(BASE_URL + PID  + "/ONTOLOGY")))
-    output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("https://gams.uni-graz.at/o:depcha.bookkeeping#")))
-    output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("https://gams.uni-graz.at/o:gams-ontology#")))
-    output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("http://purl.org/dc/terms/")))
-    output_graph.add((VOID_Dataset, VOID.vocabulary, URIRef("http://www.ontology-of-units-of-measure.org/resource/om-2/")))
-    output_graph.add((VOID_Dataset, VOID.triples, Literal(0)))
-    if(config_data["DEPCHA_DATASET_DC_METADATA"]):
-        output_graph.add((VOID_Dataset, DC.title, Literal( config_data["DEPCHA_DATASET_DC_METADATA"]["title"] )))
-        output_graph.add((VOID_Dataset, DC.creator, Literal( config_data["DEPCHA_DATASET_DC_METADATA"]["creator"] ) ))
-        output_graph.add((VOID_Dataset, DC.date, Literal( config_data["DEPCHA_DATASET_DC_METADATA"]["date"] ) ))
-        output_graph.add((VOID_Dataset, DC.contributor, Literal( config_data["DEPCHA_DATASET_DC_METADATA"]["contributor"] ) ))
-        output_graph.add((VOID_Dataset, DC.language, Literal( config_data["DEPCHA_DATASET_DC_METADATA"]["language"] ) ))
-        output_graph.add((VOID_Dataset, DC.source, Literal( config_data["DEPCHA_DATASET_DC_METADATA"]["source"] ) ))
-        output_graph.add((VOID_Dataset, DC.subject, Literal( config_data["DEPCHA_DATASET_DC_METADATA"]["subject"] ) ))
-        # static metadata
-        output_graph.add((VOID_Dataset, DC.relation, Literal( "Digital Edition Publishing Cooperative for Historical Accounts" ) ))
-        output_graph.add((VOID_Dataset, DC.relation, Literal( "http://gams.uni-graz.at/depcha" ) ))
-        output_graph.add((VOID_Dataset, DC.publisher, Literal( "Institute Centre for Information Modelling, University of Graz" ) ))
-        output_graph.add((VOID_Dataset, DC.rights, Literal( "Creative Commons BY 4.0" ) ))
-        output_graph.add((VOID_Dataset, DC.rights, Literal( "https://creativecommons.org/licenses/by/4.0" ) ))
-        #output_graph.add((VOID_Dataset, DC.format, Literal( "rdf+xml" ) ))
-
-        
-    ########################################################################################
-    ### Distinct bk:EconomicAgent
-    ########################################################################################
-    # * if a bk_EconomicAgent column exists create a distinct set of <bk:EconomicAgent>
-    # * therwise make a distinct list of all entries in the BK_FROM and BK:TO column   
-    
-    # todo bk:Group, bk:Individual
-    if(depcha_accountHolder):
-        output_graph.add((depcha_accountHolder, RDF.type,  BK.EconomicAgent))
-        output_graph.add((depcha_accountHolder , RDFS.label,  Literal(normalizeStringforJSON(depcha_accountHolder_label)) ))
-        count_economic_units += 1
-    
-      
-    if('bk_economic_unit' in df.columns):
-        print("in column")
-        for name in df.bk_economic_unit.unique():
-            # normalize for URI
-            if(type(name)==str):
-                normalized_name = normalizeStringforURI(name)
-                EconomicAgent_URI = BASE_URL + PID + str(normalized_name)
-                EconomicAgent = URIRef(EconomicAgent_URI)
-                output_graph.add((EconomicAgent, RDF.type,  BK.EconomicAgent))
-                output_graph.add((EconomicAgent , RDFS.label,  Literal(normalizeStringforJSON(name)) ))
-                output_graph.add((EconomicAgent , SCHEMA.name,  Literal(normalizeStringforJSON(name)) ))
-                count_economic_units += 1
-        print("Log: distinct bk_EconomicAgent ... check") 
-    elif('bk_to' in df.columns or 'bk_from' in df.columns):
-        print("yes")
-    else:
-        print("Log: was not able to create distinct BK.EconomicAgent")    
-
-    
-    # bk:EconomicAgent
-    # multiple names in column, seperator from forename and surname is the same as seperator from names
-    # hack: if 1 or less , than its just on name or cash or orgName
-         
-    ########################################################################################
-    ### data structure which contains sums for income/expense fpr each year
-    income_db = {}
-    expense_db = {}
-    
-    ########################################################################################
-    ### Distinct dates
-    ########################################################################################
-    # define a set with all dates from bk_when column
-    #  * 10 March 1772 --> 1772-03-10
-    #  * March 1772 --> 1772-03-01
-    #  * 1772 --> 1772-01-01
-    #  * skip empty cells; catch invalid dates; make 1000-01-01 default and skip it  
-    #  * fill  income_db|expense_db with they years as key 
-    dates = set()
-    for date_string in df.bk_when:
-        if(pd.notnull(date_string)):
-            try:
-                normalized_date = dateutil.parser.parse(date_string, default=datetime(1000, 1, 1))
-                if(normalized_date.date().year != 1000):
-                    #dates.add(normalized_date.date().strftime("%Y-%m"))
-                    year = normalized_date.date().strftime("%Y")
-                    dates.add(year)
-                    income_db[year] = []
-                    expense_db[year] = []
-            except:
-                print(f"Exception: invalid date {date_string}")            
-    print("Log: Distinct dates ... check")
-                
-    ########################################################################################
-    ### <bk:Transaction>
-    ########################################################################################   
-    # iterate over all rows; every row is a bk:Transaction or bk:Total 
-    for index, row in df.iterrows():
-        
-        ### TODO: row with "Carried to" or "[Total]" or "Amount brought over" must be exluded or explicitly defined
-        # a bk_Transaction is not a "[Total]" and has a date
-        if('bk_entry' in df.columns):
-            try:
-                if ( pd.notnull(row["bk_entry"]) and not "[Total]" in str(row["bk_entry"]) and
-                    (not "Carried to" in row["bk_entry"]) and (not "Amount brought over" in row["bk_entry"])):
-                    ### <bk:Transaction>
-                    Transaction_URI = BASE_URL + PID + "#T" + str(index)
-                    Transaction = URIRef(Transaction_URI)
-                    output_graph.add((Transaction, RDF.type,  BK.Transaction))
-                    # count
-                    count_transactions = count_transactions + 1
-                    ### <bk:entry>, <gams:isMemberOfCollection>
-                    getBKCoreElements(Transaction)
-                    ### <bk:Transfer> <bk:Money>
-                    createTransferOfMeasurable(Transaction_URI, Transaction)
-                    #ToDo
-                    ### bk:Transfer of Commodity
-                    #if(pd.notnull(row.get["bk_commodity"])):
-                    #    print("todo")
-                        
-                    ### bk:Transfer of Service
-                    #if(pd.notnull(row["bk_service"])):
-                    #    print("todo")
-                    
-                #########################################
-                # GWFP: [Total] in bk:entry marks bk:Total, Todo optional row.BK_TOTAL ?
-                elif ("[Total]" in str(row["bk_entry"])):  
-                    ### <bk:Total>
-                    Total_URI = BASE_URL + PID + "#To" + str(index)
-                    Total = URIRef(Total_URI)
-                    output_graph.add((Total, RDF.type,  BK.Total))
-                    # count
-                    count_totals = count_totals + 1
-                    
-                    ### <bk:entry>, <gams:isMemberOfCollection>
-                    getBKCoreElements(Total)
-                    ### <bk:Transfer> <bk:Money>
-                    createTransferOfMeasurable(Total_URI, Total)
-                    
-                #########################################
-                else:
-                    Debug_CountEmptyRow += 1         
-                    #print("Log: bk:Transactions|bk:Total ... check")
-            except:
-                Debug_Count_No_BK_ENTRY += 1 
-                #print(f"Exception: No BK_ENTRY.")
-                    
-        #########################################   
-        # there is only a BK_ID and not BK_ENTRY to identify a transaction
-        # BK_ID is part of the URI
-        if('bk_id' in df.columns):
-            ### <bk:Transaction>
-            Transaction_URI = BASE_URL + PID + "#T" + str(row["bk_id"])
-            Transaction = URIRef(Transaction_URI)
-            output_graph.add((Transaction, RDF.type,  BK.Transaction))
-            # count
-            count_transactions = count_transactions + 1
-            ### <bk:entry>, <gams:isMemberOfCollection>
-            getBKCoreElements(Transaction)
-            createTransferOfMeasurable(Transaction_URI, Transaction)
-    
-    
-        ### <bk:when>
-        # try to parse string with dateutil and get YYYY-MM-DD
-        if('bk_when' in df.columns):
-            if(pd.notnull(row["bk_when"])):
-                try:
-                    # if more than two words try to parse the %Y-%m-%d - date
-                    if(len(row['bk_when'].split()) > 2):
-                        normalized_date = dateutil.parser.parse(row['bk_when'], ignoretz=True).strftime('%Y-%m-%d')
-                    else:
-                        normalized_date = dateutil.parser.parse(row['bk_when'], ignoretz=True).strftime('%Y-%m')
-                    output_graph.add((Transaction, BK.when, Literal(normalized_date) ))
-                except:
-                    print(f"Error: Found invalid date {row['bk_when']} in row {index}")     
-    
-    #print(income_db)   
-    #print("########")
-    #print(expense_db)
-
-
-    ########################################################################################
-    ### <bk:Dataset>
-    ########################################################################################
-    DEPCHA_Dataset_URI = BASE_URL + PID + "#Dataset"
-    DEPCHA_Dataset = URIRef(DEPCHA_Dataset_URI)
-    output_graph.add(( DEPCHA_Dataset, RDF.type,  DEPCHA.Dataset))
-    output_graph.add(( DEPCHA_Dataset, GAMS.isMemberOfCollection,  URIRef(BASE_URL + CONTEXT) ))
-    output_graph.add(( DEPCHA_Dataset, GAMS.isPartOf, URIRef(BASE_URL + PID) )) 
-    # depeche ontology aggregation
-    output_graph.add(( DEPCHA_Dataset, DEPCHA.accountHolder, URIRef(depcha_accountHolder) ))
-    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfTransactions, Literal(count_transactions) ))
-    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfTransfers, Literal(count_transfers) ))
-    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfEconomicAgents, Literal(count_economic_units) ))
-    count_economic_goods = count_commodities + count_services + count_rights
-    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfEconomicGoods, Literal(count_economic_goods) ))
-    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfMonetaryValues, Literal(count_monetary_values) ))
-    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfServices, Literal(count_services) ))
-    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfCommodities, Literal(count_commodities) ))
-    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfRights, Literal(count_rights) ))
-    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfTotals, Literal(count_totals) ))
-    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfPlaces, Literal(count_places) ))
-    output_graph.add(( DEPCHA_Dataset, DEPCHA.numberOfAccounts, Literal(count_accounts) ))
-
-    # depeche ontology: units and currencies
-    output_graph.add((DEPCHA_Dataset, DEPCHA.isMainCurrency, URIRef(BASE_URL + CONTEXT + "#" + BK_MAIN_CURRENCY["unit"]) ))
-    for currency in config_data["BK_CURRENCY"]["currency"]:
-        output_graph.add((DEPCHA_Dataset, DEPCHA.currency, URIRef(BASE_URL + CONTEXT + "#" + BK_MAIN_CURRENCY["unit"]) ))
-
-    # create a bk:Dataset for every year
-    # it contains info about the sum of all expense and income          
-    for year in dates:
-        # <bk:Dataset rdf:about="https://gams.uni-graz.at/o:depcha.gwfp.3#1771">
-        depcha_Aggregation_URI = BASE_URL + PID + "#" + year
-        Aggregation = URIRef(depcha_Aggregation_URI)
-        output_graph.add((Aggregation, RDF.type,  DEPCHA.Aggregation))
-        output_graph.add((DEPCHA_Dataset, DEPCHA.aggregates, Aggregation))
-        # <bk:date>1771</bk:date>
-        output_graph.add((Aggregation, DEPCHA.date, Literal(year) ))
-        output_graph.add((Aggregation, BK.unit, Literal(BK_MAIN_CURRENCY['unit']) ))
-
-        # income / debit
-        revenue_sum = 0
-        for money in income_db[year]:
-            unit = list(money)[0]
-            quantity = money.get(unit)
-            # return converted money according to predefined main currency (confic file)
-            revenue_sum += convert_Money_to_MainCurrency(quantity, unit) 
-        output_graph.add((Aggregation, DEPCHA.revenue, Literal(float(revenue_sum)) ))
-
-        # expense / credit
-        expenditure_sum = 0
-        for money in expense_db[year]:
-            unit = list(money)[0]
-            quantity = money.get(unit)
-            expenditure_sum += convert_Money_to_MainCurrency(quantity, unit) 
-        output_graph.add((Aggregation, DEPCHA.expenses, Literal(float(expenditure_sum)) ))
-
-    ########################################################################################
-    ### Currency <om:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#pound">
-    ########################################################################################
-    ### currency info in confic file
-    if(config_data["BK_CURRENCY"]):
-        # the first mentioned currency is the main currency all other are mapepd to
-        #BK_MAIN_CURRENCY = config_data["BK_CURRENCY"]["currency"][0]
-        # <bk:Unit rdf:about="https://gams.uni-graz.at/context:depcha.gwfp#shilling">
-        for currency in config_data["BK_CURRENCY"]["currency"]:
-            HUC_Unit = URIRef(BASE_URL + CONTEXT + "#" + currency["unit"])
-            output_graph.add((HUC_Unit, RDF.type, HUC.HistoricalUnit ))
-            output_graph.add((HUC_Unit, RDFS.label, Literal(normalizeStringforJSON(currency["unit"])) ))
-            # add to depcha:Dataset the unit
-            output_graph.add((DEPCHA_Dataset, DEPCHA.currency, HUC_Unit ))
-            if(currency.get("conversion", False)):
-                HUC_Conversion = URIRef(BASE_URL + CONTEXT + "#" + currency["unit"] + "Conversion")
-                output_graph.add((HUC_Conversion, RDF.type, HUC.Conversion ))
-                output_graph.add((HUC_Conversion, HUC.convertsFrom, HUC_Unit ))
-                toCurrency = URIRef(BASE_URL + CONTEXT + "#" + currency["conversion"]["convertsTo"])
-                output_graph.add((HUC_Conversion, HUC.convertsTo,  toCurrency))
-                output_graph.add((HUC_Conversion, HUC.formula, Literal(normalizeStringforJSON(currency["conversion"]["formula"]))))
-        print("Log: BK_CURRENCY ... check") 
-    ###  currency info in csv
-    # if bk_currency is in the spreadsheet?
-    # case 1: bk_currency column with multiple values in it like: pound, shilling, cents
-    # case 2: for each bk:currency a column and every cell is filled up with the same value 
-    elif('bk_currency' in df.columns):
-        print("ToDo bk_currency")
-    else:
-        Debug_CurrencyInformation = "Error 'HUC_CURRENCY' missing: no Information about currency in spreadsheet or in confic file"
-        print("Log: HUC_CURRENCY ... failed")   
-
-
-
-    ########################################################################################
-    ### DEBUGGING
-    print("################## DATASET:")
-    #print(DataSets)
-    print("################## Distinct bk:EconomicAgent:")
-    #print(DistinctEconomicAgent)
-    print("################## Columns:")
-    #print(df.columns.values)
-    print("################## Log:")
-    print(f"Log: Processed the following config files: {all_JSON_filenames}")
-    print(f"Log: skipped {str(Debug_CountEmptyRow)} rows with empty bk:entry")
-    print(f"Log: no bk:debit or bk:credit found for {str(Debug_DebitCreditEmptyCell)} bk:entry")
-    print(f"Log: was not able to identify bk:from or bk:to for {str(Debug_FromToEmpty)} bk:entry")
-    print(f"Log: missed {str(Debug_missedTotal)} bk:Total")
-    #print(Debug_CurrencyInformation)
-    print(f"The BK_MAIN_CURRENCY is {BK_MAIN_CURRENCY}") 
-    print(f"Log: {count_transactions} bk:Transaction created")
-    print(f"Log: {count_totals} bk:Total created")
-    print(f"Log: {count_transfers} bk:Transfer created")
-    print(f"Log: {count_moneys} bk:Money created")
-    print(f"Log: {count_commodities} bk:Commodity created")
-    print(f"Log: {count_services} bk:Service created")
-    print(f"Log: {count_rights} bk:Right created")
-    print(f"Log: {count_EconomicAgents} bk:EconomicAgent created")
-    print(f"Log: {Debug_Count_No_BK_ENTRY} no valid bk:entry in row.")    
-        
-    ########################################################################################
-    ### OUTPUT file .xml
-    ########################################################################################
-    output_graph.serialize(destination = config_data["OUTPUT-FILE-NAME"] + '.xml', format="pretty-xml")
-
-### 
-print(f"new file: {config_data['OUTPUT-FILE-NAME']}.xml")     
+if __name__ == "__main__":
+    sys.exit(main())

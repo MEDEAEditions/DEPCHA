@@ -1,7 +1,7 @@
 {
-  "FILENAME":"example.csv",  
-  "CONTEXT":"context:depcha.example",
-  "PID":"o:depcha.example.1",
+  "FILENAME": "GWFP_Ledger_A_1750_1772.csv",
+  "CONTEXT": "context:depcha.example",
+  "PID": "o:depcha.example.1",
   "BK_CURRENCY": {
     "currency": [
       {
@@ -11,19 +11,17 @@
       {
         "id": "1",
         "unit": "shilling",
-        "conversion": 
-        {
-          "hasBaseUnit": "pound",
-          "formular": "$BaseUnit / 20"
+        "conversion": {
+          "convertsTo": "pound",
+          "formula": "$BaseUnit / 20"
         }
       },
       {
         "id": "2",
         "unit": "pence",
-        "conversion": 
-        {
-          "hasBaseUnit": "pound",
-          "formular": "$BaseUnit / 240"
+        "conversion": {
+          "convertsTo": "pound",
+          "formula": "$BaseUnit / 240"
         }
       },
       {
@@ -33,15 +31,19 @@
       {
         "id": "4",
         "unit": "cents",
-        "conversion": 
-        {
-          "hasBaseUnit": "dollar",
-          "formular": "$BaseUnit / 100"
+        "conversion": {
+          "convertsTo": "dollar",
+          "formula": "$BaseUnit / 100"
         }
       }
     ]
   },
-  "BK_MAIN_BETWEEN_NAME":"BK_MAIN_BETWEEN_NAME",
-  "BK_MAIN_BETWEEN_ID":"BK_MAIN_BETWEEN_ID",
-  "OUTPUT-FILE-NAME":"depcha-example.1"
+  "depcha_accountHolder_label": "BK_MAIN_BETWEEN_NAME",
+  "depcha_accountHolder_id": "BK_MAIN_BETWEEN_ID",
+  "TOTAL_MARKER": "[Total]",
+  "SKIP_ENTRY_MARKERS": [
+    "Carried to",
+    "Amount brought over"
+  ],
+  "OUTPUT-FILE-NAME": "depcha-example.1"
 }
