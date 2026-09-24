@@ -14,6 +14,7 @@
      xmlns:depcha="https://gams.uni-graz.at/o:depcha.bookkeeping#"
      xmlns:cidoc-crm="http://www.cidoc-crm.org/cidoc-crm/">
     <owl:Ontology rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping">
+        <owl:versionIRI rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping-1.2"/>
         <dc:creator xml:lang="en">Christopher Pollin</dc:creator>
         <dc:creator xml:lang="en">Georg Vogeler</dc:creator>
         <dc:date>2022</dc:date>
@@ -152,6 +153,20 @@
             zugeordnet.</rdfs:comment>
         <rdfs:label xml:lang="en">has accountHolder</rdfs:label>
         <rdfs:label xml:lang="de">wird gehalten von</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#addUp -->
+
+    <owl:ObjectProperty rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#addUp">
+        <rdfs:domain rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transaction"/>
+        <rdfs:comment xml:lang="en">Connects a transaction with the total in the source that its
+            amount is added up to.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Verbindet eine Transaktion mit der Summe in der Quelle, in die
+            ihr Betrag eingerechnet ist.</rdfs:comment>
+        <rdfs:label xml:lang="en">adds up to</rdfs:label>
+        <rdfs:label xml:lang="de">summiert zu</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -875,6 +890,24 @@
         <rdfs:label xml:lang="de">Dienstleistung</rdfs:label>
         <rdfs:label xml:lang="en">Service</rdfs:label>
         <rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q7406919"/>
+    </owl:Class>
+    
+
+
+    <!-- https://gams.uni-graz.at/o:depcha.bookkeeping#SubTotalTransaction -->
+
+    <owl:Class rdf:about="https://gams.uni-graz.at/o:depcha.bookkeeping#SubTotalTransaction">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object"/>
+        <rdfs:subClassOf rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#Transaction"/>
+        <rdfs:comment xml:lang="en">A subtotal in the source. This is the class the RDF
+            transformation of model 1.2 assigns to subtotals, written with a capital T, for the
+            concept defined as bk:SubtotalTransaction.</rdfs:comment>
+        <rdfs:comment xml:lang="de">Eine Zwischensumme in der Quelle. Diese Klasse vergibt die
+            RDF-Transformation des Modells 1.2 an Zwischensummen, mit großem T geschrieben, für das
+            als bk:SubtotalTransaction definierte Konzept.</rdfs:comment>
+        <rdfs:label xml:lang="en">Subtotal Transaction</rdfs:label>
+        <rdfs:label xml:lang="de">Zwischensummentransaktion</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://gams.uni-graz.at/o:depcha.bookkeeping#SubtotalTransaction"/>
     </owl:Class>
     
 
