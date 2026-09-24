@@ -237,6 +237,19 @@
           </constraint>
         </constraintSpec>
 
+        <constraintSpec ident="depcha-licence" scheme="schematron">
+          <desc>The RDF states the licence given in availability/licence/@target of the
+            publicationStmt and falls back to CC BY 4.0 without one. A licence stated only in prose
+            is not read, so data under other terms would be published as CC BY 4.0.</desc>
+          <constraint>
+            <sch:rule context="tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:availability">
+              <sch:assert id="licence-target" role="warning"
+                test="normalize-space(tei:licence/@target) != ''">availability states no licence
+                with @target, so the RDF states the default CC BY 4.0.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
         <constraintSpec ident="depcha-ana-tokens" scheme="schematron">
           <desc>The vocabulary of @ana is closed for the prefixes bk: and depcha:. It consists of
             the tokens depcha-TORDF.xsl tests for, the tokens the annotation tutorial documents
