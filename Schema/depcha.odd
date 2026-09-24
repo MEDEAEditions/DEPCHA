@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xml:lang="en">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>DEPCHA TEI profile</title>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Department of Digital Humanities, University of Graz</publisher>
+        <availability>
+          <licence target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Derived from the RDF transformation depcha-TORDF.xsl of the DEPCHA presentation layer,
+          model version 1.2 of the Bookkeeping Ontology, and from the annotation tutorial
+          o:depcha.tutorial.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <head>DEPCHA TEI profile</head>
+      <p>The profile describes what a TEI account book must contain so that the RDF transformation
+        depcha-TORDF.xsl turns it into a complete Bookkeeping Ontology graph. It admits the whole of
+        TEI and adds DEPCHA constraints as ISO Schematron. Every constraint names the transformation
+        behaviour it protects.</p>
+      <p>A constraint has the role error when the data makes the transformation abort, yields no
+        usable graph, or uses an annotation token the profile does not define. It has the role
+        warning when the transformation runs but the RDF loses or misplaces information, for example
+        a reference that dangles or an amount that falls out of the yearly totals.</p>
+      <p>The rules are written in XPath 1.0 so that they run with the XSLT 1.0 query binding of
+        lxml. The expressions used are also valid XPath 2.0 and are meant to run under the XSLT 2.0
+        binding of the TEI Stylesheets as well. Lower-casing is approximated with translate() over ASCII and
+        Latin-1 letters.</p>
+
+      <schemaSpec ident="depcha" start="TEI" docLang="en">
+        <!-- All modules of tei_all except the computer-mediated communication module, which no
+          DEPCHA collection uses. Encodings from Transkribus and FromThePage use elements from many
+          modules, and without a Java runtime a module selection could not be tested against the
+          corpus, so the profile restricts annotation, not elements. -->
+        <moduleRef key="tei"/>
+        <moduleRef key="core"/>
+        <moduleRef key="header"/>
+        <moduleRef key="textstructure"/>
+        <moduleRef key="analysis"/>
+        <moduleRef key="certainty"/>
+        <moduleRef key="corpus"/>
+        <moduleRef key="dictionaries"/>
+        <moduleRef key="drama"/>
+        <moduleRef key="figures"/>
+        <moduleRef key="gaiji"/>
+        <moduleRef key="iso-fs"/>
+        <moduleRef key="linking"/>
+        <moduleRef key="msdescription"/>
+        <moduleRef key="namesdates"/>
+        <moduleRef key="nets"/>
+        <moduleRef key="spoken"/>
+        <moduleRef key="tagdocs"/>
+        <moduleRef key="textcrit"/>
+        <moduleRef key="transcr"/>
+        <moduleRef key="verse"/>
+
+        <constraintSpec ident="depcha-namespaces" scheme="schematron">
+          <constraint>
+            <sch:ns prefix="tei" uri="http://www.tei-c.org/ns/1.0"/>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-identity" scheme="schematron">
+          <desc>The object PID names every transaction IRI and the collection context names every
+            entity IRI. Without exactly one of each the transformation writes an error text instead
+            of a graph, aborts on a sequence passed to concat(), or mints IRIs outside any
+            collection.</desc>
+          <constraint>
+            <sch:rule context="/tei:TEI">
+              <sch:let name="pid" value="//tei:publicationStmt/tei:idno[@type = 'PID']"/>
+              <sch:let name="context" value="tei:teiHeader//tei:publicationStmt/tei:ref[@type = 'context']"/>
+              <sch:let name="collection" value="substring-after($context[1]/@target, 'context:depcha.')"/>
+              <sch:assert id="pid-missing" role="error" test="count($pid) &gt; 0">No
+                publicationStmt/idno[@type='PID']. The transformation writes "ERROR: No PID" instead of
+                a graph.</sch:assert>
+              <sch:assert id="pid-multiple" role="error" test="count($pid) &lt; 2">The document has
+                <sch:value-of select="count($pid)"/> idno[@type='PID'] in publicationStmt. The
+                transformation aborts on the sequence.</sch:assert>
+              <sch:assert id="context-missing" role="error" test="count($context) &gt; 0">No
+                publicationStmt/ref[@type='context'] in the teiHeader. Every entity IRI of the graph
+                would lie outside a collection.</sch:assert>
+              <sch:assert id="context-multiple" role="error" test="count($context) &lt; 2">The
+                teiHeader has <sch:value-of select="count($context)"/> ref[@type='context'] in
+                publicationStmt. The transformation aborts or picks one arbitrarily.</sch:assert>
+              <sch:assert id="pid-collection" role="warning"
+                test="count($pid) != 1 or count($context) != 1 or starts-with($pid[1], concat('o:depcha.', $collection, '.'))"
+                >PID <sch:value-of select="$pid"/> does not belong to the collection <sch:value-of
+                  select="$context/@target"/>. Transactions and entities of the object end up in
+                different collections.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-pid-form" scheme="schematron">
+          <desc>The PID is copied verbatim into IRIs, so a placeholder or whitespace breaks every
+            transaction IRI.</desc>
+          <constraint>
+            <sch:rule context="tei:publicationStmt/tei:idno[@type = 'PID']">
+              <sch:assert id="pid-form" role="error"
+                test="starts-with(., 'o:depcha.') and string-length(.) &gt; 9 and . = normalize-space(.) and not(contains(., ' ')) and not(contains(., '#'))"
+                >PID "<sch:value-of select="."/>" is not of the form o:depcha.collection.n without
+                whitespace or '#'.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-context-form" scheme="schematron">
+          <desc>The collection context is copied into every entity IRI, with or without the prefix
+            info:fedora/.</desc>
+          <constraint>
+            <sch:rule context="tei:teiHeader//tei:publicationStmt/tei:ref[@type = 'context']">
+              <sch:assert id="context-form" role="error"
+                test="(starts-with(@target, 'context:depcha.') or starts-with(@target, 'info:fedora/context:depcha.')) and not(contains(@target, ' ')) and @target = normalize-space(@target)"
+                >Context "<sch:value-of select="@target"/>" is not of the form
+                context:depcha.collection, optionally prefixed with info:fedora/.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-prefixes" scheme="schematron">
+          <desc>The prefix declarations make the bk: and depcha: tokens of @ana resolvable
+            pointers. Without them the annotation is undefined in TEI terms. In the corpus a missing
+            declaration also marks encodings the transformation cannot read.</desc>
+          <constraint>
+            <sch:rule context="/tei:TEI">
+              <sch:let name="bk" value="tei:teiHeader//tei:listPrefixDef/tei:prefixDef[@ident = 'bk']"/>
+              <sch:let name="depcha" value="tei:teiHeader//tei:listPrefixDef/tei:prefixDef[@ident = 'depcha']"/>
+              <sch:assert id="prefix-bk" role="error" test="$bk">No prefixDef[@ident='bk'] in
+                listPrefixDef, so the bk: tokens are undefined.</sch:assert>
+              <sch:assert id="prefix-bk-namespace" role="error"
+                test="not($bk) or $bk/@replacementPattern = 'https://gams.uni-graz.at/o:depcha.bookkeeping#$1'"
+                >prefixDef bk expands to "<sch:value-of select="$bk/@replacementPattern"/>", not to
+                the Bookkeeping namespace https://gams.uni-graz.at/o:depcha.bookkeeping#$1.</sch:assert>
+              <sch:assert id="prefix-depcha" role="error" test="$depcha">No
+                prefixDef[@ident='depcha'] in listPrefixDef, so the depcha: tokens are
+                undefined.</sch:assert>
+              <sch:assert id="prefix-depcha-namespace" role="error"
+                test="not($depcha) or $depcha/@replacementPattern = 'https://gams.uni-graz.at/o:depcha.ontology#$1'"
+                >prefixDef depcha expands to "<sch:value-of select="$depcha/@replacementPattern"/>",
+                not to the DEPCHA namespace https://gams.uni-graz.at/o:depcha.ontology#$1.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-main-currency" scheme="schematron">
+          <desc>The yearly revenue and expenses are computed in the main currency. The
+            transformation compares @ana exactly with depcha:mainCurrency at the fixed path
+            teiHeader/encodingDesc/unitDecl/unitDef, terminates when it finds none and aborts when it
+            finds several.</desc>
+          <constraint>
+            <sch:rule context="/tei:TEI">
+              <sch:let name="main" value="tei:teiHeader/tei:encodingDesc/tei:unitDecl/tei:unitDef[@ana = 'depcha:mainCurrency']"/>
+              <sch:let name="marked" value="//tei:unitDef[contains(concat(' ', normalize-space(@ana), ' '), ' depcha:mainCurrency ')]"/>
+              <sch:assert id="main-currency-missing" role="error" test="count($main) &gt; 0">No
+                teiHeader/encodingDesc/unitDecl/unitDef with @ana exactly "depcha:mainCurrency". The
+                transformation terminates. <sch:value-of select="count($marked)"/> unitDef carry the
+                token combined with others or at another place.</sch:assert>
+              <sch:assert id="main-currency-multiple" role="error" test="count($main) &lt; 2"
+                ><sch:value-of select="count($main)"/> unitDef are marked depcha:mainCurrency. The
+                transformation aborts on the sequence.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-main-currency-definition" scheme="schematron">
+          <desc>The label of the main currency becomes the unit of every aggregation, its
+            identifier the currency IRI the totals are summed in.</desc>
+          <constraint>
+            <sch:rule context="tei:teiHeader/tei:encodingDesc/tei:unitDecl/tei:unitDef[@ana = 'depcha:mainCurrency']">
+              <sch:assert id="main-currency-label" role="error" test="tei:label">The main currency
+                has no label. The transformation aborts when it writes the unit of the yearly
+                aggregation.</sch:assert>
+              <sch:assert id="main-currency-id" role="warning" test="@xml:id">The main currency has
+                no @xml:id, so its IRI ends in '#' and no amount is summed in it.</sch:assert>
+              <sch:assert id="main-currency-type" role="warning" test="@type = 'currency'">The main
+                currency lacks @type='currency', so the dataset does not state it as main
+                currency.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-account-holder" scheme="schematron">
+          <desc>Revenue and expenses are the transfers to and from the account holder. The
+            transformation finds the holder by the token depcha:accountHolder anywhere in the
+            document and passes its @xml:id to concat(), which aborts on more than one.</desc>
+          <constraint>
+            <sch:rule context="/tei:TEI">
+              <sch:let name="holders" value="//*[@ana][contains(concat(' ', normalize-space(@ana), ' '), ' depcha:accountHolder ')]"/>
+              <sch:assert id="account-holder-missing" role="warning" test="count($holders) &gt; 0"
+                >No element is marked depcha:accountHolder, so revenue and expenses of every year are
+                0.</sch:assert>
+              <sch:assert id="account-holder-multiple" role="error"
+                test="count($holders[@xml:id]) &lt; 2"><sch:value-of
+                  select="count($holders[@xml:id])"/> elements with @xml:id are marked
+                depcha:accountHolder. The transformation aborts.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-account-holder-entity" scheme="schematron">
+          <desc>The account holder IRI is formed from its @xml:id and must name a resource the
+            transformation defines. The dataset states the holder only when it is in the
+            teiHeader.</desc>
+          <constraint>
+            <sch:rule context="tei:*[@ana][contains(concat(' ', normalize-space(@ana), ' '), ' depcha:accountHolder ')]">
+              <sch:assert id="account-holder-id" role="warning" test="@xml:id">The account holder
+                (<sch:value-of select="local-name()"/>) has no @xml:id, so its IRI ends in '#'.</sch:assert>
+              <sch:assert id="account-holder-entity" role="warning"
+                test="((self::tei:person or self::tei:personGrp) and parent::tei:listPerson[@ana = 'depcha:index']) or (self::tei:org and parent::tei:listOrg[@ana = 'depcha:index']) or (self::tei:category and ancestor::tei:taxonomy[contains(concat(' ', normalize-space(@ana), ' '), ' bk:account ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:rubrics ') or contains(concat(' ', normalize-space(@ana), ' '), ' depcha:index ')])"
+                >The account holder is a <sch:value-of select="local-name()"/>, not a person, group or
+                organisation of an index list marked depcha:index nor an account category, so no
+                resource of the graph carries its IRI.</sch:assert>
+              <sch:assert id="account-holder-header" role="warning" test="ancestor::tei:teiHeader"
+                >The account holder lies outside the teiHeader, so the dataset has no
+                depcha:accountHolder statement.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-index-lists" scheme="schematron">
+          <desc>Only lists marked exactly depcha:index become agents and places. Entries of an
+            unmarked list are referenced in the RDF but never defined.</desc>
+          <constraint>
+            <sch:rule context="tei:listPerson[not(ancestor::tei:listPerson)] | tei:listOrg[not(ancestor::tei:listOrg)] | tei:listPlace[not(ancestor::tei:listPlace)]">
+              <sch:assert id="index-marker" role="warning" test="@ana = 'depcha:index'"
+                ><sch:value-of select="local-name()"/> is not marked @ana='depcha:index', so its
+                entries become no resources of the graph.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-ana-tokens" scheme="schematron">
+          <desc>The vocabulary of @ana is closed for the prefixes bk: and depcha:. It consists of
+            the tokens depcha-TORDF.xsl tests for and the tokens the annotation tutorial documents
+            without a mapping in model 1.2 (bk:price, bk:agent). Because the transformation tests
+            some tokens exactly and others by substring, a misspelled or plural token is mapped
+            unpredictably. The rule checks up to six tokens per attribute, the corpus uses at most
+            three.</desc>
+          <constraint>
+            <sch:rule context="tei:*[@ana]">
+              <sch:let name="mapped" value="' bk:entry bk:money bk:commodity bk:service bk:right bk:tax bk:governmentTransfer bk:each bk:from bk:to bk:when bk:where bk:status bk:total bk:subtotal bk:sum bk:debit bk:credit bk:account bk:rubrics bk:rubric bk:group bk:individual bk:organisation depcha:index depcha:accountHolder depcha:mainCurrency depcha:totalContainer '"/>
+              <sch:let name="documented" value="' bk:price bk:agent '"/>
+              <sch:let name="bare" value="' entry money commodity service right tax governmentTransfer each from to when where status total subtotal sum debit credit account rubrics rubric group individual organisation index accountHolder mainCurrency totalContainer price agent '"/>
+              <sch:let name="a1" value="concat(normalize-space(@ana), ' ')"/>
+              <sch:let name="t1" value="substring-before($a1, ' ')"/>
+              <sch:let name="a2" value="substring-after($a1, ' ')"/>
+              <sch:let name="t2" value="substring-before($a2, ' ')"/>
+              <sch:let name="a3" value="substring-after($a2, ' ')"/>
+              <sch:let name="t3" value="substring-before($a3, ' ')"/>
+              <sch:let name="a4" value="substring-after($a3, ' ')"/>
+              <sch:let name="t4" value="substring-before($a4, ' ')"/>
+              <sch:let name="a5" value="substring-after($a4, ' ')"/>
+              <sch:let name="t5" value="substring-before($a5, ' ')"/>
+              <sch:let name="a6" value="substring-after($a5, ' ')"/>
+              <sch:let name="t6" value="substring-before($a6, ' ')"/>
+              <sch:let name="rest" value="substring-after($a6, ' ')"/>
+              <!-- XPath 1.0 has no tokenize() or string-join(). Each list below keeps a token when
+                its condition holds, because substring(s, 1 div number(true())) is s and
+                substring(s, 1 div number(false())) is the empty string. -->
+              <sch:let name="unknown" value="concat(
+                substring(concat(' ', $t1), 1 div number((starts-with($t1, 'bk:') or starts-with($t1, 'depcha:')) and not(contains($mapped, concat(' ', $t1, ' '))) and not(contains($documented, concat(' ', $t1, ' '))))),
+                substring(concat(' ', $t2), 1 div number((starts-with($t2, 'bk:') or starts-with($t2, 'depcha:')) and not(contains($mapped, concat(' ', $t2, ' '))) and not(contains($documented, concat(' ', $t2, ' '))))),
+                substring(concat(' ', $t3), 1 div number((starts-with($t3, 'bk:') or starts-with($t3, 'depcha:')) and not(contains($mapped, concat(' ', $t3, ' '))) and not(contains($documented, concat(' ', $t3, ' '))))),
+                substring(concat(' ', $t4), 1 div number((starts-with($t4, 'bk:') or starts-with($t4, 'depcha:')) and not(contains($mapped, concat(' ', $t4, ' '))) and not(contains($documented, concat(' ', $t4, ' '))))),
+                substring(concat(' ', $t5), 1 div number((starts-with($t5, 'bk:') or starts-with($t5, 'depcha:')) and not(contains($mapped, concat(' ', $t5, ' '))) and not(contains($documented, concat(' ', $t5, ' '))))),
+                substring(concat(' ', $t6), 1 div number((starts-with($t6, 'bk:') or starts-with($t6, 'depcha:')) and not(contains($mapped, concat(' ', $t6, ' '))) and not(contains($documented, concat(' ', $t6, ' '))))))"/>
+              <sch:let name="unprefixed" value="concat(
+                substring(concat(' ', $t1), 1 div number(($t1 != '' and contains($bare, concat(' ', $t1, ' '))) or starts-with($t1, '#bk_') or starts-with($t1, '#depcha_'))),
+                substring(concat(' ', $t2), 1 div number(($t2 != '' and contains($bare, concat(' ', $t2, ' '))) or starts-with($t2, '#bk_') or starts-with($t2, '#depcha_'))),
+                substring(concat(' ', $t3), 1 div number(($t3 != '' and contains($bare, concat(' ', $t3, ' '))) or starts-with($t3, '#bk_') or starts-with($t3, '#depcha_'))),
+                substring(concat(' ', $t4), 1 div number(($t4 != '' and contains($bare, concat(' ', $t4, ' '))) or starts-with($t4, '#bk_') or starts-with($t4, '#depcha_'))),
+                substring(concat(' ', $t5), 1 div number(($t5 != '' and contains($bare, concat(' ', $t5, ' '))) or starts-with($t5, '#bk_') or starts-with($t5, '#depcha_'))),
+                substring(concat(' ', $t6), 1 div number(($t6 != '' and contains($bare, concat(' ', $t6, ' '))) or starts-with($t6, '#bk_') or starts-with($t6, '#depcha_'))))"/>
+              <sch:let name="unmapped" value="concat(
+                substring(concat(' ', $t1), 1 div number(contains($documented, concat(' ', $t1, ' ')))),
+                substring(concat(' ', $t2), 1 div number(contains($documented, concat(' ', $t2, ' ')))),
+                substring(concat(' ', $t3), 1 div number(contains($documented, concat(' ', $t3, ' ')))),
+                substring(concat(' ', $t4), 1 div number(contains($documented, concat(' ', $t4, ' ')))),
+                substring(concat(' ', $t5), 1 div number(contains($documented, concat(' ', $t5, ' ')))),
+                substring(concat(' ', $t6), 1 div number(contains($documented, concat(' ', $t6, ' ')))))"/>
+              <sch:assert id="token-unknown" role="error" test="$unknown = ''">Token outside the
+                DEPCHA vocabulary in @ana (<sch:value-of select="normalize-space($unknown)"/>).</sch:assert>
+              <sch:assert id="token-unprefixed" role="error" test="$unprefixed = ''">Vocabulary
+                token without its prefix or in the older #bk_ form in @ana (<sch:value-of
+                  select="normalize-space($unprefixed)"/>). The transformation does not read
+                it.</sch:assert>
+              <sch:assert id="token-unmapped" role="warning" test="$unmapped = ''">Token documented
+                in the tutorial but not mapped by model 1.2 (<sch:value-of
+                  select="normalize-space($unmapped)"/>). Its information is not in the
+                RDF.</sch:assert>
+              <sch:assert id="token-count" role="warning" test="$rest = ''">@ana has more than six
+                tokens. The tokens after the sixth are not checked.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-transactions" scheme="schematron">
+          <desc>Transactions are the elements of the text marked bk:entry. Without one the graph
+            holds no transaction.</desc>
+          <constraint>
+            <sch:rule context="/tei:TEI">
+              <sch:assert id="entry-missing" role="error"
+                test="tei:text//*[@ana][contains(concat(' ', normalize-space(@ana), ' '), ' bk:entry ')]"
+                >No element of the text is marked bk:entry, so the graph holds no
+                transaction.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-amounts" scheme="schematron">
+          <desc>A transferred asset takes its quantity and unit from a measure. Without @quantity
+            the transformation states 1, without @unit or @unitRef the unit "piece". The unit is
+            lower-cased and resolved against the unitDef identifiers, and the yearly totals sum only
+            money whose unit is the main currency or converts from it. The totals cast every such
+            quantity to a number and abort on a value that is not one.</desc>
+          <constraint>
+            <sch:rule context="tei:measure[@ana][contains(concat(' ', normalize-space(@ana), ' '), ' bk:money ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:commodity ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:service ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:right ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:tax ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:governmentTransfer ')] | tei:measure[not(@ana)][ancestor::*[@ana][contains(concat(' ', normalize-space(@ana), ' '), ' bk:money ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:commodity ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:service ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:right ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:tax ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:governmentTransfer ')]]">
+              <sch:let name="money" value="ancestor-or-self::*[@ana][contains(concat(' ', normalize-space(@ana), ' '), ' bk:money ')]"/>
+              <sch:let name="unit" value="normalize-space(@unitRef | @unit[not(../@unitRef)])"/>
+              <sch:let name="unitKey" value="translate(translate($unit, '#', ''), 'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞ', 'abcdefghijklmnopqrstuvwxyzàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþ')"/>
+              <sch:assert id="measure-quantity" role="warning" test="@quantity">The measure
+                "<sch:value-of select="normalize-space(.)"/>" has no @quantity, so the RDF states
+                quantity 1.</sch:assert>
+              <sch:assert id="measure-unit" role="warning" test="@unit or @unitRef">The measure
+                "<sch:value-of select="normalize-space(.)"/>" has neither @unit nor @unitRef, so the
+                RDF states the unit "piece".</sch:assert>
+              <sch:assert id="money-quantity" role="error"
+                test="not($money) or not(@quantity) or number(@quantity) = number(@quantity)"
+                >Monetary quantity "<sch:value-of select="@quantity"/>" is not a decimal number. The
+                yearly totals abort on it when the amount is in the main currency or converts from
+                it.</sch:assert>
+              <sch:assert id="unit-undefined" role="warning"
+                test="$unit = '' or starts-with($unit, 'http') or /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:unitDecl/tei:unitDef[translate(@xml:id, 'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞ', 'abcdefghijklmnopqrstuvwxyzàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþ') = $unitKey]"
+                >Unit "<sch:value-of select="$unit"/>" matches no unitDef of the teiHeader. The unit
+                of the transfer is not defined in the RDF, and money in it is left out of the yearly
+                totals.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-money-measure" scheme="schematron">
+          <desc>Money marked on an element other than measure takes quantity and unit from the
+            measures it contains.</desc>
+          <constraint>
+            <sch:rule context="tei:text//*[@ana][contains(concat(' ', normalize-space(@ana), ' '), ' bk:money ')][not(self::tei:measure)]">
+              <sch:assert id="money-measure" role="warning"
+                test="(@quantity and (@unit or @unitRef)) or .//tei:measure[@quantity][@unit or @unitRef]"
+                >Money on <sch:value-of select="local-name()"/> "<sch:value-of
+                  select="substring(normalize-space(.), 1, 60)"/>" contains no measure with @quantity
+                and a unit, so the RDF states 1 piece.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-commodity" scheme="schematron">
+          <desc>@commodity of a transferred asset becomes bk:classified. The transformation
+            lower-cases it and forms the IRI of a category, which only exists when the category is
+            in a taxonomy marked depcha:index, bk:account or bk:rubrics.</desc>
+          <constraint>
+            <sch:rule context="tei:*[@commodity][@ana][contains(concat(' ', normalize-space(@ana), ' '), ' bk:money ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:commodity ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:service ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:right ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:tax ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:governmentTransfer ')]">
+              <sch:let name="commodityKey" value="translate(translate(normalize-space(@commodity), '#', ''), 'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞ', 'abcdefghijklmnopqrstuvwxyzàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþ')"/>
+              <sch:assert id="commodity-undefined" role="warning"
+                test="@commodity = 'currency' or starts-with(normalize-space(@commodity), 'http') or /tei:TEI/tei:teiHeader/tei:encodingDesc/tei:classDecl//tei:taxonomy[contains(concat(' ', normalize-space(@ana), ' '), ' depcha:index ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:account ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:rubrics ')]//tei:category[translate(@xml:id, 'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞ', 'abcdefghijklmnopqrstuvwxyzàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþ') = $commodityKey]"
+                >Commodity "<sch:value-of select="@commodity"/>" matches no category of a mapped
+                taxonomy, so bk:classified points to an undefined resource.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-dates" scheme="schematron">
+          <desc>The transaction date and the year of the aggregation come from @when, or @from,
+            of the element marked bk:when.</desc>
+          <constraint>
+            <sch:rule context="tei:*[@ana][contains(concat(' ', normalize-space(@ana), ' '), ' bk:when ')]">
+              <sch:assert id="when-value" role="warning" test="@when or @from">Date "<sch:value-of
+                  select="substring(normalize-space(.), 1, 60)"/>" is marked bk:when but has neither
+                @when nor @from, so the transaction may lose its date and its place in the yearly
+                totals.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-references" scheme="schematron">
+          <desc>A local pointer must name an @xml:id of the same document. The transformation
+            turns @ref of agents and places, @unitRef of amounts and @corresp of entries and
+            accounts into IRIs, which dangle when the target is missing.</desc>
+          <constraint>
+            <sch:rule context="tei:*[starts-with(normalize-space(@ref), '#')]">
+              <sch:let name="v" value="normalize-space(@ref)"/>
+              <sch:let name="pointers" value="string-length($v) - string-length(translate($v, '#', ''))"/>
+              <sch:let name="tokens" value="string-length($v) - string-length(translate($v, ' ', '')) + 1"/>
+              <sch:assert id="ref-unresolved" role="warning"
+                test="$pointers != $tokens or count(id(normalize-space(translate($v, '#', ' ')))) = $pointers"
+                >@ref="<sch:value-of select="$v"/>" on <sch:value-of select="local-name()"/> does not
+                resolve to an @xml:id of the document.</sch:assert>
+            </sch:rule>
+          </constraint>
+          <constraint>
+            <sch:rule context="tei:*[@ref][@ana][contains(concat(' ', normalize-space(@ana), ' '), ' bk:from ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:to ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:where ')][not(contains(@ref, '#'))][not(contains(@ref, ':'))]">
+              <sch:let name="v" value="normalize-space(@ref)"/>
+              <sch:let name="tokens" value="string-length($v) - string-length(translate($v, ' ', '')) + 1"/>
+              <sch:assert id="ref-bare-unresolved" role="warning" test="count(id($v)) = $tokens"
+                >@ref="<sch:value-of select="$v"/>" of an agent or place lacks '#'. The
+                transformation reads it as a local identifier, but no @xml:id matches.</sch:assert>
+            </sch:rule>
+          </constraint>
+          <constraint>
+            <sch:rule context="tei:*[starts-with(normalize-space(@unitRef), '#')]">
+              <sch:let name="v" value="normalize-space(@unitRef)"/>
+              <sch:assert id="unitref-unresolved" role="warning"
+                test="count(id(normalize-space(translate($v, '#', ' ')))) = 1"
+                >@unitRef="<sch:value-of select="$v"/>" does not resolve to an @xml:id of the
+                document.</sch:assert>
+            </sch:rule>
+          </constraint>
+          <constraint>
+            <sch:rule context="tei:*[@corresp][@ana][contains(concat(' ', normalize-space(@ana), ' '), ' bk:entry ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:account ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:rubric ')][not(contains(@corresp, ':'))][not(contains(@corresp, '/'))]">
+              <sch:let name="v" value="normalize-space(@corresp)"/>
+              <sch:let name="tokens" value="string-length($v) - string-length(translate($v, ' ', '')) + 1"/>
+              <sch:assert id="corresp-unresolved" role="warning"
+                test="count(id(normalize-space(translate($v, '#', ' ')))) = $tokens"
+                >@corresp="<sch:value-of select="$v"/>" of an entry or account does not resolve to an
+                @xml:id of the document.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-identifier-case" scheme="schematron">
+          <desc>The transformation lower-cases identifiers on one side of a reference only.
+            Organisations and account categories are defined lower-cased while @ref of agents,
+            @corresp of accounts and the account holder IRI keep their case. Units are referenced
+            lower-cased while the unitDef, the main currency and the conversions keep their case.
+            An identifier with an upper-case letter therefore dangles, and a unit of this kind also
+            drops out of the yearly totals.</desc>
+          <constraint>
+            <sch:rule context="tei:listOrg[@ana = 'depcha:index']/tei:org[@xml:id] | tei:teiHeader/tei:encodingDesc/tei:unitDecl/tei:unitDef[@xml:id] | tei:teiHeader//tei:taxonomy[contains(concat(' ', normalize-space(@ana), ' '), ' bk:account ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:rubrics ')]//tei:category[@xml:id]">
+              <sch:assert id="id-case" role="warning"
+                test="translate(@xml:id, 'ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞ', '') = @xml:id"
+                >Identifier "<sch:value-of select="@xml:id"/>" of <sch:value-of select="local-name()"
+                /> has upper-case letters, which the transformation lower-cases on one side of its
+                references only.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-identifier-characters" scheme="schematron">
+          <desc>Organisations, places, categories and units are defined with encode-for-uri(),
+            while references with '#' are copied unencoded. An identifier with a character outside
+            the unreserved URI characters therefore dangles.</desc>
+          <constraint>
+            <sch:rule context="tei:listOrg[@ana = 'depcha:index']/tei:org[@xml:id] | tei:listPlace[@ana = 'depcha:index']/tei:place[@xml:id] | tei:teiHeader/tei:encodingDesc/tei:unitDecl/tei:unitDef[@xml:id] | tei:teiHeader//tei:taxonomy[contains(concat(' ', normalize-space(@ana), ' '), ' depcha:index ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:account ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:rubrics ')]//tei:category[@xml:id]">
+              <sch:assert id="id-characters" role="warning"
+                test="translate(@xml:id, 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.~', '') = ''"
+                >Identifier "<sch:value-of select="@xml:id"/>" of <sch:value-of select="local-name()"
+                /> has characters that are percent-encoded in its definition but not in references
+                to it.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+
+        <constraintSpec ident="depcha-single-values" scheme="schematron">
+          <desc>Several templates pass a child element to a function that accepts one value, and
+            the transformation aborts when there are two.</desc>
+          <constraint>
+            <sch:rule context="tei:listOrg[@ana = 'depcha:index']/tei:org">
+              <sch:assert id="org-name-single" role="error" test="not(tei:orgName and tei:name)"
+                >Organisation <sch:value-of select="@xml:id"/> has both orgName and name. The
+                transformation aborts.</sch:assert>
+            </sch:rule>
+          </constraint>
+          <constraint>
+            <sch:rule context="tei:teiHeader//tei:taxonomy[contains(concat(' ', normalize-space(@ana), ' '), ' depcha:index ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:account ') or contains(concat(' ', normalize-space(@ana), ' '), ' bk:rubrics ')]//tei:category">
+              <sch:assert id="category-term-single" role="error"
+                test="count(tei:catDesc/tei:term) &lt; 2 and (tei:catDesc/tei:term or count(tei:catDesc[tei:gloss]) &lt; 2)"
+                >Category <sch:value-of select="@xml:id"/> has several catDesc with a term or gloss.
+                The transformation aborts.</sch:assert>
+            </sch:rule>
+          </constraint>
+          <constraint>
+            <sch:rule context="tei:teiHeader//tei:taxonomy[contains(concat(' ', normalize-space(@ana), ' '), ' depcha:index ')]">
+              <sch:assert id="taxonomy-gloss-single" role="error"
+                test="count(tei:gloss) &lt; 2 and count(tei:desc) &lt; 2">Taxonomy <sch:value-of
+                  select="@xml:id"/> has several gloss or desc children. The transformation
+                aborts.</sch:assert>
+            </sch:rule>
+          </constraint>
+        </constraintSpec>
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>
